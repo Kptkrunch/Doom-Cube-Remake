@@ -10,7 +10,7 @@ public class DamageNumber : MonoBehaviour
     public float showInterval;
     private float _showTimer;
     public float floatSpeed;
-
+    
     private void Start()
     {
         _showTimer = showInterval;
@@ -23,7 +23,7 @@ public class DamageNumber : MonoBehaviour
             _showTimer -= Time.deltaTime;
             if (_showTimer <= 0)
             {
-                Destroy(gameObject);
+                DamageNumberController.dnController.PlaceInPool(this);
             }
         }
         
