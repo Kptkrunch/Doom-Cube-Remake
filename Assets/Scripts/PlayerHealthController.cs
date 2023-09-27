@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    public static PlayerHealthController PhcInstance;
+    public static PlayerHealthController phcInstance;
     public Slider healthSlider;
 
     private void Awake()
     {
-        PhcInstance = this;
+        phcInstance = this;
     }
 
     public float currentHealth, maxHealth;
@@ -21,10 +21,6 @@ public class PlayerHealthController : MonoBehaviour
 
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
-    }
-
-    void Update()
-    {
     }
 
     public void TakeDamage(float damage)

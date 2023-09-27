@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     {
         _spawnTimer = spawnInterval;
         
-        _target = PlayerHealthController.PhcInstance.transform;
+        _target = PlayerHealthController.phcInstance.transform;
 
         _despawnDistance = Vector3.Distance(transform.position, maxSpawnPoint.position) + 3f;
     }

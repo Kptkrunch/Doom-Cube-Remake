@@ -5,19 +5,10 @@ using UnityEngine;
 public class EnemyDamager : MonoBehaviour
 {
     public float damage;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<EnemyController>().TakeDamage(damage);
         }

@@ -7,10 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed;
     public Animator animator;
-    void Start()
-    {
-        
-    }
+    private static readonly int IsMoving = Animator.StringToHash("IsMoving");
 
     void Update()
     {
@@ -24,11 +21,11 @@ public class PlayerController : MonoBehaviour
 
         if (moveInput != Vector3.zero)
         {
-            animator.SetBool("IsMoving", true);
+            animator.SetBool(IsMoving, true);
         }
         else
         {
-            animator.SetBool("IsMoving", false);
+            animator.SetBool(IsMoving, false);
         }
     }
 }

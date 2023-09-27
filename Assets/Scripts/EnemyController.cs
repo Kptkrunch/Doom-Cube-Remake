@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         _originalMoveSpeed = moveSpeed;
-        _target = PlayerHealthController.PhcInstance.transform;
+        _target = PlayerHealthController.phcInstance.transform;
     }
     
     void Update()
@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && _hitCounter <= 0f)
         {
-            PlayerHealthController.PhcInstance.TakeDamage(damage);
+            PlayerHealthController.phcInstance.TakeDamage(damage);
 
             _hitCounter = hitInterval;
         }
@@ -58,6 +58,8 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        DamageNumberController.dnController.ShowDamage(damage, transform.position);
     }
 
     public void KnockBack(float knockBackAmount, float knockBackDuration)
