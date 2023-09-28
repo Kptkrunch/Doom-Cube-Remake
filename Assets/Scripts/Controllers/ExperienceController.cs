@@ -6,8 +6,8 @@ using UnityEngine;
 public class ExperienceController : MonoBehaviour
 {
     public static ExperienceController expController;
+    public LevelController lvlController;
     public ItemDropper expDrop;
-    public LevelController expLevelController;
 
     private void Awake()
     {
@@ -15,13 +15,16 @@ public class ExperienceController : MonoBehaviour
     }
 
     public int currentExp;
-
     public void GetExp(int exp)
     {
         currentExp += exp;
-        if (currentExp >= expLevelController.expLevels[expLevelController.currentLevel])
+        
+        ExpBar.expBar.UpdateExpBar(currentExp, lvlController.currentLevel,
+            lvlController.expLevels[lvlController.currentLevel]);
+        
+        if (currentExp >= lvlController.expLevels[lvlController.currentLevel])
         {
-            expLevelController.LevelUp();
+            lvlController.LevelUp();
             if (exp > 0)
             {
                 currentExp = 0;

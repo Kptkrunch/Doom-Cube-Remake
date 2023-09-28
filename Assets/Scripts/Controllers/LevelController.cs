@@ -5,8 +5,14 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
+    public static LevelController lvlController;
     public List<int> expLevels;
     public int currentLevel = 1, maxLevel = 100;
+
+    private void Awake()
+    {
+        lvlController = this;
+    }
 
     private void Start()
     {
