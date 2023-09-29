@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 1404993622}
   currentHealth: 0
-  maxHealth: 100
+  maxHealth: 1000
 --- !u!50 &23833858
 Rigidbody2D:
   serializedVersion: 4
@@ -627,7 +627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &119987225
 Transform:
   m_ObjectHideFlags: 0
@@ -758,7 +758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: {x: 1, y: 1, z: 1}
   growShrinkSpeed: 0.75
-  staySizeInterval: 2
+  staySizeInterval: 3
 --- !u!114 &119987230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,7 +1210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4473147247977312726, guid: 1af55b3320d4955409e9512770a04a7f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5537
+      value: -1.5537109
       objectReference: {fileID: 0}
     - target: {fileID: 4656529621166627594, guid: 1af55b3320d4955409e9512770a04a7f, type: 3}
       propertyPath: m_Name
@@ -1314,7 +1314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8470780327018084806, guid: 1af55b3320d4955409e9512770a04a7f, type: 3}
       propertyPath: m_Value
-      value: 0.364
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470780327018084806, guid: 1af55b3320d4955409e9512770a04a7f, type: 3}
       propertyPath: m_Interactable
@@ -1372,6 +1372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 679304369}
+  - component: {fileID: 679304370}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -1399,6 +1400,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &679304370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679304368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7f570a230b7e248ba782793c175eab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equippedWeapons:
+  - {fileID: 1100572718}
 --- !u!4 &682735380 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4792389843021600, guid: 0fc50fd3faa65944ea9ebd10b28a67ed, type: 3}
@@ -1437,6 +1452,7 @@ Transform:
   - {fileID: 1457017850}
   - {fileID: 1121611827}
   - {fileID: 24217533}
+  - {fileID: 2057506876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757974905
@@ -1565,7 +1581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &911633802
 Transform:
   m_ObjectHideFlags: 0
@@ -1696,7 +1712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: {x: 1, y: 1, z: 1}
   growShrinkSpeed: 0.75
-  staySizeInterval: 2
+  staySizeInterval: 3
 --- !u!114 &911633807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1878,8 +1894,145 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006ae75f16765534b986ec3e8f425efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+  - projSpeed: 1
+    damage: 5
+    range: 1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1
+    size: 1
+    cdr: 1
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  - projSpeed: 1.1
+    damage: 5
+    range: 1.1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.9
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  - projSpeed: 1.1
+    damage: 5
+    range: 1.1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.9
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  - projSpeed: 1.1
+    damage: 5
+    range: 1.1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.9
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  - projSpeed: 1.1
+    damage: 5
+    range: 1.1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.9
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  - projSpeed: 1.1
+    damage: 5
+    range: 1.1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.9
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  - projSpeed: 1.1
+    damage: 5
+    range: 1.1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.9
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  - projSpeed: 1.1
+    damage: 5
+    range: 1.1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.9
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  - projSpeed: 1.1
+    damage: 5
+    range: 1.1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.9
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  - projSpeed: 1.1
+    damage: 5
+    range: 1.1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.9
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  - projSpeed: 1.1
+    damage: 5
+    range: 1.1
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.9
+    specialAbilities:
+    - {fileID: 0}
+    - {fileID: 0}
+  weaponLevel: 0
+  weaponLeveledUp: 0
   rotationSpeed: 200
   projectileFrame: {fileID: 540812674}
+  projectileDamagers:
+  - {fileID: 2058996617}
+  - {fileID: 2127813196}
+  - {fileID: 119987226}
+  - {fileID: 911633803}
+  projectileScales:
+  - {fileID: 2058996618}
+  - {fileID: 2127813199}
+  - {fileID: 119987229}
+  - {fileID: 911633806}
+  weaponFrameTimer: {fileID: 1100572719}
+  ability1: {fileID: 0}
+  ability2: {fileID: 0}
 --- !u!114 &1100572719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1892,8 +2045,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c795904dcc895c241b10bf36e64c7d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeInterval: 4
+  activeInterval: 5
   weaponFrame: {fileID: 540812673}
+  coolDownTimer: 3
 --- !u!1 &1121611825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,11 +2084,11 @@ MonoBehaviour:
   checkPerFrame: 10
   waves:
   - enemyToSpawn: {fileID: 9209951920271896769, guid: c3f9784e55e886c47b8af57603bf7bbc, type: 3}
-    waveDuration: 60
+    waveDuration: 10
     waveInterval: 0.01
   - enemyToSpawn: {fileID: 3338946353524091767, guid: 1e952c7a9e533dd48876841c7a83f16a, type: 3}
     waveDuration: 10
-    waveInterval: 0.5
+    waveInterval: 0.1
   - enemyToSpawn: {fileID: 4057208376332854993, guid: 5fe33b24e6e411e458c9e9f9df8783bf, type: 3}
     waveDuration: 10
     waveInterval: 0.5
@@ -130497,7 +130651,7 @@ RectTransform:
   m_Children:
   - {fileID: 678441103}
   - {fileID: 569713441}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 742495943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -130655,7 +130809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: {x: 1, y: 1, z: 1}
   growShrinkSpeed: 0.75
-  staySizeInterval: 2
+  staySizeInterval: 3
 --- !u!114 &2058996619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130821,7 +130975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: {x: 1, y: 1, z: 1}
   growShrinkSpeed: 0.75
-  staySizeInterval: 2
+  staySizeInterval: 3
 --- !u!114 &2127813200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131040,4 +131194,3 @@ SceneRoots:
   - {fileID: 1660418510}
   - {fileID: 23833853}
   - {fileID: 742495943}
-  - {fileID: 2057506876}

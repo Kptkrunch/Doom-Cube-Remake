@@ -25,6 +25,7 @@ public class LevelController : MonoBehaviour
     public void LevelUp()
     {
         currentLevel++;
+        WepsAndAbs.wepsAndAbs.equippedWeapons[0].weaponLeveledUp = true;
         GeneralTextController.generalTextControllerController.ShowText("Level Up", PlayerController.pController.transform.position);
     }
 }

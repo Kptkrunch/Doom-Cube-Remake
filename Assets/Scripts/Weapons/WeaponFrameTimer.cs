@@ -7,6 +7,7 @@ public class WeaponFrameTimer : MonoBehaviour
 {
     public float activeInterval;
     public GameObject weaponFrame;
+    public float coolDownTimer;
     private float _activeTimer;
     private bool _isActive;
     
@@ -26,9 +27,11 @@ public class WeaponFrameTimer : MonoBehaviour
             {
                 weaponFrame.SetActive(true);
                 _isActive = true;
+                _activeTimer = activeInterval;
             }
             else
             {
+                _activeTimer = coolDownTimer;
                 weaponFrame.SetActive(false);
                 _isActive = false;
             }
