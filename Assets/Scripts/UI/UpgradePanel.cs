@@ -36,7 +36,7 @@ namespace UI
             {
                 if (_assignedWeapon.gameObject.activeSelf == true)
                 {
-                    _assignedWeapon.WeaponLevelUp();
+                    _assignedWeapon.UpdateWeapon();
                 }
                 else
                 {
@@ -45,7 +45,6 @@ namespace UI
                 UpgradePanelController.upgradePanelController.gameObject.SetActive(false);
                 UpgradePanelController.upgradePanelController.skipLevelButton.gameObject.SetActive(false);
                 Time.timeScale = 1f;
-                _assignedWeapon.weaponLeveledUp = false;
             }
         }
     }

@@ -15,14 +15,9 @@ namespace Weapons.SpecificWeapons
         void Update()
         {
             transform.rotation = Quaternion.Euler(0f, 0f, projFrameWithTimer.transform.rotation.eulerAngles.z + (rotationSpeed * stats[0].projSpeed * Time.deltaTime));
-            if (weaponLeveledUp == true)
-            {
-                weaponLeveledUp = false;
-                UpdateWeapon();
-            }
         }
 
-        public void UpdateWeapon()
+        public override void UpdateWeapon()
         {
             WeaponLevelUp();
 

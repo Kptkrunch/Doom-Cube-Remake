@@ -7,14 +7,12 @@ namespace Weapons
     {
         public List<WeaponStats> stats;
         public int weaponLevel;
-        public bool weaponLeveledUp = false;
         public Sprite weaponIcon;
         public void WeaponLevelUp()
         {
             if (weaponLevel < stats.Count - 1)
             {
                 weaponLevel++;
-                weaponLeveledUp = true;
 
                 if (weaponLevel >= stats.Count - 1)
                 {
@@ -22,6 +20,18 @@ namespace Weapons
                     WepsAndAbs.wepsAndAbs.equippedWeapons.Remove(this);
                 }
             }
+        }
+
+        public virtual void UpdateWeapon()
+        {
+            WeaponLevelUp();
+            
+            stats[weaponLevel].projSpeed *= stats[weaponLevel].projSpeed;
+            stats[weaponLevel].range *= stats[weaponLevel].range;
+            stats[weaponLevel].rateOfFire *= stats[weaponLevel].rateOfFire;
+            stats[weaponLevel].duration *= stats[weaponLevel].duration;
+            stats[weaponLevel].size *= stats[weaponLevel].size;
+            stats[weaponLevel].cdr *= stats[weaponLevel].cdr;
         }
     }
 

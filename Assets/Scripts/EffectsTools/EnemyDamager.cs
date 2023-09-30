@@ -1,3 +1,4 @@
+using System;
 using Controllers;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace EffectsTools
     {
         public float damage;
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Enemy"))
             {
