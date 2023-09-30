@@ -7,12 +7,14 @@ public class Weapon : MonoBehaviour
     public List<WeaponStats> stats;
     public int weaponLevel;
     public bool weaponLeveledUp = false;
-
+    public Sprite weaponIcon;
+    
     public void WeaponLevelUp()
     {
         if (weaponLevel < stats.Count - 1)
         {
             weaponLevel++;
+            weaponLeveledUp = true;
         }
     }
 }
@@ -21,5 +23,6 @@ public class Weapon : MonoBehaviour
 public class WeaponStats
 {
     public float projSpeed, damage, range, rateOfFire, numOfProj, duration, size, cdr;
+    public string name, description, upgradeText;
     public List<GameObject> specialAbilities;
 }

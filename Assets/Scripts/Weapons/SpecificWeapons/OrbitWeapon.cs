@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class OrbitWeapon : Weapon
 {
@@ -9,7 +10,7 @@ public class OrbitWeapon : Weapon
     public Transform projectileFrame;
     public List<EnemyDamager> projectileDamagers;
     public List<ChangeProjectileScale> projectileScales;
-    public WeaponFrameTimer weaponFrameTimer;
+    public ProjFrameWithTimer projFrameWithTimer;
     public GameObject ability1;
     public GameObject ability2;
 
@@ -47,14 +48,14 @@ public class OrbitWeapon : Weapon
         
         // match growth interval to weapon frame interval
         // increase projectile size and growth speed
-        projectileScales[0].staySizeInterval = weaponFrameTimer.activeInterval * .6f;
-        projectileScales[1].staySizeInterval = weaponFrameTimer.activeInterval * .6f;
-        projectileScales[2].staySizeInterval = weaponFrameTimer.activeInterval * .6f;
-        projectileScales[3].staySizeInterval = weaponFrameTimer.activeInterval * .6f;
+        projectileScales[0].staySizeInterval = projFrameWithTimer.activeInterval * .6f;
+        projectileScales[1].staySizeInterval = projFrameWithTimer.activeInterval * .6f;
+        projectileScales[2].staySizeInterval = projFrameWithTimer.activeInterval * .6f;
+        projectileScales[3].staySizeInterval = projFrameWithTimer.activeInterval * .6f;
         
         // increase duration and reduce cooldown
-        weaponFrameTimer.coolDownTimer *= stats[weaponLevel].cdr;
-        weaponFrameTimer.activeInterval *= stats[weaponLevel].duration;
+        projFrameWithTimer.coolDownTimer *= stats[weaponLevel].cdr;
+        projFrameWithTimer.activeInterval *= stats[weaponLevel].duration;
         
         // add weapon new abilities
         if (!ability1)

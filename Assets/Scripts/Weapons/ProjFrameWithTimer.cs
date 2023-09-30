@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 
-public class WeaponFrameTimer : MonoBehaviour
+public class ProjFrameWithTimer : MonoBehaviour
 {
     public float activeInterval;
     public GameObject weaponFrame;

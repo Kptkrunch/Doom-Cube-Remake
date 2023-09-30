@@ -39,19 +39,6 @@ public class EnemySpawner : MonoBehaviour
     
     void Update()
     {
-        // uncomment below if you want singular enemy spawner
-        
-        // _spawnTimer -= Time.deltaTime;
-        // if (_spawnTimer <= 0)
-        // {
-        //     _spawnTimer = spawnInterval;
-        //     
-        //     GameObject newEnemy = Instantiate(enemyToSpawn, SelectSpawnPoint(), transform.rotation);
-        //     _spawnedEnemies.Add(newEnemy);
-        // }
-
-        // comment out if you want singular enemy spawner
-        
         if (PlayerController.pController.gameObject.activeSelf)
         {
             if (_currentWave < waves.Count)
