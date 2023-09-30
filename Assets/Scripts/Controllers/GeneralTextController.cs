@@ -1,51 +1,55 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+using JetBrains.Annotations;
+using UI;
 using UnityEngine;
 
-public class GeneralTextController : MonoBehaviour
+namespace Controllers
 {
-    public static GeneralTextController generalTextControllerController;
-
-    private void Awake()
+    public class GeneralTextController : MonoBehaviour
     {
-        generalTextControllerController = this;
-    }
+        public static GeneralTextController generalTextControllerController;
 
-    public GeneralText text;
-    public Transform textTransform;
-    private readonly List<GeneralText> _tmpTexts = new();
+        private void Awake()
+        {
+            generalTextControllerController = this;
+        }
 
-    public void ShowText(string text, Vector3 location)
-    {
-        GeneralText newText = GetFromPool();
-        newText.Setup(text);
-        newText.gameObject.SetActive(true);
+        public GeneralText text;
+        public Transform textTransform;
+        private readonly List<GeneralText> _tmpTexts = new();
 
-        newText.transform.position = location;
-    }
+        public void ShowText([NotNull] string textString, Vector3 location)
+        {
+            if (textString == null) throw new ArgumentNullException(nameof(textString));
+            var newText = GetFromPool();
+            newText.Setup(textString);
+            newText.gameObject.SetActive(true);
+
+            newText.transform.position = location;
+        }
     
     
-    public GeneralText GetFromPool()
-    {
-        GeneralText pooledText = null;
-
-        if (_tmpTexts.Count == 0)
+        public GeneralText GetFromPool()
         {
-            pooledText = Instantiate(text, textTransform);
-        }
-        else
-        {
-            pooledText = _tmpTexts[0];
-            _tmpTexts.RemoveAt(0);
-        }
-        return pooledText;
-    }
+            GeneralText pooledText = null;
 
-    public void PlaceInPool(GeneralText textToAdd)
-    {
-        textToAdd.gameObject.SetActive(false);
-        _tmpTexts.Add(textToAdd);
+            if (_tmpTexts.Count == 0)
+            {
+                pooledText = Instantiate(text, textTransform);
+            }
+            else
+            {
+                pooledText = _tmpTexts[0];
+                _tmpTexts.RemoveAt(0);
+            }
+            return pooledText;
+        }
+
+        public void PlaceInPool(GeneralText textToAdd)
+        {
+            textToAdd.gameObject.SetActive(false);
+            _tmpTexts.Add(textToAdd);
+        }
     }
 }

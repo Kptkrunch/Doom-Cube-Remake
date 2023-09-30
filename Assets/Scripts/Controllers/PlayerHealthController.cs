@@ -1,35 +1,35 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealthController : MonoBehaviour
+namespace Controllers
 {
-    public static PlayerHealthController phcInstance;
-    public Slider healthSlider;
-
-    private void Awake()
+    public class PlayerHealthController : MonoBehaviour
     {
-        phcInstance = this;
-    }
+        public static PlayerHealthController phcInstance;
+        public Slider healthSlider;
 
-    public float currentHealth, maxHealth;
-    void Start()
-    {
-        currentHealth = maxHealth;
-
-        healthSlider.maxValue = maxHealth;
-        healthSlider.value = currentHealth;
-    }
-
-    public void TakeDamage(float damage)
-    {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        private void Awake()
         {
-            gameObject.SetActive(false);
+            phcInstance = this;
         }
-        healthSlider.value = currentHealth;
+
+        public float currentHealth, maxHealth;
+        private void Start()
+        {
+            currentHealth = maxHealth;
+
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = currentHealth;
+        }
+
+        public void TakeDamage(float damage)
+        {
+            currentHealth -= damage;
+            if (currentHealth <= 0)
+            {
+                gameObject.SetActive(false);
+            }
+            healthSlider.value = currentHealth;
+        }
     }
 }

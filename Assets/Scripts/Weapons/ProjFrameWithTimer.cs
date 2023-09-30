@@ -1,39 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
 using UnityEngine;
 
-public class ProjFrameWithTimer : MonoBehaviour
+namespace Weapons
 {
-    public float activeInterval;
-    public GameObject weaponFrame;
-    public float coolDownTimer;
-    private float _activeTimer;
-    private bool _isActive;
+    public class ProjFrameWithTimer : MonoBehaviour
+    {
+        public float activeInterval;
+        public GameObject projectileFrame;
+        public float coolDownTimer;
+        private float _activeTimer;
+        private bool _isActive;
     
-    void Start()
-    {
-        weaponFrame.SetActive(false);
-        _isActive = false;
-    }
-
-    void Update()
-    {
-        _activeTimer -= Time.deltaTime;
-        if (_activeTimer <= 0)
+        private void Start()
         {
-            _activeTimer = activeInterval;
-            if (!_isActive)
+            projectileFrame.SetActive(false);
+            _isActive = false;
+        }
+
+        private void Update()
+        {
+            _activeTimer -= Time.deltaTime;
+            if (_activeTimer <= 0)
             {
-                weaponFrame.SetActive(true);
-                _isActive = true;
                 _activeTimer = activeInterval;
-            }
-            else
-            {
-                _activeTimer = coolDownTimer;
-                weaponFrame.SetActive(false);
-                _isActive = false;
+                if (!_isActive)
+                {
+                    projectileFrame.SetActive(true);
+                    _isActive = true;
+                    _activeTimer = activeInterval;
+                }
+                else
+                {
+                    _activeTimer = coolDownTimer;
+                    projectileFrame.SetActive(false);
+                    _isActive = false;
+                }
             }
         }
     }

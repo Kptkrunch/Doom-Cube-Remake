@@ -1,28 +1,45 @@
-using System.Collections;
 using System.Collections.Generic;
+using Controllers;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+namespace Weapons
 {
-    public List<WeaponStats> stats;
-    public int weaponLevel;
-    public bool weaponLeveledUp = false;
-    public Sprite weaponIcon;
-    
-    public void WeaponLevelUp()
+    public class Weapon : MonoBehaviour
     {
-        if (weaponLevel < stats.Count - 1)
+        public List<WeaponStats> stats;
+        public int weaponLevel;
+        public Sprite weaponIcon;
+        public void WeaponLevelUp()
         {
-            weaponLevel++;
-            weaponLeveledUp = true;
+            if (weaponLevel < stats.Count - 1)
+            {
+                weaponLevel++;
+
+                if (weaponLevel >= stats.Count - 1)
+                {
+                    WepsAndAbs.wepsAndAbs.fullyUpgradedWeapons.Add(this);
+                    WepsAndAbs.wepsAndAbs.equippedWeapons.Remove(this);
+                }
+            }
+        }
+
+        public virtual void UpdateWeapon()
+        {
+            WeaponLevelUp();
+            
+            stats[weaponLevel].projSpeed *= stats[weaponLevel].projSpeed;
+            stats[weaponLevel].range *= stats[weaponLevel].range;
+            stats[weaponLevel].rateOfFire *= stats[weaponLevel].rateOfFire;
+            stats[weaponLevel].duration *= stats[weaponLevel].duration;
+            stats[weaponLevel].size *= stats[weaponLevel].size;
+            stats[weaponLevel].cdr *= stats[weaponLevel].cdr;
         }
     }
-}
 
-[System.Serializable]
-public class WeaponStats
-{
-    public float projSpeed, damage, range, rateOfFire, numOfProj, duration, size, cdr;
-    public string name, description, upgradeText;
-    public List<GameObject> specialAbilities;
+    [System.Serializable]
+    public class WeaponStats
+    {
+        public float projSpeed, damage, range, rateOfFire, numOfProj, duration, size, cdr;
+        public string name, description, upgradeText;
+    }
 }

@@ -153,7 +153,7 @@ namespace Fury.Editor
 
             foreach (string prefab in allPrefabs)
             {
-                UnityEngine.Object o = AssetDatabase.LoadMainAssetAtPath(prefab);
+                Object o = AssetDatabase.LoadMainAssetAtPath(prefab);
 
                 if (o == null)
                 {
@@ -192,22 +192,23 @@ namespace Fury.Editor
             results.Add(new Result()
             {
                 address = "Missing Component " + index + " of " + childPath,
-                Obj = obj,
+                Obj = obj
             });
         }
         private void AppendTransformResult(string childPath, string name, GameObject obj)
         {
-            results.Add(new Result()
+            results.Add(new Result
             {
                 address = "Missing Prefab for \"" + name + "\" of " + childPath,
-                Obj = obj,
+                Obj = obj
             });
         }
+        // ReSharper disable Unity.PerformanceAnalysis
         private void Traverse(Transform transform, string path = "")
         {
-            string thisPath = path + "/" + transform.name;
-            Component[] components = transform.GetComponents<Component>();
-            for (int i = 0; i < components.Length; i++)
+            var thisPath = path + "/" + transform.name;
+            var components = transform.GetComponents<Component>();
+            for (var i = 0; i < components.Length; i++)
             {
                 if (components[i] == null)
                 {

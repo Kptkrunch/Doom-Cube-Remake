@@ -1,32 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
+using Controllers;
 using UnityEngine;
 
-public class AttractableItem : MonoBehaviour
+namespace EffectsTools
 {
-    private float _moveSpeed;
-    private bool _isAttracted;
-    
-    private void Start()
+    public class AttractableItem : MonoBehaviour
     {
-        _moveSpeed = ItemAttractor.itemAttractor.pullSpeed;
-    }
+        private float _moveSpeed;
+        private bool _isAttracted;
     
-    private void Update()
-    {
-        if (_isAttracted)
+        private void Start()
         {
-            transform.position = Vector3.MoveTowards(transform.position,
-                PlayerController.pController.transform.position, _moveSpeed * Time.deltaTime);
+            _moveSpeed = ItemAttractor.itemAttractor.pullSpeed;
         }
-    }
     
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("ItemAttractor"))
+        private void Update()
         {
-            _isAttracted = true;
-            _moveSpeed += PlayerController.pController.moveSpeed;
+            if (_isAttracted)
+            {
+                transform.position = Vector3.MoveTowards(transform.position,
+                    PlayerController.pController.transform.position, _moveSpeed * Time.deltaTime);
+            }
+        }
+    
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("ItemAttractor"))
+            {
+                _isAttracted = true;
+                _moveSpeed += PlayerController.pController.moveSpeed;
+            }
         }
     }
 }

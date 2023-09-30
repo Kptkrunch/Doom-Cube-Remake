@@ -1,22 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using UI;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class UpgradePanelController : MonoBehaviour
+namespace Controllers
 {
-    public static UpgradePanelController upgradePanelController;
-    public bool isOpen = false;
-    private void Awake()
+    public class UpgradePanelController : MonoBehaviour
     {
-        upgradePanelController = this;
-    }
+        public static UpgradePanelController upgradePanelController;
+        public SkipLevelButton skipLevelButton;
+        public bool isOpen = false;
+        private void Awake()
+        {
+            upgradePanelController = this;
+        }
     
-    public UpgradePanel[] upgradePanels;
+        public UpgradePanel[] upgradePanels;
 
-    private void Start()
-    {
-        gameObject.SetActive(isOpen);
+        private void Start()
+        {
+            gameObject.SetActive(isOpen);
+            skipLevelButton.gameObject.SetActive(isOpen);
+        }
     }
 }
