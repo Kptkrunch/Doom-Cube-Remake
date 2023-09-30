@@ -1,30 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class FillBar : MonoBehaviour
+
+namespace UI
 {
-    public static FillBar fbInstance;
-    public Slider fillBar;
-    public float startingValue;
-
-    private void Awake()
+    public class FillBar : MonoBehaviour
     {
-        fbInstance = this;
-    }
+        public static FillBar fbInstance;
+        public Slider fillBar;
+        public float startingValue;
 
-    protected float currentValue;
-    protected float maxValue;
-    void Start()
-    {
-        currentValue = startingValue;
-        fillBar.maxValue = maxValue;
-        fillBar.value = currentValue;
-    }
+        private void Awake()
+        {
+            fbInstance = this;
+        }
 
-    public void IncreaseBar(float value)
-    {
-        currentValue += value;
-        fillBar.value = currentValue;
+        protected float currentValue;
+        protected float maxValue;
+        void Start()
+        {
+            currentValue = startingValue;
+            fillBar.maxValue = maxValue;
+            fillBar.value = currentValue;
+        }
+
+        public void IncreaseBar(float value)
+        {
+            currentValue += value;
+            fillBar.value = currentValue;
+        }
     }
 }

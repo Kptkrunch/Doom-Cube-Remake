@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDropper : MonoBehaviour
+namespace EffectsTools
 {
-    public GameObject itemDrop;
-
-    public void DropItem(Vector3 dropLocation)
+    public class ItemDropper : MonoBehaviour
     {
-        Instantiate(itemDrop, dropLocation, Quaternion.identity);
+        public GameObject itemDrop;
+
+        public void DropItem(Vector3 dropLocation)
+        {
+            Instantiate(itemDrop, dropLocation, Quaternion.identity);
+        }
     }
 }

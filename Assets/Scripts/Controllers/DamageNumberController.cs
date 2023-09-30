@@ -1,52 +1,54 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 
-public class DamageNumberController : MonoBehaviour
+namespace Controllers
 {
-    public static DamageNumberController dnController;
-
-    private void Awake()
+    public class DamageNumberController : MonoBehaviour
     {
-        dnController = this;
-    }
+        public static DamageNumberController dnController;
 
-    public DamageNumber damageNumber;
-    public Transform damageNumberTransform;
-    private readonly List<DamageNumber> _damageNumbers = new();
+        private void Awake()
+        {
+            dnController = this;
+        }
 
-    public void ShowDamage(float damage, Vector3 location)
-    {
-        int rounded = Mathf.RoundToInt(damage);
-        DamageNumber newDamage = GetFromPool();
+        public DamageNumber damageNumber;
+        public Transform damageNumberTransform;
+        private readonly List<DamageNumber> _damageNumbers = new();
 
-        newDamage.Setup(rounded);
-        newDamage.gameObject.SetActive(true);
+        public void ShowDamage(float damage, Vector3 location)
+        {
+            int rounded = Mathf.RoundToInt(damage);
+            DamageNumber newDamage = GetFromPool();
 
-        newDamage.transform.position = location;
-    }
+            newDamage.Setup(rounded);
+            newDamage.gameObject.SetActive(true);
+
+            newDamage.transform.position = location;
+        }
     
     
-    public DamageNumber GetFromPool()
-    {
-        DamageNumber pooledNumber = null;
-
-        if (_damageNumbers.Count == 0)
+        public DamageNumber GetFromPool()
         {
-            pooledNumber = Instantiate(damageNumber, damageNumberTransform);
-        }
-        else
-        {
-            pooledNumber = _damageNumbers[0];
-            _damageNumbers.RemoveAt(0);
-        }
-        return pooledNumber;
-    }
+            DamageNumber pooledNumber = null;
 
-    public void PlaceInPool(DamageNumber damageNumberToAdd)
-    {
-        damageNumberToAdd.gameObject.SetActive(false);
-        _damageNumbers.Add(damageNumberToAdd);
+            if (_damageNumbers.Count == 0)
+            {
+                pooledNumber = Instantiate(damageNumber, damageNumberTransform);
+            }
+            else
+            {
+                pooledNumber = _damageNumbers[0];
+                _damageNumbers.RemoveAt(0);
+            }
+            return pooledNumber;
+        }
+
+        public void PlaceInPool(DamageNumber damageNumberToAdd)
+        {
+            damageNumberToAdd.gameObject.SetActive(false);
+            _damageNumbers.Add(damageNumberToAdd);
+        }
     }
 }

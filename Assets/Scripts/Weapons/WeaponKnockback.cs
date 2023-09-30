@@ -1,18 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Controllers;
 using UnityEngine;
 
-public class WeaponKnockback : MonoBehaviour
+namespace Weapons
 {
-    public float knockBackAmount;
-    public float knockBackDuration;
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class WeaponKnockback : MonoBehaviour
     {
-        if (collision.CompareTag("Enemy"))
+        public float knockBackAmount;
+        public float knockBackDuration;
+    
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            collision.GetComponent<EnemyController>().KnockBack(knockBackAmount, knockBackDuration);
+            if (collision.CompareTag("Enemy"))
+            {
+                collision.GetComponent<EnemyController>().KnockBack(knockBackAmount, knockBackDuration);
+            }
         }
     }
 }

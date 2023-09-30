@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Weapons;
 
 public class WepsAndAbs : MonoBehaviour
 {
     public static WepsAndAbs wepsAndAbs;
     public int maxWeapons;
     public List<Weapon> equippedWeapons, upgradableWeapons, allWeapons;
+    public List<Weapon> fullyUpgradedWeapons = new();
+    
     private void Awake()
     {
         wepsAndAbs = this;

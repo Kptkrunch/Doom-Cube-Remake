@@ -1,34 +1,34 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemyAnimation : MonoBehaviour
+namespace EffectsTools
 {
-    public Transform sprite;
-    public float speed;
-    public float minSize, maxSize;
-    private float _activeSize;
-    void Start()
+    public class EnemyAnimation : MonoBehaviour
     {
-        _activeSize = maxSize;
-        
-        speed = speed * Random.Range(.75f, 1.25f);
-    }
-    
-    void Update()
-    {
-        sprite.localScale = Vector3.MoveTowards(sprite.localScale, Vector3.one * _activeSize, speed * Time.deltaTime);
-        if (sprite.localScale.x == _activeSize)
+        public Transform sprite;
+        public float speed;
+        public float minSize, maxSize;
+        private float _activeSize;
+        void Start()
         {
-            if (_activeSize == maxSize)
+            _activeSize = maxSize;
+        
+            speed = speed * Random.Range(.75f, 1.25f);
+        }
+    
+        void Update()
+        {
+            sprite.localScale = Vector3.MoveTowards(sprite.localScale, Vector3.one * _activeSize, speed * Time.deltaTime);
+            if (sprite.localScale.x == _activeSize)
             {
-                _activeSize = minSize;
-            }
-            else
-            {
-                _activeSize = maxSize;
+                if (_activeSize == maxSize)
+                {
+                    _activeSize = minSize;
+                }
+                else
+                {
+                    _activeSize = maxSize;
+                }
             }
         }
     }

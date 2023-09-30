@@ -1,66 +1,82 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Weapons;
 using Random = UnityEngine.Random;
 
-public class LevelController : MonoBehaviour
+namespace Controllers
 {
-    public static LevelController lvlController;
-    public List<int> expLevels;
-    public int currentLevel = 1, maxLevel = 100;
-
-    private void Awake()
+    public class LevelController : MonoBehaviour
     {
-        lvlController = this;
-    }
+        public static LevelController lvlController;
+        public List<int> expLevels;
+        public int currentLevel = 1, maxLevel = 100;
 
-    private void Start()
-    {
-        while (expLevels.Count < maxLevel)
+        private void Awake()
         {
-            expLevels.Add(Mathf.CeilToInt(expLevels[expLevels.Count - 1] * 1.1f));
-        }
-    }
-
-    public void LevelUp()
-    {
-        currentLevel++;
-        
-        GeneralTextController.generalTextControllerController.ShowText("Level Up", PlayerController.pController.transform.position);
-        UpgradePanelController.upgradePanelController.gameObject.SetActive(true);
-        Time.timeScale = 0f;
-        
-        WepsAndAbs.wepsAndAbs.upgradableWeapons.Clear();
-
-        List<Weapon> availableWeapons = new List<Weapon>();
-        availableWeapons.AddRange(WepsAndAbs.wepsAndAbs.equippedWeapons);
-        
-        if (availableWeapons.Count > 0)
-        {
-            int selectedWeapon = Random.Range(0, availableWeapons.Count);
-            WepsAndAbs.wepsAndAbs.upgradableWeapons.Add(availableWeapons[selectedWeapon]);
-            availableWeapons.RemoveAt(selectedWeapon);
+            lvlController = this;
         }
 
-        if ((WepsAndAbs.wepsAndAbs.equippedWeapons.Count < WepsAndAbs.wepsAndAbs.maxWeapons) &&
-            WepsAndAbs.wepsAndAbs.allWeapons.Count != 0) ;
+        private void Start()
         {
-            availableWeapons.AddRange(WepsAndAbs.wepsAndAbs.allWeapons);
+            while (expLevels.Count < maxLevel)
+            {
+                expLevels.Add(Mathf.CeilToInt(expLevels[expLevels.Count - 1] * 1.1f));
+            }
         }
-        for (int i = WepsAndAbs.wepsAndAbs.upgradableWeapons.Count; i < 3; i++)
+
+        public void LevelUp()
         {
+            currentLevel++;
+        
+            GeneralTextController.generalTextControllerController.ShowText("Level Up", PlayerController.pController.transform.position);
+            UpgradePanelController.upgradePanelController.gameObject.SetActive(true);
+            UpgradePanelController.upgradePanelController.skipLevelButton.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        
+            WepsAndAbs.wepsAndAbs.upgradableWeapons.Clear();
+
+            List<Weapon> availableWeapons = new List<Weapon>();
+            availableWeapons.AddRange(WepsAndAbs.wepsAndAbs.equippedWeapons);
+        
             if (availableWeapons.Count > 0)
             {
                 int selectedWeapon = Random.Range(0, availableWeapons.Count);
                 WepsAndAbs.wepsAndAbs.upgradableWeapons.Add(availableWeapons[selectedWeapon]);
                 availableWeapons.RemoveAt(selectedWeapon);
             }
-        }
 
-        for (int i = 0; i < WepsAndAbs.wepsAndAbs.upgradableWeapons.Count; i++)
-        {
-            UpgradePanelController.upgradePanelController.upgradePanels[i].UpdatePanelDisplay(WepsAndAbs.wepsAndAbs.upgradableWeapons[i]);
+            if (WepsAndAbs.wepsAndAbs.equippedWeapons.Count <
+                WepsAndAbs.wepsAndAbs.maxWeapons + WepsAndAbs.wepsAndAbs.fullyUpgradedWeapons.Count &&
+                WepsAndAbs.wepsAndAbs.allWeapons.Count != 0)
+            {
+                availableWeapons.AddRange(WepsAndAbs.wepsAndAbs.allWeapons);
+            }
+            for (int i = WepsAndAbs.wepsAndAbs.upgradableWeapons.Count; i < 3; i++)
+            {
+                if (availableWeapons.Count > 0)
+                {
+                    int selectedWeapon = Random.Range(0, availableWeapons.Count);
+                    WepsAndAbs.wepsAndAbs.upgradableWeapons.Add(availableWeapons[selectedWeapon]);
+                    availableWeapons.RemoveAt(selectedWeapon);
+                }
+            }
+
+            for (int i = 0; i < WepsAndAbs.wepsAndAbs.upgradableWeapons.Count; i++)
+            {
+                UpgradePanelController.upgradePanelController.upgradePanels[i].UpdatePanelDisplay(WepsAndAbs.wepsAndAbs.upgradableWeapons[i]);
+            }
+
+            for (int i = 0; i < UpgradePanelController.upgradePanelController.upgradePanels.Length; i++)
+            {
+                if (i < WepsAndAbs.wepsAndAbs.upgradableWeapons.Count)
+                {
+                    UpgradePanelController.upgradePanelController.upgradePanels[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    UpgradePanelController.upgradePanelController.upgradePanels[i].gameObject.SetActive(false);
+                }
+            }
         }
     }
 }

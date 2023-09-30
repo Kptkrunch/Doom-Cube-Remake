@@ -1,33 +1,35 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using EffectsTools;
+using UI;
 using UnityEngine;
 
-public class ExperienceController : MonoBehaviour
+namespace Controllers
 {
-    public static ExperienceController expController;
-    public LevelController lvlController;
-    public ItemDropper expDrop;
-
-    private void Awake()
+    public class ExperienceController : MonoBehaviour
     {
-        expController = this;
-    }
+        public static ExperienceController expController;
+        public LevelController lvlController;
+        public ItemDropper expDrop;
 
-    public int currentExp;
-    public void GetExp(int exp)
-    {
-        currentExp += exp;
-        
-        ExpBar.expBar.UpdateExpBar(currentExp, lvlController.currentLevel,
-            lvlController.expLevels[lvlController.currentLevel]);
-        
-        if (currentExp >= lvlController.expLevels[lvlController.currentLevel])
+        private void Awake()
         {
-            lvlController.LevelUp();
-            if (exp > 0)
+            expController = this;
+        }
+
+        public int currentExp;
+        public void GetExp(int exp)
+        {
+            currentExp += exp;
+        
+            ExpBar.expBar.UpdateExpBar(currentExp, lvlController.currentLevel,
+                lvlController.expLevels[lvlController.currentLevel]);
+        
+            if (currentExp >= lvlController.expLevels[lvlController.currentLevel])
             {
-                currentExp = 0;
+                lvlController.LevelUp();
+                if (exp > 0)
+                {
+                    currentExp = 0;
+                }
             }
         }
     }

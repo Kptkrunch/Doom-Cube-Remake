@@ -1,48 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-public class UpgradePanel : MonoBehaviour
+using Weapons;
+
+namespace UI
 {
-    public TextMeshProUGUI weaponNameAndLvl, upgradeDescription;
-    public Image weaponImage;
+    public class UpgradePanel : MonoBehaviour
+    {
+        public TextMeshProUGUI weaponNameAndLvl, upgradeDescription;
+        public Image weaponImage;
 
-    private Weapon _assignedWeapon;
+        private Weapon _assignedWeapon;
     
-    public void UpdatePanelDisplay(Weapon theWeapon)
-    {
-        if (theWeapon.gameObject.activeSelf == true)
+        public void UpdatePanelDisplay(Weapon theWeapon)
         {
-            upgradeDescription.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText;
-            weaponImage.sprite = theWeapon.weaponIcon;
-            weaponNameAndLvl.text = theWeapon.stats[theWeapon.weaponLevel].name + ": Lvl-" + theWeapon.weaponLevel;
-        }
-        else
-        {
-            upgradeDescription.text = "Unlock the " + theWeapon.stats[theWeapon.weaponLevel].name;
-            weaponImage.sprite = theWeapon.weaponIcon;
-            weaponNameAndLvl.text = theWeapon.stats[theWeapon.weaponLevel].name;
-        }
-        _assignedWeapon = theWeapon;
-
-    }
-
-    public void SelectUpgrade()
-    {
-        if (_assignedWeapon != null)
-        {
-            if (_assignedWeapon.gameObject.activeSelf == true)
+            if (theWeapon.gameObject.activeSelf == true)
             {
-                _assignedWeapon.WeaponLevelUp();
+                upgradeDescription.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText;
+                weaponImage.sprite = theWeapon.weaponIcon;
+                weaponNameAndLvl.text = theWeapon.stats[theWeapon.weaponLevel].name + ": Lvl-" + theWeapon.weaponLevel;
             }
             else
             {
-                WepsAndAbs.wepsAndAbs.AddWeapon(_assignedWeapon);
+                upgradeDescription.text = "Unlock the " + theWeapon.stats[theWeapon.weaponLevel].name;
+                weaponImage.sprite = theWeapon.weaponIcon;
+                weaponNameAndLvl.text = theWeapon.stats[theWeapon.weaponLevel].name;
             }
-            UpgradePanelController.upgradePanelController.gameObject.SetActive(false);
-            Time.timeScale = 1f;
-            _assignedWeapon.weaponLeveledUp = false;
+            _assignedWeapon = theWeapon;
+
+        }
+
+        public void SelectUpgrade()
+        {
+            if (_assignedWeapon != null)
+            {
+                if (_assignedWeapon.gameObject.activeSelf == true)
+                {
+                    _assignedWeapon.WeaponLevelUp();
+                }
+                else
+                {
+                    WepsAndAbs.wepsAndAbs.AddWeapon(_assignedWeapon);
+                }
+                UpgradePanelController.upgradePanelController.gameObject.SetActive(false);
+                UpgradePanelController.upgradePanelController.skipLevelButton.gameObject.SetActive(false);
+                Time.timeScale = 1f;
+                _assignedWeapon.weaponLeveledUp = false;
+            }
         }
     }
 }

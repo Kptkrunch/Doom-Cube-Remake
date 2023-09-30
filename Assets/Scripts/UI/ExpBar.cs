@@ -1,28 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class ExpBar : MonoBehaviour
+namespace UI
 {
-    public static ExpBar expBar;
-    public Slider fillBar;
-    public TMP_Text levelText;
-
-    private float _currentValue;
-    private float _maxValue;
-    private void Awake()
+    public class ExpBar : MonoBehaviour
     {
-        expBar = this;
-    }
+        public static ExpBar expBar;
+        public Slider fillBar;
+        public TMP_Text levelText;
 
-    public void UpdateExpBar(float currentExp, int currentLevel, float expToLevel)
-    {
-        fillBar.maxValue = expToLevel;
-        fillBar.value = currentExp;
+        private float _currentValue;
+        private float _maxValue;
+        private void Awake()
+        {
+            expBar = this;
+        }
 
-        levelText.text = "Level: " + currentLevel;
+        public void UpdateExpBar(float currentExp, int currentLevel, float expToLevel)
+        {
+            fillBar.maxValue = expToLevel;
+            fillBar.value = currentExp;
+
+            levelText.text = "Level: " + currentLevel;
+        }
     }
 }

@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+using Controllers;
 using UnityEngine;
 
-public class EnemyDamager : MonoBehaviour
+namespace EffectsTools
 {
-    public float damage;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class EnemyDamager : MonoBehaviour
     {
-        if (collision.CompareTag("Enemy"))
+        public float damage;
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            collision.GetComponent<EnemyController>().TakeDamage(damage);
+            if (collision.CompareTag("Enemy"))
+            {
+                collision.GetComponent<EnemyController>().TakeDamage(damage);
+            }
         }
     }
 }
