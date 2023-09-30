@@ -15,12 +15,14 @@ namespace Controllers
             pController = this;
         }
 
-        void Update()
+        private void Update()
         {
-            Vector3 moveInput = new Vector3(0f, 0f, 0f);
-            moveInput.x = Input.GetAxisRaw("Horizontal");
-            moveInput.y = Input.GetAxisRaw("Vertical");
-        
+            var moveInput = new Vector3(0f, 0f, 0f)
+            {
+                x = Input.GetAxisRaw("Horizontal"),
+                y = Input.GetAxisRaw("Vertical")
+            };
+
             moveInput.Normalize();
 
             if (moveInput.x < 0)

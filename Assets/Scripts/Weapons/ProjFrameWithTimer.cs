@@ -10,13 +10,13 @@ namespace Weapons
         private float _activeTimer;
         private bool _isActive;
     
-        void Start()
+        private void Start()
         {
             projectileFrame.SetActive(false);
             _isActive = false;
         }
 
-        void Update()
+        private void Update()
         {
             _activeTimer -= Time.deltaTime;
             if (_activeTimer <= 0)

@@ -19,8 +19,8 @@ namespace Controllers
 
         public void ShowDamage(float damage, Vector3 location)
         {
-            int rounded = Mathf.RoundToInt(damage);
-            DamageNumber newDamage = GetFromPool();
+            var rounded = Mathf.RoundToInt(damage);
+            var newDamage = GetFromPool();
 
             newDamage.Setup(rounded);
             newDamage.gameObject.SetActive(true);
@@ -31,7 +31,7 @@ namespace Controllers
     
         public DamageNumber GetFromPool()
         {
-            DamageNumber pooledNumber = null;
+            DamageNumber pooledNumber;
 
             if (_damageNumbers.Count == 0)
             {

@@ -14,7 +14,7 @@ namespace Controllers
         }
 
         public float currentHealth, maxHealth;
-        void Start()
+        private void Start()
         {
             currentHealth = maxHealth;
 

@@ -12,7 +12,7 @@ namespace Weapons
         public float staySizeInterval;
         private float _staySizeTimer;
     
-        void Start()
+        private void Start()
         {
             _targetSize = maxSize;
             transform.localScale = Vector3.zero;
@@ -26,7 +26,7 @@ namespace Weapons
             _staySizeTimer = staySizeInterval;
         }
 
-        void Update()
+        private void Update()
         {
             transform.localScale = Vector3.MoveTowards(transform.localScale, _targetSize, growShrinkSpeed * Time.deltaTime);
             _staySizeTimer -= Time.deltaTime;

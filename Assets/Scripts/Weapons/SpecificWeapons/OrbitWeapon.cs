@@ -12,7 +12,7 @@ namespace Weapons.SpecificWeapons
         public List<ChangeProjectileScale> projectileScales;
         public ProjFrameWithTimer projFrameWithTimer;
 
-        void Update()
+        private void Update()
         {
             transform.rotation = Quaternion.Euler(0f, 0f, projFrameWithTimer.transform.rotation.eulerAngles.z + (rotationSpeed * stats[0].projSpeed * Time.deltaTime));
         }

@@ -16,16 +16,10 @@ namespace UI
 
         protected float currentValue;
         protected float maxValue;
-        void Start()
+        private void Start()
         {
             currentValue = startingValue;
             fillBar.maxValue = maxValue;
-            fillBar.value = currentValue;
-        }
-
-        public void IncreaseBar(float value)
-        {
-            currentValue += value;
             fillBar.value = currentValue;
         }
     }

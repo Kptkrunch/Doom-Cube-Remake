@@ -1,19 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Controllers;
 using UnityEngine;
 
-public class ExpPickup : MonoBehaviour
+namespace EffectsTools
 {
-    public int expValue;
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class ExpPickup : MonoBehaviour
     {
-        if (collision.CompareTag("Player"))
+        public int expValue;
+    
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            ExperienceController.expController.GetExp(expValue);
-            Destroy(gameObject);
+            if (collision.CompareTag("Player"))
+            {
+                ExperienceController.expController.GetExp(expValue);
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -124,7 +124,7 @@ public class ETFXSceneManager : MonoBehaviour
              GameObject.Find("CanvasSceneSelect").GetComponent<Canvas> ().enabled = true;
          }
      }
-	      if(Input.GetKeyDown(KeyCode.J))
+		 if(Input.GetKeyDown(KeyCode.J))
 	 {
          GUIHide2 = !GUIHide2;
      

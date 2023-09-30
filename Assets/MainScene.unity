@@ -1130,7 +1130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &100643037
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1200,8 +1200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   damageOverTime: 1
-  damageInterval: 0
+  damageInterval: 2
   damageTimer: 0
+  auraDamage: 0
   enemiesInRadius: []
 --- !u!114 &100643040
 MonoBehaviour:
@@ -1272,7 +1273,6 @@ MonoBehaviour:
     description: Suck the life out of everything in range
     upgradeText: More doooooooooom!!!
   weaponLevel: 0
-  weaponLeveledUp: 0
   weaponIcon: {fileID: -704770020, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   enemyDamager: {fileID: 100643039}
   auraCollider: {fileID: 100643038}
@@ -2169,7 +2169,6 @@ MonoBehaviour:
     upgradeText: This upgrade increases all area of this weapons power.  Multiple
       upgrades stack!
   weaponLevel: 0
-  weaponLeveledUp: 0
   weaponIcon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   rotationSpeed: 200
   projectileDamagers:
@@ -5207,6 +5206,7 @@ MonoBehaviour:
   maxWeapons: 9
   equippedWeapons:
   - {fileID: 180098299}
+  - {fileID: 100643040}
   upgradableWeapons: []
   allWeapons:
   - {fileID: 1324533011}
@@ -5215,7 +5215,6 @@ MonoBehaviour:
   - {fileID: 1328375689}
   - {fileID: 1553657004}
   - {fileID: 1153151799}
-  - {fileID: 100643040}
   fullyUpgradedWeapons: []
 --- !u!1001 &696292002
 PrefabInstance:
@@ -6811,7 +6810,6 @@ MonoBehaviour:
     upgradeText: This upgrade increases all area of this weapons power.  Multiple
       upgrades stack!
   weaponLevel: 0
-  weaponLeveledUp: 0
   weaponIcon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   rotationSpeed: 200
   projectileDamagers:
@@ -7450,7 +7448,6 @@ MonoBehaviour:
     upgradeText: This upgrade increases all area of this weapons power.  Multiple
       upgrades stack!
   weaponLevel: 0
-  weaponLeveledUp: 0
   weaponIcon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   rotationSpeed: 200
   projectileDamagers:
@@ -7566,7 +7563,6 @@ MonoBehaviour:
     upgradeText: This upgrade increases all area of this weapons power.  Multiple
       upgrades stack!
   weaponLevel: 0
-  weaponLeveledUp: 0
   weaponIcon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   rotationSpeed: 200
   projectileDamagers:
@@ -136663,7 +136659,6 @@ MonoBehaviour:
     upgradeText: This upgrade increases all area of this weapons power.  Multiple
       upgrades stack!
   weaponLevel: 0
-  weaponLeveledUp: 0
   weaponIcon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   rotationSpeed: 200
   projectileDamagers:
@@ -137383,7 +137378,6 @@ MonoBehaviour:
     upgradeText: This upgrade increases all area of this weapons power.  Multiple
       upgrades stack!
   weaponLevel: 0
-  weaponLeveledUp: 0
   weaponIcon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   rotationSpeed: 200
   projectileDamagers:
@@ -137993,7 +137987,6 @@ MonoBehaviour:
     upgradeText: This upgrade increases all area of this weapons power.  Multiple
       upgrades stack!
   weaponLevel: 0
-  weaponLeveledUp: 0
   weaponIcon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   rotationSpeed: 200
   projectileDamagers:

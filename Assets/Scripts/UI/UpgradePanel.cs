@@ -1,3 +1,4 @@
+using Controllers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ namespace UI
     
         public void UpdatePanelDisplay(Weapon theWeapon)
         {
-            if (theWeapon.gameObject.activeSelf == true)
+            if (theWeapon.gameObject.activeSelf)
             {
                 upgradeDescription.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText;
                 weaponImage.sprite = theWeapon.weaponIcon;

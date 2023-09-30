@@ -5,14 +5,15 @@ namespace Controllers
     public class CameraController : MonoBehaviour
     {
         private Transform _target;
-        void Start()
+        private void Start()
         {
             _target = FindObjectOfType<PlayerController>().transform;
         }
 
-        void LateUpdate()
+        private void LateUpdate()
         {
-            transform.position = new Vector3(_target.position.x, _target.position.y, -10f);
+            var position = _target.position;
+            transform.position = new Vector3(position.x, position.y, -10f);
         }
     }
 }

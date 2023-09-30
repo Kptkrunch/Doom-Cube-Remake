@@ -18,7 +18,7 @@ namespace EffectsTools
 
         private float _despawnDistance;
 
-        private List<GameObject> _spawnedEnemies = new List<GameObject>();
+        private readonly List<GameObject> _spawnedEnemies = new();
 
         public int checkPerFrame;
         private int _enemyToCheck;
@@ -27,7 +27,7 @@ namespace EffectsTools
         private int _currentWave;
         private float _waveTimer;
     
-        void Start()
+        private void Start()
         {
             _spawnTimer = spawnInterval;
         
@@ -39,7 +39,7 @@ namespace EffectsTools
             SpawnNextWave();
         }
     
-        void Update()
+        private void Update()
         {
             if (PlayerController.pController.gameObject.activeSelf)
             {
@@ -56,7 +56,7 @@ namespace EffectsTools
                     {
                         _spawnTimer = waves[_currentWave].waveInterval;
 
-                        GameObject newEnemy = Instantiate(waves[_currentWave].enemyToSpawn, SelectSpawnPoint(),
+                        var newEnemy = Instantiate(waves[_currentWave].enemyToSpawn, SelectSpawnPoint(),
                             Quaternion.identity);
                     
                         _spawnedEnemies.Add(newEnemy);
@@ -66,13 +66,13 @@ namespace EffectsTools
 
             transform.position = _target.position;
 
-            int checkTarget = _enemyToCheck + checkPerFrame;
+            var checkTarget = _enemyToCheck + checkPerFrame;
 
             while (_enemyToCheck < checkTarget)
             {
                 if (_enemyToCheck < _spawnedEnemies.Count)
                 {
-                    if (_spawnedEnemies[_enemyToCheck] != null)
+                    if (!_spawnedEnemies[_enemyToCheck])
                     {
                         if (Vector3.Distance(transform.position, _spawnedEnemies[_enemyToCheck].transform.position) >
                             _despawnDistance)
@@ -102,9 +102,9 @@ namespace EffectsTools
 
         public Vector3 SelectSpawnPoint()
         {
-            Vector3 spawnPoint = Vector3.zero;
+            var spawnPoint = Vector3.zero;
 
-            bool spawnVerticalEdge = Random.Range(0f, 1.0f) > .5f;
+            var spawnVerticalEdge = Random.Range(0f, 1.0f) > .5f;
             if (spawnVerticalEdge)
             {
                 spawnPoint.y = Random.Range(minSpawnPoint.position.y, maxSpawnPoint.position.y);

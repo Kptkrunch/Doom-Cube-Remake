@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UI;
 using UnityEngine;
 
@@ -17,10 +19,11 @@ namespace Controllers
         public Transform textTransform;
         private readonly List<GeneralText> _tmpTexts = new();
 
-        public void ShowText(string text, Vector3 location)
+        public void ShowText([NotNull] string textString, Vector3 location)
         {
-            GeneralText newText = GetFromPool();
-            newText.Setup(text);
+            if (textString == null) throw new ArgumentNullException(nameof(textString));
+            var newText = GetFromPool();
+            newText.Setup(textString);
             newText.gameObject.SetActive(true);
 
             newText.transform.position = location;

@@ -16,13 +16,13 @@ namespace Controllers
         private float _knockBackTimer;
     
         public float health = 5;
-        void Start()
+        private void Start()
         {
             _originalMoveSpeed = moveSpeed;
             _target = PlayerHealthController.phcInstance.transform;
         }
     
-        void Update()
+        private void Update()
         {
             rb2d.velocity = (_target.position - transform.position).normalized * moveSpeed;
             if (_hitCounter > 0f)

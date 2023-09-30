@@ -35,12 +35,12 @@ namespace Controllers
         
             WepsAndAbs.wepsAndAbs.upgradableWeapons.Clear();
 
-            List<Weapon> availableWeapons = new List<Weapon>();
+            var availableWeapons = new List<Weapon>();
             availableWeapons.AddRange(WepsAndAbs.wepsAndAbs.equippedWeapons);
         
             if (availableWeapons.Count > 0)
             {
-                int selectedWeapon = Random.Range(0, availableWeapons.Count);
+                var selectedWeapon = Random.Range(0, availableWeapons.Count);
                 WepsAndAbs.wepsAndAbs.upgradableWeapons.Add(availableWeapons[selectedWeapon]);
                 availableWeapons.RemoveAt(selectedWeapon);
             }
@@ -51,22 +51,22 @@ namespace Controllers
             {
                 availableWeapons.AddRange(WepsAndAbs.wepsAndAbs.allWeapons);
             }
-            for (int i = WepsAndAbs.wepsAndAbs.upgradableWeapons.Count; i < 3; i++)
+            for (var i = WepsAndAbs.wepsAndAbs.upgradableWeapons.Count; i < 3; i++)
             {
                 if (availableWeapons.Count > 0)
                 {
-                    int selectedWeapon = Random.Range(0, availableWeapons.Count);
+                    var selectedWeapon = Random.Range(0, availableWeapons.Count);
                     WepsAndAbs.wepsAndAbs.upgradableWeapons.Add(availableWeapons[selectedWeapon]);
                     availableWeapons.RemoveAt(selectedWeapon);
                 }
             }
 
-            for (int i = 0; i < WepsAndAbs.wepsAndAbs.upgradableWeapons.Count; i++)
+            for (var i = 0; i < WepsAndAbs.wepsAndAbs.upgradableWeapons.Count; i++)
             {
                 UpgradePanelController.upgradePanelController.upgradePanels[i].UpdatePanelDisplay(WepsAndAbs.wepsAndAbs.upgradableWeapons[i]);
             }
 
-            for (int i = 0; i < UpgradePanelController.upgradePanelController.upgradePanels.Length; i++)
+            for (var i = 0; i < UpgradePanelController.upgradePanelController.upgradePanels.Length; i++)
             {
                 if (i < WepsAndAbs.wepsAndAbs.upgradableWeapons.Count)
                 {
