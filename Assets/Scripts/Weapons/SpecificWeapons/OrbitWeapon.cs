@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using EffectsTools;
+using GenUtilsAndTools;
 using UnityEngine;
 
 namespace Weapons.SpecificWeapons
@@ -14,7 +14,7 @@ namespace Weapons.SpecificWeapons
 
         private void Update()
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, projFrameWithTimer.transform.rotation.eulerAngles.z + (rotationSpeed * stats[0].projSpeed * Time.deltaTime));
+            transform.rotation = Quaternion.Euler(0f, 0f, projFrameWithTimer.transform.rotation.eulerAngles.z + rotationSpeed * stats[0].projSpeed * Time.deltaTime);
         }
 
         public override void UpdateWeapon()

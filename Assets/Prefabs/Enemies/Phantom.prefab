@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6034432640658991223}
   - component: {fileID: 6403333161346052619}
   - component: {fileID: 6629126700727827268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Phantom
   m_TagString: Enemy
   m_Icon: {fileID: 0}

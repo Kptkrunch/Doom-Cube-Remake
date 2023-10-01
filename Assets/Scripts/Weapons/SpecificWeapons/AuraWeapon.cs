@@ -1,11 +1,11 @@
-using EffectsTools;
+using GenUtilsAndTools;
 using UnityEngine;
 
 namespace Weapons.SpecificWeapons
 {
     public class AuraWeapon : Weapon
     {
-        public EAuraDamager enemyDamager;
+        public EAuraDamager auraDamager;
         public CircleCollider2D auraCollider;
         public Transform auraParticles;
 
@@ -14,14 +14,14 @@ namespace Weapons.SpecificWeapons
             WeaponLevelUp();
 
             // update projectile damage, add more for more projectiles
-            enemyDamager.damage = stats[weaponLevel].damage;
+            auraDamager.damage = stats[weaponLevel].damage;
         
             // increase radius
             auraCollider.radius *= stats[weaponLevel].range;
             auraParticles.transform.localScale = Vector3.one * stats[weaponLevel].range;        
         
             // increase duration and reduce cooldown
-            enemyDamager.damageInterval *= stats[weaponLevel].cdr;
+            auraDamager.damageInterval *= stats[weaponLevel].cdr;
         }
     }
 }
