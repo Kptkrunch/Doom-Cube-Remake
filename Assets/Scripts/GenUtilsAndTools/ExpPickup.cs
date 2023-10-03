@@ -5,7 +5,7 @@ namespace GenUtilsAndTools
 {
     public class ExpPickup : MonoBehaviour
     {
-        public int expValue;
+        [SerializeField] private int expValue;
     
         private void OnTriggerEnter2D(Collider2D collision)
         {

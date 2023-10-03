@@ -5,12 +5,12 @@ namespace Weapons
     public class ChangeProjectileScale : MonoBehaviour
     {
         public Vector3 maxSize;
-        private Vector3 _targetSize;
-
         public float growShrinkSpeed;
-
         public float staySizeInterval;
+        
+        private Vector3 _targetSize;
         private float _staySizeTimer;
+            
     
         private void Start()
         {

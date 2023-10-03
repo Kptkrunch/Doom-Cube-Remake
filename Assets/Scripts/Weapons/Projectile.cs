@@ -10,11 +10,13 @@ namespace GenUtilsAndTools
         public EnemyDamager enemyDamager;
         [HideInInspector]
         public float moveSpeed, rotationSpeed, lifeTimer, lobHeight, lobDistance, numberOfPenetrates;
-        public bool doesPenetrate, doesRotate, isLobbed, doesBounce, hasLifetime;
+        
+        [SerializeField] protected bool doesPenetrate, doesRotate, isLobbed, doesBounce, hasLifetime;
         [SerializeField] protected Rigidbody2D rb2d;
         protected int bounces = 3;
         protected float bounceInterval = 1f;
         protected float bounceTimer = 1f;
+        
         private void Update()
         {
             if (!isLobbed)

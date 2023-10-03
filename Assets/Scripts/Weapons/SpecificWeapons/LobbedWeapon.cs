@@ -7,11 +7,11 @@ namespace Weapons.SpecificWeapons
 {
     public class LobbedWeapon : Weapon
     {
-        public BombOrNade projectile;
         public EnemyDamager enemyDamager;
         public EExplosionDamager eExplosionDamager;
+        
+        [SerializeField] private BombOrNade projectile;
         private float _attackInterval, _attackTimer, _direction, _lobHeight, _lobDistance;
-        public Rigidbody2D rb2d;
 
         private void Start()
         {
@@ -43,6 +43,18 @@ namespace Weapons.SpecificWeapons
         {
             _attackInterval = stats[weaponLevel].rateOfFire;
             _attackTimer = _attackInterval;
+            enemyDamager.damage = stats[weaponLevel].damage;
+            projectile.lobHeight = stats[weaponLevel].range + 1f;
+            projectile.lobDistance = stats[weaponLevel].range;
+            projectile.lifeTimer = stats[weaponLevel].duration;
+            projectile.rotationSpeed = stats[weaponLevel].projSpeed;
+        }
+
+        public override void UpdateWeapon()
+        {
+            _attackInterval = stats[weaponLevel].cdr;
+            projectile.transform.localScale *= stats[weaponLevel].size;
+            stats[weaponLevel].numOfProj = stats[weaponLevel].numOfProj;
             enemyDamager.damage = stats[weaponLevel].damage;
             projectile.lobHeight = stats[weaponLevel].range + 1f;
             projectile.lobDistance = stats[weaponLevel].range;

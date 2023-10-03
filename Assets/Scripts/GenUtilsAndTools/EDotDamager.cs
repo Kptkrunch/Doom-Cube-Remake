@@ -5,8 +5,10 @@ namespace GenUtilsAndTools
 {
     public class EDotDamager : EnemyDamager
     {
-        private float _damageTimer;
         public float damageInterval;
+        
+        private float _damageTimer;
+
 
         private void Start()
         {

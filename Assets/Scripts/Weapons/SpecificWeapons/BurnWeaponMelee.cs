@@ -6,10 +6,10 @@ namespace Weapons.SpecificWeapons
     // same as melee weapon, but accepts a different damager that does dot damage
     public class BurnWeaponMelee : Weapon
     {
-        public EDotDamager eDotDamager;
-        public GameObject theWeapon;
+        public EDotDamager eDotDamager; 
         public ChangeProjectileScale weaponScaler;
         public ProjFrameWithTimer weaponFrame;
+        
         private bool _weaponCanBeDrawn;
         private float _attackDuration, _attackInterval, _attackTimer, _direction;
 

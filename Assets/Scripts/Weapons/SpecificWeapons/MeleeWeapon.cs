@@ -8,6 +8,7 @@ namespace Weapons.SpecificWeapons
         public EnemyDamager enemyDamager;
         public GameObject theWeapon;
         public ChangeProjectileScale weaponScaler;
+        
         private bool _weaponCanBeDrawn;
         private float _attackDuration, _attackInterval, _attackTimer, _direction;
 

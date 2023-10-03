@@ -1,12 +1,13 @@
 using Controllers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GenUtilsAndTools
 {
     public class EExplosionDamager : EnemyDamager
     {
-        public GameObject explosion;
-        public GameObject theNade;
+        [SerializeField] private GameObject explosion;
+        [SerializeField] private GameObject theNade;
 
         protected override void OnTriggerEnter2D(Collider2D collision)
         {

@@ -7,11 +7,12 @@ namespace Weapons.SpecificWeapons
 {
     public class OrbitWeapon : Weapon
     {
-        private float _rotationSpeed;
         // public Transform projectileFrame;
         public List<EnemyDamager> enemyDamagers;
         public List<ChangeProjectileScale> projectileScales;
         public ProjFrameWithTimer projFrameWithTimer;
+        
+        private float _rotationSpeed;
 
         private void Start()
         {

@@ -7,25 +7,17 @@ namespace GenUtilsAndTools
 {
     public class EnemySpawner : MonoBehaviour
     {
-
         public GameObject enemyToSpawn;
-
-        public float spawnInterval;
-        private float _spawnTimer;
         public Transform minSpawnPoint, maxSpawnPoint;
-    
-        private Transform _target;
-
-        private float _despawnDistance;
-
-        private readonly List<GameObject> _spawnedEnemies = new();
-
+        public float spawnInterval;
         public int checkPerFrame;
-        private int _enemyToCheck;
-
         public List<WaveInfo> waves;
-        private int _currentWave;
-        private float _waveTimer;
+        
+        private readonly List<GameObject> _spawnedEnemies = new();
+        private Transform _target;
+        private int _enemyToCheck, _currentWave;
+        private float _spawnTimer, _waveTimer, _despawnDistance;
+
     
         private void Start()
         {

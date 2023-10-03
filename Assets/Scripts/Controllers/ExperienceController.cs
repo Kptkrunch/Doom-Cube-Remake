@@ -9,13 +9,14 @@ namespace Controllers
         public static ExperienceController expController;
         public LevelController lvlController;
         public ItemDropper expDrop;
+        public int currentExp;
+
 
         private void Awake()
         {
             expController = this;
         }
 
-        public int currentExp;
         public void GetExp(int exp)
         {
             currentExp += exp;

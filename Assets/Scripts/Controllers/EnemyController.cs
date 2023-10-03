@@ -6,16 +6,13 @@ namespace Controllers
     {
         public Rigidbody2D rb2d;
         public float moveSpeed;
-        private float _originalMoveSpeed;
-        private Transform _target;
-
         public float damage;
-        public float hitInterval;
-        private float _hitCounter;
-
-        private float _knockBackTimer;
-    
         public float health = 5;
+
+        
+        private Transform _target;
+        private float _hitCounter, _knockBackTimer, _hitInterval, _originalMoveSpeed;
+        
         private void Start()
         {
             _originalMoveSpeed = moveSpeed;
@@ -47,7 +44,7 @@ namespace Controllers
             {
                 PlayerHealthController.phcInstance.TakeDamage(damage);
 
-                _hitCounter = hitInterval;
+                _hitCounter = _hitInterval;
             }
         }
 

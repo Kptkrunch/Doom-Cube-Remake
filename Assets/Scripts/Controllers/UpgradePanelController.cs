@@ -7,13 +7,14 @@ namespace Controllers
     {
         public static UpgradePanelController upgradePanelController;
         public SkipLevelButton skipLevelButton;
-        public bool isOpen = false;
+        public bool isOpen;
+        public UpgradePanel[] upgradePanels;
+
         private void Awake()
         {
             upgradePanelController = this;
         }
     
-        public UpgradePanel[] upgradePanels;
 
         private void Start()
         {

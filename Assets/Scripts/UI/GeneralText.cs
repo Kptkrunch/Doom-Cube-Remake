@@ -7,9 +7,9 @@ namespace UI
     public class GeneralText : MonoBehaviour
     {
         public TMP_Text genText;
-        public float showInterval;
+        public float showInterval, floatSpeed;
+        
         private float _showTimer;
-        public float floatSpeed;
     
         private void Start()
         {

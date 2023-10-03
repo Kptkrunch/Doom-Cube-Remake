@@ -6,8 +6,8 @@ namespace GenUtilsAndTools
     public class EnemyAnimation : MonoBehaviour
     {
         public Transform sprite;
-        public float speed;
-        public float minSize, maxSize;
+        public float speed,minSize, maxSize;
+        
         private float _activeSize;
         private void Start()
         {

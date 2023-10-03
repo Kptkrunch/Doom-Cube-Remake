@@ -8,8 +8,7 @@ namespace Controllers
     {
         public static WepsAndAbs wepsAndAbs;
         public int maxWeapons;
-        public List<Weapon> equippedWeapons, upgradableWeapons, allWeapons;
-        public List<Weapon> fullyUpgradedWeapons = new();
+        public List<Weapon> equippedWeapons, upgradableWeapons, allWeapons, fullyUpgradedWeapons;
     
         private void Awake()
         {

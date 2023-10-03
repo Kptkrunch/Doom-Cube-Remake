@@ -8,8 +8,8 @@ namespace GenUtilsAndTools
     {
         public bool damageOverTime;
         public float damageInterval;
+        
         private float _damageTimer;
-
         private List<EnemyController> _enemiesInRadius = new();
 
         private void Update()

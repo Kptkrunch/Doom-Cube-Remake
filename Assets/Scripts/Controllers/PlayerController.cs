@@ -7,8 +7,9 @@ namespace Controllers
         public static PlayerController pController;
         public float moveSpeed;
         public Animator animator;
-        private static readonly int IsMoving = Animator.StringToHash("IsMoving");
         public SpriteRenderer spriteRenderer;
+
+        private static readonly int IsMoving = Animator.StringToHash("IsMoving");
 
         private void Awake()
         {

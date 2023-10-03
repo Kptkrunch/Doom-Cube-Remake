@@ -8,14 +8,14 @@ namespace UI
         public static FillBar fbInstance;
         public Slider fillBar;
         public float startingValue;
+        
+        protected float currentValue, maxValue;
 
         private void Awake()
         {
             fbInstance = this;
         }
-
-        protected float currentValue;
-        protected float maxValue;
+        
         private void Start()
         {
             currentValue = startingValue;

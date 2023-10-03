@@ -112,9 +112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 6189813745357755807}
   moveSpeed: 1
-  damage: 5
-  hitInterval: 2
-  health: 5
+  damage: 15
+  hitInterval: 3
+  health: 20
 --- !u!114 &6627088745840545047
 MonoBehaviour:
   m_ObjectHideFlags: 0

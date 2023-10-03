@@ -7,9 +7,9 @@ namespace UI
     public class DamageNumber : MonoBehaviour
     {
         public TMP_Text damageText;
-        public float showInterval;
+        public float floatSpeed, showInterval;
+        
         private float _showTimer;
-        public float floatSpeed;
     
         private void Start()
         {

@@ -7,16 +7,18 @@ namespace Controllers
     public class DamageNumberController : MonoBehaviour
     {
         public static DamageNumberController dnController;
+        public DamageNumber damageNumber;
+        public Transform damageNumberTransform;
+        
+        private readonly List<DamageNumber> _damageNumbers = new();
+
 
         private void Awake()
         {
             dnController = this;
         }
 
-        public DamageNumber damageNumber;
-        public Transform damageNumberTransform;
-        private readonly List<DamageNumber> _damageNumbers = new();
-
+        
         public void ShowDamage(float damage, Vector3 location)
         {
             // var rounded = Mathf.RoundToInt(damage);

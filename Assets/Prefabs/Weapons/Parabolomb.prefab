@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6963282978740109629
 RectTransform:
   m_ObjectHideFlags: 0
@@ -61,20 +61,53 @@ MonoBehaviour:
     name: Parabalomb
     description: Word to your moms, I came to lob bombs
     upgradeText: Bigger is mostly better!
+  - projSpeed: 1
+    damage: 3
+    range: 5
+    rateOfFire: 1.5
+    numOfProj: 5
+    duration: 5
+    size: 1.25
+    cdr: 0.9
+    name: Parabalomb
+    description: Word to your moms, I came to lob bombs
+    upgradeText: Bigger is mostly better!
   - projSpeed: 4
-    damage: 1
+    damage: 4
     range: 1
-    rateOfFire: 1
-    numOfProj: 1
-    duration: 1
-    size: 1
+    rateOfFire: 1.5
+    numOfProj: 7
+    duration: 5
+    size: 1.25
+    cdr: 1
+    name: Parabalomb
+    description: Word to your moms, I came to lob bombs
+    upgradeText: Bigger is mostly better!
+  - projSpeed: 4
+    damage: 5
+    range: 1
+    rateOfFire: 1.25
+    numOfProj: 11
+    duration: 5
+    size: 1.25
+    cdr: 1
+    name: Parabalomb
+    description: Word to your moms, I came to lob bombs
+    upgradeText: Bigger is mostly better!
+  - projSpeed: 4
+    damage: 6
+    range: 1
+    rateOfFire: 1.15
+    numOfProj: 15
+    duration: 5
+    size: 1.25
     cdr: 1
     name: Parabalomb
     description: Word to your moms, I came to lob bombs
     upgradeText: Bigger is mostly better!
   weaponLevel: 0
-  weaponIcon: {fileID: -1061488230, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
-  projectile: {fileID: 0}
+  weaponIcon: {fileID: 21300000, guid: 69b0d1f96517d5e48b8dcdce0345e7fa, type: 3}
+  projectile: {fileID: 6899109234388035767}
   enemyDamager: {fileID: 655134265423262753}
   eExplosionDamager: {fileID: 655134265423262753}
   rb2d: {fileID: 1892907203438899870}
@@ -90,7 +123,6 @@ GameObject:
   - component: {fileID: 6899109234388035767}
   - component: {fileID: 655134265423262753}
   - component: {fileID: 1892907203438899870}
-  - component: {fileID: 4065444945411849203}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -132,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDamager: {fileID: 655134265423262753}
-  eExplosionDamager: {fileID: 655134265423262753}
   moveSpeed: 0
   rotationSpeed: 0
   lifeTimer: 0
@@ -143,9 +174,9 @@ MonoBehaviour:
   doesRotate: 0
   isLobbed: 1
   doesBounce: 1
-  hasLifetime: 0
+  hasLifetime: 1
   rb2d: {fileID: 1892907203438899870}
-  eExplosionDamager: {fileID: 0}
+  eExplosionDamager: {fileID: 655134265423262753}
 --- !u!114 &655134265423262753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,8 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  explosionCollider: {fileID: 4065444945411849203}
-  explosionParticle: {fileID: 2913916723318427971, guid: 984703b23b5faa743add8d85a9f725aa, type: 3}
+  explosion: {fileID: 3622033358897355586}
+  theNade: {fileID: 5953138630544188298}
 --- !u!50 &1892907203438899870
 Rigidbody2D:
   serializedVersion: 4
@@ -188,41 +219,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &4065444945411849203
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6053913554788842521}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.5
 --- !u!1001 &1888208861035629057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,8 +278,51 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2913916723318427971, guid: 984703b23b5faa743add8d85a9f725aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2208264168475186876}
   m_SourcePrefab: {fileID: 100100000, guid: 984703b23b5faa743add8d85a9f725aa, type: 3}
+--- !u!1 &3622033358897355586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2913916723318427971, guid: 984703b23b5faa743add8d85a9f725aa, type: 3}
+  m_PrefabInstance: {fileID: 1888208861035629057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &2208264168475186876
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622033358897355586}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!4 &3622033358897582180 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2913916723318135397, guid: 984703b23b5faa743add8d85a9f725aa, type: 3}
@@ -349,5 +388,10 @@ PrefabInstance:
 --- !u!4 &5953138630543906636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 444968, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
+  m_PrefabInstance: {fileID: 5953138630544285028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5953138630544188298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 179950, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
   m_PrefabInstance: {fileID: 5953138630544285028}
   m_PrefabAsset: {fileID: 0}
