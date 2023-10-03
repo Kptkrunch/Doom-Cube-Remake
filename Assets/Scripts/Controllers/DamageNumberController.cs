@@ -19,10 +19,10 @@ namespace Controllers
 
         public void ShowDamage(float damage, Vector3 location)
         {
-            var rounded = Mathf.RoundToInt(damage);
+            // var rounded = Mathf.RoundToInt(damage);
             var newDamage = GetFromPool();
 
-            newDamage.Setup(rounded);
+            newDamage.Setup(damage);
             newDamage.gameObject.SetActive(true);
 
             newDamage.transform.position = location;

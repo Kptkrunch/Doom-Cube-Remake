@@ -6,11 +6,10 @@ using Random = UnityEngine.Random;
 
 namespace Weapons.SpecificWeapons
 {
-    public class ProjectileWeapon : Weapon
+    public class RadarWeapon : Weapon
     {
         public Projectile projectile;
-        private float _weaponRange;
-        private float _fireTimer;
+        private float _weaponRange, _fireTimer, _fireInterval;
         public LayerMask enemyLayer;
 
         private void Start()
@@ -22,8 +21,10 @@ namespace Weapons.SpecificWeapons
         {
             projectile.enemyDamager.damage = stats[weaponLevel].damage;
             projectile.moveSpeed = stats[weaponLevel].projSpeed;
-            _fireTimer = stats[weaponLevel].rateOfFire;
+            _fireInterval = stats[weaponLevel].rateOfFire;
+            _fireTimer = _fireInterval;
             _weaponRange = stats[weaponLevel].range;
+            projectile.numberOfPenetrates = stats[weaponLevel].duration;
         }
 
         private void Update()
@@ -31,7 +32,7 @@ namespace Weapons.SpecificWeapons
             _fireTimer -= Time.deltaTime;
             if (_fireTimer <= 0)
             {
-                _fireTimer = stats[weaponLevel].rateOfFire;
+                _fireTimer = _fireInterval;
                 Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, _weaponRange, enemyLayer);
                 if (enemies.Length > 0)
                 {
@@ -49,6 +50,21 @@ namespace Weapons.SpecificWeapons
                     }
                 } 
             }
+        }
+        
+        public override void UpdateWeapon()
+        {
+            WeaponLevelUp();
+
+            // update projectile damage and speed
+            projectile.enemyDamager.damage = stats[weaponLevel].damage;
+            projectile.moveSpeed *= stats[weaponLevel].projSpeed;
+            projectile.numberOfPenetrates = stats[weaponLevel].duration;
+            // increase detection range
+            _weaponRange *= stats[weaponLevel].range;        
+        
+            // reduce time between volleys
+            _fireInterval *= stats[weaponLevel].cdr;
         }
     }
 }

@@ -30,7 +30,7 @@ namespace UI
             transform.position += Vector3.up * (floatSpeed * Time.deltaTime);
         }
 
-        public void Setup(int damage)
+        public void Setup(float damage)
         {
             _showTimer = showInterval;
             damageText.text = damage.ToString();

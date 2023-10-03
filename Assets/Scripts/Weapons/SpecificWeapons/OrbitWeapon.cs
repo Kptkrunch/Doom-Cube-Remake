@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using GenUtilsAndTools;
 using UnityEngine;
@@ -6,15 +7,33 @@ namespace Weapons.SpecificWeapons
 {
     public class OrbitWeapon : Weapon
     {
-        public float rotationSpeed;
+        private float _rotationSpeed;
         // public Transform projectileFrame;
-        public List<EnemyDamager> projectileDamagers;
+        public List<EnemyDamager> enemyDamagers;
         public List<ChangeProjectileScale> projectileScales;
         public ProjFrameWithTimer projFrameWithTimer;
 
+        private void Start()
+        {
+            SetStats();
+        }
+
         private void Update()
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, projFrameWithTimer.transform.rotation.eulerAngles.z + rotationSpeed * stats[0].projSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0f, 0f, projFrameWithTimer.transform.rotation.eulerAngles.z + _rotationSpeed * stats[0].projSpeed * Time.deltaTime);
+        }
+
+        private void SetStats()
+        {
+            _rotationSpeed = stats[weaponLevel].projSpeed;
+            for (int i = 0; i < enemyDamagers.Count; i++)
+            {
+                enemyDamagers[i].damage = stats[weaponLevel].damage;
+                projectileScales[i].staySizeInterval = stats[weaponLevel].duration * .6f;
+                projectileScales[i].maxSize = Vector3.one;
+                projFrameWithTimer.activeInterval = stats[weaponLevel].duration;
+                projFrameWithTimer.coolDownTimer = stats[weaponLevel].cdr;
+            }
         }
 
         public override void UpdateWeapon()
@@ -22,33 +41,24 @@ namespace Weapons.SpecificWeapons
             WeaponLevelUp();
 
             // update projectile damage, add more for more projectiles
-            projectileDamagers[0].damage = stats[weaponLevel].damage;
-            projectileDamagers[1].damage = stats[weaponLevel].damage;
-            projectileDamagers[2].damage = stats[weaponLevel].damage;
-            projectileDamagers[3].damage = stats[weaponLevel].damage;
-
-            // increase rotational speed on projectiles
-            rotationSpeed *= stats[weaponLevel].projSpeed;
-        
-            // increase radius
-            transform.localScale = Vector3.one * stats[weaponLevel].range;
-        
             // increase projectile size and growth speed
-            projectileScales[0].maxSize *= stats[weaponLevel].size;
-            projectileScales[1].maxSize *= stats[weaponLevel].size;
-            projectileScales[2].maxSize *= stats[weaponLevel].size;
-            projectileScales[3].maxSize *= stats[weaponLevel].size;
-        
             // match growth interval to weapon frame interval
             // increase projectile size and growth speed
-            projectileScales[0].staySizeInterval = projFrameWithTimer.activeInterval * .6f;
-            projectileScales[1].staySizeInterval = projFrameWithTimer.activeInterval * .6f;
-            projectileScales[2].staySizeInterval = projFrameWithTimer.activeInterval * .6f;
-            projectileScales[3].staySizeInterval = projFrameWithTimer.activeInterval * .6f;
-        
+            for (int i = 0; i < enemyDamagers.Count; i++)
+            {
+                enemyDamagers[i].damage *= stats[weaponLevel].damage;
+                projectileScales[i].staySizeInterval *= stats[weaponLevel].duration * .6f;
+                projFrameWithTimer.activeInterval *= stats[weaponLevel].duration;
+                projFrameWithTimer.coolDownTimer *= stats[weaponLevel].cdr;
+            }
+            // increase radius
+            transform.localScale *= stats[weaponLevel].range;
             // increase duration and reduce cooldown
             projFrameWithTimer.coolDownTimer *= stats[weaponLevel].cdr;
             projFrameWithTimer.activeInterval *= stats[weaponLevel].duration;
+            // increase rotational speed on projectiles
+            _rotationSpeed *= stats[weaponLevel].projSpeed;
+
         }
     }
 }

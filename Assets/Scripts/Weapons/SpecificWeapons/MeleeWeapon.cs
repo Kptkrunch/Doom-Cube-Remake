@@ -7,6 +7,7 @@ namespace Weapons.SpecificWeapons
     {
         public EnemyDamager enemyDamager;
         public GameObject theWeapon;
+        public ChangeProjectileScale weaponScaler;
         private bool _weaponCanBeDrawn;
         private float _attackDuration, _attackInterval, _attackTimer, _direction;
 
@@ -34,21 +35,20 @@ namespace Weapons.SpecificWeapons
                         }
                         
                         _weaponCanBeDrawn = false;
-                        _attackTimer = _attackInterval;
+                        _attackTimer = _attackDuration;
                         theWeapon.gameObject.SetActive(true);
                     }
                 
                 }
             }
-
-
+            
             if (!_weaponCanBeDrawn)
             {
                 _attackTimer -= Time.deltaTime;
                 if (_attackTimer <= 0)
                 {
                     _weaponCanBeDrawn = true;
-                    _attackTimer = _attackDuration;
+                    _attackTimer = _attackInterval;
                     theWeapon.gameObject.SetActive(false);
                 }
             }
@@ -56,12 +56,18 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
-            enemyDamager.damage = stats[weaponLevel].damage;
+
             _attackDuration = stats[weaponLevel].duration;
-            _attackInterval = stats[weaponLevel].rateOfFire;
+            _attackInterval = stats[weaponLevel].cdr;
             _attackTimer = _attackInterval;
             _weaponCanBeDrawn = true;
-
+            enemyDamager.damage = stats[weaponLevel].damage;
+            if (weaponScaler)
+            {
+                weaponScaler.staySizeInterval = _attackDuration * .6f;
+                weaponScaler.maxSize = Vector3.one * stats[weaponLevel].size;
+                weaponScaler.growShrinkSpeed = .75f;
+            }
         }
     }
 }

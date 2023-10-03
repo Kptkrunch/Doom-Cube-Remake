@@ -7,9 +7,8 @@ namespace GenUtilsAndTools
     {
         public EnemyDamager enemyDamager;
         [HideInInspector]
-        public float moveSpeed, rotationSpeed, lifeTimer, lobHeight, lobDistance;
+        public float moveSpeed, rotationSpeed, lifeTimer, lobHeight, lobDistance, numberOfPenetrates;
         public bool doesPenetrate, doesRotate, isLobbed, hasLifetime;
-        public int numberOfPenetrates;
         [SerializeField] private Rigidbody2D rb2d;
 
         private void Update()

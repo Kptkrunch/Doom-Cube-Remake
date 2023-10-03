@@ -8,8 +8,7 @@ namespace GenUtilsAndTools
     {
         public bool damageOverTime;
         public float damageInterval;
-        public float damageTimer;
-        public float auraDamage;
+        private float _damageTimer;
 
         private List<EnemyController> _enemiesInRadius = new();
 
@@ -17,16 +16,16 @@ namespace GenUtilsAndTools
         {
             if (damageOverTime)
             {
-                damageTimer -= Time.deltaTime;
-                if (damageTimer <= 0)
+                _damageTimer -= Time.deltaTime;
+                if (_damageTimer <= 0)
                 {
-                    damageTimer = damageInterval;
+                    _damageTimer = damageInterval;
 
                     for (var i = 0; i < _enemiesInRadius.Count; i++)
                     {
                         if (_enemiesInRadius[i])
                         {
-                            _enemiesInRadius[i].TakeDamage(auraDamage);
+                            _enemiesInRadius[i].TakeDamage(damage);
                         }
                         else
                         {
@@ -45,7 +44,7 @@ namespace GenUtilsAndTools
             {
                 if (collision.CompareTag("Enemy"))
                 {
-                    collision.GetComponent<EnemyController>().TakeDamage(auraDamage);
+                    collision.GetComponent<EnemyController>().TakeDamage(damage);
                 }
             }
             else
