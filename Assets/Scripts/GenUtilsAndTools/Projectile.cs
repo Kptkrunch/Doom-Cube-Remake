@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using DG.Tweening;
 
 namespace GenUtilsAndTools
 {
@@ -8,9 +10,11 @@ namespace GenUtilsAndTools
         public EnemyDamager enemyDamager;
         [HideInInspector]
         public float moveSpeed, rotationSpeed, lifeTimer, lobHeight, lobDistance, numberOfPenetrates;
-        public bool doesPenetrate, doesRotate, isLobbed, hasLifetime;
-        [SerializeField] private Rigidbody2D rb2d;
-
+        public bool doesPenetrate, doesRotate, isLobbed, doesBounce, hasLifetime;
+        [SerializeField] protected Rigidbody2D rb2d;
+        protected int bounces = 3;
+        protected float bounceInterval = 1f;
+        protected float bounceTimer = 1f;
         private void Update()
         {
             if (!isLobbed)
@@ -24,14 +28,37 @@ namespace GenUtilsAndTools
                 transform.rotation = Quaternion.Euler(0f, 0f,
                     transform.rotation.eulerAngles.z + (rotationSpeed * 360f * Time.deltaTime * Mathf.Sign(rb2d.velocity.x)));
             }
+
+            if (doesBounce)
+            {
+                bounceTimer -= Time.deltaTime;
+                if (bounceTimer <= 0)
+                {
+                    var velocity = rb2d.velocity;
+                    velocity = new Vector2(velocity.x, velocity.y).normalized;
+                    rb2d.velocity = velocity;
+                    bounceInterval *= 0.8f;
+                    bounceTimer = bounceInterval;
+                    rb2d.AddForce(new Vector2(velocity.x * 0.8f, lobHeight * .75f), ForceMode2D.Impulse);
+                    bounces--;
+
+                    if (bounces <= 0)
+                    {
+                        rb2d.velocity = Vector2.zero;
+                        rb2d.gravityScale = 0f;
+                        Destroy(gameObject, bounceTimer * 2);
+                    }
+                }
+            }
         }
         
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
-            if (doesPenetrate)
+            if (doesPenetrate && numberOfPenetrates > 0)
             {
                 if (collision.CompareTag("Enemy"))
                 {
+                    numberOfPenetrates--;
                     if (numberOfPenetrates <= 0)
                     {
                         Destroy(gameObject);
@@ -40,20 +67,21 @@ namespace GenUtilsAndTools
             }
         }
 
-        protected void OnTriggerExit2D(Collider2D other)
-        {
-            numberOfPenetrates--;
-        }
-
         private void OnEnable()
         {
-            if (hasLifetime)
+            if (hasLifetime && !doesBounce)
             {
-                if (isLobbed)
-                {
-                    rb2d.velocity = new Vector2(Random.Range(-lobDistance, lobDistance), lobHeight);
-                }
                 Destroy(gameObject, lifeTimer);
+            }
+
+            if (isLobbed)
+            {
+                rb2d.velocity = new Vector2(Random.Range(-lobDistance, lobDistance), lobHeight);
+            }
+            
+            if (doesBounce)
+            {
+                bounceTimer = Random.Range(bounceTimer * 0.5f, bounceTimer * 1.75f);
             }
         }
     }
