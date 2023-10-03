@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8618292732738833395}
   - component: {fileID: 4515577214934228625}
   - component: {fileID: 5306197443841034658}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ReaperSkeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}

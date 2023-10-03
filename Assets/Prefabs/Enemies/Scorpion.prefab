@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6189813745357755807}
   - component: {fileID: 5256788694239019883}
   - component: {fileID: 6627088745840545047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Scorpion
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -114,6 +114,7 @@ MonoBehaviour:
   moveSpeed: 1
   damage: 5
   hitInterval: 2
+  health: 5
 --- !u!114 &6627088745840545047
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,6 +29,8 @@ namespace Controllers
             currentLevel++;
         
             GeneralTextController.generalTextControllerController.ShowText("Level Up", PlayerController.pController.transform.position);
+
+            
             UpgradePanelController.upgradePanelController.gameObject.SetActive(true);
             UpgradePanelController.upgradePanelController.skipLevelButton.gameObject.SetActive(true);
             Time.timeScale = 0f;

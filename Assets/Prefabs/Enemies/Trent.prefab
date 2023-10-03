@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1713628216213666840}
   - component: {fileID: 3760603319730297518}
   - component: {fileID: 2453447586325970289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trent
   m_TagString: Enemy
   m_Icon: {fileID: 0}

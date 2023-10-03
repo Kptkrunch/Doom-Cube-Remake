@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8604702275010593995}
   - component: {fileID: 5002338149181293293}
   - component: {fileID: 3117110263728622650}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SnakeMan
   m_TagString: Enemy
   m_Icon: {fileID: 0}

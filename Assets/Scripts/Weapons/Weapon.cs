@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Controllers;
+using GenUtilsAndTools;
 using UnityEngine;
 
 namespace Weapons
@@ -9,6 +10,7 @@ namespace Weapons
         public List<WeaponStats> stats;
         public int weaponLevel;
         public Sprite weaponIcon;
+        
         public void WeaponLevelUp()
         {
             if (weaponLevel < stats.Count - 1)
