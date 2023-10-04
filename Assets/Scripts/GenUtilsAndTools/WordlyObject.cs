@@ -21,17 +21,17 @@ public class WordlyObject : MonoBehaviour
         if (currentDurability.Equals(maxDurability))
         {
             objRenderer.sprite = objSprite;
-        } else if (currentDurability <= _stage1dmg 
-                   && currentDurability > _stage2dmg
+        } else if (currentDurability <= _stage1dmg * maxDurability 
+                   && currentDurability > _stage2dmg * maxDurability
                    && stage1Sprite)
         {
             objRenderer.sprite = stage1Sprite;
-        } else if (currentDurability <= _stage2dmg
-                   && currentDurability > _stage3dmg
+        } else if (currentDurability <= _stage2dmg * maxDurability 
+                   && currentDurability > _stage3dmg * maxDurability 
                    && stage2Sprite)
         {
             objRenderer.sprite = stage2Sprite;
-        } else if (currentDurability <= _stage3dmg
+        } else if (currentDurability <= _stage3dmg * maxDurability 
                    && currentDurability > 0
                    && stage3Sprite)
         {

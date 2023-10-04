@@ -8,6 +8,7 @@ namespace Controllers
         public float moveSpeed;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
+        public Rigidbody2D rb2d;
 
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
 
@@ -25,6 +26,7 @@ namespace Controllers
             };
 
             moveInput.Normalize();
+            var velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
 
             if (moveInput.x < 0)
             {
@@ -35,8 +37,9 @@ namespace Controllers
                 spriteRenderer.flipX = false;
             }
         
-            transform.position += moveInput * (moveSpeed * Time.deltaTime);
-
+            // transform.position += moveInput * (moveSpeed * Time.deltaTime);
+            rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime);
+            
             if (moveInput != Vector3.zero)
             {
                 animator.SetBool(IsMoving, true);

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -6,7 +7,10 @@ namespace GenUtilsAndTools
     public class EnemyAnimation : MonoBehaviour
     {
         public Transform sprite;
-        public float speed,minSize, maxSize;
+        [CanBeNull] public Animator enemyAnimator;
+        public float speed, minSize, maxSize;
+        public Vector2 key1, key2, key3, key4;
+        public bool animateTransform, animateRotation, animateScale;
         
         private float _activeSize;
         private void Start()
@@ -18,16 +22,19 @@ namespace GenUtilsAndTools
     
         private void Update()
         {
-            sprite.localScale = Vector3.MoveTowards(sprite.localScale, Vector3.one * _activeSize, speed * Time.deltaTime);
-            if (sprite.localScale.x.Equals(_activeSize))
+            if (animateScale)
             {
-                if (_activeSize.Equals(maxSize))
+                sprite.localScale = Vector3.MoveTowards(sprite.localScale, Vector3.one * _activeSize, speed * Time.deltaTime);
+                if (sprite.localScale.x.Equals(_activeSize))
                 {
-                    _activeSize = minSize;
-                }
-                else
-                {
-                    _activeSize = maxSize;
+                    if (_activeSize.Equals(maxSize))
+                    {
+                        _activeSize = minSize;
+                    }
+                    else
+                    {
+                        _activeSize = maxSize;
+                    }
                 }
             }
         }
