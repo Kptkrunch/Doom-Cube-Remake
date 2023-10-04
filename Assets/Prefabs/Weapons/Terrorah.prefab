@@ -319,5 +319,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  destructive: 0
+  hitsGround: 1
+  hitsAir: 0
+  fireDamage: 0
+  chemicalDamage: 0
+  explosiveDamage: 0
   damageOverTime: 1
   damageInterval: 0

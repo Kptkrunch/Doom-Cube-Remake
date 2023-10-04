@@ -107,10 +107,9 @@ MonoBehaviour:
     upgradeText: Bigger is mostly better!
   weaponLevel: 0
   weaponIcon: {fileID: 21300000, guid: 69b0d1f96517d5e48b8dcdce0345e7fa, type: 3}
-  projectile: {fileID: 6899109234388035767}
   enemyDamager: {fileID: 655134265423262753}
   eExplosionDamager: {fileID: 655134265423262753}
-  rb2d: {fileID: 1892907203438899870}
+  projectile: {fileID: 6899109234388035767}
 --- !u!1 &6053913554788842521
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +189,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  destructive: 1
+  hitsGround: 1
+  hitsAir: 0
+  fireDamage: 0
+  chemicalDamage: 0
+  explosiveDamage: 1
   explosion: {fileID: 3622033358897355586}
   theNade: {fileID: 5953138630544188298}
 --- !u!50 &1892907203438899870

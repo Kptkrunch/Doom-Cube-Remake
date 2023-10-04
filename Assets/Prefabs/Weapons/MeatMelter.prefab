@@ -53,6 +53,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  destructive: 1
+  hitsGround: 1
+  hitsAir: 0
+  fireDamage: 1
+  chemicalDamage: 0
+  explosiveDamage: 0
   damageInterval: 0
 --- !u!114 &3606534477743052813
 MonoBehaviour:
@@ -222,7 +228,6 @@ MonoBehaviour:
   weaponLevel: 0
   weaponIcon: {fileID: 21300000, guid: 5e3103e14f6ac694ab1246de449ffd67, type: 3}
   eDotDamager: {fileID: 4199865901650256689}
-  theWeapon: {fileID: 1730044648976520946}
   weaponScaler: {fileID: 3606534477743052813}
   weaponFrame: {fileID: 7613853486066866486}
 --- !u!1 &5310869208068018653
@@ -275,8 +280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeInterval: 0
-  projectileFrame: {fileID: 5310869208068018653}
   coolDownTimer: 0
+  projectileFrame: {fileID: 5310869208068018653}
 --- !u!1001 &5335035590849324338
 PrefabInstance:
   m_ObjectHideFlags: 0

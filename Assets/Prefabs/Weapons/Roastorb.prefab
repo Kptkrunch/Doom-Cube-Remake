@@ -91,6 +91,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  destructive: 0
+  hitsGround: 1
+  hitsAir: 0
+  fireDamage: 1
+  chemicalDamage: 0
+  explosiveDamage: 0
 --- !u!58 &3404639595593748962
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -193,6 +199,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  destructive: 0
+  hitsGround: 1
+  hitsAir: 0
+  fireDamage: 1
+  chemicalDamage: 0
+  explosiveDamage: 0
 --- !u!58 &6080412729333833224
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -295,6 +307,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  destructive: 0
+  hitsGround: 1
+  hitsAir: 0
+  fireDamage: 1
+  chemicalDamage: 0
+  explosiveDamage: 0
 --- !u!58 &1627024529323906780
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -479,8 +497,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeInterval: 5
-  projectileFrame: {fileID: 4367494957766704995}
   coolDownTimer: 2
+  projectileFrame: {fileID: 4367494957766704995}
 --- !u!1 &9219362563799668649
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +551,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  destructive: 0
+  hitsGround: 1
+  hitsAir: 0
+  fireDamage: 1
+  chemicalDamage: 0
+  explosiveDamage: 0
 --- !u!58 &7560141042584537226
 CircleCollider2D:
   m_ObjectHideFlags: 0

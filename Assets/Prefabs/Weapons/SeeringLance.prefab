@@ -189,6 +189,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  destructive: 0
+  hitsGround: 1
+  hitsAir: 1
+  fireDamage: 1
+  chemicalDamage: 0
+  explosiveDamage: 0
 --- !u!50 &6937636198986826122
 Rigidbody2D:
   serializedVersion: 4
