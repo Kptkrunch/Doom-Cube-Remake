@@ -1,8 +1,7 @@
 using Controllers;
-using Damagers;
 using UnityEngine;
 
-namespace GenUtilsAndTools
+namespace Damagers
 {
     public class EDotDamager : EnemyDamager
     {

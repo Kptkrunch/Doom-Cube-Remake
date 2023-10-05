@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Weapons;
 using Random = UnityEngine.Random;
@@ -10,6 +11,7 @@ namespace Controllers
         public static LevelController contExpLvls;
         public List<int> expLevels;
         public int currentLevel = 1, maxLevel = 100;
+        public TMP_Text levelText;
 
         private void Awake()
         {
@@ -27,9 +29,8 @@ namespace Controllers
         public void LevelUp()
         {
             currentLevel++;
-        
-            GeneralTextController.contGenText.ShowText("Level Up", PlayerController.contPlayer.transform.position);
-
+            levelText.text = "Doom Rating: " + currentLevel;
+            ShowCongrats();
             
             UpgradePanelController.contUpgrades.gameObject.SetActive(true);
             UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(true);
@@ -79,6 +80,11 @@ namespace Controllers
                     UpgradePanelController.contUpgrades.upgradePanels[i].gameObject.SetActive(false);
                 }
             }
+        }
+
+        private void ShowCongrats()
+        {
+            
         }
     }
 }

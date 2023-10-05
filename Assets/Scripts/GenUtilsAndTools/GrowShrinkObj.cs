@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Weapons
+namespace GenUtilsAndTools
 {
-    public class ChangeProjectileScale : MonoBehaviour
+    public class GrowShrinkObj : MonoBehaviour
     {
         public Vector3 maxSize;
         public float growShrinkSpeed;

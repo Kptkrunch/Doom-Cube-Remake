@@ -1,8 +1,7 @@
 using Controllers;
-using JetBrains.Annotations;
 using UnityEngine;
 
-namespace GenUtilsAndTools
+namespace Objects
 {
     public class GasContainer : WordlyObject
     {

@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace Controllers
@@ -8,7 +9,6 @@ namespace Controllers
         public float moveSpeed;
         public float damage;
         public float health = 5;
-
         
         private Transform _target;
         private float _hitCounter, _knockBackTimer, _hitInterval, _originalMoveSpeed;
@@ -56,8 +56,8 @@ namespace Controllers
                 ExperienceController.contExp.expDrop.DropItem(transform.position);
                 Destroy(gameObject);
             }
-        
-            DamageNumberController.contDmgNum.ShowDamage(enemyDamage, transform.position);
+            
+            ShowDamage(enemyDamage);
         }
 
         public void KnockBack(float knockBackAmount, float knockBackDuration)
@@ -67,6 +67,16 @@ namespace Controllers
             {
                 moveSpeed = -moveSpeed * knockBackAmount;
             }
+        }
+        
+                
+        // ReSharper disable Unity.PerformanceAnalysis
+        public void ShowDamage(float theDamage, float intensity = 1f)
+        {
+            MMF_FloatingText floatingText = DamageNumberController.contDmgText
+                .player.GetFeedbackOfType<MMF_FloatingText>();
+            floatingText.Value = theDamage.ToString();
+            if (rb2d) DamageNumberController.contDmgText.player.PlayFeedbacks(transform.position);
         }
     }
 }

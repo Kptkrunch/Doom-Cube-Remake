@@ -38,7 +38,6 @@ namespace Controllers
                 transform1.localScale = new Vector2(1f, transform1.localScale.y);
             }
         
-            // transform.position += moveInput * (moveSpeed * Time.deltaTime);
             rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime);
             
             if (moveInput != Vector3.zero)

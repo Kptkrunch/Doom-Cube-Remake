@@ -10,7 +10,5 @@ namespace Controllers
         {
             contPool = this;
         }
-    
-    
     }
 }

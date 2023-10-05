@@ -1,10 +1,8 @@
-using System;
 using Damagers;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using DG.Tweening;
 
-namespace GenUtilsAndTools
+namespace Weapons
 {
     public class Projectile : MonoBehaviour
     {

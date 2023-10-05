@@ -1,10 +1,8 @@
 using Controllers;
-using Damagers;
 using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace GenUtilsAndTools
+namespace Damagers
 {
     public class EExplosionDamager : EnemyDamager
     {

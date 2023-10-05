@@ -2,9 +2,9 @@ using JetBrains.Annotations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace GenUtilsAndTools
+namespace EnemyStuff
 {
-    public class EnemyAnimation : MonoBehaviour
+    public class TrundleAnim : MonoBehaviour
     {
         public Transform sprite;
         [CanBeNull] public Animator enemyAnimator;

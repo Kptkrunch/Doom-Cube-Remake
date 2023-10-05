@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using Controllers;
-using Damagers;
+using Objects;
 using UnityEngine;
 
-namespace GenUtilsAndTools
+namespace Damagers
 {
     public class EAuraDamager : EnemyDamager
     {
@@ -38,7 +38,7 @@ namespace GenUtilsAndTools
                     
                     for (var i = 0; i < _objectsInRadius.Count; i++)
                     {
-                        if (_objectsInRadius[i])
+                        if ( _objectsInRadius[i])
                         {
                             _objectsInRadius[i].TakeDamage(damage);
                         }

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1739116468493140281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 4438535198638987798}
   m_Layer: 0
   m_Name: WeaponFrame
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +157,10 @@ PrefabInstance:
     - target: {fileID: 116054, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_Name
       value: TerrorahParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 116054, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 408918, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -228,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19913272, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 19913272, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayerID
@@ -236,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19922138, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 19922138, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayerID
@@ -244,7 +248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19942060, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 19942060, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayerID
@@ -319,11 +323,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  destructive: 0
+  destructive: 1
   hitsGround: 1
-  hitsAir: 0
-  fireDamage: 0
-  chemicalDamage: 0
-  explosiveDamage: 0
+  hitsAir: 1
+  fireDamage: 1
+  chemicalDamage: 1
+  explosiveDamage: 1
   damageOverTime: 1
   damageInterval: 0

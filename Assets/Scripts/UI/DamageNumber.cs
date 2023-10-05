@@ -23,7 +23,7 @@ namespace UI
                 _showTimer -= Time.deltaTime;
                 if (_showTimer <= 0)
                 {
-                    DamageNumberController.contDmgNum.PlaceInPool(this);
+                    // DamageNumberController.contDmgNum.PlaceInPool(this);
                 }
             }
         

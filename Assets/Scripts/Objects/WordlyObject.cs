@@ -1,8 +1,9 @@
+using Controllers;
 using JetBrains.Annotations;
-using Objects;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
-namespace GenUtilsAndTools
+namespace Objects
 {
     public class WordlyObject : MonoBehaviour
     {
@@ -52,6 +53,16 @@ namespace GenUtilsAndTools
             {
                 objParent.currentHealth -= damage;
             }
+            
+            ShowDamage(damage);
+        }
+        
+        public void ShowDamage(float damage, float intensity = 1f)
+        {
+            MMF_FloatingText floatingText = ObjDmgNumController.contObjDmgNum
+                .player.GetFeedbackOfType<MMF_FloatingText>();
+            floatingText.Value = damage.ToString();
+            if (objBody) ObjDmgNumController.contObjDmgNum.player.PlayFeedbacks(transform.position);
         }
     }
 }

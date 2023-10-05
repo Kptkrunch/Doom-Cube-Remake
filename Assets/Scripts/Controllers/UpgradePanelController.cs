@@ -14,8 +14,7 @@ namespace Controllers
         {
             contUpgrades = this;
         }
-    
-
+        
         private void Start()
         {
             gameObject.SetActive(isOpen);

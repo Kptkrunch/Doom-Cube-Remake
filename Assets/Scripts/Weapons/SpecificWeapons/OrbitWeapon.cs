@@ -10,7 +10,7 @@ namespace Weapons.SpecificWeapons
     {
         // public Transform projectileFrame;
         public List<EnemyDamager> enemyDamagers;
-        public List<ChangeProjectileScale> projectileScales;
+        public List<GrowShrinkObj> projectileScales;
         public ProjFrameWithTimer projFrameWithTimer;
         
         private float _rotationSpeed;

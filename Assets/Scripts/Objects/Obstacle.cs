@@ -96,7 +96,6 @@ namespace Objects
             if (mmSimpleObjectPooler.sDust)
             {
                 _dust1 = mmSimpleObjectPooler.sDust.GetPooledGameObject();
-
             }
             
             if (mmSimpleObjectPooler.mDust)

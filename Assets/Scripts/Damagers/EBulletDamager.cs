@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GenUtilsAndTools
+namespace Damagers
 {
     public class EBulletDamager : MonoBehaviour
     {

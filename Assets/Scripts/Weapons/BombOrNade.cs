@@ -1,9 +1,9 @@
-using System;
+using Damagers;
+using GenUtilsAndTools;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using DG.Tweening;
 
-namespace GenUtilsAndTools
+namespace Weapons
 {
     public class BombOrNade : Projectile
     {

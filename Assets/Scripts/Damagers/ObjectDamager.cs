@@ -1,7 +1,7 @@
-using Controllers;
+using Objects;
 using UnityEngine;
 
-namespace GenUtilsAndTools
+namespace Damagers
 {
     public class ObjectDamager : MonoBehaviour
     {
@@ -9,7 +9,7 @@ namespace GenUtilsAndTools
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Object"))
+            if (collision.CompareTag("WorldlyObject"))
             {
                 collision.GetComponent<WordlyObject>().TakeDamage(damage);
             }
