@@ -6,7 +6,7 @@ namespace Controllers
 {
     public class DamageNumberController : MonoBehaviour
     {
-        public static DamageNumberController dnController;
+        public static DamageNumberController contDmgNum;
         public DamageNumber damageNumber;
         public Transform damageNumberTransform;
         
@@ -15,7 +15,7 @@ namespace Controllers
 
         private void Awake()
         {
-            dnController = this;
+            contDmgNum = this;
         }
 
         

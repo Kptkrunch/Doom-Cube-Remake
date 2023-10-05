@@ -5,12 +5,12 @@ namespace Controllers
 {
     public class PlayerHealthController : MonoBehaviour
     {
-        public static PlayerHealthController phcInstance;
+        public static PlayerHealthController contPHealth;
         public Slider healthSlider;
 
         private void Awake()
         {
-            phcInstance = this;
+            contPHealth = this;
         }
 
         public float currentHealth, maxHealth;

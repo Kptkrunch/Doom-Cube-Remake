@@ -19,8 +19,8 @@ namespace Weapons
 
                 if (weaponLevel >= stats.Count - 1)
                 {
-                    WepsAndAbs.wepsAndAbs.fullyUpgradedWeapons.Add(this);
-                    WepsAndAbs.wepsAndAbs.equippedWeapons.Remove(this);
+                    WepsAndAbs.contWepsAbs.fullyUpgradedWeapons.Add(this);
+                    WepsAndAbs.contWepsAbs.equippedWeapons.Remove(this);
                 }
             }
         }

@@ -41,10 +41,10 @@ namespace UI
                 }
                 else
                 {
-                    WepsAndAbs.wepsAndAbs.AddWeapon(_assignedWeapon);
+                    WepsAndAbs.contWepsAbs.AddWeapon(_assignedWeapon);
                 }
-                UpgradePanelController.upgradePanelController.gameObject.SetActive(false);
-                UpgradePanelController.upgradePanelController.skipLevelButton.gameObject.SetActive(false);
+                UpgradePanelController.contUpgrades.gameObject.SetActive(false);
+                UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(false);
                 Time.timeScale = 1f;
             }
         }

@@ -11,7 +11,7 @@ namespace GenUtilsAndTools
         {
             if (collision.CompareTag("Player"))
             {
-                ExperienceController.expController.GetExp(expValue);
+                ExperienceController.contExp.GetExp(expValue);
                 Destroy(gameObject);
             }
         }

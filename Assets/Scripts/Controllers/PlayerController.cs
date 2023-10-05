@@ -4,7 +4,7 @@ namespace Controllers
 {
     public class PlayerController : MonoBehaviour
     {
-        public static PlayerController pController;
+        public static PlayerController contPlayer;
         public float moveSpeed;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
@@ -14,7 +14,7 @@ namespace Controllers
 
         private void Awake()
         {
-            pController = this;
+            contPlayer = this;
         }
 
         private void Update()
@@ -27,14 +27,15 @@ namespace Controllers
 
             moveInput.Normalize();
             var velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
-
             if (moveInput.x < 0)
             {
-                spriteRenderer.flipX = true;
+                var transform1 = transform;
+                transform1.localScale = new Vector2(-1f, transform1.localScale.y);
             }
             else if (moveInput.x > 0)
             {
-                spriteRenderer.flipX = false;
+                var transform1 = transform;
+                transform1.localScale = new Vector2(1f, transform1.localScale.y);
             }
         
             // transform.position += moveInput * (moveSpeed * Time.deltaTime);

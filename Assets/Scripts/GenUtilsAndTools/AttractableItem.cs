@@ -19,7 +19,7 @@ namespace GenUtilsAndTools
             if (isAttracted)
             {
                 transform.position = Vector3.MoveTowards(transform.position,
-                    PlayerController.pController.transform.position, moveSpeed * Time.deltaTime);
+                    PlayerController.contPlayer.transform.position, moveSpeed * Time.deltaTime);
             }
         }
     
@@ -28,7 +28,7 @@ namespace GenUtilsAndTools
             if (collision.CompareTag("ItemAttractor"))
             {
                 isAttracted = true;
-                moveSpeed += PlayerController.pController.moveSpeed;
+                moveSpeed += PlayerController.contPlayer.moveSpeed;
             }
         }
     }

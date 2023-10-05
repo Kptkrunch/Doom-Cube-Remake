@@ -6,7 +6,7 @@ namespace Controllers
 {
     public class ExperienceController : MonoBehaviour
     {
-        public static ExperienceController expController;
+        public static ExperienceController contExp;
         public LevelController lvlController;
         public ItemDropper expDrop;
         public int currentExp;
@@ -14,7 +14,7 @@ namespace Controllers
 
         private void Awake()
         {
-            expController = this;
+            contExp = this;
         }
 
         public void GetExp(int exp)

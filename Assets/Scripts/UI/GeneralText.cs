@@ -23,7 +23,7 @@ namespace UI
                 _showTimer -= Time.deltaTime;
                 if (_showTimer <= 0)
                 {
-                    GeneralTextController.generalTextControllerController.PlaceInPool(this);
+                    GeneralTextController.contGenText.PlaceInPool(this);
                 }
             }
         

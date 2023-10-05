@@ -6,13 +6,13 @@ namespace Controllers
 {
     public class WepsAndAbs : MonoBehaviour
     {
-        public static WepsAndAbs wepsAndAbs;
+        public static WepsAndAbs contWepsAbs;
         public int maxWeapons;
         public List<Weapon> equippedWeapons, upgradableWeapons, allWeapons, fullyUpgradedWeapons;
     
         private void Awake()
         {
-            wepsAndAbs = this;
+            contWepsAbs = this;
         }
 
         public void AddWeapon(int weaponIndex) 

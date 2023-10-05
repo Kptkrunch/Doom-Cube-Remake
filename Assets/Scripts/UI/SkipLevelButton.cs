@@ -7,7 +7,7 @@ namespace UI
     {
         public void SkipLevel()
         {
-            UpgradePanelController.upgradePanelController.gameObject.SetActive(false);
+            UpgradePanelController.contUpgrades.gameObject.SetActive(false);
             Time.timeScale = 1f;
             gameObject.SetActive(false);
         }

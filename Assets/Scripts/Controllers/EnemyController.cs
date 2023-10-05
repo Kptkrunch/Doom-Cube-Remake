@@ -16,7 +16,7 @@ namespace Controllers
         private void Start()
         {
             _originalMoveSpeed = moveSpeed;
-            _target = PlayerHealthController.phcInstance.transform;
+            _target = PlayerHealthController.contPHealth.transform;
         }
     
         private void Update()
@@ -42,7 +42,7 @@ namespace Controllers
         {
             if (collision.gameObject.CompareTag("Player") && _hitCounter <= 0f)
             {
-                PlayerHealthController.phcInstance.TakeDamage(damage);
+                PlayerHealthController.contPHealth.TakeDamage(damage);
 
                 _hitCounter = _hitInterval;
             }
@@ -53,11 +53,11 @@ namespace Controllers
             health -= enemyDamage;
             if (health <= 0)
             {
-                ExperienceController.expController.expDrop.DropItem(transform.position);
+                ExperienceController.contExp.expDrop.DropItem(transform.position);
                 Destroy(gameObject);
             }
         
-            DamageNumberController.dnController.ShowDamage(enemyDamage, transform.position);
+            DamageNumberController.contDmgNum.ShowDamage(enemyDamage, transform.position);
         }
 
         public void KnockBack(float knockBackAmount, float knockBackDuration)
