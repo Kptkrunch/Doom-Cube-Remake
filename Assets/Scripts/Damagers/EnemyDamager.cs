@@ -1,5 +1,6 @@
 using Controllers;
 using GenUtilsAndTools;
+using Objects;
 using UnityEngine;
 
 namespace Damagers
@@ -14,6 +15,11 @@ namespace Damagers
             if (collision.CompareTag("Enemy"))
             {
                 collision.GetComponent<EnemyController>().TakeDamage(damage);
+            }
+
+            if (destructive && collision.CompareTag("WorldlyObject"))
+            {
+                collision.GetComponent<WordlyObject>().TakeDamage(damage);
             }
         }
     }

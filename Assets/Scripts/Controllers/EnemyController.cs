@@ -46,6 +46,7 @@ namespace Controllers
 
                 _hitCounter = _hitInterval;
             }
+            StopEnemies();
         }
 
         public void TakeDamage(float enemyDamage)
@@ -77,6 +78,14 @@ namespace Controllers
                 .player.GetFeedbackOfType<MMF_FloatingText>();
             floatingText.Value = theDamage.ToString();
             if (rb2d) DamageNumberController.contDmgText.player.PlayFeedbacks(transform.position);
+        }
+
+        private void StopEnemies()
+        {
+            if (!PlayerController.contPlayer.gameObject.activeInHierarchy)
+            {
+                moveSpeed = 0f;
+            }
         }
     }
 }

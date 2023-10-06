@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Controllers
@@ -8,13 +9,19 @@ namespace Controllers
         public float moveSpeed;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
+        public GameObject weapons;
+        public GameObject deathRays;
         public Rigidbody2D rb2d;
-
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
 
         private void Awake()
         {
             contPlayer = this;
+        }
+
+        private void OnDisable()
+        {
+            UIController.contUI.gameOver.gameObject.SetActive(true);
         }
 
         private void Update()
@@ -29,13 +36,16 @@ namespace Controllers
             var velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
             if (moveInput.x < 0)
             {
-                var transform1 = transform;
-                transform1.localScale = new Vector2(-1f, transform1.localScale.y);
+                // spriteRenderer.flipX = true;
+                deathRays.transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+                weapons.transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
             }
             else if (moveInput.x > 0)
             {
-                var transform1 = transform;
-                transform1.localScale = new Vector2(1f, transform1.localScale.y);
+                // spriteRenderer.flipX = false;
+                deathRays.transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+                weapons.transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+
             }
         
             rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime);
