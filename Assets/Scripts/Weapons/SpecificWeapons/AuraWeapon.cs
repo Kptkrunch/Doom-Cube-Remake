@@ -1,4 +1,5 @@
 using System;
+using Damagers;
 using GenUtilsAndTools;
 using UnityEngine;
 
@@ -7,8 +8,8 @@ namespace Weapons.SpecificWeapons
     public class AuraWeapon : Weapon
     {
         public EAuraDamager auraDamager;
-        public CircleCollider2D auraCollider;
-        public Transform auraParticles;
+        [SerializeField] private CircleCollider2D auraCollider;
+        [SerializeField] private Transform auraParticles;
 
         private void Start()
         {

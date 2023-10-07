@@ -8,16 +8,16 @@ namespace Controllers
 {
     public class GeneralTextController : MonoBehaviour
     {
-        public static GeneralTextController generalTextControllerController;
+        public static GeneralTextController contGenText;
+        public GeneralText text;
+        public Transform textTransform;
+        
+        private readonly List<GeneralText> _tmpTexts = new();
 
         private void Awake()
         {
-            generalTextControllerController = this;
+            contGenText = this;
         }
-
-        public GeneralText text;
-        public Transform textTransform;
-        private readonly List<GeneralText> _tmpTexts = new();
 
         public void ShowText([NotNull] string textString, Vector3 location)
         {

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1739116468493140281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -73,7 +73,18 @@ MonoBehaviour:
     description: Feel the aura of heart stopping terror!
     upgradeText: Doooooooooom!!!
   - projSpeed: 0
-    damage: 1.5
+    damage: 2
+    range: 2
+    rateOfFire: 0.95
+    numOfProj: 1
+    duration: 1.1
+    size: 1.1
+    cdr: 0.95
+    name: Terrorah
+    description: Feel the aura of heart stopping terror!
+    upgradeText: Doooooooooom!!!
+  - projSpeed: 0
+    damage: 3
     range: 1.1
     rateOfFire: 0.95
     numOfProj: 1
@@ -83,8 +94,19 @@ MonoBehaviour:
     name: Terrorah
     description: Feel the aura of heart stopping terror!
     upgradeText: Doooooooooom!!!
+  - projSpeed: 0
+    damage: 3
+    range: 2
+    rateOfFire: 0.95
+    numOfProj: 1
+    duration: 2
+    size: 1.1
+    cdr: 0.95
+    name: Terrorah
+    description: Feel the aura of heart stopping terror!
+    upgradeText: Doooooooooom!!!
   weaponLevel: 0
-  weaponIcon: {fileID: 21300000, guid: 4722b279247554a4ba87a9e28610c911, type: 3}
+  weaponIcon: {fileID: 21300000, guid: c3b446b59512df741bc2d358d4d9b727, type: 3}
   auraDamager: {fileID: 5848720773743805485}
   auraCollider: {fileID: 7892065331381918549}
   auraParticles: {fileID: 4438535198638987798}
@@ -99,7 +121,7 @@ GameObject:
   - component: {fileID: 4438535198638987798}
   m_Layer: 0
   m_Name: WeaponFrame
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,6 +157,10 @@ PrefabInstance:
     - target: {fileID: 116054, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_Name
       value: TerrorahParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 116054, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 408918, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -198,11 +224,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19827266, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 19897296, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 19913272, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 19913272, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayerID
@@ -210,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19922138, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 19922138, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayerID
@@ -218,7 +248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19942060, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 19942060, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayerID
@@ -293,5 +323,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  destructive: 1
+  hitsGround: 1
+  hitsAir: 1
+  fireDamage: 1
+  chemicalDamage: 1
+  explosiveDamage: 1
   damageOverTime: 1
   damageInterval: 0

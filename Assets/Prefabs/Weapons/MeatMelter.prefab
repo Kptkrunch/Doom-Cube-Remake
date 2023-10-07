@@ -53,6 +53,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  destructive: 1
+  hitsGround: 1
+  hitsAir: 0
+  fireDamage: 1
+  chemicalDamage: 0
+  explosiveDamage: 0
   damageInterval: 0
 --- !u!114 &3606534477743052813
 MonoBehaviour:
@@ -130,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7699034738757788201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -189,10 +195,32 @@ MonoBehaviour:
   - projSpeed: 3
     damage: 2
     range: 1
-    rateOfFire: 0.2
+    rateOfFire: 0.15
     numOfProj: 1
     duration: 3
+    size: 1.5
+    cdr: 0.9
+    name: Meat Melter
+    description: Not unlike a light saber combined with an acetaline torch
+    upgradeText: More burnination is always better!
+  - projSpeed: 3
+    damage: 3
+    range: 1
+    rateOfFire: 0.15
+    numOfProj: 1
+    duration: 3.5
     size: 1.25
+    cdr: 0.9
+    name: Meat Melter
+    description: Not unlike a light saber combined with an acetaline torch
+    upgradeText: More burnination is always better!
+  - projSpeed: 3
+    damage: 5
+    range: 1
+    rateOfFire: 0.12
+    numOfProj: 1
+    duration: 4
+    size: 2
     cdr: 0.9
     name: Meat Melter
     description: Not unlike a light saber combined with an acetaline torch
@@ -200,7 +228,6 @@ MonoBehaviour:
   weaponLevel: 0
   weaponIcon: {fileID: 21300000, guid: 5e3103e14f6ac694ab1246de449ffd67, type: 3}
   eDotDamager: {fileID: 4199865901650256689}
-  theWeapon: {fileID: 1730044648976520946}
   weaponScaler: {fileID: 3606534477743052813}
   weaponFrame: {fileID: 7613853486066866486}
 --- !u!1 &5310869208068018653
@@ -253,8 +280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeInterval: 0
-  projectileFrame: {fileID: 5310869208068018653}
   coolDownTimer: 0
+  projectileFrame: {fileID: 5310869208068018653}
 --- !u!1001 &5335035590849324338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274,6 +301,10 @@ PrefabInstance:
     - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_SortingLayer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_SortingLayerID
@@ -561,6 +592,18 @@ PrefabInstance:
     - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_LengthScale
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -555709117
       objectReference: {fileID: 0}
     - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_NormalDirection

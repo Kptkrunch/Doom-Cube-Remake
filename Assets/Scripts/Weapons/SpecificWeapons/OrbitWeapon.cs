@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Damagers;
 using GenUtilsAndTools;
 using UnityEngine;
 
@@ -7,11 +8,12 @@ namespace Weapons.SpecificWeapons
 {
     public class OrbitWeapon : Weapon
     {
-        private float _rotationSpeed;
         // public Transform projectileFrame;
         public List<EnemyDamager> enemyDamagers;
-        public List<ChangeProjectileScale> projectileScales;
+        public List<GrowShrinkObj> projectileScales;
         public ProjFrameWithTimer projFrameWithTimer;
+        
+        private float _rotationSpeed;
 
         private void Start()
         {

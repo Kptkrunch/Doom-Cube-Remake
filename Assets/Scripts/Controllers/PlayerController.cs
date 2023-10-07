@@ -4,18 +4,33 @@ namespace Controllers
 {
     public class PlayerController : MonoBehaviour
     {
-        public static PlayerController pController;
-        public float moveSpeed;
+        public static PlayerController contPlayer;
+        private float _moveSpeed;
         public Animator animator;
-        private static readonly int IsMoving = Animator.StringToHash("IsMoving");
         public SpriteRenderer spriteRenderer;
+        public GameObject weapons;
+        public GameObject deathRays;
+        public Rigidbody2D rb2d;
+        private static readonly int IsMoving = Animator.StringToHash("IsMoving");
 
         private void Awake()
         {
-            pController = this;
+            contPlayer = this;
+        }
+
+        private void Start()
+        {
+            _moveSpeed = PlayerStatsController.contStats.moveSpeed;
         }
 
         private void Update()
+        {
+            HandleMovementAndFlip();
+            TurnOffLvelUpParticle();
+            ShowGameOver();
+        }
+
+        private void HandleMovementAndFlip()
         {
             var moveInput = new Vector3(0f, 0f, 0f)
             {
@@ -24,25 +39,42 @@ namespace Controllers
             };
 
             moveInput.Normalize();
-
+            var velocity = new Vector2(moveInput.x * _moveSpeed, moveInput.y * _moveSpeed);
             if (moveInput.x < 0)
             {
-                spriteRenderer.flipX = true;
+                // spriteRenderer.flipX = true;
+                var localScale = transform.localScale;
+                deathRays.transform.localScale = new Vector3(-1, localScale.y, localScale.z);
+                weapons.transform.localScale = new Vector3(-1, localScale.y, localScale.z);
             }
             else if (moveInput.x > 0)
             {
-                spriteRenderer.flipX = false;
-            }
-        
-            transform.position += moveInput * (moveSpeed * Time.deltaTime);
+                // spriteRenderer.flipX = false;
+                var localScale = transform.localScale;
+                deathRays.transform.localScale = new Vector3(1, localScale.y, localScale.z);
+                weapons.transform.localScale = new Vector3(1, localScale.y, localScale.z);
 
-            if (moveInput != Vector3.zero)
-            {
-                animator.SetBool(IsMoving, true);
             }
-            else
+            
+            rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime);
+            animator.SetBool(IsMoving, moveInput != Vector3.zero);
+        }
+
+        private void ShowGameOver()
+        {
+            if (PlayerHealthController.contPHealth.currentHealth <= 0)
             {
-                animator.SetBool(IsMoving, false);
+                UIController.contUI.gameOver.SetActive(true);
+
+            }
+        }
+
+        private void TurnOffLvelUpParticle()
+        {
+            if (!LevelController.contExpLvls.player.IsPlaying
+                && LevelController.contExpLvls.lvlUpParticle.activeInHierarchy)
+            {
+                LevelController.contExpLvls.lvlUpParticle.SetActive(false);
             }
         }
     }

@@ -4,9 +4,9 @@ namespace Weapons
 {
     public class ProjFrameWithTimer : MonoBehaviour
     {
-        public float activeInterval;
+        public float activeInterval, coolDownTimer;
         public GameObject projectileFrame;
-        public float coolDownTimer;
+        
         private float _activeTimer;
         private bool _isActive;
     

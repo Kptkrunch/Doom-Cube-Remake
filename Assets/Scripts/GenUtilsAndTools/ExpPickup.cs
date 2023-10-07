@@ -5,14 +5,14 @@ namespace GenUtilsAndTools
 {
     public class ExpPickup : MonoBehaviour
     {
-        public int expValue;
+        [SerializeField] private int expValue;
     
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player"))
+            if (collision.CompareTag("Player") && !collision.CompareTag("ItemAttractor"))
             {
-                ExperienceController.expController.GetExp(expValue);
-                Destroy(gameObject);
+                ExperienceController.contExp.GetExp(expValue);
+                Destroy(this.gameObject.gameObject);
             }
         }
     }

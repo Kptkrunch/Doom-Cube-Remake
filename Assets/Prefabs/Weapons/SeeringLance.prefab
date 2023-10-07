@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4993079015285987139
 RectTransform:
   m_ObjectHideFlags: 0
@@ -67,6 +67,28 @@ MonoBehaviour:
     rateOfFire: 0.75
     numOfProj: 2
     duration: 2
+    size: 1.1
+    cdr: 0.9
+    name: Seering Lance
+    description: White hot energy that only stops when burned out
+    upgradeText: Hotter than red hot magma!
+  - projSpeed: 1.1
+    damage: 7
+    range: 1.2
+    rateOfFire: 0.75
+    numOfProj: 3
+    duration: 3
+    size: 1.1
+    cdr: 0.9
+    name: Seering Lance
+    description: White hot energy that only stops when burned out
+    upgradeText: Hotter than red hot magma!
+  - projSpeed: 1.1
+    damage: 7
+    range: 1.2
+    rateOfFire: 0.75
+    numOfProj: 3
+    duration: 3
     size: 1.1
     cdr: 0.9
     name: Seering Lance
@@ -151,6 +173,7 @@ MonoBehaviour:
   doesPenetrate: 1
   doesRotate: 0
   isLobbed: 0
+  doesBounce: 0
   hasLifetime: 0
   rb2d: {fileID: 6937636198986826122}
 --- !u!114 &5401883805159277407
@@ -166,6 +189,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  destructive: 0
+  hitsGround: 1
+  hitsAir: 1
+  fireDamage: 1
+  chemicalDamage: 0
+  explosiveDamage: 0
 --- !u!50 &6937636198986826122
 Rigidbody2D:
   serializedVersion: 4

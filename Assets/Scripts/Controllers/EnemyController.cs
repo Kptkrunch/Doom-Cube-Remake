@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace Controllers
@@ -6,20 +7,16 @@ namespace Controllers
     {
         public Rigidbody2D rb2d;
         public float moveSpeed;
-        private float _originalMoveSpeed;
-        private Transform _target;
-
         public float damage;
-        public float hitInterval;
-        private float _hitCounter;
-
-        private float _knockBackTimer;
-    
         public float health = 5;
+        
+        private Transform _target;
+        private float _hitCounter, _knockBackTimer, _hitInterval, _originalMoveSpeed;
+        
         private void Start()
         {
             _originalMoveSpeed = moveSpeed;
-            _target = PlayerHealthController.phcInstance.transform;
+            _target = PlayerHealthController.contPHealth.transform;
         }
     
         private void Update()
@@ -45,10 +42,11 @@ namespace Controllers
         {
             if (collision.gameObject.CompareTag("Player") && _hitCounter <= 0f)
             {
-                PlayerHealthController.phcInstance.TakeDamage(damage);
+                PlayerHealthController.contPHealth.TakeDamage(damage);
 
-                _hitCounter = hitInterval;
+                _hitCounter = _hitInterval;
             }
+            StopEnemies();
         }
 
         public void TakeDamage(float enemyDamage)
@@ -56,11 +54,10 @@ namespace Controllers
             health -= enemyDamage;
             if (health <= 0)
             {
-                ExperienceController.expController.expDrop.DropItem(transform.position);
+                ExperienceController.contExp.expDrop.DropItem(transform.position);
                 Destroy(gameObject);
             }
-        
-            DamageNumberController.dnController.ShowDamage(enemyDamage, transform.position);
+            ShowDamage(enemyDamage);
         }
 
         public void KnockBack(float knockBackAmount, float knockBackDuration)
@@ -69,6 +66,23 @@ namespace Controllers
             if (_knockBackTimer >= 0)
             {
                 moveSpeed = -moveSpeed * knockBackAmount;
+            }
+        }
+        
+        // ReSharper disable Unity.PerformanceAnalysis
+        public void ShowDamage(float theDamage, float intensity = 1f)
+        {
+            MMF_FloatingText floatingText = DamageNumberController.contDmgText
+                .player.GetFeedbackOfType<MMF_FloatingText>();
+            floatingText.Value = theDamage.ToString();
+            if (rb2d) DamageNumberController.contDmgText.player.PlayFeedbacks(transform.position);
+        }
+
+        private void StopEnemies()
+        {
+            if (!PlayerController.contPlayer.gameObject.activeInHierarchy)
+            {
+                moveSpeed = 0f;
             }
         }
     }

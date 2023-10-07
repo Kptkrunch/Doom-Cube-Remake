@@ -9,8 +9,9 @@ namespace Weapons.SpecificWeapons
     public class RadarWeapon : Weapon
     {
         public Projectile projectile;
+        
         private float _weaponRange, _fireTimer, _fireInterval;
-        public LayerMask enemyLayer;
+        [SerializeField] private LayerMask enemyLayer;
 
         private void Start()
         {

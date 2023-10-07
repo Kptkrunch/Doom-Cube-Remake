@@ -7,9 +7,9 @@ namespace UI
     public class DamageNumber : MonoBehaviour
     {
         public TMP_Text damageText;
-        public float showInterval;
+        public float floatSpeed, showInterval;
+        
         private float _showTimer;
-        public float floatSpeed;
     
         private void Start()
         {
@@ -23,7 +23,7 @@ namespace UI
                 _showTimer -= Time.deltaTime;
                 if (_showTimer <= 0)
                 {
-                    DamageNumberController.dnController.PlaceInPool(this);
+                    // DamageNumberController.contDmgNum.PlaceInPool(this);
                 }
             }
         

@@ -1,24 +1,25 @@
 using Controllers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GenUtilsAndTools
 {
     public class AttractableItem : MonoBehaviour
     {
-        private float _moveSpeed;
-        private bool _isAttracted;
+        [SerializeField] private float moveSpeed;
+        [SerializeField] private bool isAttracted;
     
         private void Start()
         {
-            _moveSpeed = ItemAttractor.itemAttractor.pullSpeed;
+            moveSpeed = ItemAttractor.itemAttractor.pullSpeed;
         }
     
         private void Update()
         {
-            if (_isAttracted)
+            if (isAttracted)
             {
                 transform.position = Vector3.MoveTowards(transform.position,
-                    PlayerController.pController.transform.position, _moveSpeed * Time.deltaTime);
+                    PlayerController.contPlayer.transform.position, moveSpeed * Time.deltaTime);
             }
         }
     
@@ -26,8 +27,8 @@ namespace GenUtilsAndTools
         {
             if (collision.CompareTag("ItemAttractor"))
             {
-                _isAttracted = true;
-                _moveSpeed += PlayerController.pController.moveSpeed;
+                isAttracted = true;
+                moveSpeed += PlayerStatsController.contStats.moveSpeed;
             }
         }
     }

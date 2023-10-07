@@ -22,7 +22,7 @@ namespace UI
             fillBar.maxValue = expToLevel;
             fillBar.value = currentExp;
 
-            levelText.text = "Level: " + currentLevel;
+            levelText.text = "Doom Rating: " + currentLevel;
         }
     }
 }

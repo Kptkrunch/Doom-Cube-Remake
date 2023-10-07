@@ -7,9 +7,9 @@ namespace UI
     public class GeneralText : MonoBehaviour
     {
         public TMP_Text genText;
-        public float showInterval;
+        public float showInterval, floatSpeed;
+        
         private float _showTimer;
-        public float floatSpeed;
     
         private void Start()
         {
@@ -23,7 +23,7 @@ namespace UI
                 _showTimer -= Time.deltaTime;
                 if (_showTimer <= 0)
                 {
-                    GeneralTextController.generalTextControllerController.PlaceInPool(this);
+                    GeneralTextController.contGenText.PlaceInPool(this);
                 }
             }
         

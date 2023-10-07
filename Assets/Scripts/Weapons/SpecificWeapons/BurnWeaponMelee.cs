@@ -1,3 +1,4 @@
+using Damagers;
 using GenUtilsAndTools;
 using UnityEngine;
 
@@ -6,10 +7,10 @@ namespace Weapons.SpecificWeapons
     // same as melee weapon, but accepts a different damager that does dot damage
     public class BurnWeaponMelee : Weapon
     {
-        public EDotDamager eDotDamager;
-        public GameObject theWeapon;
-        public ChangeProjectileScale weaponScaler;
+        public EDotDamager eDotDamager; 
+        public GrowShrinkObj weaponScaler;
         public ProjFrameWithTimer weaponFrame;
+        
         private bool _weaponCanBeDrawn;
         private float _attackDuration, _attackInterval, _attackTimer, _direction;
 
@@ -25,22 +26,22 @@ namespace Weapons.SpecificWeapons
                 _attackTimer -= Time.deltaTime;
                 if (_attackTimer <= 0)
                 {
-                    if (Input.GetAxisRaw("Horizontal") != 0)
+                    if (Input.GetAxisRaw("Horizontal") > 0)
                     {
-                        if (Input.GetAxisRaw("Horizontal") > 0)
-                        {
-                            eDotDamager.transform.rotation = Quaternion.identity;
-                        }
-                        else
-                        {
-                            eDotDamager.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
-                        }
-                        
+                        weaponFrame.transform.localScale =
+                            new Vector2(1, transform.localScale.y);
+                        eDotDamager.transform.rotation = Quaternion.identity;
                         _weaponCanBeDrawn = false;
-                        _attackTimer = _attackDuration;
-                        weaponFrame.gameObject.SetActive(true);
+                    } else if (Input.GetAxisRaw("Horizontal") < 0)
+                    {
+                        weaponFrame.transform.localScale =
+                            new Vector2(-1, transform.localScale.y);
+                        eDotDamager.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                        _weaponCanBeDrawn = false;
                     }
-                
+                    
+                    _attackTimer = _attackDuration;
+                    weaponFrame.gameObject.SetActive(true);
                 }
             }
             
