@@ -1,5 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using Weapons;
 using Random = UnityEngine.Random;
@@ -11,8 +12,8 @@ namespace Controllers
         public static LevelController contExpLvls;
         public List<int> expLevels;
         public int currentLevel = 1, maxLevel = 100;
-        public TMP_Text levelText;
-
+        public MMF_Player player;
+        public GameObject lvlUpParticle;
         private void Awake()
         {
             contExpLvls = this;
@@ -29,13 +30,9 @@ namespace Controllers
         public void LevelUp()
         {
             currentLevel++;
-            // ShowCongrats();
-            
+            StartCoroutine(ShowCongrats());
             UpgradePanelController.contUpgrades.gameObject.SetActive(true);
             UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(true);
-            
-            Time.timeScale = 0f;
-        
             WepsAndAbs.contWepsAbs.upgradableWeapons.Clear();
 
             var availableWeapons = new List<Weapon>();
@@ -80,11 +77,15 @@ namespace Controllers
                     UpgradePanelController.contUpgrades.upgradePanels[i].gameObject.SetActive(false);
                 }
             }
+            StopCoroutine(ShowCongrats());
+            Time.timeScale = 0f;
         }
 
-        private void ShowCongrats()
+        private IEnumerator ShowCongrats()
         {
-            
+            if (lvlUpParticle) lvlUpParticle.SetActive(true);
+            player.PlayFeedbacks(PlayerController.contPlayer.gameObject.transform.position);
+            yield return new WaitForSeconds(1f);
         }
     }
 }

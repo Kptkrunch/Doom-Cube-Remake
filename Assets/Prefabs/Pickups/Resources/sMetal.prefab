@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6548593066306947616}
   m_Layer: 0
   m_Name: sMetal
-  m_TagString: Metal
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceSprite: {fileID: -447076789, guid: 764120a36c1fd487aba946474e52fc58, type: 3}
-  pickupEffect: {fileID: 0}
   value: 1
   meat: 0
   metal: 1
@@ -174,8 +173,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1807668911
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1854373769, guid: cccb1c89d7da77343a8f97baa45e5dff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

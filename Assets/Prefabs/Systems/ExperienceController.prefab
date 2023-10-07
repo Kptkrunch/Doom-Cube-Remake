@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c4e835ea5879744a1ebc04f6f5b586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrop: {fileID: 5416294103432642803, guid: 47d4e5ead1cf2484cae59ce574bbfaf8, type: 3}
+  itemDrop: {fileID: 5416294103432642803, guid: 5d9988a6ef11f2645be78ef28476e3dc, type: 3}
 --- !u!114 &8791480448664990819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,4 +77,5 @@ MonoBehaviour:
   expLevels: 0000000002000000050000000a0000001e000000
   currentLevel: 1
   maxLevel: 100
-  levelText: {fileID: 0}
+  player: {fileID: 0}
+  lvlUpParticle: {fileID: 9040823010023462528, guid: 82cce8fb77f4cfe42af0e5d330ecf376, type: 3}

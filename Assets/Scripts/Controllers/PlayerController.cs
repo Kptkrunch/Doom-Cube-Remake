@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Controllers
@@ -26,6 +25,13 @@ namespace Controllers
 
         private void Update()
         {
+            HandleMovementAndFlip();
+            TurnOffLvelUpParticle();
+            ShowGameOver();
+        }
+
+        private void HandleMovementAndFlip()
+        {
             var moveInput = new Vector3(0f, 0f, 0f)
             {
                 x = Input.GetAxisRaw("Horizontal"),
@@ -49,12 +55,9 @@ namespace Controllers
                 weapons.transform.localScale = new Vector3(1, localScale.y, localScale.z);
 
             }
-        
-            rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime);
-
-            animator.SetBool(IsMoving, moveInput != Vector3.zero);
             
-            ShowGameOver();
+            rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime);
+            animator.SetBool(IsMoving, moveInput != Vector3.zero);
         }
 
         private void ShowGameOver()
@@ -63,6 +66,15 @@ namespace Controllers
             {
                 UIController.contUI.gameOver.SetActive(true);
 
+            }
+        }
+
+        private void TurnOffLvelUpParticle()
+        {
+            if (!LevelController.contExpLvls.player.IsPlaying
+                && LevelController.contExpLvls.lvlUpParticle.activeInHierarchy)
+            {
+                LevelController.contExpLvls.lvlUpParticle.SetActive(false);
             }
         }
     }
