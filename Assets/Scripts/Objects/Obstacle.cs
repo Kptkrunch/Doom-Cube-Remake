@@ -13,7 +13,7 @@ namespace Objects
         [CanBeNull] public List<WordlyObject> objects;
         
         
-        [CanBeNull] private GameObject _dust1, _dust2, _dust3, _explode1, _wreckage;
+        [CanBeNull] private GameObject _dmgParticle1, _dmgParticle2, _dmgParticle3, _explode1, _wreckage;
         [SerializeField] private float maxHealth, stage1dmg = 0.75f, stage2dmg = 0.35f, stage3dmg = .10f;
 
 
@@ -27,22 +27,22 @@ namespace Objects
             if (currentHealth < maxHealth * stage1dmg
                 && currentHealth > maxHealth * stage2dmg)
             {
-                if (_dust1)
+                if (_dmgParticle1)
                 {
-                    _dust1.SetActive(true);
-                    _dust1.transform.position = transform.position;
+                    _dmgParticle1.SetActive(true);
+                    _dmgParticle1.transform.position = transform.position;
                 }
             }
 
             if (currentHealth <= maxHealth * stage2dmg
                 && currentHealth > maxHealth * stage3dmg)
             {
-                if (_dust2)
+                if (_dmgParticle2)
                 {
-                    if (_dust2)
+                    if (_dmgParticle2)
                     {
-                        _dust2.SetActive(true);
-                        _dust2.transform.position = transform.position;
+                        _dmgParticle2.SetActive(true);
+                        _dmgParticle2.transform.position = transform.position;
                     }
                     
                 }
@@ -51,12 +51,12 @@ namespace Objects
             if (currentHealth <= maxHealth * stage3dmg
                 && currentHealth > 0)
             {
-                if (_dust3)
+                if (_dmgParticle3)
                 {
-                    if (_dust3)
+                    if (_dmgParticle3)
                     {
-                        _dust3.SetActive(true);
-                        _dust3.transform.position = transform.position;
+                        _dmgParticle3.SetActive(true);
+                        _dmgParticle3.transform.position = transform.position;
                     }
                 }
             }
@@ -95,17 +95,17 @@ namespace Objects
             var mmSimpleObjectPooler = PoolController.contPool.GetComponent<DustController>();
             if (mmSimpleObjectPooler.sDust)
             {
-                _dust1 = mmSimpleObjectPooler.sDust.GetPooledGameObject();
+                _dmgParticle1 = mmSimpleObjectPooler.sDust.GetPooledGameObject();
             }
             
             if (mmSimpleObjectPooler.mDust)
             {
-                _dust2 = mmSimpleObjectPooler.mDust.GetPooledGameObject();
+                _dmgParticle2 = mmSimpleObjectPooler.mDust.GetPooledGameObject();
             }
 
             if (mmSimpleObjectPooler.bDust)
             {
-                _dust3 = mmSimpleObjectPooler.bDust.GetPooledGameObject();
+                _dmgParticle3 = mmSimpleObjectPooler.bDust.GetPooledGameObject();
             }
         }
     }

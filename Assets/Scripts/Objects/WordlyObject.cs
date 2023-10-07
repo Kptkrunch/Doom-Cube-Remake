@@ -1,4 +1,6 @@
+using System;
 using Controllers;
+using GenUtilsAndTools;
 using JetBrains.Annotations;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -8,11 +10,13 @@ namespace Objects
     public class WordlyObject : MonoBehaviour
     {
         public SpriteRenderer objRenderer;
+        [CanBeNull] public ResDropper resDropper;
         [CanBeNull] public Obstacle objParent;
         [CanBeNull] public Rigidbody2D objBody;
         [CanBeNull] public Sprite objSprite, stage1Sprite, stage2Sprite, stage3Sprite, destroyedSprite;
         public float currentDurability, maxDurability;
-    
+
+        private bool _lootDropped = false;
         private float _stage1dmg = .80f, _stage2dmg = .50f, _stage3dmg = .20f;
 
         private void Start()
@@ -43,7 +47,14 @@ namespace Objects
                        && destroyedSprite)
             {
                 objRenderer.sprite = destroyedSprite;
+                if (resDropper && !_lootDropped)
+                {
+                    _lootDropped = true;
+                    resDropper.DropResource();
+                }
             }
+            
+            
         }
 
         public void TakeDamage(float damage)

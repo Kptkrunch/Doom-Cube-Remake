@@ -57,7 +57,6 @@ namespace Controllers
                 ExperienceController.contExp.expDrop.DropItem(transform.position);
                 Destroy(gameObject);
             }
-            
             ShowDamage(enemyDamage);
         }
 
@@ -70,7 +69,6 @@ namespace Controllers
             }
         }
         
-                
         // ReSharper disable Unity.PerformanceAnalysis
         public void ShowDamage(float theDamage, float intensity = 1f)
         {

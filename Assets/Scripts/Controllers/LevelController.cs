@@ -29,11 +29,11 @@ namespace Controllers
         public void LevelUp()
         {
             currentLevel++;
-            levelText.text = "Doom Rating: " + currentLevel;
-            ShowCongrats();
+            // ShowCongrats();
             
             UpgradePanelController.contUpgrades.gameObject.SetActive(true);
             UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(true);
+            
             Time.timeScale = 0f;
         
             WepsAndAbs.contWepsAbs.upgradableWeapons.Clear();
@@ -49,7 +49,7 @@ namespace Controllers
             }
 
             if (WepsAndAbs.contWepsAbs.equippedWeapons.Count <
-                WepsAndAbs.contWepsAbs.maxWeapons + WepsAndAbs.contWepsAbs.fullyUpgradedWeapons.Count &&
+                PlayerStatsController.contStats.maxWeapons + WepsAndAbs.contWepsAbs.fullyUpgradedWeapons.Count &&
                 WepsAndAbs.contWepsAbs.allWeapons.Count != 0)
             {
                 availableWeapons.AddRange(WepsAndAbs.contWepsAbs.allWeapons);

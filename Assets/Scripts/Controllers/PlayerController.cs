@@ -6,7 +6,7 @@ namespace Controllers
     public class PlayerController : MonoBehaviour
     {
         public static PlayerController contPlayer;
-        public float moveSpeed;
+        private float _moveSpeed;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
         public GameObject weapons;
@@ -19,9 +19,9 @@ namespace Controllers
             contPlayer = this;
         }
 
-        private void OnDisable()
+        private void Start()
         {
-            UIController.contUI.gameOver.gameObject.SetActive(true);
+            _moveSpeed = PlayerStatsController.contStats.moveSpeed;
         }
 
         private void Update()
@@ -33,30 +33,36 @@ namespace Controllers
             };
 
             moveInput.Normalize();
-            var velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+            var velocity = new Vector2(moveInput.x * _moveSpeed, moveInput.y * _moveSpeed);
             if (moveInput.x < 0)
             {
                 // spriteRenderer.flipX = true;
-                deathRays.transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
-                weapons.transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+                var localScale = transform.localScale;
+                deathRays.transform.localScale = new Vector3(-1, localScale.y, localScale.z);
+                weapons.transform.localScale = new Vector3(-1, localScale.y, localScale.z);
             }
             else if (moveInput.x > 0)
             {
                 // spriteRenderer.flipX = false;
-                deathRays.transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
-                weapons.transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+                var localScale = transform.localScale;
+                deathRays.transform.localScale = new Vector3(1, localScale.y, localScale.z);
+                weapons.transform.localScale = new Vector3(1, localScale.y, localScale.z);
 
             }
         
             rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime);
+
+            animator.SetBool(IsMoving, moveInput != Vector3.zero);
             
-            if (moveInput != Vector3.zero)
+            ShowGameOver();
+        }
+
+        private void ShowGameOver()
+        {
+            if (PlayerHealthController.contPHealth.currentHealth <= 0)
             {
-                animator.SetBool(IsMoving, true);
-            }
-            else
-            {
-                animator.SetBool(IsMoving, false);
+                UIController.contUI.gameOver.SetActive(true);
+
             }
         }
     }

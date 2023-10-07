@@ -7,7 +7,6 @@ namespace Controllers
     public class WepsAndAbs : MonoBehaviour
     {
         public static WepsAndAbs contWepsAbs;
-        public int maxWeapons;
         public List<Weapon> equippedWeapons, upgradableWeapons, allWeapons, fullyUpgradedWeapons;
     
         private void Awake()

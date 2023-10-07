@@ -28,7 +28,7 @@ namespace GenUtilsAndTools
             if (collision.CompareTag("ItemAttractor"))
             {
                 isAttracted = true;
-                moveSpeed += PlayerController.contPlayer.moveSpeed;
+                moveSpeed += PlayerStatsController.contStats.moveSpeed;
             }
         }
     }
