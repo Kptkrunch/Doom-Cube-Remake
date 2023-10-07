@@ -92,7 +92,7 @@ namespace Objects
 
         private void GetParticles()
         {
-            var mmSimpleObjectPooler = PoolController.contPool.GetComponent<DustController>();
+            var mmSimpleObjectPooler = PoolController.contPool.GetComponent<DustPool>();
             if (mmSimpleObjectPooler.sDust)
             {
                 _dmgParticle1 = mmSimpleObjectPooler.sDust.GetPooledGameObject();

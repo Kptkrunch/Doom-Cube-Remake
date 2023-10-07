@@ -6615,17 +6615,6 @@ MonoBehaviour:
   plastic: 0
   energy: 0
   resourcePool: {fileID: 1924493330}
---- !u!114 &1351905632 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7092160881618573119, guid: 1af55b3320d4955409e9512770a04a7f, type: 3}
-  m_PrefabInstance: {fileID: 678441102}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1362492683
 GameObject:
   m_ObjectHideFlags: 0
@@ -137396,22 +137385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExperienceController
       objectReference: {fileID: 0}
-    - target: {fileID: 5227449509606528890, guid: 54a4289d2db5697489f653e45105614d, type: 3}
-      propertyPath: itemDrop
-      value: 
-      objectReference: {fileID: 5416294103432642803, guid: 5d9988a6ef11f2645be78ef28476e3dc, type: 3}
     - target: {fileID: 8791480448664990819, guid: 54a4289d2db5697489f653e45105614d, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1234953179}
-    - target: {fileID: 8791480448664990819, guid: 54a4289d2db5697489f653e45105614d, type: 3}
-      propertyPath: levelText
-      value: 
-      objectReference: {fileID: 1351905632}
-    - target: {fileID: 8791480448664990819, guid: 54a4289d2db5697489f653e45105614d, type: 3}
-      propertyPath: lvlUpParticle
-      value: 
-      objectReference: {fileID: 9040823010023462528, guid: 82cce8fb77f4cfe42af0e5d330ecf376, type: 3}
     - target: {fileID: 9093157715790570024, guid: 54a4289d2db5697489f653e45105614d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
