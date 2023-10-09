@@ -27,42 +27,22 @@ public class TechController : MonoBehaviour
     {
         if (_gamepad.aButton.wasPressedThisFrame)
         {
-                TriggerTech(0);
+            purchasedTechList[0].ActivateTech("a");
         }
 
         if (_gamepad.bButton.wasPressedThisFrame)
         {
-                TriggerTech(1);
+            purchasedTechList[1].ActivateTech("x");
         }
 
         if (_gamepad.xButton.wasPressedThisFrame)
         {
-                TriggerTech(2);
+            purchasedTechList[2].ActivateTech("y");
         }
 
         if (_gamepad.yButton.wasPressedThisFrame)
         {
-                TriggerTech(3);
-        }
-    }
-
-
-    private void TriggerTech(int techIndex)
-    {
-        switch (techIndex)
-        {
-            case 0:
-                purchasedTechList[0].gameObject.SetActive(true);
-                break;
-            case 1:
-                purchasedTechList[1].gameObject.SetActive(true);
-                break;
-            case 2:
-                purchasedTechList[2].gameObject.SetActive(true);
-                break;
-            case 3:
-                purchasedTechList[3].gameObject.SetActive(true);
-                break;
+            purchasedTechList[3].ActivateTech("b");
         }
     }
     
@@ -76,6 +56,10 @@ public class TechController : MonoBehaviour
         if (resCont.plastic - plastic < 0) canAfford = false;
         if (resCont.energy - energy < 0) canAfford = false;
 
+        if (canAfford)
+        {
+            ResourceController.contRes.SpendResource(meat, metal, mineral, plastic, energy);
+        }
         return canAfford;
     }
 
