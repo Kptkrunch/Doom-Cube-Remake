@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using TechSkills;
+using UI;
 using UnityEngine;
 using Weapons;
 using Random = UnityEngine.Random;
@@ -33,8 +34,14 @@ namespace Controllers
 
         public void LevelUp()
         {
-            currentLevel++;
+            ExperienceController.contExp.currentExp = 0;
             StartCoroutine(ShowCongrats());
+            currentLevel++;
+            ExpBar.expBar.UpdateExpBar(
+                ExperienceController.contExp.currentExp,
+                contExpLvls.currentLevel,
+                contExpLvls.expLevels[currentLevel]);
+
             UpgradePanelController.contUpgrades.gameObject.SetActive(true);
             UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(true);
             TechPanelController.contTechPanel.gameObject.SetActive(true);
