@@ -1,20 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class CritterAi : MonoBehaviour
 {
-    public CircleCollider2D aggroArea;
-    public Attack attack;
-    // public FollowPlayer follow;
+    [CanBeNull] public CircleCollider2D aggroArea;
+    [CanBeNull] public Follow follow;
     public float aggroRadius, attackRange;
     public bool enemies, obstacles, civilians, vehicles, catchingUp;
-
-    private void Move()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,4 +15,6 @@ public class CritterAi : MonoBehaviour
             Vector3.MoveTowards(transform.position, collision.transform.position, aggroRadius);
         }
     }
+    
+    
 }

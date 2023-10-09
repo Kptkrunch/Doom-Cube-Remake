@@ -14,7 +14,7 @@ namespace Controllers
     
         public void UpdatePanelDisplay(Tech theTech)
         {
-            description.text = theTech.stats[theTech.techLevel].description;
+            description.text = theTech.description;
             techIcon.sprite = theTech.techImage;
             techName.text = theTech.name + ": Lvl-" + theTech.techLevel;
             meat.text = theTech.costMeat.ToString();
