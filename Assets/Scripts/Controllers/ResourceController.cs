@@ -23,26 +23,13 @@ namespace Controllers
             energyText.text = energy.ToString();
         }
 
-        public void SpendResource(int amount, string resType)
+        public void SpendResource(int meatSpent, int metalSpent, int mineralSpent, int plasticSpent, int enerygySpent)
         {
-            switch (resType)
-            {
-                case "meat":
-                    meat -= amount;
-                    break;
-                case "metal":
-                    metal -= amount;
-                    break;
-                case "mineral":
-                    mineral -= amount;
-                    break;
-                case "plastic":
-                    plastic -= amount;
-                    break;
-                case "energy":
-                    energy -= amount;
-                    break;
-            }
+            meat -= meatSpent;
+            metal -= metalSpent;
+            mineral -= mineralSpent;
+            plastic -= plasticSpent;
+            energy -= enerygySpent;
             UpdateResources();
         }
     }

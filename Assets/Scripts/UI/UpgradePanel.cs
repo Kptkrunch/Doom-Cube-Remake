@@ -8,8 +8,8 @@ namespace UI
 {
     public class UpgradePanel : MonoBehaviour
     {
-        public TextMeshProUGUI weaponNameAndLvl, upgradeDescription;
         public Image weaponImage;
+        public TextMeshProUGUI weaponNameAndLvl, upgradeDescription;
 
         private Weapon _assignedWeapon;
     
@@ -35,13 +35,13 @@ namespace UI
         {
             if (_assignedWeapon != null)
             {
-                if (_assignedWeapon.gameObject.activeSelf == true)
+                if (_assignedWeapon.gameObject.activeSelf)
                 {
                     _assignedWeapon.UpdateWeapon();
                 }
                 else
                 {
-                    WepsAndAbs.contWepsAbs.AddWeapon(_assignedWeapon);
+                    WeaponController.contWeps.AddWeapon(_assignedWeapon);
                 }
                 UpgradePanelController.contUpgrades.gameObject.SetActive(false);
                 UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(false);

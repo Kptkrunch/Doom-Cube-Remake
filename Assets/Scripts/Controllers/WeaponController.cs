@@ -4,14 +4,14 @@ using Weapons;
 
 namespace Controllers
 {
-    public class WepsAndAbs : MonoBehaviour
+    public class WeaponController : MonoBehaviour
     {
-        public static WepsAndAbs contWepsAbs;
+        public static WeaponController contWeps;
         public List<Weapon> equippedWeapons, upgradableWeapons, allWeapons, fullyUpgradedWeapons;
     
         private void Awake()
         {
-            contWepsAbs = this;
+            contWeps = this;
         }
 
         public void AddWeapon(int weaponIndex) 
