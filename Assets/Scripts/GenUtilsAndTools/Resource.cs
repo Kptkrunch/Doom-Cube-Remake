@@ -23,6 +23,7 @@ namespace GenUtilsAndTools
                 if (mineral) ResourceController.contRes.mineral += value;
                 if (plastic) ResourceController.contRes.plastic += value;
                 if (energy) ResourceController.contRes.plastic += value;
+                ResourceController.contRes.UpdateResources();
             }
         }
     }

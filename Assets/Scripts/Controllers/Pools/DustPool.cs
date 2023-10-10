@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Controllers
 {
-    public class DustController : PoolController
+    public class DustPool : PoolController
     {
         [CanBeNull] [SerializeField] public MMSimpleObjectPooler sDust, mDust, bDust;
     }

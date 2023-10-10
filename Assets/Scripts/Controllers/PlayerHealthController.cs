@@ -8,6 +8,7 @@ namespace Controllers
         public static PlayerHealthController contPHealth;
         public Slider healthSlider;
         public float currentHealth;
+        public float lastAttackedTime;
         
         private float _maxHealth;
 
@@ -34,6 +35,7 @@ namespace Controllers
                 gameObject.SetActive(false);
             }
             healthSlider.value = currentHealth;
+            lastAttackedTime = Time.time;
         }
     }
 }
