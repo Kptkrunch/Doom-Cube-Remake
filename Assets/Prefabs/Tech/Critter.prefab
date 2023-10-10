@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 940465145942546880}
   m_Layer: 0
   m_Name: Critter
-  m_TagString: Untagged
+  m_TagString: Critter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1949ee0052a2a6545960dc8af4eb8da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   techLevel: 0
   description: A Critter to kill things with
   techImage: {fileID: -2011955584, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
@@ -58,6 +59,7 @@ MonoBehaviour:
   costMineral: 1
   costPlastic: 0
   costEnergy: 0
+  cooldown: 5
   player: {fileID: 0}
   critterLevel: 0
   stats:
@@ -65,11 +67,10 @@ MonoBehaviour:
     damage: 1
     speed: 1.5
     followDistance: 4
+    maxFollowDistance: 0
     searchRadius: 9
     attackDistance: 1.5
     attackInterval: 2
-    moveInterval: 1
-    stamina: 2
     lifeTime: 0
 --- !u!50 &1937262957447078562
 Rigidbody2D:

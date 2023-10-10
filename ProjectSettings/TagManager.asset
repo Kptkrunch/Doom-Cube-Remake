@@ -9,11 +9,9 @@ TagManager:
   - ItemAttractor
   - Projectile
   - WorldlyObject
-  - Meat
-  - Metal
-  - Mineral
-  - Plastic
-  - Energy
+  - Critter
+  - Resource
+  - Tower
   layers:
   - Default
   - TransparentFX

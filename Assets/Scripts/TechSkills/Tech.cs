@@ -1,39 +1,49 @@
+using System;
+using Controllers.Pools;
 using UnityEngine;
 
 namespace TechSkills
 {
     public class Tech : MonoBehaviour
     {
+        public int id;
         public int techLevel;
         public string description;
         public Sprite techImage;
         public int costMeat, costMetal, costMineral, costPlastic, costEnergy;
-        private GameObject _obj;
-        
-        public virtual void ActivateTech(string button)
+        public float cooldown; 
+        private float _cooldownTimer;
+
+        public virtual void ActivateTech(string button, int techId)
         {
-            switch (button)
+            if (Time.time > _cooldownTimer)
             {
-                case "a":
-                    _obj = WarTechPoolsA.poolsA.tech1.GetPooledGameObject();
-                    _obj.gameObject.SetActive(true);
-                    _obj.transform.position = transform.position;
-                    break;
-                case "x":
-                    _obj = WarTechPoolsA.poolsA.tech1.GetPooledGameObject();
-                    _obj.gameObject.SetActive(true);
-                    _obj.transform.position = transform.position;
-                    break;
-                case "y":
-                    _obj = WarTechPoolsA.poolsA.tech1.GetPooledGameObject();
-                    _obj.gameObject.SetActive(true);
-                    _obj.transform.position = transform.position;
-                    break;
-                case "b":
-                    _obj = WarTechPoolsA.poolsA.tech1.GetPooledGameObject();
-                    _obj.gameObject.SetActive(true);
-                    _obj.transform.position = transform.position;
-                    break;
+                var activator = TechActivator.techActivator;
+                switch (button)
+                {
+                    case "a":
+                        activator.techId = techId;
+                        activator.gameObject.SetActive(true);
+                        break;
+                    case "x":
+                        activator.techId = techId;
+                        activator.gameObject.SetActive(true);
+                        break;
+                    case "y":
+                        activator.techId = techId;
+                        activator.gameObject.SetActive(true);
+                        break;
+                    case "b":
+                        activator.techId = techId;
+                        activator.gameObject.SetActive(true);
+                        break;
+                }
+
+                _cooldownTimer = Time.time + cooldown;
+            }
+            else
+            {
+                Debug.Log("Tech on cooldown");
             }
         }
         
@@ -43,3 +53,4 @@ namespace TechSkills
         }
     }
 }
+

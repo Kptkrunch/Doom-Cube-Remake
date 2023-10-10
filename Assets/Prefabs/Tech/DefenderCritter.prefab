@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8084672776469063925}
   m_Layer: 0
   m_Name: DefenderCritter
-  m_TagString: Untagged
+  m_TagString: Critter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 4882538809631351932}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7521314, y: -0.15028958, z: -0.007438866}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -131,6 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e90ea894e69074d9516d062de5ec2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 1
+  techLevel: 0
+  description: Will attack and defend the player
+  techImage: {fileID: -386498487, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
+  costMeat: 0
+  costMetal: 0
+  costMineral: 1
+  costPlastic: 1
+  costEnergy: 0
+  cooldown: 5
   player: {fileID: 0}
   critterLevel: 0
   stats:
@@ -144,7 +154,7 @@ MonoBehaviour:
     attackInterval: 3
     moveInterval: 0
     stamina: 0
-    lifeTime: 0
+    lifeTime: 5
 --- !u!50 &8024277885349222463
 Rigidbody2D:
   serializedVersion: 4
