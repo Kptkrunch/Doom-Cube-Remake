@@ -1,15 +1,33 @@
+using System;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Weapons.DeathRays
 {
     public class DeathRay : MonoBehaviour
     {
+        public int drid;
         public LineRenderer lineRenderer;
         public CircleCollider2D beamHitBox;
-        public GameObject beamStart, hitMarker, pointA;
-        public MMF_Player fireDRay;
         private Vector3 _velocity, _beamStart, _beamEnd;
+        private Gamepad _gamepad;
+
+        private void Update()
+        {
+            _gamepad = Gamepad.current;
+            ResolveDeathRay();
+        }
+    
+        public virtual void FireBeam() {
+
+            // set everything to active
+        }
+        public virtual void ResolveDeathRay()
+        {
+            // run all the deactivate and line renderer
+            // stuff here while playing anim
+        }
     }
 }

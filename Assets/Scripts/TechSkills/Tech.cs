@@ -14,10 +14,13 @@ namespace TechSkills
         public float cooldown; 
         private float _cooldownTimer;
 
+        private void Start()
+        {
+            _cooldownTimer = 0;
+        }
+
         public virtual void ActivateTech(string button, int techId)
         {
-            if (Time.time > _cooldownTimer)
-            {
                 var activator = TechActivator.techActivator;
                 switch (button)
                 {
@@ -38,13 +41,6 @@ namespace TechSkills
                         activator.gameObject.SetActive(true);
                         break;
                 }
-
-                _cooldownTimer = Time.time + cooldown;
-            }
-            else
-            {
-                Debug.Log("Tech on cooldown");
-            }
         }
         
         public void UpdateTech()

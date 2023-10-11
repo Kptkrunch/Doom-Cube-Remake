@@ -154,7 +154,7 @@ MonoBehaviour:
     attackInterval: 3
     moveInterval: 0
     stamina: 0
-    lifeTime: 5
+    lifeTime: 60
 --- !u!50 &8024277885349222463
 Rigidbody2D:
   serializedVersion: 4

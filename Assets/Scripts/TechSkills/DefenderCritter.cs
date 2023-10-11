@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Controllers;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 namespace TechSkills
 {
@@ -14,14 +15,15 @@ namespace TechSkills
         private GameObject[] _enemies;
         private GameObject _currentTarget;
         private readonly float _lastDamageTime = -1f;
-        private float _lifeTime;
+        private float _lifeTime, _cooldownTimer;
 
         void Start()
         {
             InitializeVariables();
+            _cooldownTimer = 0;
         }
 
-        void Update()
+        private void FixedUpdate()
         {
             DieInTime();
             float distanceToPlayer = Vector3.Distance(_critter.position, player.position);
