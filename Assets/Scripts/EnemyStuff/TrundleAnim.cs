@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,7 +6,6 @@ namespace EnemyStuff
     public class TrundleAnim : MonoBehaviour
     {
         public Transform sprite;
-        [CanBeNull] public Animator enemyAnimator;
         public float speed, minSize, maxSize;
         public Vector2 key1, key2, key3, key4;
         public bool animateTransform, animateRotation, animateScale;
@@ -22,19 +20,21 @@ namespace EnemyStuff
     
         private void Update()
         {
-            if (animateScale)
+            switch (animateScale)
             {
-                sprite.localScale = Vector3.MoveTowards(sprite.localScale, Vector3.one * _activeSize, speed * Time.deltaTime);
-                if (sprite.localScale.x.Equals(_activeSize))
+                case false:
+                    return;
+            }
+            sprite.localScale = Vector3.MoveTowards(sprite.localScale, Vector3.one * _activeSize, speed * Time.deltaTime);
+            if (sprite.localScale.x.Equals(_activeSize))
+            {
+                if (_activeSize.Equals(maxSize))
                 {
-                    if (_activeSize.Equals(maxSize))
-                    {
-                        _activeSize = minSize;
-                    }
-                    else
-                    {
-                        _activeSize = maxSize;
-                    }
+                    _activeSize = minSize;
+                }
+                else
+                {
+                    _activeSize = maxSize;
                 }
             }
         }

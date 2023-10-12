@@ -44,15 +44,20 @@ namespace Weapons.SpecificWeapons
                     weaponFrame.gameObject.SetActive(true);
                 }
             }
-            
-            if (!_weaponCanBeDrawn)
+
+            switch (_weaponCanBeDrawn)
             {
-                _attackTimer -= Time.deltaTime;
-                if (_attackTimer <= 0)
+                case false:
                 {
-                    _weaponCanBeDrawn = true;
-                    _attackTimer = _attackInterval;
-                    weaponFrame.gameObject.SetActive(false);
+                    _attackTimer -= Time.deltaTime;
+                    if (_attackTimer <= 0)
+                    {
+                        _weaponCanBeDrawn = true;
+                        _attackTimer = _attackInterval;
+                        weaponFrame.gameObject.SetActive(false);
+                    }
+
+                    break;
                 }
             }
         }
@@ -65,17 +70,19 @@ namespace Weapons.SpecificWeapons
             eDotDamager.damageInterval = stats[weaponLevel].rateOfFire;
             eDotDamager.damage = stats[weaponLevel].damage;
             _weaponCanBeDrawn = true;
-            if (weaponFrame)
+            if (!weaponFrame)
+            {
+            }
+            else
             {
                 weaponFrame.coolDownTimer = stats[weaponLevel].cdr;
                 weaponFrame.activeInterval = stats[weaponLevel].duration;
             }
-            if (weaponScaler)
-            {
-                weaponScaler.staySizeInterval = weaponFrame.activeInterval * .6f;
-                weaponScaler.maxSize = Vector3.one;
-                weaponScaler.growShrinkSpeed = stats[weaponLevel].projSpeed;
-            }
+
+            if (!weaponScaler) return;
+            weaponScaler.staySizeInterval = weaponFrame.activeInterval * .6f;
+            weaponScaler.maxSize = Vector3.one;
+            weaponScaler.growShrinkSpeed = stats[weaponLevel].projSpeed;
         }
         
         public override void UpdateWeapon()

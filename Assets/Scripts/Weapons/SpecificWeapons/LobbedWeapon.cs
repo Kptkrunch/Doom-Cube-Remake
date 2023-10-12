@@ -1,8 +1,5 @@
-using System;
 using Damagers;
-using GenUtilsAndTools;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Weapons.SpecificWeapons
 {

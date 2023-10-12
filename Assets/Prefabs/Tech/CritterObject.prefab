@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1837082187116986145}
-  - component: {fileID: 1451876821048974657}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
@@ -33,20 +32,6 @@ Transform:
   - {fileID: 7723089807253073971}
   m_Father: {fileID: 3773719864112002385}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1451876821048974657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676087393963065499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bef096f5ec05c6043a9f187a37167385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackArea: {fileID: 0}
-  enemyDamager: {fileID: 0}
 --- !u!1 &1029112712142827371
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,25 +77,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd4288e383a8eb4ea1191c45a83abc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   techLevel: 0
+  description: 
   techImage: {fileID: -2011955584, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   costMeat: 0
   costMetal: 0
   costMineral: 2
   costPlastic: 1
   costEnergy: 0
-  stats:
-  - techSprite: {fileID: -2011955584, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
-    description: A nasty lil biddy
-    actMeat: 0
-    actMetal: 0
-    actMineral: 0
-    actPlastic: 0
-    actEnergy: 0
-    duration: 0
-    damage: 0
-    range: 0
-    maxHealth: 0
+  cooldown: 0
 --- !u!1 &1314665623527037175
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +96,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7263448170146270067}
-  - component: {fileID: 9031217679662682972}
   m_Layer: 0
   m_Name: FollowBehavior
   m_TagString: Untagged
@@ -143,20 +118,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3773719864112002385}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9031217679662682972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314665623527037175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88c3e804b3fbd4b4ea017ea71ef08075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRange: 0
-  moveSpead: 0
 --- !u!1 &2578956619543482493
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,10 +345,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3773719864112002385}
-  - component: {fileID: 7100943555151882083}
   - component: {fileID: 4422980909562052340}
   - component: {fileID: 3748700132141805940}
-  - component: {fileID: 1168786141646643232}
   m_Layer: 0
   m_Name: Critter
   m_TagString: Untagged
@@ -414,49 +373,6 @@ Transform:
   - {fileID: 7263448170146270067}
   m_Father: {fileID: 595382720994971148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7100943555151882083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7596651277900523431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1949ee0052a2a6545960dc8af4eb8da8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  techLevel: 0
-  techImage: {fileID: 0}
-  costMeat: 0
-  costMetal: 0
-  costMineral: 0
-  costPlastic: 0
-  costEnergy: 0
-  stats:
-  - techSprite: {fileID: 0}
-    description: 
-    actMeat: 0
-    actMetal: 0
-    actMineral: 0
-    actPlastic: 0
-    actEnergy: 0
-    duration: 0
-    damage: 1
-    range: 2
-    maxHealth: 0
-  critterLevel: 0
-  rb2d: {fileID: 4422980909562052340}
-  ai: {fileID: 1168786141646643232}
-  attack: {fileID: 1451876821048974657}
-  stats:
-  - health: 0
-    damage: 1
-    speed: 0
-    range: 2
-    aggroRange: 0
-    rateOfFire: 0
-    lifeTime: 0
 --- !u!50 &4422980909562052340
 Rigidbody2D:
   serializedVersion: 4
@@ -519,24 +435,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1168786141646643232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7596651277900523431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5676c55cc7304ac4599619a7794131ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aggroArea: {fileID: 7047111975318507309}
-  follow: {fileID: 9031217679662682972}
-  aggroRadius: 0
-  attackRange: 0
-  enemies: 1
-  obstacles: 0
-  civilians: 0
-  vehicles: 0
-  catchingUp: 0

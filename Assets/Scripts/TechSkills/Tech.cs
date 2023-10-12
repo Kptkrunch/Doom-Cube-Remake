@@ -1,4 +1,4 @@
-using System;
+using Controllers;
 using Controllers.Pools;
 using UnityEngine;
 
@@ -11,36 +11,39 @@ namespace TechSkills
         public string description;
         public Sprite techImage;
         public int costMeat, costMetal, costMineral, costPlastic, costEnergy;
-        public float cooldown; 
-        private float _cooldownTimer;
+        protected float cooldownTimer;
+        private TechController _techCont;
 
         private void Start()
         {
-            _cooldownTimer = 0;
+            cooldownTimer = 0;
+            _techCont = TechController.contTechCon;
         }
 
-        public virtual void ActivateTech(string button, int techId)
+        // ReSharper disable Unity.PerformanceAnalysis
+        public void ActivateTech(string button)
         {
-                var activator = TechActivator.techActivator;
-                switch (button)
-                {
-                    case "a":
-                        activator.techId = techId;
-                        activator.gameObject.SetActive(true);
-                        break;
-                    case "x":
-                        activator.techId = techId;
-                        activator.gameObject.SetActive(true);
-                        break;
-                    case "y":
-                        activator.techId = techId;
-                        activator.gameObject.SetActive(true);
-                        break;
-                    case "b":
-                        activator.techId = techId;
-                        activator.gameObject.SetActive(true);
-                        break;
-                }
+            var tech = TechController.contTechCon.purchasedTechList;
+            var techObj = TechPools.pools.techList[id].GetPooledGameObject();
+            switch (button)
+            {
+                case "a":
+                    techObj.SetActive(true);
+                    techObj.transform.position = PlayerController.contPlayer.transform.position;
+                    break;
+                case "b":
+                    techObj.SetActive(true);
+                    techObj.transform.position = PlayerController.contPlayer.transform.position;
+                    break;
+                case "x":
+                    techObj.SetActive(true);
+                    techObj.transform.position = PlayerController.contPlayer.transform.position;
+                    break;
+                case "y":
+                    techObj.SetActive(true);
+                    techObj.transform.position = PlayerController.contPlayer.transform.position;
+                    break;
+            }
         }
         
         public void UpdateTech()

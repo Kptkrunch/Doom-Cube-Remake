@@ -33,21 +33,19 @@ namespace UI
 
         public void SelectUpgrade()
         {
-            if (_assignedWeapon != null)
+            if (_assignedWeapon == null) return;
+            if (_assignedWeapon.gameObject.activeSelf)
             {
-                if (_assignedWeapon.gameObject.activeSelf)
-                {
-                    _assignedWeapon.UpdateWeapon();
-                }
-                else
-                {
-                    WeaponController.contWeps.AddWeapon(_assignedWeapon);
-                }
-                UpgradePanelController.contUpgrades.gameObject.SetActive(false);
-                UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(false);
-                TechPanelController.contTechPanel.gameObject.SetActive(false);
-                Time.timeScale = 1f;
+                _assignedWeapon.UpdateWeapon();
             }
+            else
+            {
+                WeaponController.contWeps.AddWeapon(_assignedWeapon);
+            }
+            UpgradePanelController.contUpgrades.gameObject.SetActive(false);
+            UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(false);
+            TechPanelController.contTechPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
         }
     }
 }

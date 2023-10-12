@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1076ec65eb878554e8a73e252f43a0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 7458329311313382505}
 --- !u!1001 &4484562884884878725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,6 +335,14 @@ PrefabInstance:
     - target: {fileID: 4206607447451609638, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206607447451609638, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791405907307182499, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7099137272689354293, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
       propertyPath: m_SortingLayer
@@ -479,5 +487,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2192c456bb84f804aa4b04b6c64a7acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7458329311313382505 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6466343129216784876, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+  m_PrefabInstance: {fileID: 4484562884884878725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

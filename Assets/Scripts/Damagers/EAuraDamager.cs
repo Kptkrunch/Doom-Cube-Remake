@@ -16,38 +16,38 @@ namespace Damagers
 
         private void Update()
         {
-            if (damageOverTime)
+            switch (damageOverTime)
             {
-                _damageTimer -= Time.deltaTime;
-                if (_damageTimer <= 0)
-                {
-                    _damageTimer = damageInterval;
+                case false:
+                    return;
+            }
+            _damageTimer -= Time.deltaTime;
+            if (!(_damageTimer <= 0)) return;
+            _damageTimer = damageInterval;
 
-                    for (var i = 0; i < _enemiesInRadius.Count; i++)
-                    {
-                        if (_enemiesInRadius[i])
-                        {
-                            _enemiesInRadius[i].TakeDamage(damage);
-                        }
-                        else
-                        {
-                            _enemiesInRadius.RemoveAt(i);
-                            i--;
-                        }
-                    }
+            for (var i = 0; i < _enemiesInRadius.Count; i++)
+            {
+                if (_enemiesInRadius[i])
+                {
+                    _enemiesInRadius[i].TakeDamage(damage);
+                }
+                else
+                {
+                    _enemiesInRadius.RemoveAt(i);
+                    i--;
+                }
+            }
                     
-                    for (var i = 0; i < _objectsInRadius.Count; i++)
-                    {
-                        if ( _objectsInRadius[i])
-                        {
-                            _objectsInRadius[i].TakeDamage(damage);
-                        }
-                        else
-                        {
-                            _objectsInRadius.RemoveAt(i);
-                            i--;
-                        }
-                    }
+            for (var i = 0; i < _objectsInRadius.Count; i++)
+            {
+                if ( _objectsInRadius[i])
+                {
+                    _objectsInRadius[i].TakeDamage(damage);
+                }
+                else
+                {
+                    _objectsInRadius.RemoveAt(i);
+                    i--;
                 }
             }
         }
@@ -83,16 +83,21 @@ namespace Damagers
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (damageOverTime)
+            switch (damageOverTime)
             {
-                if (collision.CompareTag("Enemy"))
+                case true:
                 {
-                    _enemiesInRadius.Remove(collision.GetComponent<EnemyController>());
-                }
+                    if (collision.CompareTag("Enemy"))
+                    {
+                        _enemiesInRadius.Remove(collision.GetComponent<EnemyController>());
+                    }
 
-                if (collision.CompareTag("WorldlyObject"))
-                {
-                    _objectsInRadius.Remove(collision.GetComponent<WordlyObject>());
+                    if (collision.CompareTag("WorldlyObject"))
+                    {
+                        _objectsInRadius.Remove(collision.GetComponent<WordlyObject>());
+                    }
+
+                    break;
                 }
             }
         }

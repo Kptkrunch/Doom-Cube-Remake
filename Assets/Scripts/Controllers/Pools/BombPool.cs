@@ -1,14 +1,17 @@
 using MoreMountains.Tools;
 using UnityEngine;
 
-public class BombPool : MonoBehaviour
+namespace Controllers.Pools
 {
-    public static BombPool poolBomb;
-    public MMSimpleObjectPooler paraBombPool, paraExpPool;
-    
-    
-    private void Awake()
+    public class BombPool : MonoBehaviour
     {
-        poolBomb = this;
+        public static BombPool poolBomb;
+        public MMSimpleObjectPooler paraBombPool, paraExpPool;
+    
+    
+        private void Awake()
+        {
+            poolBomb = this;
+        }
     }
 }

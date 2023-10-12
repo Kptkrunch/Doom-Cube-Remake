@@ -1,26 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace GenUtilsAndTools
 {
     public class FillBar : MonoBehaviour
     {
-        public static FillBar fbInstance;
         public Slider fillBar;
         public float startingValue;
-        
-        protected float currentValue, maxValue;
+
+        private float _currentValue;
+        protected float maxValue;
 
         private void Awake()
         {
-            fbInstance = this;
         }
         
         private void Start()
         {
-            currentValue = startingValue;
+            _currentValue = startingValue;
             fillBar.maxValue = maxValue;
-            fillBar.value = currentValue;
+            fillBar.value = _currentValue;
         }
     }
 }

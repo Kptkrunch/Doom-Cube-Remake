@@ -1,6 +1,5 @@
 using Controllers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace GenUtilsAndTools
 {
@@ -25,11 +24,9 @@ namespace GenUtilsAndTools
     
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("ItemAttractor"))
-            {
-                isAttracted = true;
-                moveSpeed += PlayerStatsController.contStats.moveSpeed;
-            }
+            if (!collision.CompareTag("ItemAttractor")) return;
+            isAttracted = true;
+            moveSpeed += PlayerStatsController.contStats.moveSpeed;
         }
     }
 }

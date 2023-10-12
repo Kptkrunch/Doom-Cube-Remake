@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Controllers;
 using UnityEngine;
@@ -19,7 +18,7 @@ namespace TechSkills
 
         private void Update()
         {
-            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, stats[critterLevel].searchRadius);
+            var hitColliders = Physics2D.OverlapCircleAll(transform.position, stats[critterLevel].searchRadius);
             if (hitColliders.Length > 0)
             {
                 Collider2D closestCollider = hitColliders[0];

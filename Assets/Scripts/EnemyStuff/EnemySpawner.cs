@@ -3,7 +3,7 @@ using Controllers;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace GenUtilsAndTools
+namespace EnemyStuff
 {
     public class EnemySpawner : MonoBehaviour
     {
@@ -92,7 +92,7 @@ namespace GenUtilsAndTools
             }
         }
 
-        public Vector3 SelectSpawnPoint()
+        private Vector3 SelectSpawnPoint()
         {
             var spawnPoint = Vector3.zero;
 
@@ -100,32 +100,18 @@ namespace GenUtilsAndTools
             if (spawnVerticalEdge)
             {
                 spawnPoint.y = Random.Range(minSpawnPoint.position.y, maxSpawnPoint.position.y);
-                if (Random.Range(0f, 1.0f) > .5f)
-                {
-                    spawnPoint.x = maxSpawnPoint.position.x;
-                }
-                else
-                {
-                    spawnPoint.x = minSpawnPoint.position.x;
-                }
+                spawnPoint.x = Random.Range(0f, 1.0f) > .5f ? maxSpawnPoint.position.x : minSpawnPoint.position.x;
             }
             else
             {
                 spawnPoint.x = Random.Range(minSpawnPoint.position.x, maxSpawnPoint.position.x);
-                if (Random.Range(0f, 1.0f) > .5f)
-                {
-                    spawnPoint.y = maxSpawnPoint.position.y;
-                }
-                else
-                {
-                    spawnPoint.y = minSpawnPoint.position.y;
-                }
+                spawnPoint.y = Random.Range(0f, 1.0f) > .5f ? maxSpawnPoint.position.y : minSpawnPoint.position.y;
             }
         
             return spawnPoint;
         }
 
-        public void SpawnNextWave()
+        private void SpawnNextWave()
         {
             _currentWave++;
             if (_currentWave >= waves.Count)

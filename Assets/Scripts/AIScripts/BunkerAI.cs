@@ -1,64 +1,70 @@
 using UnityEngine;
-using System.Collections;
 
-public class EnemyAI : MonoBehaviour
+namespace AIScripts
 {
-    public float moveSpeed = 2f;
-    public float attackDistance = 2f;
-    public float retreatDistance = 5f;
-
-    private Transform playerTransform;
-    private Transform enemyTransform;
-    private GameObject currentBunker;
-
-    void Start()
+    public class EnemyAI : MonoBehaviour
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        enemyTransform = transform;
-    }
+        public float moveSpeed = 2f;
+        public float attackDistance = 2f;
+        public float retreatDistance = 5f;
 
-    void Update()
-    {
-        if (currentBunker == null)
+        private Transform _playerTransform;
+        private Transform _enemyTransform;
+        private GameObject _currentBunker;
+
+        void Start()
         {
-            // Move towards the player
-            enemyTransform.position += (playerTransform.position - enemyTransform.position).normalized * moveSpeed * Time.deltaTime;
-        }
-        else
-        {
-            // Take cover in the bunker
-            enemyTransform.position += (currentBunker.transform.position - enemyTransform.position).normalized * moveSpeed * Time.deltaTime;
+            _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            _enemyTransform = transform;
         }
 
-        float distanceToPlayer = Vector3.Distance(enemyTransform.position, playerTransform.position);
+        void Update()
+        {
+            if (_currentBunker == null)
+            {
+                // Move towards the player
+                var position = _enemyTransform.position;
+                position += (_playerTransform.position - position).normalized * (moveSpeed * Time.deltaTime);
+                _enemyTransform.position = position;
+            }
+            else
+            {
+                // Take cover in the bunker
+                var position = _enemyTransform.position;
+                position += (_currentBunker.transform.position - position).normalized * (moveSpeed * Time.deltaTime);
+                _enemyTransform.position = position;
+            }
 
-        if (distanceToPlayer <= attackDistance)
-        {
-            // Attack the player
-            Debug.Log("Attacking player");
-        }
-        else if (distanceToPlayer > retreatDistance)
-        {
-            // Retreat from the player
-            Debug.Log("Retreating from player");
-        }
-    }
+            float distanceToPlayer = Vector3.Distance(_enemyTransform.position, _playerTransform.position);
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Bunker")
-        {
-            // Take cover in the bunker
-            currentBunker = other.gameObject;
+            if (distanceToPlayer <= attackDistance)
+            {
+                // Attack the player
+                Debug.Log("Attacking player");
+            }
+            else if (distanceToPlayer > retreatDistance)
+            {
+                // Retreat from the player
+                Debug.Log("Retreating from player");
+            }
         }
-    }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Bunker")
+        void OnTriggerEnter2D(Collider2D other)
         {
-            // Leave the bunker
-            currentBunker = null;
+            if (other.CompareTag($"Bunker"))
+            {
+                // Take cover in the bunker
+                _currentBunker = other.gameObject;
+            }
+        }
+
+        void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag($"Bunker"))
+            {
+                // Leave the bunker
+                _currentBunker = null;
+            }
         }
     }
 }

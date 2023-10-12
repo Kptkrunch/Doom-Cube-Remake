@@ -14,16 +14,6 @@ namespace Controllers
             contWeps = this;
         }
 
-        public void AddWeapon(int weaponIndex) 
-        {
-            if (weaponIndex < allWeapons.Count)
-            {
-                equippedWeapons.Add(allWeapons[weaponIndex]);
-                allWeapons[weaponIndex].gameObject.SetActive(true);
-                allWeapons.RemoveAt(weaponIndex);
-            }
-        }
-
         public void AddWeapon(Weapon newWeapon)
         {
             newWeapon.gameObject.SetActive(true);

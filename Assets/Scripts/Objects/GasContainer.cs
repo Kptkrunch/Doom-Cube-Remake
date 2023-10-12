@@ -26,7 +26,7 @@ namespace Objects
         
         private void IsMaybeHookedUpToGas()
         {
-            int randomNumber = Random.Range(0, 100);
+            var randomNumber = Random.Range(0, 100);
             if (randomNumber % 2 == 0)
             {
                 maybeHookedUpToGas = true;
@@ -42,9 +42,9 @@ namespace Objects
         {
             expParticle.SetActive(true);
             var position = transform.position;
-            Collider2D[] enemies = Physics2D.OverlapCircleAll(position, aoeRadius, enemyLayer);
-            Collider2D[] objects = Physics2D.OverlapCircleAll(position, aoeRadius, objectLayer);
-            int maxTargets = enemies.Length;
+            var enemies = Physics2D.OverlapCircleAll(position, aoeRadius, enemyLayer);
+            var objects = Physics2D.OverlapCircleAll(position, aoeRadius, objectLayer);
+            var maxTargets = enemies.Length;
             if (objects.Length > enemies.Length)
             {
                 maxTargets = objects.Length;

@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using Controllers;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 namespace TechSkills
 {
@@ -15,12 +13,12 @@ namespace TechSkills
         private GameObject[] _enemies;
         private GameObject _currentTarget;
         private readonly float _lastDamageTime = -1f;
-        private float _lifeTime, _cooldownTimer;
+        private float _lifeTime;
 
         void Start()
         {
             InitializeVariables();
-            _cooldownTimer = 0;
+            cooldownTimer = 0f;
         }
 
         private void FixedUpdate()
@@ -84,16 +82,17 @@ namespace TechSkills
         private void LookForAndAttackEnemies()
         {
             // Look for enemies
-            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(_critter.position, stats[critterLevel].searchRadius);
+            Collider2D[] results = new Collider2D[] { };
+            var size = Physics2D.OverlapCircleNonAlloc(_critter.position, stats[critterLevel].searchRadius, results);
             int i = 0;
-            while (i < hitColliders.Length)
+            while (i < results.Length)
             {
-                if (hitColliders[i].CompareTag("Enemy"))
+                if (results[i].CompareTag("Enemy"))
                 {
                     // Attack the enemy
-                    if (!_currentTarget || _currentTarget != hitColliders[i].gameObject)
+                    if (!_currentTarget || _currentTarget != results[i].gameObject)
                     {
-                        _currentTarget = hitColliders[i].gameObject;
+                        _currentTarget = results[i].gameObject;
                     }
                     if (Vector3.Distance(_critter.position, _currentTarget.transform.position) > stats[critterLevel].attackDistance)
                     {
@@ -101,7 +100,7 @@ namespace TechSkills
                     }
                     else
                     {
-                        hitColliders[i].GetComponent<EnemyController>().TakeDamage(stats[critterLevel].damage);
+                        results[i].GetComponent<EnemyController>().TakeDamage(stats[critterLevel].damage);
                     }
                     return;
                 }

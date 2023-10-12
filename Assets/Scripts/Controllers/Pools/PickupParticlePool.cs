@@ -1,16 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
 
-public class PickupParticlePool : MonoBehaviour
+namespace Controllers.Pools
 {
-    public static PickupParticlePool poolPickup;
-    public MMSimpleObjectPooler poolDark, poolRed;
-    
-    private void Awake()
+    public class PickupParticlePool : MonoBehaviour
     {
-        poolPickup = this;
+        public static PickupParticlePool poolPickup;
+        public MMSimpleObjectPooler poolDark, poolRed;
+    
+        private void Awake()
+        {
+            poolPickup = this;
+        }
     }
 }

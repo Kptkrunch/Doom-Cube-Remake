@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Controllers;
-using GenUtilsAndTools;
+using Controllers.Pools;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -69,22 +69,20 @@ namespace Objects
                 }
             }
 
-            if (isDestroyed)
+            if (!isDestroyed) return;
+            gameObject.SetActive(false);
+            if (isExplosive && _explode1)
             {
-                gameObject.SetActive(false);
-                if (isExplosive && _explode1)
-                {
-                    _explode1.SetActive(true);
-                }
+                _explode1.SetActive(true);
             }
         }
 
         private void GetStructuralIntegrity()
         {
             if (objects != null)
-                for (var i = 0; i < objects.Count; i++)
+                foreach (var t in objects)
                 {
-                    maxHealth += objects[i].maxDurability;
+                    maxHealth += t.maxDurability;
                 }
 
             currentHealth = maxHealth;

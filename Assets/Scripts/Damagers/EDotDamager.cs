@@ -19,12 +19,17 @@ namespace Damagers
         {
             _damageTimer -= Time.deltaTime;
 
-            if (_damageTimer <= 0)
+            switch (_damageTimer)
             {
-                _damageTimer = damageInterval;
-                if (collision.CompareTag("Enemy"))
+                case <= 0:
                 {
-                    collision.GetComponent<EnemyController>().TakeDamage(damage);
+                    _damageTimer = damageInterval;
+                    if (collision.CompareTag("Enemy"))
+                    {
+                        collision.GetComponent<EnemyController>().TakeDamage(damage);
+                    }
+
+                    break;
                 }
             }
         }

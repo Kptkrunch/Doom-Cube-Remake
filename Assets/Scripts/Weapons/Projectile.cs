@@ -27,28 +27,33 @@ namespace Weapons
             if (doesRotate)
             {
                 transform.rotation = Quaternion.Euler(0f, 0f,
-                    transform.rotation.eulerAngles.z + (rotationSpeed * 360f * Time.deltaTime * Mathf.Sign(rb2d.velocity.x)));
+                    transform.rotation.eulerAngles.z + rotationSpeed * 360f * Time.deltaTime * Mathf.Sign(rb2d.velocity.x));
             }
 
-            if (doesBounce)
+            switch (doesBounce)
             {
-                bounceTimer -= Time.deltaTime;
-                if (bounceTimer <= 0)
+                case true:
                 {
-                    var velocity = rb2d.velocity;
-                    velocity = new Vector2(velocity.x, velocity.y).normalized;
-                    rb2d.velocity = velocity;
-                    bounceInterval *= 0.8f;
-                    bounceTimer = bounceInterval;
-                    rb2d.AddForce(new Vector2(velocity.x * 0.8f, lobHeight * .75f), ForceMode2D.Impulse);
-                    bounces--;
-
-                    if (bounces <= 0)
+                    bounceTimer -= Time.deltaTime;
+                    if (bounceTimer <= 0)
                     {
-                        rb2d.velocity = Vector2.zero;
-                        rb2d.gravityScale = 0f;
-                        Destroy(gameObject, bounceTimer * 2);
+                        var velocity = rb2d.velocity;
+                        velocity = new Vector2(velocity.x, velocity.y).normalized;
+                        rb2d.velocity = velocity;
+                        bounceInterval *= 0.8f;
+                        bounceTimer = bounceInterval;
+                        rb2d.AddForce(new Vector2(velocity.x * 0.8f, lobHeight * .75f), ForceMode2D.Impulse);
+                        bounces--;
+
+                        if (bounces <= 0)
+                        {
+                            rb2d.velocity = Vector2.zero;
+                            rb2d.gravityScale = 0f;
+                            Destroy(gameObject, bounceTimer * 2);
+                        }
                     }
+
+                    break;
                 }
             }
         }

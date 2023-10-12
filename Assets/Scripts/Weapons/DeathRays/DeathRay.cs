@@ -1,8 +1,4 @@
-using System;
-using MoreMountains.Feedbacks;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace Weapons.DeathRays
 {
@@ -12,11 +8,9 @@ namespace Weapons.DeathRays
         public LineRenderer lineRenderer;
         public CircleCollider2D beamHitBox;
         private Vector3 _velocity, _beamStart, _beamEnd;
-        private Gamepad _gamepad;
 
         private void Update()
         {
-            _gamepad = Gamepad.current;
             ResolveDeathRay();
         }
     
