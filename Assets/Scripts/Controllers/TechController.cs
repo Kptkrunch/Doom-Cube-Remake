@@ -28,16 +28,17 @@ namespace Controllers
     
         private void CheckInput()
         {
-            if (_gamepad.aButton.wasPressedThisFrame)
+            var length = purchasedTechList.Count;
+            if (_gamepad.aButton.wasPressedThisFrame && length >= 1)
             {
                 purchasedTechList[0].ActivateTech("a");
-            } else if (_gamepad.bButton.wasPressedThisFrame)
+            } else if (_gamepad.bButton.wasPressedThisFrame && length >= 2)
             {
                 purchasedTechList[1].ActivateTech("b");
-            } else if (_gamepad.xButton.wasPressedThisFrame)
+            } else if (_gamepad.xButton.wasPressedThisFrame && length >= 3)
             {
                 purchasedTechList[2].ActivateTech("x");
-            } else if (_gamepad.yButton.wasPressedThisFrame)
+            } else if (_gamepad.yButton.wasPressedThisFrame && length >= 4)
             {
                 purchasedTechList[3].ActivateTech("y");
             }

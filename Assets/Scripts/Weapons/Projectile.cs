@@ -8,8 +8,8 @@ namespace Weapons
     {
         public EnemyDamager enemyDamager;
         [HideInInspector]
-        public float moveSpeed, rotationSpeed, lifeTimer, lobHeight, lobDistance, numberOfPenetrates;
-        
+        public float lobHeight, lobDistance;
+        public float moveSpeed, rotationSpeed, lifeTimer, numberOfPenetrates;
         [SerializeField] protected bool doesPenetrate, doesRotate, isLobbed, doesBounce, hasLifetime;
         [SerializeField] protected Rigidbody2D rb2d;
         protected int bounces = 3;
@@ -18,6 +18,15 @@ namespace Weapons
         
         private void Update()
         {
+            if (hasLifetime)
+            {
+                lifeTimer -= Time.deltaTime;
+                if (lifeTimer <= 0)
+                {
+                    Destroy(gameObject);
+                }
+            }
+            
             if (!isLobbed)
             {
                 var transform1 = transform;

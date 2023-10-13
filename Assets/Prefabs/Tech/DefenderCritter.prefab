@@ -143,10 +143,10 @@ MonoBehaviour:
   player: {fileID: 0}
   critterLevel: 0
   stats:
-  - health: 5
-    damage: 1
+  - health: 15
+    damage: 3
     speed: 1
-    followDistance: 2
+    followDistance: 5
     maxFollowDistance: 9
     searchRadius: 5
     attackDistance: 1
