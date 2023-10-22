@@ -7,9 +7,7 @@ namespace ScriptableObjs
 
         [Serializable] public class SoResources : ScriptableObject
         {
-                public int meat;
                 public int metal;
-                public int mineral;
                 public int plastic;
                 public int energy;
         }

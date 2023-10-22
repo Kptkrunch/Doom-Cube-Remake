@@ -7,10 +7,12 @@ namespace Controllers
 {
     public class TechController : MonoBehaviour
     {
+        public int maxTech = 3;
         public static TechController contTechCon;
         public List<int> IDList;
         public List<Tech> purchasedTechList, upgradeableTech, allAvailableTechList, fullyUpgradedTech;
         private Gamepad _gamepad;
+        
 
         private void Awake()
         {
@@ -26,24 +28,19 @@ namespace Controllers
     
         private void CheckInput()
         {
-            if (_gamepad.aButton.wasPressedThisFrame)
+            var length = purchasedTechList.Count;
+            if (_gamepad.aButton.wasPressedThisFrame && length >= 1)
             {
-                purchasedTechList[0].ActivateTech("a", IDList[0]);
-            }
-
-            if (_gamepad.bButton.wasPressedThisFrame)
+                purchasedTechList[0].ActivateTech("a");
+            } else if (_gamepad.bButton.wasPressedThisFrame && length >= 2)
             {
-                purchasedTechList[1].ActivateTech("x", IDList[1]);
-            }
-
-            if (_gamepad.xButton.wasPressedThisFrame)
+                purchasedTechList[1].ActivateTech("b");
+            } else if (_gamepad.xButton.wasPressedThisFrame && length >= 3)
             {
-                purchasedTechList[2].ActivateTech("y", IDList[2]);
-            }
-
-            if (_gamepad.yButton.wasPressedThisFrame)
+                purchasedTechList[2].ActivateTech("x");
+            } else if (_gamepad.yButton.wasPressedThisFrame && length >= 4)
             {
-                purchasedTechList[3].ActivateTech("b", IDList[3]);
+                purchasedTechList[3].ActivateTech("y");
             }
         }
     
@@ -78,14 +75,6 @@ namespace Controllers
                     IDList[i] = tech.id;
                     return;
                 }
-            }
-        }
-
-        public void RemoveTechFromList(int techIndex)
-        {
-            if (contTechCon.purchasedTechList[techIndex])
-            {
-                contTechCon.purchasedTechList.RemoveAt(techIndex);
             }
         }
     }

@@ -1,3 +1,4 @@
+using Controllers;
 using Controllers.Pools;
 
 namespace TechSkills
@@ -6,10 +7,10 @@ namespace TechSkills
     { 
         private void OnEnable()
         {
-            // var tech = TechPools.poolsA.tech1.GetPooledGameObject();
-            // tech.SetActive(true);
-            // tech.transform.position = TechController.contTechCon.transform.position;
-            // gameObject.SetActive(false);
+            var tech = TechPools.pools.techList[id].GetPooledGameObject();
+            tech.SetActive(true);
+            tech.transform.position = TechController.contTechCon.transform.position;
+            gameObject.SetActive(false);
         }
     }
 }

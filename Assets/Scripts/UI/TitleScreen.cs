@@ -10,36 +10,43 @@ namespace UI
         public GameObject optionsButton;
         public GameObject quitButton;
 
-        private int _currentSelection = 0;
+        private int _currentSelection;
 
-        void Start()
+        private void Start()
         {
             // Set the initial selection to the new game button
             _currentSelection = 0;
             newGameButton.GetComponent<Button>().Select();
         }
 
-        void Update()
+        private void Update()
         {
             // Check for input from the controller
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
+            var horizontal = Input.GetAxis("Horizontal");
+            var vertical = Input.GetAxis("Vertical");
 
-            // Move the selection based on input
-            if (horizontal > 0.5f)
+            switch (horizontal)
             {
-                _currentSelection++;
-                if (_currentSelection > 3)
+                // Move the selection based on input
+                case > 0.5f:
                 {
-                    _currentSelection = 0;
+                    _currentSelection++;
+                    if (_currentSelection > 3)
+                    {
+                        _currentSelection = 0;
+                    }
+
+                    break;
                 }
-            }
-            else if (horizontal < -0.5f)
-            {
-                _currentSelection--;
-                if (_currentSelection < 0)
+                case < -0.5f:
                 {
-                    _currentSelection = 3;
+                    _currentSelection--;
+                    if (_currentSelection < 0)
+                    {
+                        _currentSelection = 3;
+                    }
+
+                    break;
                 }
             }
 
@@ -61,8 +68,7 @@ namespace UI
             }
 
             // Check for button press
-            if (Input.GetButtonDown("AButton"))
-            {
+            if (Input.GetButtonDown($"AButton"))
                 switch (_currentSelection)
                 {
                     case 0:
@@ -79,7 +85,6 @@ namespace UI
                         Application.Quit();
                         break;
                 }
-            }
         }
     }
 }

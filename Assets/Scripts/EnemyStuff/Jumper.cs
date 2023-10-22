@@ -10,49 +10,50 @@ namespace EnemyStuff
         public float attackDistance = 2f;
         public float retreatDistance = 1f;
 
-        private Transform playerTransform;
-        private Transform enemyTransform;
-        private bool isJumping = false;
+        private Transform _playerTransform;
+        private Transform _enemyTransform;
+        private bool _isJumping;
 
-        void Start()
+        private void Start()
         {
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-            enemyTransform = transform;
+            _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            _enemyTransform = transform;
         }
 
-        void Update()
+        private void Update()
         {
-            float distanceToPlayer = Vector3.Distance(enemyTransform.position, playerTransform.position);
+            var distanceToPlayer = Vector3.Distance(_enemyTransform.position, _playerTransform.position);
 
             if (distanceToPlayer <= attackDistance)
             {
                 // Jump attack
-                if (!isJumping)
+                if (!_isJumping)
                 {
                     StartCoroutine(JumpAttack());
                 }
             }
             else
-            {
                 // Move towards the player
-                enemyTransform.position += (playerTransform.position - enemyTransform.position).normalized * moveSpeed * Time.deltaTime;
-            }
+                _enemyTransform.position += (_playerTransform.position - _enemyTransform.position).normalized * (moveSpeed * Time.deltaTime);
         }
 
         IEnumerator JumpAttack()
         {
-            isJumping = true;
+            _isJumping = true;
 
             // Jump towards the player
-            Vector3 jumpDirection = (playerTransform.position - enemyTransform.position).normalized;
-            enemyTransform.position += jumpDirection * jumpSpeed * Time.deltaTime;
+            var position = _enemyTransform.position;
+            var position1 = _playerTransform.position;
+            var jumpDirection = (position1 - position).normalized;
+            position += jumpDirection * (jumpSpeed * Time.deltaTime);
 
             // Retreat after the attack
             yield return new WaitForSeconds(0.5f);
-            Vector3 retreatDirection = (enemyTransform.position - playerTransform.position).normalized;
-            enemyTransform.position += retreatDirection * retreatDistance;
+            var retreatDirection = (position - position1).normalized;
+            position += retreatDirection * retreatDistance;
+            _enemyTransform.position = position;
 
-            isJumping = false;
+            _isJumping = false;
         }
     }
 }

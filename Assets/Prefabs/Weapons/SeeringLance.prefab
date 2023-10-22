@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4993079015285987139
 RectTransform:
   m_ObjectHideFlags: 0
@@ -164,11 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDamager: {fileID: 5401883805159277407}
+  lobHeight: 0
+  lobDistance: 0
   moveSpeed: 0
   rotationSpeed: 0
   lifeTimer: 0
-  lobHeight: 0
-  lobDistance: 0
   numberOfPenetrates: 0
   doesPenetrate: 1
   doesRotate: 0
@@ -339,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9612372, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9612372, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_SortingLayerID
@@ -347,7 +347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19988278, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 19988278, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_SortingLayerID

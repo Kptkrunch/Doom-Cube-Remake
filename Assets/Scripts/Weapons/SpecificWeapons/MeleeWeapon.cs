@@ -27,14 +27,7 @@ namespace Weapons.SpecificWeapons
                 {
                     if (Input.GetAxisRaw("Horizontal") != 0)
                     {
-                        if (Input.GetAxisRaw("Horizontal") > 0)
-                        {
-                            enemyDamager.transform.rotation = Quaternion.identity;
-                        }
-                        else
-                        {
-                            enemyDamager.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
-                        }
+                        enemyDamager.transform.rotation = Input.GetAxisRaw("Horizontal") > 0 ? Quaternion.identity : Quaternion.Euler(0f, 0f, 180f);
                         
                         _weaponCanBeDrawn = false;
                         _attackTimer = _attackDuration;
@@ -43,17 +36,13 @@ namespace Weapons.SpecificWeapons
                 
                 }
             }
-            
-            if (!_weaponCanBeDrawn)
-            {
-                _attackTimer -= Time.deltaTime;
-                if (_attackTimer <= 0)
-                {
-                    _weaponCanBeDrawn = true;
-                    _attackTimer = _attackInterval;
-                    theWeapon.gameObject.SetActive(false);
-                }
-            }
+
+            if (_weaponCanBeDrawn) return;
+            _attackTimer -= Time.deltaTime;
+            if (!(_attackTimer <= 0)) return;
+            _weaponCanBeDrawn = true;
+            _attackTimer = _attackInterval;
+            theWeapon.gameObject.SetActive(false);
         }
 
         private void SetStats()

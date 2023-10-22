@@ -32,7 +32,7 @@ namespace Controllers
     
         public GeneralText GetFromPool()
         {
-            GeneralText pooledText = null;
+            GeneralText pooledText;
 
             if (_tmpTexts.Count == 0)
             {

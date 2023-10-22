@@ -44,15 +44,20 @@ namespace Weapons.SpecificWeapons
                     weaponFrame.gameObject.SetActive(true);
                 }
             }
-            
-            if (!_weaponCanBeDrawn)
+
+            switch (_weaponCanBeDrawn)
             {
-                _attackTimer -= Time.deltaTime;
-                if (_attackTimer <= 0)
+                case false:
                 {
-                    _weaponCanBeDrawn = true;
-                    _attackTimer = _attackInterval;
-                    weaponFrame.gameObject.SetActive(false);
+                    _attackTimer -= Time.deltaTime;
+                    if (_attackTimer <= 0)
+                    {
+                        _weaponCanBeDrawn = true;
+                        _attackTimer = _attackInterval;
+                        weaponFrame.gameObject.SetActive(false);
+                    }
+
+                    break;
                 }
             }
         }
@@ -65,40 +70,41 @@ namespace Weapons.SpecificWeapons
             eDotDamager.damageInterval = stats[weaponLevel].rateOfFire;
             eDotDamager.damage = stats[weaponLevel].damage;
             _weaponCanBeDrawn = true;
-            if (weaponFrame)
+            if (!weaponFrame)
+            {
+            }
+            else
             {
                 weaponFrame.coolDownTimer = stats[weaponLevel].cdr;
                 weaponFrame.activeInterval = stats[weaponLevel].duration;
             }
-            if (weaponScaler)
-            {
-                weaponScaler.staySizeInterval = weaponFrame.activeInterval * .6f;
-                weaponScaler.maxSize = Vector3.one;
-                weaponScaler.growShrinkSpeed = stats[weaponLevel].projSpeed;
-            }
+
+            if (!weaponScaler) return;
+            weaponScaler.staySizeInterval = weaponFrame.activeInterval * .6f;
+            weaponScaler.maxSize = Vector3.one;
+            weaponScaler.growShrinkSpeed = stats[weaponLevel].projSpeed;
         }
         
         public override void UpdateWeapon()
         {
             WeaponLevelUp();
 
-            _attackInterval *= stats[weaponLevel].cdr;
-            _attackDuration *= stats[weaponLevel].duration;
+            _attackInterval = stats[weaponLevel].rateOfFire;
+            _attackDuration = stats[weaponLevel].duration;
             // increase projectile size and growth speed
             // match growth interval to weapon frame interval
             weaponFrame.activeInterval = stats[weaponLevel].duration;
             weaponFrame.coolDownTimer = stats[weaponLevel].cdr;
             // increase projectile size and growth speed
-            weaponScaler.staySizeInterval *= stats[weaponLevel].duration * .6f;
-            weaponScaler.maxSize.x *= stats[weaponLevel].size;
-            weaponScaler.growShrinkSpeed *= stats[weaponLevel].projSpeed;
+            weaponScaler.staySizeInterval = stats[weaponLevel].duration * .6f;
+            weaponScaler.maxSize.x = stats[weaponLevel].size;
+            weaponScaler.growShrinkSpeed = stats[weaponLevel].projSpeed;
             
             // increase radius
-            var newScale = new Vector3(1f, stats[weaponLevel].size, 1f);
-            transform.localScale = newScale;
+            transform.localScale = Vector3.one * stats[weaponLevel].size;
             // increase damage and damage interval
-            eDotDamager.damageInterval *= stats[weaponLevel].cdr;
-            eDotDamager.damage *= stats[weaponLevel].damage;
+            eDotDamager.damageInterval = 1f / stats[weaponLevel].cdr;
+            eDotDamager.damage = stats[weaponLevel].damage;
 
         }
     }

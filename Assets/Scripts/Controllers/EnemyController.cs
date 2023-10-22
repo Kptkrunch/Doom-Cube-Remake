@@ -27,14 +27,14 @@ namespace Controllers
                 _hitCounter -= Time.deltaTime;
             }
         
-            if (_knockBackTimer <= 0)
+            switch (_knockBackTimer)
             {
-                moveSpeed = _originalMoveSpeed;
-            }
-        
-            if (_knockBackTimer > 0f)
-            {
-                _knockBackTimer -= Time.deltaTime;
+                case <= 0:
+                    moveSpeed = _originalMoveSpeed;
+                    break;
+                case > 0f:
+                    _knockBackTimer -= Time.deltaTime;
+                    break;
             }
         }
 
@@ -70,9 +70,9 @@ namespace Controllers
         }
         
         // ReSharper disable Unity.PerformanceAnalysis
-        public void ShowDamage(float theDamage, float intensity = 1f)
+        private void ShowDamage(float theDamage, float intensity = 1f)
         {
-            MMF_FloatingText floatingText = DamageNumberController.contDmgText
+            var floatingText = DamageNumberController.contDmgText
                 .player.GetFeedbackOfType<MMF_FloatingText>();
             floatingText.Value = theDamage.ToString();
             if (rb2d) DamageNumberController.contDmgText.player.PlayFeedbacks(transform.position);

@@ -28,27 +28,23 @@ namespace Controllers
 
         public void SelectUpgrade()
         {
-            if (_assignedTech)
+            if (!_assignedTech) return;
+            if (!TechController.contTechCon.BrokeCheck(
+                    _assignedTech.costMeat,
+                    _assignedTech.costMetal,
+                    _assignedTech.costMineral,
+                    _assignedTech.costPlastic,
+                    _assignedTech.costEnergy)) return;
+            if (!_assignedTech.gameObject.activeSelf)
             {
-                if (TechController.contTechCon.BrokeCheck(
-                        _assignedTech.costMeat,
-                        _assignedTech.costMetal,
-                        _assignedTech.costMineral,
-                        _assignedTech.costPlastic,
-                        _assignedTech.costEnergy))
-                {
-                    if (!_assignedTech.gameObject.activeSelf)
-                    {
-                        _assignedTech.UpdateTech();
-                    }
-                    else
-                    {
-                        TechController.contTechCon.AddTechToList(_assignedTech);
-                    }
-
-                    gameObject.SetActive(false);
-                }
+                _assignedTech.UpdateTech();
             }
+            else
+            {
+                TechController.contTechCon.AddTechToList(_assignedTech);
+            }
+
+            gameObject.SetActive(false);
         }
     }
 }

@@ -1,20 +1,21 @@
 using UnityEngine;
 
-public class FlipX : MonoBehaviour
+namespace GenUtilsAndTools
 {
-    public Rigidbody2D rb2d;
-
-    private void FixedUpdate()
+    public class FlipX : MonoBehaviour
     {
-        var velocity = rb2d.velocity;
-        if (velocity.x > 0)
-        {
-            transform.localScale = new Vector2(-1f, 1f);
-        }
+        public Rigidbody2D rb2d;
 
-        if (velocity.x < 0)
+        private void FixedUpdate()
         {
-            transform.localScale = new Vector2(1f, 1f);
+            var velocity = rb2d.velocity;
+            var transform1 = transform;
+            transform1.localScale = velocity.x switch
+            {
+                > 0 => new Vector2(-1f, 1f),
+                < 0 => new Vector2(1f, 1f),
+                _ => transform1.localScale
+            };
         }
     }
 }

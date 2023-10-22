@@ -7,7 +7,6 @@ namespace Controllers
         public static PlayerController contPlayer;
         private float _moveSpeed;
         public Animator animator;
-        public SpriteRenderer spriteRenderer;
         public GameObject weapons;
         public GameObject deathRays;
         public Rigidbody2D rb2d;
@@ -40,27 +39,31 @@ namespace Controllers
 
             moveInput.Normalize();
             var velocity = new Vector2(moveInput.x * _moveSpeed, moveInput.y * _moveSpeed);
-            if (moveInput.x < 0)
+            switch (moveInput.x)
             {
-                // spriteRenderer.flipX = true;
-                var localScale = transform.localScale;
-                deathRays.transform.localScale = new Vector3(-1, localScale.y, localScale.z);
-                weapons.transform.localScale = new Vector3(-1, localScale.y, localScale.z);
-            }
-            else if (moveInput.x > 0)
-            {
-                // spriteRenderer.flipX = false;
-                var localScale = transform.localScale;
-                deathRays.transform.localScale = new Vector3(1, localScale.y, localScale.z);
-                weapons.transform.localScale = new Vector3(1, localScale.y, localScale.z);
-
+                case < 0:
+                {
+                    // spriteRenderer.flipX = true;
+                    var localScale = transform.localScale;
+                    deathRays.transform.localScale = new Vector3(-1, localScale.y, localScale.z);
+                    weapons.transform.localScale = new Vector3(-1, localScale.y, localScale.z);
+                    break;
+                }
+                case > 0:
+                {
+                    // spriteRenderer.flipX = false;
+                    var localScale = transform.localScale;
+                    deathRays.transform.localScale = new Vector3(1, localScale.y, localScale.z);
+                    weapons.transform.localScale = new Vector3(1, localScale.y, localScale.z);
+                    break;
+                }
             }
             
             rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime);
             animator.SetBool(IsMoving, moveInput != Vector3.zero);
         }
 
-        private void ShowGameOver()
+        public void ShowGameOver()
         {
             if (PlayerHealthController.contPHealth.currentHealth <= 0)
             {

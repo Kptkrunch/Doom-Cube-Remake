@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Damagers;
 using GenUtilsAndTools;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Weapons.SpecificWeapons
@@ -9,9 +9,10 @@ namespace Weapons.SpecificWeapons
     public class OrbitWeapon : Weapon
     {
         // public Transform projectileFrame;
-        public List<EnemyDamager> enemyDamagers;
-        public List<GrowShrinkObj> projectileScales;
-        public ProjFrameWithTimer projFrameWithTimer;
+        [CanBeNull] public List<EnemyDamager> enemyDamagers;
+        [CanBeNull] public List<GrowShrinkObj> projectileScales;
+        [CanBeNull] public ProjFrameWithTimer projFrameWithTimer;
+        [CanBeNull] public NaniteController naniteController;
         
         private float _rotationSpeed;
 
@@ -22,17 +23,33 @@ namespace Weapons.SpecificWeapons
 
         private void Update()
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, projFrameWithTimer.transform.rotation.eulerAngles.z + _rotationSpeed * stats[0].projSpeed * Time.deltaTime);
+            if (projFrameWithTimer)
+                transform.rotation = Quaternion.Euler(0f, 0f,
+                    projFrameWithTimer.transform.rotation.eulerAngles.z +
+                    _rotationSpeed * stats[weaponLevel].projSpeed * Time.deltaTime);
+            
+            if (naniteController)
+            {
+                transform.rotation = Quaternion.Euler(0f, 0f,
+                    naniteController.gameObject.transform.rotation.eulerAngles.z +
+                    _rotationSpeed * stats[weaponLevel].projSpeed * Time.deltaTime);
+            }
         }
 
         private void SetStats()
         {
             _rotationSpeed = stats[weaponLevel].projSpeed;
-            for (int i = 0; i < enemyDamagers.Count; i++)
+            if (enemyDamagers == null) return;
+            for (var i = 0; i < enemyDamagers.Count; i++)
             {
                 enemyDamagers[i].damage = stats[weaponLevel].damage;
-                projectileScales[i].staySizeInterval = stats[weaponLevel].duration * .6f;
-                projectileScales[i].maxSize = Vector3.one;
+                if (projectileScales != null)
+                {
+                    projectileScales[i].staySizeInterval = stats[weaponLevel].duration * .6f;
+                    projectileScales[i].maxSize = Vector3.one * stats[weaponLevel].size;
+                }
+
+                if (!projFrameWithTimer) continue;
                 projFrameWithTimer.activeInterval = stats[weaponLevel].duration;
                 projFrameWithTimer.coolDownTimer = stats[weaponLevel].cdr;
             }
@@ -42,24 +59,28 @@ namespace Weapons.SpecificWeapons
         {
             WeaponLevelUp();
 
-            // update projectile damage, add more for more projectiles
-            // increase projectile size and growth speed
-            // match growth interval to weapon frame interval
-            // increase projectile size and growth speed
-            for (int i = 0; i < enemyDamagers.Count; i++)
-            {
-                enemyDamagers[i].damage *= stats[weaponLevel].damage;
-                projectileScales[i].staySizeInterval *= stats[weaponLevel].duration * .6f;
-                projFrameWithTimer.activeInterval *= stats[weaponLevel].duration;
-                projFrameWithTimer.coolDownTimer *= stats[weaponLevel].cdr;
-            }
+            if (enemyDamagers != null)
+                for (var i = 0; i < enemyDamagers.Count; i++)
+                {
+                    enemyDamagers[i].damage = stats[weaponLevel].damage;
+                    if (projectileScales != null)
+                        projectileScales[i].staySizeInterval = stats[weaponLevel].duration * .6f;
+                    if (projFrameWithTimer == null) continue;
+                    projFrameWithTimer.activeInterval = stats[weaponLevel].duration;
+                    projFrameWithTimer.coolDownTimer = stats[weaponLevel].cdr;
+                }
+
             // increase radius
-            transform.localScale *= stats[weaponLevel].range;
+            transform.localScale *= stats[weaponLevel].size;
             // increase duration and reduce cooldown
-            projFrameWithTimer.coolDownTimer *= stats[weaponLevel].cdr;
-            projFrameWithTimer.activeInterval *= stats[weaponLevel].duration;
+            if (projFrameWithTimer != null)
+            {
+                projFrameWithTimer.coolDownTimer = stats[weaponLevel].cdr;
+                projFrameWithTimer.activeInterval = stats[weaponLevel].duration;
+            }
+
             // increase rotational speed on projectiles
-            _rotationSpeed *= stats[weaponLevel].projSpeed;
+            _rotationSpeed = stats[weaponLevel].projSpeed;
 
         }
     }

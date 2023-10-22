@@ -1,4 +1,3 @@
-using System;
 using Controllers;
 using GenUtilsAndTools;
 using JetBrains.Annotations;
@@ -16,7 +15,7 @@ namespace Objects
         [CanBeNull] public Sprite objSprite, stage1Sprite, stage2Sprite, stage3Sprite, destroyedSprite;
         public float currentDurability, maxDurability;
 
-        private bool _lootDropped = false;
+        private bool _lootDropped;
         private float _stage1dmg = .80f, _stage2dmg = .50f, _stage3dmg = .20f;
 
         private void Start()
@@ -57,6 +56,7 @@ namespace Objects
             
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         public void TakeDamage(float damage)
         {
             currentDurability -= damage;
@@ -67,13 +67,15 @@ namespace Objects
             
             ShowDamage(damage);
         }
-        
-        public void ShowDamage(float damage, float intensity = 1f)
+
+        private void ShowDamage(float damage, float intensity = 1f)
         {
-            MMF_FloatingText floatingText = ObjDmgNumController.contObjDmgNum
+            var floatingText = ObjDmgNumController.contObjDmgNum
                 .player.GetFeedbackOfType<MMF_FloatingText>();
             floatingText.Value = damage.ToString();
-            if (objBody) ObjDmgNumController.contObjDmgNum.player.PlayFeedbacks(transform.position);
+            if (objBody)
+                if (ObjDmgNumController.contObjDmgNum != null)
+                    ObjDmgNumController.contObjDmgNum.player.PlayFeedbacks(transform.position);
         }
     }
 }

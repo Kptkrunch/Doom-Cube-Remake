@@ -1,17 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Controllers;
 using MoreMountains.Tools;
 using UnityEngine;
 
-public class ResourcePool : MonoBehaviour
+namespace Controllers.Pools
 {
-    public static ResourcePool poolRes;
-    public MMSimpleObjectPooler poolMeat, poolMetal, poolMineral, poolPlastic, poolEnergy;
-
-    private void Awake()
+    public class ResourcePool : MonoBehaviour
     {
-        poolRes = this;
+        public static ResourcePool poolRes;
+        public MMSimpleObjectPooler poolMeat, poolMetal, poolMineral, poolPlastic, poolEnergy, poolExp;
+
+        private void Awake()
+        {
+            poolRes = this;
+        }
     }
 }

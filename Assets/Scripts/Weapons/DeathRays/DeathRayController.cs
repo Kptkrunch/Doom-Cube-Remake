@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
@@ -7,6 +8,6 @@ namespace Weapons.DeathRays
     {
         public static DeathRayController contDRay;
 
-        public MMF_Player moveDeathRayA;
+        public List<MMF_Player> dRayPlayers;
     }
 }

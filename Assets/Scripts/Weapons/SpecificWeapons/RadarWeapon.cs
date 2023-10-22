@@ -1,6 +1,3 @@
-using System;
-using Controllers;
-using GenUtilsAndTools;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -16,16 +13,6 @@ namespace Weapons.SpecificWeapons
         private void Start()
         {
             SetStats();
-        }
-
-        private void SetStats()
-        {
-            projectile.enemyDamager.damage = stats[weaponLevel].damage;
-            projectile.moveSpeed = stats[weaponLevel].projSpeed;
-            _fireInterval = stats[weaponLevel].rateOfFire;
-            _fireTimer = _fireInterval;
-            _weaponRange = stats[weaponLevel].range;
-            projectile.numberOfPenetrates = stats[weaponLevel].duration;
         }
 
         private void Update()
@@ -53,19 +40,29 @@ namespace Weapons.SpecificWeapons
             }
         }
         
+        private void SetStats()
+        {
+            projectile.enemyDamager.damage = stats[weaponLevel].damage;
+            projectile.moveSpeed = stats[weaponLevel].projSpeed;
+            _fireInterval = stats[weaponLevel].rateOfFire;
+            _fireTimer = _fireInterval;
+            _weaponRange = stats[weaponLevel].range;
+            projectile.numberOfPenetrates = stats[weaponLevel].duration;
+        }
+        
         public override void UpdateWeapon()
         {
             WeaponLevelUp();
 
             // update projectile damage and speed
             projectile.enemyDamager.damage = stats[weaponLevel].damage;
-            projectile.moveSpeed *= stats[weaponLevel].projSpeed;
+            projectile.moveSpeed = stats[weaponLevel].projSpeed;
             projectile.numberOfPenetrates = stats[weaponLevel].duration;
             // increase detection range
-            _weaponRange *= stats[weaponLevel].range;        
-        
+            _weaponRange = stats[weaponLevel].range;
+            projectile.transform.localScale = Vector3.one * stats[weaponLevel].size;
             // reduce time between volleys
-            _fireInterval *= stats[weaponLevel].cdr;
+            _fireInterval = 3f / stats[weaponLevel].rateOfFire;
         }
     }
 }
