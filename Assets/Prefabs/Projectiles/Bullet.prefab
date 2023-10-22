@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4232375179365886057
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53,18 +53,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDamager: {fileID: 143337889030325946}
+  lobHeight: 0
+  lobDistance: 0
   moveSpeed: 0
   rotationSpeed: 0
   lifeTimer: 0
-  lobHeight: 0
-  lobDistance: 0
   numberOfPenetrates: 0
-  targetEnemy: {fileID: 0}
   doesPenetrate: 1
   doesRotate: 0
   isLobbed: 0
   doesBounce: 0
   hasLifetime: 0
+  useTranslate: 0
   rb2d: {fileID: 3261258776330953320}
 --- !u!114 &143337889030325946
 MonoBehaviour:

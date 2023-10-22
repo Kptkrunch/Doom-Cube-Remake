@@ -42,10 +42,6 @@ namespace Controllers
             {
                 purchasedTechList[3].ActivateTech("y");
             }
-            else
-            {
-                Debug.Log("No Tech Assigned");
-            }
         }
     
         public bool BrokeCheck(int meat, int metal, int mineral, int plastic, int energy)

@@ -18,7 +18,9 @@ namespace Weapons.SpecificWeapons
         {
             auraDamager.damage = stats[weaponLevel].damage;
             auraDamager.damageInterval = stats[weaponLevel].rateOfFire;
-            auraParticles.localScale = Vector3.one * stats[weaponLevel].range;
+            auraParticles.localScale = Vector3.one * stats[weaponLevel].size;
+            auraCollider.gameObject.transform.localScale = Vector3.one * stats[weaponLevel].size;
+
         }
 
         public override void UpdateWeapon()
@@ -29,11 +31,11 @@ namespace Weapons.SpecificWeapons
             auraDamager.damage = stats[weaponLevel].damage;
         
             // increase radius of collider and aura
-            auraCollider.gameObject.transform.localScale = Vector3.one * stats[weaponLevel].range;
-            auraParticles.transform.localScale = Vector3.one * stats[weaponLevel].range;        
+            auraCollider.gameObject.transform.localScale = Vector3.one * stats[weaponLevel].size;
+            auraParticles.transform.localScale = Vector3.one * stats[weaponLevel].size;        
         
             // reduce time between damage tics
-            auraDamager.damageInterval *= stats[weaponLevel].cdr;
+            auraDamager.damageInterval = 1f / stats[weaponLevel].rateOfFire;
         }
     }
 }

@@ -6,6 +6,8 @@ namespace Damagers
 {
     public class EExplosionDamager : EnemyDamager
     {
+        public float explosionRadius;
+        public CircleCollider2D blastRadiusCollider;
         [CanBeNull] [SerializeField] private GameObject explosion;
         [CanBeNull] [SerializeField] private GameObject theNade;
 
@@ -13,11 +15,13 @@ namespace Damagers
         {
             if (collision.CompareTag("Enemy"))
             {
+                Detonate();
                 collision.gameObject.GetComponent<EnemyController>().TakeDamage(damage);
             }
         }
         public void Detonate()
         {
+            blastRadiusCollider.radius = explosionRadius;
             if (explosion && theNade)
             {
                 theNade.gameObject.SetActive(false);

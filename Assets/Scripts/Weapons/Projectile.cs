@@ -10,20 +10,26 @@ namespace Weapons
         [HideInInspector]
         public float lobHeight, lobDistance;
         public float moveSpeed, rotationSpeed, lifeTimer, numberOfPenetrates;
-        [SerializeField] protected bool doesPenetrate, doesRotate, isLobbed, doesBounce, hasLifetime;
+        [SerializeField] protected bool doesPenetrate, doesRotate, isLobbed, doesBounce, hasLifetime, useTranslate;
         [SerializeField] protected Rigidbody2D rb2d;
         protected int bounces = 3;
         protected float bounceInterval = 1f;
         protected float bounceTimer = 1f;
+        private Vector3 _direction;
         
         private void Update()
         {
+            if (useTranslate)
+            {
+                transform.position += _direction * (moveSpeed * Time.deltaTime);
+            }
+            
             if (hasLifetime)
             {
                 lifeTimer -= Time.deltaTime;
                 if (lifeTimer <= 0)
                 {
-                    Destroy(gameObject);
+                    gameObject.SetActive(false);
                 }
             }
             
@@ -76,19 +82,17 @@ namespace Weapons
                     numberOfPenetrates--;
                     if (numberOfPenetrates <= 0)
                     {
-                        Destroy(gameObject);
+                        gameObject.SetActive(false);
                     }
+                } else if (collision.CompareTag("Enemy") && !collision.CompareTag("Player"))
+                {
+                    gameObject.SetActive(false);
                 }
             }
         }
 
         private void OnEnable()
         {
-            if (hasLifetime && !doesBounce)
-            {
-                Destroy(gameObject, lifeTimer);
-            }
-
             if (isLobbed)
             {
                 rb2d.velocity = new Vector2(Random.Range(-lobDistance, lobDistance), lobHeight);
@@ -97,6 +101,16 @@ namespace Weapons
             if (doesBounce)
             {
                 bounceTimer = Random.Range(bounceTimer * 0.5f, bounceTimer * 1.75f);
+            }
+        }
+        
+        public void MoveProjectile(Vector3 direction, bool moveTransform) {
+            
+            if (moveTransform) rb2d.velocity = direction * moveSpeed;
+            if (!moveTransform)
+            {
+                useTranslate = true;
+                _direction = direction;
             }
         }
     }

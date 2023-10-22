@@ -39,7 +39,7 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
-            _attackInterval = stats[weaponLevel].rateOfFire;
+            _attackInterval = 1f / stats[weaponLevel].rateOfFire;
             _attackTimer = _attackInterval;
             enemyDamager.damage = stats[weaponLevel].damage;
             projectile.lobHeight = stats[weaponLevel].range + 1f;
@@ -50,8 +50,8 @@ namespace Weapons.SpecificWeapons
 
         public override void UpdateWeapon()
         {
-            _attackInterval = stats[weaponLevel].cdr;
-            projectile.transform.localScale *= stats[weaponLevel].size;
+            _attackInterval = 3f / stats[weaponLevel].rateOfFire;
+            projectile.transform.localScale = Vector3.one * stats[weaponLevel].size;
             stats[weaponLevel].numOfProj = stats[weaponLevel].numOfProj;
             enemyDamager.damage = stats[weaponLevel].damage;
             projectile.lobHeight = stats[weaponLevel].range + 1f;

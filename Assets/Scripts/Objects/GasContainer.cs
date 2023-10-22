@@ -61,8 +61,6 @@ namespace Objects
                     objects[i].GetComponent<WordlyObject>().TakeDamage(damage);
                 }
             }
-            
-            
         }
     }
 }
