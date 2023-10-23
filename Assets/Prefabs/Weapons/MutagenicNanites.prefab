@@ -1,0 +1,368 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1574817095814488171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538803318744657949}
+  - component: {fileID: 7714734752393094163}
+  m_Layer: 0
+  m_Name: Nanite1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1538803318744657949
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574817095814488171}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1505039519788045859}
+  m_Father: {fileID: 6307115068007664012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2, y: 0}
+  m_SizeDelta: {x: 5, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7714734752393094163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574817095814488171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90735ebe67e2f654b963e1857a3cefe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 724270545706422958}
+  phaseOutInterval: 10
+  phaseInInterval: 10
+--- !u!1 &1648350872401376539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 54338230880036718}
+  - component: {fileID: 6041282756868791652}
+  m_Layer: 0
+  m_Name: Nanite2
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &54338230880036718
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648350872401376539}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1299850835725083519}
+  m_Father: {fileID: 6307115068007664012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2, y: 0}
+  m_SizeDelta: {x: 5, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6041282756868791652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648350872401376539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90735ebe67e2f654b963e1857a3cefe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 929472377737930738}
+  phaseOutInterval: 10
+  phaseInInterval: 10
+--- !u!1 &2714843142245173538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6307115068007664012}
+  - component: {fileID: 3424754510276838431}
+  m_Layer: 0
+  m_Name: NaniteFrame
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6307115068007664012
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714843142245173538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 54338230880036718}
+  - {fileID: 1538803318744657949}
+  m_Father: {fileID: 7788478484353969662}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3424754510276838431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714843142245173538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001955ba74110bd489abf3d18ba8f695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nanitePhasers:
+  - {fileID: 7714734752393094163}
+  - {fileID: 6041282756868791652}
+--- !u!1 &4852625643641453805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7788478484353969662}
+  - component: {fileID: 7237635094007620338}
+  m_Layer: 0
+  m_Name: MutagenicNanites
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7788478484353969662
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852625643641453805}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6307115068007664012}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7237635094007620338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852625643641453805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006ae75f16765534b986ec3e8f425efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+  - projSpeed: 5
+    damage: 0
+    range: 3
+    rateOfFire: 1
+    numOfProj: 1
+    duration: 3
+    size: 1
+    cdr: 3
+    name: Mutagenic Nanites
+    description: Who doesn't want a pet slug or two?
+    upgradeText: More slugs the merrier
+  weaponLevel: 0
+  weaponIcon: {fileID: -1255574354, guid: 5eda7b2a067ab884186599f65074b1bc, type: 3}
+  enemyDamagers: []
+  projectileScales: []
+  projFrameWithTimer: {fileID: 0}
+  naniteController: {fileID: 3424754510276838431}
+--- !u!1001 &8925360336351349672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1538803318744657949}
+    m_Modifications:
+    - target: {fileID: 1742543258363886262, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: phaser
+      value: 
+      objectReference: {fileID: 7714734752393094163}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201089928152045830, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_Name
+      value: Nanite
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+--- !u!1 &724270545706422958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8201089928152045830, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+  m_PrefabInstance: {fileID: 8925360336351349672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1505039519788045859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+  m_PrefabInstance: {fileID: 8925360336351349672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9022462560620920564
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 54338230880036718}
+    m_Modifications:
+    - target: {fileID: 1742543258363886262, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: phaser
+      value: 
+      objectReference: {fileID: 6041282756868791652}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201089928152045830, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_Name
+      value: Nanite
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+--- !u!1 &929472377737930738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8201089928152045830, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+  m_PrefabInstance: {fileID: 9022462560620920564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1299850835725083519 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+  m_PrefabInstance: {fileID: 9022462560620920564}
+  m_PrefabAsset: {fileID: 0}
