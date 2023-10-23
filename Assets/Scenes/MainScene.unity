@@ -1620,7 +1620,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 0}
+  GameObjectToPool: {fileID: 4167155621880657864, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!114 &285325641
@@ -3590,6 +3590,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502662025}
   m_CullTransparentMesh: 1
+--- !u!1001 &520421872
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2671700239272925944, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9861205
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671700239272925944, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.0456495
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671700239272925944, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671700239272925944, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671700239272925944, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671700239272925944, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671700239272925944, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671700239272925944, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671700239272925944, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671700239272925944, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167155621880657864, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
+      propertyPath: m_Name
+      value: MutantSlug
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6e2d3a6326e3084f927261f9381f739, type: 3}
 --- !u!1 &524268072
 GameObject:
   m_ObjectHideFlags: 0
@@ -143811,3 +143868,4 @@ SceneRoots:
   - {fileID: 599910297}
   - {fileID: 742495943}
   - {fileID: 911624791}
+  - {fileID: 520421872}
