@@ -1,6 +1,7 @@
 using Damagers;
 using GenUtilsAndTools;
 using UnityEngine;
+using Weapons.WeaponModifiers;
 
 namespace Weapons.SpecificWeapons
 {

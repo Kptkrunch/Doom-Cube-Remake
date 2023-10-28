@@ -1,4 +1,5 @@
 using UnityEngine;
+using Weapons.Projectiles;
 using Random = UnityEngine.Random;
 
 namespace Weapons.SpecificWeapons

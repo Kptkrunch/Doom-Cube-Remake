@@ -3,6 +3,7 @@ using Damagers;
 using GenUtilsAndTools;
 using JetBrains.Annotations;
 using UnityEngine;
+using Weapons.WeaponModifiers;
 
 namespace Weapons.SpecificWeapons
 {

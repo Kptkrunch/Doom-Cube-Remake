@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c4e835ea5879744a1ebc04f6f5b586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: 5
+  dropChance: 20
   meat: 1
   metal: 0
   mineral: 0

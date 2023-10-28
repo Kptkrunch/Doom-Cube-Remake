@@ -3,8 +3,9 @@ using Controllers.Pools;
 using Damagers;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Weapons.Projectiles;
 
-namespace Weapons
+namespace Weapons.SpecificWeapons
 {
     public class RapidFireWeapon : Weapon
     {

@@ -1,51 +1,52 @@
 using System.Collections;
 using Controllers.Pools;
-using Damagers;
 using UnityEngine;
-using Weapons;
 
-public class MineSlayer : Weapon
+namespace Weapons.SpecificWeapons
 {
-    private float _fireInterval, _reloadInterval, _ammo;
-    private bool _canDropMines;
-
-    private void Start()
+    public class MineSlayer : Weapon
     {
-        _canDropMines = true;
-        SetStats();
-    }
+        private float _fireInterval, _reloadInterval, _ammo;
+        private bool _canDropMines;
 
-    private void FixedUpdate()
-    {
-        if (_canDropMines)
+        private void Start()
         {
-            StartCoroutine(LayMines());
+            _canDropMines = true;
+            SetStats();
         }
-    }
 
-    IEnumerator LayMines()
-    {
-        _canDropMines = false;
-        for (int i = 0; i < _ammo; i++)
+        private void FixedUpdate()
         {
-            yield return new WaitForSeconds(_fireInterval);
-            DropMine();
+            if (_canDropMines)
+            {
+                StartCoroutine(LayMines());
+            }
         }
-        yield return new WaitForSeconds(_reloadInterval);
-        _canDropMines = true;
-    }
+
+        IEnumerator LayMines()
+        {
+            _canDropMines = false;
+            for (int i = 0; i < _ammo; i++)
+            {
+                yield return new WaitForSeconds(_fireInterval);
+                DropMine();
+            }
+            yield return new WaitForSeconds(_reloadInterval);
+            _canDropMines = true;
+        }
     
-    private void DropMine()
-    {
-        var mine = ProjectilePoolManager.poolProj.projPools[4].GetPooledGameObject();
-        mine.transform.position = transform.position;
-        mine.SetActive(true);
-    }
+        private void DropMine()
+        {
+            var mine = ProjectilePoolManager.poolProj.projPools[4].GetPooledGameObject();
+            mine.transform.position = transform.position;
+            mine.SetActive(true);
+        }
 
-    private void SetStats()
-    {
-        _fireInterval = stats[weaponLevel].rateOfFire;
-        _reloadInterval = stats[weaponLevel].cdr;
-        _ammo = stats[weaponLevel].numOfProj;
-    }   
+        private void SetStats()
+        {
+            _fireInterval = stats[weaponLevel].rateOfFire;
+            _reloadInterval = stats[weaponLevel].cdr;
+            _ammo = stats[weaponLevel].numOfProj;
+        }   
+    }
 }
