@@ -21,7 +21,12 @@ namespace GenUtilsAndTools
                     PlayerController.contPlayer.transform.position, moveSpeed * Time.deltaTime);
             }
         }
-    
+
+        private void OnDisable()
+        {
+            isAttracted = false;
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.CompareTag("ItemAttractor")) return;

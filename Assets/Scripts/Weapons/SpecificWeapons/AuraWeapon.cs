@@ -1,5 +1,6 @@
 using Damagers;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 namespace Weapons.SpecificWeapons
 {
@@ -16,26 +17,20 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
-            auraDamager.damage = stats[weaponLevel].damage;
-            auraDamager.damageInterval = stats[weaponLevel].rateOfFire;
-            auraParticles.localScale = Vector3.one * stats[weaponLevel].size;
-            auraCollider.gameObject.transform.localScale = Vector3.one * stats[weaponLevel].size;
-
+            auraDamager.damage = stats.weaponLvls[stats.lvl].damage;
+            auraDamager.damageInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            auraCollider.radius = stats.weaponLvls[stats.lvl].range * 2;
+            auraParticles.localScale = Vector3.one * stats.weaponLvls[stats.lvl].range;
         }
 
         public override void UpdateWeapon()
         {
             WeaponLevelUp();
-
-            // update aura damage
-            auraDamager.damage = stats[weaponLevel].damage;
-        
-            // increase radius of collider and aura
-            auraCollider.gameObject.transform.localScale = Vector3.one * stats[weaponLevel].size;
-            auraParticles.transform.localScale = Vector3.one * stats[weaponLevel].size;        
-        
-            // reduce time between damage tics
-            auraDamager.damageInterval = 1f / stats[weaponLevel].rateOfFire;
+            auraDamager.damage = stats.weaponLvls[stats.lvl].damage;
+            auraCollider.radius = stats.weaponLvls[stats.lvl].range;
+            auraDamager.transform.localScale =
+                new Vector2(stats.weaponLvls[stats.lvl].range, stats.weaponLvls[stats.lvl].range);        
+            auraDamager.damageInterval = stats.weaponLvls[stats.lvl].rateOfFire;
         }
     }
 }

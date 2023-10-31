@@ -44,9 +44,9 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
-            _fireInterval = stats[weaponLevel].rateOfFire;
-            _reloadInterval = stats[weaponLevel].cdr;
-            _ammo = stats[weaponLevel].numOfProj;
+            _fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            _reloadInterval = stats.weaponLvls[stats.lvl].coolDown;
+            _ammo = stats.weaponLvls[stats.lvl].ammo;
         }   
     }
 }

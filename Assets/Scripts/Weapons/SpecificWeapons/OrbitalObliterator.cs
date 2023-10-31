@@ -46,12 +46,12 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
-            _beamCooldown = stats[weaponLevel].cdr;
-            _beamDuration = stats[weaponLevel].duration;
-            _moveSpeed = stats[weaponLevel].projSpeed;
-            _signalRange = stats[weaponLevel].range;
+            _beamCooldown = stats.weaponLvls[stats.lvl].coolDown;
+            _beamDuration = stats.weaponLvls[stats.lvl].duration;
+            _moveSpeed = stats.weaponLvls[stats.lvl].speed;
+            _signalRange = stats.weaponLvls[stats.lvl].range;
             gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-            beamImpact.GetComponent<CircleCollider2D>().radius = stats[weaponLevel].size;
+            beamImpact.GetComponent<CircleCollider2D>().radius = stats.weaponLvls[stats.lvl].range;
         }
 
         private void BeamTimeHandler()

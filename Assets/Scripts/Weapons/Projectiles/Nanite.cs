@@ -15,13 +15,13 @@ namespace Weapons.Projectiles
                 var mutantSlug = MutantsAndBotsPoolManager.poolMutRob.mutAndRobPools[0].GetPooledGameObject();
                 mutantSlug.SetActive(true);
                 mutantSlug.transform.position = mutantPosition;
+                phaser.ResetPhasingOnHit();
             }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             MutateEnemy(collision);
-            phaser.ResetPhasingOnHit();
         }
     }
 }

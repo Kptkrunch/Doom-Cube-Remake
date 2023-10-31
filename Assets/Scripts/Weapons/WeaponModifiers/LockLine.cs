@@ -11,7 +11,7 @@ namespace Weapons.WeaponModifiers
             if (collision.CompareTag("Enemy"))
             {
                 var position = collision.transform.position;
-                parent.enemy = new Vector2(position.x - 5, position.y + 10);
+                parent.enemy = new Vector2(position.x, position.y);
             }
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using Damagers;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -10,16 +11,20 @@ namespace Weapons.Projectiles
     {
         public BehaviorChecklist it;
         [CanBeNull] public EnemyDamager enemyDamager;
-        [HideInInspector]
+        public GameObject parent;
         public float lobHeight, lobDistance;
         public float moveSpeed, rotationSpeed, lifeTimer, numberOfPenetrates;
         [SerializeField] protected Rigidbody2D rb2d;
         protected int bounces = 3;
-        protected float hardBoundeInterval = 1f;
-        protected float bounceInterval = 1f;
-        protected float bounceTimer = 1f;
-        protected Vector3 direction;
-        
+        protected float hardBoundInterval = 1f, bounceInterval = 1f, bounceTimer = 1f;
+        private float _lifeTimeInterval;
+        public Vector3 direction;
+
+        private void Start()
+        {
+            _lifeTimeInterval = lifeTimer;
+        }
+
         private void Update()
         {
             if (it.useTranslate)
@@ -32,7 +37,7 @@ namespace Weapons.Projectiles
                 lifeTimer -= Time.deltaTime;
                 if (lifeTimer <= 0)
                 {
-                    gameObject.SetActive(false);
+                    if (parent) parent.gameObject.SetActive(false);
                 }
             }
             
@@ -67,7 +72,7 @@ namespace Weapons.Projectiles
                         {
                             rb2d.velocity = Vector2.zero;
                             rb2d.gravityScale = 0f;
-                            if (it.disableAfterBounces) gameObject.SetActive(false);
+                            if (it.disableAfterBounces) gameObject.SetActive(true);
                             it.delayDisable = true;
                         }
                     }
@@ -79,6 +84,8 @@ namespace Weapons.Projectiles
         
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
+            
+            
             if (it.doesPenetrate && numberOfPenetrates > 0)
             {
                 if (collision.CompareTag("Enemy"))
@@ -93,10 +100,27 @@ namespace Weapons.Projectiles
                     gameObject.SetActive(false);
                 }
             }
+            
+            if (collision.CompareTag("Enemy") || collision.CompareTag("WorldlyObject") && !it.doesPenetrate && it.disableOnContact && !collision.CompareTag("Player")) parent.gameObject.SetActive(false);
         }
 
         private void OnEnable()
         {
+            if (it.movesBackwards && it.moveProjectile)
+            {
+                direction = -direction;
+                MoveProjectile();
+            }
+            
+            if (it.randomDirection)
+            {
+                direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
+                var angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Deg2Rad - 90;
+                var rotation = Quaternion.Euler(0f, 0f, angle).normalized;
+                transform.rotation = rotation;
+                if (it.moveProjectile) MoveProjectile();
+            }
+            
             if (it.isLobbed)
             {
                 rb2d.gravityScale = 1;
@@ -107,16 +131,19 @@ namespace Weapons.Projectiles
             {
                 bounceTimer = Random.Range(bounceTimer * 0.5f, bounceTimer * 1.75f);
             }
-        }
-        
-        public void MoveProjectile(Vector3 dir, bool moveTransform) {
             
-            if (moveTransform) rb2d.velocity = dir * (moveSpeed * Time.deltaTime);
-            if (!moveTransform)
-            {
-                it.useTranslate = true;
-                direction = dir;
-            }
+            if (it.moveProjectile) MoveProjectile();
+        }
+
+        private void OnDisable()
+        {
+            lifeTimer = _lifeTimeInterval;
+            rb2d.velocity = new Vector2(0f, 0f);
+        }
+
+        public void MoveProjectile()
+        {
+            if (!it.useTranslate) rb2d.velocity = direction * (moveSpeed * Time.deltaTime);
         }
     }
 }

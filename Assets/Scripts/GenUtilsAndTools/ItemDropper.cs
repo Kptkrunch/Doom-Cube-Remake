@@ -1,5 +1,6 @@
 using System;
 using Controllers.Pools;
+using JetBrains.Annotations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,17 +10,38 @@ namespace GenUtilsAndTools
     {
         public float dropChance;
         public bool meat, metal, mineral, plastic, energy, exp;
-        public GameObject itemDrop;
+        [CanBeNull] public GameObject itemDrop;
 
         private float _dropCheckValue;
 
-        private void Start()
+        private void OnEnable()
         {
             _dropCheckValue = Random.Range(0, 100);
         }
 
-        public void DropItem(Vector3 dropLocation)
+        private void OnDisable()
         {
+            DropResource();
+            if (itemDrop && _dropCheckValue <= dropChance)
+            {
+                DropItem();
+            } 
+        }
+
+        public void DropItem()
+        {
+            Instantiate(itemDrop, transform.position, Quaternion.identity);
+        }
+
+        public void DropResource()
+        {
+            if (exp)
+            {
+                var res = ResourcePool.poolRes.poolExp.GetPooledGameObject();
+                res.transform.position = transform.position;
+                res.gameObject.SetActive(true);
+            }
+            
             if (_dropCheckValue <= dropChance)
             {
                 if (meat)
@@ -56,14 +78,6 @@ namespace GenUtilsAndTools
                     res.transform.position = transform.position;
                     res.gameObject.SetActive(true);
                 }
-            }
-
-
-            if (exp)
-            {
-                var res = ResourcePool.poolRes.poolExp.GetPooledGameObject();
-                res.transform.position = transform.position;
-                res.gameObject.SetActive(true);
             }
         }
     }

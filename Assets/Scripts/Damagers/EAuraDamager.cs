@@ -14,13 +14,14 @@ namespace Damagers
         private readonly List<EnemyController> _enemiesInRadius = new();
         private readonly List<WordlyObject> _objectsInRadius = new();
 
-        private void Update()
+        private void FixedUpdate()
         {
             switch (damageOverTime)
             {
                 case false:
                     return;
             }
+            
             _damageTimer -= Time.deltaTime;
             if (!(_damageTimer <= 0)) return;
             _damageTimer = damageInterval;

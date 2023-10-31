@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7038441453253820814}
   - component: {fileID: 2348413478231728229}
+  - component: {fileID: 1038764665581467226}
   m_Layer: 0
   m_Name: TurretShell
   m_TagString: Untagged
@@ -45,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd847137796bf0a468a020889c032b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  it: {fileID: 1038764665581467226}
   enemyDamager: {fileID: 0}
   lobHeight: 0
   lobDistance: 0
@@ -52,12 +54,27 @@ MonoBehaviour:
   rotationSpeed: 0
   lifeTimer: 2
   numberOfPenetrates: 0
+  rb2d: {fileID: 0}
+--- !u!114 &1038764665581467226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2863473949514863687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDisable: 0
   doesPenetrate: 0
   doesRotate: 0
   isLobbed: 0
   doesBounce: 0
   hasLifetime: 0
-  rb2d: {fileID: 0}
+  useTranslate: 0
+  disableAfterBounces: 0
 --- !u!1001 &704322914782187738
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Controllers;
 using UnityEngine;
 
@@ -6,17 +5,17 @@ namespace Weapons
 {
     public class Weapon : MonoBehaviour
     {
-        public List<WeaponStats> stats;
-        public int weaponLevel;
-        public Sprite weaponIcon;
+        
+        [SerializeField] public WeaponData stats;
+        public Sprite uiSprite;
         
         public void WeaponLevelUp()
         {
-            if (weaponLevel < stats.Count - 1)
+            if (stats.lvl < stats.weaponLvls.Count - 1)
             {
-                weaponLevel++;
+                stats.lvl++;
 
-                if (weaponLevel >= stats.Count - 1)
+                if (stats.lvl >= stats.weaponLvls.Count - 1)
                 {
                     WeaponController.contWeps.fullyUpgradedWeapons.Add(this);
                     WeaponController.contWeps.equippedWeapons.Remove(this);
@@ -27,20 +26,11 @@ namespace Weapons
         public virtual void UpdateWeapon()
         {
             WeaponLevelUp();
-            
-            stats[weaponLevel].projSpeed *= stats[weaponLevel].projSpeed;
-            stats[weaponLevel].range *= stats[weaponLevel].range;
-            stats[weaponLevel].rateOfFire *= stats[weaponLevel].rateOfFire;
-            stats[weaponLevel].duration *= stats[weaponLevel].duration;
-            stats[weaponLevel].size *= stats[weaponLevel].size;
-            stats[weaponLevel].cdr *= stats[weaponLevel].cdr;
+            stats.weaponLvls[stats.lvl].range = stats.weaponLvls[stats.lvl].range;
+            stats.weaponLvls[stats.lvl].rateOfFire = stats.weaponLvls[stats.lvl].rateOfFire;
+            stats.weaponLvls[stats.lvl].duration = stats.weaponLvls[stats.lvl].duration;
+            stats.weaponLvls[stats.lvl].coolDown = stats.weaponLvls[stats.lvl].coolDown;
+            stats.weaponLvls[stats.lvl].ammo = stats.weaponLvls[stats.lvl].ammo;
         }
-    }
-
-    [System.Serializable]
-    public class WeaponStats
-    {
-        public float projSpeed, damage, range, rateOfFire, numOfProj, duration, size, cdr;
-        public string name, description, upgradeText;
     }
 }

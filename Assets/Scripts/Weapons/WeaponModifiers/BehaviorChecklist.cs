@@ -14,5 +14,9 @@ namespace Weapons.WeaponModifiers
         public bool hasLifetime;
         public bool useTranslate;
         public bool disableAfterBounces;
+        public bool disableOnContact;
+        public bool randomDirection;
+        public bool movesBackwards;
+        public bool moveProjectile;
     }
 }

@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   it: {fileID: 6773755887716218981}
   enemyDamager: {fileID: 0}
+  parent: {fileID: 1142175529633162953}
   lobHeight: 6
   lobDistance: 5
   moveSpeed: 3

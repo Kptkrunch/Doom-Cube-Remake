@@ -21,7 +21,7 @@ namespace Weapons.SpecificWeapons
     
         private void SetStats()
         {
-            _attackInterval = stats[weaponLevel].rateOfFire;
+            _attackInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             _attackTimer = _attackInterval;
         }
 

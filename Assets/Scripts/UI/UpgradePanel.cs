@@ -17,15 +17,15 @@ namespace UI
         {
             if (theWeapon.gameObject.activeSelf)
             {
-                upgradeDescription.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText;
-                weaponImage.sprite = theWeapon.weaponIcon;
-                weaponNameAndLvl.text = theWeapon.stats[theWeapon.weaponLevel].name + ": Lvl-" + theWeapon.weaponLevel;
+                upgradeDescription.text = theWeapon.stats.weaponLvls[theWeapon.stats.lvl].upgradeText;
+                weaponImage.sprite = theWeapon.uiSprite;
+                weaponNameAndLvl.text = theWeapon.name + ": Lvl-" + theWeapon.stats.lvl;
             }
             else
             {
-                upgradeDescription.text = "Unlock the " + theWeapon.stats[theWeapon.weaponLevel].name;
-                weaponImage.sprite = theWeapon.weaponIcon;
-                weaponNameAndLvl.text = theWeapon.stats[theWeapon.weaponLevel].name;
+                upgradeDescription.text = "Unlock the " + theWeapon.name;
+                weaponImage.sprite = theWeapon.uiSprite;
+                weaponNameAndLvl.text = theWeapon.name;
             }
             _assignedWeapon = theWeapon;
 

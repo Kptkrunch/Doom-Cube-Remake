@@ -10,9 +10,9 @@ namespace Weapons.WeaponModifiers
 
         private void Start()
         {
-            _damageInterval = parent.stats[parent.weaponLevel].rateOfFire;
+            _damageInterval = parent.stats.weaponLvls[parent.stats.lvl].rateOfFire;
             _damageTimer = _damageInterval;
-            _damage = parent.stats[parent.weaponLevel].damage;
+            _damage = parent.stats.weaponLvls[parent.stats.lvl].damage;
         }
         private void FixedUpdate()
         {
@@ -21,7 +21,6 @@ namespace Weapons.WeaponModifiers
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-        
             if (collision.CompareTag("Enemy"))
             {
                 Debug.Log("Hit");

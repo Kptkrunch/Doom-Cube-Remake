@@ -21,20 +21,20 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
-            _attackInterval = stats[weaponLevel].rateOfFire;
+            _attackInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             _attackTimer = _attackInterval;
         }
 
         public override void UpdateWeapon()
         {
-            _attackInterval = stats[weaponLevel].rateOfFire;
-            stats[weaponLevel].numOfProj = stats[weaponLevel].numOfProj;
+            _attackInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            stats.weaponLvls[stats.lvl].ammo = stats.weaponLvls[stats.lvl].ammo;
         }
 
         private void LaunchProjectile()
         {
             _attackTimer = _attackInterval;
-            for (var i = 0; i < stats[weaponLevel].numOfProj; i++)
+            for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
             {
                 var bomb = ProjectilePoolManager.poolProj.projPools[projectileIndex].GetPooledGameObject();
                 bomb.transform.position = transform.position;

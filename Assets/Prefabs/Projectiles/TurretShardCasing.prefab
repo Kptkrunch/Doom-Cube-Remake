@@ -196,6 +196,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6818193395088445855}
     - target: {fileID: 2348413478231728229, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 9181381071157571637}
+    - target: {fileID: 2348413478231728229, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
       propertyPath: enemyDamager
       value: 
       objectReference: {fileID: 3719558142764550045}

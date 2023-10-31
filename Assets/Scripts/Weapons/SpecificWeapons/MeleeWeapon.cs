@@ -48,15 +48,15 @@ namespace Weapons.SpecificWeapons
         private void SetStats()
         {
 
-            _attackDuration = stats[weaponLevel].duration;
-            _attackInterval = stats[weaponLevel].cdr;
+            _attackDuration = stats.weaponLvls[stats.lvl].duration;
+            _attackInterval = stats.weaponLvls[stats.lvl].coolDown;
             _attackTimer = _attackInterval;
             _weaponCanBeDrawn = true;
-            enemyDamager.damage = stats[weaponLevel].damage;
+            enemyDamager.damage = stats.weaponLvls[stats.lvl].damage;
             if (weaponScaler)
             {
                 weaponScaler.staySizeInterval = _attackDuration * .6f;
-                weaponScaler.maxSize = Vector3.one * stats[weaponLevel].size;
+                weaponScaler.maxSize = Vector3.one * stats.weaponLvls[stats.lvl].range;
                 weaponScaler.growShrinkSpeed = .75f;
             }
         }

@@ -76,7 +76,7 @@ namespace Weapons.Projectiles
         private void SetStats()
         {
             
-            bounceInterval = hardBoundeInterval;
+            bounceInterval = hardBoundInterval;
             bounceTimer = bounceInterval;
             if (lobDistance < 1) lobDistance = 5;
             if (lobHeight < 1) lobHeight = 5;

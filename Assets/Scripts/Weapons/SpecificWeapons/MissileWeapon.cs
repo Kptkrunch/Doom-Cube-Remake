@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using Controllers.Pools;
 using UnityEngine;
-using Weapons.Projectiles;
+using UnityEngine.Splines;
 using Weapons.WeaponModifiers;
 
 namespace Weapons.SpecificWeapons
@@ -10,13 +9,10 @@ namespace Weapons.SpecificWeapons
     public class MissileWeapon : Weapon
     {
         public int missileIndex;
-        public GameObject missileLauncher;
-        public List<MeatSeeker> missileRack;
         public Vector2 enemy;
         public LockLine lockLine;
-        private float _pingTimer, _pingInterval, _launchInterval, _launchTimer, _rateOfFire;
-        private int _numOfMissiles;
-        private bool _pinged;
+        private float _pingTimer, _pingInterval, _launchInterval, _launchTimer, _rateOfFire, _numOfMissiles;
+        private bool _pinged, _canFire;
 
         private void Start()
         {
@@ -26,35 +22,33 @@ namespace Weapons.SpecificWeapons
         private void FixedUpdate()
         {
             RadarPing();
-            if (_launchTimer <= 0)
+            if (_canFire)
             {
-                _launchTimer = _launchInterval;
-                MissileBarrage();
+                StartCoroutine(MissileBarrage());
             }
         }
 
-        private void MissileBarrage()
+        IEnumerator MissileBarrage()
         {
-            missileLauncher.gameObject.transform.position = enemy;
-            for (var i = 0; i < missileRack.Count; i++)
+            _canFire = false;
+            for (var i = 0; i < _numOfMissiles; i++)
             {
-                if (i > _numOfMissiles) break;
-                StartCoroutine(MissleLaunchTimer());
-                missileRack[i].animator.gameObject.SetActive(true);
-                missileRack[i].animator.Play();
+                var missleTarget = new Vector2(enemy.x + i, enemy.y);
+                yield return new WaitForSeconds(_rateOfFire);
+                var missile = ProjectilePoolManager2.poolProj.projPools[2].GetPooledGameObject();
+                missile.transform.position = missleTarget;
+                missile.GetComponentInChildren<SplineAnimate>().Play();
+                missile.SetActive(true);
             }
-        }
-
-        IEnumerator MissleLaunchTimer()
-        {
-            yield return new WaitForSeconds(_rateOfFire);
+            yield return new WaitForSeconds(_launchInterval);
+            _canFire = true;
         }
 
         private void RadarScan()
         {
             lockLine.gameObject.transform.rotation = Quaternion.Euler(0f, 0f,
                 lockLine.gameObject.transform.rotation.eulerAngles.z +
-                stats[weaponLevel].projSpeed * stats[weaponLevel].projSpeed * Time.deltaTime);
+                stats.weaponLvls[stats.lvl].speed * stats.weaponLvls[stats.lvl].speed * Time.deltaTime);
         }
 
         private void RadarPing()
@@ -66,6 +60,7 @@ namespace Weapons.SpecificWeapons
                 _launchTimer -= Time.deltaTime;
                 if (!_pinged)
                 {
+                    _pingTimer = _pingInterval;
                     _pinged = true;
                     var ping = ProjectilePoolManager2.poolProj.projPools[missileIndex + 1].GetPooledGameObject();
                     ping.transform.position = transform.position;
@@ -76,18 +71,14 @@ namespace Weapons.SpecificWeapons
         }
         private void SetStats()
         {
-            for (var i = 0; i < missileRack.Count; i++)
-            {
-                missileRack[i].damage = (int)stats[weaponLevel].damage;
-                missileRack[i].blastRadius = stats[weaponLevel].size;
-            }
-            _numOfMissiles = (int)stats[weaponLevel].numOfProj;
+            _canFire = true;
+            _numOfMissiles = stats.weaponLvls[stats.lvl].ammo;
             lockLine = GetComponentInChildren<LockLine>();
-            _pingInterval = stats[weaponLevel].duration;
+            _pingInterval = stats.weaponLvls[stats.lvl].duration;
             _pingTimer = _pingInterval;
-            _launchInterval = stats[weaponLevel].cdr;
+            _launchInterval = stats.weaponLvls[stats.lvl].coolDown;
             _launchTimer = _launchInterval;
-            _rateOfFire = stats[weaponLevel].rateOfFire;
+            _rateOfFire = stats.weaponLvls[stats.lvl].rateOfFire;
         }
     }
 }

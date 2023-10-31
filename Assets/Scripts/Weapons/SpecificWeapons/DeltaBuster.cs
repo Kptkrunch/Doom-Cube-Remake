@@ -40,23 +40,26 @@ namespace Weapons.SpecificWeapons
                 proj.transform.position = firePoints[i].position;
                 proj.gameObject.SetActive(true);
                 proj.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-                proj.GetComponentInChildren<Projectile>().MoveProjectile(-_direction, true);
+                proj.GetComponentInChildren<Projectile>().MoveProjectile();
             }
         }
 
         private void SetStats()
         {
-            _moveSpeed = stats[weaponLevel].projSpeed;
-            _fireInterval = stats[weaponLevel].rateOfFire;
+            _moveSpeed = stats.weaponLvls[stats.lvl].speed;
+            _fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             _fireTimer = _fireInterval;
         }
 
         public override void UpdateWeapon()
         {
-            ProjectilePoolManager.poolProj.projPools[1].GetComponent<Projectile>().enemyDamager.damage = stats[weaponLevel].damage;
-            ProjectilePoolManager.poolProj.projPools[1].GetComponent<Projectile>().lifeTimer = stats[weaponLevel].projSpeed;
-            _moveSpeed = stats[weaponLevel].projSpeed;
-            _fireInterval = stats[weaponLevel].rateOfFire;
+            var enemyDamager = ProjectilePoolManager.poolProj.projPools[1].GetComponent<Projectile>().enemyDamager;
+            if (enemyDamager != null)
+                enemyDamager.damage =
+                    stats.weaponLvls[stats.lvl].damage;
+            ProjectilePoolManager.poolProj.projPools[1].GetComponent<Projectile>().lifeTimer = stats.weaponLvls[stats.lvl].speed;
+            _moveSpeed = stats.weaponLvls[stats.lvl].speed;
+            _fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             _fireTimer = _fireInterval;
         }
     }

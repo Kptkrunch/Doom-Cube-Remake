@@ -54,7 +54,7 @@ namespace Controllers
             health -= enemyDamage;
             if (health <= 0)
             {
-                ExperienceController.contExp.expDrop.DropItem(transform.position);
+                ExperienceController.contExp.expDrop.DropItem();
                 Destroy(gameObject);
             }
             ShowDamage(enemyDamage);
@@ -69,7 +69,6 @@ namespace Controllers
             }
         }
         
-        // ReSharper disable Unity.PerformanceAnalysis
         private void ShowDamage(float theDamage, float intensity = 1f)
         {
             var floatingText = DamageNumberController.contDmgText
