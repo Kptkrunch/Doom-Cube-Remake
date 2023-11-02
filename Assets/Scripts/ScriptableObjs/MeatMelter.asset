@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc6b48e165e3d247a86313a73fec543, type: 3}
+  m_Name: MeatMelter
+  m_EditorClassIdentifier: 
+  weaponName: Meat Melter
+  lvl: 0
+  wid: 1
+  pid: 0
+  weaponPrefab: {fileID: 0}
+  weaponLvls:
+  - damage: 1
+    ammo: 1
+    range: 1
+    coolDown: 4
+    rateOfFire: 0.5
+    duration: 3
+    speed: 1
+    wildCard: 0
+    upgradeText: 
+  - damage: 1.5
+    ammo: 1
+    range: 1
+    coolDown: 3.5
+    rateOfFire: 0.4
+    duration: 3.5
+    speed: 1
+    wildCard: 0
+    upgradeText: 
+  - damage: 2
+    ammo: 1
+    range: 1
+    coolDown: 3
+    rateOfFire: 0.3
+    duration: 4
+    speed: 1
+    wildCard: 0
+    upgradeText: 

@@ -40,6 +40,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 435576366729694507}
     m_Modifications:
+    - target: {fileID: 3701539839598528648, guid: 43443c04224519e4d869b7f9e3e280eb, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 7135458651043569613}
+    - target: {fileID: 4048762914037038865, guid: 43443c04224519e4d869b7f9e3e280eb, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4947877613969299130, guid: 43443c04224519e4d869b7f9e3e280eb, type: 3}
       propertyPath: m_Name
       value: PlasmaSlug

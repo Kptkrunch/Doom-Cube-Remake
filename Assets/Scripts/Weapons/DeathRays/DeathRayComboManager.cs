@@ -14,10 +14,12 @@ namespace Weapons.DeathRays
 
         private int _currentHitIndex;
         private float _lastHitTime;
+        private Gamepad _gamepad;
 
         private void Awake()
         {
             contCombo = this;
+            _gamepad = Gamepad.current;
         }
 
         private void Start()
@@ -36,13 +38,14 @@ namespace Weapons.DeathRays
                 chargeRestored = Time.time;
             }
 
+            if (_gamepad == null) return;
             if (Gamepad.current.rightTrigger.wasPressedThisFrame)
             {
                 ActivateCombo();
             }
         }
     
-        public bool ActivateCombo()
+        public void ActivateCombo()
         {
             if (Time.time - _lastHitTime > hitWindowTime && beamCharges > 0)
             {
@@ -53,25 +56,26 @@ namespace Weapons.DeathRays
                 if (_currentHitIndex == 1)
                 {
                     deathRays[0].FireBeam();
-                
-                    return true;
+
+                    return;
                 }
-                else if (_currentHitIndex == 2)
+
+                if (_currentHitIndex == 2 && deathRays[1].isActiveAndEnabled)
                 {
                     deathRays[1].FireBeam();
-                    return true;
+                    return;
                 }
-                else if (_currentHitIndex == 3)
+
+                if (_currentHitIndex == 3 && deathRays[2].isActiveAndEnabled)
                 {
                     deathRays[2].FireBeam();
-                    return true;
+                    return;
                 }
 
             }
 
             // Combo failed
             _currentHitIndex = 0;
-            return false;
         }
     
     }

@@ -1,6 +1,7 @@
 using Damagers;
 using GenUtilsAndTools;
 using UnityEngine;
+using Weapons.WeaponModifiers;
 
 namespace Weapons.SpecificWeapons
 {
@@ -64,47 +65,44 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
-            _attackDuration = stats[weaponLevel].duration;
-            _attackInterval = stats[weaponLevel].cdr;
+            _attackDuration = stats.weaponLvls[stats.lvl].duration;
+            _attackInterval = stats.weaponLvls[stats.lvl].coolDown;
             _attackTimer = _attackInterval;
-            eDotDamager.damageInterval = stats[weaponLevel].rateOfFire;
-            eDotDamager.damage = stats[weaponLevel].damage;
+            eDotDamager.damageInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            eDotDamager.damage = stats.weaponLvls[stats.lvl].damage;
             _weaponCanBeDrawn = true;
-            if (!weaponFrame)
+            if (weaponFrame)
             {
-            }
-            else
-            {
-                weaponFrame.coolDownTimer = stats[weaponLevel].cdr;
-                weaponFrame.activeInterval = stats[weaponLevel].duration;
+                weaponFrame.coolDownTimer = stats.weaponLvls[stats.lvl].coolDown;
+                weaponFrame.activeInterval = stats.weaponLvls[stats.lvl].duration;
             }
 
             if (!weaponScaler) return;
             weaponScaler.staySizeInterval = weaponFrame.activeInterval * .6f;
             weaponScaler.maxSize = Vector3.one;
-            weaponScaler.growShrinkSpeed = stats[weaponLevel].projSpeed;
+            weaponScaler.growShrinkSpeed = stats.weaponLvls[stats.lvl].speed;
         }
         
         public override void UpdateWeapon()
         {
             WeaponLevelUp();
 
-            _attackInterval = stats[weaponLevel].rateOfFire;
-            _attackDuration = stats[weaponLevel].duration;
+            _attackInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            _attackDuration = stats.weaponLvls[stats.lvl].duration;
             // increase projectile size and growth speed
             // match growth interval to weapon frame interval
-            weaponFrame.activeInterval = stats[weaponLevel].duration;
-            weaponFrame.coolDownTimer = stats[weaponLevel].cdr;
+            weaponFrame.activeInterval = stats.weaponLvls[stats.lvl].duration;
+            weaponFrame.coolDownTimer = stats.weaponLvls[stats.lvl].coolDown;
             // increase projectile size and growth speed
-            weaponScaler.staySizeInterval = stats[weaponLevel].duration * .6f;
-            weaponScaler.maxSize.x = stats[weaponLevel].size;
-            weaponScaler.growShrinkSpeed = stats[weaponLevel].projSpeed;
+            weaponScaler.staySizeInterval = stats.weaponLvls[stats.lvl].duration * .6f;
+            weaponScaler.maxSize.x = stats.weaponLvls[stats.lvl].range;
+            weaponScaler.growShrinkSpeed = stats.weaponLvls[stats.lvl].speed;
             
             // increase radius
-            transform.localScale = Vector3.one * stats[weaponLevel].size;
+            transform.localScale = Vector3.one * stats.weaponLvls[stats.lvl].range;
             // increase damage and damage interval
-            eDotDamager.damageInterval = 1f / stats[weaponLevel].cdr;
-            eDotDamager.damage = stats[weaponLevel].damage;
+            eDotDamager.damageInterval = 1f / stats.weaponLvls[stats.lvl].coolDown;
+            eDotDamager.damage = stats.weaponLvls[stats.lvl].damage;
 
         }
     }

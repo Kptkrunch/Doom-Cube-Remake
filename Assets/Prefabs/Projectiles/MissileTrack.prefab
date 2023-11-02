@@ -1,0 +1,307 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8766339402483427144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7183951910347047295}
+  - component: {fileID: 8679522347085447543}
+  m_Layer: 0
+  m_Name: MissileTrack
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7183951910347047295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8766339402483427144}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8233469790691526676}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8679522347085447543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8766339402483427144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Spline:
+    m_EditModeType: 1
+    m_Knots: []
+    m_MetaData: []
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Splines:
+  - m_EditModeType: 1
+    m_Knots:
+    - Position:
+        x: -5
+        y: 5
+        z: 0
+      TangentIn:
+        x: -0
+        y: -0
+        z: -1.0606601
+      TangentOut:
+        x: 0
+        y: 0
+        z: 1.0606601
+      Rotation:
+        value:
+          x: 0.27059805
+          y: 0.6532815
+          z: -0.27059805
+          w: 0.6532815
+    - Position:
+        x: 2.5
+        y: -2.5
+        z: 0
+      TangentIn:
+        x: -0
+        y: -0
+        z: -1.0606601
+      TangentOut:
+        x: 0
+        y: 0
+        z: 1.0606601
+      Rotation:
+        value:
+          x: 0.27059805
+          y: 0.6532815
+          z: -0.27059805
+          w: 0.6532815
+    m_MetaData:
+    - Mode: 0
+      Tension: 0.5
+      m_DistanceToInterpolation:
+      - Distance: 0
+        T: 0
+      - Distance: 0.13559957
+        T: 0.03448276
+      - Distance: 0.32051635
+        T: 0.06896552
+      - Distance: 0.551096
+        T: 0.10344828
+      - Distance: 0.82368696
+        T: 0.13793103
+      - Distance: 1.1346357
+        T: 0.1724138
+      - Distance: 1.4802887
+        T: 0.20689656
+      - Distance: 1.8569925
+        T: 0.2413793
+      - Distance: 2.2610948
+        T: 0.27586207
+      - Distance: 2.6889424
+        T: 0.31034482
+      - Distance: 3.136882
+        T: 0.3448276
+      - Distance: 3.6012607
+        T: 0.37931034
+      - Distance: 4.0784254
+        T: 0.41379312
+      - Distance: 4.5647225
+        T: 0.44827586
+      - Distance: 5.056499
+        T: 0.4827586
+      - Distance: 5.5501027
+        T: 0.51724136
+      - Distance: 6.041879
+        T: 0.55172414
+      - Distance: 6.5281773
+        T: 0.5862069
+      - Distance: 7.005341
+        T: 0.62068963
+      - Distance: 7.4697204
+        T: 0.6551724
+      - Distance: 7.91766
+        T: 0.6896552
+      - Distance: 8.345507
+        T: 0.7241379
+      - Distance: 8.74961
+        T: 0.7586207
+      - Distance: 9.126314
+        T: 0.79310346
+      - Distance: 9.471968
+        T: 0.82758623
+      - Distance: 9.782915
+        T: 0.86206895
+      - Distance: 10.055507
+        T: 0.8965517
+      - Distance: 10.286087
+        T: 0.9310345
+      - Distance: 10.471004
+        T: 0.9655172
+      - Distance: 10.606603
+        T: 1
+    - Mode: 0
+      Tension: 0.5
+      m_DistanceToInterpolation:
+      - Distance: -1
+        T: -1
+      - Distance: 0.13559957
+        T: 0.03448276
+      - Distance: 0.320516
+        T: 0.06896552
+      - Distance: 0.5510963
+        T: 0.10344828
+      - Distance: 0.8236868
+        T: 0.13793103
+      - Distance: 1.1346352
+        T: 0.1724138
+      - Distance: 1.4802883
+        T: 0.20689656
+      - Distance: 1.8569922
+        T: 0.2413793
+      - Distance: 2.2610948
+        T: 0.27586207
+      - Distance: 2.6889424
+        T: 0.31034482
+      - Distance: 3.1368823
+        T: 0.3448276
+      - Distance: 3.6012607
+        T: 0.37931034
+      - Distance: 4.078426
+        T: 0.41379312
+      - Distance: 4.564723
+        T: 0.44827586
+      - Distance: 5.0564995
+        T: 0.4827586
+      - Distance: 5.550103
+        T: 0.51724136
+      - Distance: 6.0418797
+        T: 0.55172414
+      - Distance: 6.5281773
+        T: 0.5862069
+      - Distance: 7.005341
+        T: 0.62068963
+      - Distance: 7.4697204
+        T: 0.6551724
+      - Distance: 7.91766
+        T: 0.6896552
+      - Distance: 8.345507
+        T: 0.7241379
+      - Distance: 8.74961
+        T: 0.7586207
+      - Distance: 9.126314
+        T: 0.79310346
+      - Distance: 9.471968
+        T: 0.82758623
+      - Distance: 9.782915
+        T: 0.86206895
+      - Distance: 10.055507
+        T: 0.8965517
+      - Distance: 10.286086
+        T: 0.9310345
+      - Distance: 10.471003
+        T: 0.9655172
+      - Distance: 10.606602
+        T: 1
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Knots:
+    m_KnotsLink: []
+--- !u!1001 &6668718861260375936
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7183951910347047295}
+    m_Modifications:
+    - target: {fileID: 1370100642267004574, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_Target
+      value: 
+      objectReference: {fileID: 8679522347085447543}
+    - target: {fileID: 1370100642267004574, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_MaxSpeed
+      value: 21.213205
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9238796
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021073426
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0000000842937
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.3826835
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078781750236708068, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: m_Name
+      value: MeatSeekerMissile
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+--- !u!4 &8233469790691526676 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+  m_PrefabInstance: {fileID: 6668718861260375936}
+  m_PrefabAsset: {fileID: 0}

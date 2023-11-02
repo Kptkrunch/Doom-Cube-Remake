@@ -49,66 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc94955de9e651e4d9f48bfb82d16c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 1
-    damage: 0.5
-    range: 1
-    rateOfFire: 1
-    numOfProj: 1
-    duration: 1
-    size: 1
-    cdr: 1
-    name: Terrorah
-    description: Feel the aura of heart stopping terror!
-    upgradeText: Doooooooooom!!!
-  - projSpeed: 0
-    damage: 1.5
-    range: 1.1
-    rateOfFire: 0.95
-    numOfProj: 1
-    duration: 1.1
-    size: 1.1
-    cdr: 0.95
-    name: Terrorah
-    description: Feel the aura of heart stopping terror!
-    upgradeText: Doooooooooom!!!
-  - projSpeed: 0
-    damage: 2
-    range: 2
-    rateOfFire: 0.95
-    numOfProj: 1
-    duration: 1.1
-    size: 1.1
-    cdr: 0.95
-    name: Terrorah
-    description: Feel the aura of heart stopping terror!
-    upgradeText: Doooooooooom!!!
-  - projSpeed: 0
-    damage: 3
-    range: 1.1
-    rateOfFire: 0.95
-    numOfProj: 1
-    duration: 1.1
-    size: 1.1
-    cdr: 0.95
-    name: Terrorah
-    description: Feel the aura of heart stopping terror!
-    upgradeText: Doooooooooom!!!
-  - projSpeed: 0
-    damage: 3
-    range: 2
-    rateOfFire: 0.95
-    numOfProj: 1
-    duration: 2
-    size: 1.1
-    cdr: 0.95
-    name: Terrorah
-    description: Feel the aura of heart stopping terror!
-    upgradeText: Doooooooooom!!!
-  weaponLevel: 0
-  weaponIcon: {fileID: 21300000, guid: c3b446b59512df741bc2d358d4d9b727, type: 3}
-  auraDamager: {fileID: 5848720773743805485}
-  auraCollider: {fileID: 7892065331381918549}
+  stats: {fileID: 11400000, guid: ff43e22d893f7aa4783f2eba0d2a3902, type: 2}
+  uiSprite: {fileID: 0}
+  auraDamager: {fileID: 0}
+  auraCollider: {fileID: 0}
   auraParticles: {fileID: 4438535198638987798}
 --- !u!1 &7933652277699109701
 GameObject:
@@ -257,77 +201,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 116054, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7892065331381918549}
-    - targetCorrespondingSourceObject: {fileID: 116054, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5848720773743805485}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
 --- !u!4 &1138656165531596387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 410724, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
   m_PrefabInstance: {fileID: 1138656165532004871}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1138656165531891537 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 116054, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
-  m_PrefabInstance: {fileID: 1138656165532004871}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &7892065331381918549
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138656165531891537}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
---- !u!114 &5848720773743805485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138656165531891537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cd333a3f955a3440902a33d041b0dce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  destructive: 1
-  hitsGround: 1
-  hitsAir: 1
-  fireDamage: 1
-  chemicalDamage: 1
-  explosiveDamage: 1
-  damageOverTime: 1
-  damageInterval: 0

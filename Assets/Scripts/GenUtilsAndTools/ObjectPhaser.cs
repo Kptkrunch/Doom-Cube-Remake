@@ -10,8 +10,9 @@ namespace GenUtilsAndTools
         private bool _phasedIn = true;
 
         private void FixedUpdate()
-        {
-           PhaseObject();
+        { 
+            obj.SetActive(_phasedIn);
+            PhaseObject();
         }
 
         private void PhaseObject()
@@ -33,7 +34,7 @@ namespace GenUtilsAndTools
                     _phaseOutTimer = phaseOutInterval;
                 }
             }
-            obj.SetActive(_phasedIn);
+            
         }
 
         public void ResetPhasingOnHit()

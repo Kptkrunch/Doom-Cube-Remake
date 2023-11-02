@@ -11,7 +11,7 @@ namespace GenUtilsAndTools
         {
             if (!collision.CompareTag("Player") || collision.CompareTag("ItemAttractor")) return;
             ExperienceController.contExp.GetExp(expValue);
-            Destroy(this.gameObject.gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Weapons.Projectiles;
 using Random = UnityEngine.Random;
 
 namespace Weapons.SpecificWeapons
@@ -24,7 +25,7 @@ namespace Weapons.SpecificWeapons
                 Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, _weaponRange, enemyLayer);
                 if (enemies.Length > 0)
                 {
-                    for (var i = 0; i < stats[weaponLevel].numOfProj; i++)
+                    for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
                     {
                         var targetPosition = enemies[Random.Range(0, enemies.Length)].transform.position;
 
@@ -42,12 +43,12 @@ namespace Weapons.SpecificWeapons
         
         private void SetStats()
         {
-            projectile.enemyDamager.damage = stats[weaponLevel].damage;
-            projectile.moveSpeed = stats[weaponLevel].projSpeed;
-            _fireInterval = stats[weaponLevel].rateOfFire;
+            projectile.enemyDamager.damage = stats.weaponLvls[stats.lvl].damage;
+            projectile.moveSpeed = stats.weaponLvls[stats.lvl].speed;
+            _fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             _fireTimer = _fireInterval;
-            _weaponRange = stats[weaponLevel].range;
-            projectile.numberOfPenetrates = stats[weaponLevel].duration;
+            _weaponRange = stats.weaponLvls[stats.lvl].range;
+            projectile.numberOfPenetrates = stats.weaponLvls[stats.lvl].duration;
         }
         
         public override void UpdateWeapon()
@@ -55,14 +56,14 @@ namespace Weapons.SpecificWeapons
             WeaponLevelUp();
 
             // update projectile damage and speed
-            projectile.enemyDamager.damage = stats[weaponLevel].damage;
-            projectile.moveSpeed = stats[weaponLevel].projSpeed;
-            projectile.numberOfPenetrates = stats[weaponLevel].duration;
+            projectile.enemyDamager.damage = stats.weaponLvls[stats.lvl].damage;
+            projectile.moveSpeed = stats.weaponLvls[stats.lvl].speed;
+            projectile.numberOfPenetrates = stats.weaponLvls[stats.lvl].duration;
             // increase detection range
-            _weaponRange = stats[weaponLevel].range;
-            projectile.transform.localScale = Vector3.one * stats[weaponLevel].size;
+            _weaponRange = stats.weaponLvls[stats.lvl].range;
+            projectile.transform.localScale = Vector3.one * stats.weaponLvls[stats.lvl].range;
             // reduce time between volleys
-            _fireInterval = 3f / stats[weaponLevel].rateOfFire;
+            _fireInterval = 3f / stats.weaponLvls[stats.lvl].rateOfFire;
         }
     }
 }

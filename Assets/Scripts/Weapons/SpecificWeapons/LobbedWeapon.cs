@@ -1,63 +1,45 @@
-using Damagers;
+using Controllers.Pools;
 using UnityEngine;
 
 namespace Weapons.SpecificWeapons
 {
     public class LobbedWeapon : Weapon
     {
-        public EnemyDamager enemyDamager;
-        public EExplosionDamager eExplosionDamager;
-        
-        [SerializeField] private BombOrNade projectile;
-        private float _attackInterval, _attackTimer, _direction, _lobHeight, _lobDistance;
-
+        public int projectileIndex;
+        private float _attackInterval, _attackTimer;
+        private Vector3 _direction;
         private void Start()
         {
             SetStats();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             _attackTimer -= Time.deltaTime;
-            if (_attackTimer <= 0)
-            {
-                _attackTimer = _attackInterval;
-                for (var i = 0; i < stats[weaponLevel].numOfProj; i++)
-                {
-                    Transform transform1;
-                    if (eExplosionDamager)
-                    {
-                        Instantiate(eExplosionDamager, (transform1 = eExplosionDamager.transform).position, transform1.rotation).gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        Instantiate(enemyDamager, (transform1 = enemyDamager.transform).position, transform1.rotation).gameObject.SetActive(true);
-                    }
-                }
-            }
+            if (_attackTimer <= 0) LaunchProjectile();
         }
 
         private void SetStats()
         {
-            _attackInterval = 1f / stats[weaponLevel].rateOfFire;
+            _attackInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             _attackTimer = _attackInterval;
-            enemyDamager.damage = stats[weaponLevel].damage;
-            projectile.lobHeight = stats[weaponLevel].range + 1f;
-            projectile.lobDistance = stats[weaponLevel].range;
-            projectile.lifeTimer = stats[weaponLevel].duration;
-            projectile.rotationSpeed = stats[weaponLevel].projSpeed;
         }
 
         public override void UpdateWeapon()
         {
-            _attackInterval = 3f / stats[weaponLevel].rateOfFire;
-            projectile.transform.localScale = Vector3.one * stats[weaponLevel].size;
-            stats[weaponLevel].numOfProj = stats[weaponLevel].numOfProj;
-            enemyDamager.damage = stats[weaponLevel].damage;
-            projectile.lobHeight = stats[weaponLevel].range + 1f;
-            projectile.lobDistance = stats[weaponLevel].range;
-            projectile.lifeTimer = stats[weaponLevel].duration;
-            projectile.rotationSpeed = stats[weaponLevel].projSpeed;
+            _attackInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            stats.weaponLvls[stats.lvl].ammo = stats.weaponLvls[stats.lvl].ammo;
+        }
+
+        private void LaunchProjectile()
+        {
+            _attackTimer = _attackInterval;
+            for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
+            {
+                var bomb = ProjectilePoolManager.poolProj.projPools[projectileIndex].GetPooledGameObject();
+                bomb.transform.position = transform.position;
+                bomb.gameObject.SetActive(true);
+            }
         }
     }
 }

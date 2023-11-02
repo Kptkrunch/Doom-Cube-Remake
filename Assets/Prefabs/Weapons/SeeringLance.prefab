@@ -170,11 +170,14 @@ MonoBehaviour:
   rotationSpeed: 0
   lifeTimer: 0
   numberOfPenetrates: 0
+  bounces: 3
   doesPenetrate: 1
   doesRotate: 0
   isLobbed: 0
   doesBounce: 0
   hasLifetime: 0
+  useTranslate: 0
+  disableAfterBounces: 0
   rb2d: {fileID: 6937636198986826122}
 --- !u!114 &5401883805159277407
 MonoBehaviour:

@@ -1,43 +1,54 @@
+using System;
 using System.Collections;
 using Controllers;
 using UnityEngine;
 
-public class AnyAttack : MonoBehaviour
+namespace MutantsAndRobots
 {
-    public float damage, hits, hitsTimer;
-    public ParticleSystem attackParticleSystem;
-    public GameObject parent;
-    private EnemyController _enemyController;
-
-    private void FixedUpdate()
+    public class AnyAttack : MonoBehaviour
     {
-        if (!attackParticleSystem.isPlaying)
-        {
-            parent.gameObject.SetActive(false);
-        }
-    }
+        public float damage, hits, hitsTimer;
+        public ParticleSystem attackParticleSystem;
+        public GameObject parent;
+        private EnemyController _enemyController;
+        private float _hitInterval;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
+        private void FixedUpdate()
         {
-            _enemyController = collision.GetComponent<EnemyController>();
-            StartCoroutine(SpecAttack(_enemyController));
+            hitsTimer -= Time.deltaTime;
+            if (!attackParticleSystem.isPlaying)
+            {
+                Debug.Log("done attacking");
+                parent.gameObject.SetActive(false);
+            }
+            else
+            {
+                // Debug.Log("No particle system to check yet");
+            }
         }
-    }
 
-    private IEnumerator SpecAttack(EnemyController enemy)
-    {            
-        attackParticleSystem.Play();
-        for (int i = 0; i < hits; i++)
+        private void OnTriggerStay2D(Collider2D collision)
         {
-            yield return new WaitForSeconds(hitsTimer);
-            enemy.TakeDamage(damage);
+            if (collision.CompareTag("Enemy") && hitsTimer <= 0)
+            {
+                hitsTimer = _hitInterval;
+                collision.GetComponent<EnemyController>().TakeDamage(damage);
+            }
         }
-    }
 
-    private void OnDisable()
-    {
-        StopCoroutine(SpecAttack(_enemyController));
+        public IEnumerator SpecAttack(EnemyController enemy)
+        {
+            attackParticleSystem.Play();
+            for (int i = 0; i < hits; i++)
+            {
+                yield return new WaitForSeconds(hitsTimer);
+                enemy.TakeDamage(damage);
+            }
+
+            if (!attackParticleSystem.isPlaying)
+            {
+                StopCoroutine(SpecAttack(_enemyController));
+            }
+        }
     }
 }

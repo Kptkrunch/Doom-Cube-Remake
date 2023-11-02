@@ -1,84 +1,107 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Mutant : MonoBehaviour
+namespace MutantsAndRobots
 {
-    public int health = 1;
-    public float moveSpeed;
-    public int moveInterval;
-    public int attackInterval;
-    public GameObject attack;
-    public Sprite mutantSprite;
-
-    private Vector2 _direction;
-
-    private void Start()
+    public class Mutant : MonoBehaviour
     {
-        StartCoroutine(Wander());
-        StartCoroutine(ProjectilePuke());
-    }
+        public int health = 1;
+        public float moveSpeed;
+        public int moveInterval;
+        public int attackInterval;
+        public GameObject attack, spriteAndAnimator;
+        public Animator animator;
+        public SpriteRenderer spriteRenderer;
+        public Sprite pukingSprite, crawlingSprite;
+        private Vector2 _direction;
 
-    private void FixedUpdate()
-    {
-        transform.Translate(_direction * (moveSpeed * Time.deltaTime));
-
-        if (health <= 0)
+        private void Start()
         {
-            Debug.Log("health missing");
+            StartCoroutine(Wander());
+            StartCoroutine(ProjectilePuke());
         }
-    }
 
-    IEnumerator Wander()
-    {
-        while (gameObject.activeSelf)
+        private void FixedUpdate()
         {
-            yield return new WaitForSeconds(moveInterval);
-            GetRandomDirection();
-            if (_direction.x < 0)
+            transform.Translate(_direction * (moveSpeed * Time.deltaTime));
+            if (!attack.gameObject.activeInHierarchy)
             {
+                spriteRenderer.sprite = crawlingSprite;
+            }
+            if (health <= 0)
+            {
+                Debug.Log("health missing");
+            }
+        }
+
+        IEnumerator Wander()
+        {
+            while (gameObject.activeSelf)
+            {
+                yield return new WaitForSeconds(moveInterval);
+                GetRandomDirection();
+                Debug.Log("After the x flip");
+            }
+        }
+
+        IEnumerator ProjectilePuke()
+        {
+            while (gameObject.activeSelf)
+            {
+                Attack();
+                yield return new WaitForSeconds(attackInterval);
+                Debug.Log("After the attack");
+            }
+        }
+
+        private void Attack()
+        {
+            attack.gameObject.SetActive(true);
+            spriteRenderer.sprite = pukingSprite;
+        }
+
+        private void GetRandomDirection()
+        {
+            var direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 1f);
+            MaybeFlipSelf(direction);
+            _direction = direction;
+            Debug.Log(transform.localScale.x);
+        }
+
+        private void MaybeFlipSelf(Vector3 direction)
+        {
+            if (direction.x < 0)
+            {
+                var scale = spriteAndAnimator.gameObject.transform.localScale;
+                scale = new Vector3(
+                    -scale.x,
+                    scale.y, 1f);
+                spriteAndAnimator.gameObject.transform.localScale = scale;
                 var transform1 = transform;
                 var localScale = transform1.localScale;
                 localScale = new Vector3(-1, localScale.y, localScale.z);
-                transform1.localScale = localScale;
+                transform1.localScale = localScale; 
             }
 
-            if (_direction.x > 0)
+            if (direction.x > 0)
             {
+                var scale = spriteAndAnimator.gameObject.transform.localScale;
+                scale = new Vector3(
+                    Math.Abs(scale.x),
+                    scale.y, 1f);
+                spriteAndAnimator.gameObject.transform.localScale = scale;
                 var transform1 = transform;
                 var localScale = transform1.localScale;
                 localScale = new Vector3(1, localScale.y, localScale.z);
                 transform1.localScale = localScale;
             }
-
         }
-    }
 
-    IEnumerator ProjectilePuke()
-    {
-        while (gameObject.activeSelf)
+        private void OnDisable()
         {
-            yield return new WaitForSeconds(attackInterval);
-            Attack();
+            StopCoroutine(Wander());
         }
-
-    }
-
-    private void Attack()
-    {
-        attack.gameObject.SetActive(true);
-    }
-
-    private void GetRandomDirection()
-    {
-        var direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 1f).normalized;
-        _direction = direction;
-        Debug.Log(_direction);
-        Debug.DrawRay(transform.position, _direction);
-    }
-
-    private void OnDisable()
-    {
-        StopCoroutine(Wander());
     }
 }
