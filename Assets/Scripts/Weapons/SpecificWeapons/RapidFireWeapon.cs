@@ -1,26 +1,21 @@
-using System;
 using System.Collections;
 using Controllers.Pools;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Weapons.Projectiles;
 using Random = UnityEngine.Random;
 
 namespace Weapons.SpecificWeapons
 {
-    public class RapidFireWeapon : Weapon
+    public class RapidFireWeapon : PrefabBasedWeapon
     {
-        private float _fireInterval, _reloadInterval;
-        [FormerlySerializedAs("_canFire")] public bool canFire;
-        private Vector2 _direction;
-        private Quaternion _rotation;
-        private float _numOfProjectiles;
-
-        void Start()
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            SetStats();
-            canFire = true;
+            if (collision.CompareTag("Enemy") && !collision.CompareTag("Player"))
+            {
+                direction = (collision.transform.position - transform.position).normalized;
+            }
         }
+
         private void FixedUpdate()
         {
             if (canFire)
@@ -29,47 +24,38 @@ namespace Weapons.SpecificWeapons
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.CompareTag("Enemy") && !collision.CompareTag("Player"))
-            {
-                _direction = (collision.transform.position - transform.position).normalized;
-            }
-        }
-
         IEnumerator RapidFire()
         {
             canFire = false;
-            var dir = _direction;
-            for (int i = 0; i < _numOfProjectiles; i++)
+            var dir = direction;
+            for (int i = 0; i < ammo; i++)
             {
-                yield return new WaitForSeconds(_fireInterval);
+                yield return new WaitForSeconds(fireInterval);
                 var proj = ProjectilePoolManager.poolProj.projPools[1].GetPooledGameObject();
                 var theProj = proj.GetComponent<Projectile>();
                 proj.transform.position = transform.position;
-                theProj.direction = dir;
+                theProj.pd.stats.direction = dir;
                 proj.SetActive(true);
-                proj.transform.rotation = _rotation;
+                proj.transform.rotation = rotation;
             }
-            yield return new WaitForSeconds(_reloadInterval);
+            yield return new WaitForSeconds(reloadInterval);
             canFire = true;
         }
         
         private void SetStats()
         {
-            _fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
-            _reloadInterval = stats.weaponLvls[stats.lvl].coolDown;
-            _numOfProjectiles = stats.weaponLvls[stats.lvl].ammo;
+            fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            reloadInterval = stats.weaponLvls[stats.lvl].coolDown;
+            ammo = stats.weaponLvls[stats.lvl].ammo;
             var attackRadius = GetComponent<CircleCollider2D>();
             attackRadius.radius = stats.weaponLvls[stats.lvl].range;
         }
 
         private void RandomDirection()
         {
-            _direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
-            var angle = Mathf.Atan2(_direction.x, _direction.y) * Mathf.Deg2Rad - 90;
-            var rotation = Quaternion.Euler(0f, 0f, angle).normalized;
-            _rotation = rotation;
+            direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
+            var angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Deg2Rad - 90;
+            rotation = Quaternion.Euler(0f, 0f, angle).normalized;
         }
     }
 }

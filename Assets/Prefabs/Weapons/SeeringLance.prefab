@@ -49,64 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de096ac8b6ad19409431b7f541d407b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 3
-    damage: 5
-    range: 4
-    rateOfFire: 3
-    numOfProj: 1
-    duration: 1
-    size: 1
-    cdr: 1
-    name: Seering Lance
-    description: White hot energy that only stops when burned out
-    upgradeText: Hotter than red hot magma!
-  - projSpeed: 1.1
-    damage: 5
-    range: 1.2
-    rateOfFire: 0.75
-    numOfProj: 2
-    duration: 2
-    size: 1.1
-    cdr: 0.9
-    name: Seering Lance
-    description: White hot energy that only stops when burned out
-    upgradeText: Hotter than red hot magma!
-  - projSpeed: 1.1
-    damage: 7
-    range: 1.2
-    rateOfFire: 0.75
-    numOfProj: 3
-    duration: 3
-    size: 1.1
-    cdr: 0.9
-    name: Seering Lance
-    description: White hot energy that only stops when burned out
-    upgradeText: Hotter than red hot magma!
-  - projSpeed: 1.1
-    damage: 7
-    range: 1.2
-    rateOfFire: 0.75
-    numOfProj: 3
-    duration: 3
-    size: 1.1
-    cdr: 0.9
-    name: Seering Lance
-    description: White hot energy that only stops when burned out
-    upgradeText: Hotter than red hot magma!
-  - projSpeed: 1.1
-    damage: 7
-    range: 1.2
-    rateOfFire: 0.75
-    numOfProj: 3
-    duration: 3
-    size: 1.1
-    cdr: 0.9
-    name: Seering Lance
-    description: White hot energy that only stops when burned out
-    upgradeText: Hotter than red hot magma!
-  weaponLevel: 0
-  weaponIcon: {fileID: 21300000, guid: 790ec4b0539273247bc25f2a57bedb61, type: 3}
+  stats: {fileID: 0}
+  uiSprite: {fileID: 0}
   projectile: {fileID: 8667892951072233727}
   enemyLayer:
     serializedVersion: 2
@@ -122,7 +66,6 @@ GameObject:
   - component: {fileID: 1433937685452992437}
   - component: {fileID: 8667892951072233727}
   - component: {fileID: 5401883805159277407}
-  - component: {fileID: 6937636198986826122}
   - component: {fileID: 6179685571674400789}
   m_Layer: 0
   m_Name: ProjectileCasing
@@ -163,22 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd847137796bf0a468a020889c032b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  it: {fileID: 0}
+  pd: {fileID: 0}
   enemyDamager: {fileID: 5401883805159277407}
-  lobHeight: 0
-  lobDistance: 0
-  moveSpeed: 0
-  rotationSpeed: 0
-  lifeTimer: 0
-  numberOfPenetrates: 0
-  bounces: 3
-  doesPenetrate: 1
-  doesRotate: 0
-  isLobbed: 0
-  doesBounce: 0
-  hasLifetime: 0
-  useTranslate: 0
-  disableAfterBounces: 0
-  rb2d: {fileID: 6937636198986826122}
 --- !u!114 &5401883805159277407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,33 +128,6 @@ MonoBehaviour:
   fireDamage: 1
   chemicalDamage: 0
   explosiveDamage: 0
---- !u!50 &6937636198986826122
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6929742712867670273}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!58 &6179685571674400789
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -10,12 +10,12 @@ namespace Damagers
         {
             if (destroyOnCollision && collision.CompareTag("Enemy"))
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
 
             if (destroyOnCollision && collision.CompareTag("WorldlyObject"))
             {
-                Destroy(gameObject,.5f);
+                gameObject.SetActive(false);
             }
         }
     }

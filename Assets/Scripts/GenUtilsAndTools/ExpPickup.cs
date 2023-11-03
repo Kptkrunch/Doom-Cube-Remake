@@ -9,7 +9,7 @@ namespace GenUtilsAndTools
     
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (!collision.CompareTag("Player") || collision.CompareTag("ItemAttractor")) return;
+            if (collision.CompareTag("Player") && !collision.CompareTag("ItemAttractor")) return;
             ExperienceController.contExp.GetExp(expValue);
             gameObject.SetActive(false);
         }

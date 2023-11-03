@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Weapons
+namespace Weapons.SOS
 {
     [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
     public class WeaponData : ScriptableObject
@@ -11,9 +11,9 @@ namespace Weapons
         public int lvl;
         public int wid;
         public int pid;
-        public GameObject weaponPrefab;
+        public Weapon weaponPrefab;
         
-        [System.Serializable]
+        [Serializable]
         public class WeaponLevel
         {
             public float damage;
