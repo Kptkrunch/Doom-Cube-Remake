@@ -28,6 +28,7 @@ namespace Weapons.SpecificWeapons
         {
             canFire = false;
             direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+            if (it.movesBackwards) direction = new Vector2(-direction.x, -direction.y);
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             projectileFrame.transform.rotation = Quaternion.Euler(0f, 0f, angle);
             

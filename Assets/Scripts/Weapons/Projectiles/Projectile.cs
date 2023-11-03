@@ -13,14 +13,17 @@ namespace Weapons.Projectiles
         public ProjectileData pd;
         public GameObject parent;
         [CanBeNull] public EnemyDamager enemyDamager;
-
+        private float _lifeTime;
         private void Awake()
         {
             pd = Instantiate(pd);
+            _lifeTime = pd.stats.lifeTime;
         }
 
         private void FixedUpdate()
         {
+            _lifeTime -= Time.deltaTime;
+
             MaybeMoveViaTranslation();
             MaybeHasLifetime();
         }
@@ -33,7 +36,6 @@ namespace Weapons.Projectiles
 
         public virtual void OnEnable()
         {
-            MaybeMoveBackwards();
             MaybeMoveRandomDirection();
         }
         
@@ -73,13 +75,10 @@ namespace Weapons.Projectiles
 
         protected void MaybeHasLifetime()
         {
-            if (it.hasLifetime)
+            if (_lifeTime <= 0)
             {
-                pd.stats.lifeTime -= Time.deltaTime;
-                if (pd.stats.lifeTime <= 0)
-                {
-                    if (parent) parent.gameObject.SetActive(false);
-                }
+                _lifeTime = pd.stats.lifeTime;
+                parent.gameObject.SetActive(false);
             }
         }
 

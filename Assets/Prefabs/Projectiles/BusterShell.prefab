@@ -69,7 +69,7 @@ MonoBehaviour:
   doesRotate: 0
   isLobbed: 0
   doesBounce: 0
-  hasLifetime: 0
+  hasLifetime: 1
   disableAfterBounces: 0
   disableOnContact: 0
   randomDirection: 0
@@ -185,6 +185,22 @@ PrefabInstance:
     - target: {fileID: 400740, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
+      propertyPath: InitialModule.startSize.maxCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
+      propertyPath: InitialModule.startSize.minCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
+      propertyPath: InitialModule.startRotation.maxCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
+      propertyPath: InitialModule.startRotation.minCurve.m_RotationOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
