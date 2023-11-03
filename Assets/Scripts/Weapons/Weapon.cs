@@ -1,5 +1,6 @@
 using Controllers;
 using UnityEngine;
+using Weapons.SOS;
 
 namespace Weapons
 {

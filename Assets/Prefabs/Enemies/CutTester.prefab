@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8584454182395483390}
   - component: {fileID: 7560899652395421741}
   - component: {fileID: 5547977353155966471}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 2533250486204988915}
   - component: {fileID: 2822750805263999890}
   - component: {fileID: 2026599251548647000}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CutTester
   m_TagString: Enemy
   m_Icon: {fileID: 0}

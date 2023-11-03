@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Controllers.Pools;
 using UnityEngine;
@@ -5,13 +6,10 @@ using Weapons.Projectiles;
 
 namespace Weapons.SpecificWeapons
 {
-    public class DeltaBuster : Weapon
+    public class DeltaBuster : PrefabBasedWeapon
     {
         public List<Transform> firePoints;
         public GameObject projectileFrame;
-
-        private Vector2 _direction;
-        private float _fireTimer, _fireInterval, _moveSpeed;
 
         private void Start()
         {
@@ -20,47 +18,51 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            _fireTimer -= Time.deltaTime;
-            if (_fireTimer <= 0)
+            if (canFire)
             {
-                _fireTimer = _fireInterval;
-                FireBuster();
+                StartCoroutine(AttackLoop());
             }
         }
 
-        private void FireBuster()
+        IEnumerator AttackLoop()
         {
-            _direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-            float angle = Mathf.Atan2(-_direction.y, -_direction.x) * Mathf.Rad2Deg;
+            canFire = false;
+            direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+            if (it.movesBackwards) direction = new Vector2(-direction.x, -direction.y);
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             projectileFrame.transform.rotation = Quaternion.Euler(0f, 0f, angle);
             
-            for (int i = 0; i < firePoints.Count; i++)
+            var coolDown = stats.weaponLvls[stats.lvl].coolDown;
+            for (int j = 0; j < firePoints.Count; j++)
             {
-                var proj = ProjectilePoolManager.poolProj.projPools[1].GetPooledGameObject();
-                proj.transform.position = firePoints[i].position;
-                proj.gameObject.SetActive(true);
+                var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+                var projClass = proj.GetComponentInChildren<Projectile>();
+                projClass.pd.stats.direction = direction;
+                proj.transform.position = firePoints[j].position;
                 proj.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-                proj.GetComponentInChildren<Projectile>().MoveProjectile();
+                proj.gameObject.SetActive(true);
             }
+            yield return new WaitForSeconds(coolDown);
+            canFire = true;
         }
 
         private void SetStats()
         {
-            _moveSpeed = stats.weaponLvls[stats.lvl].speed;
-            _fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
-            _fireTimer = _fireInterval;
+            canFire = true;
+            fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            ammo = stats.weaponLvls[stats.lvl].ammo;
+            
+            
         }
 
         public override void UpdateWeapon()
         {
-            var enemyDamager = ProjectilePoolManager.poolProj.projPools[1].GetComponent<Projectile>().enemyDamager;
+            var enemyDamager = ProjectilePoolManager.poolProj.projPools[stats.pid].GetComponent<Projectile>().enemyDamager;
             if (enemyDamager != null)
                 enemyDamager.damage =
                     stats.weaponLvls[stats.lvl].damage;
-            ProjectilePoolManager.poolProj.projPools[1].GetComponent<Projectile>().lifeTimer = stats.weaponLvls[stats.lvl].speed;
-            _moveSpeed = stats.weaponLvls[stats.lvl].speed;
-            _fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
-            _fireTimer = _fireInterval;
+            ProjectilePoolManager.poolProj.projPools[stats.pid].GetComponent<Projectile>().pd.stats.lifeTime = stats.weaponLvls[stats.lvl].speed;
+            fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
         }
     }
 }

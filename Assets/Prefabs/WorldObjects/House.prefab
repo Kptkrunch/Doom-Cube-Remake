@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4937967695715191198}
   - component: {fileID: 3825063328224206069}
   - component: {fileID: 5128535970480697481}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TestObstacle
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objRenderer: {fileID: 4937967695715191198}
+  resDropper: {fileID: 0}
   objParent: {fileID: 209535231914884328}
   objBody: {fileID: 3825063328224206069}
   objSprite: {fileID: 949204756, guid: d1eebcd747a6d9a43aff4b4360b19451, type: 3}
@@ -202,7 +203,7 @@ GameObject:
   - component: {fileID: 8620199321502903892}
   - component: {fileID: 6903904727407046831}
   - component: {fileID: 1670318474794281394}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TestRoof
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -237,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objRenderer: {fileID: 8620199321502903892}
+  resDropper: {fileID: 0}
   objParent: {fileID: 209535231914884328}
   objBody: {fileID: 6903904727407046831}
   objSprite: {fileID: 2000150547, guid: d1eebcd747a6d9a43aff4b4360b19451, type: 3}
@@ -381,7 +383,7 @@ GameObject:
   - component: {fileID: 5893975344760894862}
   - component: {fileID: 209535231914884328}
   - component: {fileID: 7470173964112225434}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: House
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -492,7 +494,7 @@ GameObject:
   - component: {fileID: 9123959167388395034}
   - component: {fileID: 7415585145641063033}
   - component: {fileID: 1084137119224020346}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TestDoor
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -527,6 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objRenderer: {fileID: 9123959167388395034}
+  resDropper: {fileID: 0}
   objParent: {fileID: 209535231914884328}
   objBody: {fileID: 7415585145641063033}
   objSprite: {fileID: 1603485665, guid: d1eebcd747a6d9a43aff4b4360b19451, type: 3}
@@ -673,7 +676,7 @@ GameObject:
   - component: {fileID: 7241365627287346968}
   - component: {fileID: 556938537014789579}
   - component: {fileID: 1975568167546534882}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TestWindow
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -708,6 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objRenderer: {fileID: 7241365627287346968}
+  resDropper: {fileID: 0}
   objParent: {fileID: 209535231914884328}
   objBody: {fileID: 556938537014789579}
   objSprite: {fileID: 2065482197, guid: d1eebcd747a6d9a43aff4b4360b19451, type: 3}
@@ -854,7 +858,7 @@ GameObject:
   - component: {fileID: 240435727785417027}
   - component: {fileID: 3831770068414996895}
   - component: {fileID: 7972918465468702668}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TestBayWindow
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -889,6 +893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objRenderer: {fileID: 240435727785417027}
+  resDropper: {fileID: 0}
   objParent: {fileID: 209535231914884328}
   objBody: {fileID: 3831770068414996895}
   objSprite: {fileID: -2132962701, guid: d1eebcd747a6d9a43aff4b4360b19451, type: 3}

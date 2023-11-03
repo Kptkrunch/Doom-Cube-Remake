@@ -1,4 +1,3 @@
-using System;
 using Controllers.Pools;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -38,7 +37,7 @@ namespace GenUtilsAndTools
             if (exp)
             {
                 var res = ResourcePool.poolRes.poolExp.GetPooledGameObject();
-                res.transform.position = transform.position;
+                res.transform.position = gameObject.transform.position;
                 res.gameObject.SetActive(true);
             }
             
@@ -47,35 +46,35 @@ namespace GenUtilsAndTools
                 if (meat)
                 {
                     var res = ResourcePool.poolRes.poolMeat.GetPooledGameObject();
-                    res.transform.position = transform.position;
+                    res.transform.position = gameObject.transform.position;
                     res.gameObject.SetActive(true);
                 }
 
                 if (metal)
                 {
                     var res = ResourcePool.poolRes.poolMetal.GetPooledGameObject();
-                    res.transform.position = transform.position;
+                    res.transform.position = gameObject.transform.position;
                     res.gameObject.SetActive(true);
                 }
 
                 if (mineral)
                 {
                     var res = ResourcePool.poolRes.poolMineral.GetPooledGameObject();
-                    res.transform.position = transform.position;
+                    res.transform.position = gameObject.transform.position;
                     res.gameObject.SetActive(true);
                 }
 
                 if (plastic)
                 {
                     var res = ResourcePool.poolRes.poolPlastic.GetPooledGameObject();
-                    res.transform.position = transform.position;
+                    res.transform.position = gameObject.transform.position;
                     res.gameObject.SetActive(true);
                 }
 
                 if (energy)
                 {
                     var res = ResourcePool.poolRes.poolEnergy.GetPooledGameObject();
-                    res.transform.position = transform.position;
+                    res.transform.position = gameObject.transform.position;
                     res.gameObject.SetActive(true);
                 }
             }

@@ -1960,7 +1960,7 @@ GameObject:
   - component: {fileID: 319873461}
   - component: {fileID: 319873463}
   - component: {fileID: 319873464}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TestDoor
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -2367,7 +2367,7 @@ GameObject:
   - component: {fileID: 395318632}
   - component: {fileID: 395318634}
   - component: {fileID: 395318635}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TestRoof
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -4477,8 +4477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7f570a230b7e248ba782793c175eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equippedWeapons:
-  - {fileID: 787975055}
+  equippedWeapons: []
   upgradableWeapons: []
   allWeapons:
   - {fileID: 1667688417}
@@ -4492,6 +4491,7 @@ MonoBehaviour:
   - {fileID: 1665918234}
   - {fileID: 1417703472}
   - {fileID: 6879837451803432046}
+  - {fileID: 787975055}
   fullyUpgradedWeapons: []
 --- !u!114 &679304371
 MonoBehaviour:
@@ -4797,7 +4797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 739562368}
   - component: {fileID: 739562369}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7543,7 +7543,7 @@ GameObject:
   - component: {fileID: 911624791}
   - component: {fileID: 911624790}
   - component: {fileID: 911624792}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: House
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -9416,7 +9416,7 @@ GameObject:
   - component: {fileID: 1258778257}
   - component: {fileID: 1258778258}
   - component: {fileID: 1258778260}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TestObstacle
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -139158,6 +139158,35 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 474372, guid: 0f339d5b694e80f488d84fe09bf67e3f, type: 3}
   m_PrefabInstance: {fileID: 2029837538}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1700601043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6929742712867670273, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
+  m_PrefabInstance: {fileID: 8939179204895238029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1700601049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700601043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDisable: 0
+  doesPenetrate: 1
+  doesRotate: 0
+  isLobbed: 0
+  doesBounce: 0
+  hasLifetime: 1
+  disableAfterBounces: 0
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 1
+  moveUseVelocity: 0
 --- !u!1 &1708851001
 GameObject:
   m_ObjectHideFlags: 0
@@ -141892,7 +141921,7 @@ GameObject:
   - component: {fileID: 2091985595}
   - component: {fileID: 2091985598}
   - component: {fileID: 2091985597}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TestBayWindow
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -142166,7 +142195,7 @@ GameObject:
   - component: {fileID: 2132384875}
   - component: {fileID: 2132384877}
   - component: {fileID: 2132384878}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TestWindow
   m_TagString: WorldlyObject
   m_Icon: {fileID: 0}
@@ -143059,6 +143088,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 8561988}
     m_Modifications:
     - target: {fileID: 521764499323827690, guid: 717cbaf270fbdcb44b4c0c7534276e9e, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 521764499323827690, guid: 717cbaf270fbdcb44b4c0c7534276e9e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -143913,6 +143946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 1358276511837714324, guid: 4684d2f3cce51924a95c0746953ed74d, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 4818198120958019098, guid: 4684d2f3cce51924a95c0746953ed74d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -144051,14 +144088,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeltaBuster
       objectReference: {fileID: 0}
-    - target: {fileID: 573632234479551164, guid: a25e6e5d0ff7eb443b1865aa0f57077d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1357120077848202881, guid: a25e6e5d0ff7eb443b1865aa0f57077d, type: 3}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 11400000, guid: 217b6c7698a360840a5fa1986054cae2, type: 2}
     - target: {fileID: 4669060258420965278, guid: a25e6e5d0ff7eb443b1865aa0f57077d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -144326,10 +144355,37 @@ PrefabInstance:
       propertyPath: stats
       value: 
       objectReference: {fileID: 11400000, guid: ec97002ebb4b6c842a97f102899f10e4, type: 2}
+    - target: {fileID: 8667892951072233727, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
+      propertyPath: it
+      value: 
+      objectReference: {fileID: 1700601049}
+    - target: {fileID: 8667892951072233727, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
+      propertyPath: rb2d
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667892951072233727, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1700601043}
+    - target: {fileID: 8667892951072233727, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
+      propertyPath: lifeTimer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667892951072233727, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667892951072233727, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
+      propertyPath: numberOfPenetrates
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6929742712867670273, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1700601049}
   m_SourcePrefab: {fileID: 100100000, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Weapons.WeaponModifiers
 {
@@ -12,11 +13,11 @@ namespace Weapons.WeaponModifiers
         public bool isLobbed;
         public bool doesBounce;
         public bool hasLifetime;
-        public bool useTranslate;
         public bool disableAfterBounces;
         public bool disableOnContact;
         public bool randomDirection;
         public bool movesBackwards;
-        public bool moveProjectile;
+        public bool moveUseTranslate;
+        public bool moveUseVelocity;
     }
 }

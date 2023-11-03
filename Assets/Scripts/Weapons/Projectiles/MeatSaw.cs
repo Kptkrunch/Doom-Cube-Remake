@@ -23,14 +23,14 @@ namespace Weapons.Projectiles
             SpoolUpAndFire();
         }
 
-        private void OnEnable()
+        public override void OnEnable()
         {
             LobSaw();
         }
     
         private void OnDisable()
         {
-            bounces = 2;
+            pd.stats.bounces = 2;
             _isGrowing = false;
             _triggered = false;
             transform.localScale = Vector3.one;
@@ -39,7 +39,7 @@ namespace Weapons.Projectiles
 
         public void SpoolUpAndFire()
         {
-            switch (bounces)
+            switch (pd.stats.bounces)
             {
                 case <= 0:
                 {
@@ -51,8 +51,8 @@ namespace Weapons.Projectiles
                     {
                         if (!_triggered) MaybeGoLeftOrRight();
                         _triggered = true;
-                        moveSpeed = 4f;
-                        rb2d.gameObject.transform.position += direction * (moveSpeed * Time.deltaTime);
+                        pd.stats.movSpeed = 4f;
+                        // rb2d.gameObject.transform.position += direction * (moveSpeed * Time.deltaTime);
                     }
 
                     break;
@@ -66,35 +66,35 @@ namespace Weapons.Projectiles
             var randomizeTransform = new Vector3(Random.Range(-1, 1), (transform1 = transform).position.y, transform1.position.z);
             if (randomizeTransform.x < 0)
             {
-                direction = new Vector3(-1, 0, 0).normalized;
+                pd.stats.direction = new Vector3(-1, 0, 0).normalized;
             } else if (randomizeTransform.x >= 0)
             {
-                direction = new Vector3(1, 0, 0).normalized;
+                pd.stats.direction = new Vector3(1, 0, 0).normalized;
             }
         }
 
         private void SetStats()
         {
             
-            bounceInterval = hardBoundInterval;
-            bounceTimer = bounceInterval;
-            if (lobDistance < 1) lobDistance = 5;
-            if (lobHeight < 1) lobHeight = 5;
+            // bounceInterval = hardBoundInterval;
+            // bounceTimer = bounceInterval;
+            if (pd.stats.lobDistance < 1) pd.stats.lobDistance = 5;
+            if (pd.stats.lobHeight < 1) pd.stats.lobHeight = 5;
             _growSawScale = new Vector3(2f, 2f, transform.localScale.z);
             _growSpeed = 1f * Time.deltaTime;
             _spinTimer = SpinInterval;
         }
         private void StopMoving()
         {
-            rb2d.velocity = Vector3.zero;
-            moveSpeed = 0f;
+            // rb2d.velocity = Vector3.zero;
+            // moveSpeed = 0f;
         }
 
         private void LobSaw()
         {
             if (it.isLobbed)
             {
-                rb2d.velocity = new Vector2(Random.Range(-lobHeight, lobHeight), Random.Range(0, lobHeight + 1f));
+                // rb2d.velocity = new Vector2(Random.Range(-lobHeight, lobHeight), Random.Range(0, lobHeight + 1f));
             }
         }
 

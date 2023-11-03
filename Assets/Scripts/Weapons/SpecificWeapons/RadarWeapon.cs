@@ -44,11 +44,11 @@ namespace Weapons.SpecificWeapons
         private void SetStats()
         {
             projectile.enemyDamager.damage = stats.weaponLvls[stats.lvl].damage;
-            projectile.moveSpeed = stats.weaponLvls[stats.lvl].speed;
+            projectile.pd.stats.movSpeed = stats.weaponLvls[stats.lvl].speed;
             _fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             _fireTimer = _fireInterval;
             _weaponRange = stats.weaponLvls[stats.lvl].range;
-            projectile.numberOfPenetrates = stats.weaponLvls[stats.lvl].duration;
+            projectile.pd.stats.pens = stats.weaponLvls[stats.lvl].duration;
         }
         
         public override void UpdateWeapon()
@@ -57,8 +57,8 @@ namespace Weapons.SpecificWeapons
 
             // update projectile damage and speed
             projectile.enemyDamager.damage = stats.weaponLvls[stats.lvl].damage;
-            projectile.moveSpeed = stats.weaponLvls[stats.lvl].speed;
-            projectile.numberOfPenetrates = stats.weaponLvls[stats.lvl].duration;
+            projectile.pd.stats.movSpeed = stats.weaponLvls[stats.lvl].speed;
+            projectile.pd.stats.pens = stats.weaponLvls[stats.lvl].duration;
             // increase detection range
             _weaponRange = stats.weaponLvls[stats.lvl].range;
             projectile.transform.localScale = Vector3.one * stats.weaponLvls[stats.lvl].range;

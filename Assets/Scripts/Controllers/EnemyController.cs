@@ -55,7 +55,7 @@ namespace Controllers
             if (health <= 0)
             {
                 ExperienceController.contExp.expDrop.DropItem();
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
             ShowDamage(enemyDamage);
         }
