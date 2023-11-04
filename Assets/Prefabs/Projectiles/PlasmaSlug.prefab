@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1292690508716302900}
   - component: {fileID: 3300815239278084903}
   - component: {fileID: 8029266134612999321}
-  - component: {fileID: 8566915538026443377}
   m_Layer: 0
   m_Name: PlasmaSlug
   m_TagString: Projectile
@@ -54,16 +53,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   it: {fileID: 3300815239278084903}
-  enemyDamager: {fileID: 1292690508716302900}
+  pd: {fileID: 11400000, guid: 8d80a678881ef304d8ded16ebcbe0b24, type: 2}
   parent: {fileID: 4947877613969299130}
-  lobHeight: 0
-  lobDistance: 0
-  moveSpeed: 3
-  rotationSpeed: 1
-  lifeTimer: 3
-  numberOfPenetrates: 0
-  rb2d: {fileID: 8566915538026443377}
-  direction: {x: 0, y: 0, z: 0}
+  enemyDamager: {fileID: 1292690508716302900}
 --- !u!114 &1292690508716302900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,12 +93,12 @@ MonoBehaviour:
   isLobbed: 0
   doesBounce: 0
   hasLifetime: 1
-  useTranslate: 1
   disableAfterBounces: 0
   disableOnContact: 1
   randomDirection: 0
   movesBackwards: 0
-  moveProjectile: 0
+  moveUseTranslate: 1
+  moveUseVelocity: 0
 --- !u!58 &8029266134612999321
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,33 +134,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!50 &8566915538026443377
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4947877613969299130}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &4048762914052287473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,6 +149,14 @@ PrefabInstance:
     - target: {fileID: 117484, guid: 172bb145d978fbb4da57d94b1e6b6776, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117484, guid: 172bb145d978fbb4da57d94b1e6b6776, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 182770, guid: 172bb145d978fbb4da57d94b1e6b6776, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 498390, guid: 172bb145d978fbb4da57d94b1e6b6776, type: 3}
       propertyPath: m_LocalPosition.x

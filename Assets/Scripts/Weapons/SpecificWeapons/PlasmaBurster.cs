@@ -6,35 +6,34 @@ using Random = UnityEngine.Random;
 
 namespace Weapons.SpecificWeapons
 {
-    public class RapidFireWeapon : PrefabBasedWeapon
+    public class PlasmaBurster : PrefabBasedWeapon
     {
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void Awake()
         {
-            if (collision.CompareTag("Enemy") && !collision.CompareTag("Player"))
-            {
-                direction = (collision.transform.position - transform.position).normalized;
-            }
+            SetStats();
+            canFire = true;
         }
 
         private void FixedUpdate()
         {
             if (canFire)
             {
-                StartCoroutine(RapidFire());
+                StartCoroutine(AttackLoop());
             }
         }
 
-        IEnumerator RapidFire()
+        IEnumerator AttackLoop()
         {
             canFire = false;
-            var dir = direction;
+            RandomDirection();
+            Debug.Log(direction);
             for (int i = 0; i < ammo; i++)
             {
                 yield return new WaitForSeconds(fireInterval);
-                var proj = ProjectilePoolManager.poolProj.projPools[1].GetPooledGameObject();
+                var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
                 var theProj = proj.GetComponent<Projectile>();
                 proj.transform.position = transform.position;
-                theProj.pd.stats.direction = dir;
+                theProj.pd.stats.direction = direction;
                 proj.SetActive(true);
                 proj.transform.rotation = rotation;
             }
@@ -47,8 +46,6 @@ namespace Weapons.SpecificWeapons
             fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             reloadInterval = stats.weaponLvls[stats.lvl].coolDown;
             ammo = stats.weaponLvls[stats.lvl].ammo;
-            var attackRadius = GetComponent<CircleCollider2D>();
-            attackRadius.radius = stats.weaponLvls[stats.lvl].range;
         }
 
         private void RandomDirection()

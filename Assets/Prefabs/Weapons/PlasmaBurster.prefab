@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6058148855714423276}
   - component: {fileID: 8427507990736907710}
+  - component: {fileID: 4236255718967933429}
   m_Layer: 0
   m_Name: PlasmaBurster
   m_TagString: Projectile
@@ -49,22 +50,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d4d0c44d3fb1e428bc63db8b5f5ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 3
-    damage: 1
-    range: 5
-    rateOfFire: 0.5
-    numOfProj: 5
-    duration: 2
-    size: 1
-    cdr: 3
-    name: Plasma Burster
-    description: White hot seering Slag Shells in large supply
-    upgradeText: More slag, more faster
-  weaponLevel: 0
-  weaponIcon: {fileID: 0}
-  firePoint: {fileID: 9206610811084537818}
-  canFire: 1
+  stats: {fileID: 11400000, guid: 6c014a01caeca5444816e7fdb8fe0f2d, type: 2}
+  uiSprite: {fileID: 0}
+  it: {fileID: 4236255718967933429}
+--- !u!114 &4236255718967933429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252291036813081737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDisable: 0
+  doesPenetrate: 0
+  doesRotate: 0
+  isLobbed: 0
+  doesBounce: 0
+  hasLifetime: 1
+  disableAfterBounces: 0
+  disableOnContact: 1
+  randomDirection: 1
+  movesBackwards: 0
+  moveUseTranslate: 1
+  moveUseVelocity: 0
 --- !u!1 &2522516437131514264
 GameObject:
   m_ObjectHideFlags: 0

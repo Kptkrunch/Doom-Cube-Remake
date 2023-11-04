@@ -1816,6 +1816,9 @@ GameObject:
   - component: {fileID: 311793995}
   - component: {fileID: 311793994}
   - component: {fileID: 311793993}
+  - component: {fileID: 311793998}
+  - component: {fileID: 311793997}
+  - component: {fileID: 311793996}
   m_Layer: 0
   m_Name: ProjectilePools
   m_TagString: GameController
@@ -1852,6 +1855,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projPools:
   - {fileID: 311793992}
+  - {fileID: 311793991}
+  - {fileID: 311793995}
+  - {fileID: 311793994}
+  - {fileID: 311793993}
+  - {fileID: 311793998}
+  - {fileID: 311793997}
+  - {fileID: 311793996}
 --- !u!114 &311793991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1867,7 +1877,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 4947877613969299130, guid: 43443c04224519e4d869b7f9e3e280eb, type: 3}
+  GameObjectToPool: {fileID: 0}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!114 &311793992
@@ -1940,6 +1950,60 @@ MonoBehaviour:
   NestWaitingPool: 1
   NestUnderThis: 0
   GameObjectToPool: {fileID: 1142175529633162953, guid: f7599acda6eb4334a835b584966529e1, type: 3}
+  PoolSize: 20
+  PoolCanExpand: 1
+--- !u!114 &311793996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311793988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 4947877613969299130, guid: 43443c04224519e4d869b7f9e3e280eb, type: 3}
+  PoolSize: 20
+  PoolCanExpand: 1
+--- !u!114 &311793997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311793988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 0}
+  PoolSize: 20
+  PoolCanExpand: 1
+--- !u!114 &311793998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311793988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 0}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!1 &319873459
@@ -143726,7 +143790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1252291036813081737, guid: cb0e83dbfbb578248aa66952893a0031, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6058148855714423276, guid: cb0e83dbfbb578248aa66952893a0031, type: 3}
       propertyPath: m_Pivot.x
