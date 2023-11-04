@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  destructive: 0
+  destructive: 1
   hitsGround: 1
   hitsAir: 0
   fireDamage: 1
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  destructive: 0
+  destructive: 1
   hitsGround: 1
   hitsAir: 0
   fireDamage: 1
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  destructive: 0
+  destructive: 1
   hitsGround: 1
   hitsAir: 0
   fireDamage: 1
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006ae75f16765534b986ec3e8f425efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 7373a0b814ab4f943a7eb503b916f65b, type: 2}
   uiSprite: {fileID: 0}
   enemyDamagers:
   - {fileID: 4051950252786060950}
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  destructive: 0
+  destructive: 1
   hitsGround: 1
   hitsAir: 0
   fireDamage: 1

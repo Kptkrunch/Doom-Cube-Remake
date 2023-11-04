@@ -670,7 +670,6 @@ RectTransform:
   m_Children:
   - {fileID: 976641175}
   - {fileID: 50659837}
-  - {fileID: 1052250251}
   m_Father: {fileID: 679304369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4793,49 +4792,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2019463314093397621, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019463314093403085, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019463314093589237, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019463314093631941, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985044885908822174, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 11400000, guid: 7373a0b814ab4f943a7eb503b916f65b, type: 2}
-    - target: {fileID: 3293388657234891070, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
-      propertyPath: destructive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051950252786060950, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
-      propertyPath: destructive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4859722817532731355, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
-      propertyPath: destructive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6837055335979774192, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
-      propertyPath: destructive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7932164212678219076, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
       propertyPath: m_Name
       value: Roastorb
-      objectReference: {fileID: 0}
-    - target: {fileID: 7932164212678219076, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8218,7 +8177,7 @@ RectTransform:
   - {fileID: 1417703471}
   - {fileID: 1120560238}
   - {fileID: 7879490491111811956}
-  m_Father: {fileID: 59669020}
+  m_Father: {fileID: 1952917671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -141009,6 +140968,7 @@ RectTransform:
   m_Children:
   - {fileID: 1086675517}
   - {fileID: 525889532}
+  - {fileID: 1052250251}
   - {fileID: 679304369}
   m_Father: {fileID: 23833853}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -142741,6 +142701,10 @@ PrefabInstance:
     - target: {fileID: 725438307855581332, guid: 1c9f5f3bcc4f2044d80a3731fbc508c0, type: 3}
       propertyPath: m_Name
       value: MineSlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 725438307855581332, guid: 1c9f5f3bcc4f2044d80a3731fbc508c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9175053106362630759, guid: 1c9f5f3bcc4f2044d80a3731fbc508c0, type: 3}
       propertyPath: m_Pivot.x
