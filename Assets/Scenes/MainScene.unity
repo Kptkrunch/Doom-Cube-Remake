@@ -1931,7 +1931,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 8951103880874222314, guid: 8d50575e7f4bb0b409cc2972007319dc, type: 3}
+  GameObjectToPool: {fileID: 1006643835540563925, guid: 8516f7b14a567cc498947ee685309579, type: 3}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!114 &311793995
@@ -1949,7 +1949,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 1142175529633162953, guid: f7599acda6eb4334a835b584966529e1, type: 3}
+  GameObjectToPool: {fileID: 0}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!114 &311793996
@@ -142742,14 +142742,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineSlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 725438307855581332, guid: 1c9f5f3bcc4f2044d80a3731fbc508c0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5815779960210326125, guid: 1c9f5f3bcc4f2044d80a3731fbc508c0, type: 3}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 11400000, guid: 47bab104faa545846acb263ab33d282f, type: 2}
     - target: {fileID: 9175053106362630759, guid: 1c9f5f3bcc4f2044d80a3731fbc508c0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -143790,7 +143782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1252291036813081737, guid: cb0e83dbfbb578248aa66952893a0031, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6058148855714423276, guid: cb0e83dbfbb578248aa66952893a0031, type: 3}
       propertyPath: m_Pivot.x
