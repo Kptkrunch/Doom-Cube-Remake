@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4110668545290411356
 Transform:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
   doesBounce: 0
   hasLifetime: 1
   disableAfterBounces: 0
-  disableOnContact: 0
+  disableOnContact: 1
   randomDirection: 0
   movesBackwards: 1
   moveUseTranslate: 1

@@ -28,11 +28,12 @@ namespace Weapons.SpecificWeapons
         {
             canFire = false;
             direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-            if (it.movesBackwards) direction = new Vector2(-direction.x, -direction.y);
+            
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             projectileFrame.transform.rotation = Quaternion.Euler(0f, 0f, angle);
             
             var coolDown = stats.weaponLvls[stats.lvl].coolDown;
+            
             for (int j = 0; j < firePoints.Count; j++)
             {
                 var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
@@ -51,7 +52,6 @@ namespace Weapons.SpecificWeapons
             canFire = true;
             fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             ammo = stats.weaponLvls[stats.lvl].ammo;
-            
             
         }
 

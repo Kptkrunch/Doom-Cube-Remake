@@ -94,7 +94,9 @@ namespace Weapons.Projectiles
         {
             if (it.movesBackwards && it.moveUseVelocity)
             {
-                pd.stats.direction = -pd.stats.direction;
+                Debug.Log(pd.stats.direction);
+                pd.stats.direction = new Vector2(pd.stats.direction.x, pd.stats.direction.y) * -1;
+                Debug.Log(pd.stats.direction);
             }
         }
 
