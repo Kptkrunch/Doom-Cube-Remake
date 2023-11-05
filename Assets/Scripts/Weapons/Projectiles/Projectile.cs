@@ -13,19 +13,21 @@ namespace Weapons.Projectiles
         public ProjectileData pd;
         public GameObject parent;
         [CanBeNull] public EnemyDamager enemyDamager;
-        private float _lifeTime;
+        private float _lifeTime, _pens;
         private void Awake()
         {
             pd = Instantiate(pd);
             _lifeTime = pd.stats.lifeTime;
+            _pens = pd.stats.pens;
         }
 
         private void FixedUpdate()
         {
-            _lifeTime -= Time.deltaTime;
+            if (it.hasLifetime) _lifeTime -= Time.deltaTime;
 
             MaybeMoveViaTranslation();
             MaybeHasLifetime();
+            MaybeMoveTowards(pd.stats.direction);
         }
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -41,18 +43,15 @@ namespace Weapons.Projectiles
         
         private void PenetrateLogic(Collider2D collision)
         {
-            if (it.doesPenetrate && pd.stats.pens > 0)
+            if (it.doesPenetrate && _pens > 0)
             {
                 if (collision.CompareTag("Enemy"))
                 {
-                    pd.stats.pens--;
-                    if (pd.stats.pens <= 0)
+                    _pens--;
+                    if (_pens <= 0)
                     {
                         gameObject.SetActive(false);
                     }
-                } else if (collision.CompareTag("Enemy") && !collision.CompareTag("Player"))
-                {
-                    gameObject.SetActive(false);
                 }
             }
         }
@@ -61,6 +60,14 @@ namespace Weapons.Projectiles
             if (it.moveUseTranslate)
             {
                 transform.Translate(pd.stats.direction * (pd.stats.movSpeed * Time.deltaTime));
+            }
+        }
+
+        protected void MaybeMoveTowards(Vector2 target)
+        {
+            if (it.moveUseMoveTowards)
+            {
+                Vector2.MoveTowards(transform.position, target, pd.stats.movSpeed);
             }
         }
 
@@ -94,9 +101,7 @@ namespace Weapons.Projectiles
         {
             if (it.movesBackwards && it.moveUseVelocity)
             {
-                Debug.Log(pd.stats.direction);
                 pd.stats.direction = new Vector2(pd.stats.direction.x, pd.stats.direction.y) * -1;
-                Debug.Log(pd.stats.direction);
             }
         }
 
@@ -109,6 +114,12 @@ namespace Weapons.Projectiles
                 var rotation = Quaternion.Euler(0f, 0f, angle).normalized;
                 transform.rotation = rotation;
             }
+        }
+
+        private void OnDisable()
+        {
+            _lifeTime = pd.stats.lifeTime;
+            _pens = pd.stats.pens;
         }
     }
 }

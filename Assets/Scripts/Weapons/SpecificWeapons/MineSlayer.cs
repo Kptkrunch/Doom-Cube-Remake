@@ -14,7 +14,7 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (canFire)
+            if (CanFire)
             {
                 StartCoroutine(AttackLoop());
             }
@@ -22,15 +22,15 @@ namespace Weapons.SpecificWeapons
 
         IEnumerator AttackLoop()
         {
-            canFire = false;
-            for (var i = 0; i < ammo; i++)
+            CanFire = false;
+            for (var i = 0; i < Ammo; i++)
             {
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
                 Fire();
             }
 
             yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].coolDown);
-            canFire = true;
+            CanFire = true;
         }
 
         protected override void Fire()
@@ -42,9 +42,9 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
-            fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
-            reloadInterval = stats.weaponLvls[stats.lvl].coolDown;
-            ammo = stats.weaponLvls[stats.lvl].ammo;
+            FireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            ReloadInterval = stats.weaponLvls[stats.lvl].coolDown;
+            Ammo = stats.weaponLvls[stats.lvl].ammo;
         }   
     }
 }

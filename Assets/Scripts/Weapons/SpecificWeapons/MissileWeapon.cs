@@ -48,18 +48,18 @@ namespace Weapons.SpecificWeapons
                 var ping = ProjectilePoolManager2.poolProj.projPools[missileIndex + 1].GetPooledGameObject();
                 ping.transform.position = transform.position;
                 ping.SetActive(true);
-                yield return new WaitForSeconds(reloadInterval);
+                yield return new WaitForSeconds(ReloadInterval);
                 _pinged = false;
             }
         }
         
         private void SetStats()
         {
-            ammo = stats.weaponLvls[stats.lvl].ammo;
+            Ammo = stats.weaponLvls[stats.lvl].ammo;
             lockLine = GetComponentInChildren<LockLine>();
             _pingInterval = stats.weaponLvls[stats.lvl].duration;
-            reloadInterval = stats.weaponLvls[stats.lvl].coolDown;
-            fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            ReloadInterval = stats.weaponLvls[stats.lvl].coolDown;
+            FireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
         }
 
         protected override void Fire()

@@ -19,5 +19,6 @@ namespace Weapons.WeaponModifiers
         public bool movesBackwards;
         public bool moveUseTranslate;
         public bool moveUseVelocity;
+        public bool moveUseMoveTowards;
     }
 }

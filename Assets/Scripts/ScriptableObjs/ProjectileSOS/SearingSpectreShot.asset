@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b92f7263037114a946da798877bd90, type: 3}
+  m_Name: SearingSpectreShot
+  m_EditorClassIdentifier: 
+  projName: Searing Spectre Shot
+  pid: 9
+  stats:
+    movSpeed: 3
+    damage: 1
+    size: 1
+    lobHeight: 0
+    lobDistance: 0
+    rotSpeed: 0
+    lifeTime: 3
+    pens: 3
+    bounces: 0
+    direction: {x: 0.7268098, y: -0.6868388}

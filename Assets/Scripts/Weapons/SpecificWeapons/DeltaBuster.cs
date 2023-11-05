@@ -18,7 +18,7 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (canFire)
+            if (CanFire)
             {
                 StartCoroutine(AttackLoop());
             }
@@ -26,10 +26,10 @@ namespace Weapons.SpecificWeapons
 
         IEnumerator AttackLoop()
         {
-            canFire = false;
-            direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+            CanFire = false;
+            Direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
             
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
             projectileFrame.transform.rotation = Quaternion.Euler(0f, 0f, angle);
             
             var coolDown = stats.weaponLvls[stats.lvl].coolDown;
@@ -38,20 +38,20 @@ namespace Weapons.SpecificWeapons
             {
                 var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
                 var projClass = proj.GetComponentInChildren<Projectile>();
-                projClass.pd.stats.direction = direction;
+                projClass.pd.stats.direction = Direction;
                 proj.transform.position = firePoints[j].position;
                 proj.transform.rotation = Quaternion.Euler(0f, 0f, angle);
                 proj.gameObject.SetActive(true);
             }
             yield return new WaitForSeconds(coolDown);
-            canFire = true;
+            CanFire = true;
         }
 
         private void SetStats()
         {
-            canFire = true;
-            fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
-            ammo = stats.weaponLvls[stats.lvl].ammo;
+            CanFire = true;
+            FireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            Ammo = stats.weaponLvls[stats.lvl].ammo;
             
         }
 
@@ -62,7 +62,7 @@ namespace Weapons.SpecificWeapons
                 enemyDamager.damage =
                     stats.weaponLvls[stats.lvl].damage;
             ProjectilePoolManager.poolProj.projPools[stats.pid].GetComponent<Projectile>().pd.stats.lifeTime = stats.weaponLvls[stats.lvl].speed;
-            fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            FireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
         }
     }
 }

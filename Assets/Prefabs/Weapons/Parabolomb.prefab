@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6963282978740109629
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48,62 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0dd0570e5256264b893df5310828f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 2
-    damage: 2
-    range: 5
-    rateOfFire: 2
-    numOfProj: 3
-    duration: 5
-    size: 1
-    cdr: 1
-    name: Parabalomb
-    description: Word to your moms, I came to lob bombs
-    upgradeText: Bigger is mostly better!
-  - projSpeed: 2
-    damage: 3
-    range: 5
-    rateOfFire: 1.5
-    numOfProj: 5
-    duration: 5
-    size: 1.25
-    cdr: 0.9
-    name: Parabalomb
-    description: Word to your moms, I came to lob bombs
-    upgradeText: Bigger is mostly better!
-  - projSpeed: 4
-    damage: 4
-    range: 1
-    rateOfFire: 1.5
-    numOfProj: 7
-    duration: 5
-    size: 1.25
-    cdr: 1
-    name: Parabalomb
-    description: Word to your moms, I came to lob bombs
-    upgradeText: Bigger is mostly better!
-  - projSpeed: 4
-    damage: 5
-    range: 1
-    rateOfFire: 1.25
-    numOfProj: 11
-    duration: 5
-    size: 1.25
-    cdr: 1
-    name: Parabalomb
-    description: Word to your moms, I came to lob bombs
-    upgradeText: Bigger is mostly better!
-  - projSpeed: 4
-    damage: 6
-    range: 1
-    rateOfFire: 1.15
-    numOfProj: 15
-    duration: 5
-    size: 1.25
-    cdr: 1
-    name: Parabalomb
-    description: Word to your moms, I came to lob bombs
-    upgradeText: Bigger is mostly better!
-  weaponLevel: 0
-  weaponIcon: {fileID: 21300000, guid: 69b0d1f96517d5e48b8dcdce0345e7fa, type: 3}
-  projectileIndex: 2
+  stats: {fileID: 11400000, guid: 469776501fabdb548a13ee476ff88f65, type: 2}
+  uiSprite: {fileID: 0}
+  it: {fileID: 0}

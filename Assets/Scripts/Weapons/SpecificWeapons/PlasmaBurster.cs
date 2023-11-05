@@ -11,12 +11,12 @@ namespace Weapons.SpecificWeapons
         private void Awake()
         {
             SetStats();
-            canFire = true;
+            CanFire = true;
         }
 
         private void FixedUpdate()
         {
-            if (canFire)
+            if (CanFire)
             {
                 StartCoroutine(AttackLoop());
             }
@@ -24,35 +24,35 @@ namespace Weapons.SpecificWeapons
 
         IEnumerator AttackLoop()
         {
-            canFire = false;
+            CanFire = false;
             RandomDirection();
-            Debug.Log(direction);
-            for (int i = 0; i < ammo; i++)
+            Debug.Log(Direction);
+            for (int i = 0; i < Ammo; i++)
             {
-                yield return new WaitForSeconds(fireInterval);
+                yield return new WaitForSeconds(FireInterval);
                 var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
                 var theProj = proj.GetComponent<Projectile>();
                 proj.transform.position = transform.position;
-                theProj.pd.stats.direction = direction;
+                theProj.pd.stats.direction = Direction;
                 proj.SetActive(true);
-                proj.transform.rotation = rotation;
+                proj.transform.rotation = Rotation;
             }
-            yield return new WaitForSeconds(reloadInterval);
-            canFire = true;
+            yield return new WaitForSeconds(ReloadInterval);
+            CanFire = true;
         }
         
         private void SetStats()
         {
-            fireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
-            reloadInterval = stats.weaponLvls[stats.lvl].coolDown;
-            ammo = stats.weaponLvls[stats.lvl].ammo;
+            FireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
+            ReloadInterval = stats.weaponLvls[stats.lvl].coolDown;
+            Ammo = stats.weaponLvls[stats.lvl].ammo;
         }
 
         private void RandomDirection()
         {
-            direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
-            var angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Deg2Rad - 90;
-            rotation = Quaternion.Euler(0f, 0f, angle).normalized;
+            Direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
+            var angle = Mathf.Atan2(Direction.x, Direction.y) * Mathf.Deg2Rad - 90;
+            Rotation = Quaternion.Euler(0f, 0f, angle).normalized;
         }
     }
 }
