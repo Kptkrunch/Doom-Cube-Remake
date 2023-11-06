@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Weapons.Projectiles
 {
@@ -7,13 +9,26 @@ namespace Weapons.Projectiles
         private Vector3 _growSawScale;
         private bool _isGrowing, _triggered;
         private float _growSpeed, _spinTimer, _lifeTimer;
-        private const float SpinInterval = 3f;
+        private const float SpinInterval = 2f;
         private Vector3 _direction;
+        private float _sawSpeed;
 
         private void Start()
         {
             _lifeTimer = pd.stats.lifeTime;
+            _sawSpeed = pd.stats.movSpeed;
+            pd.stats.movSpeed = 0f;
+            if (it.isLobbed) RestoreLob = true;
             SetStats();
+        }
+
+        private void Update()
+        {
+            if (_isGrowing)
+            {
+                _spinTimer -= Time.deltaTime;
+                GrowSaw();
+            }
         }
 
         private void FixedUpdate()
@@ -26,10 +41,10 @@ namespace Weapons.Projectiles
                 pd.stats.lifeTime -= Time.deltaTime;
                 if (pd.stats.lifeTime <= 0) parent.SetActive(false);
             }
-            
-            if (_isGrowing)
+
+            if (Bounces <= 0)
             {
-                _spinTimer -= Time.deltaTime;
+                StopMoving();
             }
             
             switch (it.doesBounce)
@@ -37,8 +52,6 @@ namespace Weapons.Projectiles
                 case true:
                 {
                     BounceTimer -= Time.deltaTime;
-                    Debug.Log("in bounce logic");
-
                     if (BounceTimer <= 0)
                     {
                         var velocity = rb2d.velocity;
@@ -54,15 +67,17 @@ namespace Weapons.Projectiles
                     break;
                 }
             }
-        }
 
-        public override void OnEnable()
-        {
-            LobSaw();
+            if (it.isLobbed)
+            {
+                it.isLobbed = false;
+                LobSaw();
+            }
         }
     
         private void OnDisable()
         {
+            pd.stats.movSpeed = _sawSpeed;
             SetStats();
         }
 
@@ -80,10 +95,9 @@ namespace Weapons.Projectiles
                     {
                         if (!_triggered) MaybeGoLeftOrRight();
                         _triggered = true;
-                        pd.stats.movSpeed = 4f;
+                        pd.stats.movSpeed = 7f;
                         rb2d.gameObject.transform.position += _direction * (pd.stats.movSpeed * Time.deltaTime);
                     }
-
                     break;
                 }
             }
@@ -104,6 +118,7 @@ namespace Weapons.Projectiles
 
         private void SetStats()
         {
+            if (RestoreLob) it.isLobbed = true;
             _growSawScale = new Vector3(2f, 2f, transform.localScale.z);
             _growSpeed = 1f * Time.deltaTime;
             pd.stats.lifeTime = _lifeTimer;
@@ -119,21 +134,17 @@ namespace Weapons.Projectiles
         }
         private void StopMoving()
         {
-            rb2d.velocity = Vector3.zero;
+            rb2d.gravityScale = 0;
+            rb2d.velocity = Vector2.zero;
             pd.stats.movSpeed = 0f;
         }
 
         private void LobSaw()
         {
-            if (it.isLobbed)
-            {
-                Debug.Log("inside lobbed saw");
-
                 rb2d.gravityScale = 1;
                 rb2d.velocity = new Vector2(
                     Random.Range(-pd.stats.lobDistance, pd.stats.lobDistance), 
-                    pd.stats.lobHeight + 1);
-                Debug.Log(rb2d.velocity);            }
+                    pd.stats.lobHeight + 3);
         }
 
         private void GrowSaw()

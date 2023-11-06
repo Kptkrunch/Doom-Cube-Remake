@@ -10,12 +10,12 @@ namespace Weapons.Projectiles
         
         public Rigidbody2D rb2d;
         protected float BounceTimer, BounceInterval, Bounces, LifeTimer;
-        private bool _restoreLob;
+        protected bool RestoreLob;
 
         private void Start()
         {
             LifeTimer = pd.stats.lifeTime;
-            if (it.isLobbed) _restoreLob = true;
+            if (it.isLobbed) RestoreLob = true;
             SetStats();
         }
 
@@ -62,7 +62,7 @@ namespace Weapons.Projectiles
         
         private void OnDisable()
         {
-            if (_restoreLob) it.isLobbed = true;
+            if (RestoreLob) it.isLobbed = true;
             SetStats();
             if (it.explodes) MaybeExplode();
         }

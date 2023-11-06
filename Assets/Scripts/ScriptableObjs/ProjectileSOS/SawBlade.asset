@@ -16,7 +16,7 @@ MonoBehaviour:
   pid: 2
   eid: 0
   stats:
-    movSpeed: 0
+    movSpeed: 50
     damage: 1
     size: 1
     lobHeight: 6

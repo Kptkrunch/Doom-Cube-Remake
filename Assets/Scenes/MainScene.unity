@@ -1879,7 +1879,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 0}
+  GameObjectToPool: {fileID: 8766339402483427144, guid: 5ec2ddaa8309d1c4d9107f36b41600d5, type: 3}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!114 &311793992
@@ -4032,6 +4032,11 @@ MonoBehaviour:
   m_ObjectForwardAxis: 0
   m_ObjectUpAxis: 1
   m_StartOffset: 0
+--- !u!1 &562859757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7362472295509532169, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
+  m_PrefabInstance: {fileID: 4407532614455461388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &564355391
 GameObject:
   m_ObjectHideFlags: 0
@@ -8690,6 +8695,10 @@ PrefabInstance:
     - target: {fileID: 1342161498012997880, guid: faee71efb23946742bb054669a0d7a72, type: 3}
       propertyPath: m_Name
       value: Parabolomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342161498012997880, guid: faee71efb23946742bb054669a0d7a72, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6963282978740109629, guid: faee71efb23946742bb054669a0d7a72, type: 3}
       propertyPath: m_Pivot.x
@@ -143473,9 +143482,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2223392768671692405, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
+      propertyPath: it
+      value: 
+      objectReference: {fileID: 7879490491111811957}
+    - target: {fileID: 2223392768671692405, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
       propertyPath: stats
       value: 
       objectReference: {fileID: 11400000, guid: 09797ac6de7fc2d498a2b9e45fab0b75, type: 2}
+    - target: {fileID: 6199463048812630442, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: 0.9958763
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199463048812630442, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: 0.008244507
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199463048812630442, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: 6.6697855
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199463048812630442, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: 0.018628426
+      objectReference: {fileID: 0}
     - target: {fileID: 7362472295509532169, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
       propertyPath: m_Name
       value: MeatSeekers
@@ -143487,7 +143516,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7362472295509532169, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7879490491111811957}
   m_SourcePrefab: {fileID: 100100000, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
 --- !u!1001 &5133909011457517580
 PrefabInstance:
@@ -143673,7 +143705,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2223392768671692405, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
   m_PrefabInstance: {fileID: 4407532614455461388}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 562859757}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82691a055a93cc449b4cb5b8f6aa3022, type: 3}
@@ -144229,6 +144261,32 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1900076064638216508, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
   m_PrefabInstance: {fileID: 4407532614455461388}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7879490491111811957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562859757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDisable: 0
+  doesPenetrate: 0
+  doesRotate: 0
+  isLobbed: 0
+  doesBounce: 0
+  explodes: 0
+  hasLifetime: 0
+  disableAfterBounces: 0
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 0
+  moveUseVelocity: 0
+  moveUseMoveTowards: 0
 --- !u!1001 &8389488132072661082
 PrefabInstance:
   m_ObjectHideFlags: 0

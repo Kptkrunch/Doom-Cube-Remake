@@ -26,10 +26,11 @@ namespace Weapons.SpecificWeapons
         {
             if (projFrameWithTimer)
                 Debug.Log("in frame");
+            if (projFrameWithTimer != null)
                 transform.rotation = Quaternion.Euler(0f, 0f,
                     projFrameWithTimer.transform.rotation.eulerAngles.z +
                     _rotationSpeed * stats.weaponLvls[stats.lvl].speed);
-            
+
             if (naniteController)
             {
                 transform.rotation = Quaternion.Euler(0f, 0f,
@@ -40,7 +41,7 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
-            _rotationSpeed = stats.weaponLvls[stats.lvl].speed * Time.deltaTime;
+            _rotationSpeed = stats.weaponLvls[stats.lvl].speed;
             if (enemyDamagers == null) return;
             for (var i = 0; i < enemyDamagers.Count; i++)
             {
@@ -72,7 +73,7 @@ namespace Weapons.SpecificWeapons
                     projFrameWithTimer.coolDownTimer = stats.weaponLvls[stats.lvl].coolDown;
                 }
             
-            transform.localScale *= stats.weaponLvls[stats.lvl].range;
+            transform.localScale = stats.weaponLvls[stats.lvl].size;
             if (projFrameWithTimer != null)
             {
                 projFrameWithTimer.coolDownTimer = stats.weaponLvls[stats.lvl].coolDown;

@@ -1,11 +1,11 @@
+using System.Collections;
 using Controllers.Pools;
 using UnityEngine;
 
 namespace Weapons.SpecificWeapons
 {
-    public class MechanicalMeatSeperator : Weapon
+    public class MechanicalMeatSeperator : LobbedWeapon
     {
-        private float _attackInterval,  _attackTimer;
         private Vector3 _direction;
 
         private void Start()
@@ -15,19 +15,36 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            _attackTimer -= Time.deltaTime;
-            if (_attackTimer <= 0) LaunchSawBlade();
+            if (CanFire)
+            {
+                StartCoroutine(AttackLoop());
+            }
         }
-    
+
+        IEnumerator AttackLoop()
+        {
+            CanFire = false;
+            for (var i = 0; i < Ammo; i++)
+            {
+                LaunchSawBlade();
+                yield return new WaitForSeconds(FireInterval);
+            }
+
+            yield return new WaitForSeconds(Cooldown);
+            CanFire = true;
+        }
+        
         private void SetStats()
         {
-            _attackInterval = stats.weaponLvls[stats.lvl].rateOfFire;
-            _attackTimer = _attackInterval;
+            CanFire = true;
+            RateOfFire = stats.weaponLvls[stats.lvl].rateOfFire;
+            Cooldown = stats.weaponLvls[stats.lvl].coolDown;
+            Ammo = stats.weaponLvls[stats.lvl].ammo;
+            
         }
 
         private void LaunchSawBlade()
         {
-            _attackTimer = _attackInterval;
             var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             saw.transform.position = transform.position;
             saw.SetActive(true);
