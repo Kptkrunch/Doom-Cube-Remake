@@ -69,12 +69,12 @@ MonoBehaviour:
   doesRotate: 0
   isLobbed: 1
   doesBounce: 1
-  itExplodes: 0
+  explodes: 1
   hasLifetime: 0
-  disableAfterBounces: 0
+  disableAfterBounces: 1
   disableOnContact: 0
   randomDirection: 0
   movesBackwards: 0
   moveUseTranslate: 0
-  moveUseVelocity: 1
+  moveUseVelocity: 0
   moveUseMoveTowards: 0

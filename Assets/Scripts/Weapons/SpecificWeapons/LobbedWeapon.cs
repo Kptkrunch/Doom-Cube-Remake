@@ -16,32 +16,8 @@ namespace Weapons.SpecificWeapons
         {
             if (CanFire)
             {
-                Debug.Log("in the can fire");
                 StartCoroutine(AttackLoop());
             }
-        }
-
-        IEnumerator AttackLoop()
-        {
-            CanFire = false;
-            Debug.Log("canfire false");
-
-            for (var i = 0; i < Ammo; i++)
-            {
-                Debug.Log("in the loop");
-
-                var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-                proj.transform.position = transform.position;
-                proj.SetActive(true);
-
-                yield return new WaitForSeconds(RateOfFire);
-            }
-            Debug.Log("out of the loop");
-
-            yield return new WaitForSeconds(Cooldown);
-            CanFire = true;
-            Debug.Log("canfire true");
-
         }
 
         private void SetStats()
@@ -49,11 +25,35 @@ namespace Weapons.SpecificWeapons
             CanFire = true;
             RateOfFire = stats.weaponLvls[stats.lvl].rateOfFire;
             Cooldown = stats.weaponLvls[stats.lvl].coolDown;
+            Ammo = stats.weaponLvls[stats.lvl].ammo;
+        }
+
+        IEnumerator AttackLoop()
+        {
+            CanFire = false;
+
+            for (var i = 0; i < Ammo; i++)
+            {
+                LobProjectile();
+                yield return new WaitForSeconds(RateOfFire);
+            }
+
+            yield return new WaitForSeconds(Cooldown);
+            CanFire = true;
         }
 
         public override void UpdateWeapon()
         {
-            stats.weaponLvls[stats.lvl].ammo = stats.weaponLvls[stats.lvl].ammo;
+            RateOfFire = stats.weaponLvls[stats.lvl].rateOfFire;
+            Cooldown = stats.weaponLvls[stats.lvl].coolDown;
+            Ammo = stats.weaponLvls[stats.lvl].ammo;
+        }
+        
+        private void LobProjectile()
+        {
+            var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+            saw.transform.position = transform.position;
+            saw.SetActive(true);
         }
     }
 }

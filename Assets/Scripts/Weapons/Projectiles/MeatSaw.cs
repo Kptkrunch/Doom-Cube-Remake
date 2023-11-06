@@ -12,6 +12,7 @@ namespace Weapons.Projectiles
 
         private void Start()
         {
+            _lifeTimer = pd.stats.lifeTime;
             SetStats();
         }
 
@@ -19,14 +20,18 @@ namespace Weapons.Projectiles
         {
             
             MaybeRotate(rb2d);
-            pd.stats.lifeTime -= Time.deltaTime;
-            if (pd.stats.lifeTime <= 0) parent.SetActive(false);
+
+            if (it.hasLifetime)
+            {
+                pd.stats.lifeTime -= Time.deltaTime;
+                if (pd.stats.lifeTime <= 0) parent.SetActive(false);
+            }
+            
             if (_isGrowing)
             {
                 _spinTimer -= Time.deltaTime;
             }
             
-            SpoolUpAndFire();
             switch (it.doesBounce)
             { 
                 case true:
@@ -58,17 +63,7 @@ namespace Weapons.Projectiles
     
         private void OnDisable()
         {
-            _isGrowing = false;
-            _triggered = false;
-            it.doesRotate = false;
-            _spinTimer = SpinInterval;
-            rb2d.velocity = new Vector2(0f, 0f);
-            transform.localScale = Vector3.one;
-
-            pd.stats.lifeTime = _lifeTimer;
-            BounceInterval = pd.stats.bounceInterval;
-            BounceTimer = BounceInterval;
-            Bounces = pd.stats.bounces;
+            SetStats();
         }
 
         public void SpoolUpAndFire()
@@ -111,8 +106,13 @@ namespace Weapons.Projectiles
         {
             _growSawScale = new Vector3(2f, 2f, transform.localScale.z);
             _growSpeed = 1f * Time.deltaTime;
+            pd.stats.lifeTime = _lifeTimer;
+            _isGrowing = false;
+            _triggered = false;
+            it.doesRotate = false;
             _spinTimer = SpinInterval;
-            _lifeTimer = pd.stats.lifeTime;
+            rb2d.velocity = new Vector2(0f, 0f);
+            transform.localScale = Vector3.one;
             BounceInterval = pd.stats.bounceInterval;
             BounceTimer = BounceInterval;
             Bounces = pd.stats.bounces;

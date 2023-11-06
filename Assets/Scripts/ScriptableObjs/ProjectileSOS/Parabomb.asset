@@ -16,14 +16,14 @@ MonoBehaviour:
   pid: 6
   eid: 6
   stats:
-    movSpeed: 3
+    movSpeed: 50
     damage: 1
     size: 3
-    lobHeight: 5
+    lobHeight: 6
     lobDistance: 5
     rotSpeed: 0
     lifeTime: 0
     pens: 0
     bounces: 3
-    bounceInterval: 2
+    bounceInterval: 1.25
     direction: {x: 0, y: 0}

@@ -1987,7 +1987,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 1142175529633162953, guid: f7599acda6eb4334a835b584966529e1, type: 3}
+  GameObjectToPool: {fileID: 5860484876394484148, guid: f6892535f967f2c40823718faf7848fb, type: 3}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!114 &311793998
@@ -10423,6 +10423,7 @@ MonoBehaviour:
   - {fileID: 1418908500}
   - {fileID: 1418908499}
   - {fileID: 1418908505}
+  - {fileID: 1418908506}
 --- !u!114 &1418908505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143111,6 +143112,10 @@ PrefabInstance:
     - target: {fileID: 4022395083330004077, guid: 4ac36309fc485884bb951c8fc556dbcd, type: 3}
       propertyPath: m_Name
       value: MechaMeatSeparator
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022395083330004077, guid: 4ac36309fc485884bb951c8fc556dbcd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
