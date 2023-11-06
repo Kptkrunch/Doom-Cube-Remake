@@ -8,6 +8,7 @@ namespace Weapons.Projectiles
     {
         public string projName;
         public int pid;
+        public int eid;
         public ProjStats stats = new();
         
         [Serializable]
@@ -22,6 +23,7 @@ namespace Weapons.Projectiles
             public float lifeTime;
             public float pens;
             public float bounces;
+            public float bounceInterval;
             public Vector2 direction;
         }
     }

@@ -24,7 +24,7 @@ MonoBehaviour:
     coolDown: 5
     rateOfFire: 1
     duration: 5
-    speed: 5
+    speed: 8
     size: {x: 1, y: 1, z: 1}
     wildCard: 0
     upgradeText: 
@@ -34,7 +34,7 @@ MonoBehaviour:
     coolDown: 4
     rateOfFire: 0.75
     duration: 4
-    speed: 8
+    speed: 10
     size: {x: 1, y: 1, z: 1}
     wildCard: 0
     upgradeText: 
@@ -44,7 +44,7 @@ MonoBehaviour:
     coolDown: 3.5
     rateOfFire: 0.5
     duration: 3.5
-    speed: 11
+    speed: 12
     size: {x: 1, y: 1, z: 1}
     wildCard: 0
     upgradeText: 

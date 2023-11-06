@@ -28,7 +28,7 @@ namespace Weapons.SpecificWeapons
         private void LaunchSawBlade()
         {
             _attackTimer = _attackInterval;
-            var saw = ProjectilePoolManager2.poolProj.projPools[1].GetPooledGameObject();
+            var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             saw.transform.position = transform.position;
             saw.SetActive(true);
         }

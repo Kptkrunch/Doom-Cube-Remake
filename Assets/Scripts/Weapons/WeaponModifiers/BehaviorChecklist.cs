@@ -12,6 +12,7 @@ namespace Weapons.WeaponModifiers
         public bool doesRotate;
         public bool isLobbed;
         public bool doesBounce;
+        public bool itExplodes;
         public bool hasLifetime;
         public bool disableAfterBounces;
         public bool disableOnContact;

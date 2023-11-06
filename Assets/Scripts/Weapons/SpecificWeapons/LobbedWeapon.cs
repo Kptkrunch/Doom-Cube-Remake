@@ -1,37 +1,59 @@
+using System.Collections;
 using Controllers.Pools;
+using UnityEngine;
 
 namespace Weapons.SpecificWeapons
 {
     public class LobbedWeapon : PrefabBasedWeapon
     {
-        private float _attackInterval, _attackTimer;
-        
+        protected float RateOfFire, Cooldown;
         private void Start()
         {
             SetStats();
         }
 
+        private void FixedUpdate()
+        {
+            if (CanFire)
+            {
+                Debug.Log("in the can fire");
+                StartCoroutine(AttackLoop());
+            }
+        }
+
+        IEnumerator AttackLoop()
+        {
+            CanFire = false;
+            Debug.Log("canfire false");
+
+            for (var i = 0; i < Ammo; i++)
+            {
+                Debug.Log("in the loop");
+
+                var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+                proj.transform.position = transform.position;
+                proj.SetActive(true);
+
+                yield return new WaitForSeconds(RateOfFire);
+            }
+            Debug.Log("out of the loop");
+
+            yield return new WaitForSeconds(Cooldown);
+            CanFire = true;
+            Debug.Log("canfire true");
+
+        }
+
         private void SetStats()
         {
-            _attackInterval = stats.weaponLvls[stats.lvl].rateOfFire;
-            _attackTimer = _attackInterval;
+            CanFire = true;
+            RateOfFire = stats.weaponLvls[stats.lvl].rateOfFire;
+            Cooldown = stats.weaponLvls[stats.lvl].coolDown;
         }
 
         public override void UpdateWeapon()
         {
-            _attackInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             stats.weaponLvls[stats.lvl].ammo = stats.weaponLvls[stats.lvl].ammo;
-        }
-
-        protected override void Fire()
-        {
-            _attackTimer = _attackInterval;
-            for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
-            {
-                var bomb = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-                bomb.transform.position = transform.position;
-                bomb.gameObject.SetActive(true);
-            }
         }
     }
 }

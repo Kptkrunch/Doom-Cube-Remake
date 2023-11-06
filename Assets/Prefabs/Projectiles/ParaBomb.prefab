@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8178988525685143888}
-  - component: {fileID: 1481880385453974489}
   - component: {fileID: 6773755887716218981}
-  - component: {fileID: 7709638010789272476}
+  - component: {fileID: 4051650927833513506}
+  - component: {fileID: 1481880385453974489}
   m_Layer: 0
   m_Name: ParaBomb
   m_TagString: Projectile
@@ -39,6 +39,49 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6773755887716218981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142175529633162953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDisable: 0
+  doesPenetrate: 0
+  doesRotate: 0
+  isLobbed: 1
+  doesBounce: 1
+  itExplodes: 1
+  hasLifetime: 0
+  disableAfterBounces: 0
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 0
+  moveUseVelocity: 1
+  moveUseMoveTowards: 0
+--- !u!114 &4051650927833513506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142175529633162953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8627c991b80f4f4895c71333d1b1ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  it: {fileID: 6773755887716218981}
+  pd: {fileID: 11400000, guid: b8cd7ba64e42d0e429c920a060bd6d02, type: 2}
+  parent: {fileID: 1142175529633162953}
+  enemyDamager: {fileID: 0}
+  rb2d: {fileID: 1481880385453974489}
 --- !u!50 &1481880385453974489
 Rigidbody2D:
   serializedVersion: 4
@@ -66,54 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6773755887716218981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142175529633162953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayDisable: 0
-  doesPenetrate: 0
-  doesRotate: 0
-  isLobbed: 1
-  doesBounce: 1
-  hasLifetime: 0
-  useTranslate: 0
-  disableAfterBounces: 0
---- !u!114 &7709638010789272476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142175529633162953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61cb4ba1f65d6914eabdbcffc3d5332d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  it: {fileID: 6773755887716218981}
-  enemyDamager: {fileID: 0}
-  parent: {fileID: 1142175529633162953}
-  lobHeight: 6
-  lobDistance: 5
-  moveSpeed: 3
-  rotationSpeed: 0
-  lifeTimer: 10
-  numberOfPenetrates: 0
-  rb2d: {fileID: 1481880385453974489}
-  expIndex: 2
-  damage: 1
-  radius: 3
-  initBounces: 3
-  vertPower: 6
-  horPower: 5
 --- !u!1001 &1377602888981810539
 PrefabInstance:
   m_ObjectHideFlags: 0

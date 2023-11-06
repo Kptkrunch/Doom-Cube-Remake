@@ -49,7 +49,7 @@ namespace Weapons.SpecificWeapons
             _beamCooldown = stats.weaponLvls[stats.lvl].coolDown;
             _beamDuration = stats.weaponLvls[stats.lvl].duration;
             _moveSpeed = stats.weaponLvls[stats.lvl].speed;
-            _signalRange = stats.weaponLvls[stats.lvl].range;
+            _signalRange = stats.weaponLvls[stats.lvl].range * 4f;
             gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
             beamImpact.GetComponent<CircleCollider2D>().radius = stats.weaponLvls[stats.lvl].range;
         }

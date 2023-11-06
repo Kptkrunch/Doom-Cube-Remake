@@ -1,4 +1,9 @@
+using System;
+using System.Collections;
+using Controllers.Pools;
+using Damagers;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Weapons.Projectiles
 {
@@ -6,9 +11,15 @@ namespace Weapons.Projectiles
     {
         
         public Rigidbody2D rb2d;
-        public float bounceInterval;
-        private float _bounceTimer;
-        
+        protected float BounceTimer, BounceInterval, Bounces;
+
+        private void Start()
+        {
+            BounceInterval = pd.stats.bounceInterval;
+            BounceTimer = BounceInterval;
+            Bounces = pd.stats.bounces;
+        }
+
         private void FixedUpdate()
         {
             if (!it.isLobbed)
@@ -18,25 +29,29 @@ namespace Weapons.Projectiles
             } 
             
             switch (it.doesBounce)
-            {
+            { 
                 case true:
                 {
-                    _bounceTimer -= Time.deltaTime;
-                    if (_bounceTimer <= 0)
+                    BounceTimer -= Time.deltaTime;
+                    Debug.Log("in bounce logic");
+
+                    if (BounceTimer <= 0)
                     {
                         var velocity = rb2d.velocity;
                         velocity = new Vector2(velocity.x, velocity.y).normalized;
                         rb2d.velocity = velocity;
-                        bounceInterval *= 0.8f;
-                        _bounceTimer = bounceInterval;
+                        BounceInterval *= 0.8f;
+                        BounceTimer = BounceInterval;
                         rb2d.AddForce(new Vector2(velocity.x * 0.8f, pd.stats.lobHeight * .75f), ForceMode2D.Impulse);
-                        pd.stats.bounces--;
-                
-                        if (pd.stats.bounces <= 0)
+                        Bounces--;
+                        
+                        if (Bounces <= 0)
                         {
+                            Debug.Log("done bouncing");
+
                             rb2d.velocity = Vector2.zero;
                             rb2d.gravityScale = 0f;
-                            if (it.disableAfterBounces) gameObject.SetActive(true);
+                            if (it.disableAfterBounces) gameObject.SetActive(false);
                             it.delayDisable = true;
                         }
                     }
@@ -49,15 +64,20 @@ namespace Weapons.Projectiles
         {
             if (it.isLobbed)
             {
+                Debug.Log("inside lobbed");
+
                 rb2d.gravityScale = 1;
                 rb2d.velocity = new Vector2(
                     Random.Range(-pd.stats.lobDistance, pd.stats.lobDistance), 
                     pd.stats.lobHeight + 1);
+                Debug.Log(rb2d.velocity);
+
             }
             
             if (it.doesBounce)
             {
-                _bounceTimer = Random.Range(_bounceTimer * 0.5f, _bounceTimer * 1.75f);
+                BounceTimer = Random.Range(BounceTimer * 0.5f, BounceTimer * 1.75f);
+                Debug.Log(BounceTimer);
             }
 
             if (it.moveUseVelocity)
@@ -68,7 +88,22 @@ namespace Weapons.Projectiles
         
         private void OnDisable()
         {
+            if (it.itExplodes)
+            {
+                Debug.Log("explodes");
+
+                var exp = ProjectilePoolManager2.poolProj.projPools[pd.eid].GetPooledGameObject();
+                exp.transform.position = transform.position;
+                var damager = exp.GetComponent<EnemyDamager>();
+                damager.damage = pd.stats.damage;
+                damager.GetComponent<CircleCollider2D>().radius = pd.stats.size;
+                exp.SetActive(true);
+                
+            }
             rb2d.velocity = new Vector2(0f, 0f);
+            BounceInterval = pd.stats.bounceInterval;
+            BounceTimer = BounceInterval;
+            Bounces = pd.stats.bounces;
         }
     }
 }

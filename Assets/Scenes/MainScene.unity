@@ -1951,7 +1951,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 0}
+  GameObjectToPool: {fileID: 2812713861188097892, guid: 8f9e9f053d00b0940b48aee864ad58c5, type: 3}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!114 &311793996
@@ -1987,7 +1987,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 0}
+  GameObjectToPool: {fileID: 1142175529633162953, guid: f7599acda6eb4334a835b584966529e1, type: 3}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!114 &311793998
@@ -8679,11 +8679,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 98.62181}
   m_SizeDelta: {x: -16, y: -260}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1157470220 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1342161498012997880, guid: faee71efb23946742bb054669a0d7a72, type: 3}
-  m_PrefabInstance: {fileID: 1193550123}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1193550123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8776,17 +8771,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8278253600463017974, guid: faee71efb23946742bb054669a0d7a72, type: 3}
-      propertyPath: it
-      value: 
-      objectReference: {fileID: 1193550126}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1342161498012997880, guid: faee71efb23946742bb054669a0d7a72, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1193550126}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faee71efb23946742bb054669a0d7a72, type: 3}
 --- !u!224 &1193550124 stripped
 RectTransform:
@@ -8798,37 +8786,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8278253600463017974, guid: faee71efb23946742bb054669a0d7a72, type: 3}
   m_PrefabInstance: {fileID: 1193550123}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157470220}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0dd0570e5256264b893df5310828f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1193550126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157470220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayDisable: 1
-  doesPenetrate: 0
-  doesRotate: 0
-  isLobbed: 1
-  doesBounce: 1
-  hasLifetime: 0
-  disableAfterBounces: 0
-  disableOnContact: 0
-  randomDirection: 0
-  movesBackwards: 0
-  moveUseTranslate: 0
-  moveUseVelocity: 0
-  moveUseMoveTowards: 0
 --- !u!1 &1202237520
 GameObject:
   m_ObjectHideFlags: 0
@@ -10328,6 +10291,7 @@ GameObject:
   - component: {fileID: 1418908500}
   - component: {fileID: 1418908499}
   - component: {fileID: 1418908505}
+  - component: {fileID: 1418908506}
   m_Layer: 0
   m_Name: ProjectilePools2
   m_TagString: GameController
@@ -10475,6 +10439,24 @@ MonoBehaviour:
   NestWaitingPool: 1
   NestUnderThis: 0
   GameObjectToPool: {fileID: 4811007448966416995, guid: c29cb1f3a5c336f4a826661bb183478c, type: 3}
+  PoolSize: 20
+  PoolCanExpand: 1
+--- !u!114 &1418908506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418908497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 8951103880874222314, guid: 8d50575e7f4bb0b409cc2972007319dc, type: 3}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!1 &1437396937
@@ -140947,6 +140929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeamFrame
       objectReference: {fileID: 0}
+    - target: {fileID: 8587588099831060693, guid: ab85e194f7e80cf4cba6b7f872bb9373, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -143126,14 +143112,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MechaMeatSeparator
       objectReference: {fileID: 0}
-    - target: {fileID: 4022395083330004077, guid: 4ac36309fc485884bb951c8fc556dbcd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842828834110783982, guid: 4ac36309fc485884bb951c8fc556dbcd, type: 3}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 11400000, guid: afb859af0e30245499f0b06d324a8948, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -143897,6 +143875,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeatMelter
       objectReference: {fileID: 0}
+    - target: {fileID: 1730044648976520946, guid: 459a854d19e70ef4397551a030a26728, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3987926661222403637, guid: 459a854d19e70ef4397551a030a26728, type: 3}
       propertyPath: stats
       value: 
@@ -144148,6 +144130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeltaBuster
       objectReference: {fileID: 0}
+    - target: {fileID: 573632234479551164, guid: a25e6e5d0ff7eb443b1865aa0f57077d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4669060258420965278, guid: a25e6e5d0ff7eb443b1865aa0f57077d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -144327,6 +144313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SeeringLance
       objectReference: {fileID: 0}
+    - target: {fileID: 3901427305864197361, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4993079015285987139, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -144406,14 +144396,6 @@ PrefabInstance:
     - target: {fileID: 4993079015285987139, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7104429582331432270, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
-      propertyPath: dir1.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7104429582331432270, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
-      propertyPath: dir2.y
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7104429582331432270, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
       propertyPath: doesAlternate

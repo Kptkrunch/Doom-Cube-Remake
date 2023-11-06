@@ -19274,12 +19274,12 @@ GameObject:
   - component: {fileID: 6680907544948362848}
   - component: {fileID: 3797331572686169295}
   m_Layer: 0
-  m_Name: NukeConeExplosionFire 1
+  m_Name: MissileExp
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4371856175806300
 Transform:
   m_ObjectHideFlags: 0
