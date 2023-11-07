@@ -44,7 +44,7 @@ namespace UI
             }
             UpgradePanelController.contUpgrades.gameObject.SetActive(false);
             UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(false);
-            TechPanelController.contTechPanel.gameObject.SetActive(false);
+            TechPanelController.ContTechPanel.gameObject.SetActive(false);
             Time.timeScale = 1f;
         }
     }

@@ -17,13 +17,13 @@ namespace TechSkills
         private void Start()
         {
             cooldownTimer = 0;
-            _techCont = TechController.contTechCon;
+            _techCont = TechController.ContTechCon;
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
         public void ActivateTech(string button)
         {
-            var tech = TechController.contTechCon.purchasedTechList;
+            var tech = TechController.ContTechCon.purchasedTechList;
             var techObj = TechPools.pools.techList[id].GetPooledGameObject();
             switch (button)
             {

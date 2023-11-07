@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 343754433359266453}
   - component: {fileID: 6842828834110783982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MechaMeatSeparator
   m_TagString: Projectile
   m_Icon: {fileID: 0}

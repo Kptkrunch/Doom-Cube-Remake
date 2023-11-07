@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9175053106362630759}
   - component: {fileID: 5815779960210326125}
   - component: {fileID: 6896750676246539954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MineSlayer
   m_TagString: Projectile
   m_Icon: {fileID: 0}

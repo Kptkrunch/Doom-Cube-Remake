@@ -5,7 +5,7 @@ namespace TechSkills
 {
     public class AttackCritter : Tech
     {
-        public float speed, minFollowDist, maxFollowDist, attackRange, aggreRadius, health, damage, attackSpeed;
+        public float speed, attackRange, health, damage, attackSpeed;
         public LayerMask enemyLayer;
         public Sprite critterSprite;
 
@@ -49,36 +49,11 @@ namespace TechSkills
 
             }
             
-            // Follow the player
-            if (Vector2.Distance(transform.position, player.position) > minFollowDist && Vector2.Distance(transform.position, player.position) < maxFollowDist)
-            {
-                _targetPosition = player.position;
-            }
-
             // Move towards the target position
             var position = transform.position;
             position = Vector2.MoveTowards(position, _targetPosition, speed * Time.deltaTime);
             var transform1 = transform;
             transform1.position = position;
-            
-            
-
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.yellow;
-            var position = transform.position;
-            Gizmos.DrawWireSphere(position, minFollowDist);
-            
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(position, maxFollowDist);
-
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(position, attackRange); 
-            
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(position, aggreRadius);
         }
     }
 }

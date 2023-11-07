@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 040dbc219a8ba8f45a69e057b2d22a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
+  isAttracted: 0
   resourceSprite: {fileID: 341596682, guid: cccb1c89d7da77343a8f97baa45e5dff, type: 3}
   value: 1
   meat: 1

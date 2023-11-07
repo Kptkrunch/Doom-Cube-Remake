@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7104429582331432270}
   - component: {fileID: 8012988009571969941}
   - component: {fileID: 4367956540037108388}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SeeringLance
   m_TagString: Untagged
   m_Icon: {fileID: 0}

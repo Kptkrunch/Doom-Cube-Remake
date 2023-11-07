@@ -8,43 +8,27 @@ namespace Weapons.Projectiles
     {
         private Vector3 _growSawScale;
         private bool _isGrowing, _triggered;
-        private float _growSpeed, _spinTimer, _lifeTimer;
+        private float _growSpeed, _spinTimer;
         private const float SpinInterval = 2f;
         private Vector3 _direction;
         private float _sawSpeed;
 
         private void Start()
         {
-            _lifeTimer = pd.stats.lifeTime;
+            LifeTimer = pd.stats.lifeTime;
             _sawSpeed = pd.stats.movSpeed;
             pd.stats.movSpeed = 0f;
             if (it.isLobbed) RestoreLob = true;
             SetStats();
         }
 
-        private void Update()
-        {
-            if (_isGrowing)
-            {
-                _spinTimer -= Time.deltaTime;
-                GrowSaw();
-            }
-        }
-
         private void FixedUpdate()
         {
             
-            MaybeRotate(rb2d);
-
-            if (it.hasLifetime)
+            if (it.isLobbed)
             {
-                pd.stats.lifeTime -= Time.deltaTime;
-                if (pd.stats.lifeTime <= 0) parent.SetActive(false);
-            }
-
-            if (Bounces <= 0)
-            {
-                StopMoving();
+                it.isLobbed = false;
+                LobSaw();
             }
             
             switch (it.doesBounce)
@@ -67,11 +51,19 @@ namespace Weapons.Projectiles
                     break;
                 }
             }
-
-            if (it.isLobbed)
+            
+            if (_isGrowing)
             {
-                it.isLobbed = false;
-                LobSaw();
+                _spinTimer -= Time.deltaTime;
+                GrowSaw();
+            }
+            
+            MaybeRotate(rb2d);
+
+            if (it.hasLifetime)
+            {
+                pd.stats.lifeTime -= Time.deltaTime;
+                if (pd.stats.lifeTime <= 0) parent.SetActive(false);
             }
         }
     
@@ -89,13 +81,13 @@ namespace Weapons.Projectiles
                 {
                     _isGrowing = true;
                     it.doesRotate = true;
-                    StopMoving();
                     GrowSaw();
+                    StopMoving();
                     if (_spinTimer <= 0)
                     {
                         if (!_triggered) MaybeGoLeftOrRight();
                         _triggered = true;
-                        pd.stats.movSpeed = 7f;
+                        pd.stats.movSpeed = 4f;
                         rb2d.gameObject.transform.position += _direction * (pd.stats.movSpeed * Time.deltaTime);
                     }
                     break;
@@ -121,7 +113,7 @@ namespace Weapons.Projectiles
             if (RestoreLob) it.isLobbed = true;
             _growSawScale = new Vector3(2f, 2f, transform.localScale.z);
             _growSpeed = 1f * Time.deltaTime;
-            pd.stats.lifeTime = _lifeTimer;
+            pd.stats.lifeTime = LifeTimer;
             _isGrowing = false;
             _triggered = false;
             it.doesRotate = false;
@@ -144,7 +136,7 @@ namespace Weapons.Projectiles
                 rb2d.gravityScale = 1;
                 rb2d.velocity = new Vector2(
                     Random.Range(-pd.stats.lobDistance, pd.stats.lobDistance), 
-                    pd.stats.lobHeight + 3);
+                    pd.stats.lobHeight);
         }
 
         private void GrowSaw()

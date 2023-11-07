@@ -8,7 +8,7 @@ namespace UI
         public void SkipLevel()
         {
             UpgradePanelController.contUpgrades.gameObject.SetActive(false);
-            TechPanelController.contTechPanel.gameObject.SetActive(false);
+            TechPanelController.ContTechPanel.gameObject.SetActive(false);
             Time.timeScale = 1f;
             gameObject.SetActive(false);
         }

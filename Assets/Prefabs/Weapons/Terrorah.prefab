@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2907146642129833190}
   - component: {fileID: 2676920559286787964}
   - component: {fileID: 6389339197873565023}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrorah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4438535198638987798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponFrame
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -161,8 +161,20 @@ PrefabInstance:
       value: TerrorahParticle
       objectReference: {fileID: 0}
     - target: {fileID: 116054, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 116054, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_TagString
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 136912, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 145520, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 408918, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_LocalPosition.y

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GenUtilsAndTools
 {
-    public class Resource : MonoBehaviour
+    public class Resource : AttractableItem
     {
         [CanBeNull] public Sprite resourceSprite;
         public int value;
@@ -14,9 +14,8 @@ namespace GenUtilsAndTools
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (!collision.CompareTag("Player") || collision.CompareTag("ItemAttractor")) return;
-            if (collision.CompareTag("Player") && !collision.CompareTag("ItemAttractor") &&
-                !collision.CompareTag("Projectile") && !collision.CompareTag("Enemy"))
+            if (!collision.CompareTag("Player")) return;
+            if (collision.CompareTag("Player"))
             {
                 var particle = PickupParticlePool.poolPickup.poolDark.GetPooledGameObject();
                 particle.SetActive(true);
@@ -27,6 +26,7 @@ namespace GenUtilsAndTools
                 if (plastic) ResourceController.contRes.plastic += value;
                 if (energy) ResourceController.contRes.plastic += value;
                 ResourceController.contRes.UpdateResources();
+                isAttracted = false;
                 gameObject.SetActive(false);
             }
         }

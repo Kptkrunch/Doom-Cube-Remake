@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6963282978740109629}
   - component: {fileID: 8278253600463017974}
   - component: {fileID: 5710720740979479284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Parabolomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}

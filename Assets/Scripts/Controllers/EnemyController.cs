@@ -53,12 +53,11 @@ namespace Controllers
         }
 
         public void TakeDamage(float enemyDamage)
-        {
+        {   
             health -= enemyDamage;
             if (health <= 0)
             {
-                itemDropper.DropItem();
-                ExperienceController.contExp.expDrop.DropItem();
+                itemDropper.DropResource();
                 gameObject.SetActive(false);
             }
             ShowDamage(enemyDamage);

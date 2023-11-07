@@ -32,8 +32,8 @@ namespace Weapons.Projectiles
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
-            PenetrateLogic(collision);
-            MaybeDisableOnContactWithAnything(collision);
+            if (it.doesPenetrate) PenetrateLogic(collision);
+            if (it.disableOnContact) MaybeDisableOnContactWithAnything(collision);
         }
 
         public virtual void OnEnable()
@@ -43,15 +43,13 @@ namespace Weapons.Projectiles
         
         private void PenetrateLogic(Collider2D collision)
         {
-            if (it.doesPenetrate && _pens > 0)
+            if (collision.CompareTag("Enemy"))
             {
-                if (collision.CompareTag("Enemy"))
+                _pens--;
+                if (_pens <= 0)
                 {
-                    _pens--;
-                    if (_pens <= 0)
-                    {
-                        gameObject.SetActive(false);
-                    }
+                    _pens = pd.stats.pens;
+                    gameObject.SetActive(false);
                 }
             }
         }
@@ -90,11 +88,8 @@ namespace Weapons.Projectiles
         }
 
         protected void MaybeDisableOnContactWithAnything(Collider2D collision)
-        {
-            if (collision.CompareTag("Enemy") 
-                || collision.CompareTag("WorldlyObject") 
-                && !it.doesPenetrate && it.disableOnContact
-                && !collision.CompareTag("Player")) parent.gameObject.SetActive(false);
+        { 
+            if (collision.CompareTag("Enemy") || collision.CompareTag("WorldlyObject")) parent.gameObject.SetActive(false);
         }
 
         protected void MaybeMoveBackwards()

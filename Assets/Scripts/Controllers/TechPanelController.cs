@@ -4,13 +4,13 @@ namespace Controllers
 {
     public class TechPanelController : MonoBehaviour
     {
-        public static TechPanelController contTechPanel;
+        public static TechPanelController ContTechPanel;
         public bool isOpen;
         public TechUpgradePanel[] techUpgradePanels;
         
         private void Awake()
         {
-            contTechPanel = this;
+            ContTechPanel = this;
         }
 
         private void Start()

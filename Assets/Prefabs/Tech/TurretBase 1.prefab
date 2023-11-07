@@ -274,15 +274,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c4772c1658d424c9976880381046ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
+  id: 1
   techLevel: 0
   description: It shoots sharp things at good guys
   techImage: {fileID: 74798634, guid: c89a347dff47ce44985f15be4d3175d1, type: 3}
   costMeat: 0
-  costMetal: 50
-  costMineral: 10
-  costPlastic: 50
-  costEnergy: 10
+  costMetal: 0
+  costMineral: 0
+  costPlastic: 0
+  costEnergy: 0
 --- !u!58 &7699640095524855384
 CircleCollider2D:
   m_ObjectHideFlags: 0

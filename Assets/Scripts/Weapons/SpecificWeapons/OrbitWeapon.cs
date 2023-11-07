@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Damagers;
 using GenUtilsAndTools;
@@ -24,8 +25,6 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (projFrameWithTimer)
-                Debug.Log("in frame");
             if (projFrameWithTimer != null)
                 transform.rotation = Quaternion.Euler(0f, 0f,
                     projFrameWithTimer.transform.rotation.eulerAngles.z +
@@ -39,9 +38,14 @@ namespace Weapons.SpecificWeapons
             }
         }
 
+        private void OnEnable()
+        {
+            SetStats();
+        }
+
         private void SetStats()
         {
-            _rotationSpeed = stats.weaponLvls[stats.lvl].speed;
+            _rotationSpeed = stats.weaponLvls[stats.lvl].speed * Time.deltaTime;
             if (enemyDamagers == null) return;
             for (var i = 0; i < enemyDamagers.Count; i++)
             {
@@ -80,7 +84,7 @@ namespace Weapons.SpecificWeapons
                 projFrameWithTimer.activeInterval = stats.weaponLvls[stats.lvl].duration;
             }
 
-            _rotationSpeed = stats.weaponLvls[stats.lvl].speed;
+            _rotationSpeed = stats.weaponLvls[stats.lvl].speed * Time.deltaTime;
         }
     }
 }

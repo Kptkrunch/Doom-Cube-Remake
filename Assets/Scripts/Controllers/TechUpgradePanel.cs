@@ -29,7 +29,7 @@ namespace Controllers
         public void SelectUpgrade()
         {
             if (!_assignedTech) return;
-            if (!TechController.contTechCon.BrokeCheck(
+            if (!TechController.ContTechCon.BrokeCheck(
                     _assignedTech.costMeat,
                     _assignedTech.costMetal,
                     _assignedTech.costMineral,
@@ -41,7 +41,7 @@ namespace Controllers
             }
             else
             {
-                TechController.contTechCon.AddTechToList(_assignedTech);
+                TechController.ContTechCon.AddTechToList(_assignedTech);
             }
 
             gameObject.SetActive(false);

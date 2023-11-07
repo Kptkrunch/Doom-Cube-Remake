@@ -40,7 +40,7 @@ namespace Weapons.SpecificWeapons
         {
             var x = Random.Range(-_signalRange, _signalRange);
             var y = Random.Range(-_signalRange, _signalRange);
-            _newSignalPosition = new Vector2(x, y);
+            _newSignalPosition = transform.position - new Vector3(x, y, transform.position.z);
             beamSignal.transform.position = _newSignalPosition;
         }
 

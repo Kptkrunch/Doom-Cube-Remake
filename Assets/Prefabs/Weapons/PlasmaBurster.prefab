@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8427507990736907710}
   - component: {fileID: 4236255718967933429}
   - component: {fileID: 7540476506174252971}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlasmaBurster
   m_TagString: Projectile
   m_Icon: {fileID: 0}
