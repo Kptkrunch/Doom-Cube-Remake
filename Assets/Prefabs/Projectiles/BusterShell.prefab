@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6807351048889185855}
   - component: {fileID: 8095844000514659987}
   - component: {fileID: 3630000991485685070}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BusterShell
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -69,13 +69,15 @@ MonoBehaviour:
   doesRotate: 0
   isLobbed: 0
   doesBounce: 0
+  explodes: 0
   hasLifetime: 1
   disableAfterBounces: 0
   disableOnContact: 1
   randomDirection: 0
-  movesBackwards: 1
+  movesBackwards: 0
   moveUseTranslate: 1
   moveUseVelocity: 0
+  moveUseMoveTowards: 0
 --- !u!114 &8095844000514659987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,9 +140,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4110668545290411356}
     m_Modifications:
+    - target: {fileID: 144506, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 144994, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 151662, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 180508, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
       propertyPath: m_Name
       value: BlueSparklerMissile 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 180508, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 180508, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
       propertyPath: m_TagString

@@ -14,6 +14,7 @@ namespace Weapons.SpecificWeapons
         [SerializeField] protected Vector2 dir1;
         [SerializeField] protected Vector2 dir2;
         [SerializeField] protected bool doesAlternate;
+        protected float Cooldown;
 
         private void FixedUpdate()
         {
@@ -23,7 +24,7 @@ namespace Weapons.SpecificWeapons
             }
         }
 
-        IEnumerator AttackLoop()
+        protected virtual IEnumerator AttackLoop()
         {
             CanFire = false;
             for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)

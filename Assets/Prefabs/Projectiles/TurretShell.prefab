@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7038441453253820814}
   - component: {fileID: 2348413478231728229}
   - component: {fileID: 1038764665581467226}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TurretShell
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,14 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   it: {fileID: 1038764665581467226}
+  pd: {fileID: 0}
+  parent: {fileID: 0}
   enemyDamager: {fileID: 0}
-  lobHeight: 0
-  lobDistance: 0
-  moveSpeed: 4
-  rotationSpeed: 0
-  lifeTimer: 2
-  numberOfPenetrates: 0
-  rb2d: {fileID: 0}
 --- !u!114 &1038764665581467226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,9 +67,15 @@ MonoBehaviour:
   doesRotate: 0
   isLobbed: 0
   doesBounce: 0
+  explodes: 0
   hasLifetime: 0
-  useTranslate: 0
   disableAfterBounces: 0
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 0
+  moveUseVelocity: 0
+  moveUseMoveTowards: 0
 --- !u!1001 &704322914782187738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86,6 +87,18 @@ PrefabInstance:
     - target: {fileID: 1550477657380252, guid: b93d40b8cb1a3074bb9259e4489611ae, type: 3}
       propertyPath: m_Name
       value: SharpMissilePink
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550477657380252, guid: b93d40b8cb1a3074bb9259e4489611ae, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901841321192174, guid: b93d40b8cb1a3074bb9259e4489611ae, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983811055577964, guid: b93d40b8cb1a3074bb9259e4489611ae, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4985825594347044, guid: b93d40b8cb1a3074bb9259e4489611ae, type: 3}
       propertyPath: m_LocalPosition.x

@@ -143912,14 +143912,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeatMelter
       objectReference: {fileID: 0}
-    - target: {fileID: 1730044648976520946, guid: 459a854d19e70ef4397551a030a26728, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3987926661222403637, guid: 459a854d19e70ef4397551a030a26728, type: 3}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 11400000, guid: e9eafc4846a09ce44a68f7ff5d31c9b5, type: 2}
     - target: {fileID: 7699034738757788201, guid: 459a854d19e70ef4397551a030a26728, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -144250,6 +144242,18 @@ PrefabInstance:
     - target: {fileID: 4669060258420965278, guid: a25e6e5d0ff7eb443b1865aa0f57077d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165820181394184246, guid: a25e6e5d0ff7eb443b1865aa0f57077d, type: 3}
+      propertyPath: hasLifetime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165820181394184246, guid: a25e6e5d0ff7eb443b1865aa0f57077d, type: 3}
+      propertyPath: movesBackwards
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165820181394184246, guid: a25e6e5d0ff7eb443b1865aa0f57077d, type: 3}
+      propertyPath: disableOnContact
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

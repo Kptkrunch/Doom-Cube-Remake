@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 291970392326735141}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MissileSpline
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,10 @@ PrefabInstance:
     - target: {fileID: 8766339402483427144, guid: 5ec2ddaa8309d1c4d9107f36b41600d5, type: 3}
       propertyPath: m_Name
       value: MissileTrack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8766339402483427144, guid: 5ec2ddaa8309d1c4d9107f36b41600d5, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8766339402483427144, guid: 5ec2ddaa8309d1c4d9107f36b41600d5, type: 3}
       propertyPath: m_IsActive

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3719558142764550045}
   - component: {fileID: 7412519665702935932}
   - component: {fileID: 4705978271193333440}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TurretShardCasing
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -191,6 +191,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4240349523571165580}
     m_Modifications:
+    - target: {fileID: 702702568842525236, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 702928441993231286, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 703621278355064134, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2348413478231728229, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
       propertyPath: rb2d
       value: 
@@ -206,6 +218,10 @@ PrefabInstance:
     - target: {fileID: 2863473949514863687, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
       propertyPath: m_Name
       value: TurretShell
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863473949514863687, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7038441453253820814, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
       propertyPath: m_LocalPosition.x

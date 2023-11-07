@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058919612510377328}
   - component: {fileID: 8452219050661754765}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MeatSaw_0
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3923738293230046291}
   - component: {fileID: 6479763292378284184}
   - component: {fileID: 5109663282500679762}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SawBlade
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
   doesRotate: 0
   isLobbed: 1
   doesBounce: 1
-  itExplodes: 0
+  explodes: 0
   hasLifetime: 1
   disableAfterBounces: 0
   disableOnContact: 0
