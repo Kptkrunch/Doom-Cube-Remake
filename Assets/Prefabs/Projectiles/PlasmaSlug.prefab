@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1292690508716302900}
   - component: {fileID: 3300815239278084903}
   - component: {fileID: 8029266134612999321}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: PlasmaSlug
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 117484, guid: 172bb145d978fbb4da57d94b1e6b6776, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 117484, guid: 172bb145d978fbb4da57d94b1e6b6776, type: 3}
       propertyPath: m_IsActive
@@ -162,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 182770, guid: 172bb145d978fbb4da57d94b1e6b6776, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 182770, guid: 172bb145d978fbb4da57d94b1e6b6776, type: 3}
       propertyPath: m_TagString

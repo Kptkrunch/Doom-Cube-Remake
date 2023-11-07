@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &343754433359266453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50,3 +50,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: afb859af0e30245499f0b06d324a8948, type: 2}
   uiSprite: {fileID: 0}
+  it: {fileID: 0}

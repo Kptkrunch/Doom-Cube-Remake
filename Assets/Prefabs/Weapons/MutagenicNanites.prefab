@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7788478484353969662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -206,20 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006ae75f16765534b986ec3e8f425efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 5
-    damage: 0
-    range: 3
-    rateOfFire: 1
-    numOfProj: 1
-    duration: 3
-    size: 1
-    cdr: 3
-    name: Mutagenic Nanites
-    description: Who doesn't want a pet slug or two?
-    upgradeText: More slugs the merrier
-  weaponLevel: 0
-  weaponIcon: {fileID: -1255574354, guid: 5eda7b2a067ab884186599f65074b1bc, type: 3}
+  stats: {fileID: 11400000, guid: 673b11440b342a94aa236dc70f176fff, type: 2}
+  uiSprite: {fileID: 0}
   enemyDamagers: []
   projectileScales: []
   projFrameWithTimer: {fileID: 0}

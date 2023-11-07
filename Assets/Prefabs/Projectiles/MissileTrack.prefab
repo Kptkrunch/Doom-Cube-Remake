@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7183951910347047295}
   - component: {fileID: 8679522347085447543}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: MissileTrack
   m_TagString: Projectile
   m_Icon: {fileID: 0}

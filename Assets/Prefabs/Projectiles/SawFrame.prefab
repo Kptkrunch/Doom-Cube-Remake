@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6926548339437666082}
   - component: {fileID: 5335573773805534726}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: SawFrame
   m_TagString: Projectile
   m_Icon: {fileID: 0}

@@ -31,12 +31,10 @@ namespace TechSkills
             {
                 Collider2D enemy = _enemiesInRange[i];
                 Vector2 direction = enemy.transform.position - transform.position;
-                Debug.DrawRay(transform.position, direction, Color.red);
                 if (_enemiesInRange[i]) _foundTarget = true;
-                if (_foundTarget) Debug.DrawRay(transform.position, direction, Color.red);
 
                 // Move towards the enemy
-                if (_foundTarget == true) transform.position = Vector2.MoveTowards(transform.position, _enemiesInRange[i].transform.position, speed * Time.deltaTime);
+                if (_foundTarget) transform.position = Vector2.MoveTowards(transform.position, _enemiesInRange[i].transform.position, speed * Time.deltaTime);
 
                 // Attack the enemy
                 if (_attackTimer <= 0)

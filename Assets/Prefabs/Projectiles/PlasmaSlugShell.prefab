@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 435576366729694507}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PlasmaSlugShell
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -50,11 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4048762914052333853, guid: 43443c04224519e4d869b7f9e3e280eb, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4048762914052399619, guid: 43443c04224519e4d869b7f9e3e280eb, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4947877613969299130, guid: 43443c04224519e4d869b7f9e3e280eb, type: 3}
       propertyPath: m_Name
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4947877613969299130, guid: 43443c04224519e4d869b7f9e3e280eb, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4947877613969299130, guid: 43443c04224519e4d869b7f9e3e280eb, type: 3}
       propertyPath: m_IsActive

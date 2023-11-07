@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7038441453253820814}
   - component: {fileID: 2348413478231728229}
   - component: {fileID: 1038764665581467226}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: TurretShell
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -90,15 +90,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1550477657380252, guid: b93d40b8cb1a3074bb9259e4489611ae, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550477657380252, guid: b93d40b8cb1a3074bb9259e4489611ae, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 1901841321192174, guid: b93d40b8cb1a3074bb9259e4489611ae, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1983811055577964, guid: b93d40b8cb1a3074bb9259e4489611ae, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4985825594347044, guid: b93d40b8cb1a3074bb9259e4489611ae, type: 3}
       propertyPath: m_LocalPosition.x

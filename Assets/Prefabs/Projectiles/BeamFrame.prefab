@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2585769712304434302}
   - component: {fileID: 4187763104773733342}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1034536183880207235}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Transforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 1516222754656341774}
   - component: {fileID: 7164967145558606810}
   - component: {fileID: 5838200903737337234}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: BeamImpact
   m_TagString: Projectile
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -299,7 +299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7412010276514041948}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: BeamFrame
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4853240589594146527}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: BeamSignal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1383822831247512183}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: BeamOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}

@@ -81,11 +81,11 @@ MonoBehaviour:
   isLobbed: 0
   doesBounce: 0
   explodes: 0
-  hasLifetime: 0
+  hasLifetime: 1
   disableAfterBounces: 0
-  disableOnContact: 0
+  disableOnContact: 1
   randomDirection: 0
-  movesBackwards: 1
+  movesBackwards: 0
   moveUseTranslate: 1
   moveUseVelocity: 0
   moveUseMoveTowards: 0

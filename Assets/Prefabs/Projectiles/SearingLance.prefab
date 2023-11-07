@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4615838180976961679}
   - component: {fileID: 4046082008318575331}
   - component: {fileID: 8347340753095523733}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: SearingLance
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -146,11 +146,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101008, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 102962, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 105478, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_Name
@@ -158,15 +158,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 105478, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 190178, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 199932, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 426138, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_LocalPosition.x

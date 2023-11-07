@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 namespace MutantsAndRobots
 {
-    public class Mutant : MonoBehaviour
+    public class CreatureOrBot : MonoBehaviour
     {
         public int health = 1;
         public float moveSpeed;
@@ -42,7 +42,6 @@ namespace MutantsAndRobots
             {
                 yield return new WaitForSeconds(moveInterval);
                 GetRandomDirection();
-                Debug.Log("After the x flip");
             }
         }
 
@@ -52,7 +51,6 @@ namespace MutantsAndRobots
             {
                 Attack();
                 yield return new WaitForSeconds(attackInterval);
-                Debug.Log("After the attack");
             }
         }
 
@@ -67,7 +65,6 @@ namespace MutantsAndRobots
             var direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 1f);
             MaybeFlipSelf(direction);
             _direction = direction;
-            Debug.Log(transform.localScale.x);
         }
 
         private void MaybeFlipSelf(Vector3 direction)

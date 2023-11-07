@@ -1,3 +1,4 @@
+using GenUtilsAndTools;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
@@ -9,9 +10,11 @@ namespace Controllers
         public float moveSpeed;
         public float damage;
         public float health = 5;
+        public ItemDropper itemDropper;
         
         private Transform _target;
         private float _hitCounter, _knockBackTimer, _hitInterval, _originalMoveSpeed;
+        
         
         private void Start()
         {
@@ -54,6 +57,7 @@ namespace Controllers
             health -= enemyDamage;
             if (health <= 0)
             {
+                itemDropper.DropItem();
                 ExperienceController.contExp.expDrop.DropItem();
                 gameObject.SetActive(false);
             }

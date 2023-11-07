@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8178988525685143888}
   - component: {fileID: 6773755887716218981}
   - component: {fileID: 4051650927833513506}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: ParaBomb
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 127838, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 127838, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_TagString
@@ -99,7 +99,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 151600, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 151600, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_TagString
@@ -107,7 +107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 153860, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 153860, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_TagString
@@ -119,7 +119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 179950, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 179950, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_TagString

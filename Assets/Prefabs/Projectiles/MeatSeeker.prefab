@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5682674649183079401}
   - component: {fileID: 4657090969271970217}
   - component: {fileID: 5117269069165185425}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: MeatSeeker
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3464617157120658608}
   - component: {fileID: 3435872272410916698}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: MissileSprite
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5207942466891706188}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: JetParticle
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 114060, guid: 74ac1167f556515428f2a73bee708365, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 138478, guid: 74ac1167f556515428f2a73bee708365, type: 3}
       propertyPath: m_Name
@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 138478, guid: 74ac1167f556515428f2a73bee708365, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 459670, guid: 74ac1167f556515428f2a73bee708365, type: 3}
       propertyPath: m_LocalPosition.x

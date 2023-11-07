@@ -11,7 +11,7 @@ TagManager:
   - WorldlyObject
   - Critter
   - Resource
-  - Tower
+  - Construct
   layers:
   - Default
   - TransparentFX
@@ -19,13 +19,13 @@ TagManager:
   - Camera
   - Water
   - UI
-  - 
-  - 
-  - 
-  - Player
   - Obstacles
   - Enemy
+  - Player
   - Projectile
+  - Critter
+  - Constructs
+  - 
   - 
   - 
   - 

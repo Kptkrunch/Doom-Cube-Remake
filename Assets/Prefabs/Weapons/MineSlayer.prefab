@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9175053106362630759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -69,6 +69,7 @@ MonoBehaviour:
   doesRotate: 0
   isLobbed: 0
   doesBounce: 0
+  explodes: 0
   hasLifetime: 1
   disableAfterBounces: 0
   disableOnContact: 0
@@ -76,3 +77,4 @@ MonoBehaviour:
   movesBackwards: 0
   moveUseTranslate: 0
   moveUseVelocity: 0
+  moveUseMoveTowards: 0

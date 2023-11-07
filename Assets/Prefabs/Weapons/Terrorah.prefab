@@ -10,13 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1739116468493140281}
   - component: {fileID: 2907146642129833190}
+  - component: {fileID: 2676920559286787964}
+  - component: {fileID: 6389339197873565023}
   m_Layer: 0
   m_Name: Terrorah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1739116468493140281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51,9 +53,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: ff43e22d893f7aa4783f2eba0d2a3902, type: 2}
   uiSprite: {fileID: 0}
-  auraDamager: {fileID: 0}
-  auraCollider: {fileID: 0}
+  auraDamager: {fileID: 6389339197873565023}
+  auraCollider: {fileID: 2676920559286787964}
   auraParticles: {fileID: 4438535198638987798}
+--- !u!58 &2676920559286787964
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171204148686782349}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &6389339197873565023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171204148686782349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd333a3f955a3440902a33d041b0dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  destructive: 0
+  hitsGround: 1
+  hitsAir: 0
+  fireDamage: 0
+  chemicalDamage: 0
+  explosiveDamage: 0
+  damageOverTime: 1
+  damageInterval: 0
 --- !u!1 &7933652277699109701
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,15 +170,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 410724, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 410724, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 410724, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 410724, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -182,6 +240,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -555709117
       objectReference: {fileID: 0}
+    - target: {fileID: 19913272, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 19922138, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -190,6 +252,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -555709117
       objectReference: {fileID: 0}
+    - target: {fileID: 19922138, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 19942060, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -197,6 +263,10 @@ PrefabInstance:
     - target: {fileID: 19942060, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
       propertyPath: m_SortingLayerID
       value: -555709117
+      objectReference: {fileID: 0}
+    - target: {fileID: 19942060, guid: 57df916d6167faf4ba0929176ea3c7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

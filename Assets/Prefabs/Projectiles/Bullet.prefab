@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 143337889030325946}
   - component: {fileID: 3261258776330953320}
   - component: {fileID: 7757919040343180698}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -151,11 +151,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 101334, guid: 93af70b94b5342c4da42b256dcd1a707, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 187738, guid: 93af70b94b5342c4da42b256dcd1a707, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 440324, guid: 93af70b94b5342c4da42b256dcd1a707, type: 3}
       propertyPath: m_LocalPosition.x

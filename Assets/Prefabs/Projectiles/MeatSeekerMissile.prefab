@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3372955731837538196}
   - component: {fileID: 1370100642267004574}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: MeatSeekerMissile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -68,10 +68,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeatSeeker
       objectReference: {fileID: 0}
+    - target: {fileID: 1103296668247464038, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251960816748066959, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409646067613215433, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409646067613371307, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5682674649183079401, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1370100642267004574}
+    - target: {fileID: 6140834961603437619, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8156555775619255281, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
