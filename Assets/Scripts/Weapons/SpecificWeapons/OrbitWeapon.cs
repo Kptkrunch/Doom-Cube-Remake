@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Damagers;
 using GenUtilsAndTools;
@@ -25,11 +24,14 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (projFrameWithTimer != null)
+            if (_rotationSpeed <= 0) _rotationSpeed = stats.weaponLvls[stats.lvl].speed * Time.deltaTime;
+            if (projFrameWithTimer)
+            {
                 transform.rotation = Quaternion.Euler(0f, 0f,
                     projFrameWithTimer.transform.rotation.eulerAngles.z +
                     _rotationSpeed * stats.weaponLvls[stats.lvl].speed);
-
+            }
+            
             if (naniteController)
             {
                 transform.rotation = Quaternion.Euler(0f, 0f,
@@ -45,7 +47,6 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
-            _rotationSpeed = stats.weaponLvls[stats.lvl].speed * Time.deltaTime;
             if (enemyDamagers == null) return;
             for (var i = 0; i < enemyDamagers.Count; i++)
             {
