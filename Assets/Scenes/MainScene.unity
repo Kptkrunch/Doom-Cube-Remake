@@ -8190,6 +8190,7 @@ GameObject:
   - component: {fileID: 932855998}
   - component: {fileID: 932855999}
   - component: {fileID: 932856000}
+  - component: {fileID: 932856001}
   m_Layer: 0
   m_Name: EnemyPools
   m_TagString: Untagged
@@ -8224,7 +8225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab4f5f14614419e46a4c59869c7ef148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wavePools:
+  - {fileID: 932856000}
+  - {fileID: 932856001}
   muggerPool: {fileID: 932856000}
+  joePool: {fileID: 932856001}
 --- !u!114 &932856000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8242,6 +8247,24 @@ MonoBehaviour:
   NestUnderThis: 0
   GameObjectToPool: {fileID: 5132048982010305450, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
   PoolSize: 40
+  PoolCanExpand: 1
+--- !u!114 &932856001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932855997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 5132048982010305450, guid: aeaf93a66390c9b45badcf69141c7800, type: 3}
+  PoolSize: 20
   PoolCanExpand: 1
 --- !u!114 &944823387 stripped
 MonoBehaviour:
@@ -142528,22 +142551,6 @@ PrefabInstance:
     - target: {fileID: 7137385650519503330, guid: bbed0c8019c462344ba396bd020b2c52, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 7240433701734382875, guid: bbed0c8019c462344ba396bd020b2c52, type: 3}
-      propertyPath: enemyPooler
-      value: 
-      objectReference: {fileID: 932856000}
-    - target: {fileID: 7240433701734382875, guid: bbed0c8019c462344ba396bd020b2c52, type: 3}
-      propertyPath: checkPerFrame
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7240433701734382875, guid: bbed0c8019c462344ba396bd020b2c52, type: 3}
-      propertyPath: spawnInterval
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7240433701734382875, guid: bbed0c8019c462344ba396bd020b2c52, type: 3}
-      propertyPath: waves.Array.data[0].waveInterval
-      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

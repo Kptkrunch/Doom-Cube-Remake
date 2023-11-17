@@ -8,7 +8,6 @@ namespace EnemyStuff
 {
     public class EnemySpawner : MonoBehaviour
     {
-        public MMSimpleObjectPooler enemyPooler;
         public Transform minSpawnPoint, maxSpawnPoint;
         public float spawnInterval;
         public int checkPerFrame;
@@ -50,7 +49,7 @@ namespace EnemyStuff
                         _spawnTimer = waves[_currentWave].waveInterval;
 
 
-                        var newEnemy = EnemyPoolManager.PoolEnemys.muggerPool.GetPooledGameObject();
+                        var newEnemy = EnemyPoolManager.PoolEnemys.wavePools[waves[_currentWave].enemyToSpawn].GetPooledGameObject();
                         newEnemy.transform.position = SelectSpawnPoint();
                         newEnemy.SetActive(true);
                     
@@ -130,7 +129,7 @@ namespace EnemyStuff
     [System.Serializable]
     public class WaveInfo
     {
-        public GameObject enemyToSpawn;
+        public int enemyToSpawn;
         [FormerlySerializedAs("waveSize")] public int waveDuration;
         public float waveInterval;
     }

@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7137385650519503330}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.016827397, y: -1.088234, z: 0.015596984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -108,12 +108,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2053b97150f7a4409248ad08db22f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 5132048982010305450, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
   minSpawnPoint: {fileID: 4330280843532063169}
   maxSpawnPoint: {fileID: 2892564231868176715}
-  spawnInterval: 0.5
+  spawnInterval: 0.2
   checkPerFrame: 10
   waves:
-  - enemyToSpawn: {fileID: 5132048982010305450, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-    waveDuration: 1000
-    waveInterval: 1
+  - enemyToSpawn: 0
+    waveDuration: 60
+    waveInterval: 0.2
+  - enemyToSpawn: 1
+    waveDuration: 60
+    waveInterval: 0.1
