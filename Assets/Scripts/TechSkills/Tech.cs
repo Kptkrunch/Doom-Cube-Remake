@@ -55,8 +55,6 @@ namespace TechSkills
         
         public void TakeDamage(float damage)
         {
-            ShowDamage(damage, 1f);
-            Debug.Log("damage");
             CurrentHealth -= damage;
             if (CurrentHealth <= 0)
             {
@@ -68,9 +66,9 @@ namespace TechSkills
         
         private void ShowDamage(float theDamage, float intensity = 1f)
         {
-            var floatingText = PlayerDamageNumberController.ContPlayerDmgNum.player.GetFeedbackOfType<MMF_FloatingText>();
+            var floatingText = TechDamageNumberController.ContTechDmgNum.player.GetFeedbackOfType<MMF_FloatingText>();
             floatingText.Value = theDamage.ToString();
-            PlayerDamageNumberController.ContPlayerDmgNum.player.PlayFeedbacks(transform.position);
+            TechDamageNumberController.ContTechDmgNum.player.PlayFeedbacks(transform.position);
         }
         
         public void UpdateTech()

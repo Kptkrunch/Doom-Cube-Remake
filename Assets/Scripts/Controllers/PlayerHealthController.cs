@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,8 +35,17 @@ namespace Controllers
             {
                 gameObject.SetActive(false);
             }
+            ShowDamage(damage, 1f);
             healthSlider.value = currentHealth;
             lastAttackedTime = Time.time;
+        }
+        
+        private void ShowDamage(float theDamage, float intensity = 1f)
+        {
+            var floatingText = PlayerDamageNumberController.ContPlayerDmgNum
+                .player.GetFeedbackOfType<MMF_FloatingText>();
+            floatingText.Value = theDamage.ToString();
+            PlayerDamageNumberController.ContPlayerDmgNum.player.PlayFeedbacks(transform.position);
         }
     }
 }
