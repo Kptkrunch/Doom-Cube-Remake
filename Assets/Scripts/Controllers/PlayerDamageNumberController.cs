@@ -3,13 +3,14 @@ using UnityEngine;
 
 namespace Controllers
 {
-    public class ObjDmgNumController : MonoBehaviour
+    public class PlayerDamageNumberController : MonoBehaviour
     {
-        public static ObjDmgNumController ContObjDmgNum;
+        public static PlayerDamageNumberController ContPlayerDmgNum;
         public MMF_Player player;
         private void Awake()
         {
-            ContObjDmgNum = this;
+            ContPlayerDmgNum = this;
         }
     }
 }
+

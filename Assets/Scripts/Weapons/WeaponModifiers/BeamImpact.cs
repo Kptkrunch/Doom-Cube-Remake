@@ -23,7 +23,6 @@ namespace Weapons.WeaponModifiers
         {
             if (collision.CompareTag("Enemy"))
             {
-                Debug.Log("Hit");
                 if (_damageTimer <= 0)
                 {
                     Debug.Log("Damage?");

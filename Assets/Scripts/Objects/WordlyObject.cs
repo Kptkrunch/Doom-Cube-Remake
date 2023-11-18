@@ -70,12 +70,12 @@ namespace Objects
 
         private void ShowDamage(float damage, float intensity = 1f)
         {
-            var floatingText = ObjDmgNumController.contObjDmgNum
+            var floatingText = ObjDmgNumController.ContObjDmgNum
                 .player.GetFeedbackOfType<MMF_FloatingText>();
             floatingText.Value = damage.ToString();
             if (objBody)
-                if (ObjDmgNumController.contObjDmgNum != null)
-                    ObjDmgNumController.contObjDmgNum.player.PlayFeedbacks(transform.position);
+                if (ObjDmgNumController.ContObjDmgNum != null)
+                    ObjDmgNumController.ContObjDmgNum.player.PlayFeedbacks(transform.position);
         }
     }
 }

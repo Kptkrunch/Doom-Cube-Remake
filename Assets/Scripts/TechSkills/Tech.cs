@@ -1,6 +1,8 @@
 using Controllers;
 using Controllers.Pools;
+using MoreMountains.Feedbacks;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TechSkills
 {
@@ -10,14 +12,19 @@ namespace TechSkills
         public int techLevel;
         public string description;
         public Sprite techImage;
+        public float maxHealth;
         public int costMeat, costMetal, costMineral, costPlastic, costEnergy;
-        protected float cooldownTimer;
+        protected float CooldownTimer;
         private TechController _techCont;
+        protected float CurrentHealth;
+        [SerializeField] protected Rigidbody2D rb2d;
 
         private void Start()
         {
-            cooldownTimer = 0;
+            CooldownTimer = 0;
             _techCont = TechController.ContTechCon;
+            CurrentHealth = maxHealth;
+            rb2d = GetComponent<Rigidbody2D>();
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
@@ -44,6 +51,26 @@ namespace TechSkills
                     techObj.transform.position = PlayerController.contPlayer.transform.position;
                     break;
             }
+        }
+        
+        public void TakeDamage(float damage)
+        {
+            ShowDamage(damage, 1f);
+            Debug.Log("damage");
+            CurrentHealth -= damage;
+            if (CurrentHealth <= 0)
+            {
+                CurrentHealth = maxHealth;
+                gameObject.SetActive(false);
+            }
+            ShowDamage(damage, 1f);
+        }
+        
+        private void ShowDamage(float theDamage, float intensity = 1f)
+        {
+            var floatingText = PlayerDamageNumberController.ContPlayerDmgNum.player.GetFeedbackOfType<MMF_FloatingText>();
+            floatingText.Value = theDamage.ToString();
+            PlayerDamageNumberController.ContPlayerDmgNum.player.PlayFeedbacks(transform.position);
         }
         
         public void UpdateTech()

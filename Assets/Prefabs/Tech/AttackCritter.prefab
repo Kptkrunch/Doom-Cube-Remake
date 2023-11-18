@@ -51,11 +51,13 @@ MonoBehaviour:
   techLevel: 0
   description: A nasty little bugger, better than ol' leg humper
   techImage: {fileID: -715782552, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
+  maxHealth: 0
   costMeat: 0
   costMetal: 0
   costMineral: 0
   costPlastic: 0
   costEnergy: 0
+  rb2d: {fileID: 0}
   speed: 2
   attackRange: 0.5
   health: 10

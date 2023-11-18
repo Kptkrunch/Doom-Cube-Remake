@@ -159,6 +159,7 @@ MonoBehaviour:
   damage: 1
   health: 1
   itemDropper: {fileID: 2822750805263999890}
+  target: {fileID: 0}
 --- !u!50 &2533250486204988915
 Rigidbody2D:
   serializedVersion: 4

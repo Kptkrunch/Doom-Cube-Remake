@@ -1,3 +1,5 @@
+using Controllers;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace TechSkills
@@ -9,7 +11,6 @@ namespace TechSkills
         public float fireRate = 1f;
         public float range = 10f;
         public GameObject projectilePrefab;
-
         private CircleCollider2D _circleCollider;
         private Transform _target;
         private float _nextFire;
