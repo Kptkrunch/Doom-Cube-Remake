@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5320141174447693361}
   - component: {fileID: 1347375190253600894}
   - component: {fileID: 5091119943287096437}
+  - component: {fileID: 4570421209848066110}
   m_Layer: 0
   m_Name: RedEyeCloakDude
   m_TagString: Enemy
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 85556b636250c344881202d32fc94979, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,6 +107,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4570421209848066110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042653812241894179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 3
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &5132048982010305450
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +136,7 @@ GameObject:
   - component: {fileID: 2533250486204988915}
   - component: {fileID: 8971525444925801166}
   - component: {fileID: 2822750805263999890}
+  - component: {fileID: 183772153419652894}
   m_Layer: 0
   m_Name: Mugger
   m_TagString: Enemy
@@ -156,8 +174,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 2533250486204988915}
-  sprite: {fileID: 1347375190253600894}
   attackLocation: {fileID: 5835176990151292451}
+  spriteRenderer: {fileID: 1347375190253600894}
+  it: {fileID: 183772153419652894}
   attackIndex: 0
   moveSpeed: 0.5
   damage: 1
@@ -256,6 +275,19 @@ MonoBehaviour:
   energy: 0
   exp: 1
   itemDrop: {fileID: 0}
+--- !u!114 &183772153419652894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132048982010305450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bcc6c338ee7854280fc27d8bda4d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathRay: 0
 --- !u!1 &5835176990151292451
 GameObject:
   m_ObjectHideFlags: 0

@@ -4380,6 +4380,63 @@ MonoBehaviour:
   fireDamage: 0
   chemicalDamage: 0
   explosiveDamage: 0
+--- !u!1001 &584002639
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132048982010305450, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
+      propertyPath: m_Name
+      value: Mugger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
 --- !u!1 &599910296
 GameObject:
   m_ObjectHideFlags: 0
@@ -11426,7 +11483,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ede3f2e9dc9eecd40b8c8612ee9ee673, type: 2}
+  - {fileID: 2100000, guid: bf895746ef9911447928c4c9b010e8b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140945,7 +141002,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
-  m_Intensity: 1
+  m_Intensity: 5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 9b4ae75700000000236a4d6b512941944b81041e438de0dea965ed48717d4159
@@ -141616,7 +141673,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 3620136804251221923, guid: 43ea962922674d2419c6bbb9ce3eec4d, type: 3}
+  GameObjectToPool: {fileID: 1576508625749478, guid: a813383461dc2864e823a10d598164e8, type: 3}
   PoolSize: 20
   PoolCanExpand: 1
 --- !u!1 &1995063860
@@ -145233,3 +145290,4 @@ SceneRoots:
   - {fileID: 23833853}
   - {fileID: 742495943}
   - {fileID: 911624791}
+  - {fileID: 584002639}

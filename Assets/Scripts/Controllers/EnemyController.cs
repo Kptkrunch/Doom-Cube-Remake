@@ -1,3 +1,4 @@
+using Controllers.Pools;
 using GenUtilsAndTools;
 using MoreMountains.Feedbacks;
 using TechSkills;
@@ -9,36 +10,48 @@ namespace Controllers
     public class EnemyController : MonoBehaviour
     {
         public Rigidbody2D rb2d;
-        public SpriteRenderer sprite;
         public GameObject attackLocation;
+        public SpriteRenderer spriteRenderer;
+        public EnemyBools it;
         public int attackIndex;
         public float moveSpeed;
         public float damage;
         public float health = 5;
         public ItemDropper itemDropper;
-        
         public Transform target;
-        private float _hitCounter, _knockBackTimer, _hitInterval, _originalMoveSpeed;
-        
-        
+
+        private Material _material;
+        private float _hitCounter, _knockBackTimer, _hitInterval, _originalMoveSpeed, _lerpTimer;
+        private static readonly int FadeAmount = Shader.PropertyToID("_FadeAmount");
+
+
         private void Start()
         {
             _originalMoveSpeed = moveSpeed;
             target = PlayerHealthController.contPHealth.transform;
+            _material = spriteRenderer.material;
         }
     
         private void Update()
         {
+            if (it.deathRay)
+            {
+                var amount = Mathf.Lerp(0, 1, _lerpTimer / 1.0f);
+                _lerpTimer += Time.deltaTime;
+                _material.SetFloat(FadeAmount, amount);
+                if (_material.GetFloat(FadeAmount) >= 1)
+                {
+                    _lerpTimer = 0;
+                    gameObject.SetActive(false);
+                }
+            }
             rb2d.velocity = (target.position - transform.position).normalized * moveSpeed;
             if (rb2d.velocity.x < 0)
             {
                 rb2d.transform.localScale = new Vector2(-1, transform.localScale.y);
-                // sprite.flipX = true;
             } else if (rb2d.velocity.x >= 0)
             {
                 rb2d.transform.localScale = new Vector2(1, transform.localScale.y);
-
-                // sprite.flipX = false;
             }
             
             if (!target) target = PlayerHealthController.contPHealth.transform;
@@ -111,8 +124,8 @@ namespace Controllers
             health -= enemyDamage;
             if (health <= 0)
             {
+                it.deathRay = true;
                 itemDropper.DropResource();
-                gameObject.SetActive(false);
             }
             ShowDamage(enemyDamage);
         }
