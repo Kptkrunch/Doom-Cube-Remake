@@ -9,6 +9,9 @@ namespace Controllers
     public class EnemyController : MonoBehaviour
     {
         public Rigidbody2D rb2d;
+        public SpriteRenderer sprite;
+        public GameObject attackLocation;
+        public int attackIndex;
         public float moveSpeed;
         public float damage;
         public float health = 5;
@@ -27,6 +30,17 @@ namespace Controllers
         private void Update()
         {
             rb2d.velocity = (target.position - transform.position).normalized * moveSpeed;
+            if (rb2d.velocity.x < 0)
+            {
+                rb2d.transform.localScale = new Vector2(-1, transform.localScale.y);
+                // sprite.flipX = true;
+            } else if (rb2d.velocity.x >= 0)
+            {
+                rb2d.transform.localScale = new Vector2(1, transform.localScale.y);
+
+                // sprite.flipX = false;
+            }
+            
             if (!target) target = PlayerHealthController.contPHealth.transform;
             if (_hitCounter > 0f)
             {
@@ -48,14 +62,45 @@ namespace Controllers
         {
             if (collision.gameObject.CompareTag("Player") && _hitCounter <= 0f)
             {
+                var attack = EnemyAttackPools.PoolEnemyAtk.attackList[attackIndex].GetPooledGameObject();
+                attack.transform.position = attackLocation.transform.position;
+                if (rb2d.velocity.x < 0)
+                {
+                    var localScale = attack.transform.localScale;
+                    localScale =
+                        new Vector3(1, localScale.y, localScale.z);
+                    attack.transform.localScale = localScale;
+                } else if (rb2d.velocity.x >= 0)
+                {
+                    var localScale = attack.transform.localScale;
+                    localScale =
+                        new Vector3(-1, localScale.y, localScale.z);
+                    attack.transform.localScale = localScale;
+                }
+                attack.SetActive(true);
                 PlayerHealthController.contPHealth.TakeDamage(damage);
                 _hitCounter = _hitInterval;
             }
 
             if (collision.gameObject.CompareTag("Construct"))
             {
+                var attack = EnemyAttackPools.PoolEnemyAtk.attackList[attackIndex].GetPooledGameObject();
+                attack.transform.position = attackLocation.transform.position;
+                if (rb2d.velocity.x < 0)
+                {
+                    var localScale = attack.transform.localScale;
+                    localScale =
+                        new Vector3(1, localScale.y, localScale.z);
+                    attack.transform.localScale = localScale;
+                } else if (rb2d.velocity.x >= 0)
+                {
+                    var localScale = attack.transform.localScale;
+                    localScale =
+                        new Vector3(-1, localScale.y, localScale.z);
+                    attack.transform.localScale = localScale;
+                }
+                attack.SetActive(true);
                 collision.gameObject.GetComponentInChildren<Tech>().TakeDamage(damage);
-                Debug.Log("got here 1");
                 _hitCounter = _hitInterval;
             }
             StopEnemies();

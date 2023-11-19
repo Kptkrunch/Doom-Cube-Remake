@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1347375190253600894}
   - component: {fileID: 5091119943287096437}
   m_Layer: 0
-  m_Name: redeyecloakdude
+  m_Name: RedEyeCloakDude
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,6 +140,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5320141174447693361}
+  - {fileID: 6357524228027479251}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6352414133390041627
@@ -155,6 +156,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 2533250486204988915}
+  sprite: {fileID: 1347375190253600894}
+  attackLocation: {fileID: 5835176990151292451}
+  attackIndex: 0
   moveSpeed: 0.5
   damage: 1
   health: 1
@@ -252,3 +256,34 @@ MonoBehaviour:
   energy: 0
   exp: 1
   itemDrop: {fileID: 0}
+--- !u!1 &5835176990151292451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6357524228027479251}
+  m_Layer: 0
+  m_Name: AttackLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6357524228027479251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835176990151292451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.15, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 502553970196647054}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -10,6 +10,7 @@ namespace Controllers
         public Slider healthSlider;
         public float currentHealth;
         public float lastAttackedTime;
+        public GameObject enemyAttack;
         
         private float _maxHealth;
 
