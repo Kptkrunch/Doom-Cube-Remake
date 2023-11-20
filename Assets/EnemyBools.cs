@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class EnemyBools : MonoBehaviour
 {
+    public bool gotDeathParticle;
     public bool deathRay;
+    public bool melting;
 
     private void Awake()
     {
@@ -13,5 +15,6 @@ public class EnemyBools : MonoBehaviour
     private void OnEnable()
     {
         deathRay = false;
+        melting = false;
     }
 }

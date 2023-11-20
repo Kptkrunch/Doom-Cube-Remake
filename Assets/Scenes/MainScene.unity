@@ -3935,6 +3935,7 @@ Transform:
   - {fileID: 1605096547}
   - {fileID: 932855998}
   - {fileID: 1991320152}
+  - {fileID: 1655140771}
   m_Father: {fileID: 742495943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &525889531
@@ -4380,63 +4381,6 @@ MonoBehaviour:
   fireDamage: 0
   chemicalDamage: 0
   explosiveDamage: 0
---- !u!1001 &584002639
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 502553970196647054, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5132048982010305450, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
-      propertyPath: m_Name
-      value: Mugger
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7bae2ecfd3983ac43874651bddae92db, type: 3}
 --- !u!1 &599910296
 GameObject:
   m_ObjectHideFlags: 0
@@ -139676,6 +139620,71 @@ MonoBehaviour:
   - {fileID: 443019872}
   - {fileID: 349240896}
   - {fileID: 1385984842}
+--- !u!1 &1655140770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655140771}
+  - component: {fileID: 1655140772}
+  - component: {fileID: 1655140773}
+  m_Layer: 0
+  m_Name: EnemyDeathPools
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1655140771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655140770}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 524268073}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1655140772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655140770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb6b85c07ae4434a96dfa73021bbf09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDeathPools: []
+  meltingPool: {fileID: 1655140773}
+--- !u!114 &1655140773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655140770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 1209267979325247194, guid: bc34258384f8d9f4f8fa09fe05cc2c37, type: 3}
+  PoolSize: 20
+  PoolCanExpand: 1
 --- !u!1 &1660418508
 GameObject:
   m_ObjectHideFlags: 0
@@ -145290,4 +145299,3 @@ SceneRoots:
   - {fileID: 23833853}
   - {fileID: 742495943}
   - {fileID: 911624791}
-  - {fileID: 584002639}

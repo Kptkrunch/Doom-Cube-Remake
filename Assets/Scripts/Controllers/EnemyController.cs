@@ -3,7 +3,6 @@ using GenUtilsAndTools;
 using MoreMountains.Feedbacks;
 using TechSkills;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Controllers
 {
@@ -23,6 +22,7 @@ namespace Controllers
         private Material _material;
         private float _hitCounter, _knockBackTimer, _hitInterval, _originalMoveSpeed, _lerpTimer;
         private static readonly int FadeAmount = Shader.PropertyToID("_FadeAmount");
+        private static readonly int OffsetUvY = Shader.PropertyToID("_OffsetUvY");
 
 
         private void Start()
@@ -34,41 +34,26 @@ namespace Controllers
     
         private void Update()
         {
+            if (!target) target = PlayerHealthController.contPHealth.transform;
+            
             if (it.deathRay)
             {
-                var amount = Mathf.Lerp(0, 1, _lerpTimer / 1.0f);
-                _lerpTimer += Time.deltaTime;
-                _material.SetFloat(FadeAmount, amount);
-                if (_material.GetFloat(FadeAmount) >= 1)
-                {
-                    _lerpTimer = 0;
-                    gameObject.SetActive(false);
-                }
+                DeathRayDeath();
             }
-            rb2d.velocity = (target.position - transform.position).normalized * moveSpeed;
-            if (rb2d.velocity.x < 0)
+
+            if (it.melting)
             {
-                rb2d.transform.localScale = new Vector2(-1, transform.localScale.y);
-            } else if (rb2d.velocity.x >= 0)
-            {
-                rb2d.transform.localScale = new Vector2(1, transform.localScale.y);
+                AcidMeltedDeath();
             }
             
-            if (!target) target = PlayerHealthController.contPHealth.transform;
+            FlipRigidBodyX();
+            
             if (_hitCounter > 0f)
             {
                 _hitCounter -= Time.deltaTime;
             }
-        
-            switch (_knockBackTimer)
-            {
-                case <= 0:
-                    moveSpeed = _originalMoveSpeed;
-                    break;
-                case > 0f:
-                    _knockBackTimer -= Time.deltaTime;
-                    break;
-            }
+            KnockBackTimer();
+
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -124,7 +109,8 @@ namespace Controllers
             health -= enemyDamage;
             if (health <= 0)
             {
-                it.deathRay = true;
+                // it.deathRay = true;
+                it.melting = true;
                 itemDropper.DropResource();
             }
             ShowDamage(enemyDamage);
@@ -147,12 +133,77 @@ namespace Controllers
             if (rb2d) DamageNumberController.contDmgText.player.PlayFeedbacks(transform.position);
         }
 
+        private void FlipRigidBodyX()
+        {
+            rb2d.velocity = (target.position - transform.position).normalized * moveSpeed;
+            if (rb2d.velocity.x < 0)
+            {
+                rb2d.transform.localScale = new Vector2(-1, transform.localScale.y);
+            } else if (rb2d.velocity.x >= 0)
+            {
+                rb2d.transform.localScale = new Vector2(1, transform.localScale.y);
+            }
+        }
+
+        private void KnockBackTimer()
+        {
+            switch (_knockBackTimer)
+            {
+                case <= 0:
+                    moveSpeed = _originalMoveSpeed;
+                    break;
+                case > 0f:
+                    _knockBackTimer -= Time.deltaTime;
+                    break;
+            }
+        }
+
         private void StopEnemies()
         {
             if (!PlayerController.contPlayer.gameObject.activeInHierarchy)
             {
                 moveSpeed = 0f;
             }
+        }
+
+        private void DeathRayDeath()
+        {
+            var amount = Mathf.Lerp(0, 1, _lerpTimer / 1.0f);
+            _lerpTimer += Time.deltaTime;
+            _material.SetFloat(FadeAmount, amount);
+            if (_material.GetFloat(FadeAmount) >= 1)
+            {
+                _material.SetFloat(FadeAmount, 0);
+                _lerpTimer = 0;
+                gameObject.SetActive(false);
+            }
+        }
+
+        private void AcidMeltedDeath()
+        {
+            moveSpeed = 0;
+            if (!it.gotDeathParticle)
+            {
+                it.gotDeathParticle = true;
+                var acid = EnemyDeathPoolManager.PoolEnemyMan.meltingPool.GetPooledGameObject();
+                var position = transform.position;
+                acid.transform.position = new Vector3(position.x, position.y - .35f, position.z);
+                acid.SetActive(true);
+            }
+
+            var amount = Mathf.Lerp(0, 1, _lerpTimer / 1.5f);
+            _lerpTimer += Time.deltaTime;
+            _material.SetFloat(OffsetUvY, amount);
+            
+            if (_material.GetFloat(OffsetUvY) >= 1)
+            {
+                _material.SetFloat(OffsetUvY, 0);
+                _lerpTimer = 0;
+                moveSpeed = _originalMoveSpeed;
+                it.gotDeathParticle = false;
+                gameObject.SetActive(false);
+            }
+                
         }
     }
 }

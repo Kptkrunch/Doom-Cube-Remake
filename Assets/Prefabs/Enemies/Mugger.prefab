@@ -287,7 +287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bcc6c338ee7854280fc27d8bda4d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gotDeathParticle: 0
   deathRay: 0
+  melting: 0
 --- !u!1 &5835176990151292451
 GameObject:
   m_ObjectHideFlags: 0
