@@ -8,6 +8,7 @@ namespace TechSkills
         public float speed, attackRange, health, damage, attackSpeed;
         public LayerMask enemyLayer;
         public Sprite critterSprite;
+        public string damageType;
 
         [SerializeField] private Transform player;
         private Vector2 _targetPosition;
@@ -42,7 +43,7 @@ namespace TechSkills
                     if (Vector2.Distance(transform.position, enemy.transform.position) < attackRange)
                     {
                         _attackTimer = attackSpeed;
-                        if (enemy) enemy.GetComponent<EnemyController>().TakeDamage(damage);
+                        if (enemy) enemy.GetComponent<EnemyController>().TakeDamage(damage, damageType);
                         if (!enemy) _foundTarget = false;
                     } 
                 }

@@ -11,6 +11,8 @@ namespace Objects
         public GameObject
         expParticle,
         natGasParticle;
+        public string damageType;
+
 
         [SerializeField] private LayerMask enemyLayer;
         [SerializeField] private LayerMask objectLayer;
@@ -53,7 +55,7 @@ namespace Objects
             {
                 if (enemies[i])
                 {
-                    enemies[i].GetComponent<EnemyController>().TakeDamage(damage);
+                    enemies[i].GetComponent<EnemyController>().TakeDamage(damage, damageType);
                 }
 
                 if (objects[i])

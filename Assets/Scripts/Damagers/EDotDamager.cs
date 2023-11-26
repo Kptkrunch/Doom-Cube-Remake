@@ -26,7 +26,7 @@ namespace Damagers
                     _damageTimer = damageInterval;
                     if (collision.CompareTag("Enemy"))
                     {
-                        collision.GetComponent<EnemyController>().TakeDamage(damage);
+                        collision.GetComponent<EnemyController>().TakeDamage(damage, damageType);
                     }
 
                     break;

@@ -6,6 +6,7 @@ namespace Weapons.WeaponModifiers
     public class BeamImpact : MonoBehaviour
     {
         public Weapon parent;
+        public string damageType;
         private float _damageTimer, _damageInterval, _damage;
 
         private void Start()
@@ -27,7 +28,7 @@ namespace Weapons.WeaponModifiers
                 {
                     Debug.Log("Damage?");
                     _damageTimer = _damageInterval;
-                    collision.GetComponent<EnemyController>().TakeDamage(_damage);
+                    collision.GetComponent<EnemyController>().TakeDamage(_damage, damageType);
                 }
             }
         }

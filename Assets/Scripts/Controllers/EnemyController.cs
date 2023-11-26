@@ -32,85 +32,28 @@ namespace Controllers
             _material = spriteRenderer.material;
         }
     
-        private void Update()
+        private void FixedUpdate()
         {
             if (!target) target = PlayerHealthController.contPHealth.transform;
-            
-            if (it.deathRay)
-            {
-                DeathRayDeath();
-            }
-
-            if (it.melting)
-            {
-                AcidMeltedDeath();
-            }
+            if (_hitCounter > 0f) _hitCounter -= Time.deltaTime;
             
             FlipRigidBodyX();
-            
-            if (_hitCounter > 0f)
-            {
-                _hitCounter -= Time.deltaTime;
-            }
             KnockBackTimer();
-
+            CheckDeath();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Player") && _hitCounter <= 0f)
-            {
-                var attack = EnemyAttackPools.PoolEnemyAtk.attackList[attackIndex].GetPooledGameObject();
-                attack.transform.position = attackLocation.transform.position;
-                if (rb2d.velocity.x < 0)
-                {
-                    var localScale = attack.transform.localScale;
-                    localScale =
-                        new Vector3(1, localScale.y, localScale.z);
-                    attack.transform.localScale = localScale;
-                } else if (rb2d.velocity.x >= 0)
-                {
-                    var localScale = attack.transform.localScale;
-                    localScale =
-                        new Vector3(-1, localScale.y, localScale.z);
-                    attack.transform.localScale = localScale;
-                }
-                attack.SetActive(true);
-                PlayerHealthController.contPHealth.TakeDamage(damage);
-                _hitCounter = _hitInterval;
-            }
-
-            if (collision.gameObject.CompareTag("Construct"))
-            {
-                var attack = EnemyAttackPools.PoolEnemyAtk.attackList[attackIndex].GetPooledGameObject();
-                attack.transform.position = attackLocation.transform.position;
-                if (rb2d.velocity.x < 0)
-                {
-                    var localScale = attack.transform.localScale;
-                    localScale =
-                        new Vector3(1, localScale.y, localScale.z);
-                    attack.transform.localScale = localScale;
-                } else if (rb2d.velocity.x >= 0)
-                {
-                    var localScale = attack.transform.localScale;
-                    localScale =
-                        new Vector3(-1, localScale.y, localScale.z);
-                    attack.transform.localScale = localScale;
-                }
-                attack.SetActive(true);
-                collision.gameObject.GetComponentInChildren<Tech>().TakeDamage(damage);
-                _hitCounter = _hitInterval;
-            }
+            MeleeAttack(collision);
             StopEnemies();
         }
 
-        public void TakeDamage(float enemyDamage)
+        public void TakeDamage(float enemyDamage, string damageType)
         {   
             health -= enemyDamage;
             if (health <= 0)
             {
-                // it.deathRay = true;
-                it.melting = true;
+                it.DmgTypeDictionary[damageType] = true;
                 itemDropper.DropResource();
             }
             ShowDamage(enemyDamage);
@@ -166,6 +109,81 @@ namespace Controllers
             }
         }
 
+        private void MeleeAttack(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player") && _hitCounter <= 0f)
+            {
+                var attack = EnemyAttackPools.PoolEnemyAtk.attackList[attackIndex].GetPooledGameObject();
+                attack.transform.position = attackLocation.transform.position;
+                if (rb2d.velocity.x < 0)
+                {
+                    var localScale = attack.transform.localScale;
+                    localScale =
+                        new Vector3(1, localScale.y, localScale.z);
+                    attack.transform.localScale = localScale;
+                } else if (rb2d.velocity.x >= 0)
+                {
+                    var localScale = attack.transform.localScale;
+                    localScale =
+                        new Vector3(-1, localScale.y, localScale.z);
+                    attack.transform.localScale = localScale;
+                }
+                attack.SetActive(true);
+                PlayerHealthController.contPHealth.TakeDamage(damage);
+                _hitCounter = _hitInterval;
+            }
+
+            if (collision.gameObject.CompareTag("Construct"))
+            {
+                var attack = EnemyAttackPools.PoolEnemyAtk.attackList[attackIndex].GetPooledGameObject();
+                attack.transform.position = attackLocation.transform.position;
+                if (rb2d.velocity.x < 0)
+                {
+                    var localScale = attack.transform.localScale;
+                    localScale =
+                        new Vector3(1, localScale.y, localScale.z);
+                    attack.transform.localScale = localScale;
+                } else if (rb2d.velocity.x >= 0)
+                {
+                    var localScale = attack.transform.localScale;
+                    localScale =
+                        new Vector3(-1, localScale.y, localScale.z);
+                    attack.transform.localScale = localScale;
+                }
+                attack.SetActive(true);
+                collision.gameObject.GetComponentInChildren<Tech>().TakeDamage(damage);
+                _hitCounter = _hitInterval;
+            }
+        }
+
+        private void CheckDeath()
+        {
+            if (it.DmgTypeDictionary["deathray"])
+            {
+                DeathRayDeath();
+            }
+
+            if (it.DmgTypeDictionary["melting"])
+            {
+                AcidMeltedDeath();
+            }
+
+            if (it.DmgTypeDictionary["burning"])
+            {
+                
+            }
+
+            if (it.DmgTypeDictionary["physical"])
+            {
+                
+            }
+
+            if (it.DmgTypeDictionary["mental"])
+            {
+                
+            }
+        }
+
         private void DeathRayDeath()
         {
             var amount = Mathf.Lerp(0, 1, _lerpTimer / 1.0f);
@@ -190,7 +208,7 @@ namespace Controllers
                 acid.transform.position = new Vector3(position.x, position.y - .35f, position.z);
                 acid.SetActive(true);
             }
-
+        
             var amount = Mathf.Lerp(0, 1, _lerpTimer / 1.5f);
             _lerpTimer += Time.deltaTime;
             _material.SetFloat(OffsetUvY, amount);

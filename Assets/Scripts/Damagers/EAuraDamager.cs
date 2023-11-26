@@ -37,7 +37,7 @@ namespace Damagers
                 
                 if (_enemiesInRadius[i])
                 {
-                    _enemiesInRadius[i].TakeDamage(damage);
+                    _enemiesInRadius[i].TakeDamage(damage, damageType);
                 }
                 else
                 {
@@ -73,7 +73,7 @@ namespace Damagers
             {
                 if (collision.CompareTag("Enemy"))
                 {
-                    collision.GetComponent<EnemyController>().TakeDamage(damage);
+                    collision.GetComponent<EnemyController>().TakeDamage(damage, damageType);
                 }
 
                 if (collision.CompareTag("WorldlyObject"))
