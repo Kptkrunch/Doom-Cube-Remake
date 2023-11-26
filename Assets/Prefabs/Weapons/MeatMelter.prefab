@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3626696979158112762}
   - component: {fileID: 4199865901650256689}
   - component: {fileID: 3276781482055201744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Burners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  damageType: burning
   destructive: 1
   hitsGround: 1
   hitsAir: 0
@@ -114,13 +115,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7699034738757788201}
   - component: {fileID: 3987926661222403637}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeatMelter
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7699034738757788201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1952903308229683014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MelterFrame
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -481,7 +482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7895086600421190269, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -724,7 +725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6656025947107122966, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6656025947107122966, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_IsActive
@@ -788,7 +789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7895086600421190269, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

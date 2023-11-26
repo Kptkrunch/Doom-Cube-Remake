@@ -13,7 +13,7 @@ namespace Damagers
         {
             if (collision.CompareTag("Enemy"))
             {
-                collision.gameObject.GetComponent<EnemyController>().TakeDamage(damage);
+                collision.gameObject.GetComponent<EnemyController>().TakeDamage(damage, damageType);
             }
         }
 

@@ -85,6 +85,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5682674649183079401, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 8078781750236708068}
+    - target: {fileID: 5682674649183079401, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1370100642267004574}

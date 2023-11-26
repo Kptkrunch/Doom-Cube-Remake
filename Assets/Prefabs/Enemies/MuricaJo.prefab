@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2533250486204988915}
   - component: {fileID: 8971525444925801166}
   - component: {fileID: 2822750805263999890}
+  - component: {fileID: 5948258298167870067}
   m_Layer: 0
   m_Name: MuricaJo
   m_TagString: Enemy
@@ -34,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4634086692960676813}
+  - {fileID: 2615806306651102579}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6352414133390041627
@@ -49,9 +51,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 2533250486204988915}
-  attackLocation: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  it: {fileID: 0}
+  attackLocation: {fileID: 6661291024236739502}
+  spriteRenderer: {fileID: 6027191905065934221}
+  it: {fileID: 5948258298167870067}
   attackIndex: 0
   moveSpeed: 0.5
   damage: 1
@@ -117,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.055010512, y: -0.04644096}
+  m_Offset: {x: -0.06802195, y: -0.023670793}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -128,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24312201, y: 0.65058684}
+  m_Size: {x: 0.38624847, y: 0.93033385}
   m_EdgeRadius: 0
 --- !u!114 &2822750805263999890
 MonoBehaviour:
@@ -150,6 +152,21 @@ MonoBehaviour:
   energy: 0
   exp: 1
   itemDrop: {fileID: 0}
+--- !u!114 &5948258298167870067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132048982010305450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bcc6c338ee7854280fc27d8bda4d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gotDeathParticle: 0
+  isMelee: 0
+  isRanged: 1
 --- !u!1 &5227686717601308110
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,3 +273,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &6661291024236739502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2615806306651102579}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2615806306651102579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661291024236739502}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6, y: 0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 502553970196647054}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

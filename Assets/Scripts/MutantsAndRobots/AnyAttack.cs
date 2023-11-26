@@ -8,6 +8,7 @@ namespace MutantsAndRobots
     public class AnyAttack : MonoBehaviour
     {
         public float damage, hits, hitsTimer;
+        public string damageType;
         public ParticleSystem attackParticleSystem;
         public GameObject parent;
         private EnemyController _enemyController;
@@ -32,7 +33,7 @@ namespace MutantsAndRobots
             if (collision.CompareTag("Enemy") && hitsTimer <= 0)
             {
                 hitsTimer = _hitInterval;
-                collision.GetComponent<EnemyController>().TakeDamage(damage);
+                collision.GetComponent<EnemyController>().TakeDamage(damage, damageType);
             }
         }
 
@@ -42,7 +43,7 @@ namespace MutantsAndRobots
             for (int i = 0; i < hits; i++)
             {
                 yield return new WaitForSeconds(hitsTimer);
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(damage, damageType);
             }
 
             if (!attackParticleSystem.isPlaying)

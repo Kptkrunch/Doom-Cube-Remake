@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  damageType: energy
   destructive: 0
   hitsGround: 1
   hitsAir: 1

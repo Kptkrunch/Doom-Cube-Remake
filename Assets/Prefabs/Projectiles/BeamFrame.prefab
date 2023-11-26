@@ -263,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  damageType: energy
 --- !u!50 &5838200903737337234
 Rigidbody2D:
   serializedVersion: 4

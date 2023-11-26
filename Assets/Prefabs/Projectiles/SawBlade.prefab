@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  damageType: physical
   destructive: 1
   hitsGround: 1
   hitsAir: 0
