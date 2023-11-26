@@ -307,6 +307,7 @@ MonoBehaviour:
   damage: 0.1
   hits: 10
   hitsTimer: 0.25
+  damageType: melting
   attackParticleSystem: {fileID: 4921162513491791628}
   parent: {fileID: 0}
 --- !u!4 &4921162513506952080 stripped
