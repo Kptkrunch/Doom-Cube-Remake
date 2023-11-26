@@ -176,7 +176,7 @@ MonoBehaviour:
   rb2d: {fileID: 2533250486204988915}
   attackLocation: {fileID: 5835176990151292451}
   spriteRenderer: {fileID: 1347375190253600894}
-  it: {fileID: 0}
+  it: {fileID: 183772153419652894}
   attackIndex: 0
   moveSpeed: 0.5
   damage: 1
@@ -242,7 +242,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.032652035, y: 0.034659117}
+  m_Offset: {x: -0.06843367, y: -0.0076282024}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -253,7 +253,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.30202276, y: 0.6769689}
+  m_Size: {x: 0.373586, y: 0.9176817}
   m_EdgeRadius: 0
 --- !u!114 &2822750805263999890
 MonoBehaviour:
@@ -300,7 +300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6357524228027479251}
   m_Layer: 0
-  m_Name: AttackLocation
+  m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
