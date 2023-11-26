@@ -16,32 +16,35 @@ MonoBehaviour:
   lvl: 0
   wid: 10
   pid: 9
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 7104429582331432270, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
   weaponLvls:
   - damage: 1
-    ammo: 1
+    ammo: 3
     range: 3
     coolDown: 3
-    rateOfFire: 3
+    rateOfFire: 0.2
     duration: 3
     speed: 3
+    size: {x: 1, y: 1, z: 1}
     wildCard: 0
     upgradeText: 
   - damage: 2
-    ammo: 2
+    ammo: 4
     range: 3.5
     coolDown: 3
     rateOfFire: 3
     duration: 3
     speed: 3
+    size: {x: 1, y: 1, z: 1}
     wildCard: 0
     upgradeText: 
   - damage: 3
-    ammo: 3
+    ammo: 5
     range: 4
     coolDown: 2
     rateOfFire: 2
     duration: 3
     speed: 4
+    size: {x: 1, y: 1, z: 1}
     wildCard: 0
     upgradeText: 

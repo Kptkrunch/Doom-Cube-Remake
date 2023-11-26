@@ -43,7 +43,7 @@ namespace Controllers
 
             UpgradePanelController.contUpgrades.gameObject.SetActive(true);
             UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(true);
-            TechPanelController.contTechPanel.gameObject.SetActive(true);
+            TechPanelController.ContTechPanel.gameObject.SetActive(true);
             WeaponController.contWeps.upgradableWeapons.Clear();
             Time.timeScale = 0f;
 
@@ -111,42 +111,42 @@ namespace Controllers
         {
 
             var availableTech = new List<Tech>();
-            availableTech.AddRange(TechController.contTechCon.purchasedTechList);
+            availableTech.AddRange(TechController.ContTechCon.purchasedTechList);
             
             if (availableTech.Count > 0)
             {
                 var selectedTech = Random.Range(0, availableTech.Count);
-                TechController.contTechCon.upgradeableTech.Add(availableTech[selectedTech]);
+                TechController.ContTechCon.upgradeableTech.Add(availableTech[selectedTech]);
                 availableTech.RemoveAt(selectedTech);
             }
 
-            if (TechController.contTechCon.purchasedTechList.Count <
-                TechController.contTechCon.maxTech + TechController.contTechCon.fullyUpgradedTech.Count &&
-                TechController.contTechCon.allAvailableTechList.Count != 0)
+            if (TechController.ContTechCon.purchasedTechList.Count <
+                TechController.ContTechCon.maxTech + TechController.ContTechCon.fullyUpgradedTech.Count &&
+                TechController.ContTechCon.allAvailableTechList.Count != 0)
             {
-                availableTech.AddRange(TechController.contTechCon.allAvailableTechList);
+                availableTech.AddRange(TechController.ContTechCon.allAvailableTechList);
             }
 
-            for (var i = TechController.contTechCon.upgradeableTech.Count; i < 3; i++)
+            for (var i = TechController.ContTechCon.upgradeableTech.Count; i < 3; i++)
             {
                 if (availableTech.Count > 0)
                 {
                     var selectedTech = Random.Range(0, availableTech.Count);
-                    TechController.contTechCon.upgradeableTech.Add(availableTech[selectedTech]);
+                    TechController.ContTechCon.upgradeableTech.Add(availableTech[selectedTech]);
                     availableTech.RemoveAt(selectedTech);
                 }
             }
 
-            for (var i = 0; i < TechPanelController.contTechPanel.techUpgradePanels.Length; i++)
+            for (var i = 0; i < TechPanelController.ContTechPanel.techUpgradePanels.Length; i++)
             {
-                TechPanelController.contTechPanel.techUpgradePanels[i]
-                    .UpdatePanelDisplay(TechController.contTechCon.upgradeableTech[i]);
+                TechPanelController.ContTechPanel.techUpgradePanels[i]
+                    .UpdatePanelDisplay(TechController.ContTechCon.upgradeableTech[i]);
             }
 
-            for (var i = 0; i < TechPanelController.contTechPanel.techUpgradePanels.Length; i++)
+            for (var i = 0; i < TechPanelController.ContTechPanel.techUpgradePanels.Length; i++)
             {
-                TechPanelController.contTechPanel.techUpgradePanels[i].gameObject
-                    .SetActive(i < TechController.contTechCon.upgradeableTech.Count);
+                TechPanelController.ContTechPanel.techUpgradePanels[i].gameObject
+                    .SetActive(i < TechController.ContTechCon.upgradeableTech.Count);
             }
         }
     }

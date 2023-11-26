@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1538803318744657949}
   - component: {fileID: 7714734752393094163}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Nanite1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   m_Component:
   - component: {fileID: 54338230880036718}
   - component: {fileID: 6041282756868791652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Nanite2
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6307115068007664012}
   - component: {fileID: 3424754510276838431}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NaniteFrame
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -167,13 +167,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7788478484353969662}
   - component: {fileID: 7237635094007620338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MutagenicNanites
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7788478484353969662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -206,20 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006ae75f16765534b986ec3e8f425efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 5
-    damage: 0
-    range: 3
-    rateOfFire: 1
-    numOfProj: 1
-    duration: 3
-    size: 1
-    cdr: 3
-    name: Mutagenic Nanites
-    description: Who doesn't want a pet slug or two?
-    upgradeText: More slugs the merrier
-  weaponLevel: 0
-  weaponIcon: {fileID: -1255574354, guid: 5eda7b2a067ab884186599f65074b1bc, type: 3}
+  stats: {fileID: 11400000, guid: 673b11440b342a94aa236dc70f176fff, type: 2}
+  uiSprite: {fileID: 0}
   enemyDamagers: []
   projectileScales: []
   projFrameWithTimer: {fileID: 0}
@@ -236,6 +224,18 @@ PrefabInstance:
       propertyPath: phaser
       value: 
       objectReference: {fileID: 7714734752393094163}
+    - target: {fileID: 3329561752752909793, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526521906140623759, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526632159734187561, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nanite
       objectReference: {fileID: 0}
+    - target: {fileID: 8201089928152045830, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -307,6 +311,18 @@ PrefabInstance:
       propertyPath: phaser
       value: 
       objectReference: {fileID: 6041282756868791652}
+    - target: {fileID: 3329561752752909793, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526521906140623759, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526632159734187561, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3618588192226825841, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: InitialModule.startSpeed.maxCurve.m_RotationOrder
       value: 4
@@ -370,6 +386,10 @@ PrefabInstance:
     - target: {fileID: 8201089928152045830, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: m_Name
       value: Nanite
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201089928152045830, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

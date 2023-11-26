@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5903857026179240609}
   - component: {fileID: 5259890033568871937}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OrbitalObliterater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5903857026179240609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48,20 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1364c09fcb9a3a34db4c734e34dfeb72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 1
-    damage: 1
-    range: 6
-    rateOfFire: 0.25
-    numOfProj: 1
-    duration: 5
-    size: 0.5
-    cdr: 2
-    name: Orbital Obliterator
-    description: Who doesn't love an orbital strike
-    upgradeText: Pilar of blinding doom upgrade
-  weaponLevel: 0
-  weaponIcon: {fileID: -2028675322, guid: c461d7e7911974442aca7cd1a139962e, type: 3}
+  stats: {fileID: 11400000, guid: 5bbceccb7c5baf9458046f98cc4c845a, type: 2}
+  uiSprite: {fileID: 0}
   theBeam: {fileID: 0}
   beamFrame: {fileID: 0}
   beamOrigin: {fileID: 0}

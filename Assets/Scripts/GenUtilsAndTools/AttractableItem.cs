@@ -5,8 +5,8 @@ namespace GenUtilsAndTools
 {
     public class AttractableItem : MonoBehaviour
     {
-        [SerializeField] private float moveSpeed;
-        [SerializeField] private bool isAttracted;
+        [SerializeField] protected float moveSpeed;
+        [SerializeField] protected bool isAttracted;
     
         private void Start()
         {

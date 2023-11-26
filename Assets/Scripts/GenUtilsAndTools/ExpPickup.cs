@@ -3,15 +3,19 @@ using UnityEngine;
 
 namespace GenUtilsAndTools
 {
-    public class ExpPickup : MonoBehaviour
+    public class ExpPickup : AttractableItem
     {
         [SerializeField] private int expValue;
     
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player") && !collision.CompareTag("ItemAttractor")) return;
-            ExperienceController.contExp.GetExp(expValue);
-            gameObject.SetActive(false);
+            if (!collision.CompareTag("Player")) return;
+            if (collision.CompareTag("Player"))
+            {
+                ExperienceController.contExp.GetExp(expValue);
+                isAttracted = false;
+                gameObject.SetActive(false);
+            }
         }
     }
 }

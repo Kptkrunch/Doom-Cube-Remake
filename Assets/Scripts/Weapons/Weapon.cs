@@ -1,3 +1,4 @@
+using System;
 using Controllers;
 using UnityEngine;
 using Weapons.SOS;
@@ -9,7 +10,12 @@ namespace Weapons
         
         [SerializeField] public WeaponData stats;
         public Sprite uiSprite;
-        
+
+        private void Awake()
+        {
+            stats = Instantiate(stats);
+        }
+
         public void WeaponLevelUp()
         {
             if (stats.lvl < stats.weaponLvls.Count - 1)

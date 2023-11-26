@@ -5,11 +5,11 @@ namespace Controllers
 {
     public class ObjDmgNumController : MonoBehaviour
     {
-        public static ObjDmgNumController contObjDmgNum;
+        public static ObjDmgNumController ContObjDmgNum;
         public MMF_Player player;
         private void Awake()
         {
-            contObjDmgNum = this;
+            ContObjDmgNum = this;
         }
     }
 }

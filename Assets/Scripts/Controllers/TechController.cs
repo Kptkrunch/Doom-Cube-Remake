@@ -8,15 +8,15 @@ namespace Controllers
     public class TechController : MonoBehaviour
     {
         public int maxTech = 3;
-        public static TechController contTechCon;
-        public List<int> IDList;
+        public static TechController ContTechCon;
+        public List<int> idList;
         public List<Tech> purchasedTechList, upgradeableTech, allAvailableTechList, fullyUpgradedTech;
         private Gamepad _gamepad;
         
 
         private void Awake()
         {
-            contTechCon = this;
+            ContTechCon = this;
         }
 
         private void Update()
@@ -32,15 +32,23 @@ namespace Controllers
             if (_gamepad.aButton.wasPressedThisFrame && length >= 1)
             {
                 purchasedTechList[0].ActivateTech("a");
+                purchasedTechList.RemoveAt(0);
+                idList[0] = 999;
             } else if (_gamepad.bButton.wasPressedThisFrame && length >= 2)
             {
                 purchasedTechList[1].ActivateTech("b");
+                purchasedTechList.RemoveAt(1);
+                idList[1] = 999;
             } else if (_gamepad.xButton.wasPressedThisFrame && length >= 3)
             {
                 purchasedTechList[2].ActivateTech("x");
+                purchasedTechList.RemoveAt(2);
+                idList[2] = 999;
             } else if (_gamepad.yButton.wasPressedThisFrame && length >= 4)
             {
                 purchasedTechList[3].ActivateTech("y");
+                purchasedTechList.RemoveAt(3);
+                idList[3] = 999;
             }
         }
     
@@ -63,16 +71,16 @@ namespace Controllers
 
         public void AddTechToList(Tech tech)
         {
-            if (contTechCon.purchasedTechList.Count < 4)
+            if (ContTechCon.purchasedTechList.Count < 4)
             {
-                contTechCon.purchasedTechList.Add(tech); 
+                ContTechCon.purchasedTechList.Add(tech); 
             }
 
-            for (var i = 0; i < IDList.Count; i++) 
+            for (var i = 0; i < idList.Count; i++) 
             {
-                if (IDList[i] == 999)
+                if (idList[i] == 999)
                 {
-                    IDList[i] = tech.id;
+                    idList[i] = tech.id;
                     return;
                 }
             }

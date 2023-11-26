@@ -137,13 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   it: {fileID: 5109663282500679762}
+  pd: {fileID: 11400000, guid: a6330f1208a91614896401a1ae251bfc, type: 2}
+  parent: {fileID: 5923405266611812333}
   enemyDamager: {fileID: 3923738293230046291}
-  lobHeight: 5
-  lobDistance: 5
-  moveSpeed: 3
-  rotationSpeed: 5
-  lifeTimer: 10
-  numberOfPenetrates: 10
   rb2d: {fileID: 0}
 --- !u!114 &3923738293230046291
 MonoBehaviour:
@@ -216,6 +212,12 @@ MonoBehaviour:
   doesRotate: 0
   isLobbed: 1
   doesBounce: 1
+  explodes: 0
   hasLifetime: 1
-  useTranslate: 1
   disableAfterBounces: 0
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 0
+  moveUseVelocity: 1
+  moveUseMoveTowards: 0

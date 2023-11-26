@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5320141174447693361}
   - component: {fileID: 1347375190253600894}
   - component: {fileID: 5091119943287096437}
+  - component: {fileID: 4570421209848066110}
   m_Layer: 0
-  m_Name: redeyecloakdude
+  m_Name: RedEyeCloakDude
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 85556b636250c344881202d32fc94979, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,6 +107,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4570421209848066110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042653812241894179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 3
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &5132048982010305450
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +136,7 @@ GameObject:
   - component: {fileID: 2533250486204988915}
   - component: {fileID: 8971525444925801166}
   - component: {fileID: 2822750805263999890}
+  - component: {fileID: 183772153419652894}
   m_Layer: 0
   m_Name: Mugger
   m_TagString: Enemy
@@ -140,6 +158,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5320141174447693361}
+  - {fileID: 6357524228027479251}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6352414133390041627
@@ -155,9 +174,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 2533250486204988915}
+  attackLocation: {fileID: 5835176990151292451}
+  spriteRenderer: {fileID: 1347375190253600894}
+  it: {fileID: 183772153419652894}
+  attackIndex: 0
   moveSpeed: 0.5
   damage: 1
   health: 1
+  itemDropper: {fileID: 2822750805263999890}
+  target: {fileID: 0}
 --- !u!50 &2533250486204988915
 Rigidbody2D:
   serializedVersion: 4
@@ -173,7 +198,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -217,7 +242,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022578072, y: 0.0015590489}
+  m_Offset: {x: -0.032652035, y: 0.034659117}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -228,7 +253,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17825714, y: 0.40928954}
+  m_Size: {x: 0.30202276, y: 0.6769689}
   m_EdgeRadius: 0
 --- !u!114 &2822750805263999890
 MonoBehaviour:
@@ -250,3 +275,49 @@ MonoBehaviour:
   energy: 0
   exp: 1
   itemDrop: {fileID: 0}
+--- !u!114 &183772153419652894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132048982010305450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bcc6c338ee7854280fc27d8bda4d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gotDeathParticle: 0
+  deathRay: 0
+  melting: 0
+--- !u!1 &5835176990151292451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6357524228027479251}
+  m_Layer: 0
+  m_Name: AttackLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6357524228027479251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835176990151292451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.15, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 502553970196647054}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

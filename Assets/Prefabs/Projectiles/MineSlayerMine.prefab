@@ -226,9 +226,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5225535953572465501}
     m_Modifications:
+    - target: {fileID: 101852, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_Name
       value: MineLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 402518, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -349,9 +357,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5225535953572465501}
     m_Modifications:
+    - target: {fileID: 101852, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_Name
       value: MineLight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 402518, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_LocalPosition.x

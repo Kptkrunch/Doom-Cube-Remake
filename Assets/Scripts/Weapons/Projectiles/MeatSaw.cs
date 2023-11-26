@@ -1,60 +1,95 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Weapons.Projectiles
 {
-    public class MeatSaw : Projectile
+    public class MeatSaw : BouncingProjectile
     {
         private Vector3 _growSawScale;
         private bool _isGrowing, _triggered;
         private float _growSpeed, _spinTimer;
-        private const float SpinInterval = 3f;
+        private const float SpinInterval = 2f;
+        private Vector3 _direction;
+        private float _sawSpeed;
 
         private void Start()
         {
+            LifeTimer = pd.stats.lifeTime;
+            _sawSpeed = pd.stats.movSpeed;
+            pd.stats.movSpeed = 0f;
+            if (it.isLobbed) RestoreLob = true;
             SetStats();
         }
 
         private void FixedUpdate()
         {
+            
+            if (it.isLobbed)
+            {
+                it.isLobbed = false;
+                LobSaw();
+            }
+            
+            switch (it.doesBounce)
+            { 
+                case true:
+                {
+                    BounceTimer -= Time.deltaTime;
+                    if (BounceTimer <= 0)
+                    {
+                        var velocity = rb2d.velocity;
+                        velocity = new Vector2(velocity.x, velocity.y).normalized;
+                        rb2d.velocity = velocity;
+                        BounceInterval *= 0.8f;
+                        BounceTimer = BounceInterval;
+                        rb2d.AddForce(new Vector2(velocity.x * 0.8f, pd.stats.lobHeight * .75f), ForceMode2D.Impulse);
+                        Bounces--;
+
+                        SpoolUpAndFire();
+                    }
+                    break;
+                }
+            }
+            
             if (_isGrowing)
             {
                 _spinTimer -= Time.deltaTime;
+                GrowSaw();
             }
-            SpoolUpAndFire();
-        }
+            
+            MaybeRotate(rb2d);
 
-        public override void OnEnable()
-        {
-            LobSaw();
+            if (it.hasLifetime)
+            {
+                pd.stats.lifeTime -= Time.deltaTime;
+                if (pd.stats.lifeTime <= 0) parent.SetActive(false);
+            }
         }
     
         private void OnDisable()
         {
-            pd.stats.bounces = 2;
-            _isGrowing = false;
-            _triggered = false;
-            transform.localScale = Vector3.one;
-            _spinTimer = SpinInterval;
+            pd.stats.movSpeed = _sawSpeed;
+            SetStats();
         }
 
         public void SpoolUpAndFire()
         {
-            switch (pd.stats.bounces)
+            switch (Bounces)
             {
                 case <= 0:
                 {
                     _isGrowing = true;
                     it.doesRotate = true;
-                    StopMoving();
                     GrowSaw();
+                    StopMoving();
                     if (_spinTimer <= 0)
                     {
                         if (!_triggered) MaybeGoLeftOrRight();
                         _triggered = true;
                         pd.stats.movSpeed = 4f;
-                        // rb2d.gameObject.transform.position += direction * (moveSpeed * Time.deltaTime);
+                        rb2d.gameObject.transform.position += _direction * (pd.stats.movSpeed * Time.deltaTime);
                     }
-
                     break;
                 }
             }
@@ -66,36 +101,42 @@ namespace Weapons.Projectiles
             var randomizeTransform = new Vector3(Random.Range(-1, 1), (transform1 = transform).position.y, transform1.position.z);
             if (randomizeTransform.x < 0)
             {
-                pd.stats.direction = new Vector3(-1, 0, 0).normalized;
+                _direction = new Vector3(-1, 0, 0).normalized;
             } else if (randomizeTransform.x >= 0)
             {
-                pd.stats.direction = new Vector3(1, 0, 0).normalized;
+                _direction = new Vector3(1, 0, 0).normalized;
             }
         }
 
         private void SetStats()
         {
-            
-            // bounceInterval = hardBoundInterval;
-            // bounceTimer = bounceInterval;
-            if (pd.stats.lobDistance < 1) pd.stats.lobDistance = 5;
-            if (pd.stats.lobHeight < 1) pd.stats.lobHeight = 5;
+            if (RestoreLob) it.isLobbed = true;
             _growSawScale = new Vector3(2f, 2f, transform.localScale.z);
             _growSpeed = 1f * Time.deltaTime;
+            pd.stats.lifeTime = LifeTimer;
+            _isGrowing = false;
+            _triggered = false;
+            it.doesRotate = false;
             _spinTimer = SpinInterval;
+            rb2d.velocity = new Vector2(0f, 0f);
+            transform.localScale = Vector3.one;
+            BounceInterval = pd.stats.bounceInterval;
+            BounceTimer = BounceInterval;
+            Bounces = pd.stats.bounces;
         }
         private void StopMoving()
         {
-            // rb2d.velocity = Vector3.zero;
-            // moveSpeed = 0f;
+            rb2d.gravityScale = 0;
+            rb2d.velocity = Vector2.zero;
+            pd.stats.movSpeed = 0f;
         }
 
         private void LobSaw()
         {
-            if (it.isLobbed)
-            {
-                // rb2d.velocity = new Vector2(Random.Range(-lobHeight, lobHeight), Random.Range(0, lobHeight + 1f));
-            }
+                rb2d.gravityScale = 1;
+                rb2d.velocity = new Vector2(
+                    Random.Range(-pd.stats.lobDistance, pd.stats.lobDistance), 
+                    pd.stats.lobHeight);
         }
 
         private void GrowSaw()

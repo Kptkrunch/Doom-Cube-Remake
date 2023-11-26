@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4669060258420965278}
   - component: {fileID: 1357120077848202881}
   - component: {fileID: 8165820181394184246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeltaBuster
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4669060258420965278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53,6 +53,9 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 217b6c7698a360840a5fa1986054cae2, type: 2}
   uiSprite: {fileID: 0}
   it: {fileID: 8165820181394184246}
+  dir1: {x: -1, y: -1}
+  dir2: {x: 1, y: -1}
+  doesAlternate: 0
   firePoints:
   - {fileID: 6223706530612463717}
   - {fileID: 2325366849106875609}
@@ -77,13 +80,15 @@ MonoBehaviour:
   doesRotate: 0
   isLobbed: 0
   doesBounce: 0
-  hasLifetime: 0
+  explodes: 0
+  hasLifetime: 1
   disableAfterBounces: 0
-  disableOnContact: 0
+  disableOnContact: 1
   randomDirection: 0
-  movesBackwards: 1
+  movesBackwards: 0
   moveUseTranslate: 1
   moveUseVelocity: 0
+  moveUseMoveTowards: 0
 --- !u!1 &963644359852726007
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2325366849106875609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -128,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3514720994171185415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -163,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4126532128579446772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ProjectileFrame
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -203,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8954549995087025597}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -238,7 +243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7230877417044583997}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -273,7 +278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6223706530612463717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}

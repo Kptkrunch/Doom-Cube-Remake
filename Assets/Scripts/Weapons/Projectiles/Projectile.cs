@@ -13,25 +13,27 @@ namespace Weapons.Projectiles
         public ProjectileData pd;
         public GameObject parent;
         [CanBeNull] public EnemyDamager enemyDamager;
-        private float _lifeTime;
+        private float _lifeTime, _pens;
         private void Awake()
         {
             pd = Instantiate(pd);
             _lifeTime = pd.stats.lifeTime;
+            _pens = pd.stats.pens;
         }
 
         private void FixedUpdate()
         {
-            _lifeTime -= Time.deltaTime;
+            if (it.hasLifetime) _lifeTime -= Time.deltaTime;
 
             MaybeMoveViaTranslation();
             MaybeHasLifetime();
+            MaybeMoveTowards(pd.stats.direction);
         }
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
-            PenetrateLogic(collision);
-            MaybeDisableOnContactWithAnything(collision);
+            if (it.doesPenetrate) PenetrateLogic(collision);
+            if (it.disableOnContact) MaybeDisableOnContactWithAnything(collision);
         }
 
         public virtual void OnEnable()
@@ -41,17 +43,12 @@ namespace Weapons.Projectiles
         
         private void PenetrateLogic(Collider2D collision)
         {
-            if (it.doesPenetrate && pd.stats.pens > 0)
+            if (collision.CompareTag("Enemy"))
             {
-                if (collision.CompareTag("Enemy"))
+                _pens--;
+                if (_pens <= 0)
                 {
-                    pd.stats.pens--;
-                    if (pd.stats.pens <= 0)
-                    {
-                        gameObject.SetActive(false);
-                    }
-                } else if (collision.CompareTag("Enemy") && !collision.CompareTag("Player"))
-                {
+                    _pens = pd.stats.pens;
                     gameObject.SetActive(false);
                 }
             }
@@ -61,6 +58,14 @@ namespace Weapons.Projectiles
             if (it.moveUseTranslate)
             {
                 transform.Translate(pd.stats.direction * (pd.stats.movSpeed * Time.deltaTime));
+            }
+        }
+
+        protected void MaybeMoveTowards(Vector2 target)
+        {
+            if (it.moveUseMoveTowards)
+            {
+                Vector2.MoveTowards(transform.position, target, pd.stats.movSpeed);
             }
         }
 
@@ -83,18 +88,15 @@ namespace Weapons.Projectiles
         }
 
         protected void MaybeDisableOnContactWithAnything(Collider2D collision)
-        {
-            if (collision.CompareTag("Enemy") 
-                || collision.CompareTag("WorldlyObject") 
-                && !it.doesPenetrate && it.disableOnContact
-                && !collision.CompareTag("Player")) parent.gameObject.SetActive(false);
+        { 
+            if (collision.CompareTag("Enemy") || collision.CompareTag("WorldlyObject")) parent.gameObject.SetActive(false);
         }
 
         protected void MaybeMoveBackwards()
         {
             if (it.movesBackwards && it.moveUseVelocity)
             {
-                pd.stats.direction = -pd.stats.direction;
+                pd.stats.direction = new Vector2(pd.stats.direction.x, pd.stats.direction.y) * -1;
             }
         }
 
@@ -107,6 +109,12 @@ namespace Weapons.Projectiles
                 var rotation = Quaternion.Euler(0f, 0f, angle).normalized;
                 transform.rotation = rotation;
             }
+        }
+
+        private void OnDisable()
+        {
+            _lifeTime = pd.stats.lifeTime;
+            _pens = pd.stats.pens;
         }
     }
 }

@@ -9,16 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8178988525685143888}
-  - component: {fileID: 1481880385453974489}
   - component: {fileID: 6773755887716218981}
-  - component: {fileID: 7709638010789272476}
+  - component: {fileID: 4051650927833513506}
   m_Layer: 0
   m_Name: ParaBomb
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8178988525685143888
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39,33 +38,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!50 &1481880385453974489
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142175529633162953}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &6773755887716218981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,10 +55,16 @@ MonoBehaviour:
   doesRotate: 0
   isLobbed: 1
   doesBounce: 1
+  explodes: 1
   hasLifetime: 0
-  useTranslate: 0
-  disableAfterBounces: 0
---- !u!114 &7709638010789272476
+  disableAfterBounces: 1
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 1
+  moveUseVelocity: 1
+  moveUseMoveTowards: 0
+--- !u!114 &4051650927833513506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,25 +73,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1142175529633162953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61cb4ba1f65d6914eabdbcffc3d5332d, type: 3}
+  m_Script: {fileID: 11500000, guid: c8627c991b80f4f4895c71333d1b1ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   it: {fileID: 6773755887716218981}
-  enemyDamager: {fileID: 0}
+  pd: {fileID: 11400000, guid: b8cd7ba64e42d0e429c920a060bd6d02, type: 2}
   parent: {fileID: 1142175529633162953}
-  lobHeight: 6
-  lobDistance: 5
-  moveSpeed: 3
-  rotationSpeed: 0
-  lifeTimer: 10
-  numberOfPenetrates: 0
-  rb2d: {fileID: 1481880385453974489}
-  expIndex: 2
-  damage: 1
-  radius: 3
-  initBounces: 3
-  vertPower: 6
-  horPower: 5
+  enemyDamager: {fileID: 0}
+  rb2d: {fileID: 0}
 --- !u!1001 &1377602888981810539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,9 +89,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8178988525685143888}
     m_Modifications:
+    - target: {fileID: 127838, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 127838, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 151600, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 151600, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 153860, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 153860, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 179950, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_Name
       value: ParabalombProjParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 179950, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 179950, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 444968, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -165,58 +164,6 @@ PrefabInstance:
     - target: {fileID: 444968, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19840036, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: prewarm
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19840036, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: InheritVelocityModule.m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19840036, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: InheritVelocityModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19840036, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: InheritVelocityModule.m_Curve.minMaxState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19840036, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19840036, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: InitialModule.startSize.maxCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19840036, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: InitialModule.startSize.minCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19840036, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: InitialModule.startRotation.maxCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19840036, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: InitialModule.startRotation.minCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19861098, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: InheritVelocityModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19861098, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19861098, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: InitialModule.startRotation.maxCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19861098, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: InitialModule.startRotation.minCurve.m_RotationOrder
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

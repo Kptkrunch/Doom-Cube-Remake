@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using Controllers;
+using Controllers.Pools;
+using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -7,7 +9,6 @@ namespace EnemyStuff
 {
     public class EnemySpawner : MonoBehaviour
     {
-        public GameObject enemyToSpawn;
         public Transform minSpawnPoint, maxSpawnPoint;
         public float spawnInterval;
         public int checkPerFrame;
@@ -48,8 +49,10 @@ namespace EnemyStuff
                     {
                         _spawnTimer = waves[_currentWave].waveInterval;
 
-                        var newEnemy = Instantiate(waves[_currentWave].enemyToSpawn, SelectSpawnPoint(),
-                            Quaternion.identity);
+
+                        var newEnemy = EnemyPoolManager.PoolEnemys.wavePools[waves[_currentWave].enemyToSpawn].GetPooledGameObject();
+                        newEnemy.transform.position = SelectSpawnPoint();
+                        newEnemy.SetActive(true);
                     
                         _spawnedEnemies.Add(newEnemy);
                     }
@@ -69,7 +72,7 @@ namespace EnemyStuff
                         if (Vector3.Distance(transform.position, _spawnedEnemies[_enemyToCheck].transform.position) >
                             _despawnDistance)
                         {
-                            Destroy(_spawnedEnemies[_enemyToCheck]);
+                            _spawnedEnemies[_enemyToCheck].gameObject.SetActive(false);
                             _spawnedEnemies.RemoveAt(_enemyToCheck);
                             checkTarget--;
                         }
@@ -127,7 +130,7 @@ namespace EnemyStuff
     [System.Serializable]
     public class WaveInfo
     {
-        public GameObject enemyToSpawn;
+        public int enemyToSpawn;
         [FormerlySerializedAs("waveSize")] public int waveDuration;
         public float waveInterval;
     }

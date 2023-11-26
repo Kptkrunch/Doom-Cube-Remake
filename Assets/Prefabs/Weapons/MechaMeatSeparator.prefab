@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 343754433359266453}
   - component: {fileID: 6842828834110783982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MechaMeatSeparator
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &343754433359266453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48,17 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09a9efa3456f2747a10d39f8e1e4790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 4
-    damage: 1
-    range: 5
-    rateOfFire: 2
-    numOfProj: 1
-    duration: 1
-    size: 1
-    cdr: 1
-    name: Mecanical Meat Separator
-    description: Bowling with hyper speed saw blades
-    upgradeText: let it of the hook, and unhinge some death
-  weaponLevel: 0
-  weaponIcon: {fileID: -1212822891, guid: 0f3301a1b88747f48bccde72bb989a54, type: 3}
+  stats: {fileID: 11400000, guid: afb859af0e30245499f0b06d324a8948, type: 2}
+  uiSprite: {fileID: 0}
+  it: {fileID: 0}

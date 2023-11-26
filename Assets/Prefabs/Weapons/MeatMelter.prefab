@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3626696979158112762}
   - component: {fileID: 4199865901650256689}
-  - component: {fileID: 3606534477743052813}
   - component: {fileID: 3276781482055201744}
   m_Layer: 0
   m_Name: Burners
@@ -60,21 +59,6 @@ MonoBehaviour:
   chemicalDamage: 0
   explosiveDamage: 0
   damageInterval: 0
---- !u!114 &3606534477743052813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399188706310578827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 523f4b7e3dbf83b46a60a6bf0f04a7c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSize: {x: 0, y: 0, z: 0}
-  growShrinkSpeed: 0
-  staySizeInterval: 0
 --- !u!61 &3276781482055201744
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -132,11 +116,11 @@ GameObject:
   - component: {fileID: 3987926661222403637}
   m_Layer: 0
   m_Name: MeatMelter
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7699034738757788201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -169,67 +153,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6941bf583fa7d9444bd69634198be967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 3
-    damage: 1
-    range: 1
-    rateOfFire: 0.2
-    numOfProj: 1
-    duration: 2
-    size: 1
-    cdr: 1
-    name: Meat Melter
-    description: Not unlike a light saber combined with an acetaline torch
-    upgradeText: More burnination is always better!
-  - projSpeed: 3
-    damage: 2
-    range: 1
-    rateOfFire: 0.2
-    numOfProj: 1
-    duration: 2.5
-    size: 1.25
-    cdr: 0.9
-    name: Meat Melter
-    description: Not unlike a light saber combined with an acetaline torch
-    upgradeText: More burnination is always better!
-  - projSpeed: 3
-    damage: 2
-    range: 1
-    rateOfFire: 0.15
-    numOfProj: 1
-    duration: 3
-    size: 1.5
-    cdr: 0.9
-    name: Meat Melter
-    description: Not unlike a light saber combined with an acetaline torch
-    upgradeText: More burnination is always better!
-  - projSpeed: 3
-    damage: 3
-    range: 1
-    rateOfFire: 0.15
-    numOfProj: 1
-    duration: 3.5
-    size: 1.25
-    cdr: 0.9
-    name: Meat Melter
-    description: Not unlike a light saber combined with an acetaline torch
-    upgradeText: More burnination is always better!
-  - projSpeed: 3
-    damage: 5
-    range: 1
-    rateOfFire: 0.12
-    numOfProj: 1
-    duration: 4
-    size: 2
-    cdr: 0.9
-    name: Meat Melter
-    description: Not unlike a light saber combined with an acetaline torch
-    upgradeText: More burnination is always better!
-  weaponLevel: 0
-  weaponIcon: {fileID: 21300000, guid: 5e3103e14f6ac694ab1246de449ffd67, type: 3}
+  stats: {fileID: 11400000, guid: e9eafc4846a09ce44a68f7ff5d31c9b5, type: 2}
+  uiSprite: {fileID: 0}
+  enemyDamager: {fileID: 0}
   eDotDamager: {fileID: 4199865901650256689}
-  weaponScaler: {fileID: 3606534477743052813}
-  weaponFrame: {fileID: 7613853486066866486}
+  burnerFrame: {fileID: 5310869208068018653}
+  burner: {fileID: 1399188706310578827}
 --- !u!1 &5310869208068018653
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,10 +168,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1952903308229683014}
-  - component: {fileID: 7613853486066866486}
   m_Layer: 0
   m_Name: MelterFrame
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,21 +195,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7613853486066866486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5310869208068018653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c795904dcc895c241b10bf36e64c7d01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeInterval: 0
-  coolDownTimer: 0
-  projectileFrame: {fileID: 5310869208068018653}
 --- !u!1001 &5335035590849324338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -300,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_SortingOrder
@@ -566,6 +479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeatMelter
       objectReference: {fileID: 0}
+    - target: {fileID: 7895086600421190269, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6656025947107122966, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
@@ -595,7 +512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3150066488793219329, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_SortingOrder
@@ -806,6 +723,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6656025947107122966, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656025947107122966, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -864,6 +785,10 @@ PrefabInstance:
     - target: {fileID: 7895086600421190269, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
       propertyPath: m_Name
       value: MeatMelter (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895086600421190269, guid: 993bd680626d0234fb73cc4c51889f46, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

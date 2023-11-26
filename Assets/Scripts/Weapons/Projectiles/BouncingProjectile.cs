@@ -1,4 +1,7 @@
+using Controllers.Pools;
+using Damagers;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Weapons.Projectiles
 {
@@ -6,69 +9,93 @@ namespace Weapons.Projectiles
     {
         
         public Rigidbody2D rb2d;
-        public float bounceInterval;
-        private float _bounceTimer;
-        
+        protected float BounceTimer, BounceInterval, Bounces, LifeTimer;
+        protected bool RestoreLob;
+
+        private void Start()
+        {
+            LifeTimer = pd.stats.lifeTime;
+            if (it.isLobbed) RestoreLob = true;
+            SetStats();
+        }
+
         private void FixedUpdate()
         {
-            if (!it.isLobbed)
-            {
-                var transform1 = transform;
-                transform1.position += transform1.up * (pd.stats.movSpeed * Time.deltaTime);
-            } 
-            
             switch (it.doesBounce)
-            {
+            { 
                 case true:
                 {
-                    _bounceTimer -= Time.deltaTime;
-                    if (_bounceTimer <= 0)
+                    BounceTimer -= Time.deltaTime;
+                    Debug.Log("in bounce logic");
+
+                    if (BounceTimer <= 0)
                     {
                         var velocity = rb2d.velocity;
                         velocity = new Vector2(velocity.x, velocity.y).normalized;
                         rb2d.velocity = velocity;
-                        bounceInterval *= 0.8f;
-                        _bounceTimer = bounceInterval;
+                        BounceInterval *= 0.8f;
+                        BounceTimer = BounceInterval;
                         rb2d.AddForce(new Vector2(velocity.x * 0.8f, pd.stats.lobHeight * .75f), ForceMode2D.Impulse);
-                        pd.stats.bounces--;
-                
-                        if (pd.stats.bounces <= 0)
-                        {
-                            rb2d.velocity = Vector2.zero;
-                            rb2d.gravityScale = 0f;
-                            if (it.disableAfterBounces) gameObject.SetActive(true);
-                            it.delayDisable = true;
-                        }
+                        Bounces--;
                     }
                     break;
                 }
+            }
+            
+            if (it.isLobbed)
+            {
+                it.isLobbed = false;
+                LobProjectile();
+            }
+            
+            if (Bounces <= 0)
+            {
+                Bounces = pd.stats.bounces;
+                gameObject.SetActive(false);
             }
         }
 
         public override void OnEnable()
         {
-            if (it.isLobbed)
-            {
-                rb2d.gravityScale = 1;
-                rb2d.velocity = new Vector2(
-                    Random.Range(-pd.stats.lobDistance, pd.stats.lobDistance), 
-                    pd.stats.lobHeight + 1);
-            }
-            
-            if (it.doesBounce)
-            {
-                _bounceTimer = Random.Range(_bounceTimer * 0.5f, _bounceTimer * 1.75f);
-            }
-
-            if (it.moveUseVelocity)
-            {
-                if (!it.moveUseTranslate) rb2d.velocity = pd.stats.direction * (pd.stats.movSpeed * Time.deltaTime);
-            }
+            if (it.doesBounce) SetBouncTimer();
         }
         
         private void OnDisable()
         {
+            if (RestoreLob) it.isLobbed = true;
+            SetStats();
+            if (it.explodes) MaybeExplode();
+        }
+
+        private void SetStats()
+        {
+            pd.stats.lifeTime = LifeTimer;
             rb2d.velocity = new Vector2(0f, 0f);
+            BounceInterval = pd.stats.bounceInterval;
+            BounceTimer = BounceInterval;
+            Bounces = pd.stats.bounces;
+        }
+
+        private void LobProjectile()
+        {
+            rb2d.velocity = new Vector2(Random.Range(-pd.stats.lobDistance, pd.stats.lobDistance), pd.stats.lobHeight) *
+                            (pd.stats.movSpeed * Time.deltaTime);
+        }
+
+        private void SetBouncTimer()
+        {
+            BounceTimer = Random.Range(BounceTimer * 0.5f, BounceTimer * 1.75f);
+        }
+
+        protected void MaybeExplode()
+        {
+            var exp = ProjectilePoolManager2.poolProj.projPools[pd.eid].GetPooledGameObject();
+            var damager = exp.GetComponent<EnemyDamager>();
+
+            exp.transform.position = transform.position;
+            damager.damage = pd.stats.damage;
+            damager.GetComponent<CircleCollider2D>().radius = pd.stats.size;
+            exp.SetActive(true);
         }
     }
 }

@@ -28,6 +28,13 @@ namespace Damagers
 
             for (var i = 0; i < _enemiesInRadius.Count; i++)
             {
+                if (!_enemiesInRadius[i].isActiveAndEnabled)
+                {
+                    _enemiesInRadius.RemoveAt(i);
+                    i--;
+
+                }
+                
                 if (_enemiesInRadius[i])
                 {
                     _enemiesInRadius[i].TakeDamage(damage);
@@ -41,6 +48,12 @@ namespace Damagers
                     
             for (var i = 0; i < _objectsInRadius.Count; i++)
             {
+                if (!_objectsInRadius[i].isActiveAndEnabled)
+                {
+                    _objectsInRadius.RemoveAt(i);
+                    i--;
+                }
+                
                 if ( _objectsInRadius[i])
                 {
                     _objectsInRadius[i].TakeDamage(damage);

@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 9175053106362630759}
   - component: {fileID: 5815779960210326125}
-  m_Layer: 0
+  - component: {fileID: 6896750676246539954}
+  m_Layer: 8
   m_Name: MineSlayer
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9175053106362630759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48,17 +49,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdd93995ebb82a4fa223f46379fe39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 0
-    damage: 3
-    range: 2
-    rateOfFire: 0.75
-    numOfProj: 2
-    duration: 20
-    size: 1
-    cdr: 3
-    name: Mine Slayer
-    description: It lays venom ridden acid mines!
-    upgradeText: Melt more with new improved acid!
-  weaponLevel: 0
-  weaponIcon: {fileID: 694901751, guid: 64099c905a4d3f44d98a849f783f7ae8, type: 3}
+  stats: {fileID: 11400000, guid: 47bab104faa545846acb263ab33d282f, type: 2}
+  uiSprite: {fileID: 0}
+  it: {fileID: 6896750676246539954}
+--- !u!114 &6896750676246539954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725438307855581332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDisable: 0
+  doesPenetrate: 0
+  doesRotate: 0
+  isLobbed: 0
+  doesBounce: 0
+  explodes: 0
+  hasLifetime: 1
+  disableAfterBounces: 0
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 0
+  moveUseVelocity: 0
+  moveUseMoveTowards: 0

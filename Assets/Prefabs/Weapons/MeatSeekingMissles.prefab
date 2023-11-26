@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69159312076460274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Radar
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 4909485421516000076}
   - component: {fileID: 6199463048812630442}
   - component: {fileID: 4413236995776592554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LockLine
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -108,8 +108,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 4.921852, y: 0.008244507}
-  - {x: 10.321856, y: 0.0034114718}
+  - {x: 0.9958763, y: 0.008244507}
+  - {x: 6.6697855, y: 0.018628426}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -137,13 +137,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1900076064638216508}
   - component: {fileID: 2223392768671692405}
-  m_Layer: 0
+  - component: {fileID: 4430695695495063508}
+  m_Layer: 8
   m_Name: MeatSeekingMissles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1900076064638216508
 RectTransform:
   m_ObjectHideFlags: 0
@@ -176,20 +177,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82691a055a93cc449b4cb5b8f6aa3022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - projSpeed: 5
-    damage: 1
-    range: 3
-    rateOfFire: 1
-    numOfProj: 3
-    duration: 5
-    size: 2
-    cdr: 5
-    name: Meat Seeking Missles
-    description: Chunks ahoy!
-    upgradeText: 1000 chunks delicious
-  weaponLevel: 0
-  weaponIcon: {fileID: -1474118083, guid: 2fea11de2b7d56e4fa5c531fd6083345, type: 3}
+  stats: {fileID: 11400000, guid: 09797ac6de7fc2d498a2b9e45fab0b75, type: 2}
+  uiSprite: {fileID: 0}
+  it: {fileID: 4430695695495063508}
   missileIndex: 2
   enemy: {x: 0, y: 0}
   lockLine: {fileID: 4413236995776592554}
+--- !u!114 &4430695695495063508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362472295509532169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDisable: 0
+  doesPenetrate: 0
+  doesRotate: 0
+  isLobbed: 0
+  doesBounce: 0
+  explodes: 0
+  hasLifetime: 0
+  disableAfterBounces: 0
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 0
+  moveUseVelocity: 0
+  moveUseMoveTowards: 0

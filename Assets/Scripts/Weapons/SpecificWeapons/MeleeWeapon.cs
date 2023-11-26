@@ -7,58 +7,21 @@ namespace Weapons.SpecificWeapons
     public class MeleeWeapon : Weapon
     {
         public EnemyDamager enemyDamager;
-        public GameObject theWeapon;
-        public GrowShrinkObj weaponScaler;
         
-        private bool _weaponCanBeDrawn;
-        private float _attackDuration, _attackInterval, _attackTimer, _direction;
+        protected bool CanFire;
+        protected float AttackDuration, Cooldown, RateOfFire, Direction;
 
         private void Start()
         {
             SetStats();
         }
 
-        private void Update()
-        {
-            if (_weaponCanBeDrawn)
-            {
-                _attackTimer -= Time.deltaTime;
-                if (_attackTimer <= 0)
-                {
-                    if (Input.GetAxisRaw("Horizontal") != 0)
-                    {
-                        enemyDamager.transform.rotation = Input.GetAxisRaw("Horizontal") > 0 ? Quaternion.identity : Quaternion.Euler(0f, 0f, 180f);
-                        
-                        _weaponCanBeDrawn = false;
-                        _attackTimer = _attackDuration;
-                        theWeapon.gameObject.SetActive(true);
-                    }
-                
-                }
-            }
-
-            if (_weaponCanBeDrawn) return;
-            _attackTimer -= Time.deltaTime;
-            if (!(_attackTimer <= 0)) return;
-            _weaponCanBeDrawn = true;
-            _attackTimer = _attackInterval;
-            theWeapon.gameObject.SetActive(false);
-        }
-
         private void SetStats()
         {
-
-            _attackDuration = stats.weaponLvls[stats.lvl].duration;
-            _attackInterval = stats.weaponLvls[stats.lvl].coolDown;
-            _attackTimer = _attackInterval;
-            _weaponCanBeDrawn = true;
+            CanFire = true;
+            AttackDuration = stats.weaponLvls[stats.lvl].duration;
+            RateOfFire = stats.weaponLvls[stats.lvl].coolDown;
             enemyDamager.damage = stats.weaponLvls[stats.lvl].damage;
-            if (weaponScaler)
-            {
-                weaponScaler.staySizeInterval = _attackDuration * .6f;
-                weaponScaler.maxSize = Vector3.one * stats.weaponLvls[stats.lvl].range;
-                weaponScaler.growShrinkSpeed = .75f;
-            }
         }
     }
 }

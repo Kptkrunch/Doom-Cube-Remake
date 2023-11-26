@@ -22,24 +22,31 @@ namespace Weapons.SpecificWeapons
             SetStats();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
+            if (_rotationSpeed <= 0) _rotationSpeed = stats.weaponLvls[stats.lvl].speed * Time.deltaTime;
             if (projFrameWithTimer)
+            {
                 transform.rotation = Quaternion.Euler(0f, 0f,
                     projFrameWithTimer.transform.rotation.eulerAngles.z +
-                    _rotationSpeed * stats.weaponLvls[stats.lvl].speed * Time.deltaTime);
+                    _rotationSpeed * stats.weaponLvls[stats.lvl].speed);
+            }
             
             if (naniteController)
             {
                 transform.rotation = Quaternion.Euler(0f, 0f,
                     naniteController.gameObject.transform.rotation.eulerAngles.z +
-                    _rotationSpeed * stats.weaponLvls[stats.lvl].speed * Time.deltaTime);
+                    _rotationSpeed * stats.weaponLvls[stats.lvl].speed);
             }
+        }
+
+        private void OnEnable()
+        {
+            SetStats();
         }
 
         private void SetStats()
         {
-            _rotationSpeed = stats.weaponLvls[stats.lvl].speed;
             if (enemyDamagers == null) return;
             for (var i = 0; i < enemyDamagers.Count; i++)
             {
@@ -70,19 +77,15 @@ namespace Weapons.SpecificWeapons
                     projFrameWithTimer.activeInterval = stats.weaponLvls[stats.lvl].duration;
                     projFrameWithTimer.coolDownTimer = stats.weaponLvls[stats.lvl].coolDown;
                 }
-
-            // increase radius
-            transform.localScale *= stats.weaponLvls[stats.lvl].range;
-            // increase duration and reduce cooldown
+            
+            transform.localScale = stats.weaponLvls[stats.lvl].size;
             if (projFrameWithTimer != null)
             {
                 projFrameWithTimer.coolDownTimer = stats.weaponLvls[stats.lvl].coolDown;
                 projFrameWithTimer.activeInterval = stats.weaponLvls[stats.lvl].duration;
             }
 
-            // increase rotational speed on projectiles
-            _rotationSpeed = stats.weaponLvls[stats.lvl].speed;
-
+            _rotationSpeed = stats.weaponLvls[stats.lvl].speed * Time.deltaTime;
         }
     }
 }

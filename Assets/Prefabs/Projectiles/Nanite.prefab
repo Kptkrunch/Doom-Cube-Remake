@@ -179,6 +179,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AuraSoftBlue 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1899250594192068, guid: eef208b27294141438865a8873f47809, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999897151172450, guid: eef208b27294141438865a8873f47809, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4403856078822734, guid: eef208b27294141438865a8873f47809, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
