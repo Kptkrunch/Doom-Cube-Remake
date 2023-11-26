@@ -6,7 +6,7 @@ namespace GenUtilsAndTools
 {
     public class EnemyBools : MonoBehaviour
     {
-        public bool gotDeathParticle, isMelee, isRanged;
+        public bool gotDeathParticle, alreadyDropped, isMelee, isRanged;
         [ShowInInspector]
         public Dictionary<string, bool> DmgTypeDictionary = new()
         {

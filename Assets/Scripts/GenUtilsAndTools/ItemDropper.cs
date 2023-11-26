@@ -18,15 +18,6 @@ namespace GenUtilsAndTools
             _dropCheckValue = Random.Range(0, 100);
         }
 
-        private void OnDisable()
-        {
-            DropResource();
-            if (itemDrop && _dropCheckValue <= dropChance)
-            {
-                DropItem();
-            } 
-        }
-
         public void DropItem()
         {
             Instantiate(itemDrop, transform.position, Quaternion.identity);
