@@ -20,13 +20,14 @@ namespace Controllers
         public Transform target;
 
         private Material _material;
-        private float _hitCounter, _knockBackTimer, _hitInterval, _originalMoveSpeed, _lerpTimer;
+        private float _maxHealth, _hitCounter, _knockBackTimer, _hitInterval, _originalMoveSpeed, _lerpTimer;
         private static readonly int FadeAmount = Shader.PropertyToID("_FadeAmount");
         private static readonly int OffsetUvY = Shader.PropertyToID("_OffsetUvY");
 
 
         private void Start()
         {
+            _maxHealth = health;
             _originalMoveSpeed = moveSpeed;
             target = PlayerHealthController.contPHealth.transform;
             _material = spriteRenderer.material;
@@ -54,7 +55,12 @@ namespace Controllers
             if (health <= 0)
             {
                 it.DmgTypeDictionary[damageType] = true;
-                itemDropper.DropResource();
+                health = _maxHealth;
+                if (!it.alreadyDropped)
+                {
+                    it.alreadyDropped = true;
+                    itemDropper.DropResource();
+                }
             }
             ShowDamage(enemyDamage);
         }
@@ -170,17 +176,17 @@ namespace Controllers
 
             if (it.DmgTypeDictionary["burning"])
             {
-                
+                gameObject.SetActive(false);
             }
 
             if (it.DmgTypeDictionary["physical"])
             {
-                
+                gameObject.SetActive(false);
             }
 
             if (it.DmgTypeDictionary["mental"])
             {
-                
+                gameObject.SetActive(false);
             }
         }
 
@@ -193,6 +199,7 @@ namespace Controllers
             {
                 _material.SetFloat(FadeAmount, 0);
                 _lerpTimer = 0;
+                it.alreadyDropped = false;
                 gameObject.SetActive(false);
             }
         }
@@ -219,6 +226,7 @@ namespace Controllers
                 _lerpTimer = 0;
                 moveSpeed = _originalMoveSpeed;
                 it.gotDeathParticle = false;
+                it.alreadyDropped = false;
                 gameObject.SetActive(false);
             }
                 

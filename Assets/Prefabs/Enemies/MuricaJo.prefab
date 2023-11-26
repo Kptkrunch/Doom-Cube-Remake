@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gotDeathParticle: 0
+  alreadyDropped: 0
   isMelee: 0
   isRanged: 1
 --- !u!1 &5227686717601308110
@@ -178,6 +179,7 @@ GameObject:
   - component: {fileID: 4634086692960676813}
   - component: {fileID: 6027191905065934221}
   - component: {fileID: 8636673460645994407}
+  - component: {fileID: 8654527635651806920}
   m_Layer: 0
   m_Name: Jo
   m_TagString: Untagged
@@ -220,7 +222,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: bfda79a5462a7a542adc64fe8e3dd64a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -238,10 +240,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aac42edfa3cc65049b2e1f909dbe7e0e, type: 3}
+  m_SortingLayerID: 1800235555
+  m_SortingLayer: 1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 472354417, guid: eeef50315df60ee49b701ccb0c994317, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -273,6 +275,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8654527635651806920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227686717601308110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 3
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &6661291024236739502
 GameObject:
   m_ObjectHideFlags: 0
