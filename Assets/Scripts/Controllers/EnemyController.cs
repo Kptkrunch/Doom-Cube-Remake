@@ -176,30 +176,30 @@ namespace Controllers
 
             if (it.DmgTypeDictionary["burning"])
             {
+                ResetEnemy();
                 gameObject.SetActive(false);
             }
 
             if (it.DmgTypeDictionary["physical"])
             {
+                ResetEnemy();
                 gameObject.SetActive(false);
             }
 
             if (it.DmgTypeDictionary["mental"])
             {
+                ResetEnemy();
                 gameObject.SetActive(false);
             }
         }
 
         private void DeathRayDeath()
         {
-            var amount = Mathf.Lerp(0, 1, _lerpTimer / 1.0f);
-            _lerpTimer += Time.deltaTime;
-            _material.SetFloat(FadeAmount, amount);
+            LerpFade();
+            
             if (_material.GetFloat(FadeAmount) >= 1)
             {
-                _material.SetFloat(FadeAmount, 0);
-                _lerpTimer = 0;
-                it.alreadyDropped = false;
+                ResetEnemy();
                 gameObject.SetActive(false);
             }
         }
@@ -216,20 +216,46 @@ namespace Controllers
                 acid.SetActive(true);
             }
         
-            var amount = Mathf.Lerp(0, 1, _lerpTimer / 1.5f);
-            _lerpTimer += Time.deltaTime;
-            _material.SetFloat(OffsetUvY, amount);
+            LerpOffSet();
             
             if (_material.GetFloat(OffsetUvY) >= 1)
             {
-                _material.SetFloat(OffsetUvY, 0);
-                _lerpTimer = 0;
-                moveSpeed = _originalMoveSpeed;
-                it.gotDeathParticle = false;
-                it.alreadyDropped = false;
+                ResetEnemy();
                 gameObject.SetActive(false);
             }
                 
+        }
+
+        private void LerpFade()
+        {
+            var amount = Mathf.Lerp(0, 1, _lerpTimer / 1.0f);
+            _lerpTimer += Time.deltaTime;
+            _material.SetFloat(FadeAmount, amount);
+        }
+
+        private void LerpOffSet()
+        {
+            var amount = Mathf.Lerp(0, 1, _lerpTimer / 1.5f);
+            _lerpTimer += Time.deltaTime;
+            _material.SetFloat(OffsetUvY, amount);
+        }
+        
+        
+        private void ResetEnemy()
+        {
+            _lerpTimer = 0f;
+            _material.SetFloat(OffsetUvY, 0);
+            moveSpeed = _originalMoveSpeed;
+            it.gotDeathParticle = false;
+            it.alreadyDropped = false;
+            it.DmgTypeDictionary["deathray"] = false;
+            it.DmgTypeDictionary["melting"] = false;
+            it.DmgTypeDictionary["burning"] = false;
+            it.DmgTypeDictionary["physical"] = false;
+            it.DmgTypeDictionary["energy"] = false;
+            it.DmgTypeDictionary["mental"] = false;
+            _material.SetFloat(OffsetUvY, 0);
+            _material.SetFloat(FadeAmount, 0.1f);
         }
     }
 }
