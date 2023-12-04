@@ -50,7 +50,7 @@ MonoBehaviour:
   id: 0
   techLevel: 0
   description: A nasty little bugger, better than ol' leg humper
-  techImage: {fileID: -715782552, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
+  techImage: {fileID: 1472385512, guid: 2b2686a0b92ffb444a435113a2fbf741, type: 3}
   maxHealth: 0
   costMeat: 0
   costMetal: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 129
-  critterSprite: {fileID: -715782552, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
+  critterSprite: {fileID: 1472385512, guid: 2b2686a0b92ffb444a435113a2fbf741, type: 3}
   damageType: 
   player: {fileID: 0}
 --- !u!212 &4584243786547910059
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: -555709117
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -715782552, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
+  m_Sprite: {fileID: 1472385512, guid: 2b2686a0b92ffb444a435113a2fbf741, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
