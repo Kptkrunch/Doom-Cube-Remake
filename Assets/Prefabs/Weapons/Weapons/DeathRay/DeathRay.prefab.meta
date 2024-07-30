@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/DeathRay.prefab.meta
+guid: 430b3384d03930f42a003e770aace5a8
+========
+guid: c2094a1ac03b5124994e1521878082c0
+>>>>>>>> 8f0fff073c100a9a045b542eee3820fe63151a89:Assets/Prefabs/Projectiles/RapidGunProjectile.prefab.meta
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
