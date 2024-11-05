@@ -16,18 +16,15 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (CanFire)
-            {
-                StartCoroutine(AttackLoop());
-            }
+            if (CanFire) StartCoroutine(AttackLoop());
         }
 
-        IEnumerator AttackLoop()
+        private IEnumerator AttackLoop()
         {
             CanFire = false;
             RandomDirection();
             Debug.Log(Direction);
-            for (int i = 0; i < Ammo; i++)
+            for (var i = 0; i < Ammo; i++)
             {
                 yield return new WaitForSeconds(FireInterval);
                 var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
@@ -37,10 +34,11 @@ namespace Weapons.SpecificWeapons
                 proj.SetActive(true);
                 proj.transform.rotation = Rotation;
             }
+
             yield return new WaitForSeconds(ReloadInterval);
             CanFire = true;
         }
-        
+
         private void SetStats()
         {
             FireInterval = stats.weaponLvls[stats.lvl].rateOfFire;

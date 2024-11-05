@@ -8,10 +8,10 @@ TagManager:
   - Pickup
   - ItemAttractor
   - Projectile
-  - WorldlyObject
   - Critter
   - Resource
   - Construct
+  - BasicObject
   layers:
   - Default
   - TransparentFX

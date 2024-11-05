@@ -8,9 +8,9 @@ namespace UI
     {
         public TMP_Text genText;
         public float showInterval, floatSpeed;
-        
+
         private float _showTimer;
-    
+
         private void Start()
         {
             _showTimer = showInterval;
@@ -21,12 +21,9 @@ namespace UI
             if (_showTimer > 0)
             {
                 _showTimer -= Time.deltaTime;
-                if (_showTimer <= 0)
-                {
-                    GeneralTextController.contGenText.PlaceInPool(this);
-                }
+                if (_showTimer <= 0) GeneralTextController.contGenText.PlaceInPool(this);
             }
-        
+
             transform.position += Vector3.up * (floatSpeed * Time.deltaTime);
         }
 

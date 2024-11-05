@@ -7,6 +7,7 @@ namespace GenUtilsAndTools
         public static ItemAttractor itemAttractor;
         public float pickupRadius, pullSpeed;
         public CircleCollider2D pickupArea;
+
         private void Awake()
         {
             itemAttractor = this;

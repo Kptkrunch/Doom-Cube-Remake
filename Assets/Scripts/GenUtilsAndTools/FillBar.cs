@@ -14,7 +14,7 @@ namespace GenUtilsAndTools
         private void Awake()
         {
         }
-        
+
         private void Start()
         {
             _currentValue = startingValue;

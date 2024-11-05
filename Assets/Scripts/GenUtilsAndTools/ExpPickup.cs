@@ -6,7 +6,7 @@ namespace GenUtilsAndTools
     public class ExpPickup : AttractableItem
     {
         [SerializeField] private int expValue;
-    
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.CompareTag("Player")) return;

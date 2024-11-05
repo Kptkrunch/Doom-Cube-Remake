@@ -25,31 +25,31 @@ namespace TechSkills
         {
             _attackTimer -= Time.deltaTime;
             // Check for enemies in range
-            int numEnemiesInRange = Physics2D.OverlapCircleNonAlloc(transform.position, attackRange, _enemiesInRange, enemyLayer);
+            var numEnemiesInRange =
+                Physics2D.OverlapCircleNonAlloc(transform.position, attackRange, _enemiesInRange, enemyLayer);
 
             // Attack enemies in range
-            for (int i = 0; i < numEnemiesInRange; i++)
+            for (var i = 0; i < numEnemiesInRange; i++)
             {
-                Collider2D enemy = _enemiesInRange[i];
+                var enemy = _enemiesInRange[i];
                 Vector2 direction = enemy.transform.position - transform.position;
                 if (_enemiesInRange[i]) _foundTarget = true;
 
                 // Move towards the enemy
-                if (_foundTarget) transform.position = Vector2.MoveTowards(transform.position, _enemiesInRange[i].transform.position, speed * Time.deltaTime);
+                if (_foundTarget)
+                    transform.position = Vector2.MoveTowards(transform.position, _enemiesInRange[i].transform.position,
+                        speed * Time.deltaTime);
 
                 // Attack the enemy
                 if (_attackTimer <= 0)
-                {
                     if (Vector2.Distance(transform.position, enemy.transform.position) < attackRange)
                     {
                         _attackTimer = attackSpeed;
                         if (enemy) enemy.GetComponent<EnemyController>().TakeDamage(damage, damageType);
                         if (!enemy) _foundTarget = false;
-                    } 
-                }
-
+                    }
             }
-            
+
             // Move towards the target position
             var position = transform.position;
             position = Vector2.MoveTowards(position, _targetPosition, speed * Time.deltaTime);

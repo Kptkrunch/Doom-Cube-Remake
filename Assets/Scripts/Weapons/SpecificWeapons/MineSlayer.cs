@@ -14,13 +14,10 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (CanFire)
-            {
-                StartCoroutine(AttackLoop());
-            }
+            if (CanFire) StartCoroutine(AttackLoop());
         }
 
-        IEnumerator AttackLoop()
+        private IEnumerator AttackLoop()
         {
             CanFire = false;
             for (var i = 0; i < Ammo; i++)
@@ -45,6 +42,6 @@ namespace Weapons.SpecificWeapons
             FireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             ReloadInterval = stats.weaponLvls[stats.lvl].coolDown;
             Ammo = stats.weaponLvls[stats.lvl].ammo;
-        }   
+        }
     }
 }

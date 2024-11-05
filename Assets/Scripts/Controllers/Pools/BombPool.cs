@@ -7,8 +7,8 @@ namespace Controllers.Pools
     {
         public static BombPool poolBomb;
         public MMSimpleObjectPooler paraBombPool, paraExpPool;
-    
-    
+
+
         private void Awake()
         {
             poolBomb = this;

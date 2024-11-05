@@ -5,14 +5,11 @@ namespace Weapons.WeaponModifiers
     public class HasLifeTime : MonoBehaviour
     {
         public float lifeTimer;
-    
-        public void DisableAfterLifeTime() {
-        
+
+        public void DisableAfterLifeTime()
+        {
             lifeTimer -= Time.deltaTime;
-            if (lifeTimer <= 0)
-            {
-                gameObject.SetActive(false);
-            }
+            if (lifeTimer <= 0) gameObject.SetActive(false);
         }
     }
 }

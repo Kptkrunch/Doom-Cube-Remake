@@ -8,7 +8,7 @@ namespace Controllers.Pools
     {
         public static TechPools pools;
         public List<MMSimpleObjectPooler> techList;
-    
+
         private void Awake()
         {
             pools = this;

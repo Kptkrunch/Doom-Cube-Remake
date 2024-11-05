@@ -31,11 +31,11 @@ namespace TechSkills
             {
                 Vector2 direction = collision.GetComponent<EnemyController>().transform.position -
                                     topTransform.position;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+                var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
 
                 if (Mathf.Abs(angle) <= 15f)
                 {
-                    Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
+                    var targetRotation = Quaternion.Euler(0f, 0f, angle);
                     topTransform.rotation =
                         Quaternion.RotateTowards(topTransform.rotation, targetRotation, Time.deltaTime * 180f);
 
@@ -59,10 +59,10 @@ namespace TechSkills
                         }
                         else if (scatterShot)
                         {
-                            for (int i = 0; i < 10; i++)
+                            for (var i = 0; i < 10; i++)
                             {
-                                float randomAngle = Random.Range(-30f, 30f);
-                                GameObject projectile = Instantiate(projectilePrefab,
+                                var randomAngle = Random.Range(-30f, 30f);
+                                var projectile = Instantiate(projectilePrefab,
                                     firePoints[_currentFirePointIndex].position,
                                     firePoints[_currentFirePointIndex].rotation *
                                     Quaternion.Euler(0f, 0f, 0f + randomAngle));
@@ -88,18 +88,16 @@ namespace TechSkills
                         }
 
                         _currentFirePointIndex++;
-                        if (_currentFirePointIndex >= firePoints.Length)
-                        {
-                            _currentFirePointIndex = 0;
-                        }
+                        if (_currentFirePointIndex >= firePoints.Length) _currentFirePointIndex = 0;
                     }
                 }
             }
         }
 
-        void Fire(Transform firePoint, float angleOffset = 0f)
+        private void Fire(Transform firePoint, float angleOffset = 0f)
         {
-            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0f, 0f, angleOffset));
+            var projectile = Instantiate(projectilePrefab, firePoint.position,
+                firePoint.rotation * Quaternion.Euler(0f, 0f, angleOffset));
             Vector2 direction = projectile.transform.up;
             projectile.GetComponent<Rigidbody2D>().velocity = direction.normalized * moveSpeed;
         }
@@ -107,12 +105,9 @@ namespace TechSkills
         private bool IsEnemyInCone(GameObject enemy)
         {
             Vector2 directionToEnemy = enemy.transform.position - topTransform.position;
-            float angleToEnemy = Vector2.Angle(directionToEnemy, topTransform.up);
+            var angleToEnemy = Vector2.Angle(directionToEnemy, topTransform.up);
 
-            if (angleToEnemy <= detectionAngle / 2f && directionToEnemy.magnitude <= detectionRange)
-            {
-                return true;
-            }
+            if (angleToEnemy <= detectionAngle / 2f && directionToEnemy.magnitude <= detectionRange) return true;
 
             return false;
         }

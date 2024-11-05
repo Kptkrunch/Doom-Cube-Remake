@@ -10,7 +10,7 @@ namespace GenUtilsAndTools
         [CanBeNull] public Sprite resourceSprite;
         public int value;
         [SerializeField] private bool meat, metal, mineral, plastic, energy;
-        
+
 
         private void OnTriggerEnter2D(Collider2D collision)
         {

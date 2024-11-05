@@ -10,7 +10,7 @@ namespace Weapons.Projectiles
         public int pid;
         public int eid;
         public ProjStats stats = new();
-        
+
         [Serializable]
         public class ProjStats
         {

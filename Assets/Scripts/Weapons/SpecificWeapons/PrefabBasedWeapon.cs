@@ -11,11 +11,11 @@ namespace Weapons.SpecificWeapons
         protected Vector2 Direction;
         protected Quaternion Rotation;
 
-        void Start()
+        private void Start()
         {
             SetStats();
         }
-    
+
         private void SetStats()
         {
             FireInterval = stats.weaponLvls[stats.lvl].rateOfFire;

@@ -13,11 +13,12 @@ namespace Weapons.DeathRays
         {
             ResolveDeathRay();
         }
-    
-        public virtual void FireBeam() {
 
+        public virtual void FireBeam()
+        {
             // set everything to active
         }
+
         public virtual void ResolveDeathRay()
         {
             // run all the deactivate and line renderer

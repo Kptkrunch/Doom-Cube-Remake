@@ -20,17 +20,14 @@ namespace Controllers
         public void GetExp(int exp)
         {
             currentExp += exp;
-        
+
             ExpBar.expBar.UpdateExpBar(currentExp, lvlController.currentLevel,
                 lvlController.expLevels[lvlController.currentLevel]);
 
             if (currentExp >= lvlController.expLevels[lvlController.currentLevel])
             {
                 lvlController.LevelUp();
-                if (exp > 0)
-                {
-                    currentExp = 0;
-                }
+                if (exp > 0) currentExp = 0;
             }
         }
     }

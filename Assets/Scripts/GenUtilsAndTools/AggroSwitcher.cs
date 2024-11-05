@@ -15,17 +15,12 @@ public class AggroSwitcher : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
-        {
-            collision.GetComponent<EnemyController>().target = parent;
-        }
+        if (collision.CompareTag("Enemy")) collision.GetComponent<EnemyController>().target = parent;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
-        {
             collision.GetComponent<EnemyController>().target = PlayerHealthController.contPHealth.transform;
-        }
     }
 }

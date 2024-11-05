@@ -7,6 +7,7 @@ namespace Controllers
     {
         public static DamageNumberController contDmgText;
         public MMF_Player player;
+
         private void Awake()
         {
             contDmgText = this;

@@ -7,26 +7,23 @@ namespace Weapons.SpecificWeapons
 {
     public class BurnWeaponMelee : MeleeWeapon
     {
-        public EDotDamager eDotDamager; 
+        public EDotDamager eDotDamager;
         public GameObject burnerFrame;
         public GameObject burner;
 
         protected bool Grow;
-        
+
         private void Start()
         {
             SetStats();
         }
-        
+
         private void FixedUpdate()
         {
             WeaponFacing();
-            if (CanFire)
-            {
-                StartCoroutine(AttackLoop());
-            }
+            if (CanFire) StartCoroutine(AttackLoop());
         }
-        
+
         protected IEnumerator AttackLoop()
         {
             CanFire = false;
@@ -49,7 +46,8 @@ namespace Weapons.SpecificWeapons
                 burnerFrame.transform.localScale =
                     new Vector2(1, transform.localScale.y);
                 eDotDamager.transform.rotation = Quaternion.identity;
-            } else if (Input.GetAxisRaw("Horizontal") < 0)
+            }
+            else if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 burnerFrame.transform.localScale =
                     new Vector2(-1, transform.localScale.y);
@@ -66,7 +64,7 @@ namespace Weapons.SpecificWeapons
             eDotDamager.damageInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             eDotDamager.damage = stats.weaponLvls[stats.lvl].damage;
         }
-        
+
         public override void UpdateWeapon()
         {
             WeaponLevelUp();
@@ -78,7 +76,6 @@ namespace Weapons.SpecificWeapons
             transform.localScale = Vector3.one * stats.weaponLvls[stats.lvl].range;
             eDotDamager.damageInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             eDotDamager.damage = stats.weaponLvls[stats.lvl].damage;
-
         }
     }
 }

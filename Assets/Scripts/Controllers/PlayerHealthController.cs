@@ -11,7 +11,7 @@ namespace Controllers
         public float currentHealth;
         public float lastAttackedTime;
         public GameObject enemyAttack;
-        
+
         private float _maxHealth;
 
 
@@ -32,15 +32,12 @@ namespace Controllers
         public void TakeDamage(float damage)
         {
             currentHealth -= damage;
-            if (currentHealth <= 0)
-            {
-                gameObject.SetActive(false);
-            }
+            if (currentHealth <= 0) gameObject.SetActive(false);
             ShowDamage(damage, 1f);
             healthSlider.value = currentHealth;
             lastAttackedTime = Time.time;
         }
-        
+
         private void ShowDamage(float theDamage, float intensity = 1f)
         {
             var floatingText = PlayerDamageNumberController.ContPlayerDmgNum

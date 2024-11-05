@@ -12,13 +12,13 @@ namespace AIScripts
         private Transform _enemyTransform;
         private GameObject _currentBunker;
 
-        void Start()
+        private void Start()
         {
             _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             _enemyTransform = transform;
         }
 
-        void Update()
+        private void Update()
         {
             if (_currentBunker == null)
             {
@@ -35,36 +35,28 @@ namespace AIScripts
                 _enemyTransform.position = position;
             }
 
-            float distanceToPlayer = Vector3.Distance(_enemyTransform.position, _playerTransform.position);
+            var distanceToPlayer = Vector3.Distance(_enemyTransform.position, _playerTransform.position);
 
             if (distanceToPlayer <= attackDistance)
-            {
                 // Attack the player
                 Debug.Log("Attacking player");
-            }
             else if (distanceToPlayer > retreatDistance)
-            {
                 // Retreat from the player
                 Debug.Log("Retreating from player");
-            }
         }
 
-        void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag($"Bunker"))
-            {
                 // Take cover in the bunker
                 _currentBunker = other.gameObject;
-            }
         }
 
-        void OnTriggerExit2D(Collider2D other)
+        private void OnTriggerExit2D(Collider2D other)
         {
             if (other.CompareTag($"Bunker"))
-            {
                 // Leave the bunker
                 _currentBunker = null;
-            }
         }
     }
 }

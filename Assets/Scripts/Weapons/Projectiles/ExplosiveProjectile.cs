@@ -23,17 +23,13 @@ namespace Weapons.Projectiles
             if (it.doesBounce) MaybeBounceHandler();
             if (it.delayDisable) MaybeDelayDisable();
         }
-        
+
         private void OnEnable()
         {
             Reset();
             Debug.Log("enabled");
-            if (it.isLobbed)
-            {
-                Debug.Log("lobbed");
-                // rb2d.velocity = new Vector2(Random.Range(-horPower, horPower), vertPower + 1);
-            }
-            
+            if (it.isLobbed) Debug.Log("lobbed");
+            // rb2d.velocity = new Vector2(Random.Range(-horPower, horPower), vertPower + 1);
             if (it.doesBounce)
             {
                 // bounceInterval = _bounceHardInterval;
@@ -43,10 +39,7 @@ namespace Weapons.Projectiles
 
         private void OnDisable()
         {
-            if (it.disableAfterBounces)
-            {
-                Detonate();
-            }
+            if (it.disableAfterBounces) Detonate();
             Debug.Log("after detonate");
         }
 
@@ -85,12 +78,9 @@ namespace Weapons.Projectiles
         private void MaybeDelayDisable()
         {
             if (it.delayDisable) _disableTimer -= Time.deltaTime;
-            if (_disableTimer <= 0)
-            {
-                Detonate();
-            }
+            if (_disableTimer <= 0) Detonate();
         }
-        
+
         private void MaybeBounceHandler()
         {
             // bounceTimer -= Time.deltaTime;

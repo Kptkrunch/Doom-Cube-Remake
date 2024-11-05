@@ -5,6 +5,7 @@ namespace Controllers
     public class CameraController : MonoBehaviour
     {
         private Transform _target;
+
         private void Start()
         {
             _target = FindObjectOfType<PlayerController>().transform;

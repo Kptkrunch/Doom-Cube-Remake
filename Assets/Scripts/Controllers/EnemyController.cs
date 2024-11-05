@@ -32,12 +32,12 @@ namespace Controllers
             target = PlayerHealthController.contPHealth.transform;
             _material = spriteRenderer.material;
         }
-    
+
         private void FixedUpdate()
         {
             if (!target) target = PlayerHealthController.contPHealth.transform;
             if (_hitCounter > 0f) _hitCounter -= Time.deltaTime;
-            
+
             FlipRigidBodyX();
             KnockBackTimer();
             CheckDeath();
@@ -50,7 +50,7 @@ namespace Controllers
         }
 
         public void TakeDamage(float enemyDamage, string damageType)
-        {   
+        {
             health -= enemyDamage;
             if (health <= 0)
             {
@@ -62,18 +62,16 @@ namespace Controllers
                     itemDropper.DropResource();
                 }
             }
+
             ShowDamage(enemyDamage);
         }
 
         public void KnockBack(float knockBackAmount, float knockBackDuration)
         {
             _knockBackTimer = knockBackDuration;
-            if (_knockBackTimer >= 0)
-            {
-                moveSpeed = -moveSpeed * knockBackAmount;
-            }
+            if (_knockBackTimer >= 0) moveSpeed = -moveSpeed * knockBackAmount;
         }
-        
+
         private void ShowDamage(float theDamage, float intensity = 1f)
         {
             var floatingText = DamageNumberController.contDmgText
@@ -86,12 +84,8 @@ namespace Controllers
         {
             rb2d.velocity = (target.position - transform.position).normalized * moveSpeed;
             if (rb2d.velocity.x < 0)
-            {
                 rb2d.transform.localScale = new Vector2(-1, transform.localScale.y);
-            } else if (rb2d.velocity.x >= 0)
-            {
-                rb2d.transform.localScale = new Vector2(1, transform.localScale.y);
-            }
+            else if (rb2d.velocity.x >= 0) rb2d.transform.localScale = new Vector2(1, transform.localScale.y);
         }
 
         private void KnockBackTimer()
@@ -109,10 +103,7 @@ namespace Controllers
 
         private void StopEnemies()
         {
-            if (!PlayerController.contPlayer.gameObject.activeInHierarchy)
-            {
-                moveSpeed = 0f;
-            }
+            if (!PlayerController.contPlayer.gameObject.activeInHierarchy) moveSpeed = 0f;
         }
 
         private void MeleeAttack(Collision2D collision)
@@ -127,13 +118,15 @@ namespace Controllers
                     localScale =
                         new Vector3(1, localScale.y, localScale.z);
                     attack.transform.localScale = localScale;
-                } else if (rb2d.velocity.x >= 0)
+                }
+                else if (rb2d.velocity.x >= 0)
                 {
                     var localScale = attack.transform.localScale;
                     localScale =
                         new Vector3(-1, localScale.y, localScale.z);
                     attack.transform.localScale = localScale;
                 }
+
                 attack.SetActive(true);
                 PlayerHealthController.contPHealth.TakeDamage(damage);
                 _hitCounter = _hitInterval;
@@ -149,13 +142,15 @@ namespace Controllers
                     localScale =
                         new Vector3(1, localScale.y, localScale.z);
                     attack.transform.localScale = localScale;
-                } else if (rb2d.velocity.x >= 0)
+                }
+                else if (rb2d.velocity.x >= 0)
                 {
                     var localScale = attack.transform.localScale;
                     localScale =
                         new Vector3(-1, localScale.y, localScale.z);
                     attack.transform.localScale = localScale;
                 }
+
                 attack.SetActive(true);
                 collision.gameObject.GetComponentInChildren<Tech>().TakeDamage(damage);
                 _hitCounter = _hitInterval;
@@ -164,15 +159,9 @@ namespace Controllers
 
         private void CheckDeath()
         {
-            if (it.DmgTypeDictionary["deathray"])
-            {
-                DeathRayDeath();
-            }
+            if (it.DmgTypeDictionary["deathray"]) DeathRayDeath();
 
-            if (it.DmgTypeDictionary["melting"])
-            {
-                AcidMeltedDeath();
-            }
+            if (it.DmgTypeDictionary["melting"]) AcidMeltedDeath();
 
             if (it.DmgTypeDictionary["burning"])
             {
@@ -196,7 +185,7 @@ namespace Controllers
         private void DeathRayDeath()
         {
             LerpFade();
-            
+
             if (_material.GetFloat(FadeAmount) >= 1)
             {
                 ResetEnemy();
@@ -215,15 +204,14 @@ namespace Controllers
                 acid.transform.position = new Vector3(position.x, position.y - .35f, position.z);
                 acid.SetActive(true);
             }
-        
+
             LerpOffSet();
-            
+
             if (_material.GetFloat(OffsetUvY) >= 1)
             {
                 ResetEnemy();
                 gameObject.SetActive(false);
             }
-                
         }
 
         private void LerpFade()
@@ -239,8 +227,8 @@ namespace Controllers
             _lerpTimer += Time.deltaTime;
             _material.SetFloat(OffsetUvY, amount);
         }
-        
-        
+
+
         private void ResetEnemy()
         {
             _lerpTimer = 0f;

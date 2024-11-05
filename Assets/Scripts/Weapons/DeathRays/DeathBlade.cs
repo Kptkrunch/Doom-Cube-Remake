@@ -7,7 +7,7 @@ namespace Weapons.DeathRays
     {
         public SplineAnimate splinePlayer;
         public GameObject hitMarker;
-    
+
         private void Update()
         {
             ResolveDeathRay();

@@ -13,13 +13,10 @@ namespace Weapons.Projectiles
         public float blastRadius;
         public SplineAnimate animator;
         public GameObject parent;
-        
+
         private void FixedUpdate()
         {
-            if (animator.isActiveAndEnabled && !animator.IsPlaying)
-            { 
-                parent.SetActive(false);
-            } 
+            if (animator.isActiveAndEnabled && !animator.IsPlaying) parent.SetActive(false);
         }
 
         private void OnDisable()

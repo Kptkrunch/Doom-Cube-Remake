@@ -51,7 +51,7 @@ namespace TechSkills
                     break;
             }
         }
-        
+
         public void TakeDamage(float damage)
         {
             CurrentHealth -= damage;
@@ -60,20 +60,19 @@ namespace TechSkills
                 CurrentHealth = maxHealth;
                 gameObject.SetActive(false);
             }
+
             ShowDamage(damage, 1f);
         }
-        
+
         private void ShowDamage(float theDamage, float intensity = 1f)
         {
             var floatingText = TechDamageNumberController.ContTechDmgNum.player.GetFeedbackOfType<MMF_FloatingText>();
             floatingText.Value = theDamage.ToString();
             TechDamageNumberController.ContTechDmgNum.player.PlayFeedbacks(transform.position);
         }
-        
+
         public void UpdateTech()
         {
-        
         }
     }
 }
-

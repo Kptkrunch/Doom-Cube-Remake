@@ -6,10 +6,10 @@ namespace Weapons.WeaponModifiers
     {
         public float activeInterval, coolDownTimer;
         public GameObject projectileFrame;
-        
+
         private float _activeTimer;
         private bool _isActive;
-    
+
         private void Start()
         {
             projectileFrame.SetActive(false);
@@ -19,11 +19,12 @@ namespace Weapons.WeaponModifiers
         private void Update()
         {
             _activeTimer -= Time.deltaTime;
-            switch ((_activeTimer <= 0))
+            switch (_activeTimer <= 0)
             {
                 case false:
                     return;
             }
+
             _activeTimer = activeInterval;
             if (!_isActive)
             {

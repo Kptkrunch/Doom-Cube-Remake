@@ -9,10 +9,7 @@ namespace Damagers
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("WorldlyObject"))
-            {
-                collision.GetComponent<WordlyObject>().TakeDamage(damage);
-            }
+            if (collision.CompareTag("WorldlyObject")) collision.GetComponent<WordlyObject>().TakeDamage(damage);
         }
     }
 }

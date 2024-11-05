@@ -8,7 +8,7 @@ namespace Controllers
     {
         public static WeaponController contWeps;
         public List<Weapon> equippedWeapons, upgradableWeapons, allWeapons, fullyUpgradedWeapons;
-    
+
         private void Awake()
         {
             contWeps = this;

@@ -10,25 +10,22 @@ public class EnemyDetection : MonoBehaviour
     public bool IsEnemyInCone(GameObject enemy)
     {
         Vector2 directionToEnemy = enemy.transform.position - transform.position;
-        float angleToEnemy = Vector2.Angle(directionToEnemy, transform.up);
+        var angleToEnemy = Vector2.Angle(directionToEnemy, transform.up);
 
-        if (angleToEnemy <= detectionAngle / 2f && directionToEnemy.magnitude <= detectionRange)
-        {
-            return true;
-        }
+        if (angleToEnemy <= detectionAngle / 2f && directionToEnemy.magnitude <= detectionRange) return true;
 
         return false;
     }
 
     public GameObject FindClosestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject closestEnemy = null;
-        float closestDistance = Mathf.Infinity;
+        var closestDistance = Mathf.Infinity;
 
-        foreach (GameObject enemy in enemies)
+        foreach (var enemy in enemies)
         {
-            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+            var distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
             if (distanceToEnemy < closestDistance)
             {
                 closestDistance = distanceToEnemy;

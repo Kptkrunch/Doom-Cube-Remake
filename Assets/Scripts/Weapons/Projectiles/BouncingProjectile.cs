@@ -7,7 +7,6 @@ namespace Weapons.Projectiles
 {
     public class BouncingProjectile : Projectile
     {
-        
         public Rigidbody2D rb2d;
         protected float BounceTimer, BounceInterval, Bounces, LifeTimer;
         protected bool RestoreLob;
@@ -22,7 +21,7 @@ namespace Weapons.Projectiles
         private void FixedUpdate()
         {
             switch (it.doesBounce)
-            { 
+            {
                 case true:
                 {
                     BounceTimer -= Time.deltaTime;
@@ -38,16 +37,17 @@ namespace Weapons.Projectiles
                         rb2d.AddForce(new Vector2(velocity.x * 0.8f, pd.stats.lobHeight * .75f), ForceMode2D.Impulse);
                         Bounces--;
                     }
+
                     break;
                 }
             }
-            
+
             if (it.isLobbed)
             {
                 it.isLobbed = false;
                 LobProjectile();
             }
-            
+
             if (Bounces <= 0)
             {
                 Bounces = pd.stats.bounces;
@@ -59,7 +59,7 @@ namespace Weapons.Projectiles
         {
             if (it.doesBounce) SetBouncTimer();
         }
-        
+
         private void OnDisable()
         {
             if (RestoreLob) it.isLobbed = true;

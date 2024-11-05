@@ -8,7 +8,7 @@ public class EnemyDeathPoolManager : MonoBehaviour
 
     public List<MMSimpleObjectPooler> enemyDeathPools;
     public MMSimpleObjectPooler meltingPool;
-    
+
     private void Awake()
     {
         PoolEnemyMan = this;

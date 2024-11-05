@@ -40,16 +40,13 @@ namespace MutantsAndRobots
         public IEnumerator SpecAttack(EnemyController enemy)
         {
             attackParticleSystem.Play();
-            for (int i = 0; i < hits; i++)
+            for (var i = 0; i < hits; i++)
             {
                 yield return new WaitForSeconds(hitsTimer);
                 enemy.TakeDamage(damage, damageType);
             }
 
-            if (!attackParticleSystem.isPlaying)
-            {
-                StopCoroutine(SpecAttack(_enemyController));
-            }
+            if (!attackParticleSystem.isPlaying) StopCoroutine(SpecAttack(_enemyController));
         }
     }
 }

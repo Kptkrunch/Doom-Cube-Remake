@@ -7,11 +7,11 @@ namespace GenUtilsAndTools
         public Vector3 maxSize;
         public float growShrinkSpeed;
         public float staySizeInterval;
-        
+
         private Vector3 _targetSize;
         private float _staySizeTimer;
-            
-    
+
+
         private void Start()
         {
             _targetSize = maxSize;
@@ -28,12 +28,10 @@ namespace GenUtilsAndTools
 
         private void Update()
         {
-            transform.localScale = Vector3.MoveTowards(transform.localScale, _targetSize, growShrinkSpeed * Time.deltaTime);
+            transform.localScale =
+                Vector3.MoveTowards(transform.localScale, _targetSize, growShrinkSpeed * Time.deltaTime);
             _staySizeTimer -= Time.deltaTime;
-            if (_staySizeTimer <= 0)
-            {
-                _targetSize = Vector3.zero;
-            }
+            if (_staySizeTimer <= 0) _targetSize = Vector3.zero;
         }
     }
 }

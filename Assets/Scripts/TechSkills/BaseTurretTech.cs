@@ -23,9 +23,9 @@ namespace TechSkills
         {
             if (_target != null)
             {
-                Vector3 direction = _target.position - top.position;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-                Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                var direction = _target.position - top.position;
+                var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+                var targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 top.rotation = Quaternion.Slerp(top.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
                 if (Time.time > _nextFire)
@@ -38,24 +38,18 @@ namespace TechSkills
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Enemy"))
-            {
-                _target = collision.transform;
-            }
+            if (collision.CompareTag("Enemy")) _target = collision.transform;
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.CompareTag("Enemy"))
-            {
-                _target = null;
-            }
+            if (collision.CompareTag("Enemy")) _target = null;
         }
 
         private void Fire()
         {
-            GameObject projectile = Instantiate(projectilePrefab, top.position, top.rotation);
-            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+            var projectile = Instantiate(projectilePrefab, top.position, top.rotation);
+            var rb = projectile.GetComponent<Rigidbody2D>();
             rb.velocity = top.up * 3f;
         }
     }

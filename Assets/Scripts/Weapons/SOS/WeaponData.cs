@@ -12,7 +12,7 @@ namespace Weapons.SOS
         public int wid;
         public int pid;
         public Weapon weaponPrefab;
-        
+
         [Serializable]
         public class WeaponLevel
         {

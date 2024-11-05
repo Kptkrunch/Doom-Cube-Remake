@@ -12,7 +12,7 @@ namespace UI
         public TextMeshProUGUI weaponNameAndLvl, upgradeDescription;
 
         private Weapon _assignedWeapon;
-    
+
         public void UpdatePanelDisplay(Weapon theWeapon)
         {
             if (theWeapon.gameObject.activeSelf)
@@ -27,21 +27,17 @@ namespace UI
                 weaponImage.sprite = theWeapon.uiSprite;
                 weaponNameAndLvl.text = theWeapon.name;
             }
-            _assignedWeapon = theWeapon;
 
+            _assignedWeapon = theWeapon;
         }
 
         public void SelectUpgrade()
         {
             if (_assignedWeapon == null) return;
             if (_assignedWeapon.gameObject.activeSelf)
-            {
                 _assignedWeapon.UpdateWeapon();
-            }
             else
-            {
                 WeaponController.contWeps.AddWeapon(_assignedWeapon);
-            }
             UpgradePanelController.contUpgrades.gameObject.SetActive(false);
             UpgradePanelController.contUpgrades.skipLevelButton.gameObject.SetActive(false);
             TechPanelController.ContTechPanel.gameObject.SetActive(false);

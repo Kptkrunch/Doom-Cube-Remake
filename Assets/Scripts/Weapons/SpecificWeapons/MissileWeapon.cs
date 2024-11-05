@@ -22,13 +22,10 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (CanFire)
-            {
-                StartCoroutine(AttackLoop());
-            }
+            if (CanFire) StartCoroutine(AttackLoop());
         }
 
-        IEnumerator AttackLoop()
+        private IEnumerator AttackLoop()
         {
             CanFire = false;
             var targetSignal = enemy;
@@ -52,7 +49,7 @@ namespace Weapons.SpecificWeapons
             StopCoroutine(RadarScan());
         }
 
-        IEnumerator RadarScan()
+        private IEnumerator RadarScan()
         {
             while (gameObject.activeSelf)
             {
@@ -63,7 +60,7 @@ namespace Weapons.SpecificWeapons
             }
         }
 
-        IEnumerator RadarPing()
+        private IEnumerator RadarPing()
         {
             if (!Pinged)
             {
@@ -74,7 +71,7 @@ namespace Weapons.SpecificWeapons
                 Pinged = false;
             }
         }
-        
+
         private void SetStats()
         {
             Ammo = stats.weaponLvls[stats.lvl].ammo;

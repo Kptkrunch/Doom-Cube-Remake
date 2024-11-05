@@ -17,10 +17,7 @@ namespace GenUtilsAndTools
         private void Update()
         {
             _timer -= Time.deltaTime;
-            if (_timer <= 0)
-            {
-                gameObject.SetActive(false);
-            }
+            if (_timer <= 0) gameObject.SetActive(false);
         }
 
         private void OnEnable()

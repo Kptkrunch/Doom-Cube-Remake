@@ -10,12 +10,10 @@ namespace UI
 
         private void Continue()
         {
-        
         }
 
         private void GoToTitle()
         {
-        
         }
 
         private void OnEnable()
