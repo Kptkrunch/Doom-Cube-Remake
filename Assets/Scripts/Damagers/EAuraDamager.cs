@@ -73,13 +73,13 @@ namespace Damagers
                 if (collision.CompareTag("Enemy"))
                     collision.GetComponent<EnemyController>().TakeDamage(damage, damageType);
 
-                if (collision.CompareTag("WorldlyObject")) collision.GetComponent<WordlyObject>().TakeDamage(damage);
+                if (collision.CompareTag("BasicObject")) collision.GetComponent<BasicObject>().TakeDamage(damage, damageType);
             }
             else
             {
                 if (collision.CompareTag("Enemy")) _enemiesInRadius.Add(collision.GetComponent<EnemyController>());
 
-                if (collision.CompareTag("WorldlyObject")) _objectsInRadius.Add(collision.GetComponent<BasicObject>());
+                if (collision.CompareTag("BasicObject")) _objectsInRadius.Add(collision.GetComponent<BasicObject>());
             }
         }
 
@@ -92,7 +92,7 @@ namespace Damagers
                     if (collision.CompareTag("Enemy"))
                         _enemiesInRadius.Remove(collision.GetComponent<EnemyController>());
 
-                    if (collision.CompareTag("WorldlyObject"))
+                    if (collision.CompareTag("BasicObject"))
                         _objectsInRadius.Remove(collision.GetComponent<BasicObject>());
 
                     break;

@@ -8,7 +8,24 @@ namespace Damagers
     {
         public float damage;
         public string damageType;
-        public bool destructive, hitsGround, hitsAir, fireDamage, chemicalDamage, explosiveDamage;
+        public bool destructive, antiGround, antiAir, fire, acid, explosive, energy, deathray, solid;
+        public bool[] damageTypeArray;
+        
+        private void Awake()
+        {
+            damageTypeArray = new[]
+                { fire, acid, explosive, energy, deathray, solid };
+
+            if (damageTypeArray.Length.Equals(0)) return; 
+            foreach (var dt in damageTypeArray)
+            {
+                if (dt)
+                {
+                    damageType = nameof(dt);
+                    return;
+                }
+            }
+        }
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {

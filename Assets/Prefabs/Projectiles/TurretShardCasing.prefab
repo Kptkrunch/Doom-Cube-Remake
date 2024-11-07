@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 6818193395088445855}
   - component: {fileID: 8739330273580598273}
   - component: {fileID: 3719558142764550045}
-  - component: {fileID: 4705978271193333440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TurretShardCasing
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -111,26 +110,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageType: energy
-  destructive: 0
-  hitsGround: 1
-  hitsAir: 1
-  fireDamage: 0
-  chemicalDamage: 0
-  explosiveDamage: 0
---- !u!114 &4705978271193333440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9181381071157571637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb0f108f079a93a4e8d7d7249a446927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyOnCollision: 1
+  damageType: Energy
+  destructive: 1
+  antiGround: 0
+  antiAir: 0
+  fire: 0
+  acid: 1
+  explosive: 0
+  energy: 0
+  deathray: 0
+  solid: 1
+  damageTypeArray: 
 --- !u!1001 &9025103023132796033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -139,6 +129,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4240349523571165580}
     m_Modifications:
+    - target: {fileID: 702702568842525236, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 702928441993231286, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 703621278355064134, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 709307464158551806, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 793689570555658336, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 794395817161840658, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794395817161840658, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794395817161840658, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038764665581467226, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: hasLifetime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038764665581467226, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: moveUseVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038764665581467226, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: disableOnContact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348413478231728229, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: pd
+      value: 
+      objectReference: {fileID: 11400000, guid: 1977dc346a8b82344abcc0cc9922285c, type: 2}
     - target: {fileID: 2348413478231728229, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
       propertyPath: parent
       value: 
@@ -150,6 +188,10 @@ PrefabInstance:
     - target: {fileID: 2863473949514863687, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
       propertyPath: m_Name
       value: TurretShell
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863473949514863687, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7038441453253820814, guid: 8057c6de1e8238e47b068fe3927c6be3, type: 3}
       propertyPath: m_LocalPosition.x

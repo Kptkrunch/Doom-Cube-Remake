@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4584243786547910059}
   - component: {fileID: -3557415182979239780}
   - component: {fileID: 733463166444279232}
+  - component: {fileID: -7546950018896350851}
   m_Layer: 10
   m_Name: AttackCritter
   m_TagString: Critter
@@ -57,7 +58,8 @@ MonoBehaviour:
   costMineral: 0
   costPlastic: 0
   costEnergy: 0
-  rb2d: {fileID: 0}
+  _currentHealth: 0
+  rb2d: {fileID: 733463166444279232}
   speed: 2
   attackRange: 0.5
   health: 10
@@ -67,7 +69,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 129
   critterSprite: {fileID: 1472385512, guid: 2b2686a0b92ffb444a435113a2fbf741, type: 3}
-  damageType: 
+  damageType: Solid
   player: {fileID: 0}
 --- !u!212 &4584243786547910059
 SpriteRenderer:
@@ -89,7 +91,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 042a6044ff4c40a42889da0f327dab53, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,3 +185,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-7546950018896350851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2821621169801986273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0

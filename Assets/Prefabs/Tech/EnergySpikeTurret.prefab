@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7463952412684575195}
   m_Layer: 11
   m_Name: AggroSwitcher
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,9 +96,10 @@ GameObject:
   - component: {fileID: 3262936065688373119}
   - component: {fileID: 3717673585766254556}
   - component: {fileID: 3561480638920496104}
+  - component: {fileID: 5851867429715637031}
   m_Layer: 11
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,12 +141,13 @@ MonoBehaviour:
   costMineral: 0
   costPlastic: 1
   costEnergy: 1
+  _currentHealth: 0
   rb2d: {fileID: 3561480638920496104}
   top: {fileID: 888041764948970028}
+  pid: 0
   rotationSpeed: 10
   fireRate: 1
   range: 10
-  projectilePrefab: {fileID: 9181381071157571637, guid: 032568511f8f7574eb91159178cf39dd, type: 3}
 --- !u!212 &3262936065688373119
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -166,7 +168,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a909fe9848407fe4c98a8fab7124feb2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,6 +262,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!114 &5851867429715637031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437306131556539864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &8910910782253818315
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,9 +290,10 @@ GameObject:
   - component: {fileID: 4451254957108221702}
   - component: {fileID: 2978454647886695923}
   - component: {fileID: 7699640095524855384}
+  - component: {fileID: 3946351926642833623}
   m_Layer: 11
   m_Name: EnergySpikeTurret
-  m_TagString: Construct
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,7 +335,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b02b701040c89204f83f461934874e6e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -370,6 +389,7 @@ MonoBehaviour:
   costMineral: 0
   costPlastic: 0
   costEnergy: 0
+  _currentHealth: 0
   rb2d: {fileID: 3561480638920496104}
 --- !u!58 &7699640095524855384
 CircleCollider2D:
@@ -406,3 +426,19 @@ CircleCollider2D:
   m_Offset: {x: 0.01847601, y: -0.24480915}
   serializedVersion: 2
   m_Radius: 0.2367146
+--- !u!114 &3946351926642833623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8910910782253818315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0

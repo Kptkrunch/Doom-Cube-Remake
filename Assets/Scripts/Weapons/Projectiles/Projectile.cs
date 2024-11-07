@@ -84,7 +84,7 @@ namespace Weapons.Projectiles
 
         protected void MaybeDisableOnContactWithAnything(Collider2D collision)
         {
-            if (collision.CompareTag("Enemy") || collision.CompareTag("WorldlyObject"))
+            if (collision.CompareTag("Enemy") || collision.CompareTag("BasicObject"))
                 parent.gameObject.SetActive(false);
         }
 

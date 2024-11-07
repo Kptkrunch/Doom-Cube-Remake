@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Objects
 {
-    public class GasContainer : WordlyObject
+    public class GasContainer : BasicObject
     {
         public bool maybeHookedUpToGas;
 
@@ -48,7 +48,7 @@ namespace Objects
             {
                 if (enemies[i]) enemies[i].GetComponent<EnemyController>().TakeDamage(damage, damageType);
 
-                if (objects[i]) objects[i].GetComponent<WordlyObject>().TakeDamage(damage);
+                if (objects[i]) objects[i].GetComponent<BasicObject>().TakeDamage(damage, damageType);
             }
         }
     }

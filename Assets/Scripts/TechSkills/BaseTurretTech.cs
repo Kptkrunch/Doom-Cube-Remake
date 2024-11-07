@@ -1,3 +1,4 @@
+using Controllers.Pools;
 using UnityEngine;
 
 namespace TechSkills
@@ -5,10 +6,8 @@ namespace TechSkills
     public class BaseTurretTech : Tech
     {
         public Transform top;
-        public float rotationSpeed = 10f;
-        public float fireRate = 1f;
-        public float range = 10f;
-        public GameObject projectilePrefab;
+        public int pid;
+        public float rotationSpeed = 10f, fireRate = 1f, range = 10f;
         private CircleCollider2D _circleCollider;
         private Transform _target;
         private float _nextFire;
@@ -48,7 +47,7 @@ namespace TechSkills
 
         private void Fire()
         {
-            var projectile = Instantiate(projectilePrefab, top.position, top.rotation);
+            var projectile = ProjectilePoolManager2.poolProj.projPools[pid].GetPooledGameObject();
             var rb = projectile.GetComponent<Rigidbody2D>();
             rb.velocity = top.up * 3f;
         }

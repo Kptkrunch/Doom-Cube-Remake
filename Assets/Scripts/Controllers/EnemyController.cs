@@ -159,30 +159,30 @@ namespace Controllers
 
         private void CheckDeath()
         {
-            if (it.DmgTypeDictionary["deathray"]) DeathRayDeath();
+            if (it.DmgTypeDictionary["Deathray"]) DeathrayDeath();
 
-            if (it.DmgTypeDictionary["melting"]) AcidMeltedDeath();
+            if (it.DmgTypeDictionary["Acid"]) AcidMeltedDeath();
 
-            if (it.DmgTypeDictionary["burning"])
+            if (it.DmgTypeDictionary["Fire"])
             {
                 ResetEnemy();
                 gameObject.SetActive(false);
             }
 
-            if (it.DmgTypeDictionary["physical"])
+            if (it.DmgTypeDictionary["Solid"])
             {
                 ResetEnemy();
                 gameObject.SetActive(false);
             }
 
-            if (it.DmgTypeDictionary["mental"])
+            if (it.DmgTypeDictionary["Mind"])
             {
                 ResetEnemy();
                 gameObject.SetActive(false);
             }
         }
 
-        private void DeathRayDeath()
+        private void DeathrayDeath()
         {
             LerpFade();
 
@@ -236,12 +236,12 @@ namespace Controllers
             moveSpeed = _originalMoveSpeed;
             it.gotDeathParticle = false;
             it.alreadyDropped = false;
-            it.DmgTypeDictionary["deathray"] = false;
-            it.DmgTypeDictionary["melting"] = false;
-            it.DmgTypeDictionary["burning"] = false;
-            it.DmgTypeDictionary["physical"] = false;
-            it.DmgTypeDictionary["energy"] = false;
-            it.DmgTypeDictionary["mental"] = false;
+            it.DmgTypeDictionary["Deathray"] = false;
+            it.DmgTypeDictionary["Acid"] = false;
+            it.DmgTypeDictionary["Fire"] = false;
+            it.DmgTypeDictionary["Solid"] = false;
+            it.DmgTypeDictionary["Energy"] = false;
+            it.DmgTypeDictionary["Mind"] = false;
             _material.SetFloat(OffsetUvY, 0);
             _material.SetFloat(FadeAmount, 0.1f);
         }

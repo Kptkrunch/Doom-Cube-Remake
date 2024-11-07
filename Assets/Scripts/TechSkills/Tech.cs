@@ -15,14 +15,14 @@ namespace TechSkills
         public int costMeat, costMetal, costMineral, costPlastic, costEnergy;
         protected float CooldownTimer;
         private TechController _techCont;
-        protected float CurrentHealth;
+        [SerializeField] private float _currentHealth;
         [SerializeField] protected Rigidbody2D rb2d;
 
         private void Start()
         {
             CooldownTimer = 0;
             _techCont = TechController.ContTechCon;
-            CurrentHealth = maxHealth;
+            _currentHealth = maxHealth;
             rb2d = GetComponent<Rigidbody2D>();
         }
 
@@ -54,10 +54,10 @@ namespace TechSkills
 
         public void TakeDamage(float damage)
         {
-            CurrentHealth -= damage;
-            if (CurrentHealth <= 0)
+            _currentHealth -= damage;
+            if (_currentHealth <= 0)
             {
-                CurrentHealth = maxHealth;
+                _currentHealth = maxHealth;
                 gameObject.SetActive(false);
             }
 

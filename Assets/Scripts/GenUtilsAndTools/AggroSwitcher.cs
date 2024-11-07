@@ -1,26 +1,28 @@
-using System;
 using Controllers;
 using UnityEngine;
 
-public class AggroSwitcher : MonoBehaviour
+namespace GenUtilsAndTools
 {
-    public CircleCollider2D switchRadius;
-    public Transform parent;
-    public float aggroRadius;
-
-    private void Start()
+    public class AggroSwitcher : MonoBehaviour
     {
-        switchRadius.radius = aggroRadius;
-    }
+        public CircleCollider2D switchRadius;
+        public Transform parent;
+        public float aggroRadius;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy")) collision.GetComponent<EnemyController>().target = parent;
-    }
+        private void Start()
+        {
+            switchRadius.radius = aggroRadius;
+        }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-            collision.GetComponent<EnemyController>().target = PlayerHealthController.contPHealth.transform;
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Enemy")) collision.GetComponent<EnemyController>().target = parent;
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Enemy"))
+                collision.GetComponent<EnemyController>().target = PlayerHealthController.contPHealth.transform;
+        }
     }
 }

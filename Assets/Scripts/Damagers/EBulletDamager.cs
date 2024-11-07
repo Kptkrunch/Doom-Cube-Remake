@@ -10,7 +10,7 @@ namespace Damagers
         {
             if (destroyOnCollision && collision.CompareTag("Enemy")) gameObject.SetActive(false);
 
-            if (destroyOnCollision && collision.CompareTag("WorldlyObject")) gameObject.SetActive(false);
+            if (destroyOnCollision && collision.CompareTag("BasicObject")) gameObject.SetActive(false);
         }
     }
 }

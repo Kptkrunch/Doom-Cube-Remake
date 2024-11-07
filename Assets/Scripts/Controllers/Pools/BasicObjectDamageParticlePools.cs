@@ -14,6 +14,8 @@ namespace Controllers.Pools
         public List<MMSimpleObjectPooler> acidPool = new();
         public List<MMSimpleObjectPooler> dustPool = new();
         public List<MMSimpleObjectPooler> explosionPool = new();
+        public List<MMSimpleObjectPooler> smokePool = new();
+        public List<MMSimpleObjectPooler> deathrayPool = new();
 
         private void Start()
         {
@@ -27,6 +29,8 @@ namespace Controllers.Pools
 
         public GameObject GetPooledDamagedParticle(string damageType, int particleIndex)
         {
+            if (particleIndex >= ParticlePoolMatrix[damageType].Count)
+                particleIndex = ParticlePoolMatrix[damageType].Count - 1;
             var particle = ParticlePoolMatrix[damageType][particleIndex].GetPooledGameObject();
             return particle;
         }
@@ -37,6 +41,8 @@ namespace Controllers.Pools
             ParticlePoolMatrix.Add("Acid", acidPool);
             ParticlePoolMatrix.Add("Dust", dustPool);
             ParticlePoolMatrix.Add("Explosion", explosionPool);
+            ParticlePoolMatrix.Add("Smoke", smokePool);
+            ParticlePoolMatrix.Add("Deathray", deathrayPool);
         }
     }
 }

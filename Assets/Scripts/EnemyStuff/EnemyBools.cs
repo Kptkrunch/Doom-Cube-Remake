@@ -10,12 +10,12 @@ namespace GenUtilsAndTools
 
         [ShowInInspector] public Dictionary<string, bool> DmgTypeDictionary = new()
         {
-            { "deathray", false },
-            { "melting", false },
-            { "burning", false },
-            { "physical", false },
-            { "energy", false },
-            { "mental", false }
+            { "Deathray", false },
+            { "Acid", false },
+            { "Fire", false },
+            { "Solid", false },
+            { "Energy", false },
+            { "Mind", false }
         };
     }
 }
