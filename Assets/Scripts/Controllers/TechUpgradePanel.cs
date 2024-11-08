@@ -36,7 +36,7 @@ namespace Controllers
                     _assignedTech.costPlastic,
                     _assignedTech.costEnergy)) return;
             if (!_assignedTech.gameObject.activeSelf)
-                _assignedTech.UpdateTech();
+                _assignedTech.ResetOrInitTechObject();
             else
                 TechController.ContTechCon.AddTechToList(_assignedTech);
 

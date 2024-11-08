@@ -8,7 +8,7 @@ namespace Damagers
     {
         public float damage;
         public string damageType;
-        public bool destructive, antiGround, antiAir, fire, acid, explosive, energy, deathray, solid;
+        public bool destructive, fire, acid, explosive, energy, deathray, solid;
         public bool[] damageTypeArray;
         
         private void Awake()

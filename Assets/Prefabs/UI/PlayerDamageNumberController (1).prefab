@@ -286,7 +286,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9001164655031117369}
-  - component: {fileID: 689621416070025323}
   m_Layer: 5
   m_Name: PlayerDamageNumberController (1)
   m_TagString: Untagged
@@ -311,19 +310,6 @@ Transform:
   - {fileID: 8554778068055227707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &689621416070025323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948430939896926263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8293ca140e4ba884bb26e6eab8c22245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1001 &9062940168960310888
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -131,20 +131,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9c9fb8750f63f4c887f69238e7d596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: A basic turret
   id: 2
   techLevel: 0
-  description: A basic turret
-  techImage: {fileID: 848731867, guid: 764120a36c1fd487aba946474e52fc58, type: 3}
-  maxHealth: 10
   costMeat: 0
   costMetal: 2
   costMineral: 0
   costPlastic: 1
   costEnergy: 1
-  _currentHealth: 0
-  rb2d: {fileID: 3561480638920496104}
-  top: {fileID: 888041764948970028}
+  currentHealth: 0
+  maxHealth: 10
+  cooldownTimer: 0
+  techCont: {fileID: 0}
+  spriteRenderer: {fileID: 3262936065688373119}
+  techImage: {fileID: 848731867, guid: 764120a36c1fd487aba946474e52fc58, type: 3}
+  techRb2d: {fileID: 3561480638920496104}
   pid: 0
+  rotatingTopTransform: {fileID: 888041764948970028}
   rotationSpeed: 10
   fireRate: 1
   range: 10
@@ -379,18 +382,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c4772c1658d424c9976880381046ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: It shoots sharp things at good guys
   id: 1
   techLevel: 0
-  description: It shoots sharp things at good guys
-  techImage: {fileID: 74798634, guid: c89a347dff47ce44985f15be4d3175d1, type: 3}
-  maxHealth: 10
   costMeat: 0
   costMetal: 0
   costMineral: 0
   costPlastic: 0
   costEnergy: 0
-  _currentHealth: 0
-  rb2d: {fileID: 3561480638920496104}
+  currentHealth: 0
+  maxHealth: 10
+  cooldownTimer: 0
+  techCont: {fileID: 0}
+  spriteRenderer: {fileID: 4451254957108221702}
+  techImage: {fileID: 74798634, guid: c89a347dff47ce44985f15be4d3175d1, type: 3}
+  techRb2d: {fileID: 3561480638920496104}
 --- !u!58 &7699640095524855384
 CircleCollider2D:
   m_ObjectHideFlags: 0

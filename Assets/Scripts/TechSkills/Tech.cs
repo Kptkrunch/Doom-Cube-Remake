@@ -7,29 +7,36 @@ namespace TechSkills
 {
     public class Tech : MonoBehaviour
     {
-        public int id;
-        public int techLevel;
+        private static readonly int GreyscaleBlend = Shader.PropertyToID("_GreyscaleBlend");
         public string description;
-        public Sprite techImage;
-        public float maxHealth;
+
+        public int id, techLevel;
         public int costMeat, costMetal, costMineral, costPlastic, costEnergy;
-        protected float CooldownTimer;
-        private TechController _techCont;
-        [SerializeField] private float _currentHealth;
-        [SerializeField] protected Rigidbody2D rb2d;
+
+        public float currentHealth, maxHealth, cooldownTimer;
+        
+        [SerializeField] private TechController techCont;
+        public SpriteRenderer spriteRenderer;
+        public Sprite techImage;
+        public Rigidbody2D techRb2d;
+
+        private float _percentDamaged;
+
+        private void Awake()
+        {
+            ResetOrInitTechObject();
+        }
 
         private void Start()
         {
-            CooldownTimer = 0;
-            _techCont = TechController.ContTechCon;
-            _currentHealth = maxHealth;
-            rb2d = GetComponent<Rigidbody2D>();
+            ResetOrInitTechObject();
+            techCont = TechController.ContTechCon;
+            techRb2d = GetComponent<Rigidbody2D>();
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
         public void ActivateTech(string button)
         {
-            var tech = TechController.ContTechCon.purchasedTechList;
             var techObj = TechPools.pools.techList[id].GetPooledGameObject();
             switch (button)
             {
@@ -54,25 +61,44 @@ namespace TechSkills
 
         public void TakeDamage(float damage)
         {
-            _currentHealth -= damage;
-            if (_currentHealth <= 0)
+            currentHealth -= damage;
+            _percentDamaged = 1 - (currentHealth / maxHealth);
+            
+            ShowDamage(damage, 1f);
+            UpdateShaderGreyscaleBlend();
+            if (currentHealth <= 0)
             {
-                _currentHealth = maxHealth;
                 gameObject.SetActive(false);
             }
-
-            ShowDamage(damage, 1f);
         }
 
-        private void ShowDamage(float theDamage, float intensity = 1f)
+        private void ShowDamage(float damage, float intensity = 1f)
         {
-            var floatingText = TechDamageNumberController.ContTechDmgNum.player.GetFeedbackOfType<MMF_FloatingText>();
-            floatingText.Value = theDamage.ToString();
-            TechDamageNumberController.ContTechDmgNum.player.PlayFeedbacks(transform.position);
+            var floatingText = TechDamageNumberController.ContTechDmgNum
+                .player.GetFeedbackOfType<MMF_FloatingText>();
+            var damageString = damage.ToString();
+            floatingText.Value = damageString;
+
+            if (techRb2d)
+            {
+                if (TechDamageNumberController.ContTechDmgNum != null)
+                    TechDamageNumberController.ContTechDmgNum.player.PlayFeedbacks(transform.position);
+            }
         }
 
-        public void UpdateTech()
+        private void UpdateShaderGreyscaleBlend()
         {
+            if (spriteRenderer != null && _percentDamaged > 0f)
+            {
+                spriteRenderer.sharedMaterial.SetFloat(GreyscaleBlend, _percentDamaged);
+            }
+        }
+        
+        public void ResetOrInitTechObject()
+        {
+            cooldownTimer = 0;
+            _percentDamaged = 0f;
+            currentHealth = maxHealth;
         }
     }
 }
