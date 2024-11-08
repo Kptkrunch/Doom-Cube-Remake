@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: A nasty little bugger, better than ol' leg humper
+  techType: 
   id: 0
   techLevel: 0
   costMeat: 0
@@ -56,13 +57,8 @@ MonoBehaviour:
   costMineral: 0
   costPlastic: 0
   costEnergy: 0
-  currentHealth: 0
-  maxHealth: 0
-  cooldownTimer: 0
-  techCont: {fileID: 0}
   spriteRenderer: {fileID: 4584243786547910059}
   techImage: {fileID: 1472385512, guid: 2b2686a0b92ffb444a435113a2fbf741, type: 3}
-  techRb2d: {fileID: 733463166444279232}
   speed: 2
   attackRange: 0.5
   health: 10

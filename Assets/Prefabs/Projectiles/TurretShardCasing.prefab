@@ -111,15 +111,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   damageType: Energy
-  destructive: 1
-  antiGround: 0
-  antiAir: 0
-  fire: 0
-  acid: 1
+  destructive: 0
+  fire: 1
+  acid: 0
   explosive: 0
   energy: 0
   deathray: 0
-  solid: 1
+  solid: 0
   damageTypeArray: 
 --- !u!1001 &9025103023132796033
 PrefabInstance:
