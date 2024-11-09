@@ -31,24 +31,32 @@ namespace Controllers
             var length = purchasedTechList.Count;
             if (_gamepad.aButton.wasPressedThisFrame && length >= 1)
             {
+                Debug.Log("aButton.wasPressedThisFrame was pressed");
+                if (!purchasedTechList[0]) return;
                 purchasedTechList[0].ActivateTech("a");
                 purchasedTechList.RemoveAt(0);
                 idList[0] = 999;
             }
             else if (_gamepad.bButton.wasPressedThisFrame && length >= 2)
             {
+                Debug.Log("aButton.wasPressedThisFrame was pressed");
+                if (!purchasedTechList[1]) return;
                 purchasedTechList[1].ActivateTech("b");
                 purchasedTechList.RemoveAt(1);
                 idList[1] = 999;
             }
             else if (_gamepad.xButton.wasPressedThisFrame && length >= 3)
             {
+                Debug.Log("aButton.wasPressedThisFrame was pressed");
+                if (!purchasedTechList[2]) return;
                 purchasedTechList[2].ActivateTech("x");
                 purchasedTechList.RemoveAt(2);
                 idList[2] = 999;
             }
             else if (_gamepad.yButton.wasPressedThisFrame && length >= 4)
             {
+                Debug.Log("aButton.wasPressedThisFrame was pressed");
+                if (!purchasedTechList[3]) return;
                 purchasedTechList[3].ActivateTech("y");
                 purchasedTechList.RemoveAt(3);
                 idList[3] = 999;

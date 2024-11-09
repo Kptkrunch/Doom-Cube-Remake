@@ -8,6 +8,12 @@ namespace GenUtilsAndTools
         public CircleCollider2D switchRadius;
         public Transform parent;
         public float aggroRadius;
+        private Transform _playerTransform;
+
+        private void Awake()
+        {
+            _playerTransform = PlayerHealthController.contPHealth.transform;
+        }
 
         private void Start()
         {
@@ -16,13 +22,14 @@ namespace GenUtilsAndTools
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Enemy")) collision.GetComponent<EnemyController>().target = parent;
+            if (collision.CompareTag("Enemy")) collision.GetComponent<EnemyController>().target = parent.transform;
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
+            _playerTransform = PlayerHealthController.contPHealth.transform;
             if (collision.CompareTag("Enemy"))
-                collision.GetComponent<EnemyController>().target = PlayerHealthController.contPHealth.transform;
+                collision.GetComponent<EnemyController>().target = _playerTransform;
         }
     }
 }

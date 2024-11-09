@@ -48,7 +48,7 @@ namespace Weapons.Projectiles
         {
             _fuseTimer = fuseTimer;
             _lifeTimer = lifeTimer;
-            var exp = ProjectilePoolManager2.poolProj.projPools[expIndex].GetPooledGameObject();
+            var exp = ProjectilePoolManager.poolProj.projPools[expIndex].GetPooledGameObject();
             var damager = exp.GetComponent<EExplosionDamager>();
             damager.damage = damage;
             damager.blastRadiusCollider.radius = expRadius;
