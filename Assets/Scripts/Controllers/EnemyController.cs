@@ -1,4 +1,6 @@
+using System;
 using Controllers.Pools;
+using EnemyStuff;
 using GenUtilsAndTools;
 using MoreMountains.Feedbacks;
 using TechSkills;
@@ -24,6 +26,10 @@ namespace Controllers
         private static readonly int FadeAmount = Shader.PropertyToID("_FadeAmount");
         private static readonly int OffsetUvY = Shader.PropertyToID("_OffsetUvY");
 
+        private void Awake()
+        {
+            if (health <= 0) health = _maxHealth;
+        }
 
         private void Start()
         {
@@ -52,8 +58,10 @@ namespace Controllers
         public void TakeDamage(float enemyDamage, string damageType)
         {
             health -= enemyDamage;
+            Debug.Log(health + ": health left");
             if (health <= 0)
             {
+                Debug.Log("should be dead now");
                 it.DmgTypeDictionary[damageType] = true;
                 health = _maxHealth;
                 if (!it.alreadyDropped)
@@ -175,7 +183,7 @@ namespace Controllers
                 gameObject.SetActive(false);
             }
 
-            if (it.DmgTypeDictionary["Mind"])
+            if (it.DmgTypeDictionary["Energy"])
             {
                 ResetEnemy();
                 gameObject.SetActive(false);
@@ -199,7 +207,7 @@ namespace Controllers
             if (!it.gotDeathParticle)
             {
                 it.gotDeathParticle = true;
-                var acid = EnemyDeathPoolManager.PoolEnemyMan.meltingPool.GetPooledGameObject();
+                var acid = EnemyDeathPoolManager.PoolEnemyDeathPoolManager.meltingPool.GetPooledGameObject();
                 var position = transform.position;
                 acid.transform.position = new Vector3(position.x, position.y - .35f, position.z);
                 acid.SetActive(true);

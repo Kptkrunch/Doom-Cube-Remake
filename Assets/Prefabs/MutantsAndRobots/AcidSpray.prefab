@@ -81,7 +81,7 @@ MonoBehaviour:
   damage: 0.1
   hits: 10
   hitsTimer: 0.25
-  damageType: melting
+  damageType: Acid
   attackParticleSystem: {fileID: 8612687220967476170}
   parent: {fileID: 3273664036194478655}
 --- !u!61 &5060654225711307776

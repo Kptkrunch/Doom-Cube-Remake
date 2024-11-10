@@ -1,5 +1,9 @@
+using System;
+using System.Collections;
+using Controllers.Pools;
 using ScriptableObjs.TechWeaponsSOS;
 using UnityEngine;
+using Weapons.Projectiles;
 
 namespace TechSkills
 {
@@ -7,24 +11,74 @@ namespace TechSkills
     {
         private static readonly int GreyscaleBlend = Shader.PropertyToID("_GreyscaleBlend");
         public TechWeaponData turretWeaponData;
-        public TurretBottomSectionTech turretBottom;
+        public int pid;
+        public float rotationSpeed, fireRate, range;
         public SpriteRenderer spriteRenderer;
+        public CircleCollider2D collider2d;
         public float percentDamaged;
-        private bool _baseHasBeenInitialized = false;
+        private bool _canFire = true, _init;
+        private Transform _target;
+        private Vector3 _direction;
         private void Start()
         {
-            ResetOrInitTurretTopObject();
-            ResetOrInitTurretBaseObject();
+            if (!_init) SetStats();
         }
 
         private void Awake()
         {
-            percentDamaged = 0f;
-
-            if (!_baseHasBeenInitialized)
+            if (_init) ResetOrInitTurretTop();
+        }
+        
+        private void FixedUpdate()
+        {
+            if (_canFire)
             {
-                ResetOrInitTurretBaseObject();
+                StartCoroutine(AutoAttackLoop());
             }
+
+            MaybeRotateTurretTop();
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Enemy"))
+            {
+                _target = collision.transform;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Enemy"))
+            {
+                _target = null;
+            }
+        }
+
+        public IEnumerator AutoAttackLoop()
+        {
+            _canFire = false;
+
+            if (_target != null)
+            {
+                var proj = ProjectilePoolManager.poolProj.projPools[pid].GetPooledGameObject();
+                var theProj = proj.GetComponentInChildren<Projectile>();
+                proj.transform.position = transform.position;
+                proj.transform.rotation = transform.rotation;
+                theProj.pd.stats.direction = _direction;
+                proj.SetActive(true);
+            }
+            
+            yield return new WaitForSeconds(fireRate);
+            _canFire = true;
+        }
+        private void MaybeRotateTurretTop()
+        {
+            if (!_target) return;
+            _direction = transform.position - _target.transform.position;
+            var angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg - 90f;
+            var targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
         
         public void UpdateShaderGreyscaleBlend()
@@ -34,22 +88,23 @@ namespace TechSkills
                 spriteRenderer.sharedMaterial.SetFloat(GreyscaleBlend, percentDamaged);
             }
         }
-
-
-        private void ResetOrInitTurretBaseObject()
-        {
-            if (!turretBottom) return;
-            turretBottom.fireRate = turretWeaponData.fireRate;
-            turretBottom.range = turretWeaponData.range;
-            turretBottom.pid = turretWeaponData.pid;
-            turretBottom.rotationSpeed = turretWeaponData.rotationSpeed;
-            _baseHasBeenInitialized = true;
-        }
-
-        private void ResetOrInitTurretTopObject()
+        
+        private void ResetOrInitTurretTop()
         {
             percentDamaged = 0f;
-            _baseHasBeenInitialized = false;
+            _canFire = true;
+            _target = null;
+            _direction = Vector3.zero;
+        }
+
+        private void SetStats()
+        {
+            fireRate = turretWeaponData.fireRate;
+            range = turretWeaponData.range;
+            pid = turretWeaponData.pid;
+            rotationSpeed = turretWeaponData.rotationSpeed;
+            collider2d.radius = range;
+            _init = true;
         }
     }
 }

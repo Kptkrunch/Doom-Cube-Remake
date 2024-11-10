@@ -1,11 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
-using Controllers;
 using Controllers.Pools;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Weapons.Projectiles;
-using Random = UnityEngine.Random;
 
 namespace Weapons.SpecificWeapons
 {

@@ -1,21 +1,23 @@
-using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
 
-public class TechProjectilePools : MonoBehaviour
+namespace Controllers.Pools
 {
-    public static TechProjectilePools ProjectilePools;
-    public List<MMSimpleObjectPooler> projectilePoolList = new();
-
-    private void Awake()
+    public class TechProjectilePools : MonoBehaviour
     {
-        ProjectilePools = this;
-    }
+        public static TechProjectilePools ProjectilePools;
+        public List<MMSimpleObjectPooler> projectilePoolList = new();
+        
+        private void Awake()
+        {
+            ProjectilePools = this;
+        }
 
-    public GameObject GetProjectileById(int projectileId)
-    {
-        var projectile = projectilePoolList[projectileId].GetPooledGameObject();
-        return projectile;
+        public GameObject GetProjectileById(int projectileId)
+        {
+            var projectile = projectilePoolList[projectileId].GetPooledGameObject();
+            return projectile;
+        }
     }
 }

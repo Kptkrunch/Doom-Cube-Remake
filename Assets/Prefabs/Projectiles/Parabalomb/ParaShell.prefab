@@ -72,6 +72,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParaBomb
       objectReference: {fileID: 0}
+    - target: {fileID: 1377602888966085021, guid: f7599acda6eb4334a835b584966529e1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602888966095075, guid: f7599acda6eb4334a835b584966529e1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602888966137855, guid: f7599acda6eb4334a835b584966529e1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602888968082455, guid: f7599acda6eb4334a835b584966529e1, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602888968089935, guid: f7599acda6eb4334a835b584966529e1, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602888968110849, guid: f7599acda6eb4334a835b584966529e1, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4051650927833513506, guid: f7599acda6eb4334a835b584966529e1, type: 3}
       propertyPath: rb2d
       value: 

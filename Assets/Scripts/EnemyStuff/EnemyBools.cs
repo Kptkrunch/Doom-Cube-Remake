@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace GenUtilsAndTools
+namespace EnemyStuff
 {
     public class EnemyBools : MonoBehaviour
     {
-        public bool gotDeathParticle, alreadyDropped, isMelee, isRanged;
+        public bool gotDeathParticle, alreadyDropped;
 
         [ShowInInspector] public Dictionary<string, bool> DmgTypeDictionary = new()
         {

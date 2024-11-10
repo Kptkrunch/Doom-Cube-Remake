@@ -6,14 +6,17 @@ namespace Controllers.Pools
 {
     public class EnemyDeathPoolManager : MonoBehaviour
     {
-        public static EnemyDeathPoolManager PoolEnemyMan;
+        public static EnemyDeathPoolManager PoolEnemyDeathPoolManager;
 
         public List<MMSimpleObjectPooler> enemyDeathPools;
         public MMSimpleObjectPooler meltingPool;
-
+        public MMSimpleObjectPooler burningPool;
+        public MMSimpleObjectPooler deathAshPool;
+        public MMSimpleObjectPooler energyPool;
+        
         private void Awake()
         {
-            PoolEnemyMan = this;
+            PoolEnemyDeathPoolManager = this;
         }
     }
 }
