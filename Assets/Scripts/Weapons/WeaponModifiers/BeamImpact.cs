@@ -15,6 +15,7 @@ namespace Weapons.WeaponModifiers
             _damageTimer = _damageInterval;
             _damage = parent.stats.weaponLvls[parent.stats.lvl].damage;
         }
+
         private void FixedUpdate()
         {
             _damageTimer -= Time.deltaTime;
@@ -23,14 +24,12 @@ namespace Weapons.WeaponModifiers
         private void OnTriggerStay2D(Collider2D collision)
         {
             if (collision.CompareTag("Enemy"))
-            {
                 if (_damageTimer <= 0)
                 {
                     Debug.Log("Damage?");
                     _damageTimer = _damageInterval;
                     collision.GetComponent<EnemyController>().TakeDamage(_damage, damageType);
                 }
-            }
         }
     }
 }

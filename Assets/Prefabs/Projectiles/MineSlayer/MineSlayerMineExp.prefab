@@ -4871,7 +4871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   destructive: 0
-  damageType: melting
+  damageType: Acid
   blastRadiusCollider: {fileID: 7805085965996742006}
 --- !u!58 &7805085965996742006
 CircleCollider2D:

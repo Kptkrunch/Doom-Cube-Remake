@@ -14,6 +14,7 @@ namespace Weapons.Projectiles
         public GameObject parent;
         [CanBeNull] public EnemyDamager enemyDamager;
         private float _lifeTime, _pens;
+
         private void Awake()
         {
             pd = Instantiate(pd);
@@ -40,7 +41,7 @@ namespace Weapons.Projectiles
         {
             MaybeMoveRandomDirection();
         }
-        
+
         private void PenetrateLogic(Collider2D collision)
         {
             if (collision.CompareTag("Enemy"))
@@ -53,29 +54,23 @@ namespace Weapons.Projectiles
                 }
             }
         }
+
         protected void MaybeMoveViaTranslation()
         {
-            if (it.moveUseTranslate)
-            {
-                transform.Translate(pd.stats.direction * (pd.stats.movSpeed * Time.deltaTime));
-            }
+            if (it.moveUseTranslate) transform.Translate(pd.stats.direction * (pd.stats.movSpeed * Time.deltaTime));
         }
 
         protected void MaybeMoveTowards(Vector2 target)
         {
-            if (it.moveUseMoveTowards)
-            {
-                Vector2.MoveTowards(transform.position, target, pd.stats.movSpeed);
-            }
+            if (it.moveUseMoveTowards) Vector2.MoveTowards(transform.position, target, pd.stats.movSpeed);
         }
 
         protected void MaybeRotate(Rigidbody2D rb2d)
         {
             if (it.doesRotate)
-            {
                 transform.rotation = Quaternion.Euler(0f, 0f,
-                    transform.rotation.eulerAngles.z + pd.stats.rotSpeed * 360f * Time.deltaTime * Mathf.Sign(rb2d.velocity.x));
-            }
+                    transform.rotation.eulerAngles.z +
+                    pd.stats.rotSpeed * 360f * Time.deltaTime * Mathf.Sign(rb2d.velocity.x));
         }
 
         protected void MaybeHasLifetime()
@@ -88,16 +83,15 @@ namespace Weapons.Projectiles
         }
 
         protected void MaybeDisableOnContactWithAnything(Collider2D collision)
-        { 
-            if (collision.CompareTag("Enemy") || collision.CompareTag("WorldlyObject")) parent.gameObject.SetActive(false);
+        {
+            if (collision.CompareTag("Enemy") || collision.CompareTag("BasicObject"))
+                parent.gameObject.SetActive(false);
         }
 
         protected void MaybeMoveBackwards()
         {
             if (it.movesBackwards && it.moveUseVelocity)
-            {
                 pd.stats.direction = new Vector2(pd.stats.direction.x, pd.stats.direction.y) * -1;
-            }
         }
 
         protected void MaybeMoveRandomDirection()

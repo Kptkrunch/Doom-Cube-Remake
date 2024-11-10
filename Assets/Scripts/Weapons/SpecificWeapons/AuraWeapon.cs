@@ -29,7 +29,7 @@ namespace Weapons.SpecificWeapons
             auraDamager.damage = stats.weaponLvls[stats.lvl].damage;
             auraCollider.radius = stats.weaponLvls[stats.lvl].range;
             auraDamager.transform.localScale =
-                new Vector2(stats.weaponLvls[stats.lvl].range, stats.weaponLvls[stats.lvl].range);        
+                new Vector2(stats.weaponLvls[stats.lvl].range, stats.weaponLvls[stats.lvl].range);
             auraDamager.damageInterval = stats.weaponLvls[stats.lvl].rateOfFire;
         }
     }

@@ -22,13 +22,10 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (CanFire)
-            {
-                StartCoroutine(AttackLoop());
-            }
+            if (CanFire) StartCoroutine(AttackLoop());
         }
 
-        IEnumerator AttackLoop()
+        private IEnumerator AttackLoop()
         {
             CanFire = false;
             var targetSignal = enemy;
@@ -52,7 +49,7 @@ namespace Weapons.SpecificWeapons
             StopCoroutine(RadarScan());
         }
 
-        IEnumerator RadarScan()
+        private IEnumerator RadarScan()
         {
             while (gameObject.activeSelf)
             {
@@ -63,18 +60,18 @@ namespace Weapons.SpecificWeapons
             }
         }
 
-        IEnumerator RadarPing()
+        private IEnumerator RadarPing()
         {
             if (!Pinged)
             {
-                var ping = ProjectilePoolManager2.poolProj.projPools[missileIndex + 1].GetPooledGameObject();
+                var ping = ProjectilePoolManager.poolProj.projPools[missileIndex + 1].GetPooledGameObject();
                 ping.transform.position = transform.position;
                 ping.SetActive(true);
                 yield return new WaitForSeconds(ReloadInterval);
                 Pinged = false;
             }
         }
-        
+
         private void SetStats()
         {
             Ammo = stats.weaponLvls[stats.lvl].ammo;
@@ -87,7 +84,7 @@ namespace Weapons.SpecificWeapons
         {
             StartCoroutine(RadarPing());
             var missileTarget = new Vector2(xValue, yValue);
-            var missile = ProjectilePoolManager2.poolProj.projPools[2].GetPooledGameObject();
+            var missile = ProjectilePoolManager.poolProj.projPools[2].GetPooledGameObject();
             missile.transform.position = missileTarget;
             missile.GetComponentInChildren<SplineAnimate>().Play();
             missile.SetActive(true);

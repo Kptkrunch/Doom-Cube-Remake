@@ -19,61 +19,52 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (CanFire)
-            {
-                StartCoroutine(AttackLoop());
-            }
+            if (CanFire) StartCoroutine(AttackLoop());
         }
-        
+
         protected override IEnumerator AttackLoop()
         {
             CanFire = false;
             for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
             {
                 if (doesAlternate)
-                {
                     for (var j = 0; j < firePoints.Count; j++)
                     {
                         var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
                         proj.transform.position = transform.position;
                         if (i % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
                         if (i % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
-                    
+
                         proj.SetActive(true);
                     }
-                }
 
                 if (!doesAlternate)
-                {
                     for (var j = 0; j < firePoints.Count(); j++)
                     {
                         var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-                    
+
                         proj.transform.position = transform.position;
-                    
+
                         proj.GetComponent<Projectile>().pd.stats.direction = dir1;
-                    
+
                         proj.SetActive(true);
                     }
 
-                }
-                
                 if (!doesAlternate)
-                {
                     for (var j = 0; j < firePoints.Count(); j++)
                     {
                         var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-                    
+
                         proj.transform.position = transform.position;
-                    
+
                         proj.GetComponent<Projectile>().pd.stats.direction = dir2;
-                    
+
                         proj.SetActive(true);
                     }
-                }
-                
+
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
             }
+
             yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].coolDown);
             CanFire = true;
         }
@@ -88,11 +79,13 @@ namespace Weapons.SpecificWeapons
 
         public override void UpdateWeapon()
         {
-            var enemyDamager = ProjectilePoolManager.poolProj.projPools[stats.pid].GetComponent<Projectile>().enemyDamager;
+            var enemyDamager = ProjectilePoolManager.poolProj.projPools[stats.pid].GetComponent<Projectile>()
+                .enemyDamager;
             if (enemyDamager != null)
                 enemyDamager.damage =
                     stats.weaponLvls[stats.lvl].damage;
-            ProjectilePoolManager.poolProj.projPools[stats.pid].GetComponent<Projectile>().pd.stats.lifeTime = stats.weaponLvls[stats.lvl].speed;
+            ProjectilePoolManager.poolProj.projPools[stats.pid].GetComponent<Projectile>().pd.stats.lifeTime =
+                stats.weaponLvls[stats.lvl].speed;
             FireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
         }
     }

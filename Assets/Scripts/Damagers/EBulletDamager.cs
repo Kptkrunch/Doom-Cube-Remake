@@ -8,15 +8,9 @@ namespace Damagers
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (destroyOnCollision && collision.CompareTag("Enemy"))
-            {
-                gameObject.SetActive(false);
-            }
+            if (destroyOnCollision && collision.CompareTag("Enemy")) gameObject.SetActive(false);
 
-            if (destroyOnCollision && collision.CompareTag("WorldlyObject"))
-            {
-                gameObject.SetActive(false);
-            }
+            if (destroyOnCollision && collision.CompareTag("BasicObject")) gameObject.SetActive(false);
         }
     }
 }

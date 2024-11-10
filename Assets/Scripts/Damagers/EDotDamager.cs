@@ -6,7 +6,7 @@ namespace Damagers
     public class EDotDamager : EnemyDamager
     {
         public float damageInterval;
-        
+
         private float _damageTimer;
 
 
@@ -25,9 +25,7 @@ namespace Damagers
                 {
                     _damageTimer = damageInterval;
                     if (collision.CompareTag("Enemy"))
-                    {
                         collision.GetComponent<EnemyController>().TakeDamage(damage, damageType);
-                    }
 
                     break;
                 }

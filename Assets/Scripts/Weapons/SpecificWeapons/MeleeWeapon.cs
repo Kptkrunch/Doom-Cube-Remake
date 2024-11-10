@@ -7,7 +7,7 @@ namespace Weapons.SpecificWeapons
     public class MeleeWeapon : Weapon
     {
         public EnemyDamager enemyDamager;
-        
+
         protected bool CanFire;
         protected float AttackDuration, Cooldown, RateOfFire, Direction;
 

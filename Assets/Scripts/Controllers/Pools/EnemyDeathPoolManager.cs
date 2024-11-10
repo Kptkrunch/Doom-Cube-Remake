@@ -2,15 +2,21 @@ using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
 
-public class EnemyDeathPoolManager : MonoBehaviour
+namespace Controllers.Pools
 {
-    public static EnemyDeathPoolManager PoolEnemyMan;
-
-    public List<MMSimpleObjectPooler> enemyDeathPools;
-    public MMSimpleObjectPooler meltingPool;
-    
-    private void Awake()
+    public class EnemyDeathPoolManager : MonoBehaviour
     {
-        PoolEnemyMan = this;
+        public static EnemyDeathPoolManager PoolEnemyDeathPoolManager;
+
+        public List<MMSimpleObjectPooler> enemyDeathPools;
+        public MMSimpleObjectPooler meltingPool;
+        public MMSimpleObjectPooler burningPool;
+        public MMSimpleObjectPooler deathAshPool;
+        public MMSimpleObjectPooler energyPool;
+        
+        private void Awake()
+        {
+            PoolEnemyDeathPoolManager = this;
+        }
     }
 }

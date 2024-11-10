@@ -25,12 +25,13 @@ namespace Weapons.Projectiles
         {
             if (hasLifetime) _lifeTimer -= Time.deltaTime;
             if (hasFuse) _fuseTimer -= Time.deltaTime;
-        
+
             if (hasLifetime && _lifeTimer <= 0)
             {
                 _lifeTimer = lifeTimer;
                 parent.gameObject.SetActive(false);
-            } else if (hasFuse && _fuseTimer <= 0)
+            }
+            else if (hasFuse && _fuseTimer <= 0)
             {
                 _fuseTimer = fuseTimer;
                 Detonate();
@@ -47,7 +48,7 @@ namespace Weapons.Projectiles
         {
             _fuseTimer = fuseTimer;
             _lifeTimer = lifeTimer;
-            var exp = ProjectilePoolManager2.poolProj.projPools[expIndex].GetPooledGameObject();
+            var exp = ProjectilePoolManager.poolProj.projPools[expIndex].GetPooledGameObject();
             var damager = exp.GetComponent<EExplosionDamager>();
             damager.damage = damage;
             damager.blastRadiusCollider.radius = expRadius;

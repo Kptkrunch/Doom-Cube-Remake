@@ -6,6 +6,7 @@ namespace Weapons.Projectiles
     public class Nanite : MonoBehaviour
     {
         public ObjectPhaser phaser;
+
         private void MutateEnemy(Collider2D collision)
         {
             if (collision.CompareTag("Enemy"))

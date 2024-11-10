@@ -7,6 +7,7 @@ namespace Weapons.SpecificWeapons
     public class LobbedWeapon : PrefabBasedWeapon
     {
         protected float RateOfFire, Cooldown;
+
         private void Start()
         {
             SetStats();
@@ -14,10 +15,7 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (CanFire)
-            {
-                StartCoroutine(AttackLoop());
-            }
+            if (CanFire) StartCoroutine(AttackLoop());
         }
 
         private void SetStats()
@@ -28,7 +26,7 @@ namespace Weapons.SpecificWeapons
             Ammo = stats.weaponLvls[stats.lvl].ammo;
         }
 
-        IEnumerator AttackLoop()
+        private IEnumerator AttackLoop()
         {
             CanFire = false;
 
@@ -48,7 +46,7 @@ namespace Weapons.SpecificWeapons
             Cooldown = stats.weaponLvls[stats.lvl].coolDown;
             Ammo = stats.weaponLvls[stats.lvl].ammo;
         }
-        
+
         private void LobProjectile()
         {
             var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();

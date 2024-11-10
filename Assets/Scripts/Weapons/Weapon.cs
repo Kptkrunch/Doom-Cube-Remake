@@ -7,7 +7,6 @@ namespace Weapons
 {
     public class Weapon : MonoBehaviour
     {
-        
         [SerializeField] public WeaponData stats;
         public Sprite uiSprite;
 

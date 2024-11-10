@@ -13,11 +13,7 @@ namespace AIScripts
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Enemy"))
-            {
                 Vector3.MoveTowards(transform.position, collision.transform.position, aggroRadius);
-            }
         }
-    
-    
     }
 }

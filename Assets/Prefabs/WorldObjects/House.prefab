@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5128535970480697481}
   m_Layer: 0
   m_Name: TestObstacle
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 1670318474794281394}
   m_Layer: 0
   m_Name: TestRoof
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 7470173964112225434}
   m_Layer: 0
   m_Name: House
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 1084137119224020346}
   m_Layer: 0
   m_Name: TestDoor
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 1975568167546534882}
   m_Layer: 0
   m_Name: TestWindow
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 7972918465468702668}
   m_Layer: 0
   m_Name: TestBayWindow
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

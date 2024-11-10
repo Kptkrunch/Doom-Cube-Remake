@@ -7,6 +7,7 @@ namespace Controllers
     {
         public static ObjDmgNumController ContObjDmgNum;
         public MMF_Player player;
+
         private void Awake()
         {
             ContObjDmgNum = this;

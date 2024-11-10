@@ -37,6 +37,7 @@ namespace Weapons.WeaponModifiers
                         rb2d.velocity = Vector2.zero;
                         rb2d.gravityScale = 0f;
                     }
+
                     break;
                 }
             }
@@ -49,7 +50,7 @@ namespace Weapons.WeaponModifiers
                 _wasLobbed = true;
                 rb2d.velocity = new Vector2(Random.Range(-lobDistance, lobDistance), lobHeight);
             }
-            
+
             if (it.doesBounce && !_wasBounced)
             {
                 _wasBounced = true;

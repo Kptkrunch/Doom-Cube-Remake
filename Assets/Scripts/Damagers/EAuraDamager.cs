@@ -9,10 +9,10 @@ namespace Damagers
     {
         public bool damageOverTime;
         public float damageInterval;
-        
+
         private float _damageTimer;
         private readonly List<EnemyController> _enemiesInRadius = new();
-        private readonly List<WordlyObject> _objectsInRadius = new();
+        private readonly List<BasicObject> _objectsInRadius = new();
 
         private void FixedUpdate()
         {
@@ -21,7 +21,7 @@ namespace Damagers
                 case false:
                     return;
             }
-            
+
             _damageTimer -= Time.deltaTime;
             if (!(_damageTimer <= 0)) return;
             _damageTimer = damageInterval;
@@ -32,9 +32,8 @@ namespace Damagers
                 {
                     _enemiesInRadius.RemoveAt(i);
                     i--;
-
                 }
-                
+
                 if (_enemiesInRadius[i])
                 {
                     _enemiesInRadius[i].TakeDamage(damage, damageType);
@@ -45,7 +44,7 @@ namespace Damagers
                     i--;
                 }
             }
-                    
+
             for (var i = 0; i < _objectsInRadius.Count; i++)
             {
                 if (!_objectsInRadius[i].isActiveAndEnabled)
@@ -53,10 +52,10 @@ namespace Damagers
                     _objectsInRadius.RemoveAt(i);
                     i--;
                 }
-                
-                if ( _objectsInRadius[i])
+
+                if (_objectsInRadius[i])
                 {
-                    _objectsInRadius[i].TakeDamage(damage);
+                    _objectsInRadius[i].TakeDamage(damage, damageType);
                 }
                 else
                 {
@@ -72,26 +71,15 @@ namespace Damagers
             if (!damageOverTime)
             {
                 if (collision.CompareTag("Enemy"))
-                {
                     collision.GetComponent<EnemyController>().TakeDamage(damage, damageType);
-                }
 
-                if (collision.CompareTag("WorldlyObject"))
-                {
-                    collision.GetComponent<WordlyObject>().TakeDamage(damage);
-                }
+                if (collision.CompareTag("BasicObject")) collision.GetComponent<BasicObject>().TakeDamage(damage, damageType);
             }
             else
             {
-                if (collision.CompareTag("Enemy"))
-                {
-                    _enemiesInRadius.Add(collision.GetComponent<EnemyController>());
-                }
-                
-                if (collision.CompareTag("WorldlyObject"))
-                {
-                    _objectsInRadius.Add(collision.GetComponent<WordlyObject>());
-                }
+                if (collision.CompareTag("Enemy")) _enemiesInRadius.Add(collision.GetComponent<EnemyController>());
+
+                if (collision.CompareTag("BasicObject")) _objectsInRadius.Add(collision.GetComponent<BasicObject>());
             }
         }
 
@@ -102,14 +90,10 @@ namespace Damagers
                 case true:
                 {
                     if (collision.CompareTag("Enemy"))
-                    {
                         _enemiesInRadius.Remove(collision.GetComponent<EnemyController>());
-                    }
 
-                    if (collision.CompareTag("WorldlyObject"))
-                    {
-                        _objectsInRadius.Remove(collision.GetComponent<WordlyObject>());
-                    }
+                    if (collision.CompareTag("BasicObject"))
+                        _objectsInRadius.Remove(collision.GetComponent<BasicObject>());
 
                     break;
                 }

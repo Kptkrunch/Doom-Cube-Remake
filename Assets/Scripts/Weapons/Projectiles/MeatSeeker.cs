@@ -13,18 +13,15 @@ namespace Weapons.Projectiles
         public float blastRadius;
         public SplineAnimate animator;
         public GameObject parent;
-        
+
         private void FixedUpdate()
         {
-            if (animator.isActiveAndEnabled && !animator.IsPlaying)
-            { 
-                parent.SetActive(false);
-            } 
+            if (animator.isActiveAndEnabled && !animator.IsPlaying) parent.SetActive(false);
         }
 
         private void OnDisable()
         {
-            var exp = ProjectilePoolManager2.poolProj.projPools[expIndex].GetPooledGameObject();
+            var exp = ProjectilePoolManager.poolProj.projPools[expIndex].GetPooledGameObject();
             var damager = exp.GetComponent<EExplosionDamager>();
             damager.damage = damage;
             damager.blastRadiusCollider.radius = blastRadius;

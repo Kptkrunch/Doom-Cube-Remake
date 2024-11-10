@@ -39,12 +39,9 @@ namespace Weapons.DeathRays
             }
 
             if (_gamepad == null) return;
-            if (Gamepad.current.rightTrigger.wasPressedThisFrame)
-            {
-                ActivateCombo();
-            }
+            if (Gamepad.current.rightTrigger.wasPressedThisFrame) ActivateCombo();
         }
-    
+
         public void ActivateCombo()
         {
             if (Time.time - _lastHitTime > hitWindowTime && beamCharges > 0)
@@ -71,13 +68,10 @@ namespace Weapons.DeathRays
                     deathRays[2].FireBeam();
                     return;
                 }
-
             }
 
             // Combo failed
             _currentHitIndex = 0;
         }
-    
     }
 }
-

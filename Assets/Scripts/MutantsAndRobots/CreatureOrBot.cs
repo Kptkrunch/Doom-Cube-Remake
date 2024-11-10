@@ -26,17 +26,11 @@ namespace MutantsAndRobots
         private void FixedUpdate()
         {
             transform.Translate(_direction * (moveSpeed * Time.deltaTime));
-            if (!attack.gameObject.activeInHierarchy)
-            {
-                spriteRenderer.sprite = crawlingSprite;
-            }
-            if (health <= 0)
-            {
-                Debug.Log("health missing");
-            }
+            if (!attack.gameObject.activeInHierarchy) spriteRenderer.sprite = crawlingSprite;
+            if (health <= 0) Debug.Log("health missing");
         }
 
-        IEnumerator Wander()
+        private IEnumerator Wander()
         {
             while (gameObject.activeSelf)
             {
@@ -45,7 +39,7 @@ namespace MutantsAndRobots
             }
         }
 
-        IEnumerator ProjectilePuke()
+        private IEnumerator ProjectilePuke()
         {
             while (gameObject.activeSelf)
             {
@@ -79,7 +73,7 @@ namespace MutantsAndRobots
                 var transform1 = transform;
                 var localScale = transform1.localScale;
                 localScale = new Vector3(-1, localScale.y, localScale.z);
-                transform1.localScale = localScale; 
+                transform1.localScale = localScale;
             }
 
             if (direction.x > 0)

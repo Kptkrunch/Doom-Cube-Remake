@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6389339197873565023}
   m_Layer: 8
   m_Name: Terrorah
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  damageType: 
   destructive: 0
   hitsGround: 1
   hitsAir: 0

@@ -289,8 +289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gotDeathParticle: 0
   alreadyDropped: 0
-  isMelee: 0
-  isRanged: 0
 --- !u!1 &5835176990151292451
 GameObject:
   m_ObjectHideFlags: 0

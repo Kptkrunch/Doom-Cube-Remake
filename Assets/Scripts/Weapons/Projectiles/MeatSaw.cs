@@ -24,15 +24,14 @@ namespace Weapons.Projectiles
 
         private void FixedUpdate()
         {
-            
             if (it.isLobbed)
             {
                 it.isLobbed = false;
                 LobSaw();
             }
-            
+
             switch (it.doesBounce)
-            { 
+            {
                 case true:
                 {
                     BounceTimer -= Time.deltaTime;
@@ -48,16 +47,17 @@ namespace Weapons.Projectiles
 
                         SpoolUpAndFire();
                     }
+
                     break;
                 }
             }
-            
+
             if (_isGrowing)
             {
                 _spinTimer -= Time.deltaTime;
                 GrowSaw();
             }
-            
+
             MaybeRotate(rb2d);
 
             if (it.hasLifetime)
@@ -66,7 +66,7 @@ namespace Weapons.Projectiles
                 if (pd.stats.lifeTime <= 0) parent.SetActive(false);
             }
         }
-    
+
         private void OnDisable()
         {
             pd.stats.movSpeed = _sawSpeed;
@@ -90,22 +90,20 @@ namespace Weapons.Projectiles
                         pd.stats.movSpeed = 4f;
                         rb2d.gameObject.transform.position += _direction * (pd.stats.movSpeed * Time.deltaTime);
                     }
+
                     break;
                 }
             }
         }
-    
+
         private void MaybeGoLeftOrRight()
         {
             Transform transform1;
-            var randomizeTransform = new Vector3(Random.Range(-1, 1), (transform1 = transform).position.y, transform1.position.z);
+            var randomizeTransform = new Vector3(Random.Range(-1, 1), (transform1 = transform).position.y,
+                transform1.position.z);
             if (randomizeTransform.x < 0)
-            {
                 _direction = new Vector3(-1, 0, 0).normalized;
-            } else if (randomizeTransform.x >= 0)
-            {
-                _direction = new Vector3(1, 0, 0).normalized;
-            }
+            else if (randomizeTransform.x >= 0) _direction = new Vector3(1, 0, 0).normalized;
         }
 
         private void SetStats()
@@ -124,6 +122,7 @@ namespace Weapons.Projectiles
             BounceTimer = BounceInterval;
             Bounces = pd.stats.bounces;
         }
+
         private void StopMoving()
         {
             rb2d.gravityScale = 0;
@@ -133,10 +132,10 @@ namespace Weapons.Projectiles
 
         private void LobSaw()
         {
-                rb2d.gravityScale = 1;
-                rb2d.velocity = new Vector2(
-                    Random.Range(-pd.stats.lobDistance, pd.stats.lobDistance), 
-                    pd.stats.lobHeight);
+            rb2d.gravityScale = 1;
+            rb2d.velocity = new Vector2(
+                Random.Range(-pd.stats.lobDistance, pd.stats.lobDistance),
+                pd.stats.lobHeight);
         }
 
         private void GrowSaw()

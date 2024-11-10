@@ -21,21 +21,15 @@ namespace EnemyStuff
 
         private void FixedUpdate()
         {
-            if (_target != null && _canFire)
-            {
-                StopCoroutine(AttackLoop());
-            }
+            if (_target != null && _canFire) StopCoroutine(AttackLoop());
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player") || collision.CompareTag("Construct"))
-            {
-                _target = collision.transform;
-            }
+            if (collision.CompareTag("Player") || collision.CompareTag("Construct")) _target = collision.transform;
         }
 
-        IEnumerator AttackLoop()
+        private IEnumerator AttackLoop()
         {
             _canFire = false;
             for (var i = 0; i < ammo; i++)

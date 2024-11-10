@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6868358512871516729}
   m_Layer: 6
   m_Name: WIndow1
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 5843395480634892147}
   m_Layer: 6
   m_Name: Roof
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 1322940146674255187}
   m_Layer: 6
   m_Name: AtticWindow
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 4082602013817130325}
   m_Layer: 6
   m_Name: Window2
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 7650332187064809783}
   m_Layer: 6
   m_Name: Framing
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -957,7 +957,7 @@ GameObject:
   - component: {fileID: 2065653841859308955}
   m_Layer: 6
   m_Name: DeckRoof
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1175,7 +1175,7 @@ GameObject:
   - component: {fileID: 1280765098504447474}
   m_Layer: 6
   m_Name: HouseA
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1246,7 +1246,7 @@ GameObject:
   - component: {fileID: 45694029126458920}
   m_Layer: 6
   m_Name: Door
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1459,7 +1459,7 @@ GameObject:
   - component: {fileID: 4177370741832684097}
   m_Layer: 6
   m_Name: Stairs
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1674,7 +1674,7 @@ GameObject:
   - component: {fileID: 2687058093961505569}
   m_Layer: 6
   m_Name: AtticVent
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1856,7 +1856,7 @@ GameObject:
   - component: {fileID: 7470723913947876682}
   m_Layer: 6
   m_Name: ExteriorWall
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2038,7 +2038,7 @@ GameObject:
   - component: {fileID: 7402029854663187038}
   m_Layer: 6
   m_Name: Deck
-  m_TagString: WorldlyObject
+  m_TagString: BasicObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

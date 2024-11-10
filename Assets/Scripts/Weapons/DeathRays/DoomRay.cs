@@ -10,8 +10,8 @@ namespace Weapons.DeathRays
 
 
         // ReSharper disable Unity.PerformanceAnalysis
-        public override void FireBeam() {
-
+        public override void FireBeam()
+        {
             lineRenderer.gameObject.SetActive(true);
             beamStart.gameObject.SetActive(true);
             beamHitBox.gameObject.SetActive(true);
@@ -19,7 +19,7 @@ namespace Weapons.DeathRays
             lineRenderer.SetPosition(0, position);
             player?.PlayFeedbacks();
         }
-    
+
         public override void ResolveDeathRay()
         {
             switch (player.IsPlaying)

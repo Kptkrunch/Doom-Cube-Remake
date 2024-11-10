@@ -8,19 +8,19 @@ namespace Damagers
     {
         public float damage;
         public string damageType;
-        public bool destructive, hitsGround, hitsAir, fireDamage, chemicalDamage, explosiveDamage;
+        public bool destructive;
+        
+        private void Awake()
+        {
+            if (string.IsNullOrEmpty(damageType)) damageType = "Solid";
+        }
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Enemy"))
-            {
-                collision.GetComponent<EnemyController>().TakeDamage(damage, damageType);
-            }
+            if (collision.CompareTag("Enemy")) collision.GetComponent<EnemyController>().TakeDamage(damage, damageType);
 
-            if (destructive && collision.CompareTag("WorldlyObject"))
-            {
-                collision.GetComponent<WordlyObject>().TakeDamage(damage);
-            }
+            if (collision.CompareTag("BasicObject") && destructive)
+                collision.GetComponent<BasicObject>().TakeDamage(damage, damageType);
         }
     }
 }

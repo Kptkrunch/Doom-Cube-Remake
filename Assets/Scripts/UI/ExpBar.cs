@@ -12,6 +12,7 @@ namespace UI
 
         private float _currentValue;
         private float _maxValue;
+
         private void Awake()
         {
             expBar = this;

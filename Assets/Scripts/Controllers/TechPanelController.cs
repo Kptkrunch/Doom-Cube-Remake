@@ -7,7 +7,7 @@ namespace Controllers
         public static TechPanelController ContTechPanel;
         public bool isOpen;
         public TechUpgradePanel[] techUpgradePanels;
-        
+
         private void Awake()
         {
             ContTechPanel = this;

@@ -9,9 +9,9 @@ namespace Controllers
     {
         public Image techIcon;
         public TMP_Text techName, description, meat, metal, mineral, plastic, energy;
-    
+
         private Tech _assignedTech;
-    
+
         public void UpdatePanelDisplay(Tech theTech)
         {
             description.text = theTech.description;
@@ -36,13 +36,9 @@ namespace Controllers
                     _assignedTech.costPlastic,
                     _assignedTech.costEnergy)) return;
             if (!_assignedTech.gameObject.activeSelf)
-            {
-                _assignedTech.UpdateTech();
-            }
+                _assignedTech.ResetOrInitTechObject();
             else
-            {
                 TechController.ContTechCon.AddTechToList(_assignedTech);
-            }
 
             gameObject.SetActive(false);
         }

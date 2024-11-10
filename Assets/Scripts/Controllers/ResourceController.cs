@@ -8,7 +8,7 @@ namespace Controllers
         public static ResourceController contRes;
         public int meat, metal, mineral, plastic, energy;
         public TMP_Text meatText, metalText, mineralText, plasticText, energyText;
-        
+
         private void Awake()
         {
             contRes = this;

@@ -11,7 +11,7 @@ namespace Controllers
         public static GeneralTextController contGenText;
         public GeneralText text;
         public Transform textTransform;
-        
+
         private readonly List<GeneralText> _tmpTexts = new();
 
         private void Awake()
@@ -28,8 +28,8 @@ namespace Controllers
 
             newText.transform.position = location;
         }
-    
-    
+
+
         public GeneralText GetFromPool()
         {
             GeneralText pooledText;
@@ -43,6 +43,7 @@ namespace Controllers
                 pooledText = _tmpTexts[0];
                 _tmpTexts.RemoveAt(0);
             }
+
             return pooledText;
         }
 

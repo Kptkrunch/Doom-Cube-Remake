@@ -15,13 +15,10 @@ namespace Weapons.SpecificWeapons
 
         private void FixedUpdate()
         {
-            if (CanFire)
-            {
-                StartCoroutine(AttackLoop());
-            }
+            if (CanFire) StartCoroutine(AttackLoop());
         }
 
-        IEnumerator AttackLoop()
+        private IEnumerator AttackLoop()
         {
             CanFire = false;
             for (var i = 0; i < Ammo; i++)
@@ -33,14 +30,13 @@ namespace Weapons.SpecificWeapons
             yield return new WaitForSeconds(Cooldown);
             CanFire = true;
         }
-        
+
         private void SetStats()
         {
             CanFire = true;
             RateOfFire = stats.weaponLvls[stats.lvl].rateOfFire;
             Cooldown = stats.weaponLvls[stats.lvl].coolDown;
             Ammo = stats.weaponLvls[stats.lvl].ammo;
-            
         }
 
         private void LaunchSawBlade()

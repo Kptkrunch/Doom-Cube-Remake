@@ -31,20 +31,14 @@ namespace UI
                 case > 0.5f:
                 {
                     _currentSelection++;
-                    if (_currentSelection > 3)
-                    {
-                        _currentSelection = 0;
-                    }
+                    if (_currentSelection > 3) _currentSelection = 0;
 
                     break;
                 }
                 case < -0.5f:
                 {
                     _currentSelection--;
-                    if (_currentSelection < 0)
-                    {
-                        _currentSelection = 3;
-                    }
+                    if (_currentSelection < 0) _currentSelection = 3;
 
                     break;
                 }
@@ -88,4 +82,3 @@ namespace UI
         }
     }
 }
-

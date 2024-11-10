@@ -7,7 +7,7 @@ namespace UI
     {
         public TMP_Text costText;
         [SerializeField] private int rerollCost;
-        
+
         private void Start()
         {
             costText.text = rerollCost.ToString();

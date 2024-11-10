@@ -10,14 +10,14 @@ namespace GenUtilsAndTools
         [CanBeNull] public Sprite resourceSprite;
         public int value;
         [SerializeField] private bool meat, metal, mineral, plastic, energy;
-        
+
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.CompareTag("Player")) return;
             if (collision.CompareTag("Player"))
             {
-                var particle = PickupParticlePool.poolPickup.poolDark.GetPooledGameObject();
+                var particle = ItemCollectedParticlePool.PoolItemCollected.poolDark.GetPooledGameObject();
                 particle.SetActive(true);
                 particle.gameObject.transform.position = transform.position;
                 if (meat) ResourceController.contRes.meat += value;

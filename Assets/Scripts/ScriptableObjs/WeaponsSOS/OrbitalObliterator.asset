@@ -16,7 +16,7 @@ MonoBehaviour:
   lvl: 0
   wid: 6
   pid: 5
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 5259890033568871937, guid: 04af597c3a851564cbb251e6ef1f4965, type: 3}
   weaponLvls:
   - damage: 0.5
     ammo: 1

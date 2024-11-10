@@ -8,7 +8,7 @@ namespace Controllers.Pools
     {
         public static ProjectilePoolManager2 poolProj;
         public List<MMSimpleObjectPooler> projPools;
-    
+
         private void Awake()
         {
             poolProj = this;

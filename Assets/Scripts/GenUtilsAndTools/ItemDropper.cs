@@ -31,7 +31,7 @@ namespace GenUtilsAndTools
                 res.transform.position = gameObject.transform.position;
                 res.gameObject.SetActive(true);
             }
-            
+
             if (_dropCheckValue <= dropChance)
             {
                 if (meat)

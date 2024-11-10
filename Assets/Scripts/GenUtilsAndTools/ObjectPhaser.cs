@@ -10,7 +10,7 @@ namespace GenUtilsAndTools
         private bool _phasedIn = true;
 
         private void FixedUpdate()
-        { 
+        {
             obj.SetActive(_phasedIn);
             PhaseObject();
         }
@@ -25,7 +25,8 @@ namespace GenUtilsAndTools
                     _phasedIn = false;
                     _phaseInTimer = phaseInInterval;
                 }
-            } else if (!_phasedIn)
+            }
+            else if (!_phasedIn)
             {
                 _phaseInTimer -= Time.deltaTime;
                 if (_phaseInTimer <= 0)
@@ -34,7 +35,6 @@ namespace GenUtilsAndTools
                     _phaseOutTimer = phaseOutInterval;
                 }
             }
-            
         }
 
         public void ResetPhasingOnHit()

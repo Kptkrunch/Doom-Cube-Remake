@@ -5,12 +5,13 @@ namespace Weapons.SpecificWeapons
     public class OrbitalObliterator : Weapon
     {
         public LineRenderer theBeam;
-        public GameObject beamFrame, beamOrigin; 
+        public GameObject beamFrame, beamOrigin;
         public GameObject beamSignal, beamImpact;
-    
+
         private float _beamCooldown, _beamDuration, _beamCdTimer, _beamDurationTimer, _moveSpeed, _signalRange;
         private bool _isFiring, _gotLocation;
         private Vector3 _newSignalPosition, _beamStrikePosition;
+
         private void Start()
         {
             var position = beamSignal.transform.position;
@@ -27,10 +28,9 @@ namespace Weapons.SpecificWeapons
             }
 
             if (_isFiring)
-            {
-                beamFrame.transform.position = Vector3.MoveTowards(beamFrame.transform.position, _newSignalPosition, _moveSpeed * Time.deltaTime);
-            }
-     
+                beamFrame.transform.position = Vector3.MoveTowards(beamFrame.transform.position, _newSignalPosition,
+                    _moveSpeed * Time.deltaTime);
+
             beamFrame.SetActive(_isFiring);
             Laser();
             BeamTimeHandler();
@@ -56,14 +56,13 @@ namespace Weapons.SpecificWeapons
 
         private void BeamTimeHandler()
         {
-            if (_isFiring) {
+            if (_isFiring)
+            {
                 _beamCdTimer = _beamCooldown;
                 _beamDurationTimer -= Time.deltaTime;
-                if (_beamDurationTimer <= 0)
-                {
-                    _isFiring = false;
-                }
-            } else if (!_isFiring)
+                if (_beamDurationTimer <= 0) _isFiring = false;
+            }
+            else if (!_isFiring)
             {
                 _beamDurationTimer = _beamDuration;
                 _beamCdTimer -= Time.deltaTime;

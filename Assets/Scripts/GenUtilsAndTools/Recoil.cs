@@ -23,13 +23,12 @@ namespace GenUtilsAndTools
                 transform.Translate(Vector3.back * (recoilSpeed * Time.deltaTime), Space.Self);
 
                 if (Vector3.Distance(_originalPosition, transform.localPosition) >= recoilDistance)
-                {
                     _isRecoiling = false;
-                }
             }
             else
             {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, _originalPosition, returnSpeed * Time.deltaTime);
+                transform.localPosition =
+                    Vector3.Lerp(transform.localPosition, _originalPosition, returnSpeed * Time.deltaTime);
             }
         }
 

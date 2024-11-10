@@ -14,7 +14,7 @@ namespace Weapons.SpecificWeapons
         [CanBeNull] public List<GrowShrinkObj> projectileScales;
         [CanBeNull] public ProjFrameWithTimer projFrameWithTimer;
         [CanBeNull] public NaniteController naniteController;
-        
+
         private float _rotationSpeed;
 
         private void Start()
@@ -26,18 +26,14 @@ namespace Weapons.SpecificWeapons
         {
             if (_rotationSpeed <= 0) _rotationSpeed = stats.weaponLvls[stats.lvl].speed * Time.deltaTime;
             if (projFrameWithTimer)
-            {
                 transform.rotation = Quaternion.Euler(0f, 0f,
                     projFrameWithTimer.transform.rotation.eulerAngles.z +
                     _rotationSpeed * stats.weaponLvls[stats.lvl].speed);
-            }
-            
+
             if (naniteController)
-            {
                 transform.rotation = Quaternion.Euler(0f, 0f,
                     naniteController.gameObject.transform.rotation.eulerAngles.z +
                     _rotationSpeed * stats.weaponLvls[stats.lvl].speed);
-            }
         }
 
         private void OnEnable()
@@ -77,7 +73,7 @@ namespace Weapons.SpecificWeapons
                     projFrameWithTimer.activeInterval = stats.weaponLvls[stats.lvl].duration;
                     projFrameWithTimer.coolDownTimer = stats.weaponLvls[stats.lvl].coolDown;
                 }
-            
+
             transform.localScale = stats.weaponLvls[stats.lvl].size;
             if (projFrameWithTimer != null)
             {

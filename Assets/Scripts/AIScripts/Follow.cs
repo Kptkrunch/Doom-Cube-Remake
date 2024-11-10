@@ -12,10 +12,10 @@ namespace AIScripts
         {
             CheckAndMove();
         }
-    
+
         private void CheckAndMove()
         {
-            Vector3 targetPosition = player.position - player.forward * playerDistance;
+            var targetPosition = player.position - player.forward * playerDistance;
             transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
     }

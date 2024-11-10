@@ -58,27 +58,21 @@ namespace Controllers
                     break;
                 }
             }
-            
+
             rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime);
             animator.SetBool(IsMoving, moveInput != Vector3.zero);
         }
 
         public void ShowGameOver()
         {
-            if (PlayerHealthController.contPHealth.currentHealth <= 0)
-            {
-                UIController.contUI.gameOver.SetActive(true);
-
-            }
+            if (PlayerHealthController.contPHealth.currentHealth <= 0) UIController.contUI.gameOver.SetActive(true);
         }
 
         private void TurnOffLvelUpParticle()
         {
             if (!LevelController.contExpLvls.player.IsPlaying
                 && LevelController.contExpLvls.lvlUpParticle.activeInHierarchy)
-            {
                 LevelController.contExpLvls.lvlUpParticle.SetActive(false);
-            }
         }
     }
 }

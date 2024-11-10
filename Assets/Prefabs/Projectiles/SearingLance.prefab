@@ -95,13 +95,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageType: burning
+  damageType: 
   destructive: 0
-  hitsGround: 1
-  hitsAir: 1
-  fireDamage: 0
-  chemicalDamage: 0
-  explosiveDamage: 0
+  fire: 1
+  acid: 0
+  explosive: 0
+  energy: 0
+  deathray: 0
+  solid: 0
+  damageTypeArray: 
 --- !u!58 &8347340753095523733
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,9 +151,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 101008, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 102962, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102962, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 105478, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_Name
@@ -161,13 +171,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 105478, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 190178, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 190178, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 199932, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199932, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 426138, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
       propertyPath: m_LocalPosition.x
@@ -209,13 +231,94 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 19842338, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19869360, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875712, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19962826, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19962826, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -555709117
+      objectReference: {fileID: 0}
+    - target: {fileID: 19962826, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 19976800, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19976800, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -555709117
+      objectReference: {fileID: 0}
+    - target: {fileID: 19976800, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 19988278, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19988278, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -555709117
+      objectReference: {fileID: 0}
+    - target: {fileID: 19988278, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11459378, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+    - {fileID: 8260202, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 101008, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 992694664020219554}
   m_SourcePrefab: {fileID: 100100000, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
 --- !u!4 &5004345256461869059 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 426138, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
   m_PrefabInstance: {fileID: 5004345256462033049}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5004345256462068233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 101008, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
+  m_PrefabInstance: {fileID: 5004345256462033049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &992694664020219554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004345256462068233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0

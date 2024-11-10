@@ -7,19 +7,17 @@ namespace GenUtilsAndTools
     {
         [SerializeField] protected float moveSpeed;
         [SerializeField] protected bool isAttracted;
-    
+
         private void Start()
         {
             moveSpeed = ItemAttractor.itemAttractor.pullSpeed;
         }
-    
+
         private void Update()
         {
             if (isAttracted)
-            {
                 transform.position = Vector3.MoveTowards(transform.position,
                     PlayerController.contPlayer.transform.position, moveSpeed * Time.deltaTime);
-            }
         }
 
         private void OnDisable()

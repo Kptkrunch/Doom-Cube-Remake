@@ -7,10 +7,10 @@ namespace Controllers
     {
         public static TechDamageNumberController ContTechDmgNum;
         public MMF_Player player;
+
         private void Awake()
         {
             ContTechDmgNum = this;
         }
     }
 }
-

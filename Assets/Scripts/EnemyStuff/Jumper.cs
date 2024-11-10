@@ -27,17 +27,17 @@ namespace EnemyStuff
             if (distanceToPlayer <= attackDistance)
             {
                 // Jump attack
-                if (!_isJumping)
-                {
-                    StartCoroutine(JumpAttack());
-                }
+                if (!_isJumping) StartCoroutine(JumpAttack());
             }
             else
                 // Move towards the player
-                _enemyTransform.position += (_playerTransform.position - _enemyTransform.position).normalized * (moveSpeed * Time.deltaTime);
+            {
+                _enemyTransform.position += (_playerTransform.position - _enemyTransform.position).normalized *
+                                            (moveSpeed * Time.deltaTime);
+            }
         }
 
-        IEnumerator JumpAttack()
+        private IEnumerator JumpAttack()
         {
             _isJumping = true;
 
