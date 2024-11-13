@@ -50,7 +50,7 @@ MonoBehaviour:
   m_LoopMode: 0
   m_Method: 0
   m_Duration: 1
-  m_MaxSpeed: 10
+  m_MaxSpeed: 21.213205
   m_EasingMode: 1
   m_AlignmentMode: 1
   m_ObjectForwardAxis: 0
@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5682674649183079401, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 8078781750236708068}
     - target: {fileID: 5682674649183079401, guid: 1a6644b9cab4fa04ba51c7b13f56e3e2, type: 3}
       propertyPath: animator
       value: 

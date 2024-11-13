@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  damageType: Energy
   destructive: 1
-  damageType: energy
 --- !u!114 &3300815239278084903
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -247,10 +247,6 @@ PrefabInstance:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 8679522347085447543}
-    - target: {fileID: 1370100642267004574, guid: 87f476bd988064b47931f59badd501e9, type: 3}
-      propertyPath: m_MaxSpeed
-      value: 21.213205
-      objectReference: {fileID: 0}
     - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -291,6 +287,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3762585068816431298, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 3211512154496383844}
     - target: {fileID: 8078781750236708068, guid: 87f476bd988064b47931f59badd501e9, type: 3}
       propertyPath: m_Name
       value: MeatSeekerMissile
@@ -300,6 +300,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+--- !u!1 &3211512154496383844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8078781750236708068, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+  m_PrefabInstance: {fileID: 6668718861260375936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8233469790691526676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}

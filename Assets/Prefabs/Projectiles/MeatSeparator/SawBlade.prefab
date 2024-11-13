@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   it: {fileID: 5109663282500679762}
   pd: {fileID: 11400000, guid: a6330f1208a91614896401a1ae251bfc, type: 2}
-  parent: {fileID: 5923405266611812333}
+  parent: {fileID: 0}
   enemyDamager: {fileID: 3923738293230046291}
   rb2d: {fileID: 0}
 --- !u!114 &3923738293230046291
@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  damageType: Solid
   destructive: 1
-  damageType: physical
 --- !u!58 &6479763292378284184
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -215,5 +215,5 @@ MonoBehaviour:
   randomDirection: 0
   movesBackwards: 0
   moveUseTranslate: 0
-  moveUseVelocity: 1
+  moveUseVelocity: 0
   moveUseMoveTowards: 0
