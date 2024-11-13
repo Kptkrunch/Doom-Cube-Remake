@@ -12,8 +12,8 @@ namespace Weapons.SpecificWeapons
         public int missileIndex;
         public Vector2 enemy;
         public LockLine lockLine;
-        private float MissleIndex;
-        private bool Pinged;
+        private float _missleIndex;
+        private bool _pinged;
 
         private void Start()
         {
@@ -62,13 +62,13 @@ namespace Weapons.SpecificWeapons
 
         private IEnumerator RadarPing()
         {
-            if (!Pinged)
+            if (!_pinged)
             {
                 var ping = ProjectilePoolManager.poolProj.projPools[missileIndex + 1].GetPooledGameObject();
                 ping.transform.position = transform.position;
                 ping.SetActive(true);
                 yield return new WaitForSeconds(ReloadInterval);
-                Pinged = false;
+                _pinged = false;
             }
         }
 
@@ -84,7 +84,7 @@ namespace Weapons.SpecificWeapons
         {
             StartCoroutine(RadarPing());
             var missileTarget = new Vector2(xValue, yValue);
-            var missile = ProjectilePoolManager.poolProj.projPools[2].GetPooledGameObject();
+            var missile = ProjectilePoolManager2.poolProj.projPools[missileIndex].GetPooledGameObject();
             missile.transform.position = missileTarget;
             missile.GetComponentInChildren<SplineAnimate>().Play();
             missile.SetActive(true);

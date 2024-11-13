@@ -95,15 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageType: 
+  damageType: Energy
   destructive: 0
-  fire: 1
-  acid: 0
-  explosive: 0
-  energy: 0
-  deathray: 0
-  solid: 0
-  damageTypeArray: 
 --- !u!58 &8347340753095523733
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -280,7 +273,6 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 11459378, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
     - {fileID: 8260202, guid: 1d3d483cae853944c9b94aacf7ea6288, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -156,14 +156,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5109663282500679762, guid: 8b3839b0302ed294da9ddbab05a0e862, type: 3}
-      propertyPath: moveUseVelocity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5109663282500679762, guid: 8b3839b0302ed294da9ddbab05a0e862, type: 3}
-      propertyPath: moveUseTranslate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5923405266611812333, guid: 8b3839b0302ed294da9ddbab05a0e862, type: 3}
       propertyPath: m_Name
       value: SawBlade

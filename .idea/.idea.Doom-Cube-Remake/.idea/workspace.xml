@@ -5,49 +5,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TechSkills/BasicCritterTech.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AllIn1SpriteShader/Materials/AttackCritter.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AllIn1SpriteShader/Materials/AttackCritter.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AllIn1SpriteShader/Materials/HouseMed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AllIn1SpriteShader/Materials/HouseMed.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/redeyecloakdude.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/redeyecloakdude.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/ThaFat2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/ThaFat2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AllIn1SpriteShader/Materials/HouseMed_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AllIn1SpriteShader/Materials/HouseMed_1.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Particles/ARPG Effects/Prefabs/Loot/Orb Consume/HealthOrbConsume.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/ARPG Effects/Prefabs/Loot/Orb Consume/HealthOrbConsume.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Combat/Missiles/Sharp/SharpMissilePink.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Combat/Missiles/Sharp/SharpMissilePink.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Archanor/Sci-Fi Arsenal/Sci-Fi Effects/Prefabs/Combat/Missiles/Bullet/v1/BulletGreen 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Archanor/Sci-Fi Arsenal/Sci-Fi Effects/Prefabs/Combat/Missiles/Bullet/v1/BulletGreen 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Archanor/Sci-Fi Arsenal/Sci-Fi Effects/Prefabs/Combat/Missiles/Laser/ModularLaserMissile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Archanor/Sci-Fi Arsenal/Sci-Fi Effects/Prefabs/Combat/Missiles/Laser/ModularLaserMissile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Archanor/Sci-Fi Arsenal/Sci-Fi Effects/Prefabs/Combat/Missiles/Sparkler/BlueSparklerMissile 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Archanor/Sci-Fi Arsenal/Sci-Fi Effects/Prefabs/Combat/Missiles/Sparkler/BlueSparklerMissile 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Combat/Brawling/Soft/Radial/SoftRadialPunchLight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Combat/Brawling/Soft/Radial/SoftRadialPunchLight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field Intense/FireFieldIntenseBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field Intense/FireFieldIntenseBlue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field Intense/FireFieldIntenseGreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field Intense/FireFieldIntenseGreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field Intense/FireFieldIntensePink.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field Intense/FireFieldIntensePink.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field Intense/FireFieldIntenseRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field Intense/FireFieldIntenseRed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field/FireFieldBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field/FireFieldBlue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field/FireFieldGreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field/FireFieldGreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field/FireFieldPink.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Field/FireFieldPink.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Radial/ToonRadialFireRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Radial/ToonRadialFireRed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Tall/ToonTallFireRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Tall/ToonTallFireRed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Torch Intense/ToonFireTorchIntenseGreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Environment/Fire/Cartoon/Torch Intense/ToonFireTorchIntenseGreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Interactive/Emojis/Anger/EmojiSinister.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Interactive/Emojis/Anger/EmojiSinister.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Death/DeathrayRemnants.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Death/DeathrayRemnants.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Death/RedFire 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Death/RedFire 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/DeathAnims/AcidMelting.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/DeathAnims/AcidMelting.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/ExplosionFireballFire 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/ExplosionFireballFire 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/GasExplosionFire 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/GasExplosionFire 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/GibletExplodeGlass 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/GibletExplodeGlass 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/GibletExplodeWood 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/GibletExplodeWood 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/HitDustExplosion 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/HitDustExplosion 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/LiquidExplosionAcid 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/LiquidExplosionAcid 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/LiquidExplosionWaterClear 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/LiquidExplosionWaterClear 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/NukeExplosionFire 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/NukeExplosionFire 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/PoisonExplosionSoft 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Explosions/PoisonExplosionSoft 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Orbs/Elemental 1/PowerOrbLightningElemental.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Orbs/Elemental 1/PowerOrbLightningElemental.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MutantsAndRobots/AcidSpray.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MutantsAndRobots/AcidSpray.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Smoke/SmokeBright 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Smoke/SmokeBright 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mugger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mugger.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/MuricaJo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/MuricaJo.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/BeamFrame.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/BeamFrame.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/BusterShell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/BusterShell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/DeltaBuster/BusterShell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/DeltaBuster/BusterShell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MeatSeeker.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MeatSeeker.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MeatSeekerMissile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MeatSeekerMissile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileExp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileExp.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileTrack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileTrack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/RadarPing.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/RadarPing.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeparator/SawBlade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeparator/SawBlade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeparator/SawFrame.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeparator/SawFrame.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MineSlayer/MineSlayerMine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MineSlayer/MineSlayerMine.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MineSlayer/MineSlayerMineExp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MineSlayer/MineSlayerMineExp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MineSlayerMine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MineSlayerMine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MissileSilo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MissileSilo.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Nanite.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Nanite.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Parabalomb/ParaShell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Parabalomb/ParaShell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Parabalomb/ParabalombExp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Parabalomb/ParabalombExp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/PlasmaBurster/PlasmaSlug.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/PlasmaBurster/PlasmaSlug.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/PlasmaSlug.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/PlasmaSlug.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/SearingLance.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/SearingLance.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/TurretShardCasing.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/TurretShardCasing.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/TurretShell.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/TurretShell.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tech/EnergySpikeTurret.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tech/EnergySpikeTurret.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tech/GenericTurretParent.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tech/GenericTurretParent.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tech/EnergySpikeTurretConstruct.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tech/EnergySpikeTurretConstruct.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tech/YelleredTooferCritter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tech/YelleredTooferCritter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MeatSeekingMissles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MeatSeekingMissles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Terrorah.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Terrorah.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects/HouseMed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects/HouseMed.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/DustPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/DustBySizePools.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/DustPool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/DustBySizePools.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/EnemyDeathPoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/EnemyDeathPoolManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/PickupParticlePool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/ItemCollectedParticlePool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/PickupParticlePool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/ItemCollectedParticlePool.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/TechProjectilePools.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/TechProjectilePools.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Damagers/EnemyDamager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Damagers/EnemyDamager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyStuff/EnemyBools.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyStuff/EnemyBools.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/AggroSwitcher.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/Resource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/Resource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/TechPoolObjectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/TechPoolObjectManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/SpikeTurretShell.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/SpikeTurretShell.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/TechWeaponsSOS/TechWeaponData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/TechWeaponsSOS/TechWeaponData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TechSkills/TurretBottomSectionTech.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TechSkills/TurretBottomSectionTech.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TechSkills/TurretTopSectionTech.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TechSkills/TurretTopSectionTech.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DirectionalWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DirectionalWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects/BasicObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/BasicObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/EnergySpike.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/EnergySpike.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Terrorah.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Terrorah.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TechSkills/AttackCritter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TechSkills/AttackCritter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TechSkills/BasicCritterTech.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/BouncingProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/BouncingProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/ExplosiveProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/ExplosiveProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Mine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Mine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MissileWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MissileWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponModifiers/BehaviorChecklist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponModifiers/BehaviorChecklist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,12 +104,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/BasicObjectDamageParticlePools.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Objects/BasicObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.8/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -160,7 +186,10 @@
       <workItem from="1731131649485" duration="1466000" />
       <workItem from="1731194795975" duration="6855000" />
       <workItem from="1731218682868" duration="3115000" />
-      <workItem from="1731253580277" duration="8338000" />
+      <workItem from="1731253580277" duration="8989000" />
+      <workItem from="1731282194020" duration="3912000" />
+      <workItem from="1731294030060" duration="3988000" />
+      <workItem from="1731530661260" duration="2329000" />
     </task>
     <task id="LOCAL-00001" summary="Remove FireFliesRed 1 prefab&#10;&#10;Deleted FireFliesRed 1.prefab from Assets/Particles/UsefulParticles/Death directory. This file was no longer necessary and its removal helps clean up the project.">
       <option name="closed" value="true" />

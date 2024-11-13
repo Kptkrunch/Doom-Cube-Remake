@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Terrorah
   lvl: 0
   wid: 11
-  pid: 10
+  pid: 0
   weaponPrefab: {fileID: 2907146642129833190, guid: 60e7268afac50c843b91a519484a9a03, type: 3}
   weaponLvls:
   - damage: 0.5

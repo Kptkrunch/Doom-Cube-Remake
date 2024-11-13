@@ -91,13 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageType: energy
+  damageType: Energy
   destructive: 1
-  hitsGround: 1
-  hitsAir: 0
-  fireDamage: 0
-  chemicalDamage: 0
-  explosiveDamage: 0
 --- !u!58 &3630000991485685070
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -141,29 +136,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4110668545290411356}
     m_Modifications:
-    - target: {fileID: 144506, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 144994, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 151662, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 180508, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
       propertyPath: m_Name
       value: BlueSparklerMissile 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 180508, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 180508, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: m_TagString
-      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 400740, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -204,22 +179,6 @@ PrefabInstance:
     - target: {fileID: 400740, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: InitialModule.startSize.maxCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: InitialModule.startSize.minCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: InitialModule.startRotation.maxCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: InitialModule.startRotation.minCurve.m_RotationOrder
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

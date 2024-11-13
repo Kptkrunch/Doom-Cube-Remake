@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18af2b517ffef2e40a7c7f1eb7d76656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expIndex: 4
+  expIndex: 1
   damage: 1
   blastRadius: 3
   animator: {fileID: 0}
@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114060, guid: 74ac1167f556515428f2a73bee708365, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 138478, guid: 74ac1167f556515428f2a73bee708365, type: 3}
       propertyPath: m_Name
       value: BoosterTrail
@@ -307,6 +311,26 @@ PrefabInstance:
     - target: {fileID: 459670, guid: 74ac1167f556515428f2a73bee708365, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19827726, guid: 74ac1167f556515428f2a73bee708365, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19935588, guid: 74ac1167f556515428f2a73bee708365, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19935588, guid: 74ac1167f556515428f2a73bee708365, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -555709117
+      objectReference: {fileID: 0}
+    - target: {fileID: 19987742, guid: 74ac1167f556515428f2a73bee708365, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19987742, guid: 74ac1167f556515428f2a73bee708365, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -555709117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

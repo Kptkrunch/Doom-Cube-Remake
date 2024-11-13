@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7183951910347047295
 Transform:
   m_ObjectHideFlags: 0
@@ -247,10 +247,6 @@ PrefabInstance:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 8679522347085447543}
-    - target: {fileID: 1370100642267004574, guid: 87f476bd988064b47931f59badd501e9, type: 3}
-      propertyPath: m_MaxSpeed
-      value: 21.213205
-      objectReference: {fileID: 0}
     - target: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -291,6 +287,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3762585068816431298, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 8766339402483427144}
     - target: {fileID: 8078781750236708068, guid: 87f476bd988064b47931f59badd501e9, type: 3}
       propertyPath: m_Name
       value: MeatSeekerMissile

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3557415182979239780}
   - component: {fileID: 733463166444279232}
   - component: {fileID: -7546950018896350851}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: YelleredTooferCritter
   m_TagString: Critter
   m_Icon: {fileID: 0}
@@ -60,15 +60,16 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4584243786547910059}
   techImage: {fileID: 1472385512, guid: 2b2686a0b92ffb444a435113a2fbf741, type: 3}
   speed: 2
-  attackRange: 0.5
   health: 10
-  damage: 1
-  attackSpeed: 1.5
+  attackRange: 1
+  aggroRange: 7
+  attackSpeed: 0
+  pid: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 129
   critterSprite: {fileID: 1472385512, guid: 2b2686a0b92ffb444a435113a2fbf741, type: 3}
-  damageType: Solid
+  basicCritterData: {fileID: 11400000, guid: 9c7e4c6c65c5bed43bcffb842bb92a0b, type: 2}
   player: {fileID: 0}
 --- !u!212 &4584243786547910059
 SpriteRenderer:
