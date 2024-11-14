@@ -4,7 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="Remove House.prefab and update WorldObjects prefabs&#10;&#10;Deleted House.prefab file and made structural changes to integrate house components directly within the WorldObjects prefab. This simplifies the hierarchy and improves maintainability of the asset configuration." />
+    <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/SortObjectByYAxis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AllIn1SpriteShader/Materials/HouseMed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AllIn1SpriteShader/Materials/HouseMed.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AllIn1SpriteShader/Materials/HouseMed_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AllIn1SpriteShader/Materials/HouseMed_1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/CubeShadow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/CubeShadow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/IsoDoomCube.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/IsoDoomCube.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Jo 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Jo 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Jo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Jo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/SampleTank..png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/SampleTank..png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/frag_grenade_.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/frag_grenade_.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/grenade.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/grenade.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/mineslayerMine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/mineslayerMine.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/missile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/missile.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/redeyecloakdude.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/redeyecloakdude.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/slug.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/slug.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FunkyCode/Demos - SmartLighting2D/Demos - Basics (Overlay)/4 - Day Lighting/Day Lighting Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FunkyCode/Demos - SmartLighting2D/Demos - Basics (Overlay)/4 - Day Lighting/Day Lighting Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FunkyCode/Demos - SmartLighting2D/Demos - Shader Graph/Demo 5 -All In One/All In One.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FunkyCode/Demos - SmartLighting2D/Demos - Shader Graph/Demo 5 -All In One/All In One.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FunkyCode/SmartLighting2D/Resources/Settings/Project Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FunkyCode/SmartLighting2D/Resources/Settings/Project Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/critter1 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/critter1 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/critter1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/critter1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/critter1Frame2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/critter1Frame2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/critter1Frame2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/critter1Frame2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseMed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseMed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseMedBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseMedBlue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseMedYellow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseMedYellow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseNarrowGrey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseNarrowGrey.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseSFWidePurp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseSFWidePurp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseSmall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseSmall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseStoreBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/HouseStoreBlue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/OfficeBuilding.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/OfficeBuilding.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/OfficeBuildingBig.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/OfficeBuildingBig.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/OfficeBuildingMed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/BuildingPrefabs/OfficeBuildingMed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/ExperienceController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Systems/ExperienceController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +78,22 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Objects/SortObjectByYAxis.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SortLightByYAxis.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.8/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -52,7 +119,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -117,7 +184,9 @@
       <workItem from="1731294030060" duration="3988000" />
       <workItem from="1731530661260" duration="7234000" />
       <workItem from="1731547640969" duration="1026000" />
-      <workItem from="1731555514930" duration="10249000" />
+      <workItem from="1731555514930" duration="10299000" />
+      <workItem from="1731590933889" duration="1469000" />
+      <workItem from="1731600885481" duration="11618000" />
     </task>
     <task id="LOCAL-00001" summary="Remove FireFliesRed 1 prefab&#10;&#10;Deleted FireFliesRed 1.prefab from Assets/Particles/UsefulParticles/Death directory. This file was no longer necessary and its removal helps clean up the project.">
       <option name="closed" value="true" />
@@ -175,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731567474780</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add new Obstacle prefabs for House, Roof, and Door&#10;&#10;This commit introduces new prefabs for a House, Roof, and Door, which are part of the Obstacle category. They include detailed configurations for transformations, physics, and sprite rendering to enable proper obstacle dynamics and interactions in the game. These prefabs are crucial for expanding the variety of interactive elements within the game environment.">
+      <option name="closed" value="true" />
+      <created>1731567495896</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731567495896</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +276,7 @@
     <MESSAGE value="Add GroundFire prefab and CritterBite scriptable object&#10;&#10;Introduced a new GroundFire particle effect prefab under Obstacles/UsefulParticles. Additionally, added a CritterBite asset for tech weapons, complete with essential configuration details." />
     <MESSAGE value="Refactor Mine class and add new assets&#10;&#10;Refactored the Mine class to inherit from Projectile and removed unnecessary fields. Added new assets: GroundFire prefab and CritterBite ScriptableObject. This improves the organization and modularity of customization in the game." />
     <MESSAGE value="Remove House.prefab and update WorldObjects prefabs&#10;&#10;Deleted House.prefab file and made structural changes to integrate house components directly within the WorldObjects prefab. This simplifies the hierarchy and improves maintainability of the asset configuration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove House.prefab and update WorldObjects prefabs&#10;&#10;Deleted House.prefab file and made structural changes to integrate house components directly within the WorldObjects prefab. This simplifies the hierarchy and improves maintainability of the asset configuration." />
+    <MESSAGE value="Add new Obstacle prefabs for House, Roof, and Door&#10;&#10;This commit introduces new prefabs for a House, Roof, and Door, which are part of the Obstacle category. They include detailed configurations for transformations, physics, and sprite rendering to enable proper obstacle dynamics and interactions in the game. These prefabs are crucial for expanding the variety of interactive elements within the game environment." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new Obstacle prefabs for House, Roof, and Door&#10;&#10;This commit introduces new prefabs for a House, Roof, and Door, which are part of the Obstacle category. They include detailed configurations for transformations, physics, and sprite rendering to enable proper obstacle dynamics and interactions in the game. These prefabs are crucial for expanding the variety of interactive elements within the game environment." />
   </component>
 </project>

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderingMode: 2
   editorView:
-    sceneViewLayer: 0
-    gameViewLayer: 0
+    sceneViewLayer: 15
+    gameViewLayer: 14
   gizmos:
-    drawGizmos: 1
-    drawGizmosBounds: 0
-    drawGizmosChunks: 0
-    drawGizmosShadowCasters: 0
-    drawIcons: 0
+    drawGizmos: 2
+    drawGizmosBounds: 1
+    drawGizmosChunks: 1
+    drawGizmosShadowCasters: 1
+    drawIcons: 1
     sceneViewLayer: 0
     gameViewLayer: 0
   chunks:
@@ -34,4 +34,4 @@ MonoBehaviour:
   MaxLightSize: 100
   materialOffScreen: 0
   disable: 0
-  profile: {fileID: 11400000, guid: 744af7d72c977154f8a4489ba6ae519d, type: 2}
+  profile: {fileID: 11400000, guid: dc518d6bda989f74c8d991a5dc25668d, type: 2}

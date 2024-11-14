@@ -19,7 +19,7 @@ TagManager:
   - Camera
   - Water
   - UI
-  - Obstacles
+  - Obstacle
   - Enemy
   - Player
   - Projectile
@@ -27,8 +27,8 @@ TagManager:
   - Constructs
   - 
   - 
-  - 
-  - 
+  - LightingInternal(Game)
+  - LightingInternal(Scene)
   - 
   - 
   - 
@@ -64,8 +64,11 @@ TagManager:
   - name: Projectiles
     uniqueID: 3739258179
     locked: 0
-  - name: Obstacle
+  - name: MySprites
     uniqueID: 1223517609
+    locked: 0
+  - name: MyLights
+    uniqueID: 3402806121
     locked: 0
   - name: UI
     uniqueID: 1497464177
