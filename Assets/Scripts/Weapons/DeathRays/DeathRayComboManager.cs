@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Weapons.DeathRays
 {
@@ -8,34 +9,39 @@ namespace Weapons.DeathRays
     {
         public static DeathRayComboManager contCombo;
         public List<DeathRay> deathRays;
-        public int maxBeamCharges = 3, beamCharges = 3;
-        public float hitWindowTime = 0.25f;
-        public float chargeRegenTime = .25f, chargeRestored;
-
+        public int maxBeamCharges = 3, beamCharges;
+        public float hitWindowTime;
+        public float chargeRegenTime;
         private int _currentHitIndex;
-        private float _lastHitTime;
+        private float _lastHitTime, _lastRestoredChargeTime;
         private Gamepad _gamepad;
 
         private void Awake()
         {
             contCombo = this;
             _gamepad = Gamepad.current;
+            beamCharges = maxBeamCharges;
         }
 
         private void Start()
         {
             _currentHitIndex = 0;
-            _lastHitTime = Time.time - hitWindowTime;
+            _lastHitTime = Time.time;
+            _lastRestoredChargeTime = Time.time;
         }
 
         private void Update()
         {
-            if (_currentHitIndex == 3) _currentHitIndex = 0;
+            if (_currentHitIndex >= 3)
+            {
+                _lastHitTime = Time.time;
+                _currentHitIndex = 0;
+            }
             if (beamCharges > maxBeamCharges) beamCharges = maxBeamCharges;
-            if (beamCharges < maxBeamCharges && Time.time - chargeRegenTime > chargeRestored)
+            if (beamCharges < maxBeamCharges && Time.time - chargeRegenTime > _lastRestoredChargeTime)
             {
                 beamCharges++;
-                chargeRestored = Time.time;
+                _lastRestoredChargeTime = Time.time;
             }
 
             if (_gamepad == null) return;
@@ -53,7 +59,7 @@ namespace Weapons.DeathRays
                 if (_currentHitIndex == 1)
                 {
                     deathRays[0].FireBeam();
-
+                    
                     return;
                 }
 

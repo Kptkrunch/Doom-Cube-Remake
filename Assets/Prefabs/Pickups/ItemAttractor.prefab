@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8566772558510153165}
   - component: {fileID: 1993377845681907110}
   - component: {fileID: 3989351221278791519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ItemAttractor
   m_TagString: ItemAttractor
   m_Icon: {fileID: 2800000, guid: ce009ee7a4fb24c1da2f07064894e6c4, type: 3}
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupRadius: 2.5
   pullSpeed: 1
+  cooldown: 60
+  overDriveDuration: 5
   pickupArea: {fileID: 3989351221278791519}
 --- !u!58 &3989351221278791519
 CircleCollider2D:

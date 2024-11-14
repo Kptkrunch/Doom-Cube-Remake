@@ -5,36 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="Refactor Mine class and add new assets&#10;&#10;Refactored the Mine class to inherit from Projectile and removed unnecessary fields. Added new assets: GroundFire prefab and CritterBite ScriptableObject. This improves the organization and modularity of customization in the game.">
-      <change afterPath="$PROJECT_DIR$/Assets/Particles/Epic Toon FX/Prefabs/Interactive/Level Up/New Folder.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/BiteHit.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/BiteHit.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Obstacles/GroundFire.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Obstacles/GroundFire.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Obstacles/ToonTallFireRed.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Obstacles/ToonTallFireRed.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Orbs/Elemental 1/ToonTallFireRed.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Orbs/Elemental 1/ToonTallFireRed.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/CritterBite.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/CritterBite.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/CritterBite.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/CritterBite.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/MineSlayerMine.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/MineSlayerMine.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/TechWeaponsSOS/CritterBite.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/TechWeaponsSOS/CritterBite.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyStuff/EnemyWaveSpawnerPoint.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyStuff/EnemyWaveSpawnerPoint.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Interesting/ScanExplosion 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Interesting/ScanExplosion 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Interesting/ScanExplosion 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/Interesting/ScanExplosion 2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileTrack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileTrack.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MineSlayer/MineSlayerMine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MineSlayer/MineSlayerMine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MineSlayer/MineSlayerMineExp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MineSlayer/MineSlayerMineExp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pickups/ItemAttractor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pickups/ItemAttractor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MineSlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MineSlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects/House.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects/House.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects/HouseMed.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects/HouseMed.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/BasicObjectDamageParticlePools.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Pools/BasicObjectDamageParticlePools.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects/BasicObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/BasicObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Mine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Mine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Projectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MissileWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MissileWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/ItemAttractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/ItemAttractor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathRayComboManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathRayComboManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +40,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Josh/Projects/Doom-Cube-Remake/Assets/Scenes/MainCorridorScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.8/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -146,7 +129,9 @@
       <workItem from="1731253580277" duration="8989000" />
       <workItem from="1731282194020" duration="3912000" />
       <workItem from="1731294030060" duration="3988000" />
-      <workItem from="1731530661260" duration="6672000" />
+      <workItem from="1731530661260" duration="7234000" />
+      <workItem from="1731547640969" duration="1026000" />
+      <workItem from="1731555514930" duration="10228000" />
     </task>
     <task id="LOCAL-00001" summary="Remove FireFliesRed 1 prefab&#10;&#10;Deleted FireFliesRed 1.prefab from Assets/Particles/UsefulParticles/Death directory. This file was no longer necessary and its removal helps clean up the project.">
       <option name="closed" value="true" />
@@ -180,7 +165,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731537279123</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactor Mine class and add new assets&#10;&#10;Refactored the Mine class to inherit from Projectile and removed unnecessary fields. Added new assets: GroundFire prefab and CritterBite ScriptableObject. This improves the organization and modularity of customization in the game.">
+      <option name="closed" value="true" />
+      <created>1731537468504</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731537468504</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Refactor Mine class and add new assets&#10;&#10;Refactored the Mine class to inherit from Projectile and removed unnecessary fields. Added new assets: GroundFire prefab and CritterBite ScriptableObject. This improves the organization and modularity of customization in the game.">
+      <option name="closed" value="true" />
+      <created>1731537550050</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731537550050</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +202,7 @@
     <MESSAGE value="Add BiteHit particle effect prefab&#10;&#10;This commit adds a new particle effect prefab named BiteHit, located at Assets/Particles/UsefulParticles/BiteHit.prefab. The prefab includes configuration for particle system properties such as particle lifetime, emission rate, and start conditions. This new particle effect can be used to enhance visual feedback for bite actions in the game." />
     <MESSAGE value="Fixed building damage, weapons particles, and git effects.  Need to update sorting layers for weapons" />
     <MESSAGE value="Refactor Mine.cs and add new assets&#10;&#10;Refactored `Mine.cs` to extend `Projectile` class and updated existing code for clarity and efficiency. Added new ground fire particle prefab and CritterBite scriptable object asset." />
+    <MESSAGE value="Add GroundFire prefab and CritterBite scriptable object&#10;&#10;Introduced a new GroundFire particle effect prefab under Obstacles/UsefulParticles. Additionally, added a CritterBite asset for tech weapons, complete with essential configuration details." />
     <MESSAGE value="Refactor Mine class and add new assets&#10;&#10;Refactored the Mine class to inherit from Projectile and removed unnecessary fields. Added new assets: GroundFire prefab and CritterBite ScriptableObject. This improves the organization and modularity of customization in the game." />
     <option name="LAST_COMMIT_MESSAGE" value="Refactor Mine class and add new assets&#10;&#10;Refactored the Mine class to inherit from Projectile and removed unnecessary fields. Added new assets: GroundFire prefab and CritterBite ScriptableObject. This improves the organization and modularity of customization in the game." />
   </component>
