@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="Refactor Mine class and add new assets&#10;&#10;Refactored the Mine class to inherit from Projectile and removed unnecessary fields. Added new assets: GroundFire prefab and CritterBite ScriptableObject. This improves the organization and modularity of customization in the game.">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyStuff/EnemyWaveSpawnerPoint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyStuff/EnemyWaveSpawnerPoint.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pickups/ItemAttractor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pickups/ItemAttractor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MineSlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MineSlayer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects/House.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects/House.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects/HouseMed.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WorldObjects/HouseMed.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/ItemAttractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/ItemAttractor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathRayComboManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathRayComboManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="Remove House.prefab and update WorldObjects prefabs&#10;&#10;Deleted House.prefab file and made structural changes to integrate house components directly within the WorldObjects prefab. This simplifies the hierarchy and improves maintainability of the asset configuration." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +117,7 @@
       <workItem from="1731294030060" duration="3988000" />
       <workItem from="1731530661260" duration="7234000" />
       <workItem from="1731547640969" duration="1026000" />
-      <workItem from="1731555514930" duration="10228000" />
+      <workItem from="1731555514930" duration="10249000" />
     </task>
     <task id="LOCAL-00001" summary="Remove FireFliesRed 1 prefab&#10;&#10;Deleted FireFliesRed 1.prefab from Assets/Particles/UsefulParticles/Death directory. This file was no longer necessary and its removal helps clean up the project.">
       <option name="closed" value="true" />
@@ -181,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731537550050</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Remove House.prefab and update WorldObjects prefabs&#10;&#10;Deleted House.prefab file and made structural changes to integrate house components directly within the WorldObjects prefab. This simplifies the hierarchy and improves maintainability of the asset configuration.">
+      <option name="closed" value="true" />
+      <created>1731567474780</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731567474780</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +198,7 @@
     <MESSAGE value="Refactor Mine.cs and add new assets&#10;&#10;Refactored `Mine.cs` to extend `Projectile` class and updated existing code for clarity and efficiency. Added new ground fire particle prefab and CritterBite scriptable object asset." />
     <MESSAGE value="Add GroundFire prefab and CritterBite scriptable object&#10;&#10;Introduced a new GroundFire particle effect prefab under Obstacles/UsefulParticles. Additionally, added a CritterBite asset for tech weapons, complete with essential configuration details." />
     <MESSAGE value="Refactor Mine class and add new assets&#10;&#10;Refactored the Mine class to inherit from Projectile and removed unnecessary fields. Added new assets: GroundFire prefab and CritterBite ScriptableObject. This improves the organization and modularity of customization in the game." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor Mine class and add new assets&#10;&#10;Refactored the Mine class to inherit from Projectile and removed unnecessary fields. Added new assets: GroundFire prefab and CritterBite ScriptableObject. This improves the organization and modularity of customization in the game." />
+    <MESSAGE value="Remove House.prefab and update WorldObjects prefabs&#10;&#10;Deleted House.prefab file and made structural changes to integrate house components directly within the WorldObjects prefab. This simplifies the hierarchy and improves maintainability of the asset configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove House.prefab and update WorldObjects prefabs&#10;&#10;Deleted House.prefab file and made structural changes to integrate house components directly within the WorldObjects prefab. This simplifies the hierarchy and improves maintainability of the asset configuration." />
   </component>
 </project>
