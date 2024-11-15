@@ -3,6 +3,7 @@ using Controllers;
 using GenUtilsAndTools;
 using MoreMountains.Feedbacks;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Objects
 {
