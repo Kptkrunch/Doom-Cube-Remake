@@ -89,41 +89,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8178988525685143888}
     m_Modifications:
-    - target: {fileID: 127838, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 127838, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: m_TagString
-      value: Projectile
-      objectReference: {fileID: 0}
-    - target: {fileID: 151600, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 151600, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: m_TagString
-      value: Projectile
-      objectReference: {fileID: 0}
-    - target: {fileID: 153860, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 153860, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: m_TagString
-      value: Projectile
-      objectReference: {fileID: 0}
     - target: {fileID: 179950, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_Name
       value: ParabalombProjParticle
-      objectReference: {fileID: 0}
-    - target: {fileID: 179950, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 179950, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
-      propertyPath: m_TagString
-      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 444968, guid: c8580ba0e2fee714e84675d8eefd5f66, type: 3}
       propertyPath: m_LocalPosition.x

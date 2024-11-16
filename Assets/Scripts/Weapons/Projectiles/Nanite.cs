@@ -16,7 +16,6 @@ namespace Weapons.Projectiles
                 var mutantSlug = MutantsAndBotsPoolManager.poolMutRob.mutAndRobPools[0].GetPooledGameObject();
                 mutantSlug.SetActive(true);
                 mutantSlug.transform.position = mutantPosition;
-                phaser.ResetPhasingOnHit();
             }
         }
 

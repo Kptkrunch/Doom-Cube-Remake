@@ -16,6 +16,7 @@ MonoBehaviour:
     list:
     - name: Day Lighting
       type: 3
+      hdr: 0
       darknessColor: {r: 0, g: 0, b: 0, a: 1}
       depth: -100
       resolution: 1
@@ -31,6 +32,7 @@ MonoBehaviour:
           sorting: 0
     - name: Lights
       type: 0
+      hdr: 0
       darknessColor: {r: 0, g: 0, b: 0, a: 1}
       depth: -100
       resolution: 1
@@ -43,6 +45,7 @@ MonoBehaviour:
           sorting: 0
     - name: Occlusion
       type: 0
+      hdr: 0
       darknessColor: {r: 0, g: 0, b: 0, a: 1}
       depth: -100
       resolution: 1
@@ -77,16 +80,16 @@ MonoBehaviour:
         list:
         - layerID: 0
   qualitySettings:
-    HDR: 1
     lightTextureSize: 1
     lightEffectTextureSize: 1
     lightFilterMode: 1
+    lightmapFilterMode: 1
     updateMethod: 0
     coreAxis: 0
     projection: 0
   dayLightingSettings:
-    alpha: 1
     direction: 38
+    ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     height: 1
     bumpMap:
       height: 1

@@ -32,6 +32,9 @@ namespace Weapons.SpecificWeapons
 
         protected override void Fire()
         {
+            var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
+            flash.transform.position = transform.position;
+            flash.SetActive(true);
             var mine = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             mine.transform.position = transform.position;
             mine.SetActive(true);

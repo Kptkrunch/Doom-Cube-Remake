@@ -26,4 +26,4 @@ MonoBehaviour:
     pens: 5
     bounces: 0
     bounceInterval: 0
-    direction: {x: -4.9078903, y: 1.6370754}
+    direction: {x: 0, y: 0}

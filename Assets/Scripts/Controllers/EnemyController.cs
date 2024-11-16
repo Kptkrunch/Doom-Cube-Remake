@@ -58,10 +58,8 @@ namespace Controllers
         public void TakeDamage(float enemyDamage, string damageType)
         {
             health -= enemyDamage;
-            Debug.Log(health + ": health left");
             if (health <= 0)
             {
-                Debug.Log("should be dead now");
                 it.DmgTypeDictionary[damageType] = true;
                 health = _maxHealth;
                 if (!it.alreadyDropped)
@@ -197,7 +195,9 @@ namespace Controllers
             if (_material.GetFloat(FadeAmount) >= 1)
             {
                 ResetEnemy();
+                Debug.Log("after resest");
                 gameObject.SetActive(false);
+                Debug.Log("set active false");
             }
         }
 
@@ -235,7 +235,6 @@ namespace Controllers
             _lerpTimer += Time.deltaTime;
             _material.SetFloat(OffsetUvY, amount);
         }
-
 
         private void ResetEnemy()
         {

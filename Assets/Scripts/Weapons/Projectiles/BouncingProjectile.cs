@@ -89,7 +89,7 @@ namespace Weapons.Projectiles
 
         protected void MaybeExplode()
         {
-            var exp = ProjectilePoolManager.poolProj.projPools[pd.eid].GetPooledGameObject();
+            var exp = ProjectilePoolManager2.poolProj.projPools[pd.pid].GetPooledGameObject();
             var damager = exp.GetComponent<EnemyDamager>();
 
             exp.transform.position = transform.position;

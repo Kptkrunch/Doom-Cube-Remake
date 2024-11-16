@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6616626293108683650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -69,13 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageType: energy
+  damageType: Energy
   destructive: 1
-  hitsGround: 1
-  hitsAir: 1
-  fireDamage: 0
-  chemicalDamage: 0
-  explosiveDamage: 0
 --- !u!114 &3300815239278084903
 MonoBehaviour:
   m_ObjectHideFlags: 0

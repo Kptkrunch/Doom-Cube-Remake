@@ -17,7 +17,7 @@ MonoBehaviour:
     - name: Default
       type: 0
       hdr: 2
-      darknessColor: {r: 0, g: 0, b: 0, a: 0}
+      darknessColor: {r: 0, g: 0, b: 0, a: 0.25}
       depth: -100
       resolution: 1
       dayLayers:
@@ -49,7 +49,7 @@ MonoBehaviour:
       layerSetting:
         list:
         - layerID: 0
-    - name: 'Preset (Id: 1)'
+    - name: BasicEvents
       layerSetting:
         list:
         - layerID: 0
@@ -71,10 +71,10 @@ MonoBehaviour:
   layers:
     colliderLayers:
       names:
-      - Default
+      - MySprites
     lightLayers:
       names:
-      - Default
+      - MyLights
     dayLayers:
       names:
       - Default

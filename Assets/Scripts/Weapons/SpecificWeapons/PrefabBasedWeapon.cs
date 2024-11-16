@@ -1,4 +1,5 @@
 using UnityEngine;
+using Weapons.SOS;
 using Weapons.WeaponModifiers;
 
 namespace Weapons.SpecificWeapons

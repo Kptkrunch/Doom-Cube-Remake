@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace GenUtilsAndTools
@@ -6,41 +7,33 @@ namespace GenUtilsAndTools
     {
         public GameObject obj;
         public float phaseOutInterval, phaseInInterval;
-        private float _phaseOutTimer, _phaseInTimer;
-        private bool _phasedIn = true;
+        public int phaseInParticleIndex, phaseOutParticleIndex;
 
+        private bool _readyToPhase = true;
+        
+        
         private void FixedUpdate()
         {
-            obj.SetActive(_phasedIn);
-            PhaseObject();
+            if (_readyToPhase) StartCoroutine(PhaseObject());
         }
 
-        private void PhaseObject()
+        IEnumerator PhaseObject()
         {
-            if (_phasedIn)
+            _readyToPhase = false;
+            yield return new WaitForSeconds(phaseOutInterval);
+            if (phaseInParticleIndex > 0)
             {
-                _phaseOutTimer -= Time.deltaTime;
-                if (_phaseOutTimer <= 0)
-                {
-                    _phasedIn = false;
-                    _phaseInTimer = phaseInInterval;
-                }
+                // get a pool that's yet to be made
             }
-            else if (!_phasedIn)
+            obj.SetActive(false);
+            
+            yield return new WaitForSeconds(phaseInInterval);
+            if (phaseOutParticleIndex > 0)
             {
-                _phaseInTimer -= Time.deltaTime;
-                if (_phaseInTimer <= 0)
-                {
-                    _phasedIn = true;
-                    _phaseOutTimer = phaseOutInterval;
-                }
+                // get a pool that's yet to be made
             }
-        }
-
-        public void ResetPhasingOnHit()
-        {
-            _phasedIn = false;
-            _phaseInTimer = phaseInInterval;
+            obj.SetActive(true);
+            _readyToPhase = true;
         }
     }
 }

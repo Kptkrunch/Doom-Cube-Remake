@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4219022896003679351
 Transform:
   m_ObjectHideFlags: 0
@@ -32,6 +32,99 @@ Transform:
   - {fileID: 1604688555300022462}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1070538698958664570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5479948438837151399}
+  - component: {fileID: 6979858191622728137}
+  m_Layer: 0
+  m_Name: Light 2D
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5479948438837151399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070538698958664570}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.055, y: 0.069, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5225535953572465501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6979858191622728137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070538698958664570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a34663ca705a54eac3205e225a6d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightType: 1
+  lightPresetId: 0
+  eventPresetId: 0
+  lightLayer: 0
+  occlusionLayer: 0
+  translucentLayer: 0
+  translucentPresetId: 0
+  color: {r: 0.31050324, g: 1, b: 0, a: 1}
+  size: 0.2
+  spotAngleInner: 360
+  spotAngleOuter: 360
+  coreSize: 0.5
+  falloff: 0
+  lightStrength: 0
+  outerAngle: 15
+  lightRadius: 1
+  shadowDistanceClose: 0
+  shadowDistanceFar: 5
+  maskTranslucencyQuality: 1
+  maskTranslucencyStrength: 0.5
+  applyRotation: 0
+  textureSize: 1
+  meshMode:
+    enable: 1
+    alpha: 0.88
+    shader: 0
+    materials:
+    - {fileID: 0}
+    sortingLayer:
+      name: MyLights
+      Order: 0
+  bumpMap:
+    intensity: 1
+    depth: 1
+  whenInsideCollider: 0
+  lightSprite: 0
+  sprite: {fileID: 21300000, guid: 6592d6be03fd808449716a11558d506f, type: 3}
+  spriteFlipX: 0
+  spriteFlipY: 0
+  freeFormFalloff: 1
+  freeFormPoint: 1
+  freeFormFalloffStrength: 1
+  freeFormPoints:
+    points:
+    - {x: 1, y: 0}
+    - {x: -0.50000006, y: 0.8660254}
+    - {x: -0.4999999, y: -0.86602545}
+  drawingEnabled: 1
+  drawingTranslucencyEnabled: 0
 --- !u!1 &4050084114769024791
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +137,7 @@ GameObject:
   - component: {fileID: 3846698184937375345}
   - component: {fileID: 3436273034692249808}
   - component: {fileID: 5337967350481339938}
+  - component: {fileID: 8666411107968324733}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Projectile
@@ -79,15 +173,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521ef284069ca2946b0f688e467639c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expIndex: 5
+  it: {fileID: 8666411107968324733}
+  pd: {fileID: 11400000, guid: 113249bf476bfb14d972858b8f692e1c, type: 2}
   parent: {fileID: 1006643835540563925}
-  hasLifetime: 1
+  enemyDamager: {fileID: 0}
+  expIndex: 3
   hasFuse: 0
-  onContact: 1
   damage: 1
   expRadius: 2
   fuseTimer: 10
-  lifeTimer: 10
 --- !u!212 &3436273034692249808
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -126,8 +220,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -555709117
-  m_SortingLayer: 4
+  m_SortingLayerID: 1223517609
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 694901751, guid: 64099c905a4d3f44d98a849f783f7ae8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -185,6 +279,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34375, y: 0.125}
   m_EdgeRadius: 0
+--- !u!114 &8666411107968324733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050084114769024791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDisable: 0
+  doesPenetrate: 0
+  doesRotate: 0
+  isLobbed: 0
+  doesBounce: 0
+  explodes: 1
+  hasLifetime: 1
+  disableAfterBounces: 0
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 0
+  moveUseVelocity: 0
+  moveUseMoveTowards: 0
 --- !u!1 &5015076685623035233
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +316,7 @@ GameObject:
   - component: {fileID: 5225535953572465501}
   m_Layer: 0
   m_Name: Lights
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,8 +336,103 @@ Transform:
   m_Children:
   - {fileID: 4020437229943051982}
   - {fileID: 1033113676914371797}
+  - {fileID: 5479948438837151399}
+  - {fileID: 769330598725000487}
   m_Father: {fileID: 1604688555300022462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8601961269261189894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769330598725000487}
+  - component: {fileID: 1023255790532416523}
+  m_Layer: 0
+  m_Name: Light 2D (1)
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &769330598725000487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8601961269261189894}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.065, y: 0.069, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5225535953572465501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1023255790532416523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8601961269261189894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a34663ca705a54eac3205e225a6d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightType: 1
+  lightPresetId: 0
+  eventPresetId: 0
+  lightLayer: 0
+  occlusionLayer: 0
+  translucentLayer: 0
+  translucentPresetId: 0
+  color: {r: 0.31050324, g: 1, b: 0, a: 1}
+  size: 0.2
+  spotAngleInner: 360
+  spotAngleOuter: 360
+  coreSize: 0.5
+  falloff: 0
+  lightStrength: 0
+  outerAngle: 15
+  lightRadius: 1
+  shadowDistanceClose: 0
+  shadowDistanceFar: 5
+  maskTranslucencyQuality: 1
+  maskTranslucencyStrength: 0.5
+  applyRotation: 0
+  textureSize: 1
+  meshMode:
+    enable: 1
+    alpha: 0.88
+    shader: 0
+    materials:
+    - {fileID: 0}
+    sortingLayer:
+      name: MyLights
+      Order: 0
+  bumpMap:
+    intensity: 1
+    depth: 1
+  whenInsideCollider: 0
+  lightSprite: 0
+  sprite: {fileID: 21300000, guid: 6592d6be03fd808449716a11558d506f, type: 3}
+  spriteFlipX: 0
+  spriteFlipY: 0
+  freeFormFalloff: 1
+  freeFormPoint: 1
+  freeFormFalloffStrength: 1
+  freeFormPoints:
+    points:
+    - {x: 1, y: 0}
+    - {x: -0.50000006, y: 0.8660254}
+    - {x: -0.4999999, y: -0.86602545}
+  drawingEnabled: 1
+  drawingTranslucencyEnabled: 0
 --- !u!1001 &1033113676914231427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -226,17 +441,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5225535953572465501}
     m_Modifications:
-    - target: {fileID: 101852, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_Name
       value: MineLight
       objectReference: {fileID: 0}
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: m_Layer
-      value: 0
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 402518, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -278,68 +489,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: lengthInSec
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: NoiseModule.quality
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: NoiseModule.frequency
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: NoiseModule.strength.scalar
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: NoiseModule.positionAmount.scalar
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: lengthInSec
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InheritVelocityModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 19986342, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19986342, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -555709117
-      objectReference: {fileID: 0}
-    - target: {fileID: 19986342, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: m_RenderingLayerMask
-      value: 4294967295
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8277020, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -357,17 +507,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5225535953572465501}
     m_Modifications:
-    - target: {fileID: 101852, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_Name
       value: MineLight (1)
       objectReference: {fileID: 0}
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: m_Layer
-      value: 0
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 402518, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -409,69 +555,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: lengthInSec
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: NoiseModule.quality
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: NoiseModule.frequency
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: NoiseModule.strength.scalar
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: NoiseModule.positionAmount.scalar
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19859100, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: lengthInSec
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InheritVelocityModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 19986342, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19986342, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -555709117
-      objectReference: {fileID: 0}
-    - target: {fileID: 19986342, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-      propertyPath: m_RenderingLayerMask
-      value: 4294967295
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8277020, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
-    - {fileID: 11402392, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

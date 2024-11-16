@@ -49,6 +49,9 @@ namespace Weapons.SpecificWeapons
 
         private void LobProjectile()
         {
+            var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
+            flash.transform.position = transform.position;
+            flash.SetActive(true);
             var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             saw.transform.position = transform.position;
             saw.SetActive(true);

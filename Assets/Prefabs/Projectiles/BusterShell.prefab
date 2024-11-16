@@ -91,13 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageType: energy
+  damageType: Energy
   destructive: 1
-  hitsGround: 1
-  hitsAir: 0
-  fireDamage: 0
-  chemicalDamage: 0
-  explosiveDamage: 0
 --- !u!58 &3630000991485685070
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -133,6 +128,99 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1 &1864963317909714760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209053833399554755}
+  - component: {fileID: 194206681146547419}
+  m_Layer: 0
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &209053833399554755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864963317909714760}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4959548525468733406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &194206681146547419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864963317909714760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a34663ca705a54eac3205e225a6d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightType: 0
+  lightPresetId: 0
+  eventPresetId: 0
+  lightLayer: 0
+  occlusionLayer: 0
+  translucentLayer: 0
+  translucentPresetId: 0
+  color: {r: 0, g: 1.6574162, b: 16.905655, a: 0.008}
+  size: 2
+  spotAngleInner: 360
+  spotAngleOuter: 360
+  coreSize: 0.5
+  falloff: 0
+  lightStrength: 1
+  outerAngle: 15
+  lightRadius: 1
+  shadowDistanceClose: 0
+  shadowDistanceFar: 5
+  maskTranslucencyQuality: 1
+  maskTranslucencyStrength: 0.5
+  applyRotation: 0
+  textureSize: 1
+  meshMode:
+    enable: 1
+    alpha: 0.049
+    shader: 0
+    materials:
+    - {fileID: 0}
+    sortingLayer:
+      name: MyLights
+      Order: 0
+  bumpMap:
+    intensity: 1
+    depth: 1
+  whenInsideCollider: 0
+  lightSprite: 0
+  sprite: {fileID: 21300000, guid: 6592d6be03fd808449716a11558d506f, type: 3}
+  spriteFlipX: 0
+  spriteFlipY: 0
+  freeFormFalloff: 1
+  freeFormPoint: 1
+  freeFormFalloffStrength: 1
+  freeFormPoints:
+    points:
+    - {x: 1, y: 0}
+    - {x: -0.50000006, y: 0.8660254}
+    - {x: -0.4999999, y: -0.86602545}
+  drawingEnabled: 1
+  drawingTranslucencyEnabled: 0
 --- !u!1001 &4959548525469127354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,29 +229,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4110668545290411356}
     m_Modifications:
-    - target: {fileID: 144506, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 144994, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 151662, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 180508, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
       propertyPath: m_Name
       value: BlueSparklerMissile 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 180508, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 180508, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: m_TagString
-      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 400740, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -205,25 +273,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: InitialModule.startSize.maxCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: InitialModule.startSize.minCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: InitialModule.startRotation.maxCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19836790, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
-      propertyPath: InitialModule.startRotation.minCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 151662, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 400740, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 209053833399554755}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7b5d379667dae64f999dfbdd90e34ba, type: 3}
 --- !u!4 &4959548525468733406 stripped

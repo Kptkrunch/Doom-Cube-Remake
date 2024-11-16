@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8791480448664990819}
   m_Layer: 0
   m_Name: ExperienceController
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +61,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c4e835ea5879744a1ebc04f6f5b586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropChance: 0
+  meat: 0
+  metal: 0
+  mineral: 0
+  plastic: 0
+  energy: 0
+  exp: 0
   itemDrop: {fileID: 5416294103432642803, guid: 5d9988a6ef11f2645be78ef28476e3dc, type: 3}
 --- !u!114 &8791480448664990819
 MonoBehaviour:
@@ -74,8 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c02008f303633104eb730a14bcb21c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expLevels: 0000000002000000050000000a0000001e000000
+  expLevels: 00000000050000000a0000001900000032000000
   currentLevel: 1
   maxLevel: 100
   player: {fileID: 0}
-  lvlUpParticle: {fileID: 9040823010023462528, guid: 82cce8fb77f4cfe42af0e5d330ecf376, type: 3}
+  lvlUpParticle: {fileID: 0}

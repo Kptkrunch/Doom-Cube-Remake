@@ -16,7 +16,8 @@ MonoBehaviour:
     list:
     - name: Regular
       type: 0
-      darknessColor: {r: 0.1509434, g: 0.1502314, b: 0.1502314, a: 1}
+      hdr: 0
+      darknessColor: {r: 0.1509434, g: 0.1502314, b: 0.1502314, a: 0.07}
       depth: 0
       resolution: 1
       dayLayers:
@@ -28,6 +29,7 @@ MonoBehaviour:
           sorting: 0
     - name: FOW
       type: 0
+      hdr: 0
       darknessColor: {r: 0, g: 0, b: 0, a: 1}
       depth: 0
       resolution: 1
@@ -62,16 +64,16 @@ MonoBehaviour:
         list:
         - layerID: 0
   qualitySettings:
-    HDR: 1
     lightTextureSize: 2
     lightEffectTextureSize: 2
     lightFilterMode: 1
+    lightmapFilterMode: 1
     updateMethod: 0
     coreAxis: 0
     projection: 0
   dayLightingSettings:
-    alpha: 1
     direction: 270
+    ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     height: 1
     bumpMap:
       height: 1

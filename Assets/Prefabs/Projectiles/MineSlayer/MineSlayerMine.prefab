@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4219022896003679351
 Transform:
   m_ObjectHideFlags: 0
@@ -44,6 +44,9 @@ GameObject:
   - component: {fileID: 3846698184937375345}
   - component: {fileID: 3436273034692249808}
   - component: {fileID: 5337967350481339938}
+  - component: {fileID: 6392360917553105394}
+  - component: {fileID: 2303254132965729851}
+  - component: {fileID: 7478971082207345481}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Projectile
@@ -79,15 +82,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521ef284069ca2946b0f688e467639c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expIndex: 5
+  it: {fileID: 6392360917553105394}
+  pd: {fileID: 11400000, guid: 113249bf476bfb14d972858b8f692e1c, type: 2}
   parent: {fileID: 1006643835540563925}
-  hasLifetime: 1
+  enemyDamager: {fileID: 2303254132965729851}
+  expIndex: 3
   hasFuse: 0
-  onContact: 1
   damage: 1
   expRadius: 2
   fuseTimer: 10
-  lifeTimer: 10
 --- !u!212 &3436273034692249808
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -185,6 +188,74 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34375, y: 0.125}
   m_EdgeRadius: 0
+--- !u!114 &6392360917553105394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050084114769024791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDisable: 0
+  doesPenetrate: 0
+  doesRotate: 0
+  isLobbed: 0
+  doesBounce: 0
+  explodes: 1
+  hasLifetime: 0
+  disableAfterBounces: 0
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 0
+  moveUseVelocity: 0
+  moveUseMoveTowards: 0
+--- !u!114 &2303254132965729851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050084114769024791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29bd94600c0bbad4c8262313bea604e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  damageType: Solid
+  destructive: 0
+--- !u!50 &7478971082207345481
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050084114769024791}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5015076685623035233
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +267,7 @@ GameObject:
   - component: {fileID: 5225535953572465501}
   m_Layer: 0
   m_Name: Lights
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,6 +308,10 @@ PrefabInstance:
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 402518, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -326,6 +401,26 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: InitialModule.startSize.maxCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: InitialModule.startSize.minCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: InitialModule.startLifetime.minCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 19986342, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -368,6 +463,10 @@ PrefabInstance:
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 402518, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -456,6 +555,26 @@ PrefabInstance:
     - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: InitialModule.startSize.maxCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: InitialModule.startSize.minCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891512, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: InitialModule.startLifetime.minCurve.m_RotationOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 19986342, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_SortingLayer
