@@ -276,6 +276,8 @@ MonoBehaviour:
   obj: {fileID: 8201089928152045830}
   phaseOutInterval: 1
   phaseInInterval: 1
+  phaseInParticleIndex: 0
+  phaseOutParticleIndex: 0
 --- !u!1001 &3528467057356922093
 PrefabInstance:
   m_ObjectHideFlags: 0

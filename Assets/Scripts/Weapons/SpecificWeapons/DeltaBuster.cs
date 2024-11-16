@@ -30,12 +30,7 @@ namespace Weapons.SpecificWeapons
                 if (doesAlternate)
                     for (var j = 0; j < firePoints.Count; j++)
                     {
-                        var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-                        proj.transform.position = transform.position;
-                        if (i % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
-                        if (i % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
-
-                        proj.SetActive(true);
+                        Fire(i);
                     }
 
                 if (!doesAlternate)
@@ -67,6 +62,19 @@ namespace Weapons.SpecificWeapons
 
             yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].coolDown);
             CanFire = true;
+        }
+
+        private void Fire(int index)
+        {
+            var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
+            flash.transform.position = transform.position;
+            flash.SetActive(true);
+            var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+            proj.transform.position = transform.position;
+            if (index % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
+            if (index % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
+
+            proj.SetActive(true);
         }
 
         private void SetStats()

@@ -27,16 +27,25 @@ namespace Weapons.SpecificWeapons
             for (var i = 0; i < Ammo; i++)
             {
                 yield return new WaitForSeconds(FireInterval);
-                var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-                var theProj = proj.GetComponent<Projectile>();
-                proj.transform.position = transform.position;
-                theProj.pd.stats.direction = Direction;
-                proj.SetActive(true);
-                proj.transform.rotation = Rotation;
+                Fire();
             }
 
             yield return new WaitForSeconds(ReloadInterval);
             CanFire = true;
+        }
+
+        protected override void Fire()
+        {
+            base.Fire();
+            var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
+            flash.transform.position = transform.position;
+            flash.SetActive(true);
+            var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+            var theProj = proj.GetComponent<Projectile>();
+            proj.transform.position = transform.position;
+            theProj.pd.stats.direction = Direction;
+            proj.SetActive(true);
+            proj.transform.rotation = Rotation;
         }
 
         private void SetStats()

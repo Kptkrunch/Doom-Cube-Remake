@@ -32,8 +32,22 @@ namespace Weapons.Projectiles
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
+            
             if (it.doesPenetrate) PenetrateLogic(collision);
             if (it.disableOnContact) MaybeDisableOnContactWithAnything(collision);
+            if (collision.CompareTag("Enemy"))
+            {
+                var hitParticle = ProjectileHitObjectPools.Instance.hitPools[pd.pid].GetPooledGameObject();
+                hitParticle.transform.position = collision.transform.position;
+                hitParticle.SetActive(true);
+            }
+            
+            if (collision.CompareTag("BasicObject"))
+            {
+                var hitParticle = ProjectileHitObjectPools.Instance.hitPools[pd.pid].GetPooledGameObject();
+                hitParticle.transform.position = collision.transform.position;
+                hitParticle.SetActive(true);
+            }
         }
 
         public virtual void OnEnable()

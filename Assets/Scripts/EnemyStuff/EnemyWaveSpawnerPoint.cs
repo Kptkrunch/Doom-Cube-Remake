@@ -27,6 +27,11 @@ namespace EnemyStuff
 
         private void FixedUpdate()
         {
+            if (currentWaveIndex >= waveInfoList.Count)
+            {
+                _canSpawn = false;
+                return;
+            }
             _waveTimer -= Time.fixedDeltaTime;
             
             if (_canSpawn)

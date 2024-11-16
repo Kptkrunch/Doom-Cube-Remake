@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using FunkyCode;
 
 public class SciFiLightFlicker : MonoBehaviour
 {
@@ -15,11 +16,11 @@ private Color originalColor;
  
 // Store the original color
 void Start (){
-    originalColor = GetComponent<Light>().color;
+    originalColor = GetComponent<Light2D>().color;
 }
  
 void Update (){
-    Light light = GetComponent<Light>();
+    Light2D light = GetComponent<Light2D>();
     light.color = originalColor * (EvalWave());
 }
  

@@ -2,6 +2,7 @@ using System.Collections;
 using Controllers.Pools;
 using UnityEngine;
 using Weapons.Projectiles;
+using Weapons.SOS;
 
 namespace Weapons.SpecificWeapons
 {
@@ -22,6 +23,9 @@ namespace Weapons.SpecificWeapons
             CanFire = false;
             for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
             {
+                var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
+                flash.transform.position = transform.position;
+                flash.SetActive(true);
                 if (doesAlternate)
                 {
                     var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();

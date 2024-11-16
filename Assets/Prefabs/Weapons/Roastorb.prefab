@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 31585698321071167, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 31585698321071167, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: color.a
-      value: 0.01
+      value: 0.014
       objectReference: {fileID: 0}
     - target: {fileID: 31585698321071167, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: color.g
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 31585698321071167, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: meshMode.alpha
-      value: 0.03
+      value: 0.017
       objectReference: {fileID: 0}
     - target: {fileID: 31585698321071167, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: meshMode.sortingLayer.name
@@ -36,17 +36,21 @@ PrefabInstance:
       propertyPath: damageType
       value: burning
       objectReference: {fileID: 0}
+    - target: {fileID: 790442390270189665, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 904048196412509447, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: uiSprite
       value: 
       objectReference: {fileID: 905496151, guid: 0d35da58c43902c4e88dfaf59823586a, type: 3}
     - target: {fileID: 1056963037624901637, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1056963037624901637, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: color.a
-      value: 0.01
+      value: 0.014
       objectReference: {fileID: 0}
     - target: {fileID: 1056963037624901637, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: color.g
@@ -58,11 +62,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1056963037624901637, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: meshMode.alpha
-      value: 0.03
+      value: 0.017
       objectReference: {fileID: 0}
     - target: {fileID: 1056963037624901637, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: meshMode.sortingLayer.name
       value: MyLights
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101843609036431009, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 2152081530765122319, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: damageType
@@ -148,9 +156,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4429484282558129561, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 5472547386233536733, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: m_Name
       value: Roastorb
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472547386233536733, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6364780654526469233, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: staySizeInterval
@@ -162,11 +178,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212460328282933086, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8212460328282933086, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: color.a
-      value: 0.01
+      value: 0.014
       objectReference: {fileID: 0}
     - target: {fileID: 8212460328282933086, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: color.g
@@ -178,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212460328282933086, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: meshMode.alpha
-      value: 0.03
+      value: 0.017
       objectReference: {fileID: 0}
     - target: {fileID: 8212460328282933086, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: meshMode.sortingLayer.name
@@ -186,11 +202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8317471391078275760, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8317471391078275760, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: color.a
-      value: 0.01
+      value: 0.014
       objectReference: {fileID: 0}
     - target: {fileID: 8317471391078275760, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: color.g
@@ -202,11 +218,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8317471391078275760, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: meshMode.alpha
-      value: 0.03
+      value: 0.017
       objectReference: {fileID: 0}
     - target: {fileID: 8317471391078275760, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: meshMode.sortingLayer.name
       value: MyLights
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776808887539625245, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 8864429954712102249, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: damageType

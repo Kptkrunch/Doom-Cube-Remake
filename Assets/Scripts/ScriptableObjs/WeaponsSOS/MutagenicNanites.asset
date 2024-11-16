@@ -24,7 +24,7 @@ MonoBehaviour:
     coolDown: 10
     rateOfFire: 10
     duration: 10
-    speed: 2
+    speed: 9.65
     size: {x: 0, y: 0, z: 0}
     wildCard: 0
     upgradeText: 

@@ -6,6 +6,7 @@ namespace GenUtilsAndTools
     public class ItemAttractor : MonoBehaviour
     {
         public static ItemAttractor itemAttractor;
+        public GameObject overDriveParticle;
         public float pickupRadius, pullSpeed, cooldown, overDriveDuration;
         public CircleCollider2D pickupArea;
         private float _cooldownTimer, _overDriveTimer, _pullSpeedTemp;
@@ -29,6 +30,7 @@ namespace GenUtilsAndTools
                     Debug.Log("overdrive is true");
                     _cooldownTimer = cooldown;
                     _overDrive = true;
+                    overDriveParticle.SetActive(true);
                     pickupArea.radius = 20f;
                     pullSpeed = 5f;
                 }
@@ -42,6 +44,7 @@ namespace GenUtilsAndTools
                     Debug.Log("overdrive is true");
                     _overDriveTimer = overDriveDuration;
                     _overDrive = false;
+                    overDriveParticle.SetActive(false);
                     pickupArea.radius = pickupRadius;
                     pullSpeed = _pullSpeedTemp;
                 }

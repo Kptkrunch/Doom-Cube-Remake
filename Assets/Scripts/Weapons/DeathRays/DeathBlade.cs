@@ -6,6 +6,7 @@ namespace Weapons.DeathRays
     public class DeathBlade : DeathRay
     {
         public SplineAnimate splinePlayer;
+        public GameObject beamOrigin;
         public GameObject hitMarker;
 
         private void Update()
@@ -25,12 +26,14 @@ namespace Weapons.DeathRays
         {
             if (splinePlayer.IsPlaying)
             {
+                beamOrigin.SetActive(true);
                 lineRenderer.SetPosition(0, transform.position);
                 lineRenderer.SetPosition(1, beamHitBox.transform.position);
             }
 
             if (!splinePlayer.IsPlaying)
             {
+                beamOrigin.SetActive(false);
                 lineRenderer.gameObject.SetActive(false);
                 hitMarker.SetActive(false);
                 splinePlayer.Restart(false);

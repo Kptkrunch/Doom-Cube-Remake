@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6979858191622728137}
   m_Layer: 0
   m_Name: Light 2D
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 3846698184937375345}
   - component: {fileID: 3436273034692249808}
   - component: {fileID: 5337967350481339938}
+  - component: {fileID: 8666411107968324733}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Projectile
@@ -172,8 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521ef284069ca2946b0f688e467639c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  it: {fileID: 0}
-  pd: {fileID: 0}
+  it: {fileID: 8666411107968324733}
+  pd: {fileID: 11400000, guid: 113249bf476bfb14d972858b8f692e1c, type: 2}
   parent: {fileID: 1006643835540563925}
   enemyDamager: {fileID: 0}
   expIndex: 3
@@ -219,8 +220,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -555709117
-  m_SortingLayer: 4
+  m_SortingLayerID: 1223517609
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 694901751, guid: 64099c905a4d3f44d98a849f783f7ae8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -278,6 +279,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34375, y: 0.125}
   m_EdgeRadius: 0
+--- !u!114 &8666411107968324733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050084114769024791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ae6588d8d87e40bb4a4d570653641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDisable: 0
+  doesPenetrate: 0
+  doesRotate: 0
+  isLobbed: 0
+  doesBounce: 0
+  explodes: 1
+  hasLifetime: 1
+  disableAfterBounces: 0
+  disableOnContact: 0
+  randomDirection: 0
+  movesBackwards: 0
+  moveUseTranslate: 0
+  moveUseVelocity: 0
+  moveUseMoveTowards: 0
 --- !u!1 &5015076685623035233
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +352,7 @@ GameObject:
   - component: {fileID: 1023255790532416523}
   m_Layer: 0
   m_Name: Light 2D (1)
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
