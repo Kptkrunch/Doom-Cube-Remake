@@ -38,6 +38,8 @@ namespace Weapons.SpecificWeapons
             var mine = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             mine.transform.position = transform.position;
             mine.SetActive(true);
+            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[stats.pid].Play(transform.position);
+
         }
 
         private void SetStats()

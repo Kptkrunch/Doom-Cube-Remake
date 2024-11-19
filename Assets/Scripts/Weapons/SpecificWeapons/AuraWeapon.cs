@@ -13,6 +13,7 @@ namespace Weapons.SpecificWeapons
         private void Start()
         {
             SetStats();
+            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[stats.pid].Play(transform.position);
         }
 
         private void SetStats()
