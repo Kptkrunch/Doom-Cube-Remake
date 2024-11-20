@@ -70,6 +70,7 @@ namespace Weapons.Projectiles
         private void OnDisable()
         {
             pd.stats.movSpeed = _sawSpeed;
+            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[pd.pid].Stop(transform.position);
             SetStats();
         }
 
@@ -83,6 +84,7 @@ namespace Weapons.Projectiles
                     it.doesRotate = true;
                     GrowSaw();
                     StopMoving();
+                    MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[pd.pid].Play(transform.position);
                     if (_spinTimer <= 0)
                     {
                         if (!_triggered) MaybeGoLeftOrRight();

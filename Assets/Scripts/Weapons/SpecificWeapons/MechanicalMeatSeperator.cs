@@ -47,7 +47,7 @@ namespace Weapons.SpecificWeapons
             var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             saw.transform.position = transform.position;
             saw.SetActive(true);
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[stats.pid].Play(transform.position);
+            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
         }
     }
 }

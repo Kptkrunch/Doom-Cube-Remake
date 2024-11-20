@@ -43,6 +43,7 @@ namespace TechSkills
         
         public virtual void TakeDamage(float damage)
         {
+            MusicManager.Instance.sfxTechHit.Feedbacks[id].Play(transform.position);
             ShowDamage(damage);
         }
 

@@ -35,6 +35,7 @@ namespace Weapons.Projectiles
             exp.gameObject.transform.position = transform.position;
             exp.SetActive(true);
             MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[expIndex].Play(transform.position);
+            
             animator.Restart(false);
         }
     }

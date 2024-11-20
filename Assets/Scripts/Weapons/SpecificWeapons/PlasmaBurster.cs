@@ -47,7 +47,7 @@ namespace Weapons.SpecificWeapons
             theProj.pd.stats.direction = Direction;
             proj.SetActive(true);
             proj.transform.rotation = Rotation;
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[stats.pid].Play(transform.position);
+            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
         }
 
         private void SetStats()

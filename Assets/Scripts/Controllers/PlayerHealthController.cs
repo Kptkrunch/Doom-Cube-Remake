@@ -1,4 +1,5 @@
 using MoreMountains.Feedbacks;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +33,11 @@ namespace Controllers
         public void TakeDamage(float damage)
         {
             currentHealth -= damage;
-            if (currentHealth <= 0) gameObject.SetActive(false);
+            if (currentHealth <= 0)
+            {
+                gameObject.SetActive(false);
+                UIController.contUI.gameOver.SetActive(true);
+            }
             ShowDamage(damage, 1f);
             healthSlider.value = currentHealth;
             lastAttackedTime = Time.time;

@@ -58,7 +58,7 @@ namespace Weapons.SpecificWeapons
                     proj.SetActive(true);
                 }
 
-                MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[stats.pid].Play(transform.position);
+                MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
             }
 

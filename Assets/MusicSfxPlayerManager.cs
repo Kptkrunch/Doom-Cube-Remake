@@ -1,3 +1,4 @@
+using System;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -13,10 +14,14 @@ public class MusicManager : MonoBehaviour
     public MMF_Player sfxPlayerProjectiles2;
     public MMF_Player sfxPlayerHit;
     public MMF_Player sfxPlayerTech;
+    public MMF_Player sfxPlayerTech2;
+    public MMF_Player sfxTechHit;
     public MMF_Player sfxCritter;
     public MMF_Player sfxCritter2;
+    public MMF_Player sfxCritterHit;
     public MMF_Player sfxConstruct;
     public MMF_Player sfxConstruct2;
+    public MMF_Player sfxConstructHit;
     public MMF_Player sfxEnemyMuzzle;
     public MMF_Player sfxEnemyProjectiles;
     public MMF_Player sfxEnemyProjectiles2;

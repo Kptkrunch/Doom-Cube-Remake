@@ -14,7 +14,7 @@ namespace Weapons.WeaponModifiers
 
         private void OnEnable()
         {
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[pid].Play(transform.position);
+            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[pid].Play(transform.position);
         }
 
         private void OnDisable()

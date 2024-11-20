@@ -27,7 +27,7 @@ namespace Weapons.SpecificWeapons
         protected IEnumerator AttackLoop()
         {
             CanFire = false;
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[stats.pid].Play(transform.position);
+            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
             burner.transform.localScale = Vector3.Lerp(burner.transform.localScale,
                 stats.weaponLvls[stats.lvl].size, 2.5f);
             burnerFrame.gameObject.SetActive(true);
