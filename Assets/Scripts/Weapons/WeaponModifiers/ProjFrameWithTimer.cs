@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Weapons.WeaponModifiers
@@ -5,10 +6,20 @@ namespace Weapons.WeaponModifiers
     public class ProjFrameWithTimer : MonoBehaviour
     {
         public float activeInterval, coolDownTimer;
+        public int pid;
         public GameObject projectileFrame;
 
         private float _activeTimer;
         private bool _isActive;
+
+        private void OnEnable()
+        {
+            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[pid].Play(transform.position);
+        }
+
+        private void OnDisable()
+        {
+        }
 
         private void Start()
         {

@@ -48,6 +48,9 @@ GameObject:
   - component: {fileID: 5748502814482363799}
   - component: {fileID: 8709522557887814929}
   - component: {fileID: 3933410705178581061}
+  - component: {fileID: 6275283928876890902}
+  - component: {fileID: 3275917787773079819}
+  - component: {fileID: 7164468455949983182}
   m_Layer: 6
   m_Name: OfficeBuildingMed
   m_TagString: BasicObject
@@ -140,9 +143,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -892161175
-  m_SortingLayer: 6
-  m_SortingOrder: 99
+  m_SortingLayerID: 1223517609
+  m_SortingLayer: 5
+  m_SortingOrder: -106
   m_Sprite: {fileID: 1424251682, guid: 3f35b563038a47146878b5bfce6ebd30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -297,6 +300,71 @@ MonoBehaviour:
     maskType: 0
     maskPivot: 0
     transform: {fileID: 4743025493452289461}
+--- !u!114 &6275283928876890902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4494437040393434020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89110521d279dc458eaf9165ca7c14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrder: -106
+  spriteRenderer: {fileID: 8809311948944921003}
+--- !u!114 &3275917787773079819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4494437040393434020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5783dbbad6a59184fa58aa75d79bcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowType: 3
+  shadowLayer: 0
+  shadowDistance: 0
+  shadowDistanceMin: 0.5
+  shadowDistanceMax: 1
+  shadowTranslucency: 0
+  maskType: 0
+  maskLit: 0
+  maskPivot: 0
+  maskLayer: 0
+  maskLitCustom: 1
+  bumpMapMode:
+    type: 0
+    textureType: 0
+    texture: {fileID: 0}
+    sprite: {fileID: 0}
+    invertX: 0
+    invertY: 0
+    depth: 1
+    spriteRenderer: {fileID: 8809311948944921003}
+  mainShape:
+    shadowType: 3
+    maskType: 0
+    maskPivot: 0
+    transform: {fileID: 4743025493452289461}
+--- !u!114 &7164468455949983182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4494437040393434020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89110521d279dc458eaf9165ca7c14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrder: -106
+  spriteRenderer: {fileID: 8809311948944921003}
 --- !u!1 &7772658353415087670
 GameObject:
   m_ObjectHideFlags: 0

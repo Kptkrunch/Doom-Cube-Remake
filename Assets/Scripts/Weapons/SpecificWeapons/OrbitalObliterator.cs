@@ -80,9 +80,17 @@ namespace Weapons.SpecificWeapons
         {
             if (_isFiring)
             {
+                if (!MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].IsPlaying)
+                {
+                    MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+                }
                 _beamStrikePosition = beamImpact.transform.position;
                 theBeam.SetPosition(0, beamOrigin.transform.position);
                 theBeam.SetPosition(1, _beamStrikePosition);
+            }
+            else if (MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].IsPlaying && !_isFiring)
+            {
+                MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Stop(transform.position);
             }
         }
     }

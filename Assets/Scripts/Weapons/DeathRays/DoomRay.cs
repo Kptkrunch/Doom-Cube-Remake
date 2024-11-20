@@ -18,6 +18,7 @@ namespace Weapons.DeathRays
             var position = transform.position;
             lineRenderer.SetPosition(0, position);
             player?.PlayFeedbacks();
+            MusicManager.Instance.sfxDeathRays.FeedbacksList[drid].Play(transform.position);
         }
 
         public override void ResolveDeathRay()

@@ -4,12 +4,8 @@ public class LevelStart : MonoBehaviour
 {
     public MusicManager audioPlayer;
     public int musicIndex = 0;
-    private void Awake()
+    private void Start()
     {
-        audioPlayer = GameObject.Find("MusicManager").GetComponent<MusicManager>();
-
-        if (audioPlayer == null) return;
-        
         audioPlayer.musicPlayer.FeedbacksList[musicIndex].Play(transform.position);
     }
 }

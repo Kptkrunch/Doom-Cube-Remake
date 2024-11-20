@@ -20,6 +20,8 @@ namespace Weapons.DeathRays
             splinePlayer.gameObject.SetActive(true);
             hitMarker.SetActive(true);
             splinePlayer.Play();
+            MusicManager.Instance.sfxDeathRays.FeedbacksList[drid].Play(transform.position);
+
         }
 
         public override void ResolveDeathRay()

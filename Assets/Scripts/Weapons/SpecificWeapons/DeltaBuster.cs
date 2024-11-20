@@ -76,7 +76,6 @@ namespace Weapons.SpecificWeapons
 
             proj.SetActive(true);
             MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[stats.pid].Play(transform.position);
-
         }
 
         private void SetStats()

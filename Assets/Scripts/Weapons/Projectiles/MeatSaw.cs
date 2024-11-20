@@ -136,6 +136,7 @@ namespace Weapons.Projectiles
             rb2d.velocity = new Vector2(
                 Random.Range(-pd.stats.lobDistance, pd.stats.lobDistance),
                 pd.stats.lobHeight);
+            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[pd.pid].Play(transform.position);
         }
 
         private void GrowSaw()
@@ -147,6 +148,7 @@ namespace Weapons.Projectiles
                     var localScale = transform.localScale;
                     localScale = Vector3.Lerp(localScale, _growSawScale, _growSpeed);
                     transform.localScale = localScale;
+                    MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[pd.pid].Play(transform.position);
                     break;
                 }
             }

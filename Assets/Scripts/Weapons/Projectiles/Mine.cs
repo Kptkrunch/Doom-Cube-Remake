@@ -47,6 +47,7 @@ namespace Weapons.Projectiles
             Debug.Log(damager.name);
             explosion.gameObject.transform.position = transform.position;
             explosion.SetActive(true);
+            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[expIndex].Play(transform.position);
             parent.gameObject.SetActive(false);
         }
     }

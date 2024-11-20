@@ -38,6 +38,7 @@ namespace Weapons.Projectiles
             if (collision.CompareTag("Enemy"))
             {
                 var hitParticle = ProjectileHitObjectPools.Instance.hitPools[pd.pid].GetPooledGameObject();
+                MusicManager.Instance.sfxEnemyHit.FeedbacksList[pd.pid].Play(collision.transform.position);
                 hitParticle.transform.position = collision.transform.position;
                 hitParticle.SetActive(true);
             }
@@ -45,6 +46,7 @@ namespace Weapons.Projectiles
             if (collision.CompareTag("BasicObject"))
             {
                 var hitParticle = ProjectileHitObjectPools.Instance.hitPools[pd.pid].GetPooledGameObject();
+                MusicManager.Instance.sfxEnemyHit.FeedbacksList[pd.pid].Play(collision.transform.position);
                 hitParticle.transform.position = collision.transform.position;
                 hitParticle.SetActive(true);
             }

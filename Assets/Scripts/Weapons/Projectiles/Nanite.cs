@@ -1,27 +1,23 @@
+using System;
 using GenUtilsAndTools;
 using UnityEngine;
 
 namespace Weapons.Projectiles
 {
-    public class Nanite : MonoBehaviour
+    public class Nanite : Transmogrifier
     {
         public ObjectPhaser phaser;
 
-        private void MutateEnemy(Collider2D collision)
+        private void Awake()
         {
-            if (collision.CompareTag("Enemy"))
-            {
-                if (collision) collision.gameObject.SetActive(false);
-                var mutantPosition = collision.transform.position;
-                var mutantSlug = MutantsAndBotsPoolManager.poolMutRob.mutAndRobPools[0].GetPooledGameObject();
-                mutantSlug.SetActive(true);
-                mutantSlug.transform.position = mutantPosition;
-            }
+            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[pid].Play(transform.position);
+            // play a particle on spawn
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+
+        private void OnDisable()
         {
-            MutateEnemy(collision);
+            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[pid].Play(transform.position);
         }
     }
 }

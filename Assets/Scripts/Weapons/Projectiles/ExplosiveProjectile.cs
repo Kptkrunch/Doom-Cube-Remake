@@ -59,6 +59,7 @@ namespace Weapons.Projectiles
             damager.gameObject.transform.position = transform.position;
             damager.gameObject.SetActive(true);
             gameObject.SetActive(false);
+            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[expIndex].Play(transform.position);
         }
 
         private void Reset()

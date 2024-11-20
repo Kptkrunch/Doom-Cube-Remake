@@ -89,7 +89,7 @@ namespace Weapons.SpecificWeapons
             missile.transform.position = missileTarget;
             missile.GetComponentInChildren<SplineAnimate>().Play();
             missile.SetActive(true);
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[stats.pid].Play(transform.position);
+            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
         }
     }
 }
