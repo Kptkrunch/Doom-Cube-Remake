@@ -49,10 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4f74c96e21a4146b63fa7a889d64b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  moveSpeed: 0.5
-  moveInterval: 5
-  attackInterval: 5
+  lifeSpan: 6
+  moveSpeed: 1
+  moveInterval: 3
+  attackInterval: 4.5
   attack: {fileID: 6539996000692506314}
   spriteAndAnimator: {fileID: 4905661326358199056}
   animator: {fileID: 8458181951338675336}
@@ -169,6 +169,8 @@ GameObject:
   - component: {fileID: 2233658609277436284}
   - component: {fileID: 6074595479282403013}
   - component: {fileID: 8458181951338675336}
+  - component: {fileID: 3949563821499177286}
+  - component: {fileID: 1282308858627149469}
   m_Layer: 0
   m_Name: slug_0
   m_TagString: Critter
@@ -211,7 +213,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a5a186a012eb3a243a3fb9f21e41f91c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -229,8 +231,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1800235555
-  m_SortingLayer: 1
+  m_SortingLayerID: 1223517609
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 235643716, guid: a79967da9e17d324faa731097f207ae5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -264,6 +266,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3949563821499177286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905661326358199056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89110521d279dc458eaf9165ca7c14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrder: 0
+  spriteRenderer: {fileID: 6074595479282403013}
+--- !u!114 &1282308858627149469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905661326358199056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 3
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1001 &8623513328994968821
 PrefabInstance:
   m_ObjectHideFlags: 0

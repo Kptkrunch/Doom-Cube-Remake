@@ -1,6 +1,7 @@
 using Controllers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Weapons;
 
@@ -29,6 +30,8 @@ namespace UI
             }
 
             _assignedWeapon = theWeapon;
+            EventSystem.current.SetSelectedGameObject(UpgradePanelController.contUpgrades.defaultUISelectionButton);
+
         }
 
         public void SelectUpgrade()

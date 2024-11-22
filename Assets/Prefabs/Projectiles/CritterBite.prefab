@@ -71,6 +71,7 @@ MonoBehaviour:
   doesBounce: 0
   explodes: 0
   hasLifetime: 1
+  hasFuse: 0
   disableAfterBounces: 0
   disableOnContact: 0
   randomDirection: 0
@@ -92,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   damageType: Solid
-  destructive: 0
+  destructive: 1
 --- !u!58 &641901528643828854
 CircleCollider2D:
   m_ObjectHideFlags: 0

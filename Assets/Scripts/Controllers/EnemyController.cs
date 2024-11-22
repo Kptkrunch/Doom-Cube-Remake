@@ -196,9 +196,7 @@ namespace Controllers
             if (_material.GetFloat(FadeAmount) >= 1)
             {
                 ResetEnemy();
-                Debug.Log("after resest");
                 gameObject.SetActive(false);
-                Debug.Log("set active false");
             }
         }
 

@@ -24003,6 +24003,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageType: energy
+  damageType: Energy
   destructive: 1
   blastRadiusCollider: {fileID: 8282982361234971540}

@@ -43,7 +43,6 @@ namespace TechSkills
                 {
                     _targetPosition = _enemiesInRange[0].transform.position;
                     _foundTarget = true;
-                    Debug.Log("target position: " + _targetPosition);
                 }
             }
             

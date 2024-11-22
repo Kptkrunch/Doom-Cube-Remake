@@ -71,6 +71,7 @@ MonoBehaviour:
   doesBounce: 0
   explodes: 0
   hasLifetime: 1
+  hasFuse: 0
   disableAfterBounces: 0
   disableOnContact: 1
   randomDirection: 0
