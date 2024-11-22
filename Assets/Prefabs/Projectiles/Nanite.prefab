@@ -225,6 +225,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a01a13cb3a10f44f8b93c5f49047210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wid: 0
+  pid: 0
+  eid: 0
   phaser: {fileID: 1796175995399259215}
 --- !u!58 &4881650294944875138
 CircleCollider2D:

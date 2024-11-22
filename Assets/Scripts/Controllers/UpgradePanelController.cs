@@ -7,6 +7,7 @@ namespace Controllers
     {
         public static UpgradePanelController contUpgrades;
         public SkipLevelButton skipLevelButton;
+        public GameObject defaultUISelectionButton;
         public bool isOpen;
         public UpgradePanel[] upgradePanels;
 

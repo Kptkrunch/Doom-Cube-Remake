@@ -13,6 +13,7 @@ namespace Weapons.WeaponModifiers
         public bool doesBounce;
         public bool explodes;
         public bool hasLifetime;
+        public bool hasFuse;
         public bool disableAfterBounces;
         public bool disableOnContact;
         public bool randomDirection;

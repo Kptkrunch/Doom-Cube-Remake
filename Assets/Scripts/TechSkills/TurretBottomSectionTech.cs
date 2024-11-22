@@ -21,6 +21,7 @@ namespace TechSkills
         {
             currentHealth -= damage;
             _percentDamaged = 1 - (currentHealth / maxHealth);
+            MusicManager.Instance.sfxPlayerHit.FeedbacksList[id].Play(transform.position);
             turretTop.percentDamaged = _percentDamaged;
             
             ShowDamage(damage, 1f);

@@ -18,7 +18,6 @@ namespace Objects
             {
                 spriteRenderer.sortingOrder = _yAxis;
             } 
-            Debug.Log(_yAxis);
         }
 
         private void FixedUpdate()
@@ -26,7 +25,6 @@ namespace Objects
             if (isStaticObject) return;
             _yAxis = (int)(objectCenterTransform.position.y * -10).RoundDown(0);
             spriteRenderer.sortingOrder = _yAxis;
-            Debug.Log("inside the update y axis");
         }
     }
 }

@@ -52,6 +52,8 @@ MonoBehaviour:
   obj: {fileID: 724270545706422958}
   phaseOutInterval: 10
   phaseInInterval: 10
+  phaseInParticleIndex: 0
+  phaseOutParticleIndex: 0
 --- !u!1 &1648350872401376539
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +106,8 @@ MonoBehaviour:
   obj: {fileID: 929472377737930738}
   phaseOutInterval: 10
   phaseInInterval: 10
+  phaseInParticleIndex: 0
+  phaseOutParticleIndex: 0
 --- !u!1 &2714843142245173538
 GameObject:
   m_ObjectHideFlags: 0

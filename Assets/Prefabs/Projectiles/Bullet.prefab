@@ -71,11 +71,6 @@ MonoBehaviour:
   damage: 1
   damageType: physical
   destructive: 0
-  hitsGround: 1
-  hitsAir: 1
-  fireDamage: 0
-  chemicalDamage: 0
-  explosiveDamage: 0
 --- !u!50 &3261258776330953320
 Rigidbody2D:
   serializedVersion: 4

@@ -21,20 +21,20 @@ MonoBehaviour:
   - damage: 0
     ammo: 0
     range: 2
-    coolDown: 10
-    rateOfFire: 10
-    duration: 10
-    speed: 9.65
+    coolDown: 3
+    rateOfFire: 3
+    duration: 3
+    speed: 5
     size: {x: 0, y: 0, z: 0}
     wildCard: 0
     upgradeText: 
   - damage: 0
     ammo: 0
-    range: 3
-    coolDown: 8
-    rateOfFire: 8
-    duration: 8
-    speed: 3
+    range: 2.5
+    coolDown: 3
+    rateOfFire: 3
+    duration: 3
+    speed: 6
     size: {x: 0, y: 0, z: 0}
     wildCard: 0
     upgradeText: 

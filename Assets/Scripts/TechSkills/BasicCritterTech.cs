@@ -43,7 +43,6 @@ namespace TechSkills
                 {
                     _targetPosition = _enemiesInRange[0].transform.position;
                     _foundTarget = true;
-                    Debug.Log("target position: " + _targetPosition);
                 }
             }
             
@@ -87,6 +86,7 @@ namespace TechSkills
                 var attack = ProjectilePoolManager.poolProj.projPools[pid].GetPooledGameObject();
                 attack.transform.position = _targetPosition;
                 attack.SetActive(true);
+                MusicManager.Instance.sfxCritter.FeedbacksList[id].Play(transform.position);
             }
 
             yield return new WaitForSeconds(attackSpeed);

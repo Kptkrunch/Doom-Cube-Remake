@@ -113,12 +113,14 @@ namespace Controllers
                 availableTech.AddRange(TechController.ContTechCon.allAvailableTechList);
 
             for (var i = TechController.ContTechCon.upgradeableTech.Count; i < 3; i++)
+            {
                 if (availableTech.Count > 0)
                 {
                     var selectedTech = Random.Range(0, availableTech.Count);
                     TechController.ContTechCon.upgradeableTech.Add(availableTech[selectedTech]);
                     availableTech.RemoveAt(selectedTech);
                 }
+            }
 
             for (var i = 0; i < TechPanelController.ContTechPanel.techUpgradePanels.Length; i++)
                 TechPanelController.ContTechPanel.techUpgradePanels[i]

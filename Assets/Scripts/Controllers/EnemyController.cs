@@ -58,6 +58,7 @@ namespace Controllers
         public void TakeDamage(float enemyDamage, string damageType)
         {
             health -= enemyDamage;
+            GetSoundByDamageType(damageType);
             if (health <= 0)
             {
                 it.DmgTypeDictionary[damageType] = true;
@@ -195,9 +196,7 @@ namespace Controllers
             if (_material.GetFloat(FadeAmount) >= 1)
             {
                 ResetEnemy();
-                Debug.Log("after resest");
                 gameObject.SetActive(false);
-                Debug.Log("set active false");
             }
         }
 
@@ -251,6 +250,37 @@ namespace Controllers
             it.DmgTypeDictionary["Mind"] = false;
             _material.SetFloat(OffsetUvY, 0);
             _material.SetFloat(FadeAmount, 0.1f);
+        }
+
+        private void GetSoundByDamageType(string dt)
+        {
+            switch (dt)
+            {
+                case "Deathray":
+                    MusicManager.Instance.sfxEnemyHit.FeedbacksList[0].Play(transform.position);
+                    break;
+                case "Acid":
+                    MusicManager.Instance.sfxEnemyHit.FeedbacksList[1].Play(transform.position);
+                    break;
+                case "Fire":
+                    MusicManager.Instance.sfxEnemyHit.FeedbacksList[2].Play(transform.position);
+                    break;
+                case "Energy":
+                    MusicManager.Instance.sfxEnemyHit.FeedbacksList[3].Play(transform.position);
+                    break;
+                case "Mind":
+                    MusicManager.Instance.sfxEnemyHit.FeedbacksList[4].Play(transform.position);
+                    break;
+                case "Solid":
+                    MusicManager.Instance.sfxEnemyHit.FeedbacksList[5].Play(transform.position);
+                    break;
+                case "Slice":
+                    MusicManager.Instance.sfxEnemyHit.FeedbacksList[6].Play(transform.position);
+                    break;
+                case "Stab":
+                    MusicManager.Instance.sfxEnemyHit.FeedbacksList[7].Play(transform.position);
+                    break;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Weapons.Projectiles
 {
@@ -7,8 +8,7 @@ namespace Weapons.Projectiles
     public class ProjectileData : ScriptableObject
     {
         public string projName;
-        public int pid;
-        public int eid;
+        public int pid, eid;
         public ProjStats stats = new();
 
         [Serializable]
@@ -21,7 +21,8 @@ namespace Weapons.Projectiles
             public float lobDistance;
             public float rotSpeed;
             public float lifeTime;
-            public float pens;
+            public float fuseTime;
+            public float penetrates;
             public float bounces;
             public float bounceInterval;
             public Vector2 direction;

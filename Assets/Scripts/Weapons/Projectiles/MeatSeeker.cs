@@ -1,3 +1,4 @@
+using System;
 using Controllers.Pools;
 using Damagers;
 using UnityEngine;
@@ -12,6 +13,11 @@ namespace Weapons.Projectiles
         public float blastRadius;
         public SplineAnimate animator;
         public GameObject parent;
+
+        private void Awake()
+        {
+            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[expIndex].Play(transform.position);
+        }
 
         private void FixedUpdate()
         {
@@ -28,6 +34,8 @@ namespace Weapons.Projectiles
             Debug.Log(damager.blastRadiusCollider.radius);
             exp.gameObject.transform.position = transform.position;
             exp.SetActive(true);
+            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[expIndex].Play(transform.position);
+            
             animator.Restart(false);
         }
     }

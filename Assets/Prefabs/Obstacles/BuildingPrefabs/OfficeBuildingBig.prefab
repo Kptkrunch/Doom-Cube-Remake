@@ -112,6 +112,9 @@ GameObject:
   - component: {fileID: 2494152151626494814}
   - component: {fileID: 3482796927483627182}
   - component: {fileID: 3568001142101358785}
+  - component: {fileID: 6049139473740000787}
+  - component: {fileID: 3625141711607697527}
+  - component: {fileID: 2807041021451269922}
   m_Layer: 6
   m_Name: OfficeBuildingBig
   m_TagString: BasicObject
@@ -204,9 +207,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -892161175
-  m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingLayerID: 1223517609
+  m_SortingLayer: 5
+  m_SortingOrder: -121
   m_Sprite: {fileID: -928141443, guid: 6bdf02e50dceb6b4dae76bceb743b6e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -361,6 +364,71 @@ MonoBehaviour:
     maskType: 0
     maskPivot: 0
     transform: {fileID: 8993304715228827756}
+--- !u!114 &6049139473740000787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202454134009869607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89110521d279dc458eaf9165ca7c14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrder: -121
+  spriteRenderer: {fileID: 5839783586652332614}
+--- !u!114 &3625141711607697527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202454134009869607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5783dbbad6a59184fa58aa75d79bcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowType: 3
+  shadowLayer: 0
+  shadowDistance: 0
+  shadowDistanceMin: 0.5
+  shadowDistanceMax: 1
+  shadowTranslucency: 0
+  maskType: 0
+  maskLit: 0
+  maskPivot: 0
+  maskLayer: 0
+  maskLitCustom: 1
+  bumpMapMode:
+    type: 0
+    textureType: 0
+    texture: {fileID: 0}
+    sprite: {fileID: 0}
+    invertX: 0
+    invertY: 0
+    depth: 1
+    spriteRenderer: {fileID: 5839783586652332614}
+  mainShape:
+    shadowType: 3
+    maskType: 0
+    maskPivot: 0
+    transform: {fileID: 8993304715228827756}
+--- !u!114 &2807041021451269922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202454134009869607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89110521d279dc458eaf9165ca7c14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrder: -121
+  spriteRenderer: {fileID: 5839783586652332614}
 --- !u!1001 &1902393600058034656
 PrefabInstance:
   m_ObjectHideFlags: 0

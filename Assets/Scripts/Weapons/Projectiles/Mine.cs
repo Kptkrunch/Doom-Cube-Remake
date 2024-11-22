@@ -6,31 +6,21 @@ namespace Weapons.Projectiles
 {
     public class Mine : Projectile
     {
-        public int expIndex;
-        public bool hasFuse;
+        public int expIndex; 
         public float damage, expRadius;
-        public float fuseTimer = 3;
-        private float _fuseTimer;
 
         private void Awake()
         {
-            _fuseTimer = fuseTimer;
+            _fuseTimer = pd.stats.fuseTime;
+            _lifeTimer = pd.stats.lifeTime;
             damage = pd.stats.damage;
             expRadius = pd.stats.size;
         }
 
         private void FixedUpdate()
         {
-            if (hasFuse)
-            {
-                _fuseTimer -= Time.deltaTime;
-                if (_fuseTimer <= 0)
-                {
-                    _fuseTimer = fuseTimer;
-                    if (it.explodes) Detonate();
-                    parent.gameObject.SetActive(false);
-                }
-            }
+            MaybeHasFuseTime();
+            MaybeHasLifetime();
         }
 
         protected override void OnTriggerEnter2D(Collider2D collision)
@@ -47,7 +37,23 @@ namespace Weapons.Projectiles
             Debug.Log(damager.name);
             explosion.gameObject.transform.position = transform.position;
             explosion.SetActive(true);
+            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[expIndex].Play(transform.position);
             parent.gameObject.SetActive(false);
         }
+
+        private void MaybeHasFuseTime()
+        {
+            if (!it.hasFuse) return;
+            
+            _fuseTimer -= Time.deltaTime;
+            if (_fuseTimer <= 0)
+            {
+                _fuseTimer = pd.stats.fuseTime;
+                if (it.explodes) Detonate();
+                parent.gameObject.SetActive(false);
+            }
+        }
+
+
     }
 }

@@ -5,12 +5,13 @@ namespace Controllers
     public class PlayerController : MonoBehaviour
     {
         public static PlayerController contPlayer;
-        private float _moveSpeed;
         public Animator animator;
         public GameObject weapons;
         public GameObject deathRays;
         public Rigidbody2D rb2d;
+        public bool allowedControl;
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+        private float _moveSpeed;
 
         private void Awake()
         {
@@ -20,10 +21,12 @@ namespace Controllers
         private void Start()
         {
             _moveSpeed = PlayerStatsController.contStats.moveSpeed;
+            allowedControl = false;
         }
 
         private void Update()
         {
+            if (!allowedControl) return;
             HandleMovementAndFlip();
             TurnOffLvelUpParticle();
             ShowGameOver();

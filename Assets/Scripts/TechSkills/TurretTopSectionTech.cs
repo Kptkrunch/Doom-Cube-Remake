@@ -11,7 +11,7 @@ namespace TechSkills
     {
         private static readonly int GreyscaleBlend = Shader.PropertyToID("_GreyscaleBlend");
         public TechWeaponData turretWeaponData;
-        public int pid;
+        public int pid, tid;
         public float rotationSpeed, fireRate, range;
         public SpriteRenderer spriteRenderer;
         public CircleCollider2D collider2d;
@@ -95,6 +95,7 @@ namespace TechSkills
             _canFire = true;
             _target = null;
             _direction = Vector3.zero;
+            MusicManager.Instance.sfxPlayerTech.FeedbacksList[tid].Play(transform.position);
         }
 
         private void SetStats()

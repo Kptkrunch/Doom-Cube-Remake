@@ -34,7 +34,7 @@ namespace EnemyStuff
             }
             _waveTimer -= Time.fixedDeltaTime;
             
-            if (_canSpawn)
+            if (_canSpawn && currentWaveIndex < waveInfoList.Count)
             {
                 StartCoroutine(SpawnEnemies());
             }

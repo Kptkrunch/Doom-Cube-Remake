@@ -112,6 +112,9 @@ GameObject:
   - component: {fileID: 4299092612293722955}
   - component: {fileID: 8262775572592631072}
   - component: {fileID: 5136594588792831062}
+  - component: {fileID: 3392664584110211583}
+  - component: {fileID: 6746526509490764606}
+  - component: {fileID: 8829237164435730150}
   m_Layer: 6
   m_Name: HouseMed
   m_TagString: BasicObject
@@ -204,9 +207,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -892161175
-  m_SortingLayer: 6
-  m_SortingOrder: 99
+  m_SortingLayerID: 1223517609
+  m_SortingLayer: 5
+  m_SortingOrder: -98
   m_Sprite: {fileID: -1759824961, guid: 826bfd5762decf144a3809b6f78f22c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -361,6 +364,71 @@ MonoBehaviour:
     maskType: 0
     maskPivot: 0
     transform: {fileID: 6871095413115272602}
+--- !u!114 &3392664584110211583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532187142412835366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89110521d279dc458eaf9165ca7c14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrder: -98
+  spriteRenderer: {fileID: 6254184817578464602}
+--- !u!114 &6746526509490764606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532187142412835366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5783dbbad6a59184fa58aa75d79bcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowType: 3
+  shadowLayer: 0
+  shadowDistance: 0
+  shadowDistanceMin: 0.5
+  shadowDistanceMax: 1
+  shadowTranslucency: 0
+  maskType: 0
+  maskLit: 0
+  maskPivot: 0
+  maskLayer: 0
+  maskLitCustom: 1
+  bumpMapMode:
+    type: 0
+    textureType: 0
+    texture: {fileID: 0}
+    sprite: {fileID: 0}
+    invertX: 0
+    invertY: 0
+    depth: 1
+    spriteRenderer: {fileID: 6254184817578464602}
+  mainShape:
+    shadowType: 3
+    maskType: 0
+    maskPivot: 0
+    transform: {fileID: 6871095413115272602}
+--- !u!114 &8829237164435730150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532187142412835366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89110521d279dc458eaf9165ca7c14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrder: -98
+  spriteRenderer: {fileID: 6254184817578464602}
 --- !u!1001 &339929782487586027
 PrefabInstance:
   m_ObjectHideFlags: 0

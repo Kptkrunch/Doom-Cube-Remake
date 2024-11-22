@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   damageType: Energy
-  destructive: 0
+  destructive: 1
 --- !u!58 &8347340753095523733
 CircleCollider2D:
   m_ObjectHideFlags: 0

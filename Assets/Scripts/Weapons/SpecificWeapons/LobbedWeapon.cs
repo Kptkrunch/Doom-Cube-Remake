@@ -52,9 +52,11 @@ namespace Weapons.SpecificWeapons
             var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
             flash.transform.position = transform.position;
             flash.SetActive(true);
-            var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-            saw.transform.position = transform.position;
-            saw.SetActive(true);
+            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+
+            var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+            proj.transform.position = transform.position;
+            proj.SetActive(true);
         }
     }
 }

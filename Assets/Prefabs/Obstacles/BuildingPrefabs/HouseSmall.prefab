@@ -48,6 +48,9 @@ GameObject:
   - component: {fileID: 5443726210475701889}
   - component: {fileID: 7429690639022285873}
   - component: {fileID: 3951106412806126491}
+  - component: {fileID: 8633208354431592927}
+  - component: {fileID: 6752133510076753875}
+  - component: {fileID: 3207974879758563416}
   m_Layer: 6
   m_Name: HouseSmall
   m_TagString: BasicObject
@@ -140,9 +143,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -892161175
-  m_SortingLayer: 6
-  m_SortingOrder: 99
+  m_SortingLayerID: 1223517609
+  m_SortingLayer: 5
+  m_SortingOrder: -82
   m_Sprite: {fileID: 1119714724, guid: 7c3649adb554b4d44b8dfb5b97cc27f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -297,6 +300,71 @@ MonoBehaviour:
     maskType: 0
     maskPivot: 0
     transform: {fileID: 1161593828504359045}
+--- !u!114 &8633208354431592927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6109655592166106017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89110521d279dc458eaf9165ca7c14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrder: -82
+  spriteRenderer: {fileID: 7747261874923763117}
+--- !u!114 &6752133510076753875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6109655592166106017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5783dbbad6a59184fa58aa75d79bcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowType: 3
+  shadowLayer: 0
+  shadowDistance: 0
+  shadowDistanceMin: 0.5
+  shadowDistanceMax: 1
+  shadowTranslucency: 0
+  maskType: 0
+  maskLit: 0
+  maskPivot: 0
+  maskLayer: 0
+  maskLitCustom: 1
+  bumpMapMode:
+    type: 0
+    textureType: 0
+    texture: {fileID: 0}
+    sprite: {fileID: 0}
+    invertX: 0
+    invertY: 0
+    depth: 1
+    spriteRenderer: {fileID: 7747261874923763117}
+  mainShape:
+    shadowType: 3
+    maskType: 0
+    maskPivot: 0
+    transform: {fileID: 1161593828504359045}
+--- !u!114 &3207974879758563416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6109655592166106017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89110521d279dc458eaf9165ca7c14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrder: -82
+  spriteRenderer: {fileID: 7747261874923763117}
 --- !u!1 &6823969248464943033
 GameObject:
   m_ObjectHideFlags: 0

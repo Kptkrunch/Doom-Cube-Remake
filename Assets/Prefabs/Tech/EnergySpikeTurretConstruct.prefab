@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretWeaponData: {fileID: 11400000, guid: 0e733fd3d4492514f97291e56d327bbb, type: 2}
   pid: 0
+  tid: 0
   rotationSpeed: 0
   fireRate: 0
   range: 0

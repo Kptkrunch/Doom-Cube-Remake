@@ -620,6 +620,12 @@ MonoBehaviour:
     rootOnly: 0
     recursive: 1
   _sceneHistory:
+  - name: Level1
+    path: Assets/Scenes/Level1.unity
+  - name: SampleScene
+    path: Assets/Scenes/SampleScene.unity
+  - name: TitleScreen
+    path: Assets/Scenes/TitleScreen.unity
   - name: MainCorridorScene
     path: Assets/Scenes/MainCorridorScene.unity
   - name: MainScene 1

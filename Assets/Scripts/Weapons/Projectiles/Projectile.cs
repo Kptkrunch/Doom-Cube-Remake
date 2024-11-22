@@ -12,18 +12,18 @@ namespace Weapons.Projectiles
         public ProjectileData pd;
         public GameObject parent;
         [CanBeNull] public EnemyDamager enemyDamager;
-        private float _lifeTime, _pens;
+        protected float _lifeTimer, _fuseTimer, _pens;
 
         private void Awake()
         {
             pd = Instantiate(pd);
-            _lifeTime = pd.stats.lifeTime;
-            _pens = pd.stats.pens;
+            _lifeTimer = pd.stats.lifeTime;
+            _pens = pd.stats.penetrates;
         }
 
         private void FixedUpdate()
         {
-            if (it.hasLifetime) _lifeTime -= Time.deltaTime;
+            if (it.hasLifetime) _lifeTimer -= Time.deltaTime;
 
             MaybeMoveViaTranslation();
             MaybeHasLifetime();
@@ -38,6 +38,7 @@ namespace Weapons.Projectiles
             if (collision.CompareTag("Enemy"))
             {
                 var hitParticle = ProjectileHitObjectPools.Instance.hitPools[pd.pid].GetPooledGameObject();
+                MusicManager.Instance.sfxEnemyHit.FeedbacksList[pd.pid].Play(collision.transform.position);
                 hitParticle.transform.position = collision.transform.position;
                 hitParticle.SetActive(true);
             }
@@ -45,6 +46,7 @@ namespace Weapons.Projectiles
             if (collision.CompareTag("BasicObject"))
             {
                 var hitParticle = ProjectileHitObjectPools.Instance.hitPools[pd.pid].GetPooledGameObject();
+                MusicManager.Instance.sfxEnemyHit.FeedbacksList[pd.pid].Play(collision.transform.position);
                 hitParticle.transform.position = collision.transform.position;
                 hitParticle.SetActive(true);
             }
@@ -62,7 +64,7 @@ namespace Weapons.Projectiles
                 _pens--;
                 if (_pens <= 0)
                 {
-                    _pens = pd.stats.pens;
+                    _pens = pd.stats.penetrates;
                     gameObject.SetActive(false);
                 }
             }
@@ -88,9 +90,11 @@ namespace Weapons.Projectiles
 
         protected void MaybeHasLifetime()
         {
-            if (_lifeTime <= 0)
+            if (!it.hasLifetime) return;
+            _lifeTimer -= Time.deltaTime;
+            if (_lifeTimer <= 0)
             {
-                _lifeTime = pd.stats.lifeTime;
+                _lifeTimer = pd.stats.lifeTime;
                 parent.gameObject.SetActive(false);
             }
         }
@@ -120,8 +124,8 @@ namespace Weapons.Projectiles
 
         private void OnDisable()
         {
-            _lifeTime = pd.stats.lifeTime;
-            _pens = pd.stats.pens;
+            _lifeTimer = pd.stats.lifeTime;
+            _pens = pd.stats.penetrates;
         }
     }
 }
