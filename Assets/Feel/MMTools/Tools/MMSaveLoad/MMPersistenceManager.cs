@@ -58,7 +58,7 @@ namespace MoreMountains.Tools
 		public bool SaveToFileButton;
 		[MMInspectorButton("LoadFromFileToMemory")]
 		public bool LoadFromFileButton;
-		[MMInspectorButton("DeletePersistencyFile")]
+		[MMInspectorButton("DeletePersistenceFile")]
 		public bool DeletePersistencyFileButton;
 
 		public DictionaryStringSceneData SceneDatas;
@@ -70,7 +70,15 @@ namespace MoreMountains.Tools
 		protected string _currentSceneName;
 
 		#region INITIALIZATION
-
+			/// <summary>
+			/// Statics initialization to support enter play modes
+			/// </summary>
+			[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+			protected static void InitializeStatics()
+			{
+				_instance = null;
+			}
+		
 			/// <summary>
 			/// On Awake we initialize our dictionary
 			/// </summary>
