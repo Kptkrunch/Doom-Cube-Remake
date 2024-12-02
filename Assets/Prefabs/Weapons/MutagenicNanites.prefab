@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 724270545706422958}
-  phaseOutInterval: 10
-  phaseInInterval: 10
+  phaseOutInterval: 3
+  phaseInInterval: 3
   phaseInParticleIndex: 0
   phaseOutParticleIndex: 0
 --- !u!1 &1648350872401376539
@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 929472377737930738}
-  phaseOutInterval: 10
-  phaseInInterval: 10
+  phaseOutInterval: 3
+  phaseInInterval: 3
   phaseInParticleIndex: 0
   phaseOutParticleIndex: 0
 --- !u!1 &2714843142245173538
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 673b11440b342a94aa236dc70f176fff, type: 2}
-  uiSprite: {fileID: 0}
+  uiSprite: {fileID: -1255574354, guid: 5eda7b2a067ab884186599f65074b1bc, type: 3}
   enemyDamagers: []
   projectileScales: []
   projFrameWithTimer: {fileID: 0}
@@ -224,10 +224,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1538803318744657949}
     m_Modifications:
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: color.a
+      value: 0.227
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: outerAngle
+      value: 53.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: eventPresetId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: spotAngleInner
+      value: 103.43283
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: spotAngleOuter
+      value: 265.97015
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: meshMode.enable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: meshMode.sortingLayer.name
+      value: UI
+      objectReference: {fileID: 0}
     - target: {fileID: 1742543258363886262, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: phaser
       value: 
       objectReference: {fileID: 7714734752393094163}
+    - target: {fileID: 2945851500710002335, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 3329561752752909793, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -239,6 +271,30 @@ PrefabInstance:
     - target: {fileID: 3526632159734187561, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617306987583901433, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617306987583901433, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1223517609
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617784490426922021, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617784490426922021, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1223517609
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266583793645252760, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266583793645252760, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1223517609
       objectReference: {fileID: 0}
     - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -311,10 +367,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 54338230880036718}
     m_Modifications:
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: color.a
+      value: 0.227
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: outerAngle
+      value: 53.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: eventPresetId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: spotAngleInner
+      value: 103.43283
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: spotAngleOuter
+      value: 265.97015
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: meshMode.enable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 135026575334082902, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: meshMode.sortingLayer.name
+      value: UI
+      objectReference: {fileID: 0}
     - target: {fileID: 1742543258363886262, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: phaser
       value: 
       objectReference: {fileID: 6041282756868791652}
+    - target: {fileID: 1796175995399259215, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: phaseInInterval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796175995399259215, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: phaseOutInterval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945851500710002335, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 3329561752752909793, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -326,6 +422,22 @@ PrefabInstance:
     - target: {fileID: 3526632159734187561, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617306987583901433, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617306987583901433, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1223517609
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617784490426922021, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617784490426922021, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1223517609
       objectReference: {fileID: 0}
     - target: {fileID: 3618588192226825841, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: InitialModule.startSpeed.maxCurve.m_RotationOrder
@@ -346,6 +458,14 @@ PrefabInstance:
     - target: {fileID: 3623173525419145681, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_RotationOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266583793645252760, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266583793645252760, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1223517609
       objectReference: {fileID: 0}
     - target: {fileID: 8016344217501654411, guid: 1f12c576041bae14e9f984a08d9689d1, type: 3}
       propertyPath: m_LocalPosition.x

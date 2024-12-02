@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Controllers.Pools;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using Weapons.Projectiles;
 
@@ -15,6 +16,7 @@ namespace Weapons.SpecificWeapons
         private void Start()
         {
             SetStats();
+            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -75,7 +77,7 @@ namespace Weapons.SpecificWeapons
             if (index % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
 
             proj.SetActive(true);
-            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+            Player.FeedbacksList[0].Play(transform.position);
         }
 
         private void SetStats()

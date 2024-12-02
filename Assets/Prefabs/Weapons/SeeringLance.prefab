@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: ec97002ebb4b6c842a97f102899f10e4, type: 2}
-  uiSprite: {fileID: 0}
+  uiSprite: {fileID: -1304725439, guid: d694fd4c39f85ef41b48f0e43c7bfbe0, type: 3}
   it: {fileID: 8012988009571969941}
   dir1: {x: 0, y: 1}
   dir2: {x: 0, y: -1}
@@ -75,6 +75,7 @@ MonoBehaviour:
   doesBounce: 0
   explodes: 0
   hasLifetime: 0
+  hasFuse: 0
   disableAfterBounces: 0
   disableOnContact: 0
   randomDirection: 0

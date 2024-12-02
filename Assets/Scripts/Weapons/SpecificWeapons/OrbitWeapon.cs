@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Damagers;
 using GenUtilsAndTools;
 using JetBrains.Annotations;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using Weapons.WeaponModifiers;
 
@@ -14,6 +15,7 @@ namespace Weapons.SpecificWeapons
         [CanBeNull] public List<GrowShrinkObj> projectileScales;
         [CanBeNull] public ProjFrameWithTimer projFrameWithTimer;
         [CanBeNull] public NaniteController naniteController;
+        protected MMF_Player Player;
 
         private float _rotationSpeed;
 
@@ -21,6 +23,7 @@ namespace Weapons.SpecificWeapons
         {
             SetStats();
             if (projFrameWithTimer != null) projFrameWithTimer.pid = stats.pid;
+            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -41,6 +44,7 @@ namespace Weapons.SpecificWeapons
         private void OnEnable()
         {
             SetStats();
+            Player.FeedbacksList[0].Play(transform.position);
         }
 
         private void SetStats()

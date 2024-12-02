@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: ff43e22d893f7aa4783f2eba0d2a3902, type: 2}
-  uiSprite: {fileID: 0}
+  uiSprite: {fileID: 1522901207, guid: 4e1511caeefa7e34496a2bd77f645871, type: 3}
   auraDamager: {fileID: 6389339197873565023}
   auraCollider: {fileID: 2676920559286787964}
   auraParticles: {fileID: 4438535198638987798}

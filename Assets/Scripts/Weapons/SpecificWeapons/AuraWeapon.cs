@@ -1,4 +1,5 @@
 using Damagers;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -9,11 +10,12 @@ namespace Weapons.SpecificWeapons
         public EAuraDamager auraDamager;
         [SerializeField] private CircleCollider2D auraCollider;
         [SerializeField] private Transform auraParticles;
-
+        protected MMF_Player Player;
         private void Start()
         {
-            SetStats();
-            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+            SetStats(); 
+            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
+            Player.FeedbacksList[0].Play(transform.position);
         }
 
         private void SetStats()

@@ -1,5 +1,6 @@
 using System.Collections;
 using Controllers.Pools;
+using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -15,10 +16,11 @@ namespace Weapons.SpecificWeapons
         public MMSimpleObjectPooler pingPool;
         private float _missleIndex;
         private bool _pinged;
-
+        protected MMF_Player Player;
         private void Start()
         {
             SetStats();
+            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -89,7 +91,7 @@ namespace Weapons.SpecificWeapons
             missile.transform.position = missileTarget;
             missile.GetComponentInChildren<SplineAnimate>().Play();
             missile.SetActive(true);
-            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+            Player.FeedbacksList[0].Play(transform.position);
         }
     }
 }

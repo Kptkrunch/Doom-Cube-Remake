@@ -1,5 +1,6 @@
 using System.Collections;
 using Controllers.Pools;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace Weapons.SpecificWeapons
@@ -7,10 +8,10 @@ namespace Weapons.SpecificWeapons
     public class MechanicalMeatSeperator : LobbedWeapon
     {
         private Vector3 _direction;
-
         private void Start()
         {
             SetStats();
+            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -47,7 +48,7 @@ namespace Weapons.SpecificWeapons
             var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             saw.transform.position = transform.position;
             saw.SetActive(true);
-            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+            Player.FeedbacksList[0].Play(transform.position);
         }
     }
 }

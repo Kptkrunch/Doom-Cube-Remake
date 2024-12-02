@@ -31,7 +31,7 @@ public class CubeCrashLanding : MonoBehaviour
     {
         player.PlayFeedbacks();
         fallingObject.SetActive(true); 
-        MusicManager.Instance.musicPlayer.FeedbacksList[1].Play(transform.position);
+        // MusicManager.Instance.musicPlayer.FeedbacksList[1].Play(transform.position);
     }
 
     private void FixedUpdate()

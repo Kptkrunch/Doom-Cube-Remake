@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using Controllers.Pools;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace Weapons.SpecificWeapons
 {
     public class MineSlayer : PrefabBasedWeapon
     {
+        protected MMF_Player Player;
         private void Start()
         {
             SetStats();
+            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -38,7 +41,7 @@ namespace Weapons.SpecificWeapons
             var mine = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             mine.transform.position = transform.position;
             mine.SetActive(true);
-            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+            Player.FeedbacksList[0].Play(transform.position);
         }
 
         private void SetStats()

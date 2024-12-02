@@ -1,4 +1,5 @@
 using System;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,12 +14,13 @@ namespace Weapons.SpecificWeapons
         private float _beamCooldown, _beamDuration, _beamCdTimer, _beamDurationTimer, _moveSpeed, _signalRange;
         private bool _isFiring, _gotLocation;
         private Vector3 _newSignalPosition, _beamStrikePosition;
-
+        protected MMF_Player Player;
         private void Start()
         {
             var position = beamSignal.transform.position;
             beamOrigin.transform.position = new Vector2(position.x, position.y + 10);
             SetStats();
+            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -80,17 +82,17 @@ namespace Weapons.SpecificWeapons
         {
             if (_isFiring)
             {
-                if (!MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].IsPlaying)
+                if (!Player.FeedbacksList[0].IsPlaying)
                 {
-                    MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+                    Player.FeedbacksList[0].Play(transform.position);
                 }
                 _beamStrikePosition = beamImpact.transform.position;
                 theBeam.SetPosition(0, beamOrigin.transform.position);
                 theBeam.SetPosition(1, _beamStrikePosition);
             }
-            else if (MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].IsPlaying && !_isFiring)
+            else if (Player.FeedbacksList[0].IsPlaying && !_isFiring)
             {
-                MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Stop(transform.position);
+                Player.FeedbacksList[0].Play(transform.position);
             }
         }
     }

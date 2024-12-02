@@ -436,4 +436,6 @@ MonoBehaviour:
   _sceneHistory:
   - name: Level1
     path: Assets/Scenes/Level1.unity
+  - name: TitleScreen
+    path: Assets/Scenes/TitleScreen.unity
   _notes: []

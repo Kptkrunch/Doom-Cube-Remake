@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9044646984967886356
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4348597938374452490, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: managedReferences[4492353375801966592].ID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348597938374452490, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: managedReferences[4492353375801966595].ID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348597938374452490, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: managedReferences[4492353375801966596].ID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348597938374452490, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: managedReferences[4492353375801966592].Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 2db7dd2b185b2b040a9f404b797c889f, type: 3}
+    - target: {fileID: 4348597938374452490, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: managedReferences[4492353375801966595].Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: ccbcac35a8a65e94397f44af5396d624, type: 3}
+    - target: {fileID: 5254945368491502573, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_Name
+      value: SfxController-Thug-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254945368491502573, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254945368491502573, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453999882162104425, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453999882162104425, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453999882162104425, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453999882162104425, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453999882162104425, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453999882162104425, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453999882162104425, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453999882162104425, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453999882162104425, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453999882162104425, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105039863147368422, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: wid
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105039863147368422, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+      propertyPath: weaponName
+      value: MeatSeekers
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9105039863147368422, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 38c7634fe458bc4479e9a5b864e3740a, type: 3}
