@@ -80,7 +80,7 @@ public class CubeCrashLanding : MonoBehaviour
             fallingObject.SetActive(false);
 
             explosionParticle.SetActive(true);
-            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[eid].Play(transform.position);
+            // MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[eid].Play(transform.position);
         }
     }
 

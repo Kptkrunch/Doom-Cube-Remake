@@ -16,11 +16,9 @@ namespace Weapons.SpecificWeapons
         public MMSimpleObjectPooler pingPool;
         private float _missleIndex;
         private bool _pinged;
-        protected MMF_Player Player;
         private void Start()
         {
             SetStats();
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -91,7 +89,7 @@ namespace Weapons.SpecificWeapons
             missile.transform.position = missileTarget;
             missile.GetComponentInChildren<SplineAnimate>().Play();
             missile.SetActive(true);
-            Player.FeedbacksList[0].Play(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using GenUtilsAndTools;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace Weapons.Projectiles
@@ -8,16 +9,16 @@ namespace Weapons.Projectiles
     {
         public ObjectPhaser phaser;
 
-        private void Awake()
+        private void OnAwake()
         {
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[pid].Play(transform.position);
-            // play a particle on spawn
+            WeaponSfxGroupController.Instance.sfxControllers[wid].player.FeedbacksList[0].Play(transform.position);
         }
 
 
         private void OnDisable()
-        {
-            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[pid].Play(transform.position);
+        { 
+            var p = WeaponSfxGroupController.Instance.sfxControllers[pid].player;
+            if (p.FeedbacksList[3].IsPlaying) p.FeedbacksList[3].Stop(transform.position);
         }
     }
 }

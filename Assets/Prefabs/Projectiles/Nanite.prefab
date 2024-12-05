@@ -187,8 +187,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8016344217501654411}
   - component: {fileID: 1742543258363886262}
-  - component: {fileID: 4881650294944875138}
   - component: {fileID: 1796175995399259215}
+  - component: {fileID: 4881650294944875138}
   m_Layer: 0
   m_Name: Nanite
   m_TagString: Projectile
@@ -229,6 +229,23 @@ MonoBehaviour:
   pid: 0
   eid: 0
   phaser: {fileID: 1796175995399259215}
+--- !u!114 &1796175995399259215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8201089928152045830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90735ebe67e2f654b963e1857a3cefe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 8201089928152045830}
+  phaseOutInterval: 1
+  phaseInInterval: 1
+  phaseInParticleIndex: 0
+  phaseOutParticleIndex: 0
 --- !u!58 &4881650294944875138
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -264,23 +281,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &1796175995399259215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8201089928152045830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90735ebe67e2f654b963e1857a3cefe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj: {fileID: 8201089928152045830}
-  phaseOutInterval: 1
-  phaseInInterval: 1
-  phaseInParticleIndex: 0
-  phaseOutParticleIndex: 0
 --- !u!1001 &3528467057356922093
 PrefabInstance:
   m_ObjectHideFlags: 0

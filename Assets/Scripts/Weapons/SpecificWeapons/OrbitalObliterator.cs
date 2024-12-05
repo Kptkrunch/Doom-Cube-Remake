@@ -14,13 +14,11 @@ namespace Weapons.SpecificWeapons
         private float _beamCooldown, _beamDuration, _beamCdTimer, _beamDurationTimer, _moveSpeed, _signalRange;
         private bool _isFiring, _gotLocation;
         private Vector3 _newSignalPosition, _beamStrikePosition;
-        protected MMF_Player Player;
         private void Start()
         {
             var position = beamSignal.transform.position;
             beamOrigin.transform.position = new Vector2(position.x, position.y + 10);
             SetStats();
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -80,19 +78,18 @@ namespace Weapons.SpecificWeapons
 
         private void Laser()
         {
+            var p = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
+            p.FeedbacksList[0].Play(transform.position);
             if (_isFiring)
             {
-                if (!Player.FeedbacksList[0].IsPlaying)
-                {
-                    Player.FeedbacksList[0].Play(transform.position);
-                }
+                // the ongoing looping sound for the laser to continue for as long as the weapon is firing
+                p.FeedbacksList[3].Play(transform.position);
                 _beamStrikePosition = beamImpact.transform.position;
                 theBeam.SetPosition(0, beamOrigin.transform.position);
                 theBeam.SetPosition(1, _beamStrikePosition);
-            }
-            else if (Player.FeedbacksList[0].IsPlaying && !_isFiring)
+            } else if (!_isFiring)
             {
-                Player.FeedbacksList[0].Play(transform.position);
+                p.FeedbacksList[3].Stop(transform.position);
             }
         }
     }

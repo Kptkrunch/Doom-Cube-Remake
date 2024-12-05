@@ -7,7 +7,9 @@ namespace Controllers
 {
     public class WeaponSfxController : MonoBehaviour
     {
-        
+        // The numbers in the feedback list correspond to the index of the sound in the MMSoundManager
+        // each index is reserved for a type of sound, with filler sounds sharing sounds with the 0 index
+        // 0 = weapon muzzle, 1 = hit sound, 2 = explosion sound, 4 = passive sound
         public string weaponName;
         public int wid;
         public MMF_Player player;

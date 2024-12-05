@@ -1,23 +1,20 @@
 using System;
 using Controllers.Pools;
 using Damagers;
+using MoreMountains.Feedbacks;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Splines;
 
 namespace Weapons.Projectiles
 {
     public class MeatSeeker : MonoBehaviour
     {
-        public int expIndex;
+        public int pid;
         public float damage;
         public float blastRadius;
         public SplineAnimate animator;
         public GameObject parent;
-
-        private void Awake()
-        {
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[expIndex].Play(transform.position);
-        }
 
         private void FixedUpdate()
         {
@@ -26,17 +23,17 @@ namespace Weapons.Projectiles
 
         private void OnDisable()
         {
-            var exp = ProjectilePoolManager2.poolProj.projPools[expIndex].GetPooledGameObject();
+            var exp = ProjectilePoolManager2.poolProj.projPools[pid].GetPooledGameObject();
             var damager = exp.GetComponent<EExplosionDamager>();
             damager.damage = damage;
             damager.blastRadiusCollider.radius = blastRadius;
-            Debug.Log(damager.damage);
-            Debug.Log(damager.blastRadiusCollider.radius);
             exp.gameObject.transform.position = transform.position;
             exp.SetActive(true);
-            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[expIndex].Play(transform.position);
-            
+            // 2 is the index for explosion sound on the weapons sfx player
+            WeaponSfxGroupController.Instance.sfxControllers[pid].player.FeedbacksList[2].Play(transform.position);            
             animator.Restart(false);
         }
+        
+        
     }
 }

@@ -12,14 +12,15 @@ namespace Weapons.DeathRays
         // ReSharper disable Unity.PerformanceAnalysis
         public override void FireBeam()
         {
+            var p = DeathRaySfxGroupController.Instance.sfxControllers[drid].player;
             lineRenderer.gameObject.SetActive(true);
             beamStart.gameObject.SetActive(true);
             beamHitBox.gameObject.SetActive(true);
             var position = transform.position;
             lineRenderer.SetPosition(0, position);
             player?.PlayFeedbacks();
-            if (MusicManager.Instance.sfxDeathRays.FeedbacksList[drid].FeedbackPlaying) return;
-            MusicManager.Instance.sfxDeathRays.FeedbacksList[drid].Play(transform.position);
+            if (p.FeedbacksList[drid].FeedbackPlaying) return;
+            p.FeedbacksList[drid].Play(transform.position);
         }
 
         public override void ResolveDeathRay()

@@ -8,12 +8,10 @@ namespace Weapons.SpecificWeapons
     public class LobbedWeapon : PrefabBasedWeapon
     {
         protected float RateOfFire, Cooldown;
-        protected MMF_Player Player;
 
         private void Start()
         {
             SetStats();
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -56,8 +54,8 @@ namespace Weapons.SpecificWeapons
             var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
             flash.transform.position = transform.position;
             flash.SetActive(true);
-            Player.FeedbacksList[0].Play(transform.position);
-
+            var p = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
+            p.FeedbacksList[0].Play(transform.position);
             var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             proj.transform.position = transform.position;
             proj.SetActive(true);

@@ -5,6 +5,11 @@ namespace Weapons.Projectiles
     public class Transmogrifier : MonoBehaviour
     {
         public int wid, pid, eid;
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            MutateEnemy(collision);
+        }
+        
         private void MutateEnemy(Collider2D collision)
         {
             if (collision.CompareTag("Enemy"))
@@ -14,13 +19,7 @@ namespace Weapons.Projectiles
                 var mutantSlug = MutantsAndBotsPoolManager.poolMutRob.mutAndRobPools[0].GetPooledGameObject();
                 mutantSlug.SetActive(true);
                 mutantSlug.transform.position = mutantPosition;
-                MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[pid].Play(transform.position);
             }
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            MutateEnemy(collision);
         }
     }
 }

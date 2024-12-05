@@ -12,12 +12,10 @@ namespace Weapons.SpecificWeapons
     {
         private Vector2 _direction;
         private Quaternion _rotation;
-        protected MMF_Player Player;
         
         private void Awake()
         {
             SetStats();
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
             CanFire = true;
         }
 
@@ -53,7 +51,7 @@ namespace Weapons.SpecificWeapons
             theProj.pd.stats.direction = _direction;
             proj.SetActive(true);
             proj.transform.rotation = _rotation;
-            Player.FeedbacksList[0].Play(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
         }
 
         private void SetStats()

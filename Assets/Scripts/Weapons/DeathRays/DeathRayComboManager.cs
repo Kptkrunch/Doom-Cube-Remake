@@ -42,7 +42,7 @@ namespace Weapons.DeathRays
             {
                 beamCharges++;
                 _lastRestoredChargeTime = Time.time;
-                MusicManager.Instance.sfxUIButtons.FeedbacksList[0].Play(transform.position);
+                // MusicManager.Instance.sfxUIButtons.FeedbacksList[0].Play(transform.position);
             }
 
             if (_gamepad == null) return;

@@ -12,14 +12,7 @@ namespace Weapons.SpecificWeapons
         [SerializeField] protected Vector2 dir1;
         [SerializeField] protected Vector2 dir2;
         [SerializeField] protected bool doesAlternate;
-        
-        protected MMF_Player Player;
         protected float Cooldown;
-
-        private void Start()
-        {
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
-        }
 
         private void FixedUpdate()
         {
@@ -66,7 +59,7 @@ namespace Weapons.SpecificWeapons
                     proj.SetActive(true);
                 }
 
-                Player.FeedbacksList[0].Play(transform.position);
+                WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
             }
 

@@ -11,7 +11,6 @@ namespace Weapons.SpecificWeapons
         public EDotDamager eDotDamager;
         public GameObject burnerFrame;
         public GameObject burner;
-        protected MMF_Player Player;
 
         protected bool Grow;
 
@@ -30,7 +29,7 @@ namespace Weapons.SpecificWeapons
         protected IEnumerator AttackLoop()
         {
             CanFire = false;
-            Player.FeedbacksList[0].Play(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
             burner.transform.localScale = Vector3.Lerp(burner.transform.localScale,
                 stats.weaponLvls[stats.lvl].size, 2.5f);
             burnerFrame.gameObject.SetActive(true);
@@ -62,7 +61,6 @@ namespace Weapons.SpecificWeapons
         private void SetStats()
         {
             CanFire = true;
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
             RateOfFire = stats.weaponLvls[stats.lvl].rateOfFire;
             AttackDuration = stats.weaponLvls[stats.lvl].duration;
             Cooldown = stats.weaponLvls[stats.lvl].coolDown;

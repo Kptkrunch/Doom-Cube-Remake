@@ -16,12 +16,12 @@ namespace Weapons.DeathRays
 
         public override void FireBeam()
         {
+            var p = WeaponSfxGroupController.Instance.sfxControllers[drid].player;
             lineRenderer.gameObject.SetActive(true);
             splinePlayer.gameObject.SetActive(true);
             hitMarker.SetActive(true);
             splinePlayer.Play();
-            MusicManager.Instance.sfxDeathRays.FeedbacksList[drid].Play(transform.position);
-
+            p.FeedbacksList[drid].Play(transform.position);
         }
 
         public override void ResolveDeathRay()

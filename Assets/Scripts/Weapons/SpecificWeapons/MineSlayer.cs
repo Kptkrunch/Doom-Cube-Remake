@@ -8,11 +8,9 @@ namespace Weapons.SpecificWeapons
 {
     public class MineSlayer : PrefabBasedWeapon
     {
-        protected MMF_Player Player;
         private void Start()
         {
             SetStats();
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -41,7 +39,7 @@ namespace Weapons.SpecificWeapons
             var mine = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             mine.transform.position = transform.position;
             mine.SetActive(true);
-            Player.FeedbacksList[0].Play(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
         }
 
         private void SetStats()

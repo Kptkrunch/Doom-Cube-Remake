@@ -16,7 +16,6 @@ namespace Weapons.SpecificWeapons
         private void Start()
         {
             SetStats();
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -77,7 +76,7 @@ namespace Weapons.SpecificWeapons
             if (index % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
 
             proj.SetActive(true);
-            Player.FeedbacksList[0].Play(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
         }
 
         private void SetStats()

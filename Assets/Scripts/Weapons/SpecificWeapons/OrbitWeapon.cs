@@ -15,15 +15,13 @@ namespace Weapons.SpecificWeapons
         [CanBeNull] public List<GrowShrinkObj> projectileScales;
         [CanBeNull] public ProjFrameWithTimer projFrameWithTimer;
         [CanBeNull] public NaniteController naniteController;
-        protected MMF_Player Player;
 
         private float _rotationSpeed;
-
+        
         private void Start()
         {
             SetStats();
             if (projFrameWithTimer != null) projFrameWithTimer.pid = stats.pid;
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -41,10 +39,15 @@ namespace Weapons.SpecificWeapons
                     _rotationSpeed * stats.weaponLvls[stats.lvl].speed);
         }
 
-        private void OnEnable()
+        private void OnAwake()
         {
             SetStats();
-            Player.FeedbacksList[0].Play(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Play(transform.position);
+        }
+        
+        private void OnDisable()
+        {
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Stop(transform.position);
         }
 
         private void SetStats()

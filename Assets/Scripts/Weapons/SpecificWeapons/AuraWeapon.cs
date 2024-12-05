@@ -1,3 +1,4 @@
+using System;
 using Damagers;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -10,12 +11,20 @@ namespace Weapons.SpecificWeapons
         public EAuraDamager auraDamager;
         [SerializeField] private CircleCollider2D auraCollider;
         [SerializeField] private Transform auraParticles;
-        protected MMF_Player Player;
         private void Start()
         {
             SetStats(); 
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
-            Player.FeedbacksList[0].Play(transform.position);
+        }
+
+        private void OnEnable()
+        {
+            // play the passive loop sound effect 0 is one-shot, 1 is hit, 2 is explosion sound, 3 is looping sound
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Play(transform.position);
+        }
+
+        private void OnDisable()
+        {
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Stop(transform.position);
         }
 
         private void SetStats()

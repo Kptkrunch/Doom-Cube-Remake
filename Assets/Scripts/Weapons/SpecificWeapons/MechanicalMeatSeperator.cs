@@ -11,7 +11,6 @@ namespace Weapons.SpecificWeapons
         private void Start()
         {
             SetStats();
-            Player = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
         }
 
         private void FixedUpdate()
@@ -48,7 +47,7 @@ namespace Weapons.SpecificWeapons
             var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             saw.transform.position = transform.position;
             saw.SetActive(true);
-            Player.FeedbacksList[0].Play(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
         }
     }
 }
