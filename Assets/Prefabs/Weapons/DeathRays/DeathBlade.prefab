@@ -51,8 +51,8 @@ MonoBehaviour:
   occlusionLayer: 0
   translucentLayer: 0
   translucentPresetId: 0
-  color: {r: 0.5358867, g: 0, b: 0, a: 0}
-  size: 4
+  color: {r: 1, g: 0.17671041, b: 0, a: 0}
+  size: 1
   spotAngleInner: 360
   spotAngleOuter: 360
   coreSize: 0.5
@@ -68,7 +68,7 @@ MonoBehaviour:
   textureSize: 1
   meshMode:
     enable: 1
-    alpha: 0.377
+    alpha: 0.288
     shader: 0
     materials:
     - {fileID: 0}
@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113304052487442750}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -139,10 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355e1791bf3436043b0446110c6e16a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drid: 0
+  drid: 1
   lineRenderer: {fileID: 2939128936678316870}
   beamHitBox: {fileID: 3224134357398783399}
   splinePlayer: {fileID: 946917098177626335}
+  beamOrigin: {fileID: 0}
   hitMarker: {fileID: 5703979111162565914}
 --- !u!1 &2303421623943423699
 GameObject:
@@ -854,8 +855,8 @@ MonoBehaviour:
   occlusionLayer: 0
   translucentLayer: 0
   translucentPresetId: 0
-  color: {r: 1.0717734, g: 0, b: 0, a: 0}
-  size: 0.6
+  color: {r: 2, g: 0.40117145, b: 0, a: 0.016}
+  size: 0.2
   spotAngleInner: 360
   spotAngleOuter: 360
   coreSize: 0.5
@@ -871,7 +872,7 @@ MonoBehaviour:
   textureSize: 1
   meshMode:
     enable: 1
-    alpha: 0.377
+    alpha: 0.19
     shader: 0
     materials:
     - {fileID: 0}
@@ -908,6 +909,7 @@ GameObject:
   - component: {fileID: 2805675273485904905}
   - component: {fileID: 946917098177626335}
   - component: {fileID: 3224134357398783399}
+  - component: {fileID: 4733994082466383615}
   m_Layer: 8
   m_Name: HitMarker
   m_TagString: Untagged
@@ -924,7 +926,7 @@ Transform:
   m_GameObject: {fileID: 5703979111162565914}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.776001, y: 0.14800072, z: 0.00032043457}
+  m_LocalPosition: {x: 0.776001, y: 0.14800262, z: 0.00032043457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1004,6 +1006,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &4733994082466383615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703979111162565914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4386156b935edac41a59ed12a3e718b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleIndex: 1
 --- !u!1 &8740513367082768099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +1035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5046378467496341056
 Transform:
   m_ObjectHideFlags: 0
@@ -1130,7 +1145,7 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 0.42477313, b: 0, a: 0.7372549}
-      key1: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 1, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1146,7 +1161,7 @@ LineRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 6168
-      atime1: 65535
+      atime1: 37394
       atime2: 0
       atime3: 0
       atime4: 0
@@ -1154,7 +1169,7 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -1219,6 +1234,14 @@ PrefabInstance:
     - target: {fileID: 474372, guid: 0f339d5b694e80f488d84fe09bf67e3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19817908, guid: 0f339d5b694e80f488d84fe09bf67e3f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19817908, guid: 0f339d5b694e80f488d84fe09bf67e3f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.49019608
       objectReference: {fileID: 0}
     - target: {fileID: 2469318569475042502, guid: 0f339d5b694e80f488d84fe09bf67e3f, type: 3}
       propertyPath: m_Layer
@@ -1303,8 +1326,8 @@ MonoBehaviour:
   occlusionLayer: 0
   translucentLayer: 0
   translucentPresetId: 0
-  color: {r: 4.2870936, g: 0, b: 0, a: 0}
-  size: 0.2
+  color: {r: 4, g: 0.8023429, b: 0, a: 0.065}
+  size: 0.1
   spotAngleInner: 360
   spotAngleOuter: 360
   coreSize: 0.5
@@ -1320,7 +1343,7 @@ MonoBehaviour:
   textureSize: 1
   meshMode:
     enable: 1
-    alpha: 0.282
+    alpha: 0.599
     shader: 0
     materials:
     - {fileID: 0}

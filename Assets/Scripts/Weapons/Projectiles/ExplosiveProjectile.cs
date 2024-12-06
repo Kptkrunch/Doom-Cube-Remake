@@ -11,6 +11,11 @@ namespace Weapons.Projectiles
         private float _bounceHardInterval, _disableTimer;
         private MMF_Player _player;
 
+        public ExplosiveProjectile(float bounceHardInterval)
+        {
+            _bounceHardInterval = bounceHardInterval;
+        }
+
         private void Awake()
         {
             pd.stats.bounces = initBounces;
@@ -28,8 +33,9 @@ namespace Weapons.Projectiles
             if (it.delayDisable) MaybeDelayDisable();
         }
 
-        private void OnEnable()
+        public override void OnEnable()
         {
+            base.OnEnable();
             Reset();
             Debug.Log("enabled");
             if (it.isLobbed) Debug.Log("lobbed");

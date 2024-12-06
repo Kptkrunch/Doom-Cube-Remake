@@ -211,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2624280929207325036}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -232,10 +232,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355e1791bf3436043b0446110c6e16a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drid: 0
+  drid: 2
   lineRenderer: {fileID: 2065237629402691681}
   beamHitBox: {fileID: 3077005104503499397}
   splinePlayer: {fileID: 3081098123521767613}
+  beamOrigin: {fileID: 0}
   hitMarker: {fileID: 3241844572913565851}
 --- !u!1 &3241844572913565851
 GameObject:
@@ -249,6 +250,7 @@ GameObject:
   - component: {fileID: 8881792536823316202}
   - component: {fileID: 3081098123521767613}
   - component: {fileID: 3077005104503499397}
+  - component: {fileID: 5104026102190906386}
   m_Layer: 8
   m_Name: HitMarker
   m_TagString: Untagged
@@ -265,7 +267,7 @@ Transform:
   m_GameObject: {fileID: 3241844572913565851}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.776001, y: 0.14800072, z: 0.00032043457}
+  m_LocalPosition: {x: 0.776001, y: 0.14800262, z: 0.00032043457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -345,6 +347,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &5104026102190906386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241844572913565851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4386156b935edac41a59ed12a3e718b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleIndex: 2
 --- !u!1 &3428994039398221958
 GameObject:
   m_ObjectHideFlags: 0

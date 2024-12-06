@@ -6,168 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/BurningA.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/BurningA.mp3.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/DPS_Attacks_Reload_2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/DPS_Attacks_Reload_2.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/FireballSpawn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/FireballSpawn.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/MechSounds/Alert 2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/MechSounds/Alert 2.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/PlasmaBurster.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/PlasmaBurster.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/StarWarsLaserA.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/StarWarsLaserA.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0/MedPulseMuzzle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0/MedPulseMuzzle.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0/TrailingGushMuzzle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0/TrailingGushMuzzle.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0/hit05.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0/hit05.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0/hit5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0/hit5.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0/shoot1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/DeltaBuster0/shoot1.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1/MuzzleProjGeneric.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1/MuzzleProjGeneric.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1/engine07.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1/engine07.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1/engine08.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1/engine08.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1/hit13.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1/hit13.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1/teleporter1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MeatSeekers1/teleporter1.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MechaMeatSeparator2.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MechaMeatSeparator2/hit04.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MechaMeatSeparator2/hit04.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MineSlayer3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MineSlayer3/MineDropMuzzlePulse.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MineSlayer3/MineDropMuzzlePulse.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MineSlayer3/MuzzleProjGeneric.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MineSlayer3/MuzzleProjGeneric.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MineSlayer3/hit1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MineSlayer3/hit1.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MutagenicNanites4.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MutagenicNanites4/SlugMutate.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MutagenicNanites4/SlugMutate.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MutagenicNanites4/hit6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MutagenicNanites4/hit6.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MutagenicNanites4/shoot2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/MutagenicNanites4/shoot2.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/OrbitalObliterator5.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/OrbitalObliterator5/engine12.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/OrbitalObliterator5/engine12.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6/WeaponMuzzle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6/WeaponMuzzle.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6/hit01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6/hit01.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6/hit09.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6/hit09.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6/hit12.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6/hit12.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6/shoot3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/Parabalomb6/shoot3.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/PlasmaBurster7.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/PlasmaBurster7/MedPulseMuzzle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/PlasmaBurster7/MedPulseMuzzle.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/PlasmaBurster7/SmallPulseMuzzle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/PlasmaBurster7/SmallPulseMuzzle.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/PlasmaBurster7/shoot4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/PlasmaBurster7/shoot4.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/RoastorbitalIncinerators8.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/RoastorbitalIncinerators8/TrailingGushMuzzle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/RoastorbitalIncinerators8/TrailingGushMuzzle.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/RoastorbitalIncinerators8/shoot5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ProjectileSfx/RoastorbitalIncinerators8/shoot5.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CubeCrashLanding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CubeCrashLanding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Feel/MMTools/Tools/MMAudio/MMSoundManager/Settings/MMSoundManagerAudioMixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Feel/MMTools/Tools/MMAudio/MMSoundManager/Settings/MMSoundManagerAudioMixer.mixer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Nanite.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Nanite.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/CoreSystems/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Systems/CoreSystems/UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/DamageNumberController.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/DamageNumberController.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/EnemySpawner.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/EnemySpawner.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/ExpBar.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/ExpBar.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/ExperienceController.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/ExperienceController.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/GenericSlider.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/GenericSlider.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/HealthBar.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/HealthBar.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/LevelUpPanel.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/LevelUpPanel.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/ObjectDamageNumberController 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/ObjectDamageNumberController 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/MusicSfxPlayerManager.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/MusicSfxPlayerManager.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-DeltaBuster-0 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-DeltaBuster-0 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-DeltaBuster-0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-DeltaBuster-0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-MeatMelter-11 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-MeatMelter-11 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-MeatSeekers-1 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-MeatSeekers-1 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-MechaSeparator-2 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-MechaSeparator-2 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-MineSlayer-3 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-MineSlayer-3 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-MutagenicNanites-4 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-MutagenicNanites-4 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-OrbitalObliterator-5 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-OrbitalObliterator-5 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-Parabalomb-6 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-Parabalomb-6 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-PlasmaBurster-7 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-PlasmaBurster-7 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-Roastorbs-8 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-Roastorbs-8 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-SearingLance-9 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-SearingLance-9 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-Terrorah-10 Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/SfxController-Terrorah-10 Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/WeaponSfxManager.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/WeaponSfxManager.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MeatMelter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MeatMelter.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MutagenicNanites.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MutagenicNanites.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/DeathBlade.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/DeathBlade.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/DeathBlade.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/DeathBlade.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/BeamStart.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/BeamStart.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/BeamThenBeepA.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/BeamThenBeepA.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/WeaponSfx/WeaponSfxManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/WeaponSfx/WeaponSfxManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/DeathRays/DeathBlade (1).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/DeathRays/DeathBlade (1).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/DeathRays/DeathBlade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/DeathRays/DeathBlade.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.scenetemplate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/WeaponSfxController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/WeaponSfxController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/ObjectPhaser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/ObjectPhaser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects/BasicObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/BasicObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/CritterBite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/CritterBite.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/EnergySpike.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/ProjectileSOS/EnergySpike.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MutagenicNanites.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MutagenicNanites.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TechSkills/BasicCritterTech.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TechSkills/BasicCritterTech.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerHealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerHealthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MeatMelter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MeatMelter.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MeatSeekers.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MeatSeekers.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MechaMeatSeparator.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MechaMeatSeparator.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MineSlayer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MineSlayer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/OrbitalObliterator.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/OrbitalObliterator.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Parabalomb.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Parabalomb.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/PlasmaBurster.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/PlasmaBurster.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Roastorb.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Roastorb.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/SearingLance.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/SearingLance.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Terrorah.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Terrorah.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathBlade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathBlade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathRayComboManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathRayComboManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/BouncingProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/BouncingProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSaw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSaw.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/ExplosiveProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/ExplosiveProjectile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Mine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Mine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Nanite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Nanite.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Projectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Transmogrifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Transmogrifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/AuraWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/AuraWeapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/BurnWeaponMelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/BurnWeaponMelee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DeltaBuster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DeltaBuster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DirectionalWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DirectionalWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/LobbedWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/LobbedWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MechanicalMeatSeperator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MechanicalMeatSeperator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MineSlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MineSlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MissileWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MissileWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/OrbitWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/OrbitWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/OrbitalObliterator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/OrbitalObliterator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/PlasmaBurster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/PlasmaBurster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponModifiers/BeamImpact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponModifiers/BeamImpact.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponModifiers/ProjFrameWithTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponModifiers/ProjFrameWithTimer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,7 +186,8 @@
       <workItem from="1733085190113" duration="1262000" />
       <workItem from="1733095702685" duration="12655000" />
       <workItem from="1733276720233" duration="2465000" />
-      <workItem from="1733346920713" duration="8133000" />
+      <workItem from="1733346920713" duration="8377000" />
+      <workItem from="1733507218174" duration="9597000" />
     </task>
     <task id="LOCAL-00001" summary="Remove FireFliesRed 1 prefab&#10;&#10;Deleted FireFliesRed 1.prefab from Assets/Particles/UsefulParticles/Death directory. This file was no longer necessary and its removal helps clean up the project.">
       <option name="closed" value="true" />
@@ -459,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733099914564</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Remove unused audio and prefab assets&#10;&#10;Deleted various unused audio files and prefabs to clean up the project and reduce bloat. This includes sound effects and prefab files related to damage numbers and enemy spawning systems. These assets were not utilized in the current project setup and their removal should not impact existing functionality.&#10;&#10;Updated logic for sound effects to match the new system, and populated 4 sfx in each weapon.  muzzle, hit, explosion, and passive">
+      <option name="closed" value="true" />
+      <created>1733374614045</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1733374614045</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,6 +368,7 @@
     <MESSAGE value="Added cube game start intro, added titlescreen, added start area of crater.&#10;&#10;" />
     <MESSAGE value="Remove unused audio file and scene.&#10;&#10;Deleted an unused audio file &quot;Waiting_game(loop).wav&quot; and removed the MainCorridorScene.unity. These files were no longer necessary and their removal helps in cleaning up the project directory.&#10;&#10;Added Cube start sequence, added title screen and scene loading logic for the first level." />
     <MESSAGE value="Refactor audio file structure and remove unused assets.&#10;&#10;Renamed audio files for better consistency and organization under the WeaponsSfx directory. Deleted unused aaSlime.wav audio file and several unused meta files to clean up the project's assets. Updated workspace and level scene data to reflect changes in asset usage and improve project organization.&#10;&#10;Added Enemy, weapon, and damage type generic sound effect controllers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor audio file structure and remove unused assets.&#10;&#10;Renamed audio files for better consistency and organization under the WeaponsSfx directory. Deleted unused aaSlime.wav audio file and several unused meta files to clean up the project's assets. Updated workspace and level scene data to reflect changes in asset usage and improve project organization.&#10;&#10;Added Enemy, weapon, and damage type generic sound effect controllers." />
+    <MESSAGE value="Remove unused audio and prefab assets&#10;&#10;Deleted various unused audio files and prefabs to clean up the project and reduce bloat. This includes sound effects and prefab files related to damage numbers and enemy spawning systems. These assets were not utilized in the current project setup and their removal should not impact existing functionality.&#10;&#10;Updated logic for sound effects to match the new system, and populated 4 sfx in each weapon.  muzzle, hit, explosion, and passive" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unused audio and prefab assets&#10;&#10;Deleted various unused audio files and prefabs to clean up the project and reduce bloat. This includes sound effects and prefab files related to damage numbers and enemy spawning systems. These assets were not utilized in the current project setup and their removal should not impact existing functionality.&#10;&#10;Updated logic for sound effects to match the new system, and populated 4 sfx in each weapon.  muzzle, hit, explosion, and passive" />
   </component>
 </project>

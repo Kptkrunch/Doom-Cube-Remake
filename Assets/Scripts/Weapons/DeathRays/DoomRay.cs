@@ -12,15 +12,13 @@ namespace Weapons.DeathRays
         // ReSharper disable Unity.PerformanceAnalysis
         public override void FireBeam()
         {
-            var p = DeathRaySfxGroupController.Instance.sfxControllers[drid].player;
             lineRenderer.gameObject.SetActive(true);
             beamStart.gameObject.SetActive(true);
             beamHitBox.gameObject.SetActive(true);
             var position = transform.position;
             lineRenderer.SetPosition(0, position);
             player?.PlayFeedbacks();
-            if (p.FeedbacksList[drid].FeedbackPlaying) return;
-            p.FeedbacksList[drid].Play(transform.position);
+            DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Play(transform.position);
         }
 
         public override void ResolveDeathRay()
@@ -36,6 +34,7 @@ namespace Weapons.DeathRays
                     lineRenderer.gameObject.SetActive(false);
                     beamStart.gameObject.SetActive(false);
                     beamHitBox.gameObject.SetActive(false);
+                    DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Stop(transform.position);
                     break;
             }
         }

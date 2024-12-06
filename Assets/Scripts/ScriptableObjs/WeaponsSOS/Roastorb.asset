@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Roastorb
   lvl: 0
-  wid: 9
+  wid: 8
   pid: 8
   weaponPrefab: {fileID: 2985044885908822174, guid: 4afd844e9dfdf2b43bec314b80786b32, type: 3}
   weaponLvls:

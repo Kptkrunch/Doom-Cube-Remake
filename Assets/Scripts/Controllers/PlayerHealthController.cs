@@ -19,6 +19,7 @@ namespace Controllers
         private void Awake()
         {
             contPHealth = this;
+
         }
 
         private void Start()

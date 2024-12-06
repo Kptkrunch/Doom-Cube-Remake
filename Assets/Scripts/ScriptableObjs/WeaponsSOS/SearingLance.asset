@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Searing Lance
   lvl: 0
-  wid: 10
+  wid: 9
   pid: 9
   weaponPrefab: {fileID: 7104429582331432270, guid: 6eddab75973c99f4bba7f19ab7cbe583, type: 3}
   weaponLvls:

@@ -16,12 +16,11 @@ namespace Weapons.DeathRays
 
         public override void FireBeam()
         {
-            var p = WeaponSfxGroupController.Instance.sfxControllers[drid].player;
             lineRenderer.gameObject.SetActive(true);
             splinePlayer.gameObject.SetActive(true);
             hitMarker.SetActive(true);
             splinePlayer.Play();
-            p.FeedbacksList[drid].Play(transform.position);
+            DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Play(transform.position);
         }
 
         public override void ResolveDeathRay()
@@ -39,6 +38,12 @@ namespace Weapons.DeathRays
                 lineRenderer.gameObject.SetActive(false);
                 hitMarker.SetActive(false);
                 splinePlayer.Restart(false);
+            }
+
+            if (!hitMarker.activeSelf
+                && DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].IsPlaying)
+            {
+                DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Stop(transform.position);
             }
         }
     }
