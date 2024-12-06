@@ -1,5 +1,6 @@
 using System.Collections;
 using Controllers.Pools;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace Weapons.SpecificWeapons
@@ -17,6 +18,7 @@ namespace Weapons.SpecificWeapons
         {
             if (CanFire) StartCoroutine(AttackLoop());
         }
+
 
         private void SetStats()
         {
@@ -52,8 +54,8 @@ namespace Weapons.SpecificWeapons
             var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
             flash.transform.position = transform.position;
             flash.SetActive(true);
-            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
-
+            var p = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
+            p.FeedbacksList[0].Play(transform.position);
             var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             proj.transform.position = transform.position;
             proj.SetActive(true);

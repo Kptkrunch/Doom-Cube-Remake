@@ -1,5 +1,6 @@
 using System.Collections;
 using Damagers;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -16,6 +17,7 @@ namespace Weapons.SpecificWeapons
         private void Start()
         {
             SetStats();
+
         }
 
         private void FixedUpdate()
@@ -27,7 +29,9 @@ namespace Weapons.SpecificWeapons
         protected IEnumerator AttackLoop()
         {
             CanFire = false;
-            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Play(transform.position);
+
             burner.transform.localScale = Vector3.Lerp(burner.transform.localScale,
                 stats.weaponLvls[stats.lvl].size, 2.5f);
             burnerFrame.gameObject.SetActive(true);
@@ -35,6 +39,8 @@ namespace Weapons.SpecificWeapons
             burner.transform.localScale = Vector3.Lerp(burner.transform.localScale, Vector3.zero, 2.5f);
             yield return new WaitForSeconds(1.5f);
             burnerFrame.SetActive(false);
+            // make sure to shut down burning sound or it will play forever!!!
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Stop(transform.position);
             burner.transform.localScale = Vector3.zero;
             yield return new WaitForSeconds(Cooldown);
             CanFire = true;

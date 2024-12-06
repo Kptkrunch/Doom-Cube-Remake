@@ -1,4 +1,5 @@
 using System;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,7 +14,6 @@ namespace Weapons.SpecificWeapons
         private float _beamCooldown, _beamDuration, _beamCdTimer, _beamDurationTimer, _moveSpeed, _signalRange;
         private bool _isFiring, _gotLocation;
         private Vector3 _newSignalPosition, _beamStrikePosition;
-
         private void Start()
         {
             var position = beamSignal.transform.position;
@@ -78,19 +78,18 @@ namespace Weapons.SpecificWeapons
 
         private void Laser()
         {
+            var p = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
+            p.FeedbacksList[0].Play(transform.position);
             if (_isFiring)
             {
-                if (!MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].IsPlaying)
-                {
-                    MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
-                }
+                // the ongoing looping sound for the laser to continue for as long as the weapon is firing
+                p.FeedbacksList[3].Play(transform.position);
                 _beamStrikePosition = beamImpact.transform.position;
                 theBeam.SetPosition(0, beamOrigin.transform.position);
                 theBeam.SetPosition(1, _beamStrikePosition);
-            }
-            else if (MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].IsPlaying && !_isFiring)
+            } else if (!_isFiring)
             {
-                MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Stop(transform.position);
+                p.FeedbacksList[3].Stop(transform.position);
             }
         }
     }

@@ -27,6 +27,7 @@ namespace Weapons.Projectiles
             if (it.isLobbed)
             {
                 it.isLobbed = false;
+                WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[0].Play(transform.position);
                 LobSaw();
             }
 
@@ -55,6 +56,7 @@ namespace Weapons.Projectiles
             if (_isGrowing)
             {
                 _spinTimer -= Time.deltaTime;
+                // play the saw sound only once it starts spinning.
                 GrowSaw();
             }
 
@@ -70,7 +72,7 @@ namespace Weapons.Projectiles
         private void OnDisable()
         {
             pd.stats.movSpeed = _sawSpeed;
-            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[pd.pid].Stop(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[3].Stop(transform.position);
             SetStats();
         }
 
@@ -84,7 +86,6 @@ namespace Weapons.Projectiles
                     it.doesRotate = true;
                     GrowSaw();
                     StopMoving();
-                    MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[pd.pid].Play(transform.position);
                     if (_spinTimer <= 0)
                     {
                         if (!_triggered) MaybeGoLeftOrRight();
@@ -138,7 +139,6 @@ namespace Weapons.Projectiles
             rb2d.velocity = new Vector2(
                 Random.Range(-pd.stats.lobDistance, pd.stats.lobDistance),
                 pd.stats.lobHeight);
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[pd.pid].Play(transform.position);
         }
 
         private void GrowSaw()
@@ -150,7 +150,7 @@ namespace Weapons.Projectiles
                     var localScale = transform.localScale;
                     localScale = Vector3.Lerp(localScale, _growSawScale, _growSpeed);
                     transform.localScale = localScale;
-                    MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[pd.pid].Play(transform.position);
+                    WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[3].Play(transform.position);
                     break;
                 }
             }

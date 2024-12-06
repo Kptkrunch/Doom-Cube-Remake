@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Mutagenic Nanobots
   lvl: 0
-  wid: 5
+  wid: 4
   pid: 4
   weaponPrefab: {fileID: 7237635094007620338, guid: 17fa7f66de44b64458463a5a5da7da14, type: 3}
   weaponLvls:

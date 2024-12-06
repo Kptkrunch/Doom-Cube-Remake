@@ -1,5 +1,6 @@
 using Controllers.Pools;
 using Damagers;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace Weapons.Projectiles
@@ -8,15 +9,23 @@ namespace Weapons.Projectiles
     {
         public int expIndex, damage, radius, initBounces, vertPower, horPower;
         private float _bounceHardInterval, _disableTimer;
+        private MMF_Player _player;
+
+        public ExplosiveProjectile(float bounceHardInterval)
+        {
+            _bounceHardInterval = bounceHardInterval;
+        }
 
         private void Awake()
         {
             pd.stats.bounces = initBounces;
             _bounceHardInterval = 2f;
+            _disableTimer = 2f;
+            _player = WeaponSfxGroupController.Instance.sfxControllers[pd.eid].player;
+            
             // bounceInterval = _bounceHardInterval;
             // bounceTimer = bounceInterval;
-            _disableTimer = 2f;
-        }
+    }
 
         private void FixedUpdate()
         {
@@ -24,11 +33,15 @@ namespace Weapons.Projectiles
             if (it.delayDisable) MaybeDelayDisable();
         }
 
-        private void OnEnable()
+        public override void OnEnable()
         {
+            base.OnEnable();
             Reset();
             Debug.Log("enabled");
             if (it.isLobbed) Debug.Log("lobbed");
+            _player.FeedbacksList[2].Play(transform.position);
+            
+            // rb2d.gravityScale = 1;
             // rb2d.velocity = new Vector2(Random.Range(-horPower, horPower), vertPower + 1);
             if (it.doesBounce)
             {
@@ -59,7 +72,6 @@ namespace Weapons.Projectiles
             damager.gameObject.transform.position = transform.position;
             damager.gameObject.SetActive(true);
             gameObject.SetActive(false);
-            MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[expIndex].Play(transform.position);
         }
 
         private void Reset()

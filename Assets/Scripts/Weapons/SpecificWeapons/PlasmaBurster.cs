@@ -1,5 +1,6 @@
 using System.Collections;
 using Controllers.Pools;
+using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
 using Weapons.Projectiles;
@@ -9,6 +10,9 @@ namespace Weapons.SpecificWeapons
 {
     public class PlasmaBurster : PrefabBasedWeapon
     {
+        private Vector2 _direction;
+        private Quaternion _rotation;
+        
         private void Awake()
         {
             SetStats();
@@ -24,7 +28,7 @@ namespace Weapons.SpecificWeapons
         {
             CanFire = false;
             RandomDirection();
-            Debug.Log(Direction);
+            Debug.Log(_direction);
             for (var i = 0; i < Ammo; i++)
             {
                 yield return new WaitForSeconds(FireInterval);
@@ -44,10 +48,10 @@ namespace Weapons.SpecificWeapons
             var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             var theProj = proj.GetComponent<Projectile>();
             proj.transform.position = transform.position;
-            theProj.pd.stats.direction = Direction;
+            theProj.pd.stats.direction = _direction;
             proj.SetActive(true);
-            proj.transform.rotation = Rotation;
-            MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+            proj.transform.rotation = _rotation;
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
         }
 
         private void SetStats()
@@ -59,9 +63,9 @@ namespace Weapons.SpecificWeapons
 
         private void RandomDirection()
         {
-            Direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
-            var angle = Mathf.Atan2(Direction.x, Direction.y) * Mathf.Deg2Rad - 90;
-            Rotation = Quaternion.Euler(0f, 0f, angle).normalized;
+            _direction = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
+            var angle = Mathf.Atan2(_direction.x, _direction.y) * Mathf.Deg2Rad - 90;
+            _rotation = Quaternion.Euler(0f, 0f, angle).normalized;
         }
     }
 }

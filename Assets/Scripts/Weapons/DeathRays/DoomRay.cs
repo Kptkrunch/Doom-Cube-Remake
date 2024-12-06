@@ -18,8 +18,7 @@ namespace Weapons.DeathRays
             var position = transform.position;
             lineRenderer.SetPosition(0, position);
             player?.PlayFeedbacks();
-            if (MusicManager.Instance.sfxDeathRays.FeedbacksList[drid].FeedbackPlaying) return;
-            MusicManager.Instance.sfxDeathRays.FeedbacksList[drid].Play(transform.position);
+            DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Play(transform.position);
         }
 
         public override void ResolveDeathRay()
@@ -35,6 +34,7 @@ namespace Weapons.DeathRays
                     lineRenderer.gameObject.SetActive(false);
                     beamStart.gameObject.SetActive(false);
                     beamHitBox.gameObject.SetActive(false);
+                    DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Stop(transform.position);
                     break;
             }
         }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Meet Seeking Missiles
   lvl: 0
-  wid: 2
+  wid: 1
   pid: 1
   weaponPrefab: {fileID: 2223392768671692405, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
   weaponLvls:

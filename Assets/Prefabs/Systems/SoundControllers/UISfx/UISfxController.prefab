@@ -1,0 +1,439 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &894152297686993782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 611749621637786370}
+  - component: {fileID: 6936821575174217021}
+  m_Layer: 0
+  m_Name: UISfxController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &611749621637786370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894152297686993782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8439292351778281951}
+  - {fileID: 376737174973251776}
+  - {fileID: 18079028578496533}
+  - {fileID: 7175190154551920504}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6936821575174217021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894152297686993782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee90dd5fafab1e34fa7c54a5561735b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxControllers: []
+  startButton: {fileID: 6104295330071180117}
+  optionsButton: {fileID: 3099877373848617106}
+  exitButton: {fileID: 7295455542793782711}
+  backButton: {fileID: 3064809567868984622}
+--- !u!1001 &1145725845625844330
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 611749621637786370}
+    m_Modifications:
+    - target: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_Name
+      value: SfxController-StartButton-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6104295330071180117}
+  m_SourcePrefab: {fileID: 100100000, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+--- !u!114 &7532963019173380874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7452360492833108320, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 1145725845625844330}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7859898741385621448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7859898741385621448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 1145725845625844330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6104295330071180117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7859898741385621448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddd3d7aef1a5f54d8d229c3ecf9fb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElemName: StartButton
+  id: 0
+  player: {fileID: 7532963019173380874}
+--- !u!4 &8439292351778281951 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 1145725845625844330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1831673492284370125
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 611749621637786370}
+    m_Modifications:
+    - target: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_Name
+      value: SfxController-BackButton-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3064809567868984622}
+  m_SourcePrefab: {fileID: 100100000, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+--- !u!4 &7175190154551920504 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 1831673492284370125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8907836952524140911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 1831673492284370125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3064809567868984622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907836952524140911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddd3d7aef1a5f54d8d229c3ecf9fb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElemName: BackButton
+  id: 3
+  player: {fileID: 9081353842492382637}
+--- !u!114 &9081353842492382637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7452360492833108320, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 1831673492284370125}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907836952524140911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &8842878341307915168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 611749621637786370}
+    m_Modifications:
+    - target: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_Name
+      value: SfxController-ExitButton-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7295455542793782711}
+  m_SourcePrefab: {fileID: 100100000, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+--- !u!4 &18079028578496533 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 8842878341307915168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1751233035668293122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 8842878341307915168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7295455542793782711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751233035668293122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddd3d7aef1a5f54d8d229c3ecf9fb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElemName: ExitButton
+  id: 2
+  player: {fileID: 2149391978152831680}
+--- !u!114 &2149391978152831680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7452360492833108320, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 8842878341307915168}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751233035668293122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &9206057266071890805
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 611749621637786370}
+    m_Modifications:
+    - target: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_Name
+      value: SfxController-OptionsButton-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3099877373848617106}
+  m_SourcePrefab: {fileID: 100100000, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+--- !u!4 &376737174973251776 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8860845702212316085, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 9206057266071890805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1778471244428384789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7452360492833108320, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 9206057266071890805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105410405299467991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2105410405299467991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7130772526436146594, guid: bd87d07533f702141854c6500c8113d1, type: 3}
+  m_PrefabInstance: {fileID: 9206057266071890805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3099877373848617106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105410405299467991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddd3d7aef1a5f54d8d229c3ecf9fb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElemName: OptionsButton
+  id: 1
+  player: {fileID: 1778471244428384789}

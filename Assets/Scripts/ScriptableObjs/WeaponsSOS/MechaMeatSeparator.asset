@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Mechanical Meat Separator
   lvl: 0
-  wid: 3
+  wid: 2
   pid: 2
   weaponPrefab: {fileID: 6842828834110783982, guid: 4ac36309fc485884bb951c8fc556dbcd, type: 3}
   weaponLvls:

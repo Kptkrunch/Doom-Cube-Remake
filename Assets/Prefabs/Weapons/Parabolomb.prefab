@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5710720740979479284}
   m_Layer: 8
   m_Name: Parabolomb
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 469776501fabdb548a13ee476ff88f65, type: 2}
-  uiSprite: {fileID: 0}
+  uiSprite: {fileID: -1316943994, guid: 49ee25a366f7aef408e3846af70b285f, type: 3}
   it: {fileID: 5710720740979479284}
 --- !u!114 &5710720740979479284
 MonoBehaviour:
@@ -71,6 +71,7 @@ MonoBehaviour:
   doesBounce: 1
   explodes: 1
   hasLifetime: 0
+  hasFuse: 0
   disableAfterBounces: 1
   disableOnContact: 0
   randomDirection: 0

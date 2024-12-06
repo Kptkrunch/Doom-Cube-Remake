@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Meat Melter
   lvl: 0
-  wid: 1
-  pid: 0
+  wid: 11
+  pid: 11
   weaponPrefab: {fileID: 3987926661222403637, guid: 459a854d19e70ef4397551a030a26728, type: 3}
   weaponLvls:
   - damage: 1

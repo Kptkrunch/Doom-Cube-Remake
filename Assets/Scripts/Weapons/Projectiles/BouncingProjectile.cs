@@ -91,7 +91,8 @@ namespace Weapons.Projectiles
         {
             var exp = ProjectilePoolManager2.poolProj.projPools[pd.pid].GetPooledGameObject();
             var damager = exp.GetComponent<EnemyDamager>();
-
+            // play explosion sound index on collision
+            WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[2].Play(transform.position);
             exp.transform.position = transform.position;
             damager.damage = pd.stats.damage;
             damager.GetComponent<CircleCollider2D>().radius = pd.stats.size;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Plasma Burster
   lvl: 0
-  wid: 8
+  wid: 7
   pid: 7
   weaponPrefab: {fileID: 8427507990736907710, guid: cb0e83dbfbb578248aa66952893a0031, type: 3}
   weaponLvls:

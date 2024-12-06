@@ -12,8 +12,8 @@ namespace Weapons.WeaponModifiers
 
         private void Awake()
         {
-            // eventually make sound follow beam as it moves
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[parent.stats.pid].Play(transform.position);
+            // play the passive sound index on awake and end it on disabled
+            WeaponSfxGroupController.Instance.sfxControllers[parent.stats.pid].player.FeedbacksList[3].Play(transform.position);
         }
 
         private void Start()
@@ -30,7 +30,7 @@ namespace Weapons.WeaponModifiers
 
         private void OnDisable()
         {
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[parent.stats.pid].Stop(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[parent.stats.pid].player.FeedbacksList[3].Play(transform.position);
         }
 
         private void OnTriggerStay2D(Collider2D collision)

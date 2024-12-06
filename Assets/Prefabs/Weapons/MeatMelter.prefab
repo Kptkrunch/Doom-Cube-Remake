@@ -54,11 +54,6 @@ MonoBehaviour:
   damage: 0
   damageType: burning
   destructive: 1
-  hitsGround: 1
-  hitsAir: 0
-  fireDamage: 1
-  chemicalDamage: 0
-  explosiveDamage: 0
   damageInterval: 0
 --- !u!61 &3276781482055201744
 BoxCollider2D:
@@ -121,7 +116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7699034738757788201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -155,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: e9eafc4846a09ce44a68f7ff5d31c9b5, type: 2}
-  uiSprite: {fileID: 0}
+  uiSprite: {fileID: 1713385007, guid: 88e011cc3bff5b7419b617c187c16014, type: 3}
   enemyDamager: {fileID: 0}
   eDotDamager: {fileID: 4199865901650256689}
   burnerFrame: {fileID: 5310869208068018653}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Mine Slayer
   lvl: 0
-  wid: 4
+  wid: 3
   pid: 3
   weaponPrefab: {fileID: 5815779960210326125, guid: 1c9f5f3bcc4f2044d80a3731fbc508c0, type: 3}
   weaponLvls:

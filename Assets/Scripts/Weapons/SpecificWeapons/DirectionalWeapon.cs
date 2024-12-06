@@ -1,5 +1,6 @@
 using System.Collections;
 using Controllers.Pools;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using Weapons.Projectiles;
 using Weapons.SOS;
@@ -58,7 +59,7 @@ namespace Weapons.SpecificWeapons
                     proj.SetActive(true);
                 }
 
-                MusicManager.Instance.sfxPlayerMuzzle.FeedbacksList[stats.pid].Play(transform.position);
+                WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
             }
 

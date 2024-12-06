@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9175053106362630759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 47bab104faa545846acb263ab33d282f, type: 2}
-  uiSprite: {fileID: 0}
+  uiSprite: {fileID: -841274553, guid: 513b7f6f682355b41b9cdb213b8e94da, type: 3}
   it: {fileID: 6896750676246539954}
 --- !u!114 &6896750676246539954
 MonoBehaviour:
@@ -71,6 +71,7 @@ MonoBehaviour:
   doesBounce: 0
   explodes: 0
   hasLifetime: 1
+  hasFuse: 0
   disableAfterBounces: 0
   disableOnContact: 0
   randomDirection: 0

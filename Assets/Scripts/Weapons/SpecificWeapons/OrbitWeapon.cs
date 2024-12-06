@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Damagers;
 using GenUtilsAndTools;
 using JetBrains.Annotations;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using Weapons.WeaponModifiers;
 
@@ -16,7 +17,7 @@ namespace Weapons.SpecificWeapons
         [CanBeNull] public NaniteController naniteController;
 
         private float _rotationSpeed;
-
+        
         private void Start()
         {
             SetStats();
@@ -38,9 +39,15 @@ namespace Weapons.SpecificWeapons
                     _rotationSpeed * stats.weaponLvls[stats.lvl].speed);
         }
 
-        private void OnEnable()
+        private void OnAwake()
         {
             SetStats();
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Play(transform.position);
+        }
+        
+        private void OnDisable()
+        {
+            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Stop(transform.position);
         }
 
         private void SetStats()

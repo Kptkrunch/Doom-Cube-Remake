@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 6c014a01caeca5444816e7fdb8fe0f2d, type: 2}
-  uiSprite: {fileID: 0}
+  uiSprite: {fileID: 74798634, guid: c89a347dff47ce44985f15be4d3175d1, type: 3}
   it: {fileID: 4236255718967933429}
 --- !u!114 &4236255718967933429
 MonoBehaviour:
@@ -72,6 +72,7 @@ MonoBehaviour:
   doesBounce: 0
   explodes: 0
   hasLifetime: 1
+  hasFuse: 0
   disableAfterBounces: 0
   disableOnContact: 1
   randomDirection: 1

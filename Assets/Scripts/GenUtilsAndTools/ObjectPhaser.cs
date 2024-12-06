@@ -20,17 +20,15 @@ namespace GenUtilsAndTools
         IEnumerator PhaseObject()
         {
             _readyToPhase = false;
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[14].Play(transform.position);
-
+            
             yield return new WaitForSeconds(phaseOutInterval);
             if (phaseInParticleIndex > 0)
             {
                 // get a pool that's yet to be made
+                
             }
             obj.SetActive(false);
             
-            MusicManager.Instance.sfxPlayerProjectiles.FeedbacksList[14].Stop(transform.position);
-
             yield return new WaitForSeconds(phaseInInterval);
             if (phaseOutParticleIndex > 0)
             {

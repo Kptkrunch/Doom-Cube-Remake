@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 599724226671821991, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: damageType
-      value: burning
+      value: Fire
       objectReference: {fileID: 0}
     - target: {fileID: 790442390270189665, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: m_TagString
@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2152081530765122319, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: damageType
-      value: burning
+      value: Fire
       objectReference: {fileID: 0}
     - target: {fileID: 3080386227458377782, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: m_Pivot.x
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392629853097757250, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: damageType
-      value: burning
+      value: Fire
       objectReference: {fileID: 0}
     - target: {fileID: 8212460328282933086, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: size
@@ -230,7 +230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8864429954712102249, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
       propertyPath: damageType
-      value: burning
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120153250708132923, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
+      propertyPath: pid
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1320998783703022451, guid: ecf580444112ecb4ba1e892f6583c6bf, type: 3}
