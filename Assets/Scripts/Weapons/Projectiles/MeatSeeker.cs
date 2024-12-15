@@ -15,22 +15,27 @@ namespace Weapons.Projectiles
 
         private void FixedUpdate()
         {
-            if (animator.isActiveAndEnabled && !animator.IsPlaying) parent.SetActive(false);
+            if (animator.ElapsedTime >= 1.0f)
+            {
+                parent.SetActive(false);
+            }
         }
 
         private void OnDisable()
         {
             var exp = ProjectilePoolManager2.poolProj.projPools[pid].GetPooledGameObject();
-            var damager = exp.GetComponent<EExplosionDamager>();
-            damager.damage = damage;
-            damager.blastRadiusCollider.radius = blastRadius;
+            Debug.Log("name: " + exp.name);
+            var damager = exp.GetComponentInChildren<EExplosionDamager>();
+            WeaponSfxGroupController.Instance.sfxControllers[pid].player.FeedbacksList[2].Play(transform.position);            
+            if (!exp || !damager)
+            {
+                Debug.Log("no exp or damager");
+                return;
+            }
             exp.gameObject.transform.position = transform.position;
             exp.SetActive(true);
-            // 2 is the index for explosion sound on the weapons sfx player
-            WeaponSfxGroupController.Instance.sfxControllers[pid].player.FeedbacksList[2].Play(transform.position);            
-            animator.Restart(false);
+            damager.damage = damage;
+            damager.blastRadiusCollider.radius = blastRadius;
         }
-        
-        
     }
 }

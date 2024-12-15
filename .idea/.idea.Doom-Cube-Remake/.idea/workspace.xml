@@ -6,33 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/DeathBlade.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/DeathBlade.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/DeathBlade.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/DeathBlade.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/BeamStart.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/BeamStart.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/BeamThenBeepA.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/BeamThenBeepA.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/WeaponSfx/WeaponSfxManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Systems/SoundControllers/WeaponSfx/WeaponSfxManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/DeathRays/DeathBlade (1).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/DeathRays/DeathBlade (1).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/DeathRays/DeathBlade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/DeathRays/DeathBlade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CubeCrashLanding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CubeCrashLanding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/CubeMegaExplode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/CubeMegaExplode.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EnemySpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EnemySpawner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MeatSeekerMissile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MeatSeekerMissile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileExp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileExp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileTrack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileTrack.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.scenetemplate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerHealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerHealthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MeatMelter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MeatMelter.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MeatSeekers.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MeatSeekers.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MechaMeatSeparator.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MechaMeatSeparator.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MineSlayer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/MineSlayer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/OrbitalObliterator.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/OrbitalObliterator.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Parabalomb.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Parabalomb.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyStuff/EnemyWaveSpawnerPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyStuff/EnemyWaveSpawnerPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/PlasmaBurster.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/PlasmaBurster.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Roastorb.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Roastorb.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/SearingLance.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/SearingLance.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Terrorah.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/Terrorah.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathBlade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathBlade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/ExplosiveProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/ExplosiveProjectile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/BurnWeaponMelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/BurnWeaponMelee.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +43,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DeathRaySfxGroupController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Objects/SortObjectByYAxis.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SortLightByYAxis.cs" root0="FORCE_HIGHLIGHTING" />
@@ -187,7 +174,9 @@
       <workItem from="1733095702685" duration="12655000" />
       <workItem from="1733276720233" duration="2465000" />
       <workItem from="1733346920713" duration="8377000" />
-      <workItem from="1733507218174" duration="9597000" />
+      <workItem from="1733507218174" duration="9760000" />
+      <workItem from="1733963223417" duration="2994000" />
+      <workItem from="1734220282998" duration="8242000" />
     </task>
     <task id="LOCAL-00001" summary="Remove FireFliesRed 1 prefab&#10;&#10;Deleted FireFliesRed 1.prefab from Assets/Particles/UsefulParticles/Death directory. This file was no longer necessary and its removal helps clean up the project.">
       <option name="closed" value="true" />
@@ -333,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733374614045</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="VER-0.01.05: added music and cleaned up sound triggers.">
+      <option name="closed" value="true" />
+      <created>1733528638676</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1733528638676</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +366,7 @@
     <MESSAGE value="Remove unused audio file and scene.&#10;&#10;Deleted an unused audio file &quot;Waiting_game(loop).wav&quot; and removed the MainCorridorScene.unity. These files were no longer necessary and their removal helps in cleaning up the project directory.&#10;&#10;Added Cube start sequence, added title screen and scene loading logic for the first level." />
     <MESSAGE value="Refactor audio file structure and remove unused assets.&#10;&#10;Renamed audio files for better consistency and organization under the WeaponsSfx directory. Deleted unused aaSlime.wav audio file and several unused meta files to clean up the project's assets. Updated workspace and level scene data to reflect changes in asset usage and improve project organization.&#10;&#10;Added Enemy, weapon, and damage type generic sound effect controllers." />
     <MESSAGE value="Remove unused audio and prefab assets&#10;&#10;Deleted various unused audio files and prefabs to clean up the project and reduce bloat. This includes sound effects and prefab files related to damage numbers and enemy spawning systems. These assets were not utilized in the current project setup and their removal should not impact existing functionality.&#10;&#10;Updated logic for sound effects to match the new system, and populated 4 sfx in each weapon.  muzzle, hit, explosion, and passive" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove unused audio and prefab assets&#10;&#10;Deleted various unused audio files and prefabs to clean up the project and reduce bloat. This includes sound effects and prefab files related to damage numbers and enemy spawning systems. These assets were not utilized in the current project setup and their removal should not impact existing functionality.&#10;&#10;Updated logic for sound effects to match the new system, and populated 4 sfx in each weapon.  muzzle, hit, explosion, and passive" />
+    <MESSAGE value="VER-0.01.05: added music and cleaned up sound triggers." />
+    <option name="LAST_COMMIT_MESSAGE" value="VER-0.01.05: added music and cleaned up sound triggers." />
   </component>
 </project>

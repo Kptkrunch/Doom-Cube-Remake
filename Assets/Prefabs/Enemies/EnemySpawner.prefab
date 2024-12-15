@@ -78,7 +78,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2424182028091981311
 Transform:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   checkPerFrame: 10
   waves:
   - enemyToSpawn: 0
-    waveDuration: 60
+    waveDuration: 1
     waveInterval: 0.2
   - enemyToSpawn: 1
     waveDuration: 60
