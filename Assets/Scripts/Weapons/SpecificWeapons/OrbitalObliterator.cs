@@ -34,8 +34,8 @@ namespace Weapons.SpecificWeapons
                     _moveSpeed * Time.deltaTime);
 
             beamFrame.SetActive(_isFiring);
-            Laser();
             BeamTimeHandler();
+            MaybeFireLaser();
         }
 
         private void GetNewOrbitalSignal()
@@ -76,21 +76,16 @@ namespace Weapons.SpecificWeapons
             }
         }
 
-        private void Laser()
+        private void MaybeFireLaser()
         {
-            var p = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
-            p.FeedbacksList[0].Play(transform.position);
             if (_isFiring)
             {
                 // the ongoing looping sound for the laser to continue for as long as the weapon is firing
-                p.FeedbacksList[3].Play(transform.position);
+                // should not play if still playing
                 _beamStrikePosition = beamImpact.transform.position;
                 theBeam.SetPosition(0, beamOrigin.transform.position);
                 theBeam.SetPosition(1, _beamStrikePosition);
-            } else if (!_isFiring)
-            {
-                p.FeedbacksList[3].Stop(transform.position);
-            }
+            } 
         }
     }
 }

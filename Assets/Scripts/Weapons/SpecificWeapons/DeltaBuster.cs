@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Controllers.Pools;
-using MoreMountains.Feedbacks;
 using UnityEngine;
 using Weapons.Projectiles;
 
@@ -28,12 +27,15 @@ namespace Weapons.SpecificWeapons
             CanFire = false;
             for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
             {
+                // For weapons like seering lance
                 if (doesAlternate)
                     for (var j = 0; j < firePoints.Count; j++)
                     {
                         Fire(i);
-                    }
+                        WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
 
+                    }
+                // For weapons like the delta buster
                 if (!doesAlternate)
                     for (var j = 0; j < firePoints.Count(); j++)
                     {
@@ -44,6 +46,8 @@ namespace Weapons.SpecificWeapons
                         proj.GetComponent<Projectile>().pd.stats.direction = dir1;
 
                         proj.SetActive(true);
+                        WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
+
                     }
 
                 if (!doesAlternate)
@@ -56,11 +60,13 @@ namespace Weapons.SpecificWeapons
                         proj.GetComponent<Projectile>().pd.stats.direction = dir2;
 
                         proj.SetActive(true);
+                        WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
+
                     }
 
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
             }
-
+            
             yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].coolDown);
             CanFire = true;
         }
@@ -70,13 +76,13 @@ namespace Weapons.SpecificWeapons
             var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
             flash.transform.position = transform.position;
             flash.SetActive(true);
+
             var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             proj.transform.position = transform.position;
             if (index % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
             if (index % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
 
             proj.SetActive(true);
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
         }
 
         private void SetStats()
@@ -89,6 +95,7 @@ namespace Weapons.SpecificWeapons
 
         public override void UpdateWeapon()
         {
+            base.UpdateWeapon();
             var enemyDamager = ProjectilePoolManager.poolProj.projPools[stats.pid].GetComponent<Projectile>()
                 .enemyDamager;
             if (enemyDamager != null)

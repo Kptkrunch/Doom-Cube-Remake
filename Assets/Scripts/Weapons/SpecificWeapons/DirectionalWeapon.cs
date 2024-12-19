@@ -11,10 +11,10 @@ namespace Weapons.SpecificWeapons
     {
         [SerializeField] protected Vector2 dir1;
         [SerializeField] protected Vector2 dir2;
-        [SerializeField] protected bool doesAlternate;
+        [SerializeField] protected bool doesAlternate, isBase;
         protected float Cooldown;
 
-        private void FixedUpdate()
+        void FixedUpdate()
         {
             if (CanFire) StartCoroutine(AttackLoop());
         }
@@ -27,42 +27,42 @@ namespace Weapons.SpecificWeapons
                 var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
                 flash.transform.position = transform.position;
                 flash.SetActive(true);
+                WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
+            
                 if (doesAlternate)
                 {
                     var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
                     proj.transform.position = transform.position;
                     if (i % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
                     if (i % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
-
+            
                     proj.SetActive(true);
                 }
-
+            
                 if (!doesAlternate)
                 {
                     var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-
+            
                     proj.transform.position = transform.position;
-
+            
                     proj.GetComponent<Projectile>().pd.stats.direction = dir1;
-
+            
                     proj.SetActive(true);
                 }
-
+            
                 if (!doesAlternate)
                 {
                     var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-
+            
                     proj.transform.position = transform.position;
-
+            
                     proj.GetComponent<Projectile>().pd.stats.direction = dir2;
-
+            
                     proj.SetActive(true);
                 }
-
-                WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
             }
-
+            
             yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].coolDown);
             CanFire = true;
         }

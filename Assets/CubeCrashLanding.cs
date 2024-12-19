@@ -77,7 +77,7 @@ public class CubeCrashLanding : MonoBehaviour
             if (explosionParticle.activeInHierarchy) return;            
             actualSprite.gameObject.SetActive(true);
             fallingObject.SetActive(false);
-            WeaponSfxGroupController.Instance.sfxControllers[1].player.FeedbacksList[eid].Play(transform.position);
+            WeaponSfxGroupController.Instance.sfxControllers[2].player.FeedbacksList[eid].Play(transform.position);
             explosionParticle.SetActive(true);
             // MusicManager.Instance.sfxPlayerProjectiles2.FeedbacksList[eid].Play(transform.position);
         }

@@ -434,6 +434,8 @@ MonoBehaviour:
     rootOnly: 0
     recursive: 1
   _sceneHistory:
+  - name: MMFeedbacksDemo
+    path: Assets/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/MMFeedbacksDemo.unity
   - name: Level1
     path: Assets/Scenes/Level1.unity
   - name: TitleScreen

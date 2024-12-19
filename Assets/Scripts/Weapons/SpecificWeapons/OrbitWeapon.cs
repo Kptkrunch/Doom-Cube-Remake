@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Damagers;
 using GenUtilsAndTools;
@@ -39,12 +40,12 @@ namespace Weapons.SpecificWeapons
                     _rotationSpeed * stats.weaponLvls[stats.lvl].speed);
         }
 
-        private void OnAwake()
+        private void OnEnable()
         {
-            SetStats();
             WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Play(transform.position);
+            SetStats();
         }
-        
+
         private void OnDisable()
         {
             WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Stop(transform.position);
