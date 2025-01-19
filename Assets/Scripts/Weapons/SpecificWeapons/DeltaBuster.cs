@@ -29,6 +29,8 @@ namespace Weapons.SpecificWeapons
             CanFire = false;
             for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
             {
+                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
+
                 if (doesAlternate)
                     for (var j = 0; j < firePoints.Count; j++)
                     {
@@ -77,7 +79,6 @@ namespace Weapons.SpecificWeapons
             if (index % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
 
             proj.SetActive(true);
-            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void SetStats()

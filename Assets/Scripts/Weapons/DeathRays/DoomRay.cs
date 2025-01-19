@@ -1,4 +1,3 @@
-using Controllers;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
@@ -9,6 +8,7 @@ namespace Weapons.DeathRays
         public GameObject beamStart, hitMarker, pointA;
         public MMF_Player player;
 
+
         // ReSharper disable Unity.PerformanceAnalysis
         public override void FireBeam()
         {
@@ -17,10 +17,11 @@ namespace Weapons.DeathRays
             beamHitBox.gameObject.SetActive(true);
             var position = transform.position;
             lineRenderer.SetPosition(0, position);
-            base.FireBeam();
+            player?.PlayFeedbacks();
+            DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Play(transform.position);
         }
 
-        public override void ResolveDeathRay()
+        protected override void ResolveDeathRay()
         {
             switch (player.IsPlaying)
             {
@@ -33,7 +34,7 @@ namespace Weapons.DeathRays
                     lineRenderer.gameObject.SetActive(false);
                     beamStart.gameObject.SetActive(false);
                     beamHitBox.gameObject.SetActive(false);
-                    juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
+                    DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Stop(transform.position);
                     break;
             }
         }

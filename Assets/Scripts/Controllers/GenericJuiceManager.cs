@@ -43,18 +43,12 @@ namespace Controllers
 
         public void TriggerFeedback(FeedbackType type)
         {
-            if (_feedbacks.TryGetValue(type, out MMF_Player player) && player != null)
-            {
-                player.PlayFeedbacks();
-            }
+            _feedbacks[type].PlayFeedbacks(transform.position);
         }
 
         public void StopFeedback(FeedbackType type)
         {
-            if (_feedbacks.TryGetValue(type, out MMF_Player player) && player != null)
-            {
-                player.StopFeedbacks();
-            }
+            _feedbacks[type].PlayFeedbacks(transform.position);
         }
     }
 }

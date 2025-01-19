@@ -6,33 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CubeCrashLanding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CubeCrashLanding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/CritterBite.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/CritterBite.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/DeltaBuster/BusterShell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/DeltaBuster/BusterShell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Nanite.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Nanite.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.scenetemplate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GenericJuiceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GenericJuiceManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathBlade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathBlade.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathRay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathRay.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/BouncingProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/BouncingProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/ExplosiveProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/ExplosiveProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSaw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSaw.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Mine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Mine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Nanite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Nanite.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Projectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/AuraWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/AuraWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/BurnWeaponMelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/BurnWeaponMelee.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DeltaBuster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DeltaBuster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DirectionalWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DirectionalWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/LobbedWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/LobbedWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MechanicalMeatSeperator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MechanicalMeatSeperator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MineSlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MineSlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MissileWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/MissileWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/OrbitWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/OrbitWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/OrbitalObliterator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/OrbitalObliterator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/PlasmaBurster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/PlasmaBurster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/PrefabBasedWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/PrefabBasedWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponModifiers/BeamImpact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponModifiers/BeamImpact.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponModifiers/ProjFrameWithTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponModifiers/ProjFrameWithTimer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +44,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DeathRaySfxGroupController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Objects/SortObjectByYAxis.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Josh/Projects/Doom-Cube-Remake/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SortLightByYAxis.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UISfxController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.8/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
@@ -196,6 +180,7 @@
       <workItem from="1736916174930" duration="1558000" />
       <workItem from="1736989952081" duration="4519000" />
       <workItem from="1737261188163" duration="2307000" />
+      <workItem from="1737304555974" duration="13150000" />
     </task>
     <task id="LOCAL-00001" summary="Remove FireFliesRed 1 prefab&#10;&#10;Deleted FireFliesRed 1.prefab from Assets/Particles/UsefulParticles/Death directory. This file was no longer necessary and its removal helps clean up the project.">
       <option name="closed" value="true" />
@@ -355,6 +340,17 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Remove FireFliesRed 1 prefab&#10;&#10;Deleted FireFliesRed 1.prefab from Assets/Particles/UsefulParticles/Death directory. This file was no longer necessary and its removal helps clean up the project." />
