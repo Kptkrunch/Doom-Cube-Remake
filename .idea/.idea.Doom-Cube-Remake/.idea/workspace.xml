@@ -5,90 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/BeamStart.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/DoomRayB.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionC.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionC.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionD.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionD.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionE.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionE.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionF.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionF.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionG.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionG.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionH.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionH.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionI.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionI.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionJ.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionJ.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionK.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionK.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionL.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionL.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionM.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionM.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionN.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionN.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionO.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionO.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionP.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionP.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionQ.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionQ.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionR.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionR.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionS.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionS.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionT.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionT.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionU.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionU.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionV.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/ExplosionSounds/ExplosionV.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/HitSounds/HitU.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/HitSounds/HitU.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/HitSounds/HitV.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/HitSounds/HitV.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/MuzzleSounds/MuzzleU.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/MuzzleSounds/MuzzleU.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/MuzzleSounds/MuzzleV.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/MuzzleSounds/MuzzleV.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/PassiveSounds/PassiveA.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/PassiveSounds/PassiveA.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/PassiveSounds/PassiveE.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/PassiveSounds/PassiveE.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/PassiveSounds/PassiveF.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/PassiveSounds/PassiveF.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/PassiveSounds/PassiveG.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/PassiveSounds/PassiveG.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MusicController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MusicController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MusicGroupController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MusicGroupController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MeatSeekerExplosion.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MeatSeekerExplosion.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScreenFeedbackGroupController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScreenFeedbackGroupController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/ClusterCannon.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/SfxPurgatory/ClusterCannon.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/BeamStart.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/PassiveSounds/PassiveA.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/WeaponsSfx/PassiveSounds/PassiveA.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/CubeSfx/Deathrays/DoomRayB.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/CubeMegaExplode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particles/UsefulParticles/CubeMegaExplode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Infinity Code/Ultimate Editor Enhancer Settings/References.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Infinity Code/Ultimate Editor Enhancer Settings/References.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EnemySpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EnemySpawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/CritterBite.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/CritterBite.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/DeltaBuster/BusterShell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/DeltaBuster/BusterShell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MeatSeekerMissile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MeatSeekerMissile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileTrack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeeker/MissileTrack.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Nanite.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Nanite.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Parabalomb/ParabalombExp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Parabalomb/ParabalombExp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/SearingLance.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/SearingLance.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyStuff/EnemyWaveSpawnerPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyStuff/EnemyWaveSpawnerPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/PlasmaBurster.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjs/WeaponsSOS/PlasmaBurster.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.scenetemplate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathBlade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathBlade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathRay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathRay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +63,7 @@
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging develop",
+    "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

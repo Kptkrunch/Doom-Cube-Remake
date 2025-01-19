@@ -1,3 +1,4 @@
+using Controllers;
 using UnityEngine;
 
 namespace Weapons.DeathRays
@@ -6,6 +7,7 @@ namespace Weapons.DeathRays
     {
         public int drid;
         public LineRenderer lineRenderer;
+        public GenericJuiceManager juiceManager;
         public CircleCollider2D beamHitBox;
         private Vector3 _velocity, _beamStart, _beamEnd;
 
