@@ -1,3 +1,4 @@
+using Controllers;
 using UnityEngine;
 
 namespace Weapons.DeathRays
@@ -7,7 +8,9 @@ namespace Weapons.DeathRays
         public int drid;
         public LineRenderer lineRenderer;
         public CircleCollider2D beamHitBox;
+        public GenericJuiceManager juiceManager;
         private Vector3 _velocity, _beamStart, _beamEnd;
+        
 
         private void Update()
         {
@@ -17,6 +20,7 @@ namespace Weapons.DeathRays
         public virtual void FireBeam()
         {
             // set everything to active
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         public virtual void ResolveDeathRay()

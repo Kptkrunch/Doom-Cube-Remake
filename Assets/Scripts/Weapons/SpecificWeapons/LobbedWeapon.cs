@@ -1,4 +1,5 @@
 using System.Collections;
+using Controllers;
 using Controllers.Pools;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -57,7 +58,7 @@ namespace Weapons.SpecificWeapons
             var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             proj.transform.position = transform.position;
             proj.SetActive(true);
-            juiceManager.TriggerFiringFeedback();
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Controllers;
 using Damagers;
 using GenUtilsAndTools;
 using JetBrains.Annotations;
@@ -42,12 +43,12 @@ namespace Weapons.SpecificWeapons
         private void OnAwake()
         {
             SetStats();
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Play(transform.position);
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
         
         private void OnDisable()
         {
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Stop(transform.position);
+            juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void SetStats()

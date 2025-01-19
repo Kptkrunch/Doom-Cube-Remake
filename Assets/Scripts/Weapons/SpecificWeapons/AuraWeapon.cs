@@ -1,4 +1,5 @@
 using System;
+using Controllers;
 using Damagers;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -18,13 +19,12 @@ namespace Weapons.SpecificWeapons
 
         private void OnEnable()
         {
-            // play the passive loop sound effect 0 is one-shot, 1 is hit, 2 is explosion sound, 3 is looping sound
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Play(transform.position);
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void OnDisable()
         {
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[3].Stop(transform.position);
+            juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void SetStats()

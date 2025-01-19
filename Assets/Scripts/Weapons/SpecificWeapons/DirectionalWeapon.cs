@@ -1,4 +1,5 @@
 using System.Collections;
+using Controllers;
 using Controllers.Pools;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -59,7 +60,7 @@ namespace Weapons.SpecificWeapons
                     proj.SetActive(true);
                 }
 
-                WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
+                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
             }
 

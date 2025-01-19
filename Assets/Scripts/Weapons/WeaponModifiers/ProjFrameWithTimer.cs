@@ -1,4 +1,5 @@
 using System;
+using Controllers;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Weapons.WeaponModifiers
         public float activeInterval, coolDownTimer;
         public int pid;
         public GameObject projectileFrame;
+        public GenericJuiceManager juiceManager;
 
         private float _activeTimer;
         private bool _isActive;
@@ -21,14 +23,13 @@ namespace Weapons.WeaponModifiers
         
         private void OnEnable()
         {
-            var p = WeaponSfxGroupController.Instance.sfxControllers[pid].player;
-            p.FeedbacksList[3].Play(transform.position);
+            if(juiceManager) juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Idle);
         }
 
         private void OnDisable()
         {
-            var p = WeaponSfxGroupController.Instance.sfxControllers[pid].player;
-            if (p.FeedbacksList[3].IsPlaying) p.FeedbacksList[3].Stop(transform.position);        }
+            if(juiceManager) juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Idle);
+        }
 
         private void Update()
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Controllers;
 using Controllers.Pools;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -76,7 +77,7 @@ namespace Weapons.SpecificWeapons
             if (index % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
 
             proj.SetActive(true);
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void SetStats()

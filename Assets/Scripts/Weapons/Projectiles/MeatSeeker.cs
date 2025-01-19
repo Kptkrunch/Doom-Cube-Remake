@@ -1,3 +1,4 @@
+using Controllers;
 using Controllers.Pools;
 using Damagers;
 using UnityEngine;
@@ -26,11 +27,7 @@ namespace Weapons.Projectiles
             damager.blastRadiusCollider.radius = blastRadius;
             exp.gameObject.transform.position = transform.position;
             exp.SetActive(true);
-            // 2 is the index for explosion sound on the weapons sfx player
-            WeaponSfxGroupController.Instance.sfxControllers[pid].player.FeedbacksList[2].Play(transform.position);            
             animator.Restart(false);
         }
-        
-        
     }
 }

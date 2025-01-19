@@ -1,4 +1,5 @@
 using System;
+using Controllers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -27,7 +28,7 @@ namespace Weapons.Projectiles
             if (it.isLobbed)
             {
                 it.isLobbed = false;
-                WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[0].Play(transform.position);
+                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Passive);
                 LobSaw();
             }
 
@@ -72,7 +73,7 @@ namespace Weapons.Projectiles
         private void OnDisable()
         {
             pd.stats.movSpeed = _sawSpeed;
-            WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[3].Stop(transform.position);
+            juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Passive);
             SetStats();
         }
 
@@ -150,7 +151,7 @@ namespace Weapons.Projectiles
                     var localScale = transform.localScale;
                     localScale = Vector3.Lerp(localScale, _growSawScale, _growSpeed);
                     transform.localScale = localScale;
-                    WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[3].Play(transform.position);
+                    juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Idle);
                     break;
                 }
             }
