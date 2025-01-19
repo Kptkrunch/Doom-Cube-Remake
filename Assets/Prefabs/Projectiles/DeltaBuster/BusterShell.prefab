@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4110668545290411356
 Transform:
   m_ObjectHideFlags: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   it: {fileID: 6807351048889185855}
   pd: {fileID: 11400000, guid: 7f74437adc98dda4d9679d3249f1b808, type: 2}
+  juiceManager: {fileID: 0}
   parent: {fileID: 1446118576198865867}
   enemyDamager: {fileID: 8095844000514659987}
 --- !u!114 &6807351048889185855

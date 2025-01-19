@@ -1,3 +1,4 @@
+using Controllers;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -21,9 +22,10 @@ namespace Weapons.DeathRays
             hitMarker.SetActive(true);
             splinePlayer.Play();
             DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Play(transform.position);
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
-        public override void ResolveDeathRay()
+        protected override void ResolveDeathRay()
         {
             if (splinePlayer.IsPlaying)
             {
@@ -40,10 +42,10 @@ namespace Weapons.DeathRays
                 splinePlayer.Restart(false);
             }
 
-            if (!hitMarker.activeSelf
-                && DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].IsPlaying)
+            if (DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].IsPlaying)
             {
                 DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Stop(transform.position);
+                juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
             }
         }
     }

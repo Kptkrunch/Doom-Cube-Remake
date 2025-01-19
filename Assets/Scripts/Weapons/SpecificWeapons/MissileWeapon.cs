@@ -1,4 +1,5 @@
 using System.Collections;
+using Controllers;
 using Controllers.Pools;
 using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
@@ -89,7 +90,7 @@ namespace Weapons.SpecificWeapons
             missile.transform.position = missileTarget;
             missile.GetComponentInChildren<SplineAnimate>().Play();
             missile.SetActive(true);
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
     }
 }

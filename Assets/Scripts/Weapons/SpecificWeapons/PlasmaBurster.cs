@@ -1,4 +1,5 @@
 using System.Collections;
+using Controllers;
 using Controllers.Pools;
 using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
@@ -28,7 +29,7 @@ namespace Weapons.SpecificWeapons
         {
             CanFire = false;
             RandomDirection();
-            Debug.Log(_direction);
+            
             for (var i = 0; i < Ammo; i++)
             {
                 yield return new WaitForSeconds(FireInterval);
@@ -51,7 +52,7 @@ namespace Weapons.SpecificWeapons
             theProj.pd.stats.direction = _direction;
             proj.SetActive(true);
             proj.transform.rotation = _rotation;
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void SetStats()

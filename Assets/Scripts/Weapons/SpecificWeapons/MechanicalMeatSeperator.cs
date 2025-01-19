@@ -1,4 +1,5 @@
 using System.Collections;
+using Controllers;
 using Controllers.Pools;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -47,7 +48,7 @@ namespace Weapons.SpecificWeapons
             var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             saw.transform.position = transform.position;
             saw.SetActive(true);
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
     }
 }

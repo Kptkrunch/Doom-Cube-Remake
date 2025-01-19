@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Controllers;
 using Controllers.Pools;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -28,6 +29,8 @@ namespace Weapons.SpecificWeapons
             CanFire = false;
             for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
             {
+                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
+
                 if (doesAlternate)
                     for (var j = 0; j < firePoints.Count; j++)
                     {
@@ -76,7 +79,6 @@ namespace Weapons.SpecificWeapons
             if (index % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
 
             proj.SetActive(true);
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
         }
 
         private void SetStats()

@@ -1,4 +1,5 @@
 using System.Collections;
+using Controllers;
 using Controllers.Pools;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -54,11 +55,10 @@ namespace Weapons.SpecificWeapons
             var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
             flash.transform.position = transform.position;
             flash.SetActive(true);
-            var p = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
-            p.FeedbacksList[0].Play(transform.position);
             var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             proj.transform.position = transform.position;
             proj.SetActive(true);
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
     }
 }

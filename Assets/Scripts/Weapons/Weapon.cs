@@ -9,7 +9,9 @@ namespace Weapons
     {
         [SerializeField] public WeaponData stats;
         public Sprite uiSprite;
-
+        
+        public GenericJuiceManager juiceManager;
+        
         private void Awake()
         {
             stats = Instantiate(stats);

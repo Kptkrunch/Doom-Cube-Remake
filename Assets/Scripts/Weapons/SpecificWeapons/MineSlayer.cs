@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Controllers;
 using Controllers.Pools;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -39,7 +40,7 @@ namespace Weapons.SpecificWeapons
             var mine = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
             mine.transform.position = transform.position;
             mine.SetActive(true);
-            WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void SetStats()
