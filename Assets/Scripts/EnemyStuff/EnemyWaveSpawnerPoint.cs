@@ -30,6 +30,7 @@ namespace EnemyStuff
             if (currentWaveIndex >= waveInfoList.Count)
             {
                 _canSpawn = false;
+                StopCoroutine(SpawnEnemies());
                 return;
             }
             _waveTimer -= Time.fixedDeltaTime;

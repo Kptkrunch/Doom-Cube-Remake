@@ -40,8 +40,7 @@ namespace Weapons.DeathRays
                 splinePlayer.Restart(false);
             }
 
-            if (!hitMarker.activeSelf
-                && DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].IsPlaying)
+            if (DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].IsPlaying)
             {
                 DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Stop(transform.position);
             }

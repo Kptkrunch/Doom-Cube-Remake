@@ -40,6 +40,8 @@ namespace Weapons.Projectiles
             if (collision.CompareTag("Enemy"))
             {
                 var hitParticle = ProjectileHitObjectPools.Instance.hitPools[pd.pid].GetPooledGameObject();
+                WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[1].Play(collision.transform.position);
+
                 hitParticle.transform.position = collision.transform.position;
                 hitParticle.SetActive(true);
             }
@@ -47,11 +49,12 @@ namespace Weapons.Projectiles
             if (collision.CompareTag("BasicObject"))
             {
                 var hitParticle = ProjectileHitObjectPools.Instance.hitPools[pd.pid].GetPooledGameObject();
+                WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[1].Play(collision.transform.position);
+
                 hitParticle.transform.position = collision.transform.position;
                 hitParticle.SetActive(true);
             }
             
-            WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[0].Play(collision.transform.position);
         }
 
         public virtual void OnEnable()
@@ -104,7 +107,9 @@ namespace Weapons.Projectiles
         protected void MaybeDisableOnContactWithAnything(Collider2D collision)
         {
             if (collision.CompareTag("Enemy") || collision.CompareTag("BasicObject"))
+            {
                 parent.gameObject.SetActive(false);
+            }
         }
 
         protected void MaybeMoveBackwards()
