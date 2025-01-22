@@ -28,6 +28,7 @@ namespace Weapons.SpecificWeapons
                 var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
                 flash.transform.position = transform.position;
                 flash.SetActive(true);
+                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
                 if (doesAlternate)
                 {
                     var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
@@ -64,7 +65,6 @@ namespace Weapons.SpecificWeapons
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
             }
 
-            yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].coolDown);
             CanFire = true;
         }
 

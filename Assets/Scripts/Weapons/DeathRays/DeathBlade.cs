@@ -22,7 +22,6 @@ namespace Weapons.DeathRays
             hitMarker.SetActive(true);
             splinePlayer.Play();
             DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Play(transform.position);
-            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         protected override void ResolveDeathRay()
@@ -45,7 +44,6 @@ namespace Weapons.DeathRays
             if (DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].IsPlaying)
             {
                 DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Stop(transform.position);
-                juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
             }
         }
     }

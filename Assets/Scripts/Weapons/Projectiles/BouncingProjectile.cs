@@ -96,7 +96,7 @@ namespace Weapons.Projectiles
             damager.damage = pd.stats.damage;
             damager.GetComponent<CircleCollider2D>().radius = pd.stats.size;
             exp.SetActive(true);
-            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Death);
+            GenericShakeController.Instance.ShakeWeakStrongViolent("strong", transform);
         }
     }
 }

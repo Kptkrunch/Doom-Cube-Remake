@@ -7,6 +7,7 @@ namespace Weapons.Projectiles
 {
     public class MeatSaw : BouncingProjectile
     {
+        public GenericJuiceManager juiceManager;
         private Vector3 _growSawScale;
         private bool _isGrowing, _triggered;
         private float _growSpeed, _spinTimer;
@@ -28,7 +29,6 @@ namespace Weapons.Projectiles
             if (it.isLobbed)
             {
                 it.isLobbed = false;
-                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Passive);
                 LobSaw();
             }
 

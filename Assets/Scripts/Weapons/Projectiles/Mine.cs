@@ -37,7 +37,7 @@ namespace Weapons.Projectiles
             damager.blastRadiusCollider.radius = expRadius;
             explosion.gameObject.transform.position = transform.position;
             explosion.SetActive(true);
-            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Death);
+            GenericShakeController.Instance.ShakeWeakStrongViolent("strong", transform);
             parent.gameObject.SetActive(false);
         }
 

@@ -27,6 +27,7 @@ namespace Weapons.Projectiles
             damager.blastRadiusCollider.radius = blastRadius;
             exp.gameObject.transform.position = transform.position;
             exp.SetActive(true);
+            GenericShakeController.Instance.ShakeWeakStrongViolent("strong", transform);
             animator.Restart(false);
         }
     }

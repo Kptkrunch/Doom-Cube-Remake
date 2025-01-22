@@ -66,7 +66,7 @@ namespace Weapons.Projectiles
             damager.gameObject.transform.position = transform.position;
             damager.gameObject.SetActive(true);
             gameObject.SetActive(false);
-            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Death);
+            GenericShakeController.Instance.ShakeWeakStrongViolent("strong", transform);
         }
 
         private void Reset()

@@ -12,14 +12,22 @@ namespace Weapons.SpecificWeapons
         public EAuraDamager auraDamager;
         [SerializeField] private CircleCollider2D auraCollider;
         [SerializeField] private Transform auraParticles;
+        private float _sfxTimer, _sfxInterval;
         private void Start()
         {
+            _sfxInterval = 10.0f;
+            _sfxTimer = _sfxInterval;
             SetStats(); 
         }
 
-        private void OnEnable()
+        private void FixedUpdate()
         {
-            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
+            _sfxTimer -= Time.deltaTime;
+            if (_sfxTimer <= 0)
+            {
+                _sfxTimer = _sfxInterval;
+                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
+            }
         }
 
         private void OnDisable()

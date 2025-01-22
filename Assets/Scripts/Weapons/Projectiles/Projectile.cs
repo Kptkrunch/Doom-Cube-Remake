@@ -11,7 +11,6 @@ namespace Weapons.Projectiles
     {
         public BehaviorChecklist it;
         public ProjectileData pd;
-        public GenericJuiceManager juiceManager;
         public GameObject parent;
         [CanBeNull] public EnemyDamager enemyDamager;
         protected float _lifeTimer, _fuseTimer, _pens;
