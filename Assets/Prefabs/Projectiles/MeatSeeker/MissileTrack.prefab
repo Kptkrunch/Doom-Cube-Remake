@@ -295,6 +295,10 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 3211512154496383844}
+    - target: {fileID: 3762585068816431298, guid: 87f476bd988064b47931f59badd501e9, type: 3}
+      propertyPath: missileTrack
+      value: 
+      objectReference: {fileID: 8766339402483427144}
     - target: {fileID: 8078781750236708068, guid: 87f476bd988064b47931f59badd501e9, type: 3}
       propertyPath: m_Name
       value: MeatSeekerMissile
