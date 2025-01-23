@@ -6,19 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ac5c2c10-ad0a-4748-b9cf-188778765940" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doom-Cube-Remake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeparator/SawFrame.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/MeatSeparator/SawFrame.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainCorridorScene.scenetemplate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/ObjectPhaser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenUtilsAndTools/ObjectPhaser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathBlade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DeathBlade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/DeathRays/DoomRay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/BouncingProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/BouncingProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/ExplosiveProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/ExplosiveProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSaw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSaw.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/MeatSeeker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Mine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Mine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectiles/Projectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/AuraWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/AuraWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DeltaBuster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DeltaBuster.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DirectionalWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/SpecificWeapons/DirectionalWeapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,6 +173,7 @@
       <workItem from="1737261188163" duration="2307000" />
       <workItem from="1737304555974" duration="13150000" />
       <workItem from="1737499951054" duration="11132000" />
+      <workItem from="1737592205232" duration="1852000" />
     </task>
     <task id="LOCAL-00001" summary="Remove FireFliesRed 1 prefab&#10;&#10;Deleted FireFliesRed 1.prefab from Assets/Particles/UsefulParticles/Death directory. This file was no longer necessary and its removal helps clean up the project.">
       <option name="closed" value="true" />

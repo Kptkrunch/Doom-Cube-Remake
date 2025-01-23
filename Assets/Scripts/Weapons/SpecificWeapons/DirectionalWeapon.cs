@@ -25,29 +25,33 @@ namespace Weapons.SpecificWeapons
             CanFire = false;
             for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
             {
+                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
                 var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
                 flash.transform.position = transform.position;
                 flash.SetActive(true);
-                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
-                if (doesAlternate)
+                switch (doesAlternate)
                 {
-                    var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-                    proj.transform.position = transform.position;
-                    if (i % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
-                    if (i % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
+                    case true:
+                    {
+                        var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+                        proj.transform.position = transform.position;
+                        if (i % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
+                        if (i % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
 
-                    proj.SetActive(true);
-                }
+                        proj.SetActive(true);
+                        break;
+                    }
+                    case false:
+                    {
+                        var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
 
-                if (!doesAlternate)
-                {
-                    var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+                        proj.transform.position = transform.position;
 
-                    proj.transform.position = transform.position;
+                        proj.GetComponent<Projectile>().pd.stats.direction = dir1;
 
-                    proj.GetComponent<Projectile>().pd.stats.direction = dir1;
-
-                    proj.SetActive(true);
+                        proj.SetActive(true);
+                        break;
+                    }
                 }
 
                 if (!doesAlternate)
@@ -61,7 +65,6 @@ namespace Weapons.SpecificWeapons
                     proj.SetActive(true);
                 }
 
-                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
             }
 

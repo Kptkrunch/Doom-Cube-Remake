@@ -63,7 +63,7 @@ namespace Weapons.SpecificWeapons
 
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
             }
-
+            
             yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].coolDown);
             CanFire = true;
         }
