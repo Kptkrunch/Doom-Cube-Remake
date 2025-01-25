@@ -11,7 +11,7 @@ namespace Weapons.WeaponModifiers
         private float _damageTimer, _damageInterval, _damage;
         
 
-        private void Awake()
+        private void OnEnable()
         {
             // play the passive sound index on awake and end it on disabled
             parent.juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
@@ -39,7 +39,6 @@ namespace Weapons.WeaponModifiers
             if (collision.CompareTag("Enemy"))
                 if (_damageTimer <= 0)
                 {
-                    Debug.Log("Damage?");
                     _damageTimer = _damageInterval;
                     collision.GetComponent<EnemyController>().TakeDamage(_damage, damageType);
                 }

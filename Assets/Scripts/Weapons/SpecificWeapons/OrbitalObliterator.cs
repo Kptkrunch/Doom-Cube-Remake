@@ -79,17 +79,12 @@ namespace Weapons.SpecificWeapons
 
         private void Laser()
         {
-            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
             if (_isFiring)
             {
                 // the ongoing looping sound for the laser to continue for as long as the weapon is firing
-                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
                 _beamStrikePosition = beamImpact.transform.position;
                 theBeam.SetPosition(0, beamOrigin.transform.position);
                 theBeam.SetPosition(1, _beamStrikePosition);
-            } else if (!_isFiring)
-            {
-                juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
             }
         }
     }

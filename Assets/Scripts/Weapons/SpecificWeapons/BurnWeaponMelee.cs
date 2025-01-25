@@ -27,7 +27,7 @@ namespace Weapons.SpecificWeapons
             if (CanFire) StartCoroutine(AttackLoop());
         }
 
-        protected IEnumerator AttackLoop()
+        private IEnumerator AttackLoop()
         {
             CanFire = false;
             juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
@@ -46,7 +46,7 @@ namespace Weapons.SpecificWeapons
             CanFire = true;
         }
 
-        protected void WeaponFacing()
+        private void WeaponFacing()
         {
             if (Input.GetAxisRaw("Horizontal") > 0)
             {
