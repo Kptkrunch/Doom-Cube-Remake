@@ -43,7 +43,6 @@ namespace Weapons.SpecificWeapons
         private void OnAwake()
         {
             SetStats();
-            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
         
         private void OnDisable()
@@ -53,6 +52,9 @@ namespace Weapons.SpecificWeapons
 
         private void SetStats()
         {
+            if (naniteController) naniteController.nanitePhasers[0].UpdateIntervals(stats.weaponLvls[stats.lvl].duration, stats.weaponLvls[stats.lvl].duration);
+            if (naniteController) naniteController.nanitePhasers[1].UpdateIntervals(stats.weaponLvls[stats.lvl].duration, stats.weaponLvls[stats.lvl].duration);
+
             if (enemyDamagers == null) return;
             for (var i = 0; i < enemyDamagers.Count; i++)
             {

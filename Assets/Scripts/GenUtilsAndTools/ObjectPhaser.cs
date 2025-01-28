@@ -21,26 +21,23 @@ namespace GenUtilsAndTools
             if (_readyToPhase) StartCoroutine(PhaseObject());
         }
 
+        public void UpdateIntervals(float phaseOut, float phaseIn)
+        {
+            phaseOutInterval = phaseOut;
+            phaseInInterval = phaseIn;
+        }
+
         IEnumerator PhaseObject()
         {
             _readyToPhase = false;
             
             yield return new WaitForSeconds(phaseOutInterval);
-            if (phaseInParticleIndex > 0)
-            {
-                // get a pool that's yet to be made
-                
-            }
             obj.SetActive(false);
-            parent.juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
             
             yield return new WaitForSeconds(phaseInInterval);
-            if (phaseOutParticleIndex > 0)
-            {
-                // get a pool that's yet to be made
-            }
             obj.SetActive(true);
             parent.juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
+            
             _readyToPhase = true;
         }
     }
