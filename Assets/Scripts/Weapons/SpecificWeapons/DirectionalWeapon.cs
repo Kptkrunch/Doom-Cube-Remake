@@ -1,10 +1,8 @@
 using System.Collections;
 using Controllers;
 using Controllers.Pools;
-using MoreMountains.Feedbacks;
 using UnityEngine;
 using Weapons.Projectiles;
-using Weapons.SOS;
 
 namespace Weapons.SpecificWeapons
 {
@@ -35,6 +33,7 @@ namespace Weapons.SpecificWeapons
                     {
                         var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
                         proj.transform.position = transform.position;
+                        
                         if (i % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
                         if (i % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
 
@@ -44,7 +43,6 @@ namespace Weapons.SpecificWeapons
                     case false:
                     {
                         var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-
                         proj.transform.position = transform.position;
 
                         proj.GetComponent<Projectile>().pd.stats.direction = dir1;
@@ -53,21 +51,11 @@ namespace Weapons.SpecificWeapons
                         break;
                     }
                 }
-
-                if (!doesAlternate)
-                {
-                    var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-
-                    proj.transform.position = transform.position;
-
-                    proj.GetComponent<Projectile>().pd.stats.direction = dir2;
-
-                    proj.SetActive(true);
-                }
-
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
-            }
 
+            }
+            
+            yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].coolDown);
             CanFire = true;
         }
 

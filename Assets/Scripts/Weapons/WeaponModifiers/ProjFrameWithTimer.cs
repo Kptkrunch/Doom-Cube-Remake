@@ -2,12 +2,13 @@ using System;
 using Controllers;
 using MoreMountains.Feedbacks;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Weapons.WeaponModifiers
 {
     public class ProjFrameWithTimer : MonoBehaviour
     {
-        public float activeInterval, coolDownTimer;
+        public float coolDown, duration;
         public int pid;
         public GameObject projectileFrame;
         public GenericJuiceManager juiceManager;
@@ -28,7 +29,8 @@ namespace Weapons.WeaponModifiers
 
         private void OnDisable()
         {
-            if(juiceManager) juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Idle);
+            juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Idle);
+            juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void Update()
@@ -40,19 +42,25 @@ namespace Weapons.WeaponModifiers
                     return;
             }
 
-            _activeTimer = activeInterval;
+            _activeTimer = duration;
             if (!_isActive)
             {
                 projectileFrame.SetActive(true);
                 _isActive = true;
-                _activeTimer = activeInterval;
+                _activeTimer = duration;
             }
             else
             {
-                _activeTimer = coolDownTimer;
+                _activeTimer = coolDown;
                 projectileFrame.SetActive(false);
                 _isActive = false;
             }
+        }
+
+        public void UpdateIntervals(float thisDuration, float thisCoolDown)
+        {
+            coolDown = thisCoolDown;
+            duration = thisDuration;
         }
     }
 }

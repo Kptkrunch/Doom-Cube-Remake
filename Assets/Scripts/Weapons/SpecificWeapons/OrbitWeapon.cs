@@ -3,7 +3,6 @@ using Controllers;
 using Damagers;
 using GenUtilsAndTools;
 using JetBrains.Annotations;
-using MoreMountains.Feedbacks;
 using UnityEngine;
 using Weapons.WeaponModifiers;
 
@@ -47,13 +46,21 @@ namespace Weapons.SpecificWeapons
         
         private void OnDisable()
         {
+            juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Idle);
             juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void SetStats()
         {
-            if (naniteController) naniteController.nanitePhasers[0].UpdateIntervals(stats.weaponLvls[stats.lvl].duration, stats.weaponLvls[stats.lvl].duration);
-            if (naniteController) naniteController.nanitePhasers[1].UpdateIntervals(stats.weaponLvls[stats.lvl].duration, stats.weaponLvls[stats.lvl].duration);
+            if (naniteController)
+                naniteController.nanitePhasers[0].UpdateIntervals(stats.weaponLvls[stats.lvl].duration,
+                    stats.weaponLvls[stats.lvl].duration);
+            if (naniteController)
+                naniteController.nanitePhasers[1].UpdateIntervals(stats.weaponLvls[stats.lvl].duration,
+                    stats.weaponLvls[stats.lvl].duration);
+            if (projFrameWithTimer)
+                projFrameWithTimer.UpdateIntervals(stats.weaponLvls[stats.lvl].duration,
+                    stats.weaponLvls[stats.lvl].coolDown);
 
             if (enemyDamagers == null) return;
             for (var i = 0; i < enemyDamagers.Count; i++)
@@ -66,8 +73,8 @@ namespace Weapons.SpecificWeapons
                 }
 
                 if (!projFrameWithTimer) continue;
-                projFrameWithTimer.activeInterval = stats.weaponLvls[stats.lvl].duration;
-                projFrameWithTimer.coolDownTimer = stats.weaponLvls[stats.lvl].coolDown;
+                projFrameWithTimer.duration = stats.weaponLvls[stats.lvl].duration;
+                projFrameWithTimer.coolDown = stats.weaponLvls[stats.lvl].coolDown;
             }
         }
 
@@ -82,15 +89,15 @@ namespace Weapons.SpecificWeapons
                     if (projectileScales != null)
                         projectileScales[i].staySizeInterval = stats.weaponLvls[stats.lvl].duration * .6f;
                     if (projFrameWithTimer == null) continue;
-                    projFrameWithTimer.activeInterval = stats.weaponLvls[stats.lvl].duration;
-                    projFrameWithTimer.coolDownTimer = stats.weaponLvls[stats.lvl].coolDown;
+                    projFrameWithTimer.duration = stats.weaponLvls[stats.lvl].duration;
+                    projFrameWithTimer.coolDown = stats.weaponLvls[stats.lvl].coolDown;
                 }
 
             transform.localScale = stats.weaponLvls[stats.lvl].size;
             if (projFrameWithTimer != null)
             {
-                projFrameWithTimer.coolDownTimer = stats.weaponLvls[stats.lvl].coolDown;
-                projFrameWithTimer.activeInterval = stats.weaponLvls[stats.lvl].duration;
+                projFrameWithTimer.coolDown = stats.weaponLvls[stats.lvl].coolDown;
+                projFrameWithTimer.duration = stats.weaponLvls[stats.lvl].duration;
             }
 
             _rotationSpeed = stats.weaponLvls[stats.lvl].speed * Time.deltaTime;

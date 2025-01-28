@@ -21,9 +21,9 @@ MonoBehaviour:
   - damage: 1
     ammo: 3
     range: 3
-    coolDown: 3
+    coolDown: 4
     rateOfFire: 0.2
-    duration: 3
+    duration: 4
     speed: 3
     size: {x: 1, y: 1, z: 1}
     wildCard: 0
