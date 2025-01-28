@@ -621,14 +621,18 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 64273e4bae940614f8d99509aefd7e8e, type: 3}
     - target: {fileID: 2919878765119358670, guid: aa4e01792733f834a9ca141be724b552, type: 3}
       propertyPath: managedReferences[5986328710834552833].MaxVolume
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 2919878765119358670, guid: aa4e01792733f834a9ca141be724b552, type: 3}
-      propertyPath: managedReferences[5986328710834552833].MinVolume
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2919878765119358670, guid: aa4e01792733f834a9ca141be724b552, type: 3}
+      propertyPath: managedReferences[5986328710834552833].MinVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919878765119358670, guid: aa4e01792733f834a9ca141be724b552, type: 3}
       propertyPath: managedReferences[5986328710834552833].StopSoundOnFeedbackStop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919878765119358670, guid: aa4e01792733f834a9ca141be724b552, type: 3}
+      propertyPath: managedReferences[5986328710834552833].DoNotPlayIfClipAlreadyPlaying
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3767633846331304247, guid: aa4e01792733f834a9ca141be724b552, type: 3}
@@ -671,6 +675,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4458764351922853843, guid: aa4e01792733f834a9ca141be724b552, type: 3}
+      propertyPath: FeedbacksList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458764351922853843, guid: aa4e01792733f834a9ca141be724b552, type: 3}
+      propertyPath: managedReferences[5986328710834552833].Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 008b9e4ead3e64c49bacf9779c006687, type: 3}
+    - target: {fileID: 4780834451385368811, guid: aa4e01792733f834a9ca141be724b552, type: 3}
+      propertyPath: hitFeedbacks
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4780834451385368811, guid: aa4e01792733f834a9ca141be724b552, type: 3}
       propertyPath: idleFeedbacks
       value: 
@@ -680,7 +696,8 @@ PrefabInstance:
       value: IdleFeedbackJuiceController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 622273709300479005, guid: aa4e01792733f834a9ca141be724b552, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa4e01792733f834a9ca141be724b552, type: 3}

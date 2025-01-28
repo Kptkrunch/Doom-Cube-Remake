@@ -73,7 +73,7 @@ namespace Weapons.Projectiles
         private void OnDisable()
         {
             pd.stats.movSpeed = _sawSpeed;
-            juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Passive);
+            juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Idle);
             SetStats();
         }
 
@@ -94,7 +94,10 @@ namespace Weapons.Projectiles
                         pd.stats.movSpeed = 4f;
                         rb2d.gameObject.transform.position += _direction * (pd.stats.movSpeed * Time.deltaTime);
                     }
-
+                    if (!juiceManager.idleFeedbacks.FeedbacksList[0].IsPlaying)
+                    {
+                        juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Idle);
+                    }
                     break;
                 }
             }
@@ -151,7 +154,6 @@ namespace Weapons.Projectiles
                     var localScale = transform.localScale;
                     localScale = Vector3.Lerp(localScale, _growSawScale, _growSpeed);
                     transform.localScale = localScale;
-                    juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Idle);
                     break;
                 }
             }
