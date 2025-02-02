@@ -36,7 +36,6 @@ namespace Weapons.SpecificWeapons
                         
                         if (i % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
                         if (i % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
-
                         proj.SetActive(true);
                         break;
                     }
