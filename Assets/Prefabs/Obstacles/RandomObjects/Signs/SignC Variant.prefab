@@ -21,6 +21,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1514216460, guid: 66c57c5af53c9804481b0ea0af50ae52, type: 3}
     - target: {fileID: 3490054517879213152, guid: 6066a8a93676deb4bb0e5bd4374fe0b2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.17956543
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490054517879213152, guid: 6066a8a93676deb4bb0e5bd4374fe0b2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.47477627
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490054517879213152, guid: 6066a8a93676deb4bb0e5bd4374fe0b2, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.007633209
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490054517879213152, guid: 6066a8a93676deb4bb0e5bd4374fe0b2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.8117194
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490054517879213152, guid: 6066a8a93676deb4bb0e5bd4374fe0b2, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.8125
       objectReference: {fileID: 0}

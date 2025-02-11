@@ -22,27 +22,27 @@ PrefabInstance:
       objectReference: {fileID: -260327609, guid: 11df02e974ff9b04c8acf697bda930fe, type: 3}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Size.x
-      value: 3.348938
+      value: 6.8635044
       objectReference: {fileID: 0}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Size.y
-      value: 1.131481
+      value: 1.4639397
       objectReference: {fileID: 0}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Offset.x
-      value: 0.03204918
+      value: -0.015444756
       objectReference: {fileID: 0}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Offset.y
-      value: -0.003474772
+      value: -0.48633194
       objectReference: {fileID: 0}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.4375
+      value: 6.875
       objectReference: {fileID: 0}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.5396193
+      value: 3.0792387
       objectReference: {fileID: 0}
     - target: {fileID: 5165583773842802034, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Name
@@ -137,9 +137,14 @@ MonoBehaviour:
     invertX: 0
     invertY: 0
     depth: 1
-    spriteRenderer: {fileID: 0}
+    spriteRenderer: {fileID: 6847372680015466274}
   mainShape:
     shadowType: 1
     maskType: 0
     maskPivot: 0
     transform: {fileID: 619559807960269907}
+--- !u!212 &6847372680015466274 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2325375378041857089, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+  m_PrefabInstance: {fileID: 9170355486360775523}
+  m_PrefabAsset: {fileID: 0}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -17,5 +18,22 @@ namespace EnemyStuff
             { "Energy", false },
             { "Mind", false }
         };
+
+        private void OnEnable()
+        {
+            ResetEnemyBools();
+        }
+
+        private void ResetEnemyBools() {
+            DmgTypeDictionary["Deathray"] = false;
+            DmgTypeDictionary["Acid"] = false;
+            DmgTypeDictionary["Fire"] = false;
+            DmgTypeDictionary["Solid"] = false;
+            DmgTypeDictionary["Energy"] = false;
+            DmgTypeDictionary["Mind"] = false;
+            
+            gotDeathParticle = false;
+            alreadyDropped = false;
+        }
     }
 }

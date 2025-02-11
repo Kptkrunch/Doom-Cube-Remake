@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Size.x
+      value: 6.809188
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2505392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00029838085
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.3642385
+      objectReference: {fileID: 0}
     - target: {fileID: 5165583773842802034, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Name
       value: YellowSedan Variant
@@ -101,9 +117,14 @@ MonoBehaviour:
     invertX: 0
     invertY: 0
     depth: 1
-    spriteRenderer: {fileID: 0}
+    spriteRenderer: {fileID: 6604582486616537615}
   mainShape:
     shadowType: 1
     maskType: 0
     maskPivot: 0
     transform: {fileID: 880435825175097726}
+--- !u!212 &6604582486616537615 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2325375378041857089, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+  m_PrefabInstance: {fileID: 8929886344844713550}
+  m_PrefabAsset: {fileID: 0}
