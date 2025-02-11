@@ -1,4 +1,5 @@
 using System;
+using Controllers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -6,6 +7,7 @@ namespace Weapons.Projectiles
 {
     public class MeatSaw : BouncingProjectile
     {
+        public GenericJuiceManager juiceManager;
         private Vector3 _growSawScale;
         private bool _isGrowing, _triggered;
         private float _growSpeed, _spinTimer;
@@ -27,7 +29,6 @@ namespace Weapons.Projectiles
             if (it.isLobbed)
             {
                 it.isLobbed = false;
-                WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[0].Play(transform.position);
                 LobSaw();
             }
 
@@ -72,7 +73,7 @@ namespace Weapons.Projectiles
         private void OnDisable()
         {
             pd.stats.movSpeed = _sawSpeed;
-            WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[3].Stop(transform.position);
+            juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Idle);
             SetStats();
         }
 
@@ -93,7 +94,10 @@ namespace Weapons.Projectiles
                         pd.stats.movSpeed = 4f;
                         rb2d.gameObject.transform.position += _direction * (pd.stats.movSpeed * Time.deltaTime);
                     }
-
+                    if (!juiceManager.idleFeedbacks.FeedbacksList[0].IsPlaying)
+                    {
+                        juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Idle);
+                    }
                     break;
                 }
             }
@@ -150,7 +154,6 @@ namespace Weapons.Projectiles
                     var localScale = transform.localScale;
                     localScale = Vector3.Lerp(localScale, _growSawScale, _growSpeed);
                     transform.localScale = localScale;
-                    WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[3].Play(transform.position);
                     break;
                 }
             }

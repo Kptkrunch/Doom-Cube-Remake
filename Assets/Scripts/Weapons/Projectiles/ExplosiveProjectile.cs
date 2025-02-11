@@ -1,3 +1,4 @@
+using Controllers;
 using Controllers.Pools;
 using Damagers;
 using MoreMountains.Feedbacks;
@@ -21,8 +22,6 @@ namespace Weapons.Projectiles
             pd.stats.bounces = initBounces;
             _bounceHardInterval = 2f;
             _disableTimer = 2f;
-            _player = WeaponSfxGroupController.Instance.sfxControllers[pd.eid].player;
-            
             // bounceInterval = _bounceHardInterval;
             // bounceTimer = bounceInterval;
     }
@@ -37,10 +36,6 @@ namespace Weapons.Projectiles
         {
             base.OnEnable();
             Reset();
-            Debug.Log("enabled");
-            if (it.isLobbed) Debug.Log("lobbed");
-            _player.FeedbacksList[2].Play(transform.position);
-            
             // rb2d.gravityScale = 1;
             // rb2d.velocity = new Vector2(Random.Range(-horPower, horPower), vertPower + 1);
             if (it.doesBounce)
@@ -53,7 +48,6 @@ namespace Weapons.Projectiles
         private void OnDisable()
         {
             if (it.disableAfterBounces) Detonate();
-            Debug.Log("after detonate");
         }
 
         private void HardStop()
@@ -72,6 +66,7 @@ namespace Weapons.Projectiles
             damager.gameObject.transform.position = transform.position;
             damager.gameObject.SetActive(true);
             gameObject.SetActive(false);
+            GenericShakeController.Instance.ShakeWeakStrongViolent("strong", transform);
         }
 
         private void Reset()
@@ -80,7 +75,6 @@ namespace Weapons.Projectiles
             _bounceHardInterval = 2f;
             // bounceInterval = _bounceHardInterval;
             // bounceTimer = bounceInterval;
-            // Debug.Log("inside reset");
             // if (rb2d.gravityScale == 0) rb2d.gravityScale = 1;
             // rb2d.velocity = new Vector2(0f, 0f).normalized;
             it.delayDisable = false;

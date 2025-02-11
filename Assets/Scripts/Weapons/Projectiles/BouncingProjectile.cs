@@ -1,3 +1,4 @@
+using Controllers;
 using Controllers.Pools;
 using Damagers;
 using UnityEngine;
@@ -57,7 +58,7 @@ namespace Weapons.Projectiles
 
         public override void OnEnable()
         {
-            if (it.doesBounce) SetBouncTimer();
+            if (it.doesBounce) SetBounceTimer();
         }
 
         private void OnDisable()
@@ -82,7 +83,7 @@ namespace Weapons.Projectiles
                             (pd.stats.movSpeed * Time.deltaTime);
         }
 
-        private void SetBouncTimer()
+        private void SetBounceTimer()
         {
             BounceTimer = Random.Range(BounceTimer * 0.5f, BounceTimer * 1.75f);
         }
@@ -91,12 +92,11 @@ namespace Weapons.Projectiles
         {
             var exp = ProjectilePoolManager2.poolProj.projPools[pd.pid].GetPooledGameObject();
             var damager = exp.GetComponent<EnemyDamager>();
-            // play explosion sound index on collision
-            WeaponSfxGroupController.Instance.sfxControllers[pd.pid].player.FeedbacksList[2].Play(transform.position);
             exp.transform.position = transform.position;
             damager.damage = pd.stats.damage;
             damager.GetComponent<CircleCollider2D>().radius = pd.stats.size;
             exp.SetActive(true);
+            GenericShakeController.Instance.ShakeWeakStrongViolent("strong", transform);
         }
     }
 }

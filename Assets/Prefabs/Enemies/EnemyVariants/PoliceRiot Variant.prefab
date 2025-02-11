@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5230383693279970312
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 930189874123926673, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930189874123926673, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930189874123926673, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930189874123926673, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 930189874123926673, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930189874123926673, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930189874123926673, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930189874123926673, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930189874123926673, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930189874123926673, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611343570187185047, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611343570187185047, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.101
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920623320006420483, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 431200284, guid: 3d0300c6a6a971d41a8d8a5a003a1454, type: 3}
+    - target: {fileID: 5851097518422337776, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}
+      propertyPath: m_Name
+      value: PoliceRiot Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fadeddbafcfda404daa4003d3b760eb2, type: 3}

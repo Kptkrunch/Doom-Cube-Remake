@@ -1,3 +1,4 @@
+using Controllers;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace Weapons.DeathRays
             DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Play(transform.position);
         }
 
-        public override void ResolveDeathRay()
+        protected override void ResolveDeathRay()
         {
             switch (player.IsPlaying)
             {
@@ -35,6 +36,7 @@ namespace Weapons.DeathRays
                     beamStart.gameObject.SetActive(false);
                     beamHitBox.gameObject.SetActive(false);
                     DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Stop(transform.position);
+                    player?.StopFeedbacks();
                     break;
             }
         }

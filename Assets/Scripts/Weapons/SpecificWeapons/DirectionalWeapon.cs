@@ -1,9 +1,8 @@
 using System.Collections;
+using Controllers;
 using Controllers.Pools;
-using MoreMountains.Feedbacks;
 using UnityEngine;
 using Weapons.Projectiles;
-using Weapons.SOS;
 
 namespace Weapons.SpecificWeapons
 {
@@ -24,45 +23,37 @@ namespace Weapons.SpecificWeapons
             CanFire = false;
             for (var i = 0; i < stats.weaponLvls[stats.lvl].ammo; i++)
             {
+                juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
                 var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
                 flash.transform.position = transform.position;
                 flash.SetActive(true);
-                if (doesAlternate)
+                switch (doesAlternate)
                 {
-                    var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-                    proj.transform.position = transform.position;
-                    if (i % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
-                    if (i % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
+                    case true:
+                    {
+                        var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+                        proj.transform.position = transform.position;
+                        
+                        if (i % 2 == 0) proj.GetComponent<Projectile>().pd.stats.direction = dir1;
+                        if (i % 2 != 0) proj.GetComponent<Projectile>().pd.stats.direction = dir2;
+                        proj.SetActive(true);
+                        break;
+                    }
+                    case false:
+                    {
+                        var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+                        proj.transform.position = transform.position;
 
-                    proj.SetActive(true);
+                        proj.GetComponent<Projectile>().pd.stats.direction = dir1;
+
+                        proj.SetActive(true);
+                        break;
+                    }
                 }
-
-                if (!doesAlternate)
-                {
-                    var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-
-                    proj.transform.position = transform.position;
-
-                    proj.GetComponent<Projectile>().pd.stats.direction = dir1;
-
-                    proj.SetActive(true);
-                }
-
-                if (!doesAlternate)
-                {
-                    var proj = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
-
-                    proj.transform.position = transform.position;
-
-                    proj.GetComponent<Projectile>().pd.stats.direction = dir2;
-
-                    proj.SetActive(true);
-                }
-
-                WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player.FeedbacksList[0].Play(transform.position);
                 yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].rateOfFire);
-            }
 
+            }
+            
             yield return new WaitForSeconds(stats.weaponLvls[stats.lvl].coolDown);
             CanFire = true;
         }

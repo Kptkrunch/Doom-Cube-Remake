@@ -22,7 +22,6 @@ namespace Weapons.SpecificWeapons
             FireInterval = stats.weaponLvls[stats.lvl].rateOfFire;
             ReloadInterval = stats.weaponLvls[stats.lvl].coolDown;
             Ammo = stats.weaponLvls[stats.lvl].ammo;
-            var attackRadius = GetComponent<CircleCollider2D>();
         }
 
         protected virtual void Fire()

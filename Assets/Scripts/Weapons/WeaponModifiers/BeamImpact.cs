@@ -9,11 +9,12 @@ namespace Weapons.WeaponModifiers
         public Weapon parent;
         public string damageType;
         private float _damageTimer, _damageInterval, _damage;
+        
 
-        private void Awake()
+        private void OnEnable()
         {
             // play the passive sound index on awake and end it on disabled
-            WeaponSfxGroupController.Instance.sfxControllers[parent.stats.pid].player.FeedbacksList[3].Play(transform.position);
+            parent.juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void Start()
@@ -30,7 +31,7 @@ namespace Weapons.WeaponModifiers
 
         private void OnDisable()
         {
-            WeaponSfxGroupController.Instance.sfxControllers[parent.stats.pid].player.FeedbacksList[3].Play(transform.position);
+            parent.juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
         private void OnTriggerStay2D(Collider2D collision)
@@ -38,7 +39,6 @@ namespace Weapons.WeaponModifiers
             if (collision.CompareTag("Enemy"))
                 if (_damageTimer <= 0)
                 {
-                    Debug.Log("Damage?");
                     _damageTimer = _damageInterval;
                     collision.GetComponent<EnemyController>().TakeDamage(_damage, damageType);
                 }

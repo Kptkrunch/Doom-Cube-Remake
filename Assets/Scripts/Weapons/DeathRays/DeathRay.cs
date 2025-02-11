@@ -1,3 +1,4 @@
+using Controllers;
 using UnityEngine;
 
 namespace Weapons.DeathRays
@@ -6,6 +7,7 @@ namespace Weapons.DeathRays
     {
         public int drid;
         public LineRenderer lineRenderer;
+        public GenericJuiceManager juiceManager;
         public CircleCollider2D beamHitBox;
         private Vector3 _velocity, _beamStart, _beamEnd;
 
@@ -19,7 +21,7 @@ namespace Weapons.DeathRays
             // set everything to active
         }
 
-        public virtual void ResolveDeathRay()
+        protected virtual void ResolveDeathRay()
         {
             // run all the deactivate and line renderer
             // stuff here while playing anim

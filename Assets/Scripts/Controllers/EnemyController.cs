@@ -1,8 +1,8 @@
-using System;
 using Controllers.Pools;
 using EnemyStuff;
 using GenUtilsAndTools;
 using MoreMountains.Feedbacks;
+using ScriptableObjs;
 using TechSkills;
 using UnityEngine;
 
@@ -14,35 +14,44 @@ namespace Controllers
         public GameObject attackLocation;
         public SpriteRenderer spriteRenderer;
         public EnemyBools it;
-        public int attackIndex;
-        public float moveSpeed;
-        public float damage;
-        public float health = 5;
         public ItemDropper itemDropper;
         public Transform target;
 
         private Material _material;
-        private float _maxHealth, _hitCounter, _knockBackTimer, _hitInterval, _originalMoveSpeed, _lerpTimer;
+        private float _maxHealth, _hitCounter, _hitInterval, _originalMoveSpeed, _lerpTimer;
         private static readonly int FadeAmount = Shader.PropertyToID("_FadeAmount");
         private static readonly int OffsetUvY = Shader.PropertyToID("_OffsetUvY");
-
+        
+        private EnemyDatabase.EnemyData _stats;
+        
+        private float _health = 1, _moveSpeed, _damage, _rateOfFire, _range, _knockBackTimer;
+        private int _collisionAttackIndex, _rangedAttackIndex, _specialAttackIndex, _ammo;
+        
+        
         private void Awake()
         {
-            if (health <= 0) health = _maxHealth;
+            Debug.Log(_stats);
+            Debug.Log("right before getting stats");
+
+            _stats = EnemyDataManager.Instance.enemyDb.GetEnemyData(name);
+            Debug.Log("should have stats now");
+            Debug.Log(_stats);
         }
 
         private void Start()
         {
-            _maxHealth = health;
-            _originalMoveSpeed = moveSpeed;
-            target = PlayerHealthController.contPHealth.transform;
+            Debug.Log("in start");
+
+            InitEnemyStats();
+            InitEnemy();
+            ResetDamagedByType();
             _material = spriteRenderer.material;
         }
 
         private void FixedUpdate()
         {
             if (!target) target = PlayerHealthController.contPHealth.transform;
-            if (_hitCounter > 0f) _hitCounter -= Time.deltaTime;
+            if (_rateOfFire > 0f) _rateOfFire -= Time.deltaTime;
 
             FlipRigidBodyX();
             KnockBackTimer();
@@ -51,23 +60,22 @@ namespace Controllers
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            MeleeAttack(collision);
+            CollisionAttack(collision);
             StopEnemies();
         }
 
         public void TakeDamage(float enemyDamage, string damageType)
         {
-            health -= enemyDamage;
-            GetSoundByDamageType(damageType);
-            if (health <= 0)
+            _health -= enemyDamage;
+            if (_health <= 0)
             {
-                it.DmgTypeDictionary[damageType] = true;
-                health = _maxHealth;
                 if (!it.alreadyDropped)
                 {
                     it.alreadyDropped = true;
                     itemDropper.DropResource();
                 }
+                
+                it.DmgTypeDictionary[damageType] = true;
             }
 
             ShowDamage(enemyDamage);
@@ -76,7 +84,7 @@ namespace Controllers
         public void KnockBack(float knockBackAmount, float knockBackDuration)
         {
             _knockBackTimer = knockBackDuration;
-            if (_knockBackTimer >= 0) moveSpeed = -moveSpeed * knockBackAmount;
+            if (_knockBackTimer >= 0) _moveSpeed = -_moveSpeed * knockBackAmount;
         }
 
         private void ShowDamage(float theDamage, float intensity = 1f)
@@ -89,7 +97,7 @@ namespace Controllers
 
         private void FlipRigidBodyX()
         {
-            rb2d.velocity = (target.position - transform.position).normalized * moveSpeed;
+            rb2d.velocity = (target.position - transform.position).normalized * _moveSpeed;
             if (rb2d.velocity.x < 0)
                 rb2d.transform.localScale = new Vector2(-1, transform.localScale.y);
             else if (rb2d.velocity.x >= 0) rb2d.transform.localScale = new Vector2(1, transform.localScale.y);
@@ -100,7 +108,7 @@ namespace Controllers
             switch (_knockBackTimer)
             {
                 case <= 0:
-                    moveSpeed = _originalMoveSpeed;
+                    _moveSpeed = _stats.moveSpeed;
                     break;
                 case > 0f:
                     _knockBackTimer -= Time.deltaTime;
@@ -110,81 +118,99 @@ namespace Controllers
 
         private void StopEnemies()
         {
-            if (!PlayerController.contPlayer.gameObject.activeInHierarchy) moveSpeed = 0f;
+            if (!PlayerController.contPlayer.gameObject.activeInHierarchy) _moveSpeed = 0f;
         }
 
-        private void MeleeAttack(Collision2D collision)
+        private void CollisionAttack(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Player") && _hitCounter <= 0f)
+            if (collision.gameObject.CompareTag("Player") && _rateOfFire <= 0f)
             {
-                var attack = EnemyAttackPools.PoolEnemyAtk.attackList[attackIndex].GetPooledGameObject();
+                var attack = EnemyAttackPools.PoolEnemyAtk.attackList[_collisionAttackIndex].GetPooledGameObject();
                 attack.transform.position = attackLocation.transform.position;
-                if (rb2d.velocity.x < 0)
+                switch (rb2d.velocity.x)
                 {
-                    var localScale = attack.transform.localScale;
-                    localScale =
-                        new Vector3(1, localScale.y, localScale.z);
-                    attack.transform.localScale = localScale;
-                }
-                else if (rb2d.velocity.x >= 0)
-                {
-                    var localScale = attack.transform.localScale;
-                    localScale =
-                        new Vector3(-1, localScale.y, localScale.z);
-                    attack.transform.localScale = localScale;
+                    case < 0:
+                    {
+                        var localScale = attack.transform.localScale;
+                        localScale =
+                            new Vector3(1, localScale.y, localScale.z);
+                        attack.transform.localScale = localScale;
+                        break;
+                    }
+                    case >= 0:
+                    {
+                        var localScale = attack.transform.localScale;
+                        localScale =
+                            new Vector3(-1, localScale.y, localScale.z);
+                        attack.transform.localScale = localScale;
+                        break;
+                    }
                 }
 
                 attack.SetActive(true);
-                PlayerHealthController.contPHealth.TakeDamage(damage);
-                _hitCounter = _hitInterval;
+                PlayerHealthController.contPHealth.TakeDamage(_damage);
+                _rateOfFire = _stats.rateOfFire;
             }
 
             if (collision.gameObject.CompareTag("Construct"))
             {
-                var attack = EnemyAttackPools.PoolEnemyAtk.attackList[attackIndex].GetPooledGameObject();
+                var attack = EnemyAttackPools.PoolEnemyAtk.attackList[_collisionAttackIndex].GetPooledGameObject();
                 attack.transform.position = attackLocation.transform.position;
-                if (rb2d.velocity.x < 0)
+                switch (rb2d.velocity.x)
                 {
-                    var localScale = attack.transform.localScale;
-                    localScale =
-                        new Vector3(1, localScale.y, localScale.z);
-                    attack.transform.localScale = localScale;
-                }
-                else if (rb2d.velocity.x >= 0)
-                {
-                    var localScale = attack.transform.localScale;
-                    localScale =
-                        new Vector3(-1, localScale.y, localScale.z);
-                    attack.transform.localScale = localScale;
+                    case < 0:
+                    {
+                        var localScale = attack.transform.localScale;
+                        localScale =
+                            new Vector3(1, localScale.y, localScale.z);
+                        attack.transform.localScale = localScale;
+                        break;
+                    }
+                    case >= 0:
+                    {
+                        var localScale = attack.transform.localScale;
+                        localScale =
+                            new Vector3(-1, localScale.y, localScale.z);
+                        attack.transform.localScale = localScale;
+                        break;
+                    }
                 }
 
                 attack.SetActive(true);
-                collision.gameObject.GetComponentInChildren<Tech>().TakeDamage(damage);
-                _hitCounter = _hitInterval;
+                collision.gameObject.GetComponentInChildren<Tech>().TakeDamage(_damage);
+                _rateOfFire = _stats.rateOfFire;
             }
         }
 
         private void CheckDeath()
         {
+            if (_health > 0) return;
+            
             if (it.DmgTypeDictionary["Deathray"]) DeathrayDeath();
 
             if (it.DmgTypeDictionary["Acid"]) AcidMeltedDeath();
 
             if (it.DmgTypeDictionary["Fire"])
             {
-                ResetEnemy();
+                InitEnemy();
+                InitEnemyStats();
+                ResetDamagedByType();
                 gameObject.SetActive(false);
             }
 
             if (it.DmgTypeDictionary["Solid"])
             {
-                ResetEnemy();
+                InitEnemy();
+                InitEnemyStats();
+                ResetDamagedByType();
                 gameObject.SetActive(false);
             }
 
             if (it.DmgTypeDictionary["Energy"])
-            {
-                ResetEnemy();
+            { 
+                InitEnemy();
+                InitEnemyStats();
+                ResetDamagedByType();
                 gameObject.SetActive(false);
             }
         }
@@ -195,14 +221,16 @@ namespace Controllers
 
             if (_material.GetFloat(FadeAmount) >= 1)
             {
-                ResetEnemy();
+                InitEnemy();
+                InitEnemyStats();
+                ResetDamagedByType();
                 gameObject.SetActive(false);
             }
         }
 
         private void AcidMeltedDeath()
         {
-            moveSpeed = 0;
+            _moveSpeed = 0;
             if (!it.gotDeathParticle)
             {
                 it.gotDeathParticle = true;
@@ -216,7 +244,9 @@ namespace Controllers
 
             if (_material.GetFloat(OffsetUvY) >= 1)
             {
-                ResetEnemy();
+                InitEnemy();
+                InitEnemyStats();
+                ResetDamagedByType();
                 gameObject.SetActive(false);
             }
         }
@@ -235,52 +265,38 @@ namespace Controllers
             _material.SetFloat(OffsetUvY, amount);
         }
 
-        private void ResetEnemy()
+        private void InitEnemy()
         {
-            _lerpTimer = 0f;
-            _material.SetFloat(OffsetUvY, 0);
-            moveSpeed = _originalMoveSpeed;
             it.gotDeathParticle = false;
             it.alreadyDropped = false;
+           
+            _lerpTimer = 0f;
+            _material.SetFloat(OffsetUvY, 0);
+            _material.SetFloat(OffsetUvY, 0);
+            _material.SetFloat(FadeAmount, 0.1f);
+        }
+        
+        private void InitEnemyStats() {
+            _ammo = _stats.ammo;
+            _damage = _stats.damage;
+            _health = _stats.health;
+            _ammo = _stats.ammo;
+            _rateOfFire = _stats.rateOfFire;
+            _range = _stats.range;
+            _moveSpeed = _stats.moveSpeed;
+
+            _collisionAttackIndex = _stats.collisionAttackIndex;
+            _rangedAttackIndex = _stats.rangedAttackIndex;
+            _specialAttackIndex = _stats.specialAttackIndex;
+        }
+        
+        private void ResetDamagedByType() {
             it.DmgTypeDictionary["Deathray"] = false;
             it.DmgTypeDictionary["Acid"] = false;
             it.DmgTypeDictionary["Fire"] = false;
             it.DmgTypeDictionary["Solid"] = false;
             it.DmgTypeDictionary["Energy"] = false;
             it.DmgTypeDictionary["Mind"] = false;
-            _material.SetFloat(OffsetUvY, 0);
-            _material.SetFloat(FadeAmount, 0.1f);
-        }
-
-        private void GetSoundByDamageType(string dt)
-        {
-            switch (dt)
-            {
-                case "Deathray":
-                    DmgTypeSfxGroupController.Instance.sfxControllers[0].player.FeedbacksList[0].Play(transform.position);
-                    break;
-                case "Acid":
-                    DmgTypeSfxGroupController.Instance.sfxControllers[1].player.FeedbacksList[0].Play(transform.position);
-                    break;
-                case "Fire":
-                    DmgTypeSfxGroupController.Instance.sfxControllers[2].player.FeedbacksList[0].Play(transform.position);
-                    break;
-                case "Energy":
-                    DmgTypeSfxGroupController.Instance.sfxControllers[3].player.FeedbacksList[0].Play(transform.position);
-                    break;
-                case "Mind":
-                    DmgTypeSfxGroupController.Instance.sfxControllers[4].player.FeedbacksList[0].Play(transform.position);
-                    break;
-                case "Solid":
-                    DmgTypeSfxGroupController.Instance.sfxControllers[5].player.FeedbacksList[0].Play(transform.position);
-                    break;
-                case "Slice":
-                    DmgTypeSfxGroupController.Instance.sfxControllers[6].player.FeedbacksList[0].Play(transform.position);
-                    break;
-                case "Stab":
-                    DmgTypeSfxGroupController.Instance.sfxControllers[7].player.FeedbacksList[0].Play(transform.position);
-                    break;
-            }
         }
     }
 }

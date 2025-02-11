@@ -1,3 +1,4 @@
+using Controllers;
 using Controllers.Pools;
 using Damagers;
 using UnityEngine;
@@ -11,12 +12,24 @@ namespace Weapons.Projectiles
         public float damage;
         public float blastRadius;
         public SplineAnimate animator;
-        public GameObject parent;
+        public GameObject parent, missileTrack;
 
         private void FixedUpdate()
         {
-            if (animator.isActiveAndEnabled && !animator.IsPlaying) parent.SetActive(false);
+            if (animator.isActiveAndEnabled && !animator.IsPlaying) Detonate();
         }
+
+        private void Detonate()
+        {
+            var exp = ProjectilePoolManager2.poolProj.projPools[pid].GetPooledGameObject();
+            var damager = exp.GetComponent<EExplosionDamager>();
+            damager.damage = damage;
+            damager.blastRadiusCollider.radius = blastRadius;
+            exp.gameObject.transform.position = transform.position;
+            exp.SetActive(true);
+            GenericShakeController.Instance.ShakeWeakStrongViolent("strong", transform);
+            animator.Restart(false);
+            missileTrack.SetActive(false); }
 
         private void OnDisable()
         {
@@ -26,11 +39,9 @@ namespace Weapons.Projectiles
             damager.blastRadiusCollider.radius = blastRadius;
             exp.gameObject.transform.position = transform.position;
             exp.SetActive(true);
-            // 2 is the index for explosion sound on the weapons sfx player
-            WeaponSfxGroupController.Instance.sfxControllers[pid].player.FeedbacksList[2].Play(transform.position);            
+            GenericShakeController.Instance.ShakeWeakStrongViolent("strong", transform);
             animator.Restart(false);
+            missileTrack.SetActive(false);
         }
-        
-        
     }
 }

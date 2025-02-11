@@ -11,6 +11,8 @@ namespace EnemyStuff
         public Transform playerTransform;
         public float waveDuration;
         public int currentWaveIndex = 0;
+        public bool canSpawnAtStart, canSpawnOnTrigger;
+        
         private bool _canSpawn;
         private float _waveTimer;
         
@@ -19,10 +21,19 @@ namespace EnemyStuff
 
         private void Start()
         {
-            _canSpawn = true;
+            if (canSpawnAtStart) _canSpawn = true;
             waveDuration = waveInfoList[currentWaveIndex].waveDuration;
             _waveTimer = waveDuration;
             playerTransform = PlayerHealthController.contPHealth.transform;
+        }
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player") && canSpawnOnTrigger)
+            {
+                _canSpawn = true;
+                
+            }
         }
 
         private void FixedUpdate()
@@ -30,6 +41,7 @@ namespace EnemyStuff
             if (currentWaveIndex >= waveInfoList.Count)
             {
                 _canSpawn = false;
+                StopCoroutine(SpawnEnemies());
                 return;
             }
             _waveTimer -= Time.fixedDeltaTime;

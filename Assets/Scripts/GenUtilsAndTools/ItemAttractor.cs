@@ -27,7 +27,6 @@ namespace GenUtilsAndTools
                 _cooldownTimer -= Time.fixedDeltaTime;
                 if (_cooldownTimer <= 0)
                 {
-                    Debug.Log("overdrive is true");
                     _cooldownTimer = cooldown;
                     _overDrive = true;
                     overDriveParticle.SetActive(true);
@@ -41,7 +40,6 @@ namespace GenUtilsAndTools
                 _overDriveTimer -= Time.fixedDeltaTime;
                 if (_overDriveTimer <= 0)
                 {
-                    Debug.Log("overdrive is true");
                     _overDriveTimer = overDriveDuration;
                     _overDrive = false;
                     overDriveParticle.SetActive(false);

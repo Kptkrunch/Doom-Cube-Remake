@@ -1,3 +1,4 @@
+using Controllers;
 using Controllers.Pools;
 using Damagers;
 using UnityEngine;
@@ -34,10 +35,9 @@ namespace Weapons.Projectiles
             var damager = explosion.GetComponent<EExplosionDamager>();
             damager.damage = damage;
             damager.blastRadiusCollider.radius = expRadius;
-            Debug.Log(damager.name);
             explosion.gameObject.transform.position = transform.position;
             explosion.SetActive(true);
-            WeaponSfxGroupController.Instance.sfxControllers[pd.eid].player.FeedbacksList[2].Play(transform.position);
+            GenericShakeController.Instance.ShakeWeakStrongViolent("strong", transform);
             parent.gameObject.SetActive(false);
         }
 

@@ -1,4 +1,5 @@
 using System;
+using Controllers;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -78,18 +79,12 @@ namespace Weapons.SpecificWeapons
 
         private void Laser()
         {
-            var p = WeaponSfxGroupController.Instance.sfxControllers[stats.wid].player;
-            p.FeedbacksList[0].Play(transform.position);
             if (_isFiring)
             {
                 // the ongoing looping sound for the laser to continue for as long as the weapon is firing
-                p.FeedbacksList[3].Play(transform.position);
                 _beamStrikePosition = beamImpact.transform.position;
                 theBeam.SetPosition(0, beamOrigin.transform.position);
                 theBeam.SetPosition(1, _beamStrikePosition);
-            } else if (!_isFiring)
-            {
-                p.FeedbacksList[3].Stop(transform.position);
             }
         }
     }

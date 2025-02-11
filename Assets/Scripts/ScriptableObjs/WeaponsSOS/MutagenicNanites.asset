@@ -20,20 +20,10 @@ MonoBehaviour:
   weaponLvls:
   - damage: 0
     ammo: 0
-    range: 2
-    coolDown: 3
-    rateOfFire: 3
-    duration: 3
-    speed: 5
-    size: {x: 0, y: 0, z: 0}
-    wildCard: 0
-    upgradeText: 
-  - damage: 0
-    ammo: 0
-    range: 2.5
-    coolDown: 3
-    rateOfFire: 3
-    duration: 3
+    range: 3
+    coolDown: 7
+    rateOfFire: 5
+    duration: 7
     speed: 6
     size: {x: 0, y: 0, z: 0}
     wildCard: 0
@@ -41,10 +31,20 @@ MonoBehaviour:
   - damage: 0
     ammo: 0
     range: 4
-    coolDown: 6
-    rateOfFire: 6
-    duration: 6
-    speed: 4
+    coolDown: 5.5
+    rateOfFire: 5
+    duration: 8
+    speed: 7
+    size: {x: 0, y: 0, z: 0}
+    wildCard: 0
+    upgradeText: 
+  - damage: 0
+    ammo: 0
+    range: 5
+    coolDown: 5
+    rateOfFire: 5
+    duration: 9
+    speed: 8
     size: {x: 0, y: 0, z: 0}
     wildCard: 0
     upgradeText: 

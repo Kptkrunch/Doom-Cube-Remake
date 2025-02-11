@@ -1,3 +1,4 @@
+using Controllers;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -20,30 +21,29 @@ namespace Weapons.DeathRays
             splinePlayer.gameObject.SetActive(true);
             hitMarker.SetActive(true);
             splinePlayer.Play();
-            DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Play(transform.position);
+            juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
         }
 
-        public override void ResolveDeathRay()
+        protected override void ResolveDeathRay()
         {
-            if (splinePlayer.IsPlaying)
+            switch (splinePlayer.IsPlaying)
             {
-                beamOrigin.SetActive(true);
-                lineRenderer.SetPosition(0, transform.position);
-                lineRenderer.SetPosition(1, beamHitBox.transform.position);
+                case true:
+                    beamOrigin.SetActive(true);
+                    lineRenderer.SetPosition(0, transform.position);
+                    lineRenderer.SetPosition(1, beamHitBox.transform.position);
+                    break;
+                case false:
+                    beamOrigin.SetActive(false);
+                    lineRenderer.gameObject.SetActive(false);
+                    hitMarker.SetActive(false);
+                    splinePlayer.Restart(false);
+                    break;
             }
 
-            if (!splinePlayer.IsPlaying)
+            if (!juiceManager.firingFeedbacks.IsPlaying)
             {
-                beamOrigin.SetActive(false);
-                lineRenderer.gameObject.SetActive(false);
-                hitMarker.SetActive(false);
-                splinePlayer.Restart(false);
-            }
-
-            if (!hitMarker.activeSelf
-                && DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].IsPlaying)
-            {
-                DeathRaySfxGroupController.Instance.sfxControllers[drid].player.FeedbacksList[0].Stop(transform.position);
+                juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
             }
         }
     }
