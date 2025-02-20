@@ -21,8 +21,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1474819752, guid: 11df02e974ff9b04c8acf697bda930fe, type: 3}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Size.x
+      value: 6.762396
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2244328
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.038172722
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.39720315
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.4375
+      value: 6.875
       objectReference: {fileID: 0}
     - target: {fileID: 5165583773842802034, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Name
@@ -117,9 +133,14 @@ MonoBehaviour:
     invertX: 0
     invertY: 0
     depth: 1
-    spriteRenderer: {fileID: 0}
+    spriteRenderer: {fileID: 4870273214514846401}
   mainShape:
     shadowType: 1
     maskType: 0
     maskPivot: 0
     transform: {fileID: 1443809262888047024}
+--- !u!212 &4870273214514846401 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2325375378041857089, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+  m_PrefabInstance: {fileID: 7193316476854353536}
+  m_PrefabAsset: {fileID: 0}

@@ -23,19 +23,6 @@ namespace ScriptableObjs
 
             [System.NonSerialized] // Prevent from being serialized by Unity since Dictionary is not supported in the editor
             public Dictionary<string, bool> DamageTypeStatus;
-
-            public EnemyData()
-            {
-                DamageTypeStatus = new Dictionary<string, bool>
-                {
-                    { "Deathray", false },
-                    { "Acid", false },
-                    { "Fire", false },
-                    { "Solid", false },
-                    { "Energy", false },
-                    { "Mind", false }
-                };
-            }
         }
 
         [SerializeField] private List<EnemyData> enemiesList = new();
@@ -61,7 +48,7 @@ namespace ScriptableObjs
         // Helper method to retrieve enemy data in O(1)
         public EnemyData GetEnemyData(string enemyName)
         {
-            InitializeDictionary(); // Ensure the dictionary exists
+            InitializeDictionary();
             _enemiesDictionary.TryGetValue(enemyName, out var enemyData);
             return enemyData;
         }

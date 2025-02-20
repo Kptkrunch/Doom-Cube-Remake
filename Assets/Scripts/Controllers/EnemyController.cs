@@ -1,3 +1,4 @@
+using System;
 using Controllers.Pools;
 using EnemyStuff;
 using GenUtilsAndTools;
@@ -10,6 +11,7 @@ namespace Controllers
 {
     public class EnemyController : MonoBehaviour
     {
+        public string id;
         public Rigidbody2D rb2d;
         public GameObject attackLocation;
         public SpriteRenderer spriteRenderer;
@@ -18,50 +20,49 @@ namespace Controllers
         public Transform target;
 
         private Material _material;
-        private float _maxHealth, _hitCounter, _hitInterval, _originalMoveSpeed, _lerpTimer;
         private static readonly int FadeAmount = Shader.PropertyToID("_FadeAmount");
         private static readonly int OffsetUvY = Shader.PropertyToID("_OffsetUvY");
         
         private EnemyDatabase.EnemyData _stats;
         
-        private float _health = 1, _moveSpeed, _damage, _rateOfFire, _range, _knockBackTimer;
+        private float _health = 1, _moveSpeed, _damage, _rateOfFire, _range, _knockBackTimer = 0.0f, _lerpTimer;
         private int _collisionAttackIndex, _rangedAttackIndex, _specialAttackIndex, _ammo;
         
         
         private void Awake()
         {
-            Debug.Log(_stats);
-            Debug.Log("right before getting stats");
-
-            _stats = EnemyDataManager.Instance.enemyDb.GetEnemyData(name);
-            Debug.Log("should have stats now");
-            Debug.Log(_stats);
+            if (EnemyDataManager.Instance.enemyDb) _stats = EnemyDataManager.Instance.enemyDb.GetEnemyData(id);
         }
 
         private void Start()
         {
-            Debug.Log("in start");
-
             InitEnemyStats();
-            InitEnemy();
-            ResetDamagedByType();
-            _material = spriteRenderer.material;
+            if (!target) target = PlayerHealthController.contPHealth.transform;
+            _material = Instantiate(spriteRenderer.material);
         }
 
         private void FixedUpdate()
         {
-            if (!target) target = PlayerHealthController.contPHealth.transform;
             if (_rateOfFire > 0f) _rateOfFire -= Time.deltaTime;
 
             FlipRigidBodyX();
-            KnockBackTimer();
+            // KnockBackTimer();
             CheckDeath();
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        // private void OnCollisionEnter2D(Collision2D collision)
+        // {
+        //     if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Construct"))
+        //     {
+        //         CollisionAttack(collision);
+        //         StopEnemies();
+        //     }
+        // }
+
+        private void OnEnable()
         {
-            CollisionAttack(collision);
-            StopEnemies();
+            if (!target) target = PlayerHealthController.contPHealth.transform;
+            InitEnemyStats();
         }
 
         public void TakeDamage(float enemyDamage, string damageType)
@@ -69,13 +70,13 @@ namespace Controllers
             _health -= enemyDamage;
             if (_health <= 0)
             {
+                it.DmgTypeDictionary[damageType] = true;
+
                 if (!it.alreadyDropped)
                 {
                     it.alreadyDropped = true;
                     itemDropper.DropResource();
                 }
-                
-                it.DmgTypeDictionary[damageType] = true;
             }
 
             ShowDamage(enemyDamage);
@@ -118,7 +119,10 @@ namespace Controllers
 
         private void StopEnemies()
         {
-            if (!PlayerController.contPlayer.gameObject.activeInHierarchy) _moveSpeed = 0f;
+            if (!PlayerController.contPlayer.gameObject.activeInHierarchy)
+            {
+                _moveSpeed = 0f;
+            }
         }
 
         private void CollisionAttack(Collision2D collision)
@@ -192,25 +196,19 @@ namespace Controllers
 
             if (it.DmgTypeDictionary["Fire"])
             {
-                InitEnemy();
-                InitEnemyStats();
-                ResetDamagedByType();
+                ResetEnemyFloats();
                 gameObject.SetActive(false);
             }
 
             if (it.DmgTypeDictionary["Solid"])
             {
-                InitEnemy();
-                InitEnemyStats();
-                ResetDamagedByType();
+                ResetEnemyFloats();
                 gameObject.SetActive(false);
             }
 
             if (it.DmgTypeDictionary["Energy"])
             { 
-                InitEnemy();
-                InitEnemyStats();
-                ResetDamagedByType();
+                ResetEnemyFloats();
                 gameObject.SetActive(false);
             }
         }
@@ -221,9 +219,8 @@ namespace Controllers
 
             if (_material.GetFloat(FadeAmount) >= 1)
             {
-                InitEnemy();
+                ResetEnemyFloats();
                 InitEnemyStats();
-                ResetDamagedByType();
                 gameObject.SetActive(false);
             }
         }
@@ -244,9 +241,8 @@ namespace Controllers
 
             if (_material.GetFloat(OffsetUvY) >= 1)
             {
-                InitEnemy();
+                ResetEnemyFloats();
                 InitEnemyStats();
-                ResetDamagedByType();
                 gameObject.SetActive(false);
             }
         }
@@ -265,11 +261,9 @@ namespace Controllers
             _material.SetFloat(OffsetUvY, amount);
         }
 
-        private void InitEnemy()
+        private void ResetEnemyFloats()
         {
-            it.gotDeathParticle = false;
-            it.alreadyDropped = false;
-           
+            _moveSpeed = _stats.moveSpeed;
             _lerpTimer = 0f;
             _material.SetFloat(OffsetUvY, 0);
             _material.SetFloat(OffsetUvY, 0);
@@ -288,15 +282,6 @@ namespace Controllers
             _collisionAttackIndex = _stats.collisionAttackIndex;
             _rangedAttackIndex = _stats.rangedAttackIndex;
             _specialAttackIndex = _stats.specialAttackIndex;
-        }
-        
-        private void ResetDamagedByType() {
-            it.DmgTypeDictionary["Deathray"] = false;
-            it.DmgTypeDictionary["Acid"] = false;
-            it.DmgTypeDictionary["Fire"] = false;
-            it.DmgTypeDictionary["Solid"] = false;
-            it.DmgTypeDictionary["Energy"] = false;
-            it.DmgTypeDictionary["Mind"] = false;
         }
     }
 }

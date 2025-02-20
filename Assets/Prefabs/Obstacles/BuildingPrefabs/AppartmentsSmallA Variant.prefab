@@ -72,6 +72,26 @@ PrefabInstance:
       propertyPath: objSpritesList.Array.data[2]
       value: 
       objectReference: {fileID: -775293154, guid: 761e52980b2d0874ba533b6981b46e0e, type: 3}
+    - target: {fileID: 5675994547752757374, guid: 580662334842b774bb2683cbaadefb65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545931951088127343, guid: 580662334842b774bb2683cbaadefb65, type: 3}
+      propertyPath: m_Size.x
+      value: 6.02462
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545931951088127343, guid: 580662334842b774bb2683cbaadefb65, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7803898
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545931951088127343, guid: 580662334842b774bb2683cbaadefb65, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0014629364
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545931951088127343, guid: 580662334842b774bb2683cbaadefb65, type: 3}
+      propertyPath: m_Offset.y
+      value: -2.7115183
+      objectReference: {fileID: 0}
     - target: {fileID: 6545931951088127343, guid: 580662334842b774bb2683cbaadefb65, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 9
@@ -87,6 +107,10 @@ PrefabInstance:
     - target: {fileID: 7208020985653307456, guid: 580662334842b774bb2683cbaadefb65, type: 3}
       propertyPath: m_Name
       value: AppartmentsSmallA Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208020985653307456, guid: 580662334842b774bb2683cbaadefb65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

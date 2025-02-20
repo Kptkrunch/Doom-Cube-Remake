@@ -288,14 +288,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3762585068816431298, guid: 87f476bd988064b47931f59badd501e9, type: 3}
-      propertyPath: pid
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3762585068816431298, guid: 87f476bd988064b47931f59badd501e9, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 3211512154496383844}
-    - target: {fileID: 3762585068816431298, guid: 87f476bd988064b47931f59badd501e9, type: 3}
       propertyPath: missileTrack
       value: 
       objectReference: {fileID: 8766339402483427144}
@@ -308,11 +300,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87f476bd988064b47931f59badd501e9, type: 3}
---- !u!1 &3211512154496383844 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8078781750236708068, guid: 87f476bd988064b47931f59badd501e9, type: 3}
-  m_PrefabInstance: {fileID: 6668718861260375936}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8233469790691526676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3372955731837538196, guid: 87f476bd988064b47931f59badd501e9, type: 3}

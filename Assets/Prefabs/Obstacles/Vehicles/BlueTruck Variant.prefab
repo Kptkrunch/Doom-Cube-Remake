@@ -22,27 +22,27 @@ PrefabInstance:
       objectReference: {fileID: -1065457463, guid: 11df02e974ff9b04c8acf697bda930fe, type: 3}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Size.x
-      value: 3.2855206
+      value: 6.873377
       objectReference: {fileID: 0}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Size.y
-      value: 0.8778097
+      value: 1.096201
       objectReference: {fileID: 0}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Offset.x
-      value: 0.0637579
+      value: -0.045437813
       objectReference: {fileID: 0}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Offset.y
-      value: -0.03518358
+      value: -0.54996264
       objectReference: {fileID: 0}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.46875
+      value: 6.9375
       objectReference: {fileID: 0}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.3196737
+      value: 2.6393473
       objectReference: {fileID: 0}
     - target: {fileID: 5165583773842802034, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Name
@@ -96,6 +96,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1523097186834680459}
   m_SourcePrefab: {fileID: 100100000, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+--- !u!212 &2071153050634306616 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2325375378041857089, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+  m_PrefabInstance: {fileID: 4394196227057098873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5413865277934522185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8636421834939723568, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
@@ -137,7 +142,7 @@ MonoBehaviour:
     invertX: 0
     invertY: 0
     depth: 1
-    spriteRenderer: {fileID: 0}
+    spriteRenderer: {fileID: 2071153050634306616}
   mainShape:
     shadowType: 1
     maskType: 0

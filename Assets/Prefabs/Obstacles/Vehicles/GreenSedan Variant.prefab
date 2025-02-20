@@ -21,8 +21,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -367594279, guid: 11df02e974ff9b04c8acf697bda930fe, type: 3}
     - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Size.x
+      value: 6.749132
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0950488
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00042247772
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.3921395
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181178199455064173, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.375
+      value: 6.75
       objectReference: {fileID: 0}
     - target: {fileID: 5165583773842802034, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
       propertyPath: m_Name
@@ -76,6 +92,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -4953696046213726903}
   m_SourcePrefab: {fileID: 100100000, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+--- !u!212 &1493196402736302656 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2325375378041857089, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
+  m_PrefabInstance: {fileID: 3818351689453465089}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4838899302801637681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8636421834939723568, guid: c36f5bfffd9bfbe4693d22b600de8129, type: 3}
@@ -117,7 +138,7 @@ MonoBehaviour:
     invertX: 0
     invertY: 0
     depth: 1
-    spriteRenderer: {fileID: 0}
+    spriteRenderer: {fileID: 1493196402736302656}
   mainShape:
     shadowType: 1
     maskType: 0

@@ -85,7 +85,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b3149537c5996748b88de6ad2966d07, type: 2}
+  - {fileID: 2100000, guid: c74f8af355072e54e9d5d435859acf5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f747332e9ab33f14cbfceba382276942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: BaseEnemy
   rb2d: {fileID: 632387995500016357}
   attackLocation: {fileID: 642946830506201365}
   spriteRenderer: {fileID: 4920623320006420483}

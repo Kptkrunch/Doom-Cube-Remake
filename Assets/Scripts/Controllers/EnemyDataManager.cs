@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using ScriptableObjs;
 using UnityEngine;
 
-public class EnemyDataManager : MonoBehaviour
+namespace Controllers
 {
-    public static EnemyDataManager Instance;
-    public EnemyDatabase enemyDb;
-    private void Awake()
+    public class EnemyDataManager : MonoBehaviour
     {
-        Instance = this;
+        public static EnemyDataManager Instance;
+        public EnemyDatabase enemyDb;
+        private void Awake()
+        {
+            Instance = this;
+        }
     }
 }

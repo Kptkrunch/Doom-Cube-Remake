@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc6b48e165e3d247a86313a73fec543, type: 3}
   m_Name: MeatSeekers
   m_EditorClassIdentifier: 
-  weaponName: Meet Seeking Missiles
+  weaponName: Meet Seeking Missile Launcher
   lvl: 0
   wid: 1
   pid: 1
-  weaponPrefab: {fileID: 2223392768671692405, guid: 48f67ac72670c824db7182ffd088c2d7, type: 3}
+  weaponPrefab: {fileID: 8068509275655914123, guid: 61a722aa53457af4f85ac6aefd3f64a3, type: 3}
   weaponLvls:
   - damage: 2
     ammo: 2

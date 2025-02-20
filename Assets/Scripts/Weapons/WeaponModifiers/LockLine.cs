@@ -5,7 +5,7 @@ namespace Weapons.WeaponModifiers
 {
     public class LockLine : MonoBehaviour
     {
-        public MissileWeapon parent;
+        public MeatSeekingMissileLauncher parent;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
