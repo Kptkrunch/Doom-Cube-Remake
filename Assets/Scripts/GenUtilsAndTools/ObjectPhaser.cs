@@ -2,7 +2,6 @@ using System.Collections;
 using Controllers;
 using UnityEngine;
 using Weapons;
-using Weapons.SpecificWeapons;
 
 namespace GenUtilsAndTools
 {
@@ -11,10 +10,8 @@ namespace GenUtilsAndTools
         public Weapon parent;
         public GameObject obj;
         public float phaseOutInterval, phaseInInterval;
-        public int phaseInParticleIndex, phaseOutParticleIndex;
-
-        private bool _readyToPhase = true;
         
+        private bool _readyToPhase = true;
         
         private void FixedUpdate()
         {
@@ -39,6 +36,19 @@ namespace GenUtilsAndTools
             parent.juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);
             
             _readyToPhase = true;
+        }
+
+        IEnumerator ResetPhase()
+        {
+            StopCoroutine(PhaseObject());
+            yield return new WaitForSeconds(phaseInInterval);
+            _readyToPhase = true;
+        }
+        
+        public void Reset()
+        {
+            _readyToPhase = false;
+            StartCoroutine(ResetPhase());
         }
     }
 }
