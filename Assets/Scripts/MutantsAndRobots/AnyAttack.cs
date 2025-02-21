@@ -19,7 +19,6 @@ namespace MutantsAndRobots
             hitsTimer -= Time.deltaTime;
             if (!attackParticleSystem.isPlaying)
             {
-                Debug.Log("done attacking");
                 parent.gameObject.SetActive(false);
             }
             else

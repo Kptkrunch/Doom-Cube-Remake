@@ -1,25 +1,25 @@
+using MoreMountains.Tools;
 using UnityEngine;
 
 namespace Weapons.Projectiles
 {
     public class Transmogrifier : MonoBehaviour
     {
-        public int wid, pid, eid;
-        private void OnTriggerEnter2D(Collider2D collision)
+        public MMSimpleObjectPooler replacementPool;
+        protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
-            MutateEnemy(collision);
+            if (!collision.CompareTag("Enemy")) return;
+            Transmogrify(collision);
         }
         
-        private void MutateEnemy(Collider2D collision)
+        private void Transmogrify(Collider2D collision)
         {
-            if (collision.CompareTag("Enemy"))
-            {
-                if (collision) collision.gameObject.SetActive(false);
-                var mutantPosition = collision.transform.position;
-                var mutantSlug = MutantsAndBotsPoolManager.poolMutRob.mutAndRobPools[0].GetPooledGameObject();
-                mutantSlug.SetActive(true);
-                mutantSlug.transform.position = mutantPosition;
-            }
+            if (collision) collision.gameObject.SetActive(false);
+            var targetPosition = collision.transform.position;
+            var replacementObject = replacementPool.GetPooledGameObject();
+            replacementObject.SetActive(true);
+            replacementObject.transform.position = targetPosition;
+            gameObject.SetActive(false);
         }
     }
 }
