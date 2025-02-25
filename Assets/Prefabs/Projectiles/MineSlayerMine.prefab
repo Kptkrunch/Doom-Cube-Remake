@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5479948438837151399}
   - component: {fileID: 6979858191622728137}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light 2D
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -58,11 +58,11 @@ Transform:
   m_GameObject: {fileID: 1070538698958664570}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.055, y: 0.069, z: 0}
+  m_LocalPosition: {x: 0.112, y: 0.004999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5225535953572465501}
+  m_Father: {fileID: 4020437229943051982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6979858191622728137
 MonoBehaviour:
@@ -178,10 +178,8 @@ MonoBehaviour:
   parent: {fileID: 1006643835540563925}
   enemyDamager: {fileID: 0}
   expIndex: 3
-  hasFuse: 0
   damage: 1
   expRadius: 2
-  fuseTimer: 10
 --- !u!212 &3436273034692249808
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -298,6 +296,7 @@ MonoBehaviour:
   doesBounce: 0
   explodes: 1
   hasLifetime: 1
+  hasFuse: 0
   disableAfterBounces: 0
   disableOnContact: 1
   randomDirection: 0
@@ -336,8 +335,6 @@ Transform:
   m_Children:
   - {fileID: 4020437229943051982}
   - {fileID: 1033113676914371797}
-  - {fileID: 5479948438837151399}
-  - {fileID: 769330598725000487}
   m_Father: {fileID: 1604688555300022462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8601961269261189894
@@ -350,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769330598725000487}
   - component: {fileID: 1023255790532416523}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light 2D (1)
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -366,11 +363,11 @@ Transform:
   m_GameObject: {fileID: 8601961269261189894}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.065, y: 0.069, z: 0}
+  m_LocalPosition: {x: -0.125, y: 0.004999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5225535953572465501}
+  m_Father: {fileID: 1033113676914371797}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1023255790532416523
 MonoBehaviour:
@@ -441,9 +438,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5225535953572465501}
     m_Modifications:
+    - target: {fileID: 101852, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_Name
       value: MineLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_TagString
@@ -491,7 +496,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 402518, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 769330598725000487}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
 --- !u!4 &1033113676914371797 stripped
@@ -507,9 +515,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5225535953572465501}
     m_Modifications:
+    - target: {fileID: 101852, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_Name
       value: MineLight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 177086, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
       propertyPath: m_TagString
@@ -557,7 +573,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 402518, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5479948438837151399}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7ac44b0d615e834097b14bd7c9512a4, type: 3}
 --- !u!4 &4020437229943051982 stripped

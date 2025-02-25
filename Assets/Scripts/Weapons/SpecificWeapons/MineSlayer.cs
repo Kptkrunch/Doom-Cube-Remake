@@ -1,14 +1,19 @@
-using System;
 using System.Collections;
 using Controllers;
-using Controllers.Pools;
-using MoreMountains.Feedbacks;
+using MoreMountains.Tools;
 using UnityEngine;
 
 namespace Weapons.SpecificWeapons
 {
     public class MineSlayer : PrefabBasedWeapon
     {
+        public static MineSlayer Instance;
+        public MMSimpleObjectPooler minePool, explosionPool, muzzleFlashPool;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
         private void Start()
         {
             SetStats();
@@ -34,10 +39,10 @@ namespace Weapons.SpecificWeapons
 
         protected override void Fire()
         {
-            var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
+            var flash = muzzleFlashPool.GetPooledGameObject();
             flash.transform.position = transform.position;
             flash.SetActive(true);
-            var mine = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+            var mine = minePool.GetPooledGameObject();
             mine.transform.position = transform.position;
             mine.SetActive(true);
             juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);

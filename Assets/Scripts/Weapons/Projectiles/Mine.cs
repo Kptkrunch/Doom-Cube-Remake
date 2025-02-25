@@ -2,12 +2,12 @@ using Controllers;
 using Controllers.Pools;
 using Damagers;
 using UnityEngine;
+using Weapons.SpecificWeapons;
 
 namespace Weapons.Projectiles
 {
     public class Mine : Projectile
     {
-        public int expIndex; 
         public float damage, expRadius;
 
         private void Awake()
@@ -31,13 +31,13 @@ namespace Weapons.Projectiles
 
         private void Detonate()
         {
-            var explosion = ProjectilePoolManager2.poolProj.projPools[expIndex].GetPooledGameObject();
+            var explosion = MineSlayer.Instance.explosionPool.GetPooledGameObject();
             var damager = explosion.GetComponent<EExplosionDamager>();
             damager.damage = damage;
             damager.blastRadiusCollider.radius = expRadius;
             explosion.gameObject.transform.position = transform.position;
             explosion.SetActive(true);
-            GenericShakeController.Instance.ShakeWeakStrongViolent("strong", transform);
+            GenericShakeController.Instance.ShakeWeakStrongViolent("weak", transform);
             parent.gameObject.SetActive(false);
         }
 
@@ -53,7 +53,5 @@ namespace Weapons.Projectiles
                 parent.gameObject.SetActive(false);
             }
         }
-
-
     }
 }

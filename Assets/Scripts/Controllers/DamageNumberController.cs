@@ -5,12 +5,12 @@ namespace Controllers
 {
     public class DamageNumberController : MonoBehaviour
     {
-        public static DamageNumberController contDmgText;
+        public static DamageNumberController Instance;
         public MMF_Player player;
 
         private void Awake()
         {
-            contDmgText = this;
+            Instance = this;
         }
     }
 }

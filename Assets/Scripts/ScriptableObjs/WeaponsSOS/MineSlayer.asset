@@ -23,28 +23,28 @@ MonoBehaviour:
     range: 3
     coolDown: 4
     rateOfFire: 1
-    duration: 10
+    duration: 5
     speed: 0
     size: {x: 0, y: 0, z: 0}
     wildCard: 0
     upgradeText: 
   - damage: 2
     ammo: 2
-    range: 3
+    range: 3.5
     coolDown: 3.5
-    rateOfFire: 1
-    duration: 10
+    rateOfFire: 0.8
+    duration: 6
     speed: 0
     size: {x: 0, y: 0, z: 0}
     wildCard: 0
-    upgradeText: 
+    upgradeText: Bigger, stronger, well...stronger
   - damage: 3
     ammo: 3
     range: 4
     coolDown: 3
-    rateOfFire: 0.75
-    duration: 10
+    rateOfFire: 0.6
+    duration: 7
     speed: 0
     size: {x: 0, y: 0, z: 0}
     wildCard: 0
-    upgradeText: 
+    upgradeText: Who doesn't love playing in puddles

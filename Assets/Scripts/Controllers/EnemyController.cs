@@ -90,10 +90,10 @@ namespace Controllers
 
         private void ShowDamage(float theDamage, float intensity = 1f)
         {
-            var floatingText = DamageNumberController.contDmgText
+            var floatingText = DamageNumberController.Instance
                 .player.GetFeedbackOfType<MMF_FloatingText>();
             floatingText.Value = theDamage.ToString();
-            if (rb2d) DamageNumberController.contDmgText.player.PlayFeedbacks(transform.position);
+            if (rb2d) DamageNumberController.Instance.player.PlayFeedbacks(transform.position);
         }
 
         private void FlipRigidBodyX()
