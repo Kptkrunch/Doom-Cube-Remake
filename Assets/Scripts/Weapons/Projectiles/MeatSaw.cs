@@ -1,13 +1,14 @@
 using System;
 using Controllers;
 using UnityEngine;
+using Weapons.SpecificWeapons;
 using Random = UnityEngine.Random;
 
 namespace Weapons.Projectiles
 {
     public class MeatSaw : BouncingProjectile
     {
-        public GenericJuiceManager juiceManager;
+        public CircleCollider2D circleCollider;
         private Vector3 _growSawScale;
         private bool _isGrowing, _triggered;
         private float _growSpeed, _spinTimer;
@@ -22,6 +23,16 @@ namespace Weapons.Projectiles
             pd.stats.movSpeed = 0f;
             if (it.isLobbed) RestoreLob = true;
             SetStats();
+        }
+
+        public override void OnEnable()
+        {
+            base.OnEnable();
+            LifeTimer = pd.stats.lifeTime;
+            _sawSpeed = pd.stats.movSpeed;
+            pd.stats.movSpeed = 0f;
+            if (it.isLobbed) RestoreLob = true;
+            circleCollider.enabled = false;
         }
 
         private void FixedUpdate()
@@ -73,11 +84,11 @@ namespace Weapons.Projectiles
         private void OnDisable()
         {
             pd.stats.movSpeed = _sawSpeed;
-            juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Idle);
+            MechanicalMeatSeperator.Instance.juiceManager.StopFeedback(GenericJuiceManager.FeedbackType.Firing);
             SetStats();
         }
 
-        public void SpoolUpAndFire()
+        private void SpoolUpAndFire()
         {
             switch (Bounces)
             {
@@ -89,15 +100,17 @@ namespace Weapons.Projectiles
                     StopMoving();
                     if (_spinTimer <= 0)
                     {
-                        if (!_triggered) MaybeGoLeftOrRight();
+                        if (!_triggered)
+                        {
+                            MaybeGoLeftOrRight(); 
+                            MechanicalMeatSeperator.Instance.juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Idle);
+                            circleCollider.enabled = true;
+                        }
                         _triggered = true;
                         pd.stats.movSpeed = 4f;
                         rb2d.gameObject.transform.position += _direction * (pd.stats.movSpeed * Time.deltaTime);
                     }
-                    if (!juiceManager.idleFeedbacks.FeedbacksList[0].IsPlaying)
-                    {
-                        juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Idle);
-                    }
+
                     break;
                 }
             }

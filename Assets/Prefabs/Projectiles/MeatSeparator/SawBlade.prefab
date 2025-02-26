@@ -141,6 +141,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   enemyDamager: {fileID: 3923738293230046291}
   rb2d: {fileID: 0}
+  circleCollider: {fileID: 6479763292378284184}
 --- !u!114 &3923738293230046291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +164,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5923405266611812333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -188,9 +189,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0032152832, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.30032748
 --- !u!114 &5109663282500679762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,12 +205,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayDisable: 0
-  doesPenetrate: 0
+  doesPenetrate: 1
   doesRotate: 0
   isLobbed: 1
   doesBounce: 1
   explodes: 0
   hasLifetime: 1
+  hasFuse: 0
   disableAfterBounces: 0
   disableOnContact: 0
   randomDirection: 0

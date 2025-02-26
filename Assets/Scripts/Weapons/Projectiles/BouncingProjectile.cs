@@ -26,7 +26,6 @@ namespace Weapons.Projectiles
                 case true:
                 {
                     BounceTimer -= Time.deltaTime;
-                    Debug.Log("in bounce logic");
 
                     if (BounceTimer <= 0)
                     {

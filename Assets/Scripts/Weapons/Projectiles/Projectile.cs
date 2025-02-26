@@ -69,7 +69,7 @@ namespace Weapons.Projectiles
                 if (_pens <= 0)
                 {
                     _pens = pd.stats.penetrates;
-                    gameObject.SetActive(false);
+                    parent.SetActive(false);
                 }
             }
         }

@@ -1,14 +1,20 @@
 using System.Collections;
 using Controllers;
-using Controllers.Pools;
-using MoreMountains.Feedbacks;
+using MoreMountains.Tools;
 using UnityEngine;
 
 namespace Weapons.SpecificWeapons
 {
     public class MechanicalMeatSeperator : LobbedWeapon
     {
+        public static MechanicalMeatSeperator Instance;
+        public MMSimpleObjectPooler sawPool, hitPool, muzzleFlashPool;
         private Vector3 _direction;
+        
+        private void Awake()
+        {
+            Instance = this;
+        }
         private void Start()
         {
             SetStats();
@@ -42,10 +48,10 @@ namespace Weapons.SpecificWeapons
 
         private void LaunchSawBlade()
         {
-            var flash = MuzzleFlashPools.Instance.flashPools[stats.pid].GetPooledGameObject();
+            var flash = muzzleFlashPool.GetPooledGameObject();
             flash.transform.position = transform.position;
             flash.SetActive(true);
-            var saw = ProjectilePoolManager.poolProj.projPools[stats.pid].GetPooledGameObject();
+            var saw = sawPool.GetPooledGameObject();
             saw.transform.position = transform.position;
             saw.SetActive(true);
             juiceManager.TriggerFeedback(GenericJuiceManager.FeedbackType.Firing);

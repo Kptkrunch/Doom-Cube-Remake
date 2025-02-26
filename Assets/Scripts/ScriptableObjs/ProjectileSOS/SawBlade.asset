@@ -23,7 +23,8 @@ MonoBehaviour:
     lobDistance: 5
     rotSpeed: 10
     lifeTime: 10
-    pens: 10
+    fuseTime: 0
+    penetrates: 3
     bounces: 2
     bounceInterval: 1
     direction: {x: 0, y: 0}
